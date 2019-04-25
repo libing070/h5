@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多点定位-横向</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <!--<script src='js/jquery-1.12.4.min.js'></script>-->
+     <style>
+
+         .warp1,
+         .warp2,
+         .warp3{
+             width:100%;
+             height: 33%;
+             position: absolute;
+
+         }
+
+         .warp1{
+             top:0;
+         }
+         .warp2{
+             top:0;
+             left: 0;
+             right: 0;
+             bottom: 0;
+             margin: auto;
+         }
+         .warp3{
+             bottom:0;
+         }
+         .warp1 span,
+         .warp2 span,
+         .warp3 span
+         {
+             display: block;
+             height: 100%;
+             width: 33%;
+             float: left;
+         }
+          .left,.center,.right{
+             background-image:url('img/bg.png');
+             background-repeat:no-repeat;
+         }
+         .warp1 .left{
+             background-position:50% 10%;
+         }
+         .warp1 .center{
+             background-position:center 10%;
+         }
+         .warp1 .right{
+             background-position:50% 10%;
+         }
+
+         .warp2 .left{
+             background-position:50% 50%;
+         }
+         .warp2 .center{
+             background-position:center 50%;
+         }
+         .warp2 .right{
+             background-position:50% 50%;
+         }
+
+         .warp3 .left{
+             background-position:50% 90%;
+         }
+         .warp3 .center{
+             background-position:center 90%;
+         }
+         .warp3 .right{
+             background-position:50% 90%;
+         }
+     </style>
+</head>
+<body>
+
+<div class="content">
+    <div class="warp1">
+        <span class="left"></span>
+        <span class="center"></span>
+        <span class="right"></span>
+    </div>
+    <div class="warp2">
+        <span class="left"></span>
+        <span class="center"></span>
+        <span class="right"></span>
+    </div>
+    <div class="warp3">
+        <span class="left"></span>
+        <span class="center"></span>
+        <span class="right"></span>
+    </div>
+</div>
+
+</body>
+
+<script>
+
+</script>
+
+</html>

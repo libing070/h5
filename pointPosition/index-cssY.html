@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多点定位-纵向</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+
+    <style>
+         .left-warp,
+         .center-warp,
+         .right-warp{
+            float: left;
+             height: 100%;
+             width: 33%;
+         }
+         .left-warp span,
+         .center-warp span,
+         .right-warp span
+         {
+             display: block;
+             width: 100%;
+             height: 33%;
+         }
+         .top,.center,.bottom{
+             background-image:url('img/bg.png');
+             background-repeat:no-repeat;
+         }
+         .left-warp .top,
+         .center-warp .top,
+         .right-warp .top
+         {
+         background-position: 50% 10%;
+         }
+
+         .left-warp .center,
+         .center-warp .center,
+         .right-warp .center
+         {
+             background-position: 50% 50%;
+         }
+         .left-warp .bottom,
+         .center-warp .bottom,
+         .right-warp .bottom
+         {
+             background-position: 50% 90%;
+         }
+     </style>
+</head>
+<body>
+
+<div class="content">
+    <div class="left-warp">
+        <span class="top"></span>
+        <span class="center"></span>
+        <span class="bottom"></span>
+    </div>
+    <div class="center-warp">
+        <span class="top"></span>
+        <span class="center"></span>
+        <span class="bottom"></span>
+    </div>
+    <div class="right-warp">
+        <span class="top"></span>
+        <span class="center"></span>
+        <span class="bottom"></span>
+    </div>
+</div>
+
+</body>
+
+<script>
+
+</script>
+
+</html>
