@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="mobile-web-app-capable">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title></title>
+    <script src="./js/jquery-1.11.2.min.js"></script>
+    <script src="./js/jquery.cookie.js"></script>
+    <script src="./js/rem.js"></script>
+    <link rel="stylesheet" href="css/sweetalert2.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="js/drag.js"></script>
+    <script src="js/sweetalert.min.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="loadding">
+            <div class="loadding_con">
+                <img src="./images/loadding_bg.png" alt="">
+                <div class="number">
+
+                </div>
+            </div>
+        </div>
+        <div class="region block_1">
+            <div class="index_txt">
+                <img class="" src="./images/index_txt.png" alt="">
+            </div>
+
+        </div>
+        <div class="join_now">
+            <div class="before">
+                <div class="before_handle"></div>
+                <div class="before_horn"></div>
+            </div>
+            <div class="after">
+                <div class="after_horn"></div>
+                <div class="after_handle"></div>
+            </div>
+            <div class="border_top border_bg"></div>
+            <div class="border_left border_bg"></div>
+            <div class="border_right border_bg"></div>
+            <div class="border_bottom border_bg"></div>
+            <div class="technology_box">
+                <img src="./images/join_now.png" alt="">
+            </div>
+        </div>
+        <div class="region block_2">
+            <div class="content2">
+                <img class="content2-wrap0" src="images/title2.png">
+                <div class="_content2-wrap1">
+                    <img class="content2-icon" src="images/nameicon.png">
+                    <input class="content2-input p input _input" type="text" id="content2wrap2Name" />
+                </div>
+                <div class="_content2-wrap2">
+                    <img class="content2-icon" src="images/phoneicon.png">
+                    <input class="content2-input p input _input" id="content2wrap2Phone" maxlength="11"
+                        oninput="value=value.replace(/[^\d]/g,'')" type="number" placeholder="">
+                </div>
+                <div class="_content2-wrap3">
+                    <img class="content2-icon" src="images/yxsicon.png">
+                    <select class="content2-input s selects" id="content2wrap2GYS">
+                        <option class="sex-select" style='display: none'></option>
+                        <option class="select">北京东风南方三合</option>
+                        <option class="select">北京华盛昌</option>
+                        <option class="select">北京福源</option>
+                        <option class="select">北京汇京世纪</option>
+                        <option class="select">北京华盛昌百旺</option>
+                        <option class="select">北京东方华中</option>
+                        <option class="select">北京通和盛远</option>
+                        <option class="select">北京海润嘉</option>
+                        <option class="select">北京冀东兴</option>
+                        <option class="select">北京汇京福瑞</option>
+                        <option class="select">北京东风南方大成</option>
+                        <option class="select">北京晟通</option>
+                        <option class="select">东风日产智行科技中关村体验馆</option>
+                        <option class="select">北京福源金港</option>
+                        <option class="select">北京东风南方大兴</option>
+                        <option class="select">北京中汽雷日</option>
+                        <option class="select">北京汇京鸿运</option>
+                        <option class="select">北京东风南方亮马</option>
+                        <option class="select">北京鑫达润城</option>
+                        <option class="select">北京航天正通</option>
+                        <option class="select">北京祥瑞聚鑫</option>
+                        <option class="select">北京宏远信诚</option>
+                    </select>
+                </div>
+                <div class="_content2-wrap4">
+                    <img class="content2-icon" src="images/messageicon.png">
+                    <div class="content2-input">
+                        <input id="content2wrap2YZM" class="p input _input left" maxlength="4"
+                            oninput="value=value.replace(/[^\d]/g,'')" type="number" placeholder="">
+                        <button class="btn countDown" id="countDown"></button>
+                    </div>
+                </div>
+                <form class="form slide" action="login">
+                    <div class="form-item">
+                        <div class="yzm">
+                            <!--展示原图-->
+                            <div id="yzm_image_source" class="yzm_image_source"></div>
+                            <!--展示凹图-->
+                            <div id="yzm_image_cut_big" class="yzm_image_cut_big"></div>
+                            <!--加载中..-->
+                            <div id="yzm_image_cut_loading" class="yzm_image_cut_loading"></div>
+                            <!--拼图-->
+                            <div id="yzm_image_cut_small" class="yzm_image_cut_small"></div>
+                            <div style="top: 37px; left: 0px;display: none;" id="xy_img"></div>
+                            <!--<img id="refreshyzm" src="images/refresh.png"-->
+                            <!--style="position:relative;bottom: -50px;height: 20px;cursor: pointer;" onclick="initYzm()">-->
+                        </div>
+                        <div id="drag" style="width: 100%;"></div>
+                    </div>
+                </form>
+                <div class="content2-huakuai">
+                    <div class="demo1" id="slideImageWrap">
+                    </div>
+                </div>
+            </div>
+            <div class="content2-wrap6-btn" id="content2Wrap4btn"></div>
+        </div>
+        <div class="region block_3">
+            <div class="draw">
+                <img src="./images/draw_title.png" alt="">
+                <div class="turntable">
+                    <img src="./images/dial.png" alt="">
+                    <div class="dial_cont box">
+                        <img src="./images/dial_cont.png" alt="">
+                    </div>
+                    <img class="arrow" id="button" src="./images/dial_arrow.png" alt="">
+                </div>
+                <img class="turntable_txt" src="./images/turntable_txt.png" alt="">
+                <div class="draw_rule">
+                    <div class="text_content">
+                        <img src="./images/draw_txt.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="region block_4">
+            <div class="petal_left petal">
+                <img src="./images/petal_left.png" alt="">
+            </div>
+            <div class="petal_center petal">
+                <img src="./images/petal_center.png" alt="">
+            </div>
+            <div class="petal_right petal">
+                <img src="./images/petal_right.png" alt="">
+            </div>
+            <div class="winning">
+                <img class="winning_title" src="./images/winning_title.png" alt="">
+                <img src="./images/winning_info.png" alt="">
+                <div class="win_info">
+                    <p id="res_name"></p>
+                    <p id="res_desc"></p>
+                    <p id="res_code"></p>
+                </div>
+            </div>
+            <div class="xiaoke">
+                <img src="./images/xiaoke.png" alt="">
+            </div>
+            <div class="draw_rule">
+                <div class="text_content">
+                    <img src="./images/winning_txt.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./js/lottery.js"></script>
+<script src="https://cdn.bootcss.com/PreloadJS/1.0.1/preloadjs.min.js"></script>
+<script src="js/main.js?v=1.0"></script>
+<script src="https://cdn.bootcss.com/vConsole/3.3.0/vconsole.min.js"></script>
+<script>
+    // new VConsole()
+    var clientWidth = document.body.clientWidth;
+    var clientHeight = document.body.clientHeight;
+    console.log(clientWidth, clientHeight)
+    if (clientWidth == 414 && (clientHeight >= 808 && clientHeight <= 896)) {//iphone XR 兼容微信浏览器
+        $('.after').css('bottom', '-35%');
+        $('.technology_box').css('bottom', '51.5%');
+        $('.win_info p').eq(0).css('margin-top', '27%');
+    }
+    if (clientWidth == 414 && (clientHeight >= 672 && clientHeight <= 736)) {//iphone 6,7,8 p 兼容微信浏览器
+        $('.win_info p').eq(0).css('margin-top', '26%');
+    }
+    $('.join_now').click(function () {//点击开始动画过度到第二页
+        $('.technology_box img').hide();
+        $('.block_1').animate({ 'padding-top': '5%' }, 300, function () {
+            $('.index_txt img').hide();
+        });
+        if (clientWidth == 375 && (clientHeight == 812 || clientHeight == 724)) {//兼容iphone x 
+            $('.after').animate({ 'bottom': '-28%' }, 1000);
+        } else if (clientWidth == 414 && (clientHeight >= 808 && clientHeight <= 896)) {
+            $('.after').animate({ 'bottom': '-26%' }, 1000);
+        } else {//iphone 6,7,8
+            $('.after').animate({ 'bottom': '-33%' }, 1000);
+        }
+        $('.join_now').animate({ 'top': '30%' }, 1000, function () {//边框动画
+            $(".technology_box img").attr('src', './images/9999.png');
+            if (clientWidth == 375 && (clientHeight == 812 || clientHeight == 724)) {//兼容iphone x
+                $('.technology_box').css('bottom', '60.5%');
+            } else if (clientWidth == 414 && (clientHeight >= 808 && clientHeight <= 896)) {//xr
+                $('.technology_box').css('bottom', '63%');
+            } else {//iphone 6,7,8
+                $('.technology_box').css('bottom', '53%');
+            }
+            $('.technology_box img').fadeIn(500, function () {//显示9999图片后边框再次运动并切换第二页面
+
+                setTimeout(function () {
+                    $('.technology_box').fadeOut(function () {
+                        $('.index_txt').hide();
+                        $(".block_1").css('padding', '30px');
+                        $('.join_now').animate({
+                            'width': '90%',
+                            'height': '100%',
+                            'margin': '30px auto',
+                            'top': '0'
+                        }, 500);
+                        $(".after").animate({ 'width': '100%', 'bottom': '-75%' }, 500);
+                        $(".before").animate({ 'width': '110%', 'top': '0', 'left': '-20px' }, 500)
+                        $(".before:before").animate({ 'left': '0' }, 500);
+                        $('.before_handle').animate({ 'width': '24%', 'top': '0' }, 500);
+                        $('.before_horn').animate({ 'width': '25%', 'top': '20px' }, 500);
+                        $('.after_handle').animate({ 'width': '24%' }, 500);
+                        $('.after_horn').animate({ 'width': '25%' }, 500, function () {
+                            $('.border_bg').show();
+                            $(".region").hide();
+                            $(".block_2").show();
+                        });
+                    });
+
+
+                }, 200)
+            });
+
+        });
+    });
+
+
+    //loading页
+    window.onload = function () {
+        $(function () {
+            $('.join_now').hide();
+            var allPic = [
+                'images/9999.png',
+                'images/after_handle.png',
+                'images/after_horn.png',
+                'images/after_handle.png',
+                'images/before_bandle.png',
+                'images/before_horn.png',
+                'images/bg.jpg',
+                'images/bottom.png',
+                'images/dial.png',
+                'images/dial_arrow.png',
+                'images/dial_cont.png',
+                'images/draw_title.png',
+                'images/draw_txt.png',
+                'images/index_txt.png',
+                'images/join_now.png',
+                'images/left.png',
+                'images/right.png',
+                'images/text_title.png',
+                'images/thumb.png',
+                'images/top.png',
+                'images/track.png',
+                'images/turntable_txt.png',
+                'images/winning_info.png',
+                'images/winning_title.png',
+                'images/winning_txt.png',
+                'images/xiaoke.png',
+                'images/petal_center.png',
+                'images/petal_left.png',
+                'images/petal_right.png',
+                'images/loadding_bg.png',
+                'images/di.png',
+                'images/title2.png',
+                'images/canyubtn.png',
+                'images/nameicon.png',
+                'images/phoneicon.png',
+                'images/yxsicon.png',
+                'images/messageicon.png'
+                
+            ];
+            var interval;
+            var timesRun = 0;
+            var allLoad = new createjs.LoadQueue(false);
+            allLoad.loadManifest(allPic);
+            allLoad.on("progress", function (e) {
+                var percentage = 9999//Math.ceil(e.progress * 100);
+                if (interval == undefined) {
+                } else {
+                    clearInterval(interval);
+                }
+                interval = setInterval(function () {
+                    if (timesRun >= percentage) {
+                        clearInterval(interval);
+                    } else {
+                        timesRun += 111;
+                        $('.number').html(timesRun)
+                        if (timesRun >= 9990) {
+                            timesRun += 9;
+                            $('.number').html(timesRun)
+                            clearInterval(interval);
+                            if (percentage == 9999) {
+
+                                if (resetPrize() == true) {
+                                    //完成动作
+                                    setTimeout(() => {
+                                        $('.loadding').hide();
+                                        checkBlock_4_2();
+                                    }, 600);
+                                } else {
+                                    //完成动作
+                                    setTimeout(() => {
+                                        $('.loadding').hide();
+                                        $('.join_now').show();
+                                        $('.block_1').show();
+                                    }, 600);
+                                }
+                            }
+                        }
+                    }
+                }, 1);
+            });
+        })
+    }
+
+</script>
+
+</html>

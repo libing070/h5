@@ -1,0 +1,718 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "汉仪中等线简";
+    src: url("../font/汉仪中等线简.woff") format("woff"), url("../font/汉仪中等线简.ttf") format("truetype"), url("../font/汉仪中等线简.eot") format("embedded-opentype"), url("../font/汉仪中等线简.svg") format("svg");
+}
+
+@font-face {
+    font-family: "Nissan-Brand-Bold";
+    src: url("../font/Nissan-Brand-Bold.woff") format("woff"), url("../font/Nissan-Brand-Bold.ttf") format("truetype"), url("../font/Nissan-Brand-Bold.eot") format("embedded-opentype"), url("../font/Nissan-Brand-Bold.svg") format("svg");
+}
+
+body, html {
+    margin: 0 auto 0;
+    height: 100%;
+    background-color: #fff;
+    overflow: hidden;
+    /* -webkit-overflow-scrolling: touch; */
+    touch-action: none;
+    /*Chorme56+开始为了让页面滚动变得更为流畅，在 window、document 和 body 上注册的 touchstart 和 touchmove 事件处理函数，会默认为是 passive: true。
+  浏览器忽略默认事件的preventDefault(), 你要是手动阻止会弹出一个警告, 告诉你阻止不了
+  CSS属性上对想要禁用触摸事件的元素设置touch-action: none, 然后用js获取该元素真实DOM元素添加事件处理。
+  ele.addEventListener('touchmove', (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  */
+}
+
+body {
+    position: relative;
+}
+
+/* a标签点击闪烁 */
+
+a, div, img {
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+}
+
+.wrap {
+    width: 100%;
+    height: 100%;
+    background: url('../images/bg.jpg') no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.region {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-top: 10%;
+    /* overflow: hidden; */
+}
+
+.block_1 {
+    display: none;
+}
+
+.block_2 {
+    display: none;
+}
+
+.block_3 {
+    display: none;
+}
+
+.block_4 {
+    display: none;
+}
+
+.loadding {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.loadding_con {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: -40% auto 0;
+}
+
+.loadding_con img {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.number {
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: -8% auto 0;
+    position: absolute;
+    color: #c90028;
+    font-size: 1.3rem;
+    font-family: Nissan-Brand-Bold;
+    text-align: center;
+}
+
+.winning {
+    position: relative;
+    padding: 0% 19% 0;
+    margin-bottom: 5%;
+}
+
+.xiaoke {
+    padding: 0% 19% 0;
+    margin-bottom: 5%;
+}
+
+.join_now {
+    display: none;
+    position: absolute;
+    top: 45%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 65%;
+    /* overflow: hidden; */
+}
+
+.before {
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 91%;
+    height: 100%;
+    
+}
+
+.before .before_handle {
+    display: block;
+    position: absolute;
+    top: 17px;
+    left: 20px;
+    background: url(../images/before_bandle.png) no-repeat;
+    background-size: 100%;
+    width: 30%;
+    height: 100%;
+    
+}
+
+.before .before_horn {
+    display: block;
+    position: absolute;
+    bottom: -40px;
+    right: 5px;
+    background: url(../images/before_horn.png) no-repeat;
+    background-size: 100%;
+    width: 30%;
+    height: 100%;
+    
+}
+
+.after {
+    display: block;
+    position: absolute;
+    bottom: -41%;
+    right: 0;
+    width: 83%;
+    height: 100%;
+    
+}
+
+.after .after_horn {
+    display: block;
+    position: absolute;
+    bottom: -53px;
+    right: 10px;
+    background: url(../images/after_handle.png) no-repeat;
+    background-size: 100%;
+    width: 30%;
+    height: 100%;
+    
+}
+
+.after .after_handle {
+    display: block;
+    position: absolute;
+    bottom: -25px;
+    left: 1px;
+    background: url(../images/after_horn.png) no-repeat;
+    background-size: 100%;
+    width: 30%;
+    height: 100%;
+    
+}
+
+.index_txt {
+    /* padding-top: 30%; */
+    width: 100%;
+    height: 30%;
+}
+
+.technology_box {
+    width: 58%;
+    position: absolute;
+    margin-top: 23%;
+    bottom: 40.5%;
+    left: 24%;
+}
+
+.border_top {
+    position: absolute;
+    top: 27px;
+    left: 35%;
+    width: 50%;
+    height: 1%;
+    background: url('../images/top.png') no-repeat;
+    background-size: 100%;
+}
+
+.border_left {
+    position: absolute;
+    top: 27%;
+    left: 3%;
+    width: 1%;
+    height: 100%;
+    background: url('../images/left.png') no-repeat;
+    background-size: 100%;
+}
+
+.border_right {
+    position: absolute;
+    top: 9%;
+    right: 0%;
+    width: 1%;
+    height: 100%;
+    background: url('../images/right.png') no-repeat;
+    background-size: 100%;
+}
+
+.border_bottom {
+    position: absolute;
+    bottom: 12%;
+    left: 16%;
+    width: 50%;
+    height: 1%;
+    background: url('../images/bottom.png') no-repeat;
+    background-size: 100%;
+}
+
+.border_bg {
+    display: none;
+}
+
+.draw {
+    width: 100%;
+    height: 100%;
+}
+
+.turntable {
+    position: relative;
+    margin: 1% auto;
+    width: 60%;
+}
+
+.dial_cont {
+    position: absolute;
+    top: 8%;
+    left: 0;
+    right: 0;
+    margin: auto auto;
+    width: 85%;
+    /* transform: rotate(10deg) */
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    /*向上平移 自身的50%*/
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    margin: auto auto;
+    width: 35%;
+}
+
+.draw_rule {
+    position: relative;
+    width: 80%;
+    height: 30%;
+    margin: 0 auto;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, .1);
+    padding: 5% 4% 0;
+    /* overflow: hidden; */
+}
+
+.turntable_txt {
+    margin: 2% 0;
+}
+
+.text_title {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5% 0 3%;
+}
+
+.text_content {
+    position: relative;
+    padding: 0% 6% 0;
+    width: 100%;
+    height: 90%;
+    overflow: auto;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.text_ele {
+    display: flex;
+}
+
+.text_ele span:nth-child(1) {
+    flex: 0 0 80px;
+    width: 80px;
+    color: #606060;
+}
+
+.text_ele span:nth-child(2) {
+    color: #989898;
+}
+
+/* 滚动条 */
+
+.text_content::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 8px;
+    /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+
+.text_content::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    /* border-radius: 10px; */
+    background: url('../images/thumb.png') no-repeat center;
+    background-size: 100% 95%;
+    border-radius: 30px;
+}
+
+.text_content::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    background: url('../images/track.png') no-repeat center;
+    background-size: 100% 95%;
+    border-radius: 30px;
+}
+
+.win_info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 15% 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.win_info p:nth-child(1) {
+    font-size: 37px;
+    color: #fff;
+    margin-top: 30%;
+    font-family: Nissan-Brand-Bold;
+}
+
+.win_info p:nth-child(2) {
+    font-size: 15px;
+    color: #fff;
+    margin-top: -2%;
+    font-family: 汉仪中等线简;
+}
+
+.win_info p:nth-child(3) {
+    font-size: 15px;
+    margin-top: 4%;
+    color: #c90028;
+    font-family: 汉仪中等线简;
+}
+
+/* 花瓣 */
+
+.petal {
+    position: absolute;
+    transform: rotate(-90deg) scale(0);
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+}
+
+.petal_left {
+    width: 25%;
+    top: 5%;
+    left: 0%;
+    transition: all 1s;
+}
+
+.petal_center {
+    width: 50%;
+    top: 0%;
+    left: 14%;
+    transition: all .7s;
+}
+
+.petal_right {
+    width: 25%;
+    top: 0%;
+    right: 0%;
+    transition: all 1.5s;
+}
+
+/* 刷子 */
+
+.brush {
+    width: 100%;
+    position: absolute;
+    top: -100%;
+    left: 0;
+    height: 100%;
+    z-index: 9;
+    background: #fff;
+    /* background-size: 100%; */
+}
+
+.brush img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* iphone X */
+
+@media only screen and (device-width: 375px) and (device-height: 812px) {
+    .after {
+        bottom: -34%;
+    }
+    .border_left {
+        top: 36%;
+    }
+    .border_bottom {
+        bottom: 14%;
+    }
+    .technology_box {
+        bottom: 51%;
+    }
+    .win_info p:nth-child(1) {
+        margin-top: 30%;
+    }
+    .win_info p:nth-child(2) {
+        margin-top: -2%;
+    }
+    .win_info p:nth-child(3) {
+        margin-top: 3.5%;
+    }
+}
+
+@media only screen and (device-width: 414px) and(device-height: 818px) {
+    .after {
+        bottom: -35%;
+    }
+    .win_info p:nth-child(1) {
+        margin-top: 32%;
+    }
+    .win_info p:nth-child(2) {
+        margin-top: -1%;
+    }
+    .win_info p:nth-child(3) {
+        margin-top: 3%;
+    }
+}
+
+/* iphone 6+ */
+
+@media only screen and (device-width: 414px) {
+    .after {
+        bottom: -43%;
+    }
+    .win_info p:nth-child(1) {
+        margin-top: 32%;
+    }
+    .win_info p:nth-child(2) {
+        margin-top: -1%;
+    }
+    .win_info p:nth-child(3) {
+        margin-top: 3%;
+    }
+}
+
+/* 小屏手机 */
+
+@media only screen and (device-width: 320px) {
+    .win_info p:nth-child(1) {
+        margin-top: 35%;
+    }
+    .win_info p:nth-child(2) {
+        margin-top: -2%;
+    }
+    .win_info p:nth-child(3) {
+        margin-top: 0%;
+    }
+}
+
+/* 安卓 */
+
+@media only screen and (device-width: 360px) {
+    .win_info p:nth-child(1) {
+        font-size: 35px;
+        color: #fff;
+        margin-top: 31%;
+        font-weight: bold;
+    }
+    .win_info p:nth-child(2) {
+        font-size: 15px;
+        color: #fff;
+        margin-top: -3%;
+    }
+    .win_info p:nth-child(3) {
+        font-size: 15px;
+        margin-top: 3%;
+        color: #c90028;
+    }
+    .before {
+        top: -1%;
+    }
+    .after {
+        bottom: -40%;
+    }
+}
+
+/* iphone x */
+
+@media only screen and (device-width: 375px) and (device-height: 724px) {
+    .technology_box {
+        bottom: 49.5%;
+    }
+    .after {
+        bottom: -35%;
+    }
+}
+
+/* iphone 6 */
+
+@media only screen and (device-width: 375px) {
+    .win_info p:nth-child(1) {
+        margin-top: 25%;
+    }
+    .win_info p:nth-child(3) {
+        margin-top: 3%;
+    }
+}
+
+
+.content2 {
+    width: 80%;
+    height:12.5rem;
+    margin: auto;
+    overflow: hidden;
+    content: "";
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url(../images/di.png);
+}
+.content2-wrap0{
+    width: 80%;
+    display: block;
+    height: 2.5rem;
+    margin: 0 auto;
+}
+.content2-wrap6-btn{
+    position: absolute;
+    width: 3rem;
+    left: 0;
+    height: 1rem;
+    right: 0;
+    margin: auto;
+    bottom: 0.2rem;
+}
+.content2-wrap6-btn:after{
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url("../images/canyubtn.png");
+}
+
+.block_2{
+    padding: 1.5rem 0;
+}
+.content2 ._content2-wrap1,
+.content2 ._content2-wrap2,
+.content2 ._content2-wrap3,
+.content2 ._content2-wrap4
+{
+    width: 80%;
+    height:1.3rem;
+    margin: 0.1rem auto;
+}
+.content2-icon{
+    height: 25%;
+    margin: 0.1rem 0;
+    width: auto;
+    display: block;
+}
+.content2-input{
+    border: 2px solid #c9042a;
+    border-radius: 4px;
+    width: 100%;
+    height: 60%;
+    background-color: transparent;
+    display: block;
+    font-size: 0.4rem;
+    font-family: 汉仪中等线简;
+}
+.content2-input .left{
+    height: 100%;
+    border: none;
+    float: left;
+    width: 55%;
+    background-color: transparent;
+    font-size: 0.4rem;
+    font-family: 汉仪中等线简;
+}
+.content2-input  .btn{
+    float: right;
+    text-align: center;
+    height: 100%;
+    width: 40%;
+    background-color: #c90029;
+    border-radius: 0.1rem;
+    font-family: 汉仪中等线简;
+    font-size: .4rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0rem;
+    color: #ffffff;
+}
+._content2-wrap1 .p,
+._content2-wrap2 .p,
+._content2-wrap4 .p
+{
+    padding: 0 0.2rem;
+}
+._content2-wrap3 .s{
+    padding: 0 0.1rem;
+}
+
+.swal-overlay {
+    background: rgba(91,5,16,.85);
+
+}
+
+.swal-modal {
+    width: 8rem;
+    background: #38030A;
+    color: #fff;
+    border: 1px #A00104 solid;
+    border-radius: 0;
+}
+.swal-modal .swal-footer{
+    text-align: center;
+}
+.swal-modal .swal-title{
+    height: 1rem;
+    line-height: 1rem;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    font-size: .4rem;
+    font-weight: 700;
+    text-align: center;
+    border-bottom: 1px #A00104 solid;
+    letter-spacing: 4px;
+}
+.swal-modal .swal-text{
+    margin: .5rem 0 0;
+    color: #fff;
+    font-weight: 400;
+    font-size: .5rem;
+    letter-spacing: 2px;
+
+}
+.swal-modal .swal-button {
+    padding: 8px 24px;
+    background: #FC2A37;
+}
+.swal-modal .swal-button:not([disabled]):hover{
+    background: #FC2A37;
+}
+.swal-modal .swal-button--cancel{
+    color: #fff;
+}
+.swal-modal button {
+    border-radius: 0!important;
+}

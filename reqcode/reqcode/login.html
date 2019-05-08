@@ -1,0 +1,77 @@
+<html>
+<head>
+    <title>登录</title>
+    <link rel="stylesheet" href="css/login.css">
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/drag.js"></script>
+    <style>
+        body {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<form class="form" action="login">
+    <div class="form-item">
+        <div class="yzm">
+            <!--展示原图-->
+            <div id="yzm_image_source" class="yzm_image_source"></div>
+            <!--展示凹图-->
+            <div id="yzm_image_cut_big" class="yzm_image_cut_big"></div>
+            <!--加载中..-->
+            <div id="yzm_image_cut_loading" class="yzm_image_cut_loading"></div>
+            <!--拼图-->
+            <div id="yzm_image_cut_small" class="yzm_image_cut_small"></div>
+            <div style="top: 37px; left: 0px;display: none;"
+                 id="xy_img"></div>
+            <img id="refreshyzm" src="img/refresh.png"
+                 style="position:relative;bottom: -50px;height: 20px;cursor: pointer;"
+                 onclick="initYzm()">
+        </div>
+        <div id="drag" style="width: 350px;"></div>
+    </div>
+</form>
+
+<script>
+    var url="http://activity.mcp8.net";
+    $(function () {
+        //初始化图形验证码
+        initYzm();
+        //注册验证码拖动事件
+        $('#drag').drag(null, null, initYzm);
+    })
+
+    function initYzm() {
+        //加载中
+        $("#xy_img").css("display", "none");
+        $("#yzm_image_source").css("display", "none");
+        $(".yzm_image_cut_big").css("display", "none");
+        $(".yzm_image_cut_loading").show();
+        $.ajax({
+            type: "GET",
+            url: url+"/api/reqCode",
+            dataType: 'jsonp',
+            success: function (result) {
+                if (result.code==200) {
+                    //设置大图，小图，及其位置http://image.cn/valid
+                    $(".yzm_image_source").css("background-image", "url("+result.data.sourceImgName + ")");
+                    $(".yzm_image_cut_big").css("background-image", "url(" + result.data.bigImgName + ")");
+                    $("#xy_img").css("background-image", "url(" + result.data.smallImgName + ")");
+                    $("#xy_img").css("top", Number(result.data.location_y) + "px");
+                    $(".yzm_image_cut_loading").css("display", "none");
+                    $(".yzm_image_source").show();
+                    $(".yzm_image_cut_big").css("display", "none");
+                } else {
+                    $.ligerDialog.error('获取图形验证码失败！');
+                }
+            },
+            error: function (errormsg) {
+                $.ligerDialog.warn("获取图形验证码失败！");
+            }
+        });
+    }
+
+    
+</script>
+</body>
+</html>
