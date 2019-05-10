@@ -1,0 +1,1163 @@
+@font-face {
+    font-family: mkf;
+    /*src: url('../font/MFKeSong_Noncommercial-Regular.ttf') format('truetype');*/
+    src: url('../font/MFKeSong_Noncommercial-Regular.woff') format('woff');
+    font-weight: 500;
+    font-style:italic;
+}
+
+
+* {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+img {
+    border: none;
+}
+
+.clear {
+    zoom: 1;
+}
+
+.clear:after {
+    display: block;
+    content: "";
+    clear: both;
+    visibility: hidden;
+    height: 0;
+}
+
+/*清除浮动*/
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+a, a:hover, a:active, a:visited, a:link, a:focus {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    background: none;
+    text-decoration: none;
+}
+
+body, html {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -100;
+}
+
+body {
+    -webkit-text-size-adjust: 100% !important;
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.loading {
+    background-color: #9e0f11;
+}
+
+.percent {
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    top: 50%;
+    margin-top: -25%;
+    text-align: center;
+}
+
+.percent .biao {
+    position: relative;
+    width: 23%;
+    display: inline-block;
+    text-align: center;
+}
+
+.percent .biao .pan {
+    width: 100%;
+}
+
+.percent .biao .shot {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 8%;
+    margin-top: 15%;
+    margin-left: 46%;
+    transform: rotate(-100deg);
+    transform-origin: 50% 91%;
+}
+
+.percent .number {
+    position: relative;
+    display: inline-block;
+    width: 30%;
+    top: 10px;
+}
+
+.percent .number div {
+    float: left;
+    width: 30%;
+}
+
+.percent .number div img {
+    width: 95%;
+}
+
+
+.welcome {
+    background: url("../image/back_liebiao.jpg") no-repeat center;
+    background-size: 100% 100%;
+}
+
+.welcome .border {
+    position: relative;
+    width: 96%;
+    height: 96%;
+    margin: 4% auto;
+}
+
+.welcome .border .top {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 2px;
+}
+
+.welcome .border .left {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 2px;
+}
+
+.welcome .border .right {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.welcome .border .right .btn {
+    text-align: right;
+    position: relative;
+    top: -1.2%;
+    right: -1%;
+}
+
+.welcome .border .right .btn .wel_btn {
+    width: 12%;
+}
+
+.welcome .border .right .line_div {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    top: 8%;
+}
+
+.welcome .border .right .line_div .line {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+}
+
+.welcome .border .right .line_div .people_div {
+    text-align: center;
+    margin-top: -8%;
+}
+
+.welcome .border .right .line_div .people_div .people {
+    width: 94%;
+}
+
+.welcome .border .right .line_div .start_div {
+    text-align: center;
+}
+
+.welcome .border .right .line_div .start_div img {
+    width: 32%;
+    margin-top: 2%;
+}
+
+
+.welcome .border .bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+}
+
+.welcome .border .logo {
+    position: absolute;
+    top: -1.2%;
+    left: 7%;
+    width: 33%;
+}
+
+.welcome .prize {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.welcome .prize .shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.7;
+}
+
+.welcome .prize .prize_img {
+    position: absolute;
+    width: 100%;
+    top: 3%;
+}
+
+.welcome .prize .close_img {
+    position: absolute;
+    width: 8%;
+    top: 10%;
+    right: 8%;
+}
+
+
+.welcome .prize .prize_back{
+    position: relative;
+    width: 100%;
+    top: 3%;
+}
+
+.welcome .prize .prize_back .prize_back_img{
+    width: 100%;
+}
+
+.welcome .prize .prize_back .prize_content{
+    text-align: left;
+    position: absolute;
+    width: 68%;
+    top: 30%;
+    height: 50%;
+    left: 50%;
+    margin-left: -33%;
+    overflow-y:scroll;
+    z-index: 99;
+}
+
+
+.welcome .prize .prize_back .prize_content .prize_content_img{
+    width: 93%;
+}
+
+/*滚动条样式*/
+.welcome .prize .prize_back .prize_content::-webkit-scrollbar { /*滚动条整体样式*/
+    width: 4px; /*高宽分别对应横竖滚动条的尺寸*/
+    height: 4px;
+}
+
+.welcome .prize .prize_back .prize_content::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
+    border-radius: 5px;
+    background: rgba(99, 1, 2, 1);
+}
+
+.welcome .prize .prize_back .prize_content::-webkit-scrollbar-track { /*滚动条里面轨道*/
+    border-radius: 0;
+    background: url("../image/line_scroll.png") repeat center;
+    background-size: 100% auto;
+}
+
+
+
+.liebiao {
+    background: url("../image/back_liebiao.jpg") no-repeat center;
+    background-size: 100% 100%;
+}
+
+.liebiao .story {
+    width: 100%;
+    height: 85%;
+    margin-top: 2%;
+}
+
+.liebiao .story ul {
+    margin: 0 auto;
+    width: 96%;
+    height: 100%;
+    overflow: auto;
+    /*-webkit-overflow-scrolling: touch;*/
+}
+
+/*滚动条样式*/
+.liebiao .story ul::-webkit-scrollbar { /*滚动条整体样式*/
+    width: 4px; /*高宽分别对应横竖滚动条的尺寸*/
+    height: 4px;
+}
+
+.liebiao .story ul::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
+    border-radius: 5px;
+    background: rgba(99, 1, 2, 1);
+}
+
+.liebiao .story ul::-webkit-scrollbar-track { /*滚动条里面轨道*/
+    border-radius: 0;
+    background: url("../image/line_scroll.png") repeat center;
+    background-size: 100% auto;
+}
+
+
+.liebiao .story ul li {
+    height: 20%;
+    padding: 5px 10px;
+    margin-right: 2%;
+}
+
+.liebiao .story ul li:not(:first-child) {
+    margin-top: 2%;
+}
+
+.liebiao .story ul li:nth-child(2n+1) {
+    background-color: #acbbd3;
+}
+
+.liebiao .story ul li:nth-child(2n) {
+    background-color: #728ab0;
+}
+
+.liebiao .story ul li .pic {
+    float: left;
+    width: 35%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.liebiao .story ul li .pic img {
+    height: 100%;
+}
+
+.liebiao .story ul li .word {
+    float: right;
+    width: 64%;
+    height: 100%;
+}
+
+.liebiao .story ul li .word .pen {
+    position: relative;
+    height: 85%;
+}
+
+.liebiao .story ul li .word .pen .border_left {
+    position: absolute;
+    height: 50%;
+    top: 0;
+    left: 0;
+}
+
+.liebiao .story ul li .word .pen .border_right {
+    position: absolute;
+    height: 50%;
+    bottom: 0;
+    right: 0;
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -moz-transform: rotate(180deg); /* Firefox */
+    -webkit-transform: rotate(180deg); /* Safari 和 Chrome */
+    -o-transform: rotate(180deg);
+/
+}
+
+.liebiao .story ul li .word .pen div {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.liebiao .story ul li .word .pen .job {
+    color: #630102;
+    font-size: 0.75em;
+}
+
+.liebiao .story ul li .word .pen .name {
+    color: #4e4e4e;
+    font-size: 0.85em;
+    font-weight: bold;
+}
+
+
+.liebiao .story ul li .word .pen p {
+    padding-top: 3px;
+    text-indent: 2em;
+    font-size: 0.7em;
+    color: #4e4e4e;
+}
+
+.liebiao .story ul li:nth-child(2n) .word .pen p {
+    color: white;
+}
+
+.liebiao .story ul li .word .active {
+    position: relative;
+    height: 15%;
+    text-align: right;
+}
+
+.liebiao .story ul li .word .active div {
+    height: 0.6em;
+    position: absolute;
+    right: 2px;
+    bottom: 0;
+    line-height: 0.6em;;
+}
+
+.liebiao .story ul li .word .active div img {
+    height: 0.6em;
+}
+
+.liebiao .story ul li .word .active div span {
+    color: #4e4e4e;
+    font-size: 0.6em;
+}
+
+.liebiao .story ul li:nth-child(2n) .word .active div span {
+    color: white;
+}
+
+.detail {
+    background: url("../image/back_liebiao.jpg") no-repeat center;
+    background-size: 100% 100%;
+    z-index: -2;
+}
+
+.detail .photo {
+    position: relative;
+    width: 85%;
+    margin-top: 10%;
+    margin-left: 6%;
+}
+
+.detail .photo .border {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border: 2px solid #9e0f11;
+    z-index: -1;
+    margin-top: -5%;
+    margin-left: 3%;
+}
+
+.detail .photo .sanjiao {
+    position: absolute;
+    width: 10%;
+    top: 0;
+    left: 0;
+}
+
+.detail .photo .pic {
+    width: 100%;
+}
+
+.detail .photo .car {
+    position: absolute;
+    width: 55%;
+    bottom: -8%;
+    right: -3%;
+}
+
+.detail .photo .word {
+    position: absolute;
+    left: -3%;
+    top: 30%;
+    color: white;
+}
+
+.detail .photo .user {
+    background-color: #9e0f11;
+    padding: 0 0.5em;
+}
+
+.detail .photo .user .name {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.detail .photo .user .job {
+    font-size: 0.75em;
+}
+
+.detail .photo .time {
+    position: relative;
+    right: 8px;
+    background-color: #9e0f11;
+    text-align: center;
+}
+
+.detail .photo .time span {
+    font-size: 0.75em;
+}
+
+.detail .pen {
+    position: relative;
+    height: 16%;
+    margin: 0 5%;
+    top: 4%;
+}
+
+
+.detail .pen .border_left {
+    position: absolute;
+    height: 50%;
+    top: 0;
+    left: 0;
+}
+
+.detail .pen .border_right {
+    position: absolute;
+    height: 50%;
+    bottom: 0;
+    right: 0;
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -moz-transform: rotate(180deg); /* Firefox */
+    -webkit-transform: rotate(180deg); /* Safari 和 Chrome */
+    -o-transform: rotate(180deg);
+}
+
+.detail .pen div {
+    width: 80%;
+    height: 100%;
+    margin: 2% auto;
+}
+
+.detail .pen p {
+    font-size: 1em;
+    color: #4e4e4e;
+    font-family: mkf;
+    font-weight: 500;
+    font-style:italic;
+}
+
+.detail .btns {
+    position: relative;
+    width: 100%;
+    top: 7%;
+}
+
+.detail .btns .like {
+    float: left;
+    width: 45%;
+    text-align: right;
+}
+
+.detail .btns .back {
+    float: right;
+    width: 45%;
+    text-align: left;
+}
+
+.detail .btns div img {
+    width: 80%;
+}
+
+.editor {
+    background: url("../image/back_liebiao.jpg") no-repeat center;
+    background-size: 100% 100%;
+}
+
+.editor .edit_header {
+    width: 80%;
+    margin: 5% auto;
+
+}
+
+.editor .edit_header img {
+    width: 100%;
+}
+
+.editor .pen {
+    position: relative;
+    margin: 0 5%;
+    top: 4%;
+}
+
+.editor .pen .border_left {
+    position: absolute;
+    height: 22%;
+    top: 0;
+    left: 0;
+}
+
+.editor .pen .border_right {
+    position: absolute;
+    height: 22%;
+    bottom: 0;
+    right: 0;
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -moz-transform: rotate(180deg); /* Firefox */
+    -webkit-transform: rotate(180deg); /* Safari 和 Chrome */
+    -o-transform: rotate(180deg);
+}
+
+.editor .pen div {
+    width: 87%;
+    height: 100%;
+    margin: 15px auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.editor .pen div textarea {
+    width: 100%;
+    height: 240px;
+    background: url('../image/line.png') repeat;
+    background-size: 30px 30px;
+    line-height: 30px;
+    font-size: 16px;
+    resize: none;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-family: mkf;
+    font-weight: 500;
+    font-style:italic;
+}
+
+
+.editor .pen p {
+    font-size: 0.75em;
+    color: #a4a8ad;
+}
+
+.editor .btn {
+    position: relative;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+}
+
+.editor .btn img {
+    width: 45%;
+}
+
+
+.upload {
+    background: url("../image/back_liebiao.jpg") no-repeat center;
+    background-size: 100% 100%;
+}
+
+.upload .upload_header {
+    width: 80%;
+    margin: 5% auto;
+}
+
+.upload .upload_header img {
+    width: 100%;
+}
+
+.upload .upload_back {
+    position: relative;
+    width: 90%;
+    margin: 5% auto;
+}
+
+.upload .upload_back .upload_back_pic {
+    width: 100%;
+}
+
+.upload .upload_back .upload_btn {
+    position: absolute;
+    width: 27%;
+    left: 35%;
+    top: 35%;
+}
+.upload .upload_back .photo_show {
+    position: absolute;
+    width: 95.7%;
+    height: 96%;
+    left: 0;
+    bottom: 4px;
+    background-color: #b7bfcc;
+}
+.upload .upload_back .sanjiao {
+    position: absolute;
+    width: 10%;
+    left: 0;
+    top: 0;
+}
+.upload .upload_back .car {
+    position: absolute;
+    width: 60%;
+    left: -4%;
+    bottom: -10%;
+}
+
+
+.upload .btns {
+    position: relative;
+    width: 100%;
+    top: 7%;
+}
+
+.upload .btns .resetBtn {
+    float: left;
+    width: 45%;
+    text-align: right;
+}
+
+.upload .btns .clipBtn {
+    float: right;
+    width: 45%;
+    text-align: left;
+}
+
+.upload .btns div img {
+    width: 80%;
+}
+#clipArea{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.upload .zhuce {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.upload .zhuce .shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.7;
+}
+
+.upload .zhuce .form {
+    position: relative;
+    width: 75%;
+    margin: 20% auto;
+    background-color: white;
+    padding: 10px;
+    font-size: 0.75em;
+}
+
+.upload .zhuce .border {
+    width: 100%;
+}
+
+.upload .zhuce .form  table{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    border-collapse: separate;
+    border-spacing: 5px 15px;
+}
+
+
+
+.upload .zhuce .form  table td{
+    width: 50%;
+    text-align: center;
+}
+.upload .zhuce .form  table input[type=text]{
+    width: 80%;
+    height: 20px;
+    border: 1px solid #b08d6f;
+    border-radius: 2px;
+    padding: 5px;
+    letter-spacing:2px;
+}
+
+.upload .zhuce .form  table input[type=number]{
+    width: 90%;
+    height: 20px;
+    border: 1px solid #b08d6f;
+    border-radius: 2px;
+    padding: 5px;
+    letter-spacing:2px;
+}
+
+.upload .zhuce .form  table input[type=radio]{
+    vertical-align: -2px;
+    margin: 0 2px;
+}
+
+.upload .zhuce .form  table select{
+    width: 95%;
+    height: 32px;
+    background: url(../image/select.jpg) no-repeat center;
+    background-size: 100% 100%;
+    color: black;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    padding: 5px;
+}
+
+.my_protocol .input_agreement_protocol {
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    display: none;
+}
+/*未选中时*/
+.my_protocol .input_agreement_protocol+span {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background: url(../image/checked.png) no-repeat center;
+    background-size: 100% 100%;
+    position: relative;
+    top: 3px;
+}
+/*选中checkbox时,修改背景图片的位置*/
+.my_protocol .input_agreement_protocol:checked+span {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background: url(../image/un_check.png) no-repeat center;
+    background-size: 100% 100%;
+    position: relative;
+    top: 3px;
+}
+
+.upload .zhuce .form  .btn_tijiao{
+    width: 50%;
+}
+
+
+
+.self {
+    background: url("../image/back_liebiao.jpg") no-repeat center;
+    background-size: 100% 100%;
+    /*z-index: -2;*/
+}
+
+.self .upload_back {
+    position: relative;
+    width: 95%;
+    left: 5%;
+}
+
+.self .upload_back .upload_back_pic {
+    width: 100%;
+}
+
+.self .upload_back .photo_show {
+    position: absolute;
+    width: 89%;
+    height: 90%;
+    left: 0;
+    bottom: 4px;
+}
+
+.self .upload_back .photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.self .upload_back .sanjiao {
+    position: absolute;
+    width: 10%;
+    left: 0;
+    top: 0;
+}
+.self .upload_back .car {
+    position: absolute;
+    width: 60%;
+    left: -4%;
+    bottom: -10%;
+}
+
+.self .photo_show .word {
+    position: absolute;
+    left: -3%;
+    top: 30%;
+    color: white;
+}
+
+.self .photo_show .user {
+    background-color: #9e0f11;
+    padding: 0 0.5em;
+}
+
+.self .photo_show .user .name {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.self .photo_show .user .job {
+    font-size: 0.75em;
+}
+
+.self .photo_show .time {
+    position: relative;
+    right: 8px;
+    background-color: #9e0f11;
+    text-align: center;
+}
+
+.self .photo_show .time span {
+    font-size: 0.75em;
+}
+
+.self .pen {
+    position: relative;
+    height: 16%;
+    margin: 0 5%;
+    top: 4%;
+}
+
+
+.self .pen .border_left {
+    position: absolute;
+    height: 50%;
+    top: 0;
+    left: 0;
+}
+
+.self .pen .border_right {
+    position: absolute;
+    height: 50%;
+    bottom: 0;
+    right: 0;
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -moz-transform: rotate(180deg); /* Firefox */
+    -webkit-transform: rotate(180deg); /* Safari 和 Chrome */
+    -o-transform: rotate(180deg);
+}
+
+.self .pen div {
+    width: 80%;
+    height: 100%;
+    margin: 1% auto;
+}
+
+.self .pen p {
+    font-size: 1em;
+    color: #4e4e4e;
+    font-family: mkf;
+    font-weight: 500;
+    font-style:italic;
+}
+
+.self .changan {
+    width: 100%;
+    text-align: center;
+    top: 5%;
+    position: relative;
+}
+
+.self .changan  img{
+    width: 30%;
+}
+
+
+.self .erwei {
+    width: 100%;
+    text-align: center;
+    top: 5%;
+    position: relative;
+}
+
+.self .erwei  img{
+    width: 90%;
+}
+
+
+.self .btns {
+    position: relative;
+    width: 100%;
+    top: 6%;
+}
+
+.self .btns .hupeng {
+    float: left;
+    width: 45%;
+    text-align: right;
+}
+
+.self .btns .kanbieren {
+    float: right;
+    width: 45%;
+    text-align: left;
+}
+
+.self .btns div img {
+    width: 80%;
+}
+
+.self .fenxiang {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 6;
+}
+
+.self .fenxiang .shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.7;
+}
+
+.self .fenxiang img {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+}
+
+.self .tip {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+
+.self .tip img {
+    width: 5%;
+}
+
+
+.yushou{
+    background: url("../image/back_liebiao.jpg") no-repeat center;
+    background-size: 100% 100%;
+}
+
+.yushou img{
+    width: 100%;
+}
+
+.log{
+    position: absolute;
+    z-index: 5;
+    width: 16%;
+    left: 10px;
+    top: 10px;
+}
+
+.kuoda{
+    font-size: 1.2em;
+    text-align: center;
+    line-height: 4em;
+}
+
+.tadaEr {
+    -webkit-animation-name: tada;
+    animation-name: tada;
+    animation-iteration-count:infinite;
+    -webkit-animation-iteration-count:infinite; /* Safari 和 Chrome */
+}
+
+.kuang{
+    display: none;
+    position: absolute;
+    width: 70%;
+    background-color: white;
+    height: 20%;
+    z-index: 200;
+    border-radius: 8px;
+    left: 50%;
+    margin-left: -35%;
+    top: 50%;
+    margin-top: -25%;
+    text-align: center;
+}
+.kuang div{
+    height: 50%;
+}
+.kuang div:first-child{
+    margin-top: 10%;
+    font-size: 0.75em;
+}
+.kuang hr{
+    width: 90%;
+    height: 1px;
+    background-color: black;
+    position: absolute;
+    left: 5%;
+    margin-top: -10%;
+}
+
+.kuang div span{
+    background-color: #9e0f11;
+    color: white;
+    font-weight: bold;
+    padding: 3px 30px;
+    border-radius: 5px;
+}
+
+.allShadow {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.7;
+    z-index: 199;
+}
+
+.music_handle {
+    display: none;
+    position: fixed;
+    bottom: 17px;
+    right: 15px;
+    z-index: 400;
+    text-align: right;
+}
+
+.music_handle img{
+    width: 35px;
+}
+
+.callback{
+    position: absolute;
+    width: 35px;
+    bottom: 20px;
+    left: 15px;
+    z-index: 999;
+}

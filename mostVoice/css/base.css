@@ -1,0 +1,547 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+body, html {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /*z-index: -100;*/
+    touch-action: none;
+    /*Chorme56+开始为了让页面滚动变得更为流畅，在 window、document 和 body 上注册的 touchstart 和 touchmove 事件处理函数，会默认为是 passive: true。
+    浏览器忽略默认事件的preventDefault(), 你要是手动阻止会弹出一个警告, 告诉你阻止不了
+    CSS属性上对想要禁用触摸事件的元素设置touch-action: none, 然后用js获取该元素真实DOM元素添加事件处理。
+    ele.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    */
+}
+
+body {
+    -webkit-text-size-adjust: 100% !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+/* a标签点击闪烁 */
+
+a, div, img {
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+}
+
+body {
+    /*background: url('../images/bg.jpg') no-repeat;*/
+    /*background-size: 100% 100%;*/
+}
+
+.img_bg img {
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transition: all 0.4s ease-in-out;
+    /* overflow: hidden; */
+}
+
+/*-------------------------- step_1 开始-------------------------- */
+
+.step_1, .step_2 {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 80%;
+    /* height: 29rem; */
+    height: 80%;
+    padding-top: 5%;
+    border: 2px solid #91bddd;
+}
+
+.step_2::before {
+    content: '';
+    width: 10px;
+    height: 100%;
+    position: absolute;
+    top: 10px;
+    right: -11px;
+    border-right: 1px solid #91bbd6;
+    border-top: 1px solid #91bbd6;
+}
+
+.step_1::before {
+    content: '';
+    width: 10px;
+    height: 100%;
+    position: absolute;
+    top: 10px;
+    right: -11px;
+    border-right: 1px solid #91bbd6;
+    border-top: 1px solid #91bbd6;
+}
+
+.step_1::after {
+    content: '';
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    left: 10px;
+    bottom: -12px;
+    border-left: 1px solid #91bbd6;
+    border-bottom: 1px solid #91bbd6;
+}
+
+.step_2::after {
+    content: '';
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    left: 10px;
+    bottom: -12px;
+    border-left: 1px solid #91bbd6;
+    border-bottom: 1px solid #91bbd6;
+}
+
+.step_1 .select_interest {
+    padding-top: 5%;
+    overflow: hidden;
+}
+
+.step_1 .select_interest ul {
+    width: 100%;
+    padding: 0 10.4%;
+}
+
+.step_1 .select_interest li {
+    position: relative;
+    margin-bottom: 2%;
+    border-radius: 50px;
+    border: 1px solid #fff;
+}
+
+.step_1 .select_interest li:nth-child(odd) {
+    float: left;
+    width: 48%;
+}
+
+.step_1 .select_interest li:nth-child(even) {
+    float: right;
+    width: 48%;
+}
+
+.step_1 .select_interest .selected {
+    background: #3a84c3;
+    border: 1px solid #2f76cc;
+}
+
+.step_1 .select_interest .selected::after {
+    content: '';
+    position: absolute;
+    top: -4%;
+    right: -3%;
+    display: block;
+    width: 13%;
+    height: 40%;
+    background: url('../images/selected.png') no-repeat;
+    background-size: 100%;
+}
+
+.step_1 .btn_box {
+    position: relative;
+    width: 100%;
+    height: 2.5rem;
+    padding: 0 10.4%;
+    margin-top: 5%;
+}
+
+.step_1 .btn_box .next_bg {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, #5e8fd9, #459bd3);
+    border-radius: 50px;
+}
+
+.step_1 .next_txt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 25%;
+}
+
+.step1_message {
+    margin: 0.5rem auto;
+    width: 80%;
+    height: 2.25rem;
+}
+
+.step1_message .ms {
+    display: none;
+    opacity: 0.66;
+    border: solid 2px #cccccc;
+    width: 100%;
+    height: 2.25rem;
+    /* margin: 1rem auto; */
+}
+
+.step1_message .ms input {
+    padding-left: 10px;
+    width: 100%;
+    float: right;
+    line-height: 2rem;
+    font-size: 0.85rem;
+    height: 100%;
+    color: #ffffff;
+    outline: none;
+    background-color: transparent;
+}
+
+/*-------------------------- step_1 结束-------------------------- */
+
+/*--------------------------分享页 开始-------------------------- */
+
+.share, .share_flar {
+    left: 0;
+}
+
+.share .share_tit {
+    width: 60%;
+    margin: 37.8% auto;
+}
+
+.share .share_tit img {
+    width: 100%;
+}
+
+.share .share_btn1 {
+    width: 65%;
+    margin: 0 auto;
+    animation: btn_in 0.4s 1s ease-in-out forwards;
+    animation-fill-mode: both;
+    -webkit-animation: index_btn 1s ease-in-out infinite;
+}
+
+.share .share_btn1 img {
+    width: 100%;
+}
+
+.share .share_btn2 {
+    width: 65%;
+    margin: 10px auto;
+}
+
+.share .share_btn2 img {
+    width: 100%;
+}
+
+.share_flar {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 50, 79, 0.8);
+}
+
+.share_flar img {
+    width: 100%;
+}
+
+/*按钮心跳式动画*/
+
+@keyframes index_btn {
+    0% {
+        transform: scale(1);
+    }
+    10% {
+        transform: scale(1.05);
+    }
+    20% {
+        transform: scale(1);
+    }
+    30% {
+        transform: scale(1.05);
+    }
+    40%, 100% {
+        transform: scale(1);
+    }
+}
+
+/*按钮弹入动画*/
+
+@keyframes btn_in {
+    0% {
+        transform: translate3d(0, 30px, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+/*--------------------------分享页 开始-------------------------- */
+
+/*-------------------------- loading 开始-------------------------- */
+
+.loading {
+    width: 100%;
+    height: 100%;
+}
+
+.loading p {
+    position: absolute;
+    width: 50%;
+    height: 3%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+}
+
+.loading .number {
+    display: inline-block;
+    width: 20%;
+}
+
+.loading .loading_p {
+    font-size: 18px;
+}
+
+/*-------------------------- loading 开始-------------------------- */
+
+/*-------------------------- step_2 开始-------------------------- */
+
+.step_2 {
+    text-align: center;
+    transform: translate3d(130%, 0, 0);
+}
+
+.step_2 .title {
+    text-align: center;
+    display: inline-block;
+    width: 80%;
+}
+
+.step_2 .message {
+    margin: 10% auto;
+    height: 60%;
+    width: 80%;
+}
+
+.step_2 .message .ms {
+    opacity: 0.66;
+    border: solid 2px #cccccc;
+    width: 100%;
+    height: 2.5rem;
+    margin: 1rem auto;
+}
+
+.step_2 .ms span {
+    margin-left: 5%;
+    float: left;
+    height: 2.5rem;
+    line-height: 2.4rem;
+    font-size: 0.85rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #ffffff;
+    opacity: 0.66;
+}
+
+.step_2 .ms input {
+    width: 80%;
+    float: right;
+    line-height: 2.25rem;
+    font-size: 0.85rem;
+    height: 100%;
+    color: #ffffff;
+    outline: none;
+    background-color: transparent;
+}
+
+.step_2 .message .city {
+    width: 100%;
+    height: 2.5rem;
+    margin: 1rem auto;
+}
+
+.step_2 .city select {
+    padding-left: 5%;
+    height: 100%;
+    width: 80%;
+    float: left;
+    font-size: 0.85rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #ffffff;
+    opacity: 0.66;
+    outline: none;
+    background-color: transparent;
+    border-radius: 0px !important;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+.step_2 .city::after {
+    position: relative;
+    display: block;
+    content: "";
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 0px;
+    height: 0;
+    top: 1.2rem;
+    right: -12.5rem;
+    border: 0.5rem solid transparent;
+    border-top-color: #2f76cc;
+    margin-top: -5px;
+}
+
+.step_2 .city input {
+    opacity: 0.66;
+    height: 100%;
+    padding-left: 1rem;
+    line-height: 2.25rem;
+    font-size: 0.85rem;
+    width: 65%;
+    float: right;
+    color: #ffffff;
+    background-color: transparent;
+    border: solid 2px #cccccc;
+    border-radius: 0px !important;
+}
+
+.step_2 .message .bottom {
+	position: relative;
+	top: 25%;
+	width: 100%;
+	height: 2.5rem;
+	text-align: center;
+	background-image: linear-gradient(to bottom, #5e8fd9, #459bd3);
+	border-radius: 50px;
+}
+
+.step_2 .bottom img {
+	display: inline-block;
+	width: 50%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	padding-left: 5%;
+}
+
+/*-------------------------- step_2 结束-------------------------- */
+
+/*-------------------------- 弹窗 开始-------------------------- */
+
+.swal-overlay {
+    background: rgba(11, 28, 58, 0.8);
+}
+
+.swal-modal {
+    width: 17rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: 1px #0192fd solid;
+    border-radius: 0;
+}
+
+.swal-modal .swal-footer {
+    text-align: center;
+}
+
+.swal-modal .swal-title {
+    height: 2rem;
+    line-height: 2rem;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    font-size: .8rem;
+    font-weight: 700;
+    text-align: center;
+    border-bottom: 1px #0192fd solid;
+    letter-spacing: 4px;
+}
+
+.swal-modal .swal-text {
+    margin: 1rem 0 0;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+.swal-modal .swal-button {
+    padding: 8px 24px;
+    background: #7cd1f9;
+}
+
+.swal-modal .swal-button:not([disabled]):hover {
+    background: #7cd1f9;
+}
+
+.swal-modal .swal-button--cancel {
+    color: #fff;
+}
+
+.swal-modal button {
+    border-radius: 0!important;
+}
+
+.swal-button-container {
+    margin: 3px;
+}
+
+/*-------------------------- 弹窗 结束-------------------------- */
+
+.logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 6.5% 6.5% 0;
+}
+
+.logo img:nth-child(1) {
+    width: 40%;
+    float: left;
+}
+
+.logo img:nth-child(2) {
+    width: 15%;
+    float: right;
+}

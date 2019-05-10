@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="mobile-web-app-capable">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>Audianer</title>
+    <link rel="stylesheet" href="./css/animate.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/sweetalert2.min.css">
+
+
+</head>
+
+<body>
+    <div class="content img_bg">
+        <img src="./images/bg.jpg" />
+    </div>
+    <div class="logo" style="display: none;">
+        <img src="./images/logo_left.png" alt="">
+        <img src="./images/logo_right.png" alt="">
+    </div>
+    <input type="hidden" id="likesHidden" value="">
+    <div class="content loading">
+        <p><img src="./images/loading_img.png" style="display:inline-block;width:25%;" alt="">&nbsp;<span class="number loading_p">0</span><span class="loading_p">%</span></p>
+    </div>
+    <div class="content step_1" style="display: none">
+        <img src="./images/sign_up.png" alt="">
+        <div class="select_interest">
+            <ul id="likeUl">
+                <li class="" num='0' text="汽车测评" ablility="ability_auto=1">
+                    <img src="./images/interest_1.png" alt="">
+                </li>
+                <li num='1' text="摄影" ablility="ability_photo=1">
+                    <img src="./images/interest_2.png" alt="">
+                </li>
+                <li num='2' text="音乐" ablility="ability_music=1">
+                    <img src="./images/interest_3.png" alt="">
+                </li>
+                <li num='3' text="视频拍摄" ablility="ability_video=1">
+                    <img src="./images/interest_4.png" alt="">
+                </li>
+                <li num='4' text="自家游记" ablility="ability_travel=1">
+                    <img src="./images/interest_5.png" alt="">
+                </li>
+                <li num='5' text="写作" ablility="ability_writing=1">
+                    <img src="./images/interest_6.png" alt="">
+                </li>
+                <li num='6' text="舞蹈" ablility="ability_dance=1">
+                    <img src="./images/interest_7.png" alt="">
+                </li>
+                <li num='7' text="搞笑段子" ablility="ability_amusing=1">
+                    <img src="./images/interest_8.png" alt="">
+                </li>
+                <li num='8' text="绘画" ablility="ability_draw=1">
+                    <img src="./images/interest_9.png" alt="">
+                </li>
+                <li num='9' text="其他" ablility="ability_other=1" id="otherinterestLi">
+                    <img src="./images/interest_10.png" alt="">
+                </li>
+            </ul>
+        </div>
+        <div class="step1_message" id="step1Message">
+            <div class="ms name"><input id="otherinterestInput" onkeyup="this.value=this.value.replace(/\s+/g,'')" type="text" placeholder="请输入擅长的才艺或技能"></div>
+        </div>
+        <div class="btn_box">
+            <div class="next_bg"></div>
+            <img class="next_txt" src="./images/next_txt.png" alt="">
+        </div>
+    </div>
+    <div class="content step_2" style="">
+        <img class="title" src="images/step_2_title.png">
+        <div class="message">
+            <div class="ms name"><span>姓名</span><input id="stepInputname" onkeyup="this.value=this.value.replace(/\s+/g,'')" type="text"></div>
+            <div class="ms phone"><span>手机</span><input type="number" id="stepInputphone" maxlength="11"
+                    oninput="if(value.length>11)value=value.slice(0,11)" placeholder=""></div>
+            <div class="ms city"><span>来自</span>
+                <select data-id="from" id="stepSelectProvice">
+                    <option value="一汽-大众奥迪车主">一汽-大众奥迪车主</option>
+                    <option value="一汽-大众奥迪经销商">一汽-大众奥迪经销商</option>
+                    <option value="一汽-大众奥迪员工">一汽-大众奥迪员工</option>
+                    <option value="一汽-大众奥迪粉丝">一汽-大众奥迪粉丝</option>
+                    <option value="其他">其他</option>
+                </select>
+            </div>
+            <!-- <div class="bottom">
+                <img id="submitStep2btn" src="images/step2btn.png">
+            </div> -->
+            <div class="bottom" id="submitStep2btn">
+                <img src="images/step2btn.png" />
+            </div>
+        </div>
+
+    </div>
+    <!--报名成功页面开始-->
+    <div class="content share" style="display:none;">
+        <div class="share_tit">
+            <img src="images/share_tit.png" />
+        </div>
+        <div class="share_btn1">
+            <a href="https://zhuanlan.zhihu.com/c_1104773426832707584"><img src="images/share_btn1.png" /></a>
+        </div>
+        <div class="share_btn2">
+            <img src="images/share_btn2.png" />
+        </div>
+    </div>
+    <!--报名成功页面结束-->
+    <!--分享页面开始-->
+    <div class="content share_flar" style="display:none;">
+        <img src="images/stare_flar.png" />
+    </div>
+    <!--分享页面结束-->
+</body>
+<script src="./js/jquery-1.11.2.min.js"></script>
+<script src="https://cdn.bootcss.com/PreloadJS/1.0.1/preloadjs.min.js"></script>
+<script src="./js/sweetalert.min.js"></script>
+<script src="./js/base.js?c=0.1"></script>
+
+</html>

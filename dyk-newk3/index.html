@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>寻找K3第一人</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/base.css?v=3">
+    <link rel="stylesheet" type="text/css" href="css/animate.css?v=1">
+</head>
+<body>
+<audio src="sound/indie.mp3" id="music" preload="true" loop="loop" hidden="false"></audio>
+<div class="music_handle" id="music_handle">
+    <img src="image/music.png" class="music_start"/>
+    <img src="image/music_stop.png" class="music_stop" style="display: none;"/>
+</div>
+
+<div class="allShadow"></div>
+<div class="kuang">
+    <div id="message"></div>
+    <hr />
+    <div><span id="closeKuang">O K</span></div>
+</div>
+<div class="content loading" >
+    <div class="percent">
+        <div class="biao">
+            <img class="pan" src="image/pan.png">
+            <img class="shot" src="image/shot.png">
+        </div>
+        <br/>
+        <div class="number">
+            <div>
+                <img class="number1" src="image/a.png">
+            </div>
+            <div>
+                <img class="number2" src="image/a.png">
+            </div>
+            <div>
+                <img class="number3" src="image/a.png">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content welcome" style="display: none" >
+    <div class="border">
+        <img class="top" src="image/border_wel_top.png">
+        <img class="left" src="image/border_wel_long.png">
+        <div class="right">
+            <div class="btn"><img class="wel_btn animated tadaEr" src="image/btn_huodong.png"></div>
+            <div class="line_div">
+                <img class="line" src="image/border_wel_long.png">
+                <div class="people_div">
+                    <img class="people" src="image/people.png">
+                </div>
+                <div class="start_div">
+                    <img class="liji_btn" src="image/lijicanyu.png">
+                    &nbsp;&nbsp;
+                    <img class="start_btn" src="image/btn_start.png">
+                </div>
+            </div>
+        </div>
+        <img class="bottom" src="image/border_wel_bottom.png">
+        <img class="logo" src="image/logo.png">
+    </div>
+    <div class="prize">
+        <div class="shadow"></div>
+        <div class="prize_back">
+            <img class="prize_back_img" src="image/liwu_back.png">
+            <ul class="prize_content">
+                <img class="prize_content_img" src="image/liwu_content_2.png">
+            </ul>
+            <img class="close_img" src="image/close.png">
+        </div>
+    </div>
+</div>
+
+
+<div class="content liebiao" style="display: none">
+    <img src="image/callback.png" class="callback" id="libiaoBack"/>
+    <div class="story">
+        <p class="refreshText" style="text-align: center;"></p>
+        <ul id="scrolling">
+            <li class="clear" style="display: none;" id="item-1">
+                <div class="pic">
+                    <img class="photo" src="image/simple.jpg">
+                </div>
+                <div class="word">
+                    <div class="pen">
+                        <img class="border_left" src="image/border_hui.png">
+                        <img class="border_right" src="image/border_hui.png">
+                        <div>
+                            <span class="job"></span>&nbsp;&nbsp;<span class="name"></span>
+                            <p class="contentTxt"></p>
+                        </div>
+                    </div>
+                    <div class="active">
+                        <div>
+                            <img src="image/eye_hui.png"/>
+                            <span class="viewNum"></span>
+                            &nbsp;
+                            <img src="image/zan_hui.png"/>
+                            <span class="zanNum"></span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="clear"  style="display: none;" id="item-2">
+                <div class="pic">
+                    <img  class="photo" src="image/simple.jpg">
+                </div>
+                <div class="word">
+                    <div class="pen">
+                        <img class="border_left" src="image/border_white.png">
+                        <img class="border_right" src="image/border_white.png">
+                        <div>
+                            <span class="job"></span>&nbsp;&nbsp;<span class="name"></span>
+                            <p class="contentTxt"></p>
+                        </div>
+                    </div>
+                    <div class="active">
+                        <div>
+                            <img src="image/eye.png"/>
+                            <span class="viewNum"></span>
+                            <img src="image/zan.png"/>
+                            <span class="zanNum"></span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="startDiv" style="height: 13%;width: 100%;text-align: center;">
+        <img class="start_to_edit" style="width: 60%; margin-top: 5%;" src="image/btn_start_edit.png">
+    </div>
+</div>
+
+
+<div class="content detail" style="display: none;">
+    <div class="photo">
+        <div class="border"></div>
+        <img class="sanjiao" src="image/sanjiao.png">
+        <img class="pic" src="image/simple_photo.jpg">
+        <img class="car" src="image/car_white.png">
+        <div class="word">
+            <div class="user">
+                <span class="name"></span>
+                <span class="job"></span>
+            </div>
+            <div class="time">
+                <span class="timeShow">2019年购入K3</span>
+            </div>
+        </div>
+    </div>
+    <div class="pen">
+        <img class="border_left" src="image/border_red.png">
+        <img class="border_right" src="image/border_red.png">
+        <div>
+            <p class="contentTxt"></p>
+        </div>
+    </div>
+    <div class="btns">
+        <div class="like"><img src="image/btn_like.png"></div>
+        <div class="back"><img src="image/btn_back.png"></div>
+    </div>
+</div>
+
+
+<div class="content editor" style="display:none;">
+    <img src="image/callback.png" class="callback" id="editorBack" />
+    <div class="edit_header">
+        <img src="image/edit_header.png"/>
+    </div>
+    <div class="pen">
+        <img class="border_left" src="image/border_red.png">
+        <img class="border_right" src="image/border_red.png">
+        <div>
+            <textarea id="txtContent" oninput="textContentFun()"></textarea>
+            <p>(文字限60个字以内)</p>
+        </div>
+    </div>
+    <div class="btn">
+        <img class="btn_edit_next" src="image/btn_edit_next.png">
+    </div>
+</div>
+
+
+<div class="content upload" style="display: none;">
+    <img src="image/callback.png" class="callback" id="uploadBack" />
+    <div class="upload_header">
+        <img src="image/upload_header.png"/>
+    </div>
+    <div class="upload_back">
+        <img class="upload_back_pic" src="image/upload_back.png"/>
+        <div class="photo_show">
+            <div id="clipArea">
+            </div>
+            <img class="sanjiao" src="image/sanjiao.png"/>
+            <img class="car" src="image/car_left.png"/>
+        </div>
+        <img class="upload_btn" src="image/upload_start.png"/>
+        <input type="file" id="file" style="position: absolute;width: 50%;height: 50%;left: 50%;top: 50%;margin-top: -25%;margin-left: -25%;opacity: 0;z-index: 2;">
+    </div>
+
+    <div class="btns">
+        <div class="resetBtn"><img src="image/btn_reset_upload.png"></div>
+        <div class="clipBtn"><img id="clipBtn" src="image/btn_upload_shengcheng.png"></div>
+    </div>
+    <div class="zhuce">
+        <div class="shadow" id="zhuce_shadow"></div>
+        <div class="form">
+            <img class="border" src="image/border_zhuce.png">
+            <table>
+                <tr>
+                    <td>
+                        <input type="text" id="user_name" name="name" placeholder="姓名"/>
+                    </td>
+                    <td>
+                        <input type="radio" name="sex" checked="checked"  value="1"/>先生
+                        <input type="radio" name="sex" value="2"/>女士
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" id="user_job" name="name"  placeholder="K3__第一人"/>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="number" id="user_mobile" name="name" oninput="mobileFun()"   placeholder="手机"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <select id="user_time" >
+                            <option value="">购车时间</option>
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                            <option value="2017">2017</option>
+                            <option value="2016">2016</option>
+                            <option value="2015">2015</option>
+                            <option value="2014">2014</option>
+                            <option value="2013">2013</option>
+                            <option value="2012">2012</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: left;">
+                        <label class="my_protocol" style="float: left;">
+                            <input class="input_agreement_protocol" type="checkbox"/>
+                            <span></span>
+                        </label>
+                        <div style="position: relative;left: 8px;color: #6f6f6f;">
+                            <p>我同意东风悦达起亚及合作商就奖品发放事宜与我联系。</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="padding-top: 15px;">
+                        <img class="btn_tijiao" src="image/btn_tijiao.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div  class="content" style="z-index: -5;" id="wrap">
+    <div class="content self item" style="display: none">
+        <div class="upload_back">
+            <img class="upload_back_pic" src="image/border_share.png"/>
+            <div class="photo_show">
+                <img id="photo" class="photo" src="image/simple_photo.jpg">
+                <img class="sanjiao" src="image/sanjiao.png"/>
+                <img class="car" src="image/car_left.png"/>
+                <div class="word">
+                    <div class="user">
+                        <span class="name"></span>
+                        <span class="job"></span>
+                    </div>
+                    <div class="time">
+                        <span class="show_time"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pen">
+            <img class="border_left" src="image/border_red.png">
+            <img class="border_right" src="image/border_red.png">
+            <div>
+                <p class="content_text">
+                </p>
+            </div>
+        </div>
+
+        <div class="erwei">
+            <img src="image/erweima.png">
+        </div>
+
+        <img id="sdimg" style="width:100%;height:100%;position:absolute;top:0;z-index:3;opacity:0"/>
+
+        <div class="changan" style="display: none">
+            <img src="image/tip_changan.png">
+        </div>
+        <div class="btns" style="display: none;z-index: 5;">
+            <div id="hupeng" class="hupeng"><img src="image/btn_hupeng.png"></div>
+            <div id="kanbieren" class="kanbieren"><img src="image/btn_kanbieren.png"></div>
+        </div>
+
+        <div class="tip" style="display: none">
+            <img src="image/next_hua.png">
+        </div>
+
+        <div id="fenxiang" class="fenxiang">
+            <div class="shadow"></div>
+            <img src="image/fenxiang.png"/>
+        </div>
+
+    </div>
+
+    <div class="content yushou item" style="display: none">
+        <img src="image/yushou.png">
+    </div>
+
+</div>
+
+
+</body>
+
+
+
+
+<script src='js/jquery-1.12.4.min.js'></script>
+<script src="https://cdn.bootcss.com/PreloadJS/1.0.1/preloadjs.min.js"></script>
+<script src="js/shares.js"></script>
+<script src="js/hammer.min.js"></script>
+<script src="js/iscroll-zoom-min.js"></script>
+<script src="js/lrz.all.bundle.js"></script>
+<script src="js/PhotoClip.js"></script>
+<script src="js/html2canvas.min.js"></script>
+<script src="js/iSlider.js?v=0.2"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/refresh.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?4477a6f56a646b7d67aba567ac334566";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script src="js/base.js?v=3.6"></script>
+
+<script>
+    function addBaidu(str){
+        setTimeout(function () {
+            try {
+                _hmt.push(["_trackEvent", str, "click"]);
+            }catch (e) {}
+        },0);
+    }
+    //demo
+    //用法
+    var myslider;
+    var pc;
+    var attachBase64;
+    var txtContent;
+    var plit="item-1";
+    var musicBut=false;
+    var mobileValue;
+    window.onload = function () {
+        $(function () {
+            $(".music_start,.music_stop").on('click',function () {
+                music_toggle();
+            });
+            if(isEmpty($.cookie('mobile'))){
+            }else{
+                $("#startDiv").hide();
+            }
+            if(isEmpty($.cookie('showGuize'))){
+                $.cookie('showGuize',"1",{ expires: 7 });
+                $('.prize').show();
+            }
+            refresh();
+            var numberPic = ['image/0.png', 'image/1.png', 'image/2.png', 'image/3.png', 'image/4.png', 'image/5.png', 'image/6.png', 'image/7.png', 'image/8.png', 'image/9.png', 'image/a.png'];
+            var numberLoad = new createjs.LoadQueue(false);
+            numberLoad.loadManifest(numberPic);
+            var allPic = ['image/0.png','font/MFKeSong_Noncommercial-Regular.woff',"image/btn_huodong.png","image/back_liebiao.jpg","image/border_share.png","image/btn_start.png","image/btn_start_edit.png","image/btn_reset_upload.png","image/btn_like.png","image/btn_kanbieren.png","image/btn_like_had.png","image/btn_hupeng.png","image/btn_edit_next.png","image/btn_back.png","image/liwu_back.png","image/liwu_content_2.png","image/people.png"];
+            var interval;
+            var timesRun = 0;
+            numberLoad.on("progress", function (numberE) {
+                if (numberE.progress == 1) {
+                    var allLoad = new createjs.LoadQueue(false);
+                    allLoad.loadManifest(allPic);
+                    allLoad.on("progress", function (e) {
+                        var percentage = Math.ceil(e.progress * 100);
+                        if (interval == undefined) {
+                        } else {
+                            clearInterval(interval);
+                        }
+                        interval = setInterval(function () {
+                            if (timesRun >= percentage) {
+                                clearInterval(interval);
+                            } else {
+                                timesRun++;
+                                resetPercent(timesRun);
+                                if (timesRun == percentage) {
+                                    clearInterval(interval);
+                                    if (percentage == 100) {
+                                        $("#music_handle").show();
+                                        music_toggle();
+                                        $('.loading').hide();
+                                        $('.welcome').show();
+                                    }
+                                }
+                            }
+                        }, 10);
+                    });
+                }
+            })
+        })
+
+        function resetPercent(number) {
+            if (number <= 50) {
+                ressetShot((number / 50) * 100 - 100);
+            } else {
+                ressetShot(((number - 50) / 50) * 100);
+            }
+            if (number < 10) {
+                $('.number3').attr("src", getPercentPic(number));
+            } else if (number < 100) {
+                var arr = (number + "").split("");
+                $('.number2').attr("src", getPercentPic(arr[0]));
+                $('.number3').attr("src", getPercentPic(arr[1]));
+            } else {
+                $('.number1').attr("src", getPercentPic(1));
+                $('.number2').attr("src", getPercentPic(0));
+                $('.number3').attr("src", getPercentPic(0));
+            }
+        }
+
+        function getPercentPic(number) {
+            return "image/" + number + ".png";
+        }
+
+        function ressetShot(number) {
+            $(".shot").css("transform", "rotate(" + number + "deg)");
+        }
+
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            document.getElementById("music").play();
+            document.getElementById("music").pause();
+        });
+
+
+        function music_toggle() {
+            if (musicBut) {
+                document.getElementById('music').pause();
+                musicBut = false;
+                $('.music_start').hide();
+                $('.music_stop').show();
+            } else {
+                document.getElementById('music').play();
+                musicBut = true;
+                $('.music_start').show();
+                $('.music_stop').hide();
+            }
+        }
+
+        var button = document.getElementById("music_handle");
+        button.addEventListener("touchstart", e => {
+            e.preventDefault();
+            music_toggle();
+        })
+
+        button.addEventListener("click", e => {
+            e.preventDefault();
+            music_toggle();
+        })
+
+
+    }
+</script>
+
+
+</html>
+
