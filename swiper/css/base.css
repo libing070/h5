@@ -1,0 +1,60 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+body, html {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    touch-action: none;
+    /*Chorme56+开始为了让页面滚动变得更为流畅，在 window、document 和 body 上注册的 touchstart 和 touchmove 事件处理函数，会默认为是 passive: true。
+    浏览器忽略默认事件的preventDefault(), 你要是手动阻止会弹出一个警告, 告诉你阻止不了
+    CSS属性上对想要禁用触摸事件的元素设置touch-action: none, 然后用js获取该元素真实DOM元素添加事件处理。
+    ele.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    */
+}
+
+body {
+    -webkit-text-size-adjust: 100% !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+/* a标签点击闪烁 */
+a, div, img {
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+}
+
+
+
+.content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+
+

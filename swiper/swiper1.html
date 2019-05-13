@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="mobile-web-app-capable">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>swiper1</title>
+    <link rel="icon" href="data:image/ico;base64,aWNv">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/base.css">
+</head>
+<style>
+    .swiper1 {
+        width: 100%;
+        height: 100%;
+        background-color: #FFFFFF;
+    }
+    .swiper1 .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+    .swiper1 .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+</style>
+<body>
+<div class="content swiper1">
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper" id="swiperWrapperList">
+
+        </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</div>
+</body>
+<script src="./js/jquery-1.11.2.min.js"></script>
+<!-- Swiper JS -->
+<script src="./js/swiper.min.js"></script>
+
+
+<script src="./js/base.js?c=0.1"></script>
+<!-- Initialize Swiper -->
+<script>
+    $(function () {
+        for (var i=1;i<=13;i++){
+            $("#swiperWrapperList").append("<div class='swiper-slide'><img src='images/swiper1/slide"+i+".jpg'></div>")
+        }
+        var swiper = new Swiper('.swiper-container', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    });
+</script>
+</html>

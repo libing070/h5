@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="mobile-web-app-capable">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>cut</title>
+    <link rel="icon" href="data:image/ico;base64,aWNv">
+    <link rel="stylesheet" href="./css/base.css">
+</head>
+<style>
+
+    .cut{
+        position: absolute;
+        width: 100%;
+    }
+
+    .cut .cut-content {
+        position: absolute;
+        width: 95.7%;
+        height: 96%;
+        left: 0;
+        top: 16px;
+        background-color: #b7bfcc;
+    }
+    .cut .sanjiao{
+        position: absolute;
+        width: 10%;
+        left: 0;
+        top: 16px;
+    }
+    .cut .photo-clip-mask{
+    opacity: 0 !important;
+    }
+    .cut .car{
+        position: absolute;
+        width: 50%;
+        left: 0;
+        bottom: -10%;
+    }
+    .cut .upload_image{
+        position: absolute;
+        width: 27%;
+        left: 35%;
+        top: 35%;
+    }
+    .cut  .file-input{
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        left: 50%;
+        top: 50%;
+        margin-top: -25%;
+        margin-left: -25%;
+        opacity: 0;
+    }
+
+    .cut  .bottom{
+        position: absolute;
+        width:100%;
+        top: 120%;
+    }
+    .cut  .bottom .left{
+        width: 40%;
+        float: left;
+        margin-left: 1rem;
+    }
+    .cut .bottom .right
+    {
+        float: right;
+        margin-right: 1rem;
+      width: 40%;
+    }
+
+.clip-view{
+    position: absolute;
+    top:0 ;
+    margin: 0 auto;
+    width: 100%;
+    height: 50%;
+}
+</style>
+<body>
+<div class="content">
+    <div class="cut">
+        <img src="images/cut/upload_back.png">
+        <div class="cut-content" id="clipArea"></div>
+        <img class="sanjiao" src="images/cut/sanjiao.png">
+        <img class="car" src="images/cut/car_left.png">
+        <img class="upload_image" src="images/cut/upload_start.png">
+        <input id="file" type="file" class="file-input">
+        <div class="bottom">
+            <div class="left"><img src="images/cut/btn_reset_upload.png" id="resetBtn"></div>
+            <div class="right"><img src="images/cut/btn_upload_shengcheng.png" id="clipBtn"></div>
+        </div>
+
+    </div>
+    <div id="view" class="clip-view" style="display: none"></div>
+
+</div>
+
+</body>
+<script src="./js/jquery-1.11.2.min.js"></script>
+<script src="./js/base.js?c=0.1"></script>
+<script src="js/iscroll-zoom.js"></script>
+<script src="js/hammer.js"></script>
+<script src="js/lrz.all.bundle.js"></script>
+<script src="js/jquery.photoClip.js"></script>
+<script>
+    $(function () {
+        var clipArea = new bjj.PhotoClip("#clipArea", {
+            size: [$(".cut-content").width(), $(".cut-content").height()],
+            outputSize: [640, 640],
+            file: "#file",
+            view: "#view",
+            ok: "#clipBtn",
+            loadStart: function() {
+                console.log("照片读取中");
+            },
+            loadComplete: function() {
+                console.log("照片读取完成");
+                $(".photo-clip-rotateLayer").show()
+                $(".upload_image,.file-input").hide();
+
+            },
+            clipFinish: function(dataURL) {
+                $(".cut").hide();
+                $(".clip-view").show();
+                console.log(dataURL);
+            }
+        });
+
+        $("#resetBtn").on("click",function () {
+            $(".photo-clip-rotateLayer").hide().children("img").attr("src","");
+            $(".upload_image,.file-input").show();
+        })
+    });
+</script>
+</html>
