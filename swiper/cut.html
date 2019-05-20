@@ -114,7 +114,7 @@
     $(function () {
         var clipArea = new bjj.PhotoClip("#clipArea", {
             size: [$(".cut-content").width(), $(".cut-content").height()],
-            outputSize: [640, 640],
+            outputSize: [$(".clip-view").width(), $(".clip-view").height()],
             file: "#file",
             view: "#view",
             ok: "#clipBtn",
@@ -123,7 +123,7 @@
             },
             loadComplete: function() {
                 console.log("照片读取完成");
-                $(".photo-clip-rotateLayer").show()
+                $(".photo-clip-rotateLayer").show();
                 $(".upload_image,.file-input").hide();
 
             },

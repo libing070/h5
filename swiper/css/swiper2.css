@@ -1,0 +1,98 @@
+.swiper2 {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+.swiper2_{
+    background-color: rgba(0,0,0,0.7);
+}
+.swiper2_ .swiper-container{
+    top: 30%;
+}
+
+.top .jpg1{
+    float: left;
+    width: 50%;
+}
+.top .jpg234{
+    float: right;
+    width: 50%;
+}
+.top  .jpg234 .jpg2 {
+    width: 100%;
+}
+.top  .jpg234 .jpg3{
+    float: left;
+    width: 50%;
+}
+.top  .jpg234 .jpg4{
+    float: right;
+    width: 50%;
+}
+
+
+.center .jpg5{
+    float: left;
+    width: 50%;
+}
+.center .jpg67{
+    width: 50%;
+    float: right;
+}
+.center .jpg67 .jpg6{
+    width: 50%;
+    float: left;
+}
+.center .jpg67 .jpg7{
+    width: 50%;
+    float: right;
+}
+
+
+.bottom .jpg891011{
+    width: 50%;
+    float: left;
+}
+
+.bottom .jpg891011 .jpg89 .jpg8{
+    width: 50%;
+    float: left;
+
+}
+.bottom .jpg891011 .jpg89 .jpg9{
+    width: 50%;
+    float: right;
+
+}
+
+.bottom .jpg891011  .jpg1011 .jpg10{
+    width: 50%;
+    float: left;
+
+}
+.bottom .jpg891011  .jpg1011 .jpg11{
+    width: 50%;
+    float: right;
+
+}
+
+.bottom .jpg12{
+    width: 50%;
+    float: right;
+}
+
+.swiper-button-close{
+    background-image: url(../images/swiper2/showImg/show-close.png);
+    right: 10px;
+    left: auto;
+    position: absolute;
+    top: 10%;
+    width: 27px;
+    height: 27px;
+    margin-top: -22px;
+    z-index: 10;
+    cursor: pointer;
+    background-size: 20px 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+}

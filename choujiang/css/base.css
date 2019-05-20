@@ -1,0 +1,337 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+body, html {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    touch-action: none;
+    /*Chorme56+开始为了让页面滚动变得更为流畅，在 window、document 和 body 上注册的 touchstart 和 touchmove 事件处理函数，会默认为是 passive: true。
+    浏览器忽略默认事件的preventDefault(), 你要是手动阻止会弹出一个警告, 告诉你阻止不了
+    CSS属性上对想要禁用触摸事件的元素设置touch-action: none, 然后用js获取该元素真实DOM元素添加事件处理。
+    ele.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    */
+}
+
+body {
+    -webkit-text-size-adjust: 100% !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+/* a标签点击闪烁 */
+a, div, img {
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+}
+
+
+
+.content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.index {
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+}
+.index  .img-bg{
+    width: 100%;
+    height: 100%;
+}
+.index .zhuanpan-box{
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.index .zhuanpan-box .zp{
+    position: absolute;
+    top: 17%;
+    left: 3%;
+    right: 0;
+    margin: auto;
+    height: 65%;
+    width: 65%;
+}
+.index .img-zhanpanbox{
+     width: 100%;
+     height: 100%;
+ }
+.index .content-box{
+    width: 80%;
+    position: absolute;
+    top: 57%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+}
+
+.index .text-box{
+    width: 80%;
+    position: absolute;
+    top: 65%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.index .img-text{
+    width: 100%;
+    height: 100%;
+}
+
+.content-box .children1{
+    color: rgba(255,255,255,1);
+}
+.content-box .children2{
+    font-size: 1.8rem;
+    color: #FFEB3B;
+}
+
+li{list-style-type:none;}
+.zp li{
+    position: absolute;
+    width: 30%;
+    height: 27%;
+    line-height: 30px;
+    text-align: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url("../images/w_bg.png");
+}
+.zp li.startli{
+    position: absolute;
+    width: 30%;
+    height: 27%;
+    line-height: 30px;
+    text-align: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url("../images/chou.png");
+}
+.zp li img{
+    width: auto;
+    height: 75%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    margin: auto;
+    bottom: 0;
+}
+#zp li.current{
+    position: absolute;
+    width: 30%;
+    height: 27%;
+    line-height: 30px;
+    text-align: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url("../images/b_bg.png");
+}
+
+.index .share{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.share .img-bg{
+    width: 100%;
+    height: 100%;
+}
+.share .dialog{
+    position: absolute;
+    top: 25%;
+    left: 0;
+    right: 1px;
+    bottom: 0;
+    margin: auto;
+    width: 85%;
+    height: 50%;
+
+}
+.share .dialog .title{
+    position: relative;
+    border-radius: 15px 15px 0 0;
+    top: 0;
+    left: 0;
+    margin: auto;
+    width: 100%;
+    height: 15%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url("../images/share_title_bg.png");
+}
+.share .dialog .title .title-con{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 32%;
+    height: auto;
+}
+.share .dialog .title .title-close{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    bottom: 0;
+    margin: auto;
+    width: 8%;
+    height: auto;
+}
+.dialog .share-content{
+    position: relative;
+    height: 50%;
+    width: 100%;
+    border-radius: 0 0 15px 15px;
+    margin-top: -1px;
+    background-color: #f0f0f0;
+}
+.dialog  .share-content .span{
+    width: 80%;
+    display: block;
+    text-align: center;
+    position: absolute;
+    top: 20%;
+    left: 0;
+    font-size: 0.9rem;
+    line-height: 150%;
+    right: 0;
+    margin: auto;
+}
+.dialog  .share-content .share-btn{
+    position: absolute;
+    bottom: 10%;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 50%;
+    height: auto;
+}
+
+.zhuanpan-box .point-top{
+    position: absolute;
+    width: 70%;
+    top: 10.5%;
+    margin: auto;
+    height: 5px;
+    right: 15%;
+    left: 15%;
+}
+.zhuanpan-box .point-bottom{
+    position: absolute;
+    width: 70%;
+    margin: auto;
+    height: 5px;
+    right: 15%;
+    left: 15%;
+    top: 82%;
+}
+.zhuanpan-box  .point-top img,
+.zhuanpan-box  .point-bottom img
+{
+    padding: 0 5px;
+    float: left;
+    height: 100%;
+    width: auto;
+}
+
+.zhuanpan-box .point-right{
+    position: absolute;
+    width: 5px;
+    top: 0%;
+    margin: auto;
+    height: 70%;
+    right: 11%;
+    bottom: 5%;
+}
+.zhuanpan-box .point-left{
+    position: absolute;
+    width: 5px;
+    top: 0%;
+    margin: auto;
+    height: 70%;
+    left: 11%;
+    bottom: 5%;
+}
+.zhuanpan-box .point-right img,
+.zhuanpan-box .point-left img{
+    width: 100%;
+    height: auto;
+    padding: 5px 0;
+}
+.zhuanpan-box .point-top-left{
+    position: absolute;
+    top: 11%;
+    margin: auto;
+    height: 5px;
+    left: 12%;
+}
+.zhuanpan-box .point-top-right{
+    position: absolute;
+    top: 11.5%;
+    margin: auto;
+    height: 5px;
+    right: 13%;
+}
+.zhuanpan-box .point-top-left img,
+.zhuanpan-box .point-top-right img
+{
+    padding: 0 3px;
+    float: left;
+    height: 100%;
+    width: auto;
+}
+.zhuanpan-box .point-bottom-right{
+    position: absolute;
+    bottom: 18%;
+    margin: auto;
+    height: 5px;
+    right: 13%;
+}
+.zhuanpan-box .point-bottom-left{
+    position: absolute;
+    bottom: 17.5%;
+    margin: auto;
+    height: 5px;
+    left: 12%;
+}
+.zhuanpan-box .point-bottom-right img,
+.zhuanpan-box .point-bottom-left img
+{
+    padding: 0 3px;
+    float: left;
+    height: 100%;
+    width: auto;
+}
