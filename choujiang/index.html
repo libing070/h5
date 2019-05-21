@@ -31,18 +31,18 @@
         <div class="point point-left"></div>
 
         <ul class="zp" id="zp">
-            <li class="jiang" style="left:0;top:0;" text="谢谢参与"><img src="images/thank.png"></li>
-            <li class="jiang" style="left:33%;top:0;"text="0.38元" ><img src="images/038.png"></li>
-            <li class="jiang" style="left:66%;top:0;" text="谢谢参与"><img src="images/thank.png"></li>
-            <li class="jiang" style="left:66%;top:33%;" text="1.68元"><img src="images/168.png"></li>
-            <li class="jiang" style="left:66%;top:66%;" text="0.38元"><img src="images/038.png"></li>
-            <li class="jiang" style="left:33%;top:66%;" text="8.8元"><img src="images/88.png"></li>
-            <li class="jiang" style="left:0;top:66%;" text="谢谢参与"><img src="images/thank.png"></li>
-            <li class="jiang" style="left:0;top:33%;" text="0.38元"><img src="images/038.png"></li>
+            <li class="jiang"  key="0" style="left:0;top:0;" text="谢谢参与"><img src="images/thank.png"></li>
+            <li class="jiang"  key="1" style="left:33%;top:0;"text="0.38元" ><img src="images/038.png"></li>
+            <li class="jiang"  key="2" style="left:66%;top:0;" text="谢谢参与"><img src="images/thank.png"></li>
+            <li class="jiang"  key="3"style="left:66%;top:33%;" text="1.68元"><img src="images/168.png"></li>
+            <li class="jiang"  key="4"style="left:66%;top:66%;" text="0.38元"><img src="images/038.png"></li>
+            <li class="jiang"  key="5"style="left:33%;top:66%;" text="8.8元"><img src="images/88.png"></li>
+            <li class="jiang"  key="6" style="left:0;top:66%;" text="谢谢参与"><img src="images/thank.png"></li>
+            <li class="jiang"  key="7"style="left:0;top:33%;" text="0.38元"><img src="images/038.png"></li>
             <li class="startli" style="left:33%;top:33%;" id="begin"></li>
         </ul>
     </div>
-    <div class="content-box"><span class="children1">你有</span>&nbsp;<span  class="children2">3</span>&nbsp;<span  class="children1">次抽奖机会</span></div>
+    <div class="content-box"><span class="children1">你有</span>&nbsp;<span  class="children2">0</span>&nbsp;<span  class="children1">次抽奖机会</span></div>
     <div class="text-box">
         <img class="img-text" src="images/text.png">
     </div>
@@ -63,72 +63,5 @@
 </div>
 </body>
 <script src="./js/jquery-1.11.2.min.js"></script>
-<script src="./js/base.js?c=0.1"></script>
-<script>
-    $(function () {
-        var list = $('#zp').children(".jiang"), len = list.length, index = 0, intervalpoint=null, interval = null;
-          var running,remain;
-        $('#begin').on("click",function () {
-             if($(".children2").html()==0){
-                    alert("您的抽奖次数用完啦！");
-             }else{
-                 if(running)return;
-                 $(".children2").html($(".children2").html()-1);
-                 running = true;
-                 remain= 4000+Math.random() * 2000;
-                 interval = setInterval(function(){
-                     if( remain < 200 ){
-                         running = false;
-                         alert( '你抽中了: '+list[index].getAttribute("text") );
-                         clearInterval(interval);
-                     }else{
-                         list[index].className = "";
-                         list[(index+1) % len].className = "current";
-                         index = ++index % len;
-                         remain -= 100;
-                     }
-                 },100);
-             }
-        });
-
-        $("#shareCloseBtn").on("click",function () {
-            $(".share").hide();
-        })
-          $("#shareBtnOk").on("click",function () {
-              $(".share").hide();
-          })
-
-        function addPoint() {
-            var point_top="",point_bottom="",point_right="",point_left="";
-            for(var i=0;i<8;i++){
-               point_top+="<img class='change-point-top light' src='images/light.png'><img class='change-point-top dark' src='images/dark.png'>";
-               point_bottom+="<img class='change-point-bottom dark' src='images/dark.png'><img class='change-point-top light' src='images/light.png'>";
-            }
-            for(var i=0;i<7;i++){
-                point_right+="<img class='change-point-right dark' src='images/dark.png'><img class='change-point-right light' src='images/light.png'>";
-                point_left+="<img class='change-point-left light' src='images/light.png'><img class='change-point-left dark' src='images/dark.png'>";
-            }
-            $(".point-top").append(point_top);
-            //$(".point-top img:last-child").remove();
-            $(".point-bottom").append(point_bottom);
-            $(".point-right").append(point_right);
-            $(".point-left").append(point_left);
-        }
-       addPoint();
-       
-        function changePoint() {
-            $(".change-point-top,.change-point-bottom,.change-point-right,.change-point-left,.change-point-top-left,.change-point-top-right,.change-point-bottom-right,.change-point-bottom-left").each(function () {
-                if($(this).hasClass("light")){
-                    $(this).removeClass("light").addClass("dark").attr("src","images/dark.png");
-                }else{
-                    $(this).removeClass("dark").addClass("light").attr("src","images/light.png");
-                }
-            });
-        }
-
-        //利用setInterval，设置每隔10秒执行changeDiv函数。
-        intervalpoint=  window.setInterval(changePoint,1000);
-    });
-
-</script>
+<script src="./js/base.js?c=0.2"></script>
 </html>
