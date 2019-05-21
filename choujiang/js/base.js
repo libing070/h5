@@ -41,9 +41,6 @@ $(function () {
     var u = navigator.userAgent;
     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
     var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
-    if(isiOS){
-       $(".zhuanpan-box .point-right,.zhuanpan-box .point-left").css("bottom","1%");
-    }
 
 //获取抽奖次数
 function getPrizeNumber() {
@@ -127,46 +124,18 @@ function getPrizeNumber() {
 
     function addPoint() {
         var point_top="",point_bottom="",point_right="",point_left="";
-        if(screen.width==414&&screen.height==736) {//iphone 6plus
-            for(var i=0;i<9;i++){
+            var point_top_bottom_num=parseInt($(".point-top").width()/15.55/2);//每一个点的宽度为15px;得到的结果是最多能放多少个点;然后/2得到每个点的个数
+            for(var i=0;i<point_top_bottom_num;i++){
                 point_top+="<img class='change-point-top light' src='images/light.png'><img class='change-point-top dark' src='images/dark.png'>";
                 point_bottom+="<img class='change-point-bottom dark' src='images/dark.png'><img class='change-point-top light' src='images/light.png'>";
             }
-            for(var i=0;i<8;i++){
-                point_right+="<img class='change-point-right dark' src='images/dark.png'><img class='change-point-right light' src='images/light.png'>";
-                point_left+="<img class='change-point-left light' src='images/light.png'><img class='change-point-left dark' src='images/dark.png'>";
-            }
-        }else if(screen.width==414&&screen.height==896){//iphone xmax
-            for(var i=0;i<9;i++){
-                point_top+="<img class='change-point-top light' src='images/light.png'><img class='change-point-top dark' src='images/dark.png'>";
-                point_bottom+="<img class='change-point-bottom dark' src='images/dark.png'><img class='change-point-top light' src='images/light.png'>";
-            }
-            for(var i=0;i<8;i++){
-                point_right+="<img class='change-point-right dark' src='images/dark.png'><img class='change-point-right light' src='images/light.png'>";
-                point_left+="<img class='change-point-left light' src='images/light.png'><img class='change-point-left dark' src='images/dark.png'>";
-            }
-        }else if(screen.width==320&&screen.height==568){//iphone 5
-            for(var i=0;i<6;i++){
-                point_top+="<img class='change-point-top light' src='images/light.png'><img style='padding: 0 7px' class='change-point-top dark' src='images/dark.png'>";
-                point_bottom+="<img class='change-point-bottom dark' src='images/dark.png'><img style='padding: 0 7px' class='change-point-top light' src='images/light.png'>";
-            }
-            for(var i=0;i<5;i++){
-                point_right+="<img class='change-point-right dark' src='images/dark.png'><img style='padding:7px 0' class='change-point-right light' src='images/light.png'>";
-                point_left+="<img class='change-point-left light' src='images/light.png'><img style='padding:7px 0' class='change-point-left dark' src='images/dark.png'>";
-            }
-        }else{
-            for(var i=0;i<8;i++){
-                point_top+="<img class='change-point-top light' src='images/light.png'><img class='change-point-top dark' src='images/dark.png'>";
-                point_bottom+="<img class='change-point-bottom dark' src='images/dark.png'><img class='change-point-top light' src='images/light.png'>";
-            }
-            for(var i=0;i<7;i++){
-                point_right+="<img class='change-point-right dark' src='images/dark.png'><img class='change-point-right light' src='images/light.png'>";
-                point_left+="<img class='change-point-left light' src='images/light.png'><img class='change-point-left dark' src='images/dark.png'>";
-            }
+        var point_right_left_num=parseInt($(".point-right").height()/16/2);//每一个点的高度为16px;得到的结果是最多能放多少个点;然后/2得到每个点的个数
+        for(var i=0;i<point_right_left_num;i++){
+            point_right+="<img class='change-point-right dark' src='images/dark.png'><img class='change-point-right light' src='images/light.png'>";
+            point_left+="<img class='change-point-left light' src='images/light.png'><img class='change-point-left dark' src='images/dark.png'>";
         }
 
         $(".point-top").append(point_top);
-        //$(".point-top img:last-child").remove();
         $(".point-bottom").append(point_bottom);
         $(".point-right").append(point_right);
         $(".point-left").append(point_left);

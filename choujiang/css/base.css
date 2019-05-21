@@ -270,37 +270,37 @@ li{list-style-type:none;}
 .zhuanpan-box .point-right{
     position: absolute;
     width: 5px;
-    top: 0%;
+    top: 0;
     margin: auto;
-    height: 70%;
+    height: 68%;
     right: 11%;
-    bottom: 5%;
+    bottom: -5px;
 }
 .zhuanpan-box .point-left{
     position: absolute;
     width: 5px;
-    top: 0%;
+    top: 0;
     margin: auto;
-    height: 70%;
+    height: 68%;
     left: 11%;
-    bottom: 5%;
+    bottom: -5px;
 }
 .zhuanpan-box .point-right img,
 .zhuanpan-box .point-left img{
     width: 100%;
     height: auto;
-    padding: 5px 0;
+    padding: 0.35rem 0;
 }
 .zhuanpan-box .point-top-left{
     position: absolute;
-    top: 11%;
+    top: 13%;
     margin: auto;
     height: 5px;
-    left: 12%;
+    left: 11%;
 }
 .zhuanpan-box .point-top-right{
     position: absolute;
-    top: 11.5%;
+    top: 13%;
     margin: auto;
     height: 5px;
     right: 13%;
@@ -322,7 +322,7 @@ li{list-style-type:none;}
 }
 .zhuanpan-box .point-bottom-left{
     position: absolute;
-    bottom: 17.5%;
+    bottom: 18%;
     margin: auto;
     height: 5px;
     left: 12%;
