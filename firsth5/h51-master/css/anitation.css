@@ -1,0 +1,248 @@
+.cloud_left {
+    width: 130%;
+    height: 130%;
+    position: absolute;
+    left: -50px;
+    top: -14%;
+    background: url("../zhong/cloud_left.png") no-repeat center;
+    background-size: 100% 100%;
+    animation: cloudLeft 9s linear infinite;
+    animation-direction: alternate;
+}
+
+
+@keyframes cloudLeft {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        transform: translate3d(-20px, 0, 0);
+    }
+    100% {
+        transform: translate3d(-10px, 0, 0);
+    }
+}
+
+.cloud_right {
+    width: 140%;
+    height: 130%;
+    position: absolute;
+    left: -90px;
+    top: -15%;
+    background: url("../zhong/cloud_right.png") no-repeat center;
+    background-size: 100% 100%;
+    animation: cloudRight 8s linear infinite;
+    animation-direction: alternate;
+}
+
+.di {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background: url("../zhong/di.png") no-repeat center;
+    background-size: 100% 100%;
+}
+
+
+@keyframes cloudRight {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        transform: translate3d(20px, 0, 0);
+    }
+    100% {
+        transform: translate3d(10px, 0, 0);
+    }
+}
+
+
+.car_1 {
+    width: 100%;
+    height: 100%;
+    transform: scale(0.5, 0.5);
+    position: absolute;
+    left: 0;
+    top: 6%;
+    background: url("../zhong/car_1.png") no-repeat center;
+    background-size: 100% 100%;
+
+}
+
+.carChong{
+    animation: carsChong 0.8s linear 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+@keyframes carsChong {
+    0% {
+        top: 6%;
+        transform: scale(0.5, 0.5);
+    }
+    100% {
+        top: 0;
+        transform: scale(1, 1);
+    }
+}
+
+.carOneAnimation{
+    animation: carOne 0.5s linear 3;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes carOne {
+    0% {
+        top: 0;
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        top: 0;
+        transform: translate3d(0, -0.5px, 0);
+    }
+    100% {
+        top: 0;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+
+.car_2 {
+    width: 100%;
+    height: 100%;
+    transform: scale(0.5, 0.5);
+    position: absolute;
+    left: 0;
+    top: 6%;
+    background: url("../zhong/car_2.png") no-repeat center;
+    background-size: 100% 100%;
+
+}
+.carTwoAnimation{
+    animation: carTwo 0.5s linear 3;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+@keyframes carTwo {
+    0% {
+        top: 0;
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        top: 0;
+        transform: translate3d(0, 1px, 0);
+    }
+    100% {
+        top: 0;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.car_3 {
+    width: 100%;
+    height: 100%;
+    transform: scale(0.5, 0.5);
+    position: absolute;
+    left: 0;
+    top: 6%;
+    background: url("../zhong/car_3.png") no-repeat center;
+    background-size: 100% 100%;
+
+}
+
+.carThreeAnimation{
+    animation: carThree 0.5s linear 3;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+@keyframes carThree {
+    0% {
+        top: 0;
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        top: 0;
+        transform: translate3d(0, -1px, 0);
+    }
+    100% {
+        top: 0;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+
+.car_4 {
+    width: 100%;
+    height: 100%;
+    transform: scale(0.5, 0.5);
+    position: absolute;
+    left: 0;
+    top: 6%;
+    background: url("../zhong/car_4.png") no-repeat center;
+    background-size: 100% 100%;
+}
+
+.carFourAnimation{
+    animation: carFour 0.5s linear 3;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+@keyframes carFour {
+    0% {
+        top: 0;
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        top: 0;
+        transform: translate3d(0, -0.5px, 0);
+    }
+    100% {
+        top: 0;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+
+.line {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: url("../zhong/line.png") no-repeat center;
+    background-size: 100% 100%;
+    animation: lineAnit 2s ease-out infinite;
+    animation-direction: normal;
+}
+
+@keyframes lineAnit {
+    0% {
+        top: 0px;
+        transform: scale(2, 2);
+        opacity: 1;
+    }
+    100% {
+        top: 20px;
+        opacity: 0;
+        transform: scale(0.5, 0.5)
+    }
+}
+
+.word {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: url("../zhong/word.png") no-repeat center;
+    background-size: 100% 100%;
+}
+
+

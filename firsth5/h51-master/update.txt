@@ -1,0 +1,10 @@
+index.html
+imgs/start_btn.png
+imgs/loading.png
+imgs/shu.png
+imgs/left_logo.png
+imgs/right_logo.png
+
+imageLoading.js
+
+

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>高尔夫给你发来了一封英雄帖</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <link rel="stylesheet" href="css/sweetalert2.min.css" />
+
+    <link rel="stylesheet" href="css/main.css?v=1.0" />
+    <link rel="stylesheet" href="css/anitation.css?v=1.0" />
+
+    <style type="text/css">
+        @keyframes run1{
+            0%{
+                transform: rotate(6deg);
+                opacity: 1;
+            }
+            100%{
+                transform: rotate(6deg) translate(190px, -195px) scale(0.4, 0.4);
+                opacity: 0.1;
+            }
+        }
+        .line1 {
+            background: url(zhong/line1.png) no-repeat;
+            position: absolute;
+            bottom: 10px;
+            width: 220px;
+            height: 170px;
+            left: -35%;
+            animation-name: run1;
+            animation-duration: 1000ms;
+
+            animation-iteration-count: infinite;
+        }
+        @keyframes run2{
+            0%{
+                transform: rotate(14deg);
+                opacity: 1;
+            }
+            100%{
+                transform: rotate(14deg) translate(136px, -340px) scale(0.5, 0.5);
+                opacity: 0.8;
+            }
+        }
+        .line2 {
+            background: url(zhong/line2.png) no-repeat;
+            position: absolute;
+            bottom: -150px;
+            width: 150px;
+            height: 151px;
+            left: -30%;
+            animation-name: run2;
+            animation-duration: 1200ms;
+            animation-delay: 130ms;
+            animation-iteration-count: infinite;
+        }
+        @keyframes run3{
+            from{
+                transform: rotate(-95deg);
+                opacity: 1;
+            }
+            to{
+                transform: rotate(-95deg) translate(300px, 80px) scale(0.4, 0.4);
+                opacity: 0;
+            }
+        }
+        .line3 {
+            background: url(zhong/line3.png) no-repeat;
+            position: absolute;
+            bottom: -90px;
+            width: 175px;
+            height: 58px;
+            left: 14%;
+            animation-name: run3;
+            animation-duration: 1000ms;
+            animation-delay: 900ms;
+            animation-iteration-count: infinite;
+        }
+        @keyframes run4{
+            from{
+                transform: rotate(-76deg);
+                opacity: 1;
+            }
+            to{
+                transform: rotate(-76deg) translate(140px, -140px);
+                opacity: 0;
+            }
+        }
+        .line4 {
+            background: url(zhong/line1.png) no-repeat;
+            position: absolute;
+            bottom: -151px;
+            width: 151px;
+            height: 237px;
+            left: 60%;
+            animation-name: run4;
+            animation-duration: 1000ms;
+            animation-delay: 170ms;
+            animation-iteration-count: infinite;
+        }
+        @keyframes run5{
+            from{
+                transform: rotate(-70deg);
+                opacity: 1;
+            }
+            to{
+                transform: rotate(-70deg) translate(160px, -400px);
+                opacity: 0;
+            }
+        }
+        .line5 {
+            background: url(zhong/line2.png) no-repeat;
+            position: absolute;
+            bottom: -150px;
+            width: 127px;
+            height: 165px;
+            left: 120%;
+            animation-name: run5;
+            animation-duration: 1000ms;
+            animation-delay: 500ms;
+            animation-iteration-count: infinite;
+        }
+        @keyframes run6{
+            from{
+                transform: rotate(-88deg);
+                opacity: 1;
+            }
+            to{
+                transform: rotate(-88deg) translate(150px, -400px) scale(0.3,0.3);
+                opacity: 0;
+            }
+        }
+        .line6 {
+            background: url(zhong/line2.png) no-repeat;
+            position: absolute;
+            bottom: 40px;
+            width: 127px;
+            height: 165px;
+            left: 120%;
+            animation-name: run6;
+            animation-duration: 1200ms;
+            animation-delay: 500ms;
+            animation-iteration-count: infinite;
+        }
+        @keyframes run7{
+            from{
+                transform: rotate(-90deg);
+                opacity: 1;
+            }
+            to{
+                transform: rotate(-90deg) translate(20px, -70px);
+                opacity: 0;
+            }
+        }
+        .line7 {
+            background: url(zhong/line2.png) no-repeat;
+            position: absolute;
+            bottom: 100px;
+            width: 127px;
+            height: 165px;
+            left: 103%;
+            animation-name: run7;
+            animation-duration: 700ms;
+            animation-delay: 500ms;
+            animation-iteration-count: infinite;
+        }
+        @keyframes run8{
+            from{
+                transform: rotate(41deg);
+                opacity: 1;
+            }
+            to{
+                transform: rotate(41deg) translate(20px, -40px);
+                opacity: 0;
+            }
+        }
+        .line8 {
+            background: url(zhong/line2.png) no-repeat;
+            position: absolute;
+            bottom: 113px;
+            width: 127px;
+            height: 145px;
+            left: -18%;
+            animation-name: run8;
+            animation-duration: 700ms;
+            animation-delay: 0ms;
+            animation-iteration-count: infinite;
+        }
+
+        .showAndHide {
+            animation: showAndHide 600ms linear infinite;
+            animation-direction: alternate;
+        }
+        .showAndShu {
+            animation: showAndHide 500ms linear infinite;
+            animation-direction: alternate;
+        }
+        @keyframes showAndHide{
+            from{
+                opacity: 1;
+            }
+            to{
+                opacity: 0.5;
+            }
+        }
+        #loading{
+            position: absolute;width: 100%;text-align: center;height:3.5%;bottom: 20%;z-index: 2;
+        }
+        #loading img{
+            height: 100%;
+            opacity: 0.5;
+        }
+
+    </style>
+
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M2H3RQD');</script>
+    <!-- End Google Tag Manager -->
+    <!-- baidu 统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?22545ba1daa5b58ab7ed5eaa906042d9";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <!-- baidu 统计 end-->
+
+</head>
+
+<body>
+<input type="hidden" id="currForm" value="0">
+<input type="hidden" id="likesHidden" value="">
+<input type="hidden" id="form3goIndex" value="">
+<input type="hidden" id="form1Checkboxdy" index="" nickname=""sum="" value="抖音">
+<input type="hidden" id="form1Checkboxwb" index="" nickname=""sum=""value="微博">
+<input type="hidden" id="form1Checkboxzh" index="" nickname=""sum=""value="知乎">
+<input type="hidden" id="form1Checkboxwx" index="" nickname=""sum=""value="微信">
+<input type="hidden" id="form1Checkboxlt" index="" nickname=""sum=""value="论坛">
+
+<div class="page video_layer" style="overflow: hidden;display: none" >
+    <video src="media/v.mp4"  style="" id="video1" webkit-playsinline playsinline x5-video-player-type="h5" x5-video-player-fullscreen="true" x5-video-orientation="portrait" >
+    </video>
+    <div class="btn-skip" id="btnSkip">跳过&nbsp;&nbsp;》》</div>
+    <!--<div id="btnPlay"class="btn-play"></div>-->
+</div>
+<div class="page index" id="index">
+    <img class="index-bg" src="zhong/back.png"/>
+    <div id="loading" >
+        <img src="imgs/shu.png" class="shu"><img class="shu"  src="imgs/shu.png" ><img class="shu"  src="imgs/shu.png">
+        <img class="loading-word showAndHide"  src="imgs/loading.png" >
+    </div>
+    <div class="cloud_left"  style="display: none"></div>
+    <div class="cloud_right"  style="display: none"></div>
+    <div class="di"></div>
+    <div class="line1 action-line" style="display: none"></div>
+    <div class="line2 action-line" style="display: none"></div>
+    <div class="line3 action-line" style="display: none"></div>
+    <div class="line4 action-line" style="display: none"></div>
+    <div class="line5 action-line" style="display: none"></div>
+    <div class="line6 action-line" style="display: none"></div>
+    <div class="line7 action-line" style="display: none"></div>
+    <div class="line8 action-line" style="display: none"></div>
+    <div class="car car_1" style="display: none"></div>
+    <div class="car car_4" style="display: none"></div>
+    <div class="car car_2" style="display: none"></div>
+    <div class="car car_3" style="display: none"></div>
+    <div class="word"  style="display: none"></div>
+    <img style="display: none" class="index-fuceng" id="indexFuceng" src="imgs/fuceng.png"/>
+    <img style="display:none" class="index-sharebtn" id="indexShareBtn" src="imgs/sharebtn.png"/>
+    <img src="imgs/left_logo.png" style="position: absolute;left: 15px;top: 12px;height: 5.8%;">
+    <img src="imgs/right_logo.png" style="position: absolute;right: 15px;top: 12px;height: 5.8%;">
+    <div class="index-btn-group" style="display: none">
+        <span class="btn btn-prve" id="indexLeftBtn">收下英雄帖</span>
+        <span class="btn btn-next" id="indexRightBtn">为TA发帖</span>
+    </div>
+</div>
+<div class="page page1" id="page1" style="display: none;">
+    <div class="div-bg-page1"></div>
+    <!--<img src="imgs/bg1.png"/>-->
+    <img src="imgs/left_logo.png" style="position: absolute;left: 15px;top: 12px;height: 5.8%;">
+    <img src="imgs/right_logo.png" style="position: absolute;right: 15px;top: 12px;height: 5.8%;">
+    <div class="form1" id="form1" style="display: none">
+        <div class="content1">
+            <div class="content1-1"></div>
+            <div class="check-box content1-text1" name="dy" ischeck="0" data-value="抖音"></div>
+            <div class="check-box  content1-text2" name="wb" ischeck="0" data-value="微博"></div>
+            <div class="check-box  content1-text3" name="zh" ischeck="0" data-value="知乎"></div>
+            <div class="check-box  content1-text4" name="wx" ischeck="0" data-value="微信"></div>
+            <div class="check-box  content1-text5" name="lt"ischeck="0" data-value="论坛"></div>
+        </div>
+        <div class="desc"></div>
+        <div class="content2">
+            <span class="div-list-pt div-list-dy"  id="divListdy">
+              <div class="text platform-id"><input disabled type="text" id="divListdyinput1" oninput="getform1DataList('dy','0',this)" class="input _input" placeholders="平台ID" placeholder="平台ID"></div>
+              <div class="text nickname"><input  disabled type="text" id="divListdyinput2"oninput="getform1DataList('dy','1',this)" class="input _input"placeholders="昵称" placeholder="昵称"></div>
+              <div class="text fans-number"><input  disabled type='number'id="divListdyinput3" oninput="this.value=this.value.replace(/[^\d.]/g,'');getform1DataList('dy','2',this)"class="input _input" placeholders="粉丝数"   placeholder="粉丝数"></div>
+            </span>
+            <span class="div-list-pt div-list-wb"  style="display: none" id="divListwb">
+              <div class="text platform-id"><input disabled id="divListwbinput1"type="text"oninput="getform1DataList('wb','0',this)" class="input _input"  placeholders="平台ID"placeholder="平台ID"></div>
+              <div class="text nickname"><input disabled type="text"id="divListwbinput2" oninput="getform1DataList('wb','1',this)"class="input _input"placeholders="昵称"  placeholder="昵称"></div>
+              <div class="text fans-number"><input disabled id="divListwbinput3" type='number'class="input _input" oninput="this.value=this.value.replace(/[^\d.]/g,'');getform1DataList('wb','2',this)"placeholders="粉丝数"   placeholder="粉丝数"></div>
+            </span>
+            <span class="div-list-pt div-list-zh"  style="display: none" id="divListzh">
+              <div class="text platform-id"><input disabled type="text"id="divListzhinput1" oninput="getform1DataList('zh','0',this)"class="input _input"  placeholders="平台ID"placeholder="平台ID"></div>
+              <div class="text nickname"><input disabled type="text" id="divListzhinput2"oninput="getform1DataList('zh','1',this)"class="input _input" placeholders="昵称" placeholder="昵称"></div>
+              <div class="text fans-number"><input disabled type='number' id="divListzhinput3"oninput="this.value=this.value.replace(/[^\d.]/g,'');getform1DataList('zh','2',this)"class="input _input"  placeholders="粉丝数"  placeholder="粉丝数"></div>
+            </span>
+            <span class="div-list-pt div-list-wx"  style="display: none" id="divListwx">
+              <div class="text platform-id"><input disabled type="text" id="divListwxinput1"oninput="getform1DataList('wx','0',this)"class="input _input"  placeholders="平台ID"placeholder="平台ID"></div>
+              <div class="text nickname"><input disabled type="text" id="divListwxinput2"oninput="getform1DataList('wx','1',this)"class="input _input" placeholders="昵称" placeholder="昵称"></div>
+              <div class="text fans-number"><input disabled type='number' id="divListwxinput3" oninput="this.value=this.value.replace(/[^\d.]/g,'');getform1DataList('wx','2',this)"class="input _input" placeholders="粉丝数"   placeholder="粉丝数"></div>
+            </span>
+            <span class="div-list-pt div-list-lt"  style="display: none" id="divListlt">
+              <div class="text platform-id"><input disabled type="text"id="divListltinput1"oninput="getform1DataList('lt','0',this)" class="input _input"  placeholders="平台ID"placeholder="平台ID"></div>
+              <div class="text nickname"><input disabled type="text" id="divListltinput2"oninput="getform1DataList('lt','1',this)"class="input _input"placeholders="昵称"  placeholder="昵称"></div>
+              <div class="text fans-number"><input disabled type='number'id="divListltinput3" oninput="this.value=this.value.replace(/[^\d.]/g,'');getform1DataList('lt','2',this)" class="input _input"placeholders="粉丝数"  placeholder="粉丝数"></div>
+            </span>
+        </div>
+        <div class="btn-group" id="btnPrveNext" style="display: none">
+            <span class="btn btn-prve" id="pagePrveBtn">上一步</span>
+            <span class="btn btn-next"   id="pageNextBtn">下一步</span>
+        </div>
+    </div>
+    <div class="form2" id="form2" style="display: none">
+        <div class="content1">
+            <div class="content1-1"></div>
+        </div>
+        <div class="like-groups">
+            <div class="options">
+                <span class="opt spanopt l" ischeck="0" data-value="汽车技术控">汽车技术控</span>
+                <span class="opt spanopt r" ischeck="0" data-value="改装">改装</span>
+            </div>
+            <div class="options">
+                <span class="opt spanopt l" ischeck="0" data-value="赛车执照">赛车执照</span>
+                <span class="opt spanopt r" ischeck="0" data-value="高尔夫控">高尔夫控</span>
+            </div>
+            <div class="options">
+                <span class="opt spanopt l" ischeck="0" data-value="金牌销售">金牌销售</span>
+                <span class="opt spanopt r" ischeck="0" data-value="自驾游">自驾游</span>
+            </div>
+        </div>
+        <div class="like-groups-two ">
+            <div class="options">
+                <span class="opt spanopt l" ischeck="0" data-value="摄影">摄影</span>
+                <span class="opt spanopt r" ischeck="0" data-value="视频剪辑">视频剪辑</span>
+            </div>
+            <div class="options">
+                <span class="opt spanopt l" ischeck="0" data-value="绘画高手">绘画高手</span>
+                <span class="opt spanopt r" ischeck="0" data-value="唱歌">唱歌</span>
+            </div>
+            <div class="options">
+                <span class="opt spanopt l" ischeck="0" data-value="街舞/滑板">街舞/滑板</span>
+                <span class="opt spanopt r" ischeck="0" data-value="颜值高">颜值高</span>
+            </div>
+            <div class="options">
+                <span class="opt spanopt l" ischeck="0" data-value="游戏大神">游戏大神</span>
+                <span class="opt spanopt r" ischeck="0" data-value="极限运动">极限运动</span>
+            </div>
+            <div class="options">
+                <span class="opt spanopt l" ischeck="0" data-value="段子手">段子手</span>
+                <span class="opt spanopt r" ischeck="0" data-value="家有萌宠">家有萌宠</span>
+            </div>
+        </div>
+        <div class="like-groups-three">
+            <div class="options">
+                <span class="opt"><input id="otherLikes"  type="text" class="input _input" placeholders="其他才艺（请填写）"placeholder="其他才艺（请填写）"></span>
+            </div>
+        </div>
+        <div class="btn-group" id="btnPrveNext2">
+            <span class="btn btn-prve"  id="pagePrveBtn2">上一步</span>
+            <span class="btn btn-next"   id="pageNextBtn2">下一步</span>
+        </div>
+    </div>
+    <div class="form3" id="form3" style="display: none">
+        <div class="content1"></div>
+        <div class="content2">
+            <div class="content2-2" id="form3Register" style="background-color: #c30d1e">期待成为最燃的星</div>
+            <div class="content2-2" id="form3Join">参与活动</div>
+        </div>
+        <div class="content3"></div>
+        <div class="content4">
+            <div class="content4-1" id="form3PrveBtn">上一步</div>
+        </div>
+    </div>
+    <div class="form4" id="form4" style="display: none" >
+        <div class="content1"></div>
+        <div class="content2">
+            <div class="groups"><span class="span">姓名</span><input id="form4inputName" type="text" class="input" placeholder=""></div>
+            <div class="groups"><span  class="span">性别</span><select id="form4inputSex"  class="input sex-select"><option class="sex-opt" value="男">男</option><option class="sex-opt" value="女">女</option></select></div>
+            <div class="groups"><span  class="span"><span style="width: 50%;float: left">手机</span><span class="star" style="width:50%;float: right;line-height: 2rem;height: 2rem">*</span></span><input id="form4inputPhone"  maxlength="11" oninput = "value=value.replace(/[^\d]/g,'')"  type="number" class="input" placeholder=""></div>
+            <div class="groups"><span  class="span">微信号</span><input  id="form4inputWeId" type="text" class="input _input" placeholder=""></div>
+            <div class="groups"><span  class="span">QQ号</span><input id="form4inputQQid" oninput = "value=value.replace(/[^\d]/g,'')"  type="number" class="input _input" placeholder=""></div>
+            <div class="groups"><span  class="span"  >来自</span>
+                <select class="input sex-select" id="form4inputFrom">
+                    <option class="sex-select" style='display: none'></option>
+                    <option class="sex-select" ids="1" value="员工">员工</option>
+                    <option class="sex-select" ids="2"value="经销商">经销商</option>
+                    <option class="sex-select" ids="3"value="车主">车主</option>
+                    <option class="sex-select" ids="4"value="上海车展">上海车展</option>
+                    <option class="sex-select" ids="5"value="粉丝">粉丝</option>
+                    <option class="sex-select" ids="6"value="其他">其他</option>
+                </select>
+            </div>
+            <div class="groups" id="xxxxxx" style="display: none"><span  class="span" id="form4inputJxdmcTitle" style="width: 30%">部门</span><input ids=""  id="form4inputJxdmc" style="width: 60%" type="text"class="input _input _span" placeholder=""></div>
+        </div>
+        <div class="content3">
+            <span class="l"><input type="checkbox" id="js_agreement" class=""></span><label for="js_agreement" class="r">我同意一汽-大众·高尔夫众星计划活动工作人员就此次活动与我联系</label>
+        </div>
+        <div class="content4">
+            <span>注：<span class="star" style="vertical-align: middle">*</span>为必填项</span>
+        </div>
+        <div class="btn-group" style="top:28.5rem;width: 15.5rem;">
+            <span class="btn btn-prve"  id="form4PrveBtn">上一步</span>
+            <span class="btn btn-next"   id="form4Btn">提交</span>
+        </div>
+    </div>
+    <div class="form5" id="form5" style="display:none;">
+        <img style="display: none" class="index-fuceng" id="indexFuceng1" src="imgs/fuceng.png"/>
+        <img style="display:none" class="index-sharebtn" id="indexShareBtn1" src="imgs/sharebtn.png"/>
+        <div class="content1"></div>
+        <div class="content2">
+            <span class="content2-1" id="formcon4">发帖分享</span>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="js/share_ftp.js"></script>
+<script type="text/javascript" src="js/sweetalert.min.js"></script>
+<!--<script type="text/javascript" src="js/rootfont.js?v=2.0"></script>-->
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript"  src="js/main.js?v=2.0"></script>
+<script type="text/javascript"  src="js/imgLoader.js?v=2.0"></script>
+
+<script>
+    window.onload = function() {
+
+        $(function(){
+            $('.shu').each(function(index,node){
+                var node=$(this);
+                setTimeout(function(){
+                    node.addClass("showAndShu")
+                },300*index);
+            })
+
+            var timesRun = 0;
+            var interval;
+            imgLoader(['imgs/bg1.png','zhong/back.png','zhong/di.png','zhong/car_1.png','zhong/car_2.png','zhong/car_3.png','zhong/car_4.png','zhong/cloud_right.png','zhong/cloud_left.png','zhong/word.png','zhong/line.png','zhong/line1.png','zhong/line2.png','zhong/line3.png',],function (percentage) {
+                percentage = parseInt(percentage * 100);
+                if (interval == undefined) {
+                } else {
+                    clearInterval(interval);
+                }
+                interval = setInterval(function () {
+                    if (timesRun >= percentage) {
+                        clearInterval(interval);
+                    } else {
+                        timesRun++;
+                        if (timesRun == percentage) {
+                            clearInterval(interval);
+                            if (percentage == 100) {
+                                $('#loading').hide();
+                                $('.cloud_left').show();
+                                $('.cloud_right').show();
+                                $('.car').show();
+                                $('.action-line').show();
+                                window.setTimeout(carOneStart, 50);
+                                window.setTimeout(carTwoStart, 250);
+                                window.setTimeout(carThreeStart, 100);
+                                window.setTimeout(carFourStart, 200);
+                                $('.word').show();
+                                $('.index-btn-group').show();
+
+                            }
+                        }
+                    }
+                },30);
+            })
+        })
+
+        function carOneStart(){
+            $(".car_1").addClass('carChong');
+            window.setTimeout(function(){
+                $(".car_1").addClass('carOneAnimation');
+            }, 900);
+        }
+
+        function carTwoStart(){
+            $(".car_2").addClass('carChong');
+            window.setTimeout(function(){
+                $(".car_2").addClass('carTwoAnimation');
+            }, 900);
+        }
+
+        function carThreeStart(){
+            $(".car_3").addClass('carChong');
+            window.setTimeout(function(){
+                $(".car_3").addClass('carThreeAnimation');
+            }, 900);
+        }
+
+        function carFourStart(){
+            $(".car_4").addClass('carChong');
+            window.setTimeout(function(){
+                $(".car_4").addClass('carFourAnimation');
+            }, 900);
+        }
+
+
+
+        //userAgent 属性是一个只读的字符串，声明了浏览器用于 HTTP 请求的用户代理头的值
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+        $('#page1').on('click',':not(.input)',function(e){
+            var currNode=e.target.nodeName;
+            if(currNode!="INPUT"){
+                window.scrollTo(0, 0);
+            }else{
+            }
+        })
+
+        //Android处理
+        if(isAndroid){
+            //获取原窗口的高度
+            var originalHeight=document.documentElement.clientHeight ||document.body.clientHeight;
+            window.onresize=function(){
+                //键盘弹起与隐藏都会引起窗口的高度发生变化
+                var resizeHeight=document.documentElement.clientHeight || document.body.clientHeight;
+                if(resizeHeight-0<originalHeight-0){
+                    //当软键盘弹起，在此处操作
+                    var ch= originalHeight-resizeHeight; //判断高度减少了多少
+                    $(".div-bg-page1").css("height",Number(originalHeight+ch)+"px"); //重写背景图片的高度（这里也是软键盘的高度）
+                }else{
+                    $(".div-bg-page1").css("height",Number(resizeHeight)+"px"); //重写背景图片的高度（这里也是软键盘的高度）
+
+                    window.scrollTo(0, 0);
+
+                    //当软键盘收起，在此处操作
+                }
+            }
+        }
+
+
+        //ios处理
+        document.body.addEventListener('focusout', () => {
+            //软键盘收起的事件处理
+            if(isiOS){
+                window.scrollTo(0, 0);
+            }
+        })
+
+        $("._input").blur(function () {
+            $(this).attr("placeholder",$(this).attr("placeholders"));
+            setTimeout(function(){
+            },100)
+        }).focus(function () {
+            var timer;
+            $(this).attr("placeholder","");
+            clearInterval(timer);
+            var index = 0;
+            timer = setInterval(function() {
+                if(index>5) {
+                    $('body').scrollTop(1000000);
+                    clearInterval(timer);
+                }
+                index++;
+            }, 50)
+        })
+
+        $tagname("body")[0].addEventListener('touchmove', function (e) {
+            e.preventDefault(); //阻止默认的处理方式(阻止下拉滑动的效果)
+        }, {passive: false}); //passive 参数不能省略，用来兼容ios和android
+
+    }
+
+
+
+
+
+
+
+
+</script>
+</html>
