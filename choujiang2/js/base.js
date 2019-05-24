@@ -41,10 +41,11 @@ $(function () {
 //获取抽奖次数
 function getPrizeNumber() {
     $.ajax({
-        url:'https://easy-mock.com/mock/5ce397e122e23351f21e78cb/h5/getPrizeIndex',
+         url:'https://easy-mock.com/mock/5ce397e122e23351f21e78cb/h5/getPrizeIndex',
+       // url:'http://ftms-wxmatrix.cloud-top.com.cn/index.php?c=PrizeApi&m=getTimes',
         type: 'get',
         success:function(json){
-            var xiabiao=json.data.index;//获取抽奖次数
+            var xiabiao=json.data;//获取抽奖次数
             $(".children2").html(xiabiao);//将抽奖次数返回给页面
         }
     });
@@ -58,18 +59,19 @@ function getPrizeNumber() {
     var apikey=[];
     var num=0;
     $('#begin').on("click",function () {
+        if(running)return;
         if($(".children2").html()==0){
             alert("您的抽奖次数用完啦！");
         }else{
             $.ajax({
-                url:'https://easy-mock.com/mock/5ce397e122e23351f21e78cb/h5/getPrizeIndex',
+                 url:'https://easy-mock.com/mock/5ce397e122e23351f21e78cb/h5/getPrizeMoney',
+                //url:'http://ftms-wxmatrix.cloud-top.com.cn/index.php?c=PrizeApi&m=getPrize',
                 type: 'get',
                 success:function(json){
-                    var xiabiao=json.data.index;//返回对应的下标
-                    apikey.push(xiabiao);
-                    console.log(xiabiao);
+                    var xiabiao=json.data;//返回对应的下标
+                    console.log("红包"+xiabiao);
+                    apikey.push(getXiabiao(xiabiao));
                     console.log(apikey);
-                    if(running)return;
                     $(".children2").html($(".children2").html()-1);
                     running = true;
                     if(apikey.length>1){//至少两次抽奖机会
@@ -88,11 +90,13 @@ function getPrizeNumber() {
                         num++;
                     }
                     var t = 80;
-                    var interval = setInterval(fn, t);
+                     interval = setInterval(fn, t);
                     function fn() {
                         if( remain <=0 ){
                             running = false;
-                            alert( '你抽中了: '+list[index].getAttribute("text") );
+                            //alert( '你抽中了: '+list[index].getAttribute("text") );
+                            $(".dialog").show();
+                            $(".dialog .money-span").html(list[index].getAttribute("text"));
                             clearInterval(interval);
                         }else{
                             list[index].className = "";
@@ -111,6 +115,25 @@ function getPrizeNumber() {
         }
     });
 
+    //获取返回的红包金额 随机给出对应红包的下标
+    function getXiabiao(num) {
+        $(".gongxi").show();
+        var random=[];
+        var res="";
+        if(num=="0"){//谢谢参与
+            $(".gongxi").hide();
+            random=new Array(2,6);//对应下标 谢谢参与
+        }else if(num=="0.38"){
+            random=new Array(0,3,7);//对应下标 0.38
+        }else if(num=="1.68"){
+            random=new Array(1,4);//对应下标1.68
+        }else if(num=="8.8"){
+            random=new Array(5,5);//对应下标 8.8
+        }
+        var index = Math.floor(Math.random()*random.length);//取得随机数的索引
+            res=random[index];//根据索引取得随机数
+        return res;
+    }
     $("#shareCloseBtn").on("click",function () {
         $(".share").hide();
     })
@@ -154,7 +177,7 @@ function getPrizeNumber() {
 
 
     function changePoint() {
-        $(".change-point-top,.change-point-bottom,.change-point-right,.change-point-left,.change-point-top-left,.change-point-top-right,.change-point-bottom-right,.change-point-bottom-left").each(function () {
+        $(".change-point-top,.change-point-bottom,.change-point-right,.change-point-left").each(function () {
             if($(this).hasClass("light")){
                 $(this).removeClass("light").addClass("dark").attr("src","img/dark.png");
             }else{
@@ -166,6 +189,11 @@ function getPrizeNumber() {
     //利用setInterval，设置每隔1秒执行changePoint函数。
     window.setInterval(changePoint,1000);
 
-
+    $("#dialogClose").on("click",function () {
+        $(".dialog").hide();
+    });
+    $(".shouxia").on("click",function () {
+        $(".dialog").hide();
+    })
 });
 
