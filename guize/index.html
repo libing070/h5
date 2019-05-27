@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta content="yes" name="mobile-web-app-capable">
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>活动攻略</title>
+    <link rel="icon" href="data:image/ico;base64,aWNv">
+    <link rel="stylesheet" href="./css/base.css?v=1">
+</head>
+<body>
+<div class="content">
+    <div class="guize-box">
+        <img class="guize-1" src="img/1.png">
+        <img class="guize-2" src="img/2.png">
+        <img class="guize-3" src="img/3.png">
+        <img class="guize-4" src="img/4.png">
+    </div>
+    <div class="fixed-div">
+        <a class="ch div1">
+            <div class="con active">
+                <div class="imgs">
+                    <img class="img1" style="opacity: 0" src="img/fixed-bg_dark.png">
+                    <img class="icon"  src="img/shouye-iocn.png">
+                </div>
+            </div>
+            <div class="bottom" style="color: #FF5674">首页</div>
+        </a>
+        <a class="ch div2" href="http://ftms-wxmatrix.cloud-top.com.cn/public/get-task"  target="_self">
+            <div class="con">
+                <div class="imgs">
+                    <img class="img1" src="img/fixed-bg_dark.png">
+                    <img class="icon" src="img/lrw-icon.png">
+                </div>
+            </div>
+            <div class="bottom">领任务</div>
+
+        </a>
+        <a class="ch div3" href="http://ftms-wxmatrix.cloud-top.com.cn/public/history-task"  target="_self">
+            <div class="con">
+                <div class="imgs">
+                    <img class="img1" src="img/fixed-bg_dark.png">
+                    <img class="icon" src="img/lsrw-icon.png">
+                </div>
+            </div>
+            <div class="bottom">历史任务</div>
+        </a>
+        <a class="ch div4" href="http://ftms-wxmatrix.cloud-top.com.cn/public/user"  target="_self">
+            <div class="con">
+                <div class="imgs">
+                    <img class="img1" src="img/fixed-bg_dark.png">
+                    <img class="icon" style="width: 40%" src="img/wode-icon.png">
+                </div>
+            </div>
+            <div class="bottom">我的</div>
+        </a>
+    </div>
+</div>
+
+<script src="js/jquery-1.11.2.min.js"></script>
+<script>
+    $(function () {
+        $(".fixed-div").on("click",'.ch',function(){
+            if(!$(this).children(".con").hasClass("active")){
+                $(this).children(".con").addClass("active");
+                $(this).siblings().children(".con").removeClass("active");
+                $(this).find(".img1").css("opacity","0");
+                $(this).siblings().find(".img1").css("opacity","1");
+                $(this).find(".bottom").css("color","#FF5674");
+                $(this).siblings().find(".bottom").css("color","rgb( 87, 87, 87 )");
+            }
+        });
+    });
+</script>
+</body>
+</html>

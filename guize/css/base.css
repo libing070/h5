@@ -1,0 +1,195 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+body, html {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    touch-action: none;
+    /*Chorme56+开始为了让页面滚动变得更为流畅，在 window、document 和 body 上注册的 touchstart 和 touchmove 事件处理函数，会默认为是 passive: true。
+    浏览器忽略默认事件的preventDefault(), 你要是手动阻止会弹出一个警告, 告诉你阻止不了
+    CSS属性上对想要禁用触摸事件的元素设置touch-action: none, 然后用js获取该元素真实DOM元素添加事件处理。
+    ele.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    */
+}
+
+body {
+    -webkit-text-size-adjust: 100% !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+/* a标签点击闪烁 */
+a, div, img {
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+}
+
+
+
+.content {
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    top: 0;
+    left: 0;
+
+}
+  .guize-box{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+      -webkit-overflow-scrolling: touch;
+      overflow-y: auto;
+}
+.content:before{
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url("../img/guize.png");
+}
+.guize-box  .guize-1{
+    position: absolute;
+    width: 80%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 5%;
+}
+
+.guize-box  .guize-2{
+    position: absolute;
+    width: 95%;
+    /*left: 0;*/
+    right: 0;
+    margin: auto;
+    top: 40%;
+}
+
+.guize-box  .guize-3{
+    position: absolute;
+    width: 95%;
+    /*left: 0;*/
+    right: 0;
+    margin: auto;
+    top: 68%;
+}
+.guize-box  .guize-4{
+    position: absolute;
+    width: 100%;
+    /*left: 0;*/
+    right: 0;
+    margin: auto;
+    top: 108%;
+}
+
+.fixed-div{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+    height: 11%;
+    /*border: 1px solid red ;*/
+}
+.fixed-div:before{
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url("../img/fixed-bg.png");
+}
+.fixed-div .ch{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 25%;
+    /*border: 1px solid pink;*/
+}
+.fixed-div .div1{
+    left: 0;
+}
+.fixed-div .div2{
+    left: 25%;
+}
+.fixed-div .div3{
+    left: 50%;
+}
+.fixed-div .div4{
+    left: 75%;
+}
+
+.fixed-div .con
+{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    width: 55%;
+    height: 80%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+}
+.fixed-div .active{
+    background-image: url("../img/xxxxx.png");
+}
+
+.fixed-div  .con .imgs
+{
+    width: 70%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.fixed-div  .con .icon{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 50%;
+}
+.fixed-div  .ch .bottom{
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    bottom: 10%;
+    text-align: center;
+    margin: auto;
+    color:rgb( 87, 87, 87 );
+    font-size: .6rem;
+}

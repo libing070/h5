@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta content="yes" name="mobile-web-app-capable">
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>福利抽奖</title>
+    <link rel="icon" href="data:image/ico;base64,aWNv">
+    <link rel="stylesheet" href="./css/base.css?v=1">
+</head>
+<body>
+<div class="content">
+    <div class="zhanpan-box">
+        <img class="snow" src="img/snow.png">
+        <div class="zhanpan-box-div">
+            <img src="img/zpbg.png">
+            <div class="point point-top"></div>
+            <div class="point point-right"></div>
+            <div class="point point-bottom"></div>
+            <div class="point point-left"></div>
+            <ul class="zp" id="zp">
+            <li class="jiang"  key="0" style="left:4%;top:5.5%;" text=""><img src="img/hongbao.png"></li>
+            <li class="jiang"  key="1" style="left:35%;top:5.5%;"text="" ><img src="img/hongbao.png"></li>
+            <li class="jiang"  key="2" style="right:4.5%;top:5.5%;" text="谢谢参与"><img style=" width: 40%;" src="img/xx.png"></li>
+            <li class="jiang"  key="3"style="right:4.5%;top:35.5%;" text=""><img src="img/hongbao.png"></li>
+            <li class="jiang"  key="4"style="right:4.5%;top:65.5%;" text=""><img src="img/hongbao.png"></li>
+            <li class="jiang"  key="5"style="left:35%;top:65.5%;" text=""><img src="img/hongbao.png"></li>
+            <li class="jiang"  key="6" style="left:4%;top:65.5%;" text="谢谢参与"><img style=" width: 40%;"  src="img/xx.png"></li>
+            <li class="jiang"  key="7"style="left:4%;top:35.5%;" text=""><img src="img/hongbao.png"></li>
+            <li class="startli" style="left:35%;top:36%;opacity: 0;pointer-events:auto;" id="begin"></li>
+            </ul>
+        </div>
+        <div class="content-box">
+            <div class="title"><span class="children1">您有</span><span  class="children2">0</span><span  class="children3">次</span><span  class="children1">抽奖机会</span></div>
+            <div class="text-box">
+                <img class="img-text" src="img/text.png">
+            </div>
+        </div>
+    </div>
+    <div class="dialog" id="" style="display: none">
+        <img class="img-bg" src="img/dialog_bg2.png">
+        <div class="dialog-div">
+            <img class="dialog-div-img" src="img/dialog.png">
+            <div class="dialog-box">
+                <img class="gongxi" src="img/gongxi.png">
+                <div class="money"><span class="money-span"></span></div>
+                <div class="close" id="dialogClose"></div>
+                <div class="shouxia"></div>
+            </div>
+        </div>
+        <img class="bottom-img-bg" src="img/dialog_buttom.png">
+    </div>
+    <div class="fixed-div">
+        <a class="ch div1">
+            <div class="con active">
+                <div class="imgs">
+                    <img class="img1" style="opacity: 0" src="img/fixed-bg_dark.png">
+                    <img class="icon"  src="img/shouye-iocn.png">
+                </div>
+            </div>
+            <div class="bottom" style="color: #FF5674">首页</div>
+        </a>
+        <a class="ch div2" href="http://ftms-wxmatrix.cloud-top.com.cn/public/get-task"  target="_self">
+            <div class="con">
+                <div class="imgs">
+                    <img class="img1" src="img/fixed-bg_dark.png">
+                    <img class="icon" src="img/lrw-icon.png">
+                </div>
+            </div>
+            <div class="bottom">领任务</div>
+
+        </a>
+        <a class="ch div3" href="http://ftms-wxmatrix.cloud-top.com.cn/public/history-task"  target="_self">
+            <div class="con">
+                <div class="imgs">
+                    <img class="img1" src="img/fixed-bg_dark.png">
+                    <img class="icon" src="img/lsrw-icon.png">
+                </div>
+            </div>
+            <div class="bottom">历史任务</div>
+        </a>
+        <a class="ch div4" href="http://ftms-wxmatrix.cloud-top.com.cn/public/user"  target="_self">
+            <div class="con">
+                <div class="imgs">
+                    <img class="img1" src="img/fixed-bg_dark.png">
+                    <img class="icon" style="width: 40%" src="img/wode-icon.png">
+                </div>
+            </div>
+            <div class="bottom">我的</div>
+        </a>
+    </div>
+
+</div>
+
+</body>
+<script src="./js/jquery-1.11.2.min.js"></script>
+<script src="./js/base.js?v=1"></script>
+</html>
