@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta content="yes" name="mobile-web-app-capable">
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>Audianer</title>
+    <link rel="icon" href="data:image/ico;base64,aWNv">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/sweetalert2.min.css">
+    <link rel="stylesheet" href="./css/dialog.css">
+
+</head>
+<style>
+    .index .btn{
+        border: 1px solid #ffd900;
+        width: 80%;
+        height: 50px;
+        line-height: 45px;
+        letter-spacing: 10px;
+        position: absolute;
+        border-radius: 30px;
+        text-align: center;
+        background-color: #ffd900;
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 20px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+</style>
+<body>
+<div class="content index">
+    <div class="semi-circle"></div>
+    <div class="btn">提交</div>
+</div>
+<div class="content step2" style="display: none">
+</div>
+<!--<div id="dialog" class="dialog" style="display: none">-->
+    <!--<div class="dialog-model">-->
+        <!--<div class="title">输入有误</div>-->
+        <!--<div class="text">-->
+            <!--<p>你输入的手机号码格式有误</p>-->
+        <!--</div>-->
+        <!--<div class="bottom">-->
+            <!--<button class="left">取消</button>-->
+            <!--<button class="right">确定</button>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+</body>
+<script src="./js/jquery-1.11.2.min.js"></script>
+<script src="https://cdn.bootcss.com/PreloadJS/1.0.1/preloadjs.min.js"></script>
+<script src="./js/sweetalert.min.js"></script>
+<script src="./js/base.js?c=0.1"></script>
+<script src="./js/MDialog.js"></script>
+<script>
+    (function ($) {
+        $(".btn").on("click",function () {
+            new Mdialog({
+                title:'提示信息',
+                text:'手机号码输入有误！',
+                btnName:["返回","确定"],
+                cancel:function(){
+                    console.log("返回");
+                },
+                confirm:function () {
+                    console.log("提交");
+                }
+            })
+        })
+
+    })($);
+</script>
+</html>
