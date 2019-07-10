@@ -1,4 +1,4 @@
-(function (window,document) {
+;(function (window,document) {
     let Mdialog=function (options) {
         this._init(options);
     };
@@ -43,7 +43,7 @@
         },
         _close(el){
             //隐藏dom把弹窗的dom和遮罩移除
-             document.body.removeChild(el)
+             document.body.removeChild(el);
         },
         _bind(el){
             const cancel=(e)=>{
@@ -73,6 +73,7 @@
             // };
             el.querySelector(".left").addEventListener("click", cancel);
             el.querySelector(".right").addEventListener("click", confirm);
+          // document.getElementById("dialog").addEventListener("click", cancel);
             //document.body.addEventListener("click",cancleOutsideDialog);
         },
         hasClass(element, cls) {
