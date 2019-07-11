@@ -2,68 +2,77 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>h5模板750设计稿</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
-    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/base.css"/>
     <script type="text/javascript" src="js/rootfont.js"></script>
     <link rel="stylesheet" href="font/iconfont.css">
     <link rel="icon" href="data:image/ico;base64,aWNv">
 
 </head>
 
-<style>        body {
-    -webkit-text-size-adjust: 100% !important;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: #f4f4f4;
-}
-.wrap{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0.9rem;
-    background-color: #ffffff;
-}
-.box{
-    display: -webkit-flex;
-    display: flex;
-}
-.item{
-    -webkit-flex: 1;
-    flex: 1;
-    text-align: center;
-    height: 0.9rem;
-}
-.item .iconfont{
-    height: 50%;
-    width: 100%;
-    line-height: 0.5rem;
-    font-size: 0.3rem;
-}
-.item .text{
-    height: 50%;
-    width: 100%;
-    font-size: 0.2rem;
-    line-height: 0.4rem;
-}
-.btn{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    height: 1.09rem; /*-- 切图高度是109px   109px/100=1.09rem  */
-    width: 100%;
-}
-.btn img{
-    height: 100%;
-    width: 100%;
-}
+<style>
+    body {
+        -webkit-text-size-adjust: 100% !important;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: #f4f4f4;
+    }
+
+    .wrap {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.9rem;
+        background-color: #ffffff;
+    }
+
+    .box {
+        display: -webkit-flex;
+        display: flex;
+    }
+
+    .item {
+        -webkit-flex: 1;
+        flex: 1;
+        text-align: center;
+        height: 0.9rem;
+    }
+
+    .item .iconfont {
+        height: 50%;
+        width: 100%;
+        line-height: 0.5rem;
+        font-size: 0.3rem;
+    }
+
+    .item .text {
+        height: 50%;
+        width: 100%;
+        font-size: 0.2rem;
+        line-height: 0.4rem;
+    }
+
+    .btn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        height: 1.09rem; /*-- 切图高度是109px   109px/100=1.09rem  */
+        width: 100%;
+    }
+
+    .btn img {
+        height: 100%;
+        width: 100%;
+    }
+
     .btn1 {
         position: absolute;
         top: 0;
@@ -73,29 +82,63 @@
         height: 0.59rem; /*-- 切图高度是109px   109px/100=1.09rem  */
         width: 1.82rem;
     }
-.btn2 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    height: 0.6rem; /*-- 切图高度是109px   109px/100=1.09rem  */
-    width: 0.6rem;
-}
+
+    .btn2 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        height: 0.6rem; /*-- 切图高度是109px   109px/100=1.09rem  */
+        width: 0.6rem;
+    }
+    .flex-container {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        width: 100%;
+        height: 250px;
+        background-color: lightgrey;
+    }
+
+    .flex-item {
+        background-color: cornflowerblue;
+        width:1rem;
+        height:1rem;
+        margin:0rem;
+    }
 </style>
 
 <body>
-<h1>页面内容</h1>
+<div class="flex-container">
+    <div class="flex-item">flex item 1</div>
+    <div class="flex-item">flex item 2</div>
+    <div class="flex-item">flex item 3</div>
+    <div class="flex-item">flex item 4</div>
+</div>
 <div class="btn"><img src="img/start-stydy-btn.png"></div>
 <div class="btn1"><img src="img/course-play-btn.png"></div>
 <div class="btn2"><img src="img/icon-tiesan3-small.png"></div>
 
 <div class="wrap">
     <div class="box">
-        <div class="item"><div class="iconfont icon-shouye"></div><div class="text">首页</div></div>
-        <div class="item"><div class="iconfont icon-wodedingdan"></div><div class="text">订单</div></div>
-        <div class="item"><div class="iconfont icon-gouwuche"></div><div class="text">购物车</div></div>
-        <div class="item"><div class="iconfont icon-wodejuhuasuan"></div><div class="text">我的</div></div>
+        <div class="item">
+            <div class="iconfont icon-shouye"></div>
+            <div class="text">首页</div>
+        </div>
+        <div class="item">
+            <div class="iconfont icon-wodedingdan"></div>
+            <div class="text">订单</div>
+        </div>
+        <div class="item">
+            <div class="iconfont icon-gouwuche"></div>
+            <div class="text">购物车</div>
+        </div>
+        <div class="item">
+            <div class="iconfont icon-wodejuhuasuan"></div>
+            <div class="text">我的</div>
+        </div>
     </div>
 </div>
 </body>
