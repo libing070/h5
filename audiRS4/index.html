@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>rs4-5</title>
+    <link rel="icon" href="data:image/ico;base64,aWNv">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="http://h5tt.skyengine.cn/audi-a8l-pc/js/skin/layer.css" id="layui_layer_skinlayercss">
+    <link rel="stylesheet" href="./css/base.css">
+
+</head>
+<body>
+<div class="header">
+    <a href="https://www.audi.cn/cn/web/zh.html" target="_blank">
+        <img src="./images/head.png" alt="">
+    </a>
+</div>
+<div class="content">
+    <div class="video videoBox">
+        <img class="video-bg" src="images/video_bg.png">
+        <img class="video-btn" src="images/video_btn.png">
+    </div>
+    <div class="rs4">
+        <img src="images/rs4-red-title.png">
+        <div class="red-swiper" id="rs4Swpier">
+            <div class="swiper-container rs4-swiper-container">
+                <div class="swiper-wrapper" id="swiperWrapperListrs4">
+                    <div class='swiper-slide'><img src='images/swiperrs4/slide1.png'></div>
+                    <div class='swiper-slide'><img src='images/swiperrs4/slide2.png'></div>
+                    <div class='swiper-slide'><img src='images/swiperrs4/slide3.png'></div>
+                    <div class='swiper-slide'><img src='images/swiperrs4/slide4.png'></div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination "></div>
+            </div>
+        </div>
+        <!-- 参数配置 -->
+        <div class="configuration">
+            <img class="config-title" src="images/config-title-icon.png">
+            <img class="config-desc" src="images/swiperrs4/rs4.png">
+            <img class="config-mask" src="images/swiperrs4/swpier-rs4-mask.png">
+        </div>
+        <!-- 右侧菜单 -->
+        <div class="right-btn">
+            <img class="yuyue" src="images/yuyue-btn.png">
+            <img class="wenda" id="wenda" src="images/wenda-btn.png">
+            <img class="faxian" id="show-find" src="images/faxian-btn.png">
+        </div>
+    </div>
+
+    <div class="rs5">
+        <img src="images/rs5-red-title.png">
+        <div class="red-swiper" id="rs5Swpier">
+            <div class="swiper-container rs5-swiper-container">
+                <div class="swiper-wrapper" id="swiperWrapperListrs5">
+                    <div class='swiper-slide'><img src='images/swiperrs5/slide1.png'></div>
+                    <div class='swiper-slide'><img src='images/swiperrs5/slide1.png'></div>
+                    <div class='swiper-slide'><img src='images/swiperrs5/slide1.png'></div>
+                    <div class='swiper-slide'><img src='images/swiperrs5/slide1.png'></div>
+
+                </div>
+                <div class="swiper-pagination "></div>
+
+            </div>
+        </div>
+        <!-- 参数配置 -->
+        <div class="configuration">
+            <img class="config-title" src="images/config-title-icon.png">
+            <img class="config-desc" src="images/swiperrs5/rs5.png">
+            <img class="config-mask" src="images/swiperrs5/swpier-rs5-mask.png">
+        </div>
+    </div>
+
+    <div class="liuzi">
+        <img src="images/liuzi-bg.png">
+        <div class="bottom-btn" id=""></div>
+        <div class="form">
+            <img class="liuzi-form-bg" src="images/liuzi-form-bg.png">
+            <div class="items">
+                <input class="form-div" type="text" value="" placeholder="车型">
+                <input class="form-div" type="text" value="" placeholder="请填写您的姓名">
+                <input class="form-div"  type="text" value="" oninput="if(value.length>11)value=value.slice(0,11)" placeholder="请填写您的电话号码">
+                <select class="select select-p-a select-p">
+                    <option class="select-option" ids="0" value="" selected>选择省份</option>
+                </select>
+                <select class="select select-p-a select-a">
+                    <option class="select-option" ids="0" value="" selected>选择城市</option>
+                </select>
+                <select class="select select-jxs">
+                    <option class="select-option" value="">请选择经销商</option>
+                </select>
+                <div class="detail address-msg">
+                    <div class="list title"></div>
+                    <div class="list t address tips"><img src="images/address-icon.png"><span></span></div>
+                    <div class="list t phone"><img src="images/phone-icon.png">销售热线：<span></span></div>
+                </div>
+                <div class="btn">
+                    <!--<img class="img l" src="images/yjhj-btn.png">-->
+                    <img class="img r" src="images/ljyy-btn.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 视频mask -->
+<div class="videoMask">
+    <div class="mask-v"></div>
+    <div class="video_box">
+        <img class="closeVideo" src="./images/close.png" alt="">
+        <video id="video1" controls src="./video/audi.mp4" poster=""></video>
+    </div>
+</div>
+<div class="find_pop" id="find_pop" style="display: none;">
+    <div class="mask"></div>
+    <ul class="">
+        <li class="share">
+            <a href="javascript:void(0);">
+                <img src="./images/dicon_03.png" alt="">
+                <p>分享</p>
+            </a>
+        </li>
+        <li class="aodi">
+            <a href="https://www.audi.cn/cn/web/zh.html">
+                <img src="./images/dicon_05.png" alt="">
+                <p>奥迪官网</p>
+            </a>
+        </li>
+        <li class="weixin">
+            <a href="javascript:void(0);">
+                <img src="./images/dicon_07.png" alt="">
+                <p>官方微信</p>
+            </a>
+        </li>
+        <li class="weibo">
+            <a href="https://weibo.com/iaudi">
+                <img src="./images/dicon_09.png" alt="">
+                <p>官方微博</p>
+            </a>
+        </li>
+        <li class="xiaochengxu">
+            <a href="javascript:void(0);">
+                <img src="./images/xiaochengxu1.png" alt="">
+                <p>奥迪小程序</p>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="share_pop zhong" style="display: none;">
+    <a href="javascript:void(0);" class="liShare_wx" id="liShare_wx" title="http://ai.audi.cn/wap/q3/index.html">
+        <img alt="Scan me!" src="images/A6erweima.png"></a>
+    <a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://v.t.sina.com.cn/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=1087202303'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"
+       class="liShare_wb"><img src="images/share_wb.png" alt=""></a>
+</div>
+
+
+<div class="xcx_pop zhong_common" style="display: none;">
+    <a href="javascript:void(0);" class="liShare_xcx"><img src="images/xiaochengxu.jpg" alt=""></a>
+</div>
+
+<div class="ewm_pop zhong_common" style="display: none;">
+    <a href="javascript:void(0);" class="liShare_ewm"><img src="images/erweima.png" alt=""></a>
+</div>
+
+
+<div class="shadow"></div>
+<div class="evaluation_pop">
+    <div class="close"><a href="javascript:void(0);"></a></div>
+    <div class="con">
+        <!--<iframe src="frame/1.html" id="myframe" width="113%" height="113%" scrolling="no" frameborder="0"></iframe>-->
+    </div>
+</div>
+
+</body>
+<script src="./js/jquery-1.11.2.min.js"></script>
+<script src="./js/layer.js"></script>
+<script src="./js/swiper.min.js"></script>
+<script src="./js/interface.js"></script>
+<script src="./js/base.js"></script>
+</html>

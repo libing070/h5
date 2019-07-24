@@ -1,0 +1,750 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+body {
+    -webkit-text-size-adjust: 100% !important;
+    min-width: 1200px;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+
+/* a标签点击闪烁 */
+
+a,
+div,
+img {
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+.float_left {
+    float: left;
+}
+
+.float_right {
+    float: right;
+}
+
+
+/* banner */
+
+.banner {
+    width: 100%;
+    position: relative;
+}
+
+.banner_icon {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2%;
+    opacity: 1;
+}
+
+.bannerAni {
+    animation: bannerAni 2s linear infinite;
+}
+
+@keyframes bannerAni {
+    0% {
+        opacity: 1
+    }
+    50% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+
+/* 车型亮点 */
+
+.carHighlight {
+    width: 100%;
+    background: #e9ecee;
+}
+
+
+/* 车型配置 */
+
+.configuration {
+    position: relative;
+    width: 100%;
+}
+
+.swiper2 {
+    width: 84%;
+    margin: 0 auto;
+    min-width: 1200px;
+}
+
+.swiper3 {
+    width: 84%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    min-width: 1200px;
+    overflow: hidden;
+}
+
+.swiper3_txt {
+    width: 25%;
+    float: left;
+    position: relative;
+}
+
+.swiper3_car {
+    width: 15%;
+    position: absolute;
+    top: 33%;
+    left: 100%;
+    z-index: 99;
+}
+
+.front_tyre {
+    position: absolute;
+    top: 50%;
+    right: 12%;
+    width: 15%;
+}
+
+.after_tyre {
+    position: absolute;
+    top: 49.5%;
+    left: 14%;
+    width: 15%;
+}
+
+.front_rotate {
+    animation: front_rotate .5s linear infinite;
+}
+
+@keyframes front_rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.after_rotate {
+    animation: after_rotate .5s linear infinite;
+}
+
+@keyframes after_rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(-360deg);
+    }
+}
+
+.black_circle {
+    width: 5%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 40%);
+}
+
+.swiper3_btn {
+    width: 5%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-25%);
+    outline: none;
+}
+
+.swiper3_prev {
+    left: 0;
+}
+
+.swiper3_next {
+    right: 0;
+}
+
+
+/* 车型评价 */
+
+.vechicle {
+    position: relative;
+    width: 100%;
+}
+
+.carEvaluate_box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 13.5%;
+}
+
+.eva_list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 55%;
+    height: 100%;
+    padding: 14% 14%;
+}
+
+.carEvaluate {
+    width: 100%;
+}
+
+.eva_list li {
+    margin-bottom: 6%;
+    vertical-align: text-bottom;
+}
+
+.eva_list img {
+    display: inline-block;
+}
+
+.eva_title {
+    width: 50%;
+}
+
+.heart {
+    width: 8%;
+    position: relative;
+    top: 0;
+}
+
+.eva_txt {
+    font-size: 1.5rem;
+    margin-right: 5%;
+    position: relative;
+    top: -3px;
+    color: #cc0031;
+}
+
+
+/* 文章列表 */
+
+.articles {
+    width: 100%;
+    background: #fff;
+}
+
+.art_list {
+    width: 93%;
+    margin: 0 auto;
+    padding: 0 5%;
+    /* overflow: hidden; */
+}
+
+.art_list li {
+    width: 47%;
+    float: left;
+    /* overflow: hidden; */
+    background: #fff;
+    padding: 3% 3% 3% 0;
+    margin-bottom: 3%;
+    position: relative;
+    box-shadow: 0px 0px 80px #f1f1f2;
+}
+
+.art_list li:nth-child(odd) {
+    margin-right: 6%;
+}
+
+.art_list::after {
+    content: '';
+    display: block;
+    clear: both;
+    zoom: 1;
+    visibility: hidden;
+    height: 0;
+}
+
+.art_img {
+    float: left;
+    width: 30%;
+    min-height: 8rem;
+    position: relative;
+}
+
+.img_overBox {
+    position: absolute;
+    left: -20%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.img_overBox img{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.art_img img {
+    width: 100%;
+    /* height: 100%; */
+}
+
+.art_txt {
+    float: left;
+    width: 70%;
+    position: relative;
+}
+
+.art_txt :nth-child(1) {
+    margin-bottom: 5%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+.art_txt :nth-child(2) {
+    font-size: 1rem;
+    color: #666;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    margin-bottom: 10%;
+}
+
+.art_txt :nth-child(3) {
+    color: #999;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.cli_more {
+    margin-bottom: 3%;
+}
+
+.cli_more img {
+    width: 3%;
+    margin: 0 auto;
+}
+
+.rotate180 {
+    animation: rotate180 .5s linear forwards;
+}
+
+.rotate0 {
+    animation: rotate0 .5s linear forwards;
+}
+
+@keyframes rotate180 {
+    0% {
+        transform: rotate(0deg)
+    }
+    100% {
+        transform: rotate(180deg)
+    }
+}
+
+@keyframes rotate0 {
+    0% {
+        transform: rotate(180deg)
+    }
+    100% {
+        transform: rotate(0)
+    }
+}
+
+
+/* 文章详情 */
+
+.evaluation_pop {
+    width: 1000px;
+    height: 500px;
+    overflow: auto;
+    left: 50%;
+    top: 50%;
+    margin: -300px 0 0 -500px;
+    box-sizing: border-box;
+    background: #fff;
+    position: fixed;
+    z-index: 11101;
+    display: none;
+}
+
+.evaluation_pop .close a {
+    background: url(../images/close.png) no-repeat center;
+    width: 16px;
+    height: 16px;
+    display: block;
+    position: absolute;
+    right: 25px;
+    top: 15px;
+}
+
+.evaluation_pop .con {
+    position: relative;
+    width: 920px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.exq_swiper_small .active-nav img {
+    padding: 0;
+    border: 2px solid #FF3E3E;
+}
+
+
+/* vr和精彩视频 */
+
+.vr_video {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 4%;
+}
+
+.vr_video div {
+    width: 50%;
+    float: left;
+}
+
+.videoBox {
+    position: relative;
+}
+
+.videoBox #video1 {
+    display: none;
+    width: 100%;
+    border: none;
+}
+
+.videoBox img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/* 留资 */
+
+.liuzi {
+    position: relative;
+    width: 100%;
+}
+
+.liuzi_cont {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.liuzi_cont .flex_div {
+    width: 50%;
+    float: left;
+    height: 100%;
+    position: relative;
+}
+
+.liuzi-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 55%;
+}
+
+.liuzi-form .liuzi_title {
+    width: 40%;
+    margin: 0 auto 3rem;
+}
+
+.form-div {
+    margin: 2.5rem auto;
+    height: 4rem;
+}
+
+.form-div input,
+select {
+    width: 100%;
+    height: 100%;
+    padding: 0 5%;
+    font-size: 0.8rem;
+}
+
+.address {
+    margin: 2.5rem auto;
+    width: 100%;
+    background: #fff;
+    padding: 1.2rem;
+}
+
+.t {
+    font-size: 0.8rem;
+}
+
+.t img {
+    width: 0.8rem;
+    display: inline-block;
+    margin-right: 0.45rem;
+}
+
+.address-msg .title {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: rgb( 40, 40, 40);
+    font-weight: bold;
+}
+
+
+/* 询底价 */
+
+.inquiry {
+    margin: 0 auto;
+    width: 100%;
+    background: #e9ecee;
+    padding-bottom: 5%;
+}
+
+.local_search {
+    width: 60%;
+    margin: 0 auto 3%;
+    overflow: hidden;
+}
+
+.local_put {
+    width: 40%;
+    float: left;
+    height: 2.5rem;
+}
+
+.local_search .local_put select {
+    text-align: center;
+    padding: 0 1rem;
+    width: 48%;
+    height: 100%;
+    border: 2px solid #000;
+    float: left;
+}
+
+.local_search .local_put select:nth-child(1) {
+    margin-right: 4%;
+}
+
+.search_put {
+    width: 60%;
+    float: left;
+    padding-left: 5%;
+    height: 2.5rem;
+    position: relative;
+}
+
+.search_put input {
+    padding: 0 1rem;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #000;
+    float: left;
+}
+
+.icon_search {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: auto;
+    height: 100%;
+}
+
+.jxs_list {
+    width: 100%;
+    overflow: hidden;
+}
+
+.jxs_list li {
+    width: 32%;
+    /* height: 13rem; */
+    float: left;
+    background: #fff;
+    margin-right: 2%;
+    padding: 2%;
+    margin-bottom: 2%;
+}
+
+.jxs_list :nth-child(3n) {
+    margin-right: 0%;
+}
+
+.jxs_info h3 {
+    margin-bottom: 3%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+.jxs_info p:nth-child(2) {
+    margin-bottom: 2%;
+}
+
+.jxs_info a {
+    display: block;
+    margin-top: 3%;
+    color: #cc0031;
+    border: 2px solid #cc0031;
+    width: 30%;
+    height: 2.5rem;
+    line-height: 2.2rem;
+    text-align: center;
+}
+
+.local_icon {
+    position: relative;
+    top: 4px;
+    left: -2px;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url(./../images/search_dizhi.png) no-repeat;
+    background-size: 100%;
+    margin-right: 2px;
+}
+
+.phone_icon {
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url(./../images/search_phone.png) no-repeat;
+    background-size: 100%;
+}
+
+
+/* layer */
+
+.tips {
+    position: relative;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+.layui-layer-tips>.layui-layer-content {
+    background: #333 !important;
+}
+
+.layui-layer-tips i.layui-layer-TipsB,
+.layui-layer-tips i.layui-layer-TipsT {
+    border-right-color: #333 !important;
+}
+
+
+/* @media screen and (max-width: 1800px) and (min-width: 1119px) {
+    .local_icon {
+        width: 13px;
+        height: 20px;
+    }
+}
+*/
+
+@media screen and (max-width: 1600px) {
+    .form-div {
+        margin: 1rem auto;
+        height: 2.5rem;
+    }
+    .address {
+        margin: 1rem auto;
+    }
+    .liuzi-form .liuzi_title {
+        width: 40%;
+        margin: 0 auto 1rem;
+    }
+    
+}
+
+@media screen and (max-width: 1920px) and (min-width: 1600px) {
+    .form-div {
+        margin: 1.5rem auto;
+        height: 3rem;
+    }
+    .address {
+        margin: 1.5rem auto;
+    }
+    .form-div input,
+    select {
+        font-size: 1rem;
+    }
+    .t {
+        font-size: 1rem;
+    }
+    
+}
+
+
+/* 视频 */
+
+.videoMask {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.mask-v {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .5);
+}
+
+.videoMask .video_box {
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.videoMask .video_box video {
+    width: 100%;
+}
+
+.closeVideo {
+    width: 3%;
+    position: absolute;
+    top: -7%;
+    right: 0;
+}

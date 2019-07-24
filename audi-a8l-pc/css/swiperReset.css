@@ -1,0 +1,36 @@
+.swiper1_btn {
+    padding: 0 2%;
+    width: 100%;
+    height: 10.6rem;
+    position: relative;
+}
+
+.swiper1_btn .swiper1_prve {
+    width: 50px;
+    height: 50px;
+    margin-top: -25px;
+    left: 20%;
+    background: url(./../images/swiper1_prve.png) no-repeat center;
+    background-size: 100%;
+    z-index: 99;
+}
+
+.swiper1_btn .swiper1_next {
+    width: 50px;
+    height: 50px;
+    margin-top: -25px;
+    right: 20%;
+    background: url(./../images/swiper1_next.png) no-repeat center;
+    background-size: 100%;
+    z-index: 99;
+}
+
+.swiper-button-next, .swiper-button-prve {
+    outline: none;
+}
+
+.swiper1_pagination {
+    font-size: 1.5rem;
+    top: 50%;
+    margin-top: -0.8rem;
+}
