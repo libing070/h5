@@ -1,0 +1,853 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+body, html {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /*overflow: hidden; */
+    z-index: -100;
+    /* touch-action: none; */
+    font-size: 0.16rem;
+    /*Chorme56+开始为了让页面滚动变得更为流畅，在 window、document 和 body 上注册的 touchstart 和 touchmove 事件处理函数，会默认为是 passive: true。
+    浏览器忽略默认事件的preventDefault(), 你要是手动阻止会弹出一个警告, 告诉你阻止不了
+    CSS属性上对想要禁用触摸事件的元素设置touch-action: none, 然后用js获取该元素真实DOM元素添加事件处理。
+    ele.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    */
+}
+
+body {
+    -webkit-text-size-adjust: 100% !important;
+    background: #f2f2f2;
+}
+
+.content {
+    display: none;
+    position: relative;
+    /* top: 1.13rem; */
+    width: 100%;
+}
+
+/* .content1 {
+    display: block;
+}
+
+.content2 {
+    display: none;
+} */
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+input, select, option, textarea {
+    outline: none;
+    border-radius: 0px;
+}
+
+/* a标签点击闪烁 */
+
+a, div, img {
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+}
+
+/* 左右浮动 */
+
+.float_left {
+    float: left;
+}
+
+.float_right {
+    float: right;
+}
+
+/* 顶部栏 */
+
+header {
+    width: 100%;
+    position: relative;
+}
+
+.seat {
+    width: 100%;
+    height: 67px;
+    position: relative;
+}
+
+.tabSwitch {
+    height: 67px;
+    background: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    z-index: 99;
+    width: 100%;
+}
+
+.tab_btns {
+    width: 50%;
+    padding: 5%;
+}
+
+.tab_btns div {
+    width: 50%;
+    border: 1px solid #cc0031;
+    font-size: 0.12rem;
+    text-align: center;
+    line-height: 0.25rem;
+    color: #cc0031;
+}
+
+.tab_btns .act {
+    color: #fff;
+    background: #cc0031;
+}
+
+.medias {
+    width: 50%;
+    padding: 5% 4% 5% 12%;
+}
+
+.medias img {
+    width: 20%;
+    margin-left: 10%;
+}
+
+/* 留资试驾 */
+
+.lc {
+    position: relative;
+    width: 100%;
+    /* padding: 10% 0; */
+    /* background: url('./../images/leavCapital_bg.jpg') no-repeat center;
+    background-size: cover; */
+}
+
+.lc_content {
+    width: 85%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+}
+
+.lc_form {
+    width: 90%;
+    margin: 10% auto 5%;
+}
+
+.lc_form li {
+    width: 100%;
+    height: 0.35rem;
+    margin-top: 0.15rem;
+    /* background: rgba(255, 255, 255, .7); */
+}
+
+.lc_form li .lc_input {
+    width: 100%;
+    height: 0.35rem;
+    padding: 0 5%;
+    font-size: 0.12rem;
+    background: rgba(255, 255, 255, .7);
+}
+
+.lc_form li div {
+    line-height: 0.35rem;
+    color: #111113;
+}
+
+.distributor {
+    margin: 0 auto;
+    width: 90%;
+    font-size: 0.14rem;
+}
+
+.distri_local {
+    padding: 0.1rem 0.1rem;
+    background: rgba(255, 255, 255, .7);
+    width: 100%;
+}
+
+.distri_local h3 {
+    font-size: 0.12rem;
+    margin-bottom: 0.1rem;
+}
+
+.distri_local p {
+    font-size: 0.10rem;
+}
+
+.icon {
+    display: inline-block;
+    width: 0.12rem;
+    height: 0.12rem;
+    vertical-align: middle;
+}
+
+.lc .local {
+    background: url('./../images/local.png') no-repeat;
+    background-size: 100%;
+}
+
+.lc .phone {
+    background: url('./../images/phone.png') no-repeat;
+    background-size: 100%;
+}
+
+.distri_btns {
+    margin-top: 5%;
+    width: 100%;
+    display: flex;
+}
+
+.app_now {
+    margin-left: 0.05rem;
+}
+
+.call_now {
+    margin-right: 0.05rem;
+}
+
+/* 询底价 */
+
+.tab1_5 .distributor {
+    width: 90%;
+    margin: 0.2rem auto 0;
+}
+
+.tab1_5 .distributor .list {
+    background: #fff;
+    padding: 0.2rem 0.3rem;
+    font-size: 0.10rem;
+    margin-top: 0.2rem;
+}
+
+.tab1_5 .distributor .list p {
+    margin-top: 0.1rem;
+}
+
+.InquiryPrice .dizhi {
+    background: url('./../images/local.png') no-repeat center;
+    background-size: auto 100%;
+}
+
+.tab1_5 .dianhua {
+    background: url('./../images/phone.png') no-repeat center;
+    background-size: auto 100%;
+}
+
+.tab1_5 .distributor .btns {
+    margin-top: 0.1rem;
+    overflow: hidden;
+}
+
+.tab1_5 .distributor .btns a {
+    padding: 0.05rem 0.35rem;
+    box-sizing: border-box;
+    font-size: 0.12rem;
+}
+
+.tab1_5 .call_now {
+    float: right;
+    background: #cc0031;
+    color: #fff;
+    /* border: 1px solid rgba(0, 0, 0, 0); */
+    border: 1px solid #cc0031;
+}
+
+.tab1_5 .app_now, .app_now2 {
+    float: left;
+    color: #cc0031;
+    border: 1px solid #cc0031;
+    padding: 0.05rem 0.35rem;
+    box-sizing: border-box;
+    background-color: transparent;
+}
+
+.look_more {
+    margin-top: 0.2rem;
+    width: 100%;
+    text-align: center;
+}
+
+.look_more p {
+    text-align: center;
+    font-size: 0.12rem;
+}
+
+.look_more img {
+    display: inline-block;
+    width: 0.14rem;
+    height: 0.14rem;
+}
+
+.look_more2 {
+    margin-top: 0.2rem;
+    width: 100%;
+    text-align: center;
+}
+
+.look_more2 p {
+    text-align: center;
+    font-size: 0.12rem;
+}
+
+.look_more2 img {
+    display: inline-block;
+    width: 0.14rem;
+    height: 0.14rem;
+}
+
+/* 搜索框 */
+
+.search {
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+}
+
+.search .local {
+    width: 40%;
+    position: relative;
+    margin-right: 5%;
+}
+
+.search .local {
+    height: 0.25rem;
+    border: 1px solid #000;
+}
+
+.replaceInput {
+    height: 100%;
+    line-height: 0.25rem;
+    font-size: 0.12rem;
+    padding: 0 5%;
+    overflow: hidden;
+}
+
+.search .search_distri {
+    width: 55%;
+    position: relative;
+    border: 1px solid #000;
+}
+
+.search_distri input {
+    width: 80%;
+    background: none;
+    /* width: 100%; */
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 5%;
+    /* overflow: hidden; */
+}
+
+.local .local2 {
+    position: absolute;
+    top: 50%;
+    right: 0.06rem;
+    margin-top: -0.06rem;
+}
+
+.search_distri .local2 {
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: url('./../images/search.jpg') no-repeat center;
+    background-size: cover;
+}
+
+/* content2 精彩视频*/
+
+.video {
+    width: 100%;
+    position: relative;
+}
+
+.video video {
+    width: 100%;
+    display: block;
+}
+
+.video img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15%;
+    transform: translate(-50%, -50%);
+}
+
+/* 车型配置 */
+
+.swiper3 {
+    margin-top: 5%;
+}
+
+/* 车型评价 */
+
+.evaluate {
+    width: 100%;
+    position: relative;
+}
+
+.eva_list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 9.5% 21%;
+}
+
+.eva_list li {
+    margin-bottom: 4%;
+    vertical-align: text-bottom;
+}
+
+.eva_list img {
+    display: inline-block;
+}
+
+.eva_title {
+    width: 40%;
+}
+
+.eva_txt {
+    font-size: 0.12rem;
+    margin-right: 5%;
+    position: relative;
+    top: 3px;
+    color: #cc0031
+}
+
+.heart {
+    width: 8%;
+    position: relative;
+    top: 3px;
+}
+
+/* 文章 */
+
+.tab2_4 {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 97%;
+}
+
+.articles {
+    width: 100%;
+    padding: 0 0.15rem;
+}
+
+.articles li {
+    overflow: hidden;
+    margin: 0.15rem 0;
+    background: #fff;
+}
+
+.articles li a {
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+.art_left {
+    width: 40%;
+    float: left;
+}
+
+.art_right {
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(85%, -40%);
+    padding-left: 0.1rem;
+    width: 60%;
+    float: left;
+    padding: 0% 5%;
+}
+
+.art_right p {
+    font-size: 0.1rem;
+    color: #9d9d9d;
+    margin-top: 0.05rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.art_right h3 {
+    font-size: 0.12rem;
+    color: #333;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+/* 省市选择器 */
+
+.doubleSelect {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: rgba(0, 0, 0, .5); */
+    z-index: 999;
+}
+
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .6);
+    /* z-index: 999; */
+}
+
+.selectCont {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+}
+
+.cityselect-title {
+    text-align: center;
+    font-size: 0.14rem;
+    line-height: 0.4rem;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.cancelBtn {
+    float: left;
+    margin-left: 0.1rem;
+    color: #999;
+}
+
+.selectUl {
+    width: 100%;
+    display: flex;
+}
+
+.selectUl .sel {
+    flex: 1;
+    text-align: center;
+    font-size: 0.14rem;
+}
+
+.selectCity, .selectPro {
+    position: relative;
+}
+
+.selectCity, .selectPro ul {
+    height: 3rem;
+    overflow: auto;
+}
+
+.selectPro::before {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #e7e7e7;
+}
+
+.sel li {
+    line-height: 0.5rem;
+}
+
+.act {
+    color: #cc0031;
+    font-size: 0.15rem;
+}
+
+.doubleSelect .icon {
+    display: none;
+}
+
+.j_active {
+    position: relative;
+    width: 0.09rem;
+    top: -1px;
+    vertical-align: middle;
+}
+
+.act .j_active {
+    display: inline-block !important;
+}
+
+.j_active::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('./../images/j_active.png') no-repeat center;
+    background-size: 100%
+}
+
+#app {
+    display: none;
+    width: 100%;
+    height: 100% !important;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 990;
+    background: #fff;
+}
+
+#app2 {
+    display: none;
+    width: 100%;
+    height: 100% !important;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 990;
+    background: #fff;
+}
+
+.find_pop {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 992;
+}
+
+.find_pop ul {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    background: #fff;
+    text-align: center;
+}
+
+.find_pop ul li {
+    flex: 1;
+    font-size: 0.12rem;
+    padding: 0.3rem 0;
+}
+
+.find_pop ul li a {
+    display: block;
+    color: #333;
+}
+
+.find_pop ul li img {
+    height: 0.28rem;
+    width: auto;
+    margin-bottom: 0.1rem;
+    display: inline;
+}
+
+.media {
+    display: none;
+    width: 100%;
+    /* height: 100%; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 992;
+}
+
+.wxBox {
+    width: 2.4rem;
+    top: 50%;
+    margin-top: -1.2rem;
+    left: 50%;
+    margin-left: -1.2rem;
+}
+
+.xcxBox {
+    width: 2.4rem;
+    top: 50%;
+    margin-top: -1.2rem;
+    left: 50%;
+    margin-left: -1.2rem;
+}
+
+.dn {
+    top: 40%;
+    position: fixed;
+}
+
+.closeIframe {
+    position: absolute;
+    top: 0rem;
+    right: 0.0rem;
+    width: 0.4rem;
+    height: 0.4rem;
+    text-align: center;
+    line-height: 0.4rem;
+    font-size: 0.14rem;
+    background: url(./../images/close.png) no-repeat center;
+    background-size: 0.2rem 0.2rem;
+    z-index: 999;
+    color: #fff;
+}
+
+/* 文章弹窗 */
+
+.evaluation_pop {
+    overflow: auto;
+    display: none;
+    width: 100%;
+    height: 100% !important;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 990;
+    background: #fff;
+}
+
+.evaluation_pop iframe {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+}
+
+.evaluation_pop iframe body {
+    margin: 0;
+}
+
+.evaluation_pop .closeIframe {
+    position: absolute;
+    top: 0.1rem;
+    right: 0.1rem;
+    width: 0.2rem;
+    height: 0.2rem;
+    text-align: center;
+    line-height: 0.4rem;
+    font-size: 0.14rem;
+    background: url('./../images/close.png') no-repeat center;
+    background-size: cover;
+    z-index: 99;
+}
+
+.cityPut {
+    float: right;
+    color: #333;
+    flex: 0 0 79%;
+    width: 79%;
+    padding: 0 0.14rem;
+    height: 100%;
+    font-size: 0.12rem;
+    background: rgba(255, 255, 255, .7);
+}
+
+.goPolicy {
+    position: relative;
+    width: 100%;
+}
+
+.goPolicy div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+}
+
+/* swiper2 */
+
+.swiper2 {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.swiper2_next, .swiper2_prev {
+    width: 15px !important;
+    height: 25px !important;
+    background-size: 15px 25px !important;
+}
+
+/* 首屏 */
+
+.first {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: url(./../images/first1_bg.jpg) no-repeat center top;
+    background-size: cover;
+    overflow: hidden;
+    z-index: 999;
+}
+
+@media screen and (min-height: 740px) {
+    .first {
+        background: url(./../images/first2_bg.jpg) no-repeat center top;
+        background-size: cover;
+    }
+}
+
+.first .open {
+    width: 1rem;
+    position: absolute;
+    left: 50%;
+    margin-left: -0.5rem;
+    top: 87%;
+}
+
+.first .turnBottom {
+    margin-top: 0.2rem;
+    animation: iconBottom 1s linear infinite;
+}
+
+@keyframes iconBottom {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

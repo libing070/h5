@@ -1,0 +1,718 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+body {
+    -webkit-text-size-adjust: 100% !important;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+/* a标签点击闪烁 */
+a, div, img {
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+}
+
+.content{
+    width: 100%;
+}
+.content .video{
+    width: 100%;
+    position: relative;
+}
+.content .video .video-bg{
+    width: 100%;
+}
+
+.content .video .video-btn{
+    cursor:pointer;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 841px;
+    height: 144px;
+
+}
+
+.rs4{
+    position: relative;
+    padding-bottom: 15%;
+}
+.rs4 .configuration{
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    margin: auto;
+    bottom: 1%;
+    width: 65%;
+}
+.rs4 .configuration .config-title{
+    padding-bottom: 10px;
+    width: 70px;
+
+}
+.rs4 .configuration .config-mask{
+    position: absolute;
+    opacity: 0.6;
+    bottom: 2px;
+    right: -2px;
+    z-index: -1;
+    width: 100%;
+}
+
+.rs4 .right-btn{
+    position: fixed;
+    top: 40%;
+    right: 0;
+    margin: auto;
+    z-index: 3;
+}
+.rs4 .right-btn img{
+    cursor:pointer;
+}
+.rs4 .bottom-mask,
+.rs5 .bottom-mask{
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    /*height: 20%*/
+}
+.rs5{
+    position: relative;
+    padding-bottom: 15%;
+}
+.rs5 .configuration{
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    margin: auto;
+    bottom: 1%;
+    width: 65%;
+}
+.rs5 .configuration .config-title{
+    padding-bottom: 10px;
+    width: 70px;
+
+}
+.rs5 .configuration .config-mask{
+    position: absolute;
+    opacity: 0.6;
+    left: -2px;
+    bottom: 2px;
+    z-index: -1;
+    width: 100%;
+}
+
+.liuzi{
+    position: relative;
+}
+.liuzi .bottom-btn{
+    cursor:pointer;
+    opacity: 0;
+    width: 350px;
+    height: 75px;
+    position: absolute;
+    bottom: 70px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.liuzi .form{
+    position: absolute;
+    right: 5%;
+    top: 17%;
+    width: 30%;
+    height: 33%;
+}
+.liuzi .form::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/liuzi-form-bg.png");
+    background-size: 100%;
+}
+.liuzi .form .liuzi-form-bg{
+    width: 100%;
+}
+.liuzi .form .items{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 80%;
+    height:90%;
+    margin: auto;
+}
+.liuzi .form .items input{
+    font-family: "DFPHeiW5";
+    padding-left: 10px;
+    background-color:#3a3a3a;
+    -web-kit-appearance:none;
+    -moz-appearance: none;
+    border: 1px solid rgba( 255, 255, 255,0.5);
+    height: 2.2rem;
+    width: 100%;
+    outline:0;
+    margin-bottom: 15px;
+    color: rgba( 255, 255, 255,0.5);
+}
+input::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: rgba( 255, 255, 255,0.5);
+}
+input:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: rgba( 255, 255, 255,0.5);
+}
+input::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color:rgba( 255, 255, 255,0.5);
+}
+
+.liuzi .form .items select{
+     background-color:#3a3a3a;
+    border: 1px solid rgba( 255, 255, 255,0.5);
+    height: 2.2rem;
+    outline:0;
+    font-family: "DFPHeiW5";
+    color: rgba( 255, 255, 255 ,0.5);
+    margin-bottom: 15px;
+    /*text-align: center;*/
+    /*text-align-last: center;*/
+    padding-left: 10px;
+}
+.select-p-a{
+    width: 48%;
+}
+.select-p{
+    float: left;
+}
+.select-a{
+    float: right;
+}
+
+.select-cx{
+    width: 100%;
+}
+
+.select-jxs{
+    width: 100%;
+}
+
+.liuzi .form .items .detail{
+    margin: auto;
+    width: 100%;
+    height: 20%;
+    border-width: 1px;
+    border-color: rgba( 255, 255, 255 ,0.251);
+    border-style: solid;
+    background-color: rgba( 165, 165, 165 ,0.251);
+    margin-top: 5px;
+    font-family: "DFPHeiW5";
+    color: rgb( 255, 255, 255 );
+    padding-left: 20px;
+}
+
+.liuzi .form .items .detail .list{
+    opacity: 0.5;
+    width: 100%;
+    height:25%;
+    margin-top: 5px;
+}
+.liuzi .form .items .detail .title{
+    font-size: 14px;
+}
+.liuzi .form .items .detail .list img{
+    display: inline-block;
+    vertical-align:middle;
+    width: 15px;
+    margin-right: 5px;
+
+}
+.liuzi .form .items .detail .list span{
+    vertical-align:middle;
+    line-height:20px;
+}
+
+.liuzi .form .items .detail .address,
+.liuzi .form .items .detail .phone{
+    font-size: 12px;
+}
+.liuzi .form .items .btn{
+    height: 2.2rem;
+    width: 100%;
+    margin-top: 10px;
+}
+.liuzi .form .items .btn .img{
+    cursor:pointer;
+    width: 40%;
+}
+.liuzi .form .items .btn .img.l{
+    float: left;
+}
+.liuzi .form .items .btn .img.r{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    /*float: right;*/
+}
+
+
+/* layer */
+
+.tips {
+    position: relative;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+.layui-layer-tips>.layui-layer-content {
+    background: #000000 !important;
+    color: #fff;
+
+}
+
+.layui-layer-tips i.layui-layer-TipsB,
+.layui-layer-tips i.layui-layer-TipsT {
+    border-right-color: #000000 !important;
+}
+
+
+
+
+/* 视频 */
+
+.videoMask {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.mask-v {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .5);
+}
+
+.videoMask .video_box {
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.videoMask .video_box video {
+    width: 100%;
+}
+
+.closeVideo {
+    width: 3%;
+    position: absolute;
+    top: -7%;
+    right: 0;
+}
+
+
+select {
+    /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+    border: solid 1px #000;
+
+    /*将默认的select选择框样式清除*/
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+
+    /*在选择框的最右侧中间显示小箭头图片*/
+    background: url(../images/select-icon.png) 95% 50%  no-repeat scroll transparent;
+
+
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+    padding-right: 20px;
+}
+
+
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+select::-ms-expand { display: none; }
+
+
+
+
+.swiper-pagination{
+    position: absolute;
+    top: 60%;
+}
+.swiper-pagination-bullet {
+    width: 11px;
+    height: 8px;
+    text-align: center;
+    opacity: 1;
+    background: none;
+    background-image: url("../images/swiper-pag-icon.png");
+}
+.swiper-pagination-bullet-active {
+    background: none;
+    background-image: url("../images/swpier-pag--icon-active.png");
+}
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{
+    margin: 0;
+}
+.swiper-container{
+    position: static;
+}
+
+.find_pop {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 992;
+}
+
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .6);
+}
+
+.find_pop ul {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 13%;
+    display: flex;
+    background: #fff;
+    text-align: center;
+    max-height: 95px;
+}
+
+.find_pop ul li {
+    flex: 1;
+    font-size: 0.12rem;
+    padding: 0.3rem 0;
+}
+
+.find_pop ul li a {
+    display: block;
+    color: #333;
+}
+
+.find_pop ul li img {
+    margin: auto;
+    height: 2.2rem;
+    width: auto;
+    margin-bottom: 0.1rem;
+}
+
+.find_pop ul li p {
+    font-size: 1.1rem;
+}
+
+.zhong {
+    position: fixed;
+    width: 320px;
+    top: 40%;
+    left: 50%;
+    margin-left: -150px;
+    z-index: 999;
+    padding-bottom:30px;
+    padding-top:10px;
+    background-color: white;
+    text-align: center;
+}
+
+.zhong img {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+}
+
+.liShare_wx::after {
+    content: "微信";
+    display: block;
+    width: 150px;
+    height: 20px;
+    line-height: 1.2;
+    position: absolute;
+    left: 0px;
+    top: 165px;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    text-align: center;
+}
+
+.liShare_wb::after {
+    content: "微博";
+    display: block;
+    width: 150px;
+    height: 20px;
+    line-height: 1.2;
+    position: absolute;
+    left: 150px;
+    top: 165px;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    text-align: center;
+}
+
+
+
+.zhong_common {
+    position: fixed;
+    width: 200px;
+    top: 40%;
+    left: 50%;
+    margin-left: -100px;
+    z-index: 999;
+    padding-bottom:30px;
+    padding-top:10px;
+    padding-right:20px;
+    padding-left:20px;
+    background-color: white;
+    text-align: center;
+}
+
+.zhong_common img {
+    width: 160px;
+    height: 160px;
+}
+
+.liShare_xcx::after {
+    content: "奥迪小程序";
+    display: block;
+    width: 200px;
+    height: 20px;
+    line-height: 1.2;
+    position: absolute;
+    left: 0px;
+    top: 175px;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    text-align: center;
+}
+
+
+.liShare_ewm::after {
+    content: "奥迪官方公众号";
+    display: block;
+    width: 200px;
+    height: 20px;
+    line-height: 1.2;
+    position: absolute;
+    left: 0px;
+    top: 175px;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    text-align: center;
+}
+
+
+
+.shadow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .6);
+    z-index: 2;
+    display: none;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .rs4 .configuration .config-title,
+    .rs5 .configuration .config-title{
+        padding-bottom: 10px;
+        width: 60px;
+    }
+    .liuzi .bottom-btn{
+        width: 274px;
+        height: 57px;
+        bottom: 57px;
+    }
+    .liuzi .form .items input,
+    .liuzi .form .items select{
+        height: 1.8rem;
+        font-size: 0.6rem;
+        margin-bottom: 0.6rem;
+    }
+    .liuzi .form .items .detail{
+        height: 28%;
+    }
+    .liuzi .form .items .detail .address{
+        margin-top: 0;
+    }
+    .liuzi .form .items .detail .phone{
+        margin-top: 15px;
+    }
+    .liuzi .form .items .detail .title{
+        font-size: 0.6rem;
+    }
+    .liuzi .form .items .detail .list img{
+        width: 0.8rem;
+    }
+    .liuzi .form .items .detail .address,
+    .liuzi .form .items .detail .phone{
+        font-size: 0.1rem;
+    }
+    .liuzi .form .items .btn{
+        margin-top: 1rem;
+    }
+
+    .swiper-pagination{
+        top: 73%;
+    }
+}
+
+@media screen and (max-width: 1366px) and (min-width: 1025px){
+    .liuzi .bottom-btn{
+        width: 350px;
+        height: 75px;
+        bottom: 70px;
+    }
+    .liuzi .form .items .detail{
+        height: 28%;
+    }
+    .liuzi .form .items .detail .address,
+    .liuzi .form .items .detail .phone{
+        margin-top: 10px;
+    }
+    .liuzi .form .items input,
+    .liuzi .form .items select{
+        font-size: 0.8rem;
+    }
+    .swiper-pagination{
+        top: 73%;
+    }
+
+}
+@media screen and (max-width: 1600px) and (min-width: 1367px){
+    .rs4 .configuration .config-title,
+    .rs5 .configuration .config-title{
+        padding-bottom: 15px;
+        width: 80px;
+    }
+    .liuzi .bottom-btn{
+        width: 432px;
+        height: 93px;
+        bottom: 86px;
+    }
+    .liuzi .form .items input,
+    .liuzi .form .items select{
+        height: 2.5rem;
+        font-size: 1rem;
+        margin-bottom: 1.2rem;
+    }
+    .liuzi .form .items .detail{
+        height: 28%;
+    }
+    .liuzi .form .items .detail .address,
+    .liuzi .form .items .detail .phone{
+        margin-top: 10px;
+    }
+    .liuzi .form .items .detail .title{
+        font-size: 1.1rem;
+    }
+    .liuzi .form .items .detail .list img{
+        width: 1.3rem;
+    }
+    .liuzi .form .items .detail .address,
+    .liuzi .form .items .detail .phone{
+        font-size: 0.9rem;
+    }
+    .liuzi .form .items .btn{
+        margin-top: 2rem;
+    }
+    .swiper-pagination{
+        top: 73%;
+    }
+}
+@media screen and (max-width: 1920px) and (min-width: 1601px){
+    .rs4 .configuration .config-title,
+    .rs5 .configuration .config-title{
+        padding-bottom: 15px;
+        width: 100px;
+
+    }
+    .liuzi .bottom-btn{
+        width: 520px;
+        height: 110px;
+        bottom: 105px;
+    }
+    .liuzi .form .items .detail{
+        height: 28%;
+    }
+    .liuzi .form .items .detail .address,
+    .liuzi .form .items .detail .phone{
+        margin-top: 10px;
+    }
+    .liuzi .form .items input,
+    .liuzi .form .items select{
+        height: 3rem;
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    .liuzi .form .items .detail .list{
+        margin-top: 9px;
+    }
+    .liuzi .form .items .detail .title{
+        font-size: 1.2rem;
+    }
+    .liuzi .form .items .detail .list img{
+        width: 1.5rem;
+    }
+    .liuzi .form .items .detail .address,
+    .liuzi .form .items .detail .phone{
+        font-size: 0.9rem;
+    }
+    .liuzi .form .items .btn{
+        margin-top: 2rem;
+    }
+    .swiper-pagination{
+        top: 73%;
+    }
+}
+
+

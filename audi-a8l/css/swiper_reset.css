@@ -1,0 +1,36 @@
+.swiper1 {
+    width: 100%;
+    /* margin: 0 auto; */
+}
+
+/* .swiper1 .swiper-container {
+    overflow: auto;
+} */
+
+.swiper-button-next, .swiper-button-prve {
+    outline: none;
+}
+
+.swiper1_btn {
+    padding: 0 2%;
+    width: 100%;
+    height: 0.5rem;
+    position: relative;
+}
+
+.swiper1_btn .swiper1_next {
+    width: 35px;
+    right: 7%;
+    background: url('./../images/swiper1_next.png') no-repeat center;
+    background-size: 100%;
+}
+
+.swiper1_btn .swiper1_prve {
+    width: 35px;
+    left: 7%;
+    background: url('./../images/swiper1_prve.png') no-repeat center;
+    background-size: 100%;
+}
+.swiper1_pagination {
+    font-size: 0.12rem;
+}
