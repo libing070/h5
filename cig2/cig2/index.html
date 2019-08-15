@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE-edge,chrome=1">
+    <!--告诉ie使用新的渲染方式，防止低版本的ie不能使用css3-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:400,700" rel="stylesheet" type="text/css" />
+    <link href="css/base.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/swiper.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <input type="hidden" scrollState='true' class="scrollState">
+        <div class="nav">
+            <!-- <div class="navBar"></div> -->
+            <input class="nav_btn" type="radio" name="radio-set" checked id="nav1">
+            <a class="nav_btn" href="#panel1">首页</a>
+            <input class="nav_btn" type="radio" name="radio-set" id="nav2">
+            <a class="nav_btn" href="#panel2">关于我们</a>
+            <input class="nav_btn" type="radio" name="radio-set" id="nav3">
+            <a class="nav_btn" href="#panel3">服务与产品</a>
+            <input class="nav_btn" type="radio" name="radio-set" id="nav4">
+            <a class="nav_btn" href="#panel4">案例</a>
+            <input class="nav_btn" type="radio" name="radio-set" id="nav5">
+            <a class="nav_btn" href="#panel5">资讯</a>
+            <input class="nav_btn" type="radio" name="radio-set" id="nav6">
+            <a class="nav_btn" href="#panel6">营销智库</a>
+            <div class="scroll">
+                <section class="panel" id="panel1">
+                    <div class="swiperBox swiper_1">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide bg1">
+                                </div>
+                                <div class="swiper-slide bg2">
+                                </div>
+                                <div class="swiper-slide bg3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page1">
+                        <img class="page1_title" src="./images/page1_title.png" alt="">
+                        <img class="page1_txt" src="./images/page1_txt.png" alt="">
+                        <!-- 如果需要导航按钮 -->
+                        <div class="swiper-button">
+                            <div class="swiper-button-prev swiper_1_prev"></div>
+                            <div class="swiper-button-next swiper_1_next"></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="panel" id="panel2">
+                    <!-- <div class="swiperBox swiper_2">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide bg1">
+                                </div>
+                                <div class="swiper-slide bg2">
+                                </div>
+                                <div class="swiper-slide bg3">
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="swiper_2"></div>
+                    <div class="page2">
+                        <div class="about_top">
+                            <div class="float_left">
+                                <div class="about_title">
+                                    <img src="./images/about_en.png" alt="">
+                                    <img src="./images/about_cn.png" alt="">
+                                </div>
+                            </div>
+                            <div class="float_left">
+                                <img class="about_txt" src="./images/about_txt.png" alt="">
+                            </div>
+                        </div>
+                        <div class="about_bottom">
+                            <ul>
+                                <li>
+                                    <div class="income num">50</div>
+                                    <div class="txt">
+                                        <p>亿+</p>
+                                        <p>年度总营收</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="year num">16</div>
+                                    <div class="txt">
+                                        <p>年</p>
+                                        <p>专注汽车服务</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="number num">900</div>
+                                    <div class="txt">
+                                        <p>人+</p>
+                                        <p>公司员工数</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="percentage num">90</div>
+                                    <div class="txt">
+                                        <p>%</p>
+                                        <p>互联网汽车消费用户覆盖</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- 如果需要导航按钮 -->
+                        <div class="swiper-button">
+                            <div class="swiper-button-prev swiper_2_prev"></div>
+                            <div class="swiper-button-next swiper_2_next"></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="panel" id="panel3">
+                    <ul class="page3">
+                        <li>
+                            <img class="page3_li_bg" src="./images/page3_1_bg.jpg" alt="">
+                            <div class="page3_cont">
+                                <img class="page3Txt_1" src="./images/page3_1_01.png" alt="">
+                                <img class="page3Txt_2" src="./images/page3_1_02.png" alt="">
+                                <img class="page3Txt_3" src="./images/page3_1_03.png" alt="">
+                                <img class="morw page3Txt_4" src="./images/page3_1_04.png" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <img class="page3_li_bg" src="./images/page3_2_bg.jpg" alt="">
+                            <div class="page3_cont">
+                                <img class="page3Txt_1" src="./images/page3_2_01.png" alt="">
+                                <img class="page3Txt_2" src="./images/page3_2_02.png" alt="">
+                                <img class="page3Txt_3" src="./images/page3_2_03.png" alt="">
+                                <img class="morw page3Txt_4" src="./images/page3_2_04.png" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <img class="page3_li_bg" src="./images/page3_3_bg.jpg" alt="">
+                            <div class="page3_cont">
+                                <img class="page3Txt_1" src="./images/page3_3_01.png" alt="">
+                                <img class="page3Txt_2" src="./images/page3_3_02.png" alt="">
+                                <img class="page3Txt_3" src="./images/page3_3_03.png" alt="">
+                                <img class="morw page3Txt_4" src="./images/page3_3_04.png" alt="">
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+                <section class="panel" id="panel4">
+                    <div class="swiperBox swiper_4">
+
+                    </div>
+                    <div class="page4">
+                        <div class="page4_left">
+                            <img class="page4_txt_01" src="./images/page4_txt_01.png" alt="">
+                        </div>
+                        <div class="page4_right">
+                            <img class="page4_txt_02" src="./images/page4_txt_02.png" alt="">
+                            <img class="page4_txt_03" src="./images/page4_txt_03.png" alt="">
+                        </div>
+                    </div>
+                    <div class="play">
+                        <img src="./images/play.png" alt="">
+                    </div>
+                </section>
+                <section class="panel" id="panel5">
+                    <div class="swiperBox swiper_5 swiper-no-swiping">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="./images/swiper_5_01.png" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/swiper_5_02.png" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/swiper_5_03.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 如果需要导航按钮 -->
+                    <div class="swiper_5_button">
+                        <div class="swiper-button-prev swiper_5_prev"></div>
+                        <!-- 如果需要分页器 -->
+                        <div class="swiper-pagination swiper_5_pag"></div>
+                        <div class="swiper-button-next swiper_5_next"></div>
+                    </div>
+                    <div class="page5">
+
+                        <div class="page5_txt">
+                            <img class="page5_txt_01" src="./images/page5_txt_01.png" alt="">
+                            <!-- <img class="page5_txt_02" src="./images/page5_txt_02.png" alt=""> -->
+                            <div class="page5_swiper swiper-no-swiping">
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img class="page5_txt_02" src="./images/page5_txt_02.png" alt="">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="page5_txt_02" src="./images/page5_txt_02.png" alt="">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="page5_txt_02" src="./images/page5_txt_02.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="panel" id="panel6">
+                    <div class="page6">
+                        <div class="page6_cont">
+                            <div class="form_cont">
+                                <div class="form_cont_div">
+                                    <img src="./images/page6_txt_01.png" alt="">
+                                    <img src="./images/page6_txt_02.png" alt="">
+                                </div>
+                                <div class="form_cont_div">
+                                    <ul class="form_submit">
+                                        <li>
+                                            <label for="">姓名</label>
+                                            <input type="text">
+                                        </li>
+                                        <li>
+                                            <label for="">电话</label>
+                                            <input type="text">
+                                        </li>
+                                        <li>
+                                            <label for="">需求</label>
+                                            <input type="text">
+                                        </li>
+                                        <li>
+                                            <img class="submit_btn" src="./images/submit_btn.jpg" alt="">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="copyRight">
+                                <img src="./images/page6_txt_03.png" alt="">
+                                <img src="./images/page6_txt_04.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="panel" id="panelMask">
+                    <div class="page1">
+                    </div>
+                </section>
+            </div>
+            <!-- 菜单 -->
+            <div class="menu">
+                <img class="logoIcon" src="./images/logo.jpg" alt="">
+                <img openNum="0" class="menuBth" src="./images/menu.jpg" alt="">
+            </div>
+            <!-- 搜索语言切换 -->
+            <div class="hold_all">
+                <img src="./images/search.png" alt="">
+                <img src="./images/cn_icon.png" alt="">
+                <img src="./images/en_icon.png" alt="">
+            </div>
+            <!-- 联系方式 -->
+            <div class="contact_information">
+                <img src="./images/weibo.png" alt="">
+                <img src="./images/phone.png" alt="">
+            </div>
+            <!-- 滚动条 -->
+            <div class="scrollBar">
+                <p class="p1">01</p>
+                <img class="redIcon" src="./images/redIcon.png" alt="">
+                <ul>
+                    <li class="active"></li>
+                    <li class=""></li>
+                    <li class=""></li>
+                    <li class=""></li>
+                    <li class=""></li>
+                    <li class=""></li>
+                </ul>
+                <img class="whiteIcon" src="./images/whiteIcon.png" alt="">
+                <p class="p2">06</p>
+            </div>
+            <!-- 鼠标图标 -->
+            <img class="mouseIcon" src="./images/mouseIcon.png" alt="">
+            <!-- 菜单也 -->
+            <div class="menuPage">
+
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery-1.11.2.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script type="text/javascript" src="js/anime.min.js"></script>
+    <script>
+
+        window.onload = function () {
+            var scroll = document.getElementsByClassName("scroll")[0];//ie不兼容，换成id会成功
+            var panel = document.getElementsByClassName("panel");//ie不兼容，换成id会成功
+
+            var clientH = window.innerHeight;
+            scroll.style.height = clientH + "px";
+            for (var i = 0; i < panel.length; i++) {
+                panel[i].style.height = clientH + "px";
+            }
+            /*下面是关于鼠标滚动*/
+            // var inputC = document.getElementsByTagName("input");
+            var inputC = $('input[name="radio-set"]');
+            console.log(inputC.length)
+            var wheel = function (event) {
+                if ($('.scrollState').attr('scrollState') == 'true') {
+                    $('.scrollState').attr('scrollState', 'false')
+                } else {
+                    return false;
+                }
+                var delta = 0;
+                if (!event)//for ie
+                    event = window.event;
+                if (event.wheelDelta) {//ie,opera
+                    delta = event.wheelDelta / 120;
+                } else if (event.detail) {
+                    delta = -event.detail / 3;
+                }
+                if (delta) {
+                    handle(delta, inputC);
+                }
+                if (event.preventDefault)
+                    event.preventDefault();
+                event.returnValue = false;
+            };
+            if (window.addEventListener) {
+                window.addEventListener('DOMMouseScroll', wheel, false);
+            }
+            window.onmousewheel = wheel;
+        };
+        function handle(delta, arr) {
+            var num;
+            for (var i = 0; i < arr.length; i++) {//得到当前checked元素的下标
+                if (arr[i].checked) {
+                    num = i;
+                }
+            }
+            if (delta > 0 && num > 0) {//向上滚动
+                num--;
+                arr[num].checked = true;
+                console.log(num)
+                if (num == 0) {
+                    $('.scrollBar ul li').eq(1).attr('class', '');
+                    aniTranslateX('.page1_title', ['0', '40rem'], 4000, 500);
+                    aniTranslateX('.page1_txt', ['0', '40rem'], 4000, 1000);
+                }
+                if (num == 1) {
+                    $('.scrollBar ul li').eq(2).attr('class', '');
+                    // 第二页动画
+                    aniTranslateX('.about_title', ['0', '-15rem'], 4000, 500);
+                    aniTranslateX('.about_txt', ['0', '30rem'], 4000, 500);
+                    aniRound('.income', [0, 50], 1, 3000);
+                    aniRound('.year', [0, 16], 1, 3100);
+                    aniRound('.number', [0, 900], 1, 3200);
+                    aniRound('.percentage', [0, 90], 1, 3300);
+                    aniScale('.swiper_2', [(1, 1), (1.2, 1.2)], 4000, 500);
+                }
+                if (num == 2) {
+                    $('.scrollBar ul li').eq(3).attr('class', '');
+                    //第三页动画
+                    aniTranslateY(['.page3Txt_1'], ['0', '-40rem'], 4000, 500);
+                    aniTranslateY(['.page3Txt_2'], ['0', '-40rem'], 4000, 1000);
+                    aniTranslateY(['.page3Txt_3'], ['0', '-40rem'], 4000, 1500);
+                    aniTranslateY(['.page3Txt_4'], ['0', '-40rem'], 4000, 2000);
+                }
+                if (num == 3) {
+                    $('.scrollBar ul li').eq(4).attr('class', '');
+                    //第四页动画
+                    aniTranslateX('.page4_txt_01', ['0', '30rem'], 4000, 500);
+                    aniTranslateX('.page4_txt_02', ['0', '-30rem'], 4000, 1000);
+                    aniTranslateX('.page4_txt_03', ['0', '-30rem'], 4000, 1500);
+                }
+                if (num == 4) {
+                    $('.scrollBar ul li').eq(5).attr('class', '');
+                    $('.whiteIcon').attr('src', './images/whiteIcon.png');
+                    //第五页动画
+                    aniTranslateX('.page5_txt_01', ['0', '20rem'], 4000, 500);
+                    // aniTranslateX('.page5_txt_02', ['0', '-30rem'], 4000, 500);
+                }
+                if (num - 1 < 0) {
+                    $('.slide li').find('img').attr('src', './images/slide_2.png');
+                } else {
+                    $('.slide li').find('img').attr('src', './images/slide_2.png');
+                    $('.slide li').eq((num - 1)).find('img').attr('src', './images/slide_1.png');
+                }
+            } else if (delta < 0 && num < 5) {//向下滚动
+                console.log(num);
+                if (num == 0) {
+                    $('.scrollBar ul li').eq(1).attr('class', 'active');
+                    // 第二页动画
+                    aniTranslateX('.about_title', ['0', '-15rem'], 4000, 500);
+                    aniTranslateX('.about_txt', ['0', '30rem'], 4000, 500);
+                    aniRound('.income', [0, 50], 1, 3000);
+                    aniRound('.year', [0, 16], 1, 3100);
+                    aniRound('.number', [0, 900], 1, 3200);
+                    aniRound('.percentage', [0, 90], 1, 3300);
+                    aniScale('.swiper_2', [(1, 1), (1.2, 1.2)], 4000, 500);
+                }
+                if (num == 1) {
+                    $('.scrollBar ul li').eq(2).attr('class', 'active');
+                    //第三页动画
+                    aniTranslateY(['.page3Txt_1'], ['0', '-40rem'], 4000, 500);
+                    aniTranslateY(['.page3Txt_2'], ['0', '-40rem'], 4000, 1000);
+                    aniTranslateY(['.page3Txt_3'], ['0', '-40rem'], 4000, 1500);
+                    aniTranslateY(['.page3Txt_4'], ['0', '-40rem'], 4000, 2000);
+                }
+                if (num == 2) {
+                    $('.scrollBar ul li').eq(3).attr('class', 'active');
+                    //第四页动画
+                    aniTranslateX('.page4_txt_01', ['0', '30rem'], 4000, 500);
+                    aniTranslateX('.page4_txt_02', ['0', '-30rem'], 4000, 1000);
+                    aniTranslateX('.page4_txt_03', ['0', '-30rem'], 4000, 1500);
+                }
+                if (num == 3) {
+                    $('.scrollBar ul li').eq(4).attr('class', 'active');
+                    //第五页动画
+                    aniTranslateX('.page5_txt_01', ['0', '20rem'], 4000, 500);
+                    // aniTranslateX('.page5_txt_02', ['0', '-30rem'], 4000, 500);
+                }
+                if (num == 4) {
+                    $('.scrollBar ul li').eq(5).attr('class', 'active');
+                    $('.whiteIcon').attr('src', './images/redIcon.png');
+                }
+                $('.slide li').find('img').attr('src', './images/slide_2.png');
+                $('.slide li').eq(num).find('img').attr('src', './images/slide_1.png');
+                num++;
+                arr[num].checked = true;
+            }
+            setTimeout(function () {
+                $('.scrollState').attr('scrollState', 'true');
+            }, 500);
+        }
+
+        $(function () {
+            setTimeout(function () {
+                $('.panel').show();
+            }, 500)
+            //swiper
+            var swiper_1 = new Swiper('.swiper_1 .swiper-container', {
+                autoplay: true,
+                direction: 'horizontal', // 垂直切换选项
+                loop: true, // 循环模式选项
+                speed: 2000,
+                observer: true,
+                observeParents: true,
+
+            });
+
+            var swiper_5 = new Swiper('.swiper_5 .swiper-container', {
+                autoplay: true,
+                speed: 2000,
+                loop: true,
+                slidesPerView: 3,
+                spaceBetween: '5%',
+                observer: true,
+                observeParents: true,
+                //spaceBetween : '10%',按container的百分比
+                // 如果需要分页器
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+                // 如果需要前进后退按钮
+                navigation: {
+                    nextEl: '.swiper_5_next',
+                    prevEl: '.swiper_5_prev',
+                },
+
+            });
+            var page5_swiper = new Swiper('.page5_swiper .swiper-container', {
+                autoplay: true,
+                speed: 2000,
+                loop: true,
+                observer: true,
+                observeParents: true,
+            });
+            $('.page3 li').hover(function () {
+                $(this).find('.page3_li_bg').stop().animate({ 'opacity': '0' }, 500);
+                $(this).find('.morw').attr('src', './images/page3_act.png');
+                // var page3_img = $(this).find('.page3_cont .page3Txt_1');
+                // console.log(page3_img)
+
+            }, function () {
+                $('.page3 li').find('.page3_li_bg').stop().animate({ 'opacity': '1' }, 500);
+                $('.page3 li').find('.morw').attr('src', './images/page3_3_04.png');
+            });
+            // 菜单按钮
+            $('.menuBth').on('click', function () {
+                if ($(this).attr('openNum') == '0') {
+                    $('.menuPage').show();
+                    $('.nav_btn').show();
+                    $(this).attr('openNum', '1');
+                    $(this).attr('src', './images/close.jpg');
+                } else {
+                    $('.menuPage').hide();
+                    $('.nav_btn').hide();
+                    $(this).attr('openNum', '0');
+                    $(this).attr('src', './images/menu.jpg');
+                }
+            });
+            $('.nav_btn').on('click', function () {
+                $('.menuPage').hide();
+                $('.nav_btn').hide();
+                $('.menuBth').attr('openNum', '0');
+                $('.menuBth').attr('src', './images/menu.jpg');
+                // console.log($(this).index() / 2);
+                var index = $(this).index() / 2;
+                removeClassAct(index);
+                if (index == 5) {
+                    $('.whiteIcon').attr('src', './images/redIcon.png');
+                } else {
+                    $('.whiteIcon').attr('src', './images/whiteIcon.png');
+                }
+            });
+            setTimeout(() => {
+                aniTranslateX('.page1_title', '40rem', 4000, 500);
+                aniTranslateX('.page1_txt', '40rem', 4000, 1000);
+            }, 1000);
+        });
+        function removeClassAct(num) {
+            $('.scrollBar ul li').attr('class', '');
+            for (let i = 0; i < num + 1; i++) {
+                $('.scrollBar ul li').eq(i).attr('class', 'active');
+            }
+        }
+        //动画
+        function aniTranslateX(className, unit, duration, delay) {
+            anime({
+                targets: [className],
+                translateX: unit,
+                duration: 1000,
+                delay: delay,
+                loop: false,
+                easing: 'easeOutQuad'
+            });
+        }
+        function aniTranslateY(className, unit, duration, delay) {
+            anime({
+                targets: className,
+                translateY: unit,
+                duration: 1000,
+                delay: delay,
+                loop: false,
+                easing: 'easeOutQuad'
+            });
+        }
+        function aniRound(className, range, round) {
+            anime({
+                targets: className,
+                innerHTML: range,
+                easing: 'linear',
+                round: round, // Will round the animated value to 1 decimal
+                delay: 2000,
+                easing: 'easeOutQuad'
+            });
+        }
+        function aniScale(className, unit, duration, delay) {
+            anime({
+                targets: className,
+                scale: unit,
+                duration: 2000,
+                delay: delay,
+                loop: false,
+                easing: 'easeOutQuad'
+            });
+        }
+    </script>
+</body>
+
+</html>

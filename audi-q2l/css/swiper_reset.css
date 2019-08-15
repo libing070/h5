@@ -1,0 +1,126 @@
+.view .swiper-container {
+    /* height: 620px; */
+    width: 100%;
+}
+
+.view:hover .arrow {
+    display: block;
+}
+
+.view .arrow {
+    display: none;
+    position: absolute;
+    top: 50%;
+    margin-top: -35px;
+    width: 70px;
+    height: 70px;
+    z-index: 10;
+}
+
+.preview {
+    padding: 0 5px;
+    width: 100%;
+    margin-top: 8px;
+    position: relative;
+}
+
+.preview .swiper-slide {
+    padding: 0 2px;
+    width: 23%;
+    height: 100%;
+}
+
+.preview .arrow {
+    position: absolute;
+    top: 50%;
+    margin-top: -9px;
+    width: 9px;
+    height: 18px;
+    z-index: 10;
+}
+
+.preview img {
+    padding: 1px;
+}
+
+.preview .active-nav img {
+    padding: 0;
+    /* border: 1px solid #FF3E3E; */
+    position: relative;
+}
+
+.preview .active-nav::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 90%;
+    height: 20%;
+    border: 2px solid #feed00;
+    border-bottom: none;
+    z-index: 99;
+}
+
+.preview .active-nav::after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-10%);
+    width: 90%;
+    height: 20%;
+    border: 2px solid #feed00;
+    border-top: none;
+    z-index: 99;
+}
+
+.swiper-button-black, .swiper-button-white {
+    margin-top: -16px;
+    width: 20px;
+    height: 32px;
+    outline: none;
+    /* background-size: 100%; */
+    background-size: 70%;
+}
+
+.swiper-button-prev1 {
+    left: 0px;
+}
+
+.swiper-button-next1 {
+    right: 0px;
+}
+
+.param_swiper .swiper-button-black, .swiper-button-white {
+    margin-top: -10px;
+    width: 12px;
+    height: 24px;
+    outline: none;
+    background-size: 100%;
+}
+
+.swiper2, .swiper3 {
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.swiper-pagination-bullet-active {
+    background: #333;
+}
+
+.swiper3 {
+    margin-top: 20px;
+    position: relative;
+}
+
+.swiper3 .swiper-pagination1 {
+    width: 100%;
+}
+
+.swiper3 .swiper-pagination1 span {
+    margin: 0 5px;
+}

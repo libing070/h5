@@ -1,0 +1,833 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+body, html {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /*overflow: hidden; */
+    z-index: -100;
+    /* touch-action: none; */
+    font-size: 0.16rem;
+    /*Chorme56+开始为了让页面滚动变得更为流畅，在 window、document 和 body 上注册的 touchstart 和 touchmove 事件处理函数，会默认为是 passive: true。
+    浏览器忽略默认事件的preventDefault(), 你要是手动阻止会弹出一个警告, 告诉你阻止不了
+    CSS属性上对想要禁用触摸事件的元素设置touch-action: none, 然后用js获取该元素真实DOM元素添加事件处理。
+    ele.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    */
+}
+
+body {
+    -webkit-text-size-adjust: 100% !important;
+}
+
+.content {
+    position: absolute;
+    top: 0.85rem;
+    left: 0;
+    width: 100%;
+    /*height: 100%;
+    overflow: hidden; */
+}
+
+.content1 {
+    display: none;
+}
+
+.content2 {
+    display: none;
+    /* background: #000; */
+}
+
+.content2 img {
+    display: block
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+}
+
+input, select, option, textarea {
+    outline: none;
+    border-radius: 0px;
+}
+
+/* a标签点击闪烁 */
+
+a, div, img {
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+}
+
+.float_right {
+    float: right;
+}
+
+.float_left {
+    float: left;
+}
+
+.first {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: url('./../images/first1_bg.jpg') no-repeat center top;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.header {
+    position: absolute;
+    width: 100%;
+    height: 0.5rem;
+    background: #fff;
+    padding: 0 5%;
+}
+
+.header img {
+    /* margin-top: 10%; */
+}
+
+.header img:nth-child(1) {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    margin-top: -2.5%;
+    width: 25%;
+}
+
+.header img:nth-child(2) {
+    position: absolute;
+    right: 5%;
+    width: 21%;
+    margin-top: 0.05rem;
+}
+
+.header2 {
+    position: absolute;
+    top: 0.5rem;
+    left: 0;
+    padding: 0 5%;
+    width: 100%;
+    height: 0.35rem;
+    background: rgba(75, 75, 75, 0.5);
+    line-height: 0.35rem;
+    font-size: 0.12rem;
+    color: #fff;
+    z-index: 99;
+}
+
+.header2 .btns {
+    float: right;
+    width: 50%;
+    text-align: right;
+}
+
+.header2 .btns a {
+    width: 45%;
+    padding: 2% 5%;
+    border-radius: 0.05rem;
+    background: #fff;
+    color: #333;
+}
+
+.header2 .btns .active {
+    background: #cc0031;
+    color: #fff;
+}
+
+.header2 .btns a:nth-child(1) {
+    margin-right: 0.05rem;
+}
+
+.header2 .A6L {
+    float: left;
+    display: block;
+    width: 0.22rem;
+    height: 100%;
+    background: url('./../images/A6L.png') no-repeat center;
+    background-size: 100%;
+}
+
+.p1 {
+    width: 100%;
+    position: relative;
+}
+
+.p1 .p1_bg {
+    width: 100%;
+}
+
+.p1 .p1_cont {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.p1 .p1_cont img {
+    display: block;
+    width: 100%;
+}
+
+.p1 .liuzi {
+    margin: 0.05rem auto 0;
+    width: 80%;
+}
+
+.p1 .put {
+    margin-bottom: 0.1rem;
+    width: 100%;
+    padding: 0;
+    height: 0.32rem;
+    line-height: 0.32rem;
+    color: #333;
+}
+
+.p1 .put label {
+    font-size: 0.12rem;
+    color: #fff;
+}
+
+.p1 .put input {
+    float: right;
+    border-radius: 0px;
+    color: #333;
+    flex: 0 0 79%;
+    width: 79%;
+    padding: 0 0.14rem;
+    height: 100%;
+    font-size: 0.12rem;
+    background: rgba(255, 255, 255, .7);
+}
+
+.p1 .put select {
+    border-radius: 0px;
+    float: right;
+    color: #333;
+    flex: 0 0 79%;
+    width: 79%;
+    padding: 0 0.14rem;
+    height: 100%;
+    font-size: 0.12rem;
+    background: rgba(255, 255, 255, .7);
+}
+
+.p1 .put input::-webkit-input-placeholder {
+    color: #333;
+}
+
+.p1 .put input::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #333;
+}
+
+.p1 .put nput:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #333;
+}
+
+.p1 .put input:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #333;
+}
+
+.p1 .distributor {
+    margin: 0 auto;
+    width: 80%;
+    font-size: 0.14rem;
+}
+
+.distri_local {
+    padding: 0.1rem 0.1rem;
+    background: rgba(255, 255, 255, .7);
+    width: 100%;
+}
+
+.distri_local h3 {
+    font-size: 0.12rem;
+    margin-bottom: 0.1rem;
+}
+
+.distri_local p {
+    font-size: 0.10rem;
+}
+
+.icon {
+    display: inline-block;
+    width: 0.11rem;
+    height: 0.11rem;
+    vertical-align: middle;
+}
+
+.p1 .local {
+    background: url('./../images/local.png') no-repeat;
+    background-size: 100%;
+}
+
+.p1 .phone {
+    background: url('./../images/phone.png') no-repeat;
+    background-size: 100%;
+}
+
+.p1 .distri_btns {
+    margin-top: 0.1rem;
+    width: 100%;
+    display: flex;
+}
+
+.p1 .distri_btns a {
+    padding: 0.1rem 0.3rem;
+    flex: 1;
+    text-align: center;
+    border: 1px solid #fff;
+}
+
+.p1 .call_now {
+    margin-right: 0.05rem;
+    background: rgba(0, 0, 0, 0);
+    color: #fff;
+}
+
+.p1 .app_now {
+    margin-left: 0.05rem;
+    background: #fff;
+    color: #333;
+}
+
+.p2 {
+    width: 100%;
+}
+
+.carInfo_head {
+    width: 100%;
+}
+
+.carInfo_head img {
+    width: 100%;
+}
+
+.p2_swiper {
+    background: #e3e3e3;
+}
+
+.p3 {
+    padding-top: 0.2rem;
+    background: #e3e3e3;
+}
+
+.activity_cont {
+    display: block;
+    margin-top: 0.1rem;
+}
+
+.p4 {
+    margin-bottom: 0.8rem;
+    width: 100%;
+    font-size: 0.14rem;
+}
+
+.InquiryPrice {
+    width: 100%;
+}
+
+.search {
+    margin: 0 auto;
+    display: flex;
+    width: 90%;
+}
+
+.search div {
+    flex: 1;
+    display: flex;
+}
+
+.search div:nth-child(1) {
+    margin-right: 0.05rem;
+}
+
+.search div:nth-child(2) {
+    margin-left: 0.05rem;
+}
+
+.search label {
+    width: 20%;
+    flex: 0 0 20%;
+    line-height: 0.3rem;
+}
+
+.search .replaceInput {
+    padding: 0 0.15rem 0 0.05rem;
+    width: 80%;
+    flex: 0 0 80%;
+    height: 0.3rem;
+    line-height: 0.3rem;
+    border: 1px solid #d5d9d8;
+    font-size: 0.12rem;
+}
+
+.search input {
+    padding: 0 0.15rem 0 0.05rem;
+    width: 80%;
+    flex: 0 0 80%;
+    height: 0.3rem;
+    border: 1px solid #d5d9d8;
+    font-size: 0.12rem;
+}
+
+.search label {
+    font-size: 0.12rem;
+}
+
+.search input::-webkit-input-placeholder {
+    font-size: 0.12rem;
+}
+
+.p4 .local {
+    position: relative;
+}
+
+.search_distri {
+    position: relative;
+}
+
+.search_distri .local2 {
+    width: 0.22rem;
+    height: 0.22rem;
+    right: 0.05rem;
+    margin-top: -0.11rem;
+}
+
+.local2 {
+    width: 0.12rem;
+    height: 0.1669rem;
+    position: absolute;
+    top: 50%;
+    right: 0.05rem;
+    margin-top: -0.083rem;
+}
+
+.p4 .distributor {
+    width: 90%;
+    margin: 0.2rem auto 0;
+}
+
+.p4 .distributor .list {
+    background: #eeeeee;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.12rem;
+    margin-top: 0.2rem;
+}
+
+.p4 .distributor .list p {
+    margin-top: 0.1rem;
+}
+
+.InquiryPrice .dizhi {
+    background: url('./../images/dizhi.png') no-repeat center;
+    background-size: auto 100%;
+}
+
+.p4 .dianhua {
+    background: url('./../images/dianhua.png') no-repeat center;
+    background-size: auto 100%;
+}
+
+.p4 .distributor .btns {
+    margin-top: 0.1rem;
+    overflow: hidden;
+}
+
+.p4 .distributor .btns a {
+    padding: 0.05rem 0.15rem;
+    box-sizing: border-box;
+}
+
+.p4 .call_now {
+    float: right;
+    background: #333;
+    color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.p4 .app_now, .app_now2 {
+    float: left;
+    color: #333;
+    border: 1px solid #333;
+    padding: 0.05rem 0.15rem;
+    box-sizing: border-box;
+    background-color: transparent;
+    font-size: 0.12rem;
+}
+
+.look_more {
+    margin-top: 0.2rem;
+    width: 100%;
+    text-align: center;
+}
+
+.look_more p {
+    text-align: center;
+}
+
+.look_more img {
+    width: 0.14rem;
+    height: 0.14rem;
+}
+
+.footer, .footer ul {
+    width: 100%;
+    display: flex;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 0.1rem;
+    background: #eeeeee;
+    box-shadow: 0 -2px 0.05rem #e5e5e5;
+    z-index: 990;
+}
+
+.footer ul li {
+    position: relative;
+    flex: 1;
+    text-align: center;
+    color: #979797;
+}
+
+.footer ul li img {
+    width: 0.27rem;
+    height: 26.0.05rem;
+    text-align: center;
+}
+
+.footer ul li p {
+    text-align: center;
+    font-size: 0.14rem;
+}
+
+.footer ul li:nth-child(1)::before {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 0.2rem;
+    background: #dcdcdc;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -0.1rem;
+}
+
+.footer ul li:nth-child(2)::before {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 0.2rem;
+    background: #dcdcdc;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -0.1rem;
+}
+
+.doubleSelect {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: rgba(0, 0, 0, .5); */
+    z-index: 999;
+}
+
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .6);
+    /* z-index: 999; */
+}
+
+.selectCont {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+}
+
+.cityselect-title {
+    text-align: center;
+    font-size: 0.14rem;
+    line-height: 0.4rem;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.cancelBtn {
+    float: left;
+    margin-left: 0.1rem;
+    color: #999;
+}
+
+.selectUl {
+    width: 100%;
+    display: flex;
+}
+
+.selectUl .sel {
+    flex: 1;
+    text-align: center;
+    font-size: 0.14rem;
+}
+
+.selectCity, .selectPro {
+    position: relative;
+}
+
+.selectCity, .selectPro ul {
+    height: 3rem;
+    overflow: auto;
+}
+
+.selectPro::before {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #e7e7e7;
+}
+
+.sel li {
+    line-height: 0.5rem;
+}
+
+.act {
+    color: #cc0031;
+    font-size: 0.15rem;
+}
+
+.doubleSelect .icon {
+    display: none;
+}
+
+.j_active {
+    position: relative;
+    width: 0.09rem;
+    top: -1px;
+    vertical-align: middle;
+}
+
+.act .j_active {
+    display: inline-block !important;
+}
+
+.j_active::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('./../images/j_active.png') no-repeat center;
+    background-size: 100%
+}
+
+#app {
+    display: none;
+    width: 100%;
+    height: 100% !important;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 990;
+    background: #fff;
+}
+
+#app2 {
+    display: none;
+    width: 100%;
+    height: 100% !important;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 990;
+    background: #fff;
+}
+
+.find_pop {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 992;
+}
+
+.find_pop ul {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    background: #fff;
+    text-align: center;
+}
+
+.find_pop ul li {
+    flex: 1;
+    font-size: 0.12rem;
+    padding: 0.3rem 0;
+}
+
+.find_pop ul li a {
+    display: block;
+    color: #333;
+}
+
+.find_pop ul li img {
+    height: 0.28rem;
+    width: auto;
+    margin-bottom: 0.1rem;
+}
+
+.media {
+    display: none;
+    width: 100%;
+    /* height: 100%; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 992;
+}
+
+.wxBox {
+    width: 2.4rem;
+    top: 50%;
+    margin-top: -1.2rem;
+    left: 50%;
+    margin-left: -1.2rem;
+}
+
+.xcxBox {
+    width: 2.4rem;
+    top: 50%;
+    margin-top: -1.2rem;
+    left: 50%;
+    margin-left: -1.2rem;
+}
+
+.dn {
+    top: 40%;
+    position: fixed;
+}
+
+.closeIframe {
+    position: absolute;
+    /* top: 0.3rem; */
+    /* left: 0.1rem; */
+    width: 0.4rem;
+    height: 0.4rem;
+    text-align: center;
+    line-height: 0.4rem;
+    font-size: 0.14rem;
+    /* background: url('./../images/close.png') no-repeat center;
+    background-size: cover; */
+    z-index: 99;
+    color: #fff;
+}
+
+.evaluation_pop .closeIframe {
+    position: absolute;
+    top: 0.1rem;
+    right: 0.1rem;
+    width: 0.2rem;
+    height: 0.2rem;
+    text-align: center;
+    line-height: 0.4rem;
+    font-size: 0.14rem;
+    background: url('./../images/close.png') no-repeat center;
+    background-size: cover;
+    z-index: 99;
+}
+
+.cityPut {
+    float: right;
+    color: #333;
+    flex: 0 0 79%;
+    width: 79%;
+    padding: 0 0.14rem;
+    height: 100%;
+    font-size: 0.12rem;
+    background: rgba(255, 255, 255, .7);
+}
+
+.goPolicy {
+    position: relative;
+    width: 100%;
+}
+
+.goPolicy div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+}
+
+@media screen and (min-height: 740px) {
+    .first {
+        background: url('./../images/first2_bg.jpg') no-repeat center top;
+        background-size: cover;
+    }
+}
+
+.first img {
+    width: 0.2rem;
+    /* height: 1rem; */
+    position: absolute;
+    left: 50%;
+    margin-left: -0.1rem;
+    top: 90%;
+    animation: iconBottom 1s linear infinite;
+}
+
+@keyframes iconBottom {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

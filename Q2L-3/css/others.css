@@ -1,0 +1,222 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #000;
+    z-index: 990;
+    height: 6%;
+    width: 100%;
+    /* padding-top: 1%; */
+}
+
+.footer ul {
+    width: 60%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+.footer ul li {
+    height: 100%;
+    width: 9.09%;
+    position: relative;
+    float: left;
+    text-align: center;
+    color: #979797;
+    cursor: pointer;
+}
+
+.footer ul li img {
+    margin: 0 auto 10%;
+    width: 30%;
+}
+
+.footer ul li p {
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #fff;
+    /* position: absolute;
+    left: 0;
+    bottom: 0; */
+}
+
+.footer ul li a {
+    display: block;
+}
+
+.interval {
+    position: relative;
+}
+
+.interval span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+img {
+    width: 100%;
+}
+
+.div-setting .title img {
+    width: 15%;
+}
+
+.find_pop {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 992;
+}
+
+.mask {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .6);
+}
+
+.find_pop ul {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 13%;
+    background: #fff;
+    text-align: center;
+    max-height: 95px;
+}
+
+.find_pop ul li {
+    float: left;
+    font-size: 0.12rem;
+    padding: 0.3rem 0;
+}
+
+.find_pop ul li a {
+    display: block;
+    color: #333;
+}
+
+.find_pop ul li img {
+    height: 2.2rem;
+    width: auto;
+    margin-bottom: 0.1rem;
+}
+
+.find_pop ul li p {
+    font-size: 1.1rem;
+}
+
+.zhong {
+    position: fixed;
+    width: 320px;
+    top: 40%;
+    left: 50%;
+    margin-left: -150px;
+    z-index: 999;
+    padding-bottom: 30px;
+    padding-top: 10px;
+    background-color: white;
+    text-align: center;
+}
+
+.zhong img {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+}
+
+.liShare_wx::after {
+    content: "微信";
+    display: block;
+    width: 150px;
+    height: 20px;
+    line-height: 1.2;
+    position: absolute;
+    left: 0px;
+    top: 165px;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    text-align: center;
+}
+
+.liShare_wb::after {
+    content: "微博";
+    display: block;
+    width: 150px;
+    height: 20px;
+    line-height: 1.2;
+    position: absolute;
+    left: 150px;
+    top: 165px;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    text-align: center;
+}
+
+.zhong_common {
+    position: fixed;
+    width: 200px;
+    top: 40%;
+    left: 50%;
+    margin-left: -100px;
+    z-index: 999;
+    padding-bottom: 30px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.zhong_common img {
+    width: 160px;
+    height: 160px;
+}
+
+.liShare_xcx::after {
+    content: "奥迪小程序";
+    display: block;
+    width: 200px;
+    height: 20px;
+    line-height: 1.2;
+    position: absolute;
+    left: 0px;
+    top: 175px;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    text-align: center;
+}
+
+.liShare_ewm::after {
+    content: "奥迪官方公众号";
+    display: block;
+    width: 200px;
+    height: 20px;
+    line-height: 1.2;
+    position: absolute;
+    left: 0px;
+    top: 175px;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    text-align: center;
+}
+
+.shadow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .6);
+    z-index: 2;
+    display: none;
+}

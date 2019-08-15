@@ -80,7 +80,7 @@ http://git.danuooa.com
 https://blog.csdn.net/jingtingfengguo/article/details/51892864  从新生成.ssh
 
 
-libing@skyengine.cn    Xflhklb8561070..
+libing@skyengine.cn    Xflhklb8561070!!
 
 
 http://123.56.180.12:8888   libing 123456
@@ -106,3 +106,7 @@ https://segmentfault.com/a/1190000007276635 h5自适应模板
 https://juejin.im/entry/58a6687661ff4b006c4854d3  Nodejs 模拟登录新浪微博
 
 https://unbug.github.io/codelf 字段命名
+
+https://c.runoob.com/codedemo/3391  css transform 
+
+https://blog.csdn.net/u012207345/article/details/81867816 移动端手势事件浅析
