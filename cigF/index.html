@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name = "format-detection" content = "telephone=no">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/layer.css">
+    <!-- 适配wap pad/pc -->
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/base_pc.css" media="(min-width:767px)">
+    <link rel="stylesheet" href="./css/base_wap.css" media="(max-width:767px)">
+    <link rel="stylesheet" href="./css/swiper_reset.css">
+    <link rel="stylesheet" href="./css/animation.css">
+    <title>cig</title>
+</head>
+
+<body>
+    <div class="container" id="pc" style="display: none">
+        <div class="containerOuter swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide outerSlide module1">
+                    <!-- <div>
+                        <div class="page1" style="border: 1px solid #333;">
+                            登录
+                            <input type="text" name="" class="username">
+                            <input type="text" name="" class="password">
+                            <input type="text" name="" class="verifyCode">
+                            <a href="javascript:;" class="verCodeBtn">
+                                <img src="http://172.16.101.119:8899/api/VerifyCode/CreateCode" alt="">
+                            </a>
+                            <input type="button" value="登录" id="login">
+                        </div>
+                        <div class="page2" style="border: 1px solid #333;">
+                            注册
+                            <input type="text" name="" class="username" placeholder="账号">
+                            <input type="password" name="" class="password" placeholder="密码">
+                            <input type="number" name="" class="mobile" placeholder="手机号">
+                            <input type="text" class="mobileCode" placeholder="验证码">
+                            <input type="button" value="发送验证码" class="mobileCodeBtn">
+                            <input type="button" value="注册" id="regist">
+                        </div>
+                        <div class="page3">
+                            找回密码
+                            <input type="password" name="" id="" class="password" placeholder="密码">
+                            <input type="number" name="" id="" class="mobile" placeholder="电话">
+                            <input type="text" name="" id="" class="mobileCode" placeholder="验证码">
+                            <input type="button" value="发送验证码" class="mobileCodeBtn">
+                            <input type="button" value="找回" class="forgetPwd">
+                        </div>
+                        <div class="page4">
+                            修改密码
+                            <input type="text" name="" class="username" placeholder="账号">
+                            <input type="password" name="" id="" class="password" placeholder="新密码">
+                            <input type="text" name="" id="" class="confirmPassword" placeholder="确认密码">
+                            <input type="button" value="修改" class="modifyPwd">
+                        </div>
+                        <a href="#" class="download" download='download'>下载</a>
+                    </div> -->
+                    <div class="indexSwiper swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="banner banner1">
+                                    <div class="banner_left">
+                                        <p class="ani_1">Digital Marketing</p>
+                                        <p class="txt_margin ani_2">数字时代营销专家</p>
+                                        <a class="arrow_icon arrow_1 " href="javascript:;">
+                                            <img class="ani_0" src="./images/arrow_icon.png" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="banner banner2">
+                                    <div class="banner_left">
+                                        <p class="ani_3">Industry Qualification</p>
+                                        <p class="txt_margin ani_4">顶级行业资质</p>
+                                        <a class="arrow_icon arrow_2" href="javascript:;">
+                                            <img src="./images/arrow_icon.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="banner_right ani_5">
+                                        <div class="danwei">
+                                            <p>理事单位</p>
+                                            <img class="ani_6" src="./images/banner2_icon1.png" alt="">
+                                            <img class="ani_7" src="./images/banner2_icon2.png" alt="">
+                                        </div>
+                                        <div class="danwei">
+                                            <p>副理事长单位</p>
+                                            <img class="ani_8" src="./images/banner2_icon3.png" alt="">
+                                            <!-- <img src="./images/banner2_icon2.png" alt=""> -->
+                                        </div>
+                                        <div class="danwei">
+                                            <p>认证企业</p>
+                                            <img class="ani_9" src="./images/banner2_icon4.png" alt="">
+                                            <!-- <img src="./images/banner2_icon2.png" alt=""> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="banner banner3">
+                                    <div class="banner_left">
+                                        <p class="ani_10">Industry Influence</p>
+                                        <p class="ani_11">专业的服务与实力，</p>
+                                        <p class="txt_margin ani_12">成就卓越的行业影响力</p>
+                                        <a class="arrow_icon arrow_3" href="javascript:;">
+                                            <img src="./images/arrow_icon_banner3.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="banner_bottom">
+                                        <img class="ban3_left ani_14" src="./images/banner_bottom_bg.png" alt="">
+                                        <div class="jiangxiang ani_13">
+                                            <ul>
+                                                <li class="ani_15">
+                                                    <img src="./images/banner3_icon1.png" alt="">
+                                                </li>
+                                                <li class="ani_16">
+                                                    <img src="./images/banner3_icon2.png" alt="">
+                                                </li>
+                                                <li class="ani_17">
+                                                    <img src="./images/banner3_icon3.png" alt="">
+                                                </li>
+                                                <li class="ani_18">
+                                                    <img src="./images/banner3_icon4.png" alt="">
+                                                </li>
+                                                <li class="ani_19">
+                                                    <img src="./images/banner3_icon5.png" alt="">
+                                                </li>
+                                                <li class="ani_20">
+                                                    <img src="./images/banner3_icon6.png" alt="">
+                                                </li>
+                                            </ul>
+                                            <ul>
+                                                <li class="ani_21">
+                                                    <img src="./images/banner3_icon7.png" alt="">
+                                                </li>
+                                                <li class="ani_22">
+                                                    <img src="./images/banner3_icon8.png" alt="">
+                                                </li>
+                                                <li class="ani_23">
+                                                    <img src="./images/banner3_icon9.png" alt="">
+                                                </li>
+                                                <li class="ani_24">
+                                                    <img src="./images/banner3_icon10.png" alt="">
+                                                </li>
+                                                <li class="ani_25">
+                                                    <img src="./images/banner3_icon11.png" alt="">
+                                                </li>
+                                                <li class="ani_26">
+                                                    <img src="./images/banner3_icon12.png" alt="">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button">
+                            <div class="swiper-button-prev indexSwiper_prev"></div>
+                            <div class="swiper-button-next indexSwiper_next"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide outerSlide module2">
+                    <div class="about_us swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="aboutUs_1">
+                                    <div class="about_top">
+                                        <div class="about_title">
+                                            <p class="ani_27">About</p>
+                                            <p class="ani_28">关于我们</p>
+                                        </div>
+                                        <div class="about_desc">
+                                            <p class="ani_29">
+                                                新意互动成立于2002年，是国内最早专注于数字整合营销服务的代理公司之一，凭借大数据输出的研究洞察、策略创意、媒介投放等优势，构建了一整套互联网模式下的整合营销服务体系，致力于为客户提供更具商业价值的智慧营销服务。
+                                            </p>
+                                            <a href="javascript:;" class="arrow_icon arrow_About">
+                                                <img src="./images/arrow_icon.png" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="about_bottom">
+                                        <ul>
+                                            <li>
+                                                <div class="about_num">
+                                                    <p class="aniR_1">17</p>
+                                                </div>
+                                                <div class="about_numDesc">
+                                                    <p>年</p>
+                                                    <p>全案代理经验</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="about_num">
+                                                    <p class="aniR_2">900</p>
+                                                </div>
+                                                <div class="about_numDesc plus">
+                                                    <p class="">+</p>
+                                                    <p>创意团队成员</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="about_num">
+                                                    <p class="aniR_3">600</p>
+                                                </div>
+                                                <div class="about_numDesc plus">
+                                                    <p>+</p>
+                                                    <p>累计服务客户</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="about_num">
+                                                    <p class="aniR_4">40</p>
+                                                </div>
+                                                <div class="about_numDesc">
+                                                    <p>亿</p>
+                                                    <p>媒介采购额</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="swiper-button swiper-button2">
+                                <div class="swiper-button-prev about_us_prev"></div>
+                                <div class="swiper-button-next about_us_next"></div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide outerSlide module3">
+                    <ul class="products">
+                        <li class="product_active">
+                            <img class="pro_img" src="./images/products_act0.jpg" alt="">
+                            <img class="product_bg1" src="./images/products_bg0.jpg" alt="">
+                            <div class="product_cont">
+                                <p class="pro_p1 ani_30">Digital Integrated</p>
+                                <p class="pro_p1 ani_30">Marketing</p>
+                                <p class="pro_p2 ani_31">数字整合营销</p>
+                                <p class="pro_p3 ani_32">
+                                    提供品牌策略、内容创意、媒介营销、公关传播、社会化营销、搜索营销、用户运营、海外营销等全营销价值链服务体系。根据您的需求与定位，量身定制打造最优的渠道组合。</p>
+                                <a href="javascript:;" class="arrow_icon arrow_About ">
+                                    <img class="pro_arrow" src="./images/arrow_icon.png" alt="">
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <img class="pro_img" src="./images/products_act1.jpg" alt="">
+                            <img class="product_bg1" src="./images/products_bg1.jpg" alt="">
+                            <div class="product_cont">
+                                <p class="pro_p1 ani_30">Big Data</p>
+                                <p class="pro_p1" style="opacity: 0">1</p>
+                                <p class="pro_p2 ani_31">大数据应用</p>
+                                <p class="pro_p3 ani_32">
+                                    以人为核心，专注营销领域，构建了独有的中国汽车受众大数据库，提供用户行为与洞察、精准投放、数字流量监测等服务，为营销决策提供支。</p>
+                                <a href="javascript:;" class="arrow_icon arrow_About ">
+                                    <img class="pro_arrow" src="./images/arrow_icon.png" alt="">
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <img class="pro_img" src="./images/products_act2.jpg" alt="">
+                            <img class="product_bg1" src="./images/products_bg2.jpg" alt="">
+                            <div class="product_cont">
+                                <p class="pro_p1 ani_30">Digital Image</p>
+                                <p class="pro_p1" style="opacity: 0">1</p>
+                                <p class="pro_p2 ani_31">数字影像</p>
+                                <p class="pro_p3 ani_32">提供全球高端可视化解决方案。</p>
+                                <p class="pro_p3 ani_32">
+                                    拥有一支经验丰富CG创作团队，采用丰富独特的创意，结合CG、实拍、虚拟现实等技术方式，为客户定制用于车展活动、发布会、广告等全媒体营销渠道的影响内容及互动方案</p>
+                                <a href="javascript:;" class="arrow_icon arrow_About ">
+                                    <img class="pro_arrow" src="./images/arrow_icon.png" alt="">
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="swiper-slide outerSlide module4">
+                    <div class="caseSwiper swiper-container">
+                        <div class="swiper-wrapper">
+                            <!-- <div class="swiper-slide">
+                                <video src="./audio/cigKV.mp4"></video>
+                                <div class="caseCont">
+                                    <div class="case_float">
+                                        <div class="case_txt">
+                                            <p class="fontSize30">123</p>
+                                            <p class="fontSize30">12</p>
+                                        </div>
+                                    </div>
+                                    <div class="case_float">
+                                        <div class="case_txt">
+                                            <p class="fontSize16">123</p>
+                                            <a href="javascript:;" class="arrow_icon arrow_About ">
+                                                <img class="" src="./images/arrow_icon.png" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="play">
+                                        <img src="./images/play.png" alt="">
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="swiper-button case-button">
+                            <div class="swiper-button-prev case_prev"></div>
+                            <div class="swiper-pagination case_pagination"></div>
+                            <div class="swiper-button-next case_next"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide outerSlide module5">
+                    <div class="news_title">
+                        <div class="float_left aniN_1">
+                            <span class="fontSize36 ">News </span>
+                            <span class="fontSize56 "> 新闻</span>
+                        </div>
+                        <div class="float_left" style="padding-top:2%;">
+                            <a href="javascript:;" class="arrow_icon arrow_About ">
+                                <img class="pro_arrow" src="./images/arrow_icon.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="newsSwiper swiper-container">
+                        <div class="swiper-wrapper">
+                            <!-- <div class="swiper-slide">
+                                <img src="" alt="">
+                                <p class="fontSize24"></p>
+                                <p class="fontSize14"></p>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="swiper-button news-button">
+                        <div class="swiper-button-prev news_prev"></div>
+                        <div class="swiper-pagination news_pagination"></div>
+                        <div class="swiper-button-next news_next"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide outerSlide module6">
+                    <div class="contact_us">
+                        <div class="float_left">
+                            <div class="posiTrans">
+                                <div class="contact_title">
+                                    <p class="fontSize36 ani_38">Contact</p>
+                                    <p class="fontSize56 ani_39">联系我们</p>
+                                </div>
+                                <div class="contact_phone">
+                                    <p class="fontSize18 ani_40">新意互动北京总部</p>
+                                    <p class="fontSize24 ani_41">010-6839 3999</p>
+                                    <p class="fontSize16 ani_42">北京市海淀区西外大街168号，腾达大厦27&29&30</p>
+                                    <div class="line_contcat1"></div>
+                                </div>
+                                <div class="cooper">
+                                    <p>
+                                        <span style="display: inline-block;" class="fontSize24 ani_43">商务合作</span>
+                                        <a href="javascript:;" class="arrow_icon arrow_About ">
+                                            <img class="pro_arrow" src="./images/arrow_icon.png" alt="">
+                                        </a>
+                                    </p>
+                                    <div class="line_contcat2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="float_left">
+                            <ul class="contact_add">
+                                <li>
+                                    <p class="fontSize18 ani_44">新意互动-上海</p>
+                                    <p class="fontSize12 ani_45">021-6037 8301</p>
+                                    <p class="fontSize14 ani_46">上海市长宁区长宁路1193号长宁来福士办公楼2108-09室</p>
+                                </li>
+                                <li>
+                                    <p class="fontSize18 ani_47">新意互动-南京</p>
+                                    <p class="fontSize12 ani_48">010-6839 3999</p>
+                                    <p class="fontSize14 ani_49">南京市秦淮区汉中路1号国际金融中心J座19层</p>
+                                </li>
+                                <li>
+                                    <p class="fontSize18 ani_50">新意互动-广州</p>
+                                    <p class="fontSize12 ani_51">020-3591 8836</p>
+                                    <p class="fontSize14 ani_52">广州市天气河区临江大道3号发展中心大厦22楼</p>
+                                </li>
+                                <li>
+                                    <p class="fontSize18 ani_53">新意互动-武汉</p>
+                                    <p class="fontSize12 ani_54">010-6839 3999</p>
+                                    <p class="fontSize14 ani_55">武汉经济开发区东风大道111号经开万达C6-1501</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="weixin ani_56">
+                            <div class="flex_1"><img src="./images/weixinCode.jpg" alt=""></div>
+                            <div class="flex_1">
+                                <p class="fontSize12" style="margin-top: 0.6rem;">扫描添加</p>
+                                <p class="fontSize12">官方微信公众号</p>
+                            </div>
+                            <div class="line_qrcode"></div>
+                        </div>
+                        <div class="copy">
+                            <p>© 2003-2018 CIG(Creative & Interactive Group) 新意互动版权所有</p>
+                            <p>京ICP05029197号，京公网安备11010802020003号</p>
+                        </div>
+                    </div>
+                    <div class="contact_mask cm_1">
+                        <div class="liuzi">
+                            <div class="selectIdentity">
+                                <img src="./images/customer.jpg" alt="">
+                                <img src="./images/supplier.jpg" alt="">
+                            </div>
+                            <img class="close_btn" src="./images/close_icon.png" alt="">
+                        </div>
+                    </div>
+                    <div class="contact_mask cm_2">
+                        <div class="liuzi">
+                            <div class="fillIn">
+                                <ul>
+                                    <li>
+                                        <label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label>
+                                        <input class="name" type="text">
+                                    </li>
+                                    <li>
+                                        <label for="">公司名称：</label>
+                                        <input class="companyName" type="text">
+                                    </li>
+                                    <li>
+                                        <label for="">公司地址：</label>
+                                        <input class="companyAddr" type="text">
+                                    </li>
+                                    <li>
+                                        <label for="">联系方式：</label>
+                                        <input class="contact" type="text">
+                                    </li>
+                                    <li>
+                                        <p class="fontSize16">需求简介：</p>
+                                        <textarea class="remark" name="" id="" cols="30" rows="10"
+                                                  placeholder="选填"></textarea>
+                                    </li>
+                                </ul>
+                                <div class="tijiao">
+                                    <a href="javascript:;">提交</a>
+                                    <a href="javascript:;">返回</a>
+                                </div>
+                            </div>
+                            <img class="close_btn" src="./images/close_icon.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide outerSlide module7">
+                    <div class="recruit">
+                        <div class="recruit_cont">
+                            <div class="welcome_box">
+                                <p class="fontSize40 ani_57" >Hello</p>
+                                <p class="fontSize30 marginEle ani_58">欢迎来到新意互动！</p>
+                                <a href="javascript:;" class="arrow_icon arrow_About ">
+                                    <img class="pro_arrow" src="./images/arrow_icon.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="recruit_cont">
+                            <div class="welcome_box">
+                                <div class="popular">
+                                    <p class="fontSize30 marginBt_5 ani_59">热门岗位</p>
+                                    <ul class="fontSize18 hotJob">
+
+                                    </ul>
+                                </div>
+                                <div class="popular" style="margin-top:0.5rem">
+                                    <p class="fontSize30 marginBt_5 ani_60">长招职位</p>
+                                    <ul class="fontSize18 longTimeJob">
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide outerSlide module8">
+                    <div class="tt">
+                        <div class="tt_left">
+                            <a class="tt_loginBtn" href="javascript:;">
+                                <!-- <img src="./images/tt_loginBtn.png" alt=""> -->
+                                登录智库
+                            </a>
+                            <p class="fontSize24 margin_tt_1 ani_71">亲爱的小伙伴你好</p>
+                            <p class="fontSize24 margin_tt_2 ani_72">欢迎来到CIG数字营销智库！</p>
+                            <a href="javascript:;" class="arrow_icon arrow_About ">
+                                <img class="pro_arrow" src="./images/arrow_icon.png" alt="">
+                            </a>
+                        </div>
+                        <div class="tt_right">
+                            <div class="ttSwiper swiper-container">
+                                <div class="swiper-wrapper">
+
+                                </div>
+
+                            </div>
+                            <div class="swiper-button tt-button">
+                                <div class="swiper-button-prev tt_prev"></div>
+                                <div class="swiper-pagination tt_pagination"></div>
+                                <div class="swiper-button-next tt_next"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact_mask cm_tt">
+                        <div class="liuzi">
+                            <div class="fillIn">
+                                <p class="tt_title fontSize32">欢迎来到新意智库</p>
+                                <ul>
+                                    <li>
+                                        <label for="">账&nbsp;&nbsp;&nbsp;&nbsp;号：</label>
+                                        <input class="userName" type="text">
+                                    </li>
+                                    <li>
+                                        <label for="">密&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
+                                        <input class="password" type="password">
+                                    </li>
+                                    <li class="verifyCodeBox">
+                                        <div class="verifyCodeDiv">
+                                            <label for="">验证码：</label>
+                                            <input class="verifyCode" type="text">
+                                        </div>
+                                        <div class="verifyCodeImg">
+                                            <img src="" alt="">
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="forgetBox">
+                                    <a class="fontSize16" href="javascript:;">加入智库</a>
+                                    <a class="fontSize16" href="javascript:;">忘记密码？</a>
+                                </div>
+                                <div class="tt_login">
+                                    <a href="javascript:;">登录</a>
+                                </div>
+                            </div>
+                            <img class="close_btn" src="./images/close_icon.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide outerSlide module9">
+                    <div class="OA">
+                        <div class="loginOA">
+                            <p class="fontSize30 ani_76">新意的小伙伴你好！</p>
+                            <a class=" fontSize18" href="javascript:;">
+                                登录OA
+                            </a>
+                        </div>
+                        <div class="oaDesc">
+                            <div class="oa_float">
+                                <div class="posiCenter">
+                                    <p class="fontSize24 OAName"><b>你打阿达</b> 你好,</p>
+                                    <p class="fontSize24">欢迎进入新意OA系统!</p>
+                                    <a class="joinOA" href="javascript:;">进入OA</a>
+                                </div>
+                            </div>
+                            <div class="oa_float">
+                                <div class="oa_menu">
+                                    <ul class="oa_menu_ul">
+                                        <li>
+                                            <a class="bell" href="javascript:;" target="_blank">
+                                                <img src="./images/bell-icon.png" alt="">
+                                                <p class="fontSize16">待办事宜</p>
+                                                <span class="oa_circle"></span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="bell" href="javascript:;" target="_blank">
+                                                <img src="./images/soipt-icon.png" alt="">
+                                                <p class="fontSize16">日常办公</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="bell" href="javascript:;" target="_blank">
+                                                <img src="./images/coins-icon.png" alt="">
+                                                <p class="fontSize16">公共资源</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <ul class="oa_menu_ul">
+                                        <li>
+                                            <a class="bell" href="javascript:;" target="_blank">
+                                                <img src="./images/link-icon.png" alt="">
+                                                <p class="fontSize16">平台链接</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="bell" href="javascript:;" target="_blank">
+                                                <img src="./images/forest-icon.png" alt="">
+                                                <p class="fontSize16">成长体系</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="bell" href="javascript:;" target="_blank">
+                                                <img src="./images/clipmark-icon.png" alt="">
+                                                <p class="fontSize16">新意新桥</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="wangpan">
+                                        <p>
+                                            <span class="fontSize18">新意网盘</span>
+                                            <a href="javascript:;" class="arrow_icon arrow_About ">
+                                                <img class="join_oa" src="./images/arrow_icon_banner3.png" alt="">
+                                            </a>
+                                        </p>
+                                        <ul>
+                                            <!-- <li>
+                                                <a href="javascript:;">
+                                                    <span class="fontSize14">2019年新意互动集团介绍字条</span>
+                                                    <span class="fontSize14">56M</span>
+                                                    <span class="fontSize14">下载</span>
+                                                    <img src="./images/dl-black.png" alt="">
+                                                </a>
+                                            </li> -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact_mask oa_tt">
+                        <div class="liuzi">
+                            <div class="fillIn">
+                                <p class="tt_title fontSize32">欢迎新意的小伙伴</p>
+                                <ul>
+                                    <li>
+                                        <label for="">工&nbsp;&nbsp;&nbsp;&nbsp;号：</label>
+                                        <input class="userName" type="text">
+                                    </li>
+                                    <li>
+                                        <label for="">密&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
+                                        <input class="password" type="password">
+                                    </li>
+                                    <li class="verifyCodeBox">
+                                        <div class="verifyCodeDiv">
+                                            <label for="">验证码：</label>
+                                            <input class="verifyCode" type="text">
+                                        </div>
+                                        <div class="verifyCodeImg">
+                                            <img src="" alt="">
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <div class="oa_login">
+                                    <a href="javascript:;">登录</a>
+                                </div>
+                            </div>
+                            <img class="close_btn" src="./images/close_icon.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="swiper-pagination"></div> -->
+        </div>
+        <!-- 滚动条 -->
+        <div class="scrollBar">
+            <p class="p1">01</p>
+            <img class="redIcon" src="./images/redIcon.png" alt="">
+            <ul>
+            </ul>
+            <img class="whiteIcon" src="./images/whiteIcon.png" alt="">
+            <p class="p2">06</p>
+        </div>
+        <!-- logo -->
+        <img class="logo" src="./images/logo.png" alt="">
+        <!-- 导航 -->
+        <div class="nav">
+            <ul>
+                <li>营销智库</li>
+                <li>职达新意</li>
+                <li>新意资讯</li>
+                <li>案例展示</li>
+                <li>服务与产品</li>
+                <li>关于我们</li>
+            </ul>
+        </div>
+        <!-- phoneIcon -->
+        <img class="phoneIcon" src="./images/phone_icon.png" />
+        <!-- mouseIcon -->
+        <img class="mouseIcon" src="./images/mouseIcon.png" />
+    </div>
+    <div class="container"  id="wap" style="display: none;overflow: hidden">
+        <div class="nav" id="wapNavMenu">
+            <img class="log" src="images/wap/log.jpg">
+            <img class="menu" src="images/wap/nav-menu.jpg">
+        </div>
+        <div class="containerOuter swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide outerSlide module1">
+                    <div class="indexSwiper swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                            <div class="banner banner1">
+                                <div class="banner_top">
+                                    <p class="wap_ani_1">Marketing<br/> Experts In The Digital Age</p>
+                                    <p class="txt_margin wap_ani_2">数字时代营销专家</p>
+                                    <a class="arrow_icon arrow_1 " href="javascript:;">
+                                        <img class="wap_ani_img" src="./images/arrow_icon.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="banner banner2">
+                                <div class="banner_top">
+                                    <p class="wap_ani_3">Industry Qualification</p>
+                                    <p class="txt_margin wap_ani_4">顶级行业资质</p>
+                                    <a class="arrow_icon arrow_1 " href="javascript:;">
+                                        <img class="wap_ani_img" src="./images/arrow_icon.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="banner-bottom wap_ani_6">
+                                    <div class="item top">
+                                        <div class="title">理事单位</div>
+                                        <img class="lishi wap_ani_7" src="images/wap/banner2-bottom-lishi.jpg">
+                                    </div>
+                                    <div class="item bottom">
+                                        <div class="left">
+                                            <div class="title">副理事长单位</div>
+                                            <img class="fulishi wap_ani_8" src="images/wap/banner2-bottom-fulishi.jpg">
+                                        </div>
+                                        <div class="right">
+                                            <div class="title">认证企业</div>
+                                            <img class="qiye wap_ani_9" src="images/wap/banner2-bottom-qiye.jpg">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                         </div>
+                         <div class="swiper-slide">
+                            <div class="banner banner3">
+                                <div class="banner_top">
+                                    <p class="wap_ani_10">Industry Influence</p>
+                                    <p class="txt_margin wap_ani_11">专业的服务与实力，<br/>成就卓越的行业影响力</p>
+                                    <a class="arrow_icon arrow_1 " href="javascript:;">
+                                        <img class="wap_ani_img" src="./images/wap/arrow_icon1.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="banner-bottom wap_ani_13">
+                                        <img class="img wap_ani_14" src="images/wap/banner3-bottom1.jpg">
+                                        <img class="img wap_ani_15" src="images/wap/banner3-bottom2.jpg">
+                                        <img class="img wap_ani_16" src="images/wap/banner3-bottom3.jpg">
+                                </div>
+                            </div>
+                         </div>
+                        </div>
+                        <div class="swiper-button indexswiper-button">
+                            <div class="swiper-button-prev indexSwiper_prev"></div>
+                            <div class="swiper-button-next indexSwiper_next"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide outerSlide module2">
+                    <div class="about">
+                        <div class="about_top">
+                            <div class="about_title">
+                                <p class="wap_ani_17">About</p>
+                                <p class="wap_ani_18">关于我们</p>
+                            </div>
+                            <div class="about_desc">
+                                <p class="wap_ani_19">新意互动成立于2002年，是国内最早专注于数字整合营销服务的代理公司之一，凭借大数据输出的研究洞察、策略创意、媒介投放等优势，构建了一整套互联网模式下的整合营销服务体系，致力于为客户提供更具商业价值的智慧营销服务。
+                                </p>
+                                <a href="javascript:;" class="arrow_icon arrow_About">
+                                    <img src="./images/arrow_icon.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="about_bottom">
+                            <div class="item">
+                                <div class="num wap_aniR_1">17</div>
+                                <div class="desc">年<br/>全年代理经验</div>
+                                <div class="num wap_aniR_2">900</div>
+                                <div class="desc">+<br/>创意团队成员</div>
+                            </div>
+                            <div class="item">
+                                <div class="num wap_aniR_3">40</div>
+                                <div class="desc">亿<br/>媒介采购额</div>
+                                <div class="num wap_aniR_4">600</div>
+                                <div class="desc">+<br/>累计服务客户</div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="swiper-slide outerSlide module3">
+                    <div class="productSwiper swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="product product1">
+                                    <p class="wap_ani_21">Digital Integrated<br/>Marketing</p>
+                                    <p class="wap_ani_22">数字整合营销</p>
+                                    <p class="wap_ani_23">提供品牌策略、内容创意、媒介营销、公关传播、社会化营销、搜索营销、用户运营、海外营销等全营销价值链服务体系。根据您的需求与定位</p>
+                                    <p><img src="images/arrow_icon.png"></p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product product2">
+                                    <p class="wap_ani_24">Big Data</p>
+                                    <p class="wap_ani_25">大数据应用</p>
+                                    <p class="wap_ani_26">以人为核心，专注营销领域，构建了独有的中国汽车受众大数据库，提供用户行为与洞察、精准投放、数字流量监测等服务，为营销决策提供支</p>
+                                    <p><img src="images/arrow_icon.png"></p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product product3">
+                                    <p class="wap_ani_27">Digital Image</p>
+                                    <p class="wap_ani_28">数字影像</p>
+                                    <p class="wap_ani_29">提供全球高端可视化解决方案。拥有一支经验丰富CG创作团队，采用丰富独特的创意，结合CG、实拍、虚拟现实等技术方式，为客户定制用</p>
+                                    <p><img src="images/arrow_icon.png"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button">
+                            <div class="swiper-button-prev productSwiper_prev"></div>
+                            <div class="swiper-button-next productSwiper_next"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide outerSlide module4">
+                    <div class="swiper-container caseSwiper">
+                        <div class="swiper-wrapper">
+                            <!--<div class="swiper-slide case-swiper-slide image">-->
+                                <!--<p class="server-user">华为&#45;&#45;1</p>-->
+                                <!--<p class="name">无添加自拍&#45;&#45;2</p>-->
+                                <!--<p class="arrow"><img src="images/arrow_icon.png"></p>-->
+                                <!--<img style="object-fit:cover;width:100%;height:100%" src="./images/wap/temp/q3.jpg">-->
+                            <!--</div>-->
+                            <!--<div class="swiper-slide case-swiper-slide video">-->
+                                <!--<p class="server-user">华为&#45;&#45;1</p>-->
+                                <!--<p class="name">无添加自拍&#45;&#45;2无添加自拍无添加自拍</p>-->
+                                <!--<p class="arrow"><img src="images/arrow_icon.png"></p>-->
+                                <!--<img class="case-swiper-video-btn" src="./images/wap/video-btn.png">-->
+                                <!--<video  poster="" x5-playsinline="" playsinline="" webkit-playsinline="" class="video video1" style="object-fit:cover;" height="100%" width="100%" id="video1" src="./images/wap/temp/audi1.mp4" preload="auto"></video>-->
+                            <!--</div>-->
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination case-swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide outerSlide module5">
+                    <div class="title">
+                        <span>新闻</span>
+                        <span>News</span>
+                        <span><img src="images/arrow_icon.png"></span>
+                    </div>
+                    <div class="swiper-container news-swiper">
+                        <div class="swiper-wrapper">
+                            <!--<div class="swiper-slide news-swiper-slide">-->
+                                <!--<img style="width: 100%" src="images/wap/temp/q2l.jpg">-->
+                                <!--<p class="t">侧面看戛纳，除了创意这里还有什么</p>-->
+                                <!--<p class="content">作为戛纳狮子节的周边活动，“华人CMO大师班”赢得了越来越多国内顶级营销人的青睐。“华人CMO大师班”是一项面向华人营销领袖的</p>-->
+                            <!--</div>-->
+                        </div>
+                        <!-- Add Pagination -->
+                        <!--<div class="swiper-pagination news-swiper-pagination"></div>-->
+                    </div>
+                </div>
+                <div class="swiper-slide outerSlide module6">
+                    <div class="dialog">
+                        <div class="mask1" style="display: none">
+                            <img class="image img1" src="images/wap/customer.jpg">
+                            <img class="image img2" src="images/wap/supplier.jpg">
+                            <img class="close" src="images/wap/close_icon.png">
+                        </div>
+                        <div class="mask2">
+                            <div class="item"><span>姓<span style="opacity: 0">姓名</span>名：</span><input type="text"></div>
+                            <div class="item"><span>公司名称：</span><input type="text"></div>
+                            <div class="item"><span>公司地址：</span><input type="text"></div>
+                            <div class="item"><span>联系方式：</span><input type="text"></div>
+                            <div class="item" style="border: none"><span>需求简介：</span></div>
+                            <div class="textarea"><textarea placeholder="选填"></textarea></div>
+                            <img class="submit" src="images/wap/submit-btn.jpg">
+                            <img class="back" src="images/wap/back-btn.jpg">
+                            <img class="close" src="images/wap/close-btn2.jpg">
+                        </div>
+
+                    </div>
+                    <div class="top">
+                        <p class="text1">Concat</p>
+                        <p class="text2">联系我们</p>
+                        <p class="text3">新意互动北京总部</p>
+                        <p class="text4">010-6839 3999</p>
+                        <p class="text5">北京市海淀区西外大街168号，腾达大厦27&29&30层</p>
+                        <p class="text6">商务合作</p>
+                        <p class="text7"><img src="images/arrow_icon.png"></p>
+                        <p class="text8"><img src="images/wap/orcode.jpg"></p>
+                        <p class="text9">扫描添加<br/>官方微信公众账号</p>
+                    </div>
+                    <div class="bottom">
+                        <div class="address address1">
+                            <p class="">新意互动 - 上海</p>
+                            <p class="">021 - 6037 8301 </p>
+                            <p class="">上海市长宁区长宁路1193号长宁来福士办公楼2108-09室</p>
+                        </div>
+                        <div class="address address2">
+                            <p class="">新意互动 - 南京</p>
+                            <p class="">010 - 6839 3999</p>
+                            <p class="">南京市秦淮区汉中路1号国际金融中心J座19层 </p>
+                        </div>
+                        <div class="address address3">
+                            <p class="">新意互动 - 广州</p>
+                            <p class="">020 - 3591 8836 </p>
+                            <p class="">广州市天气河区临江大道3号发展中心大厦22楼 </p>
+                        </div>
+                        <div class="address address4">
+                            <p class="">新意互动 - 武汉</p>
+                            <p class="">010 - 6839 3999</p>
+                            <p class="">武汉经济开发区东风大道111号经开万达C6 - 1501 </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide outerSlide module7">7</div>
+                <div class="swiper-slide outerSlide module8">8</div>
+                <div class="swiper-slide outerSlide module9">9</div>
+            </div>
+        </div>
+
+        <div class="menu-content close"  style="transform:translateX(100%);">
+            <div class="content">
+              <div class="item">
+                <div class="title">关于我们</div>
+              </div>
+              <div class="item">
+                 <div class="title">服务与产品</div>
+                <div class="list"><span>数字整合营销</span><span>大数据技术与工具</span><span>数字影像</span></div>
+              </div>
+                <div class="item">
+                    <div class="title">案例展示</div>
+                    <div class="list"><span>数字整合营销</span><span>内容营销</span><span>社会化与用户营销</span><span>大数据营销</span><span style="padding-top: 0.15rem">视频营销技术营</span></div>
+                </div>
+                <div class="item">
+                    <div class="title">新意咨讯</div>
+                    <div class="list"><span>新意动态</span><span>新意荣誉</span><span>新意观点</span><span>行业观察</span><span>成功案例</span></div>
+                </div>
+                <div class="item">
+                    <div class="title">职达新意</div>
+                    <div class="list"><span>意起精彩</span><span>社招</span><span>校招</span><span>内部推荐</span><span>活水计划</span></div>
+                </div>
+                <div class="item">
+                    <div class="title">营销智库</div>
+                    <div class="list"><span>资讯</span><span>作品</span><span>活动</span></div>
+                </div>
+           </div>
+        </div>
+
+
+    </div>
+    <script src="./js/jquery-1.11.2.min.js"></script>
+    <script src="./js/jquery.cookie.js"></script>
+    <script src="./js/anime.min.js"></script>
+    <script src="./js/layer.js"></script>
+    <script src="./js/rem.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/md5.js"></script>
+
+    <!--<script src="./js/swiperInit.js"></script>-->
+    <script src="./js/common.js"></script>
+    <script src="./js/initJs.js"></script>
+    <!--<script src="./js/base.js"></script>-->
+    <!--<script src="./js/interFace.js"></script>-->
+
+    <script src="./js/animation.js"></script>
+    <!--<script>-->
+
+        <!--// layer.msg('123')-->
+        <!--function browserRedirect() {-->
+            <!--var sUserAgent = navigator.userAgent.toLowerCase();-->
+            <!--var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";-->
+            <!--var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";-->
+            <!--var bIsMidp = sUserAgent.match(/midp/i) == "midp";-->
+            <!--var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";-->
+            <!--var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";-->
+            <!--var bIsAndroid = sUserAgent.match(/android/i) == "android";-->
+            <!--var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";-->
+            <!--var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";-->
+
+            <!--if (!(bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM)) {-->
+                <!--return checkBrowser = 0; //pc-->
+            <!--} else {-->
+                <!--return checkBrowser = 1; //wap-->
+            <!--}-->
+        <!--}-->
+    <!--</script>-->
+</body>
+
+</html>
