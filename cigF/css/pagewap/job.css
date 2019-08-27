@@ -1,0 +1,136 @@
+a{ text-decoration:none}
+.container{
+    width: 100%;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+}
+
+.content .banner1{
+     width: 100%;
+     position: relative;
+}
+
+
+.banner1 .swiper-pagination{
+    position: absolute;
+    bottom:1.85rem;
+}
+.banner1  .swiper-pagination-bullet {
+    width: 0.21rem;
+    height: 0.21rem;
+    text-align: center;
+    opacity: 1;
+    background: none;
+    background-image: url("../../images/wap/caseswpier-pag-icon.png");
+    background-size: 100%;
+}
+.banner1  .swiper-pagination-bullet-active {
+    width: 0.21rem;
+    height: 0.21rem;
+    background: none;
+    background-image: url("../../images/wap/caseswpier-pag-icon-active.png");
+    background-size: 100%;
+}
+.banner1  .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{
+    margin: 0 5px;
+}
+.banner1 .bottom{
+    position: absolute;
+    bottom: 0;
+    background-color: rgba( 0, 0, 0 ,0.2);
+    width: 100%;
+    height: 1.5rem;
+    z-index: 1;
+}
+
+.banner1 .bottom .con{
+    width:6.4rem;
+    height:1rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    margin: auto;
+    background-color: #fff;
+    border-bottom:3px solid rgb( 215, 0, 15 );;
+}
+
+.banner1 .bottom .con span{
+    padding-left: 0.6rem;
+    font-size: 0.3rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 215, 0, 15 );
+    font-weight: bold;
+    line-height:1rem;
+}
+.banner1 .bottom .con img{
+    position: absolute;
+    right: 0.6rem;
+    top: 0;
+    bottom: 0;
+    width: 15%;
+    margin: auto;
+}
+
+.content .banner2,
+.content .banner3,
+.content .banner4{
+    width: 100%;
+    background-color: #fff;
+    position: relative;
+}
+.content .banner2 .title,
+.content .banner3 .title,
+.content .banner4 .title{
+    width: 100%;
+
+}
+.job_1,
+.job_2,
+.job_3{
+    width: 6.4rem;
+    height:6.4rem;
+}
+.job_1 .swiper-slide img,
+.job_2 .swiper-slide img,
+.job_3 .swiper-slide img{
+    width: 100%;
+}
+.job_swiperBtn {
+    width: 2.1rem;
+    height: 1.1rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .5);
+    z-index: 1;
+}
+
+.job_next1,
+.job_next2,
+.job_next3{
+    width: 0.5rem;
+    height: 0.5rem;
+    background: url(./../../images/turn_right_def.png) no-repeat center;
+    background-size: 100%;
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+
+.job_prev1,
+.job_prev2,
+.job_prev3{
+    width: 0.5rem;
+    height: 0.5rem;
+    background: url(./../../images/turn_left_def.png) no-repeat center;
+    background-size: 100%;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+

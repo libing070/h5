@@ -1,4 +1,9 @@
 /* 首页 */
+.container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
 
 .nav{
     position: relative;
@@ -434,11 +439,13 @@ font-size: 0.32rem;
     color: rgb( 255, 255, 255 );
     line-height: 1.833;
 }
-.product p:nth-child(4){
+.product a{
+    padding-left: 0.5rem;
+    display: block;
     padding-top: 1.05rem;
-    width: 25%;
+    width: 20%;
 }
-.product p img{
+.product a img{
     width: 100%;
 
  }
@@ -595,14 +602,14 @@ font-size: 0.32rem;
     font-family: "BaskOldFace";
     color: rgb( 255, 255, 255 );
 }
-.module5 .title span:nth-child(3){
+.module5 .title a{
     position: absolute;
     display: block;
     right: 0.8rem;
     top: 1.9rem;
     width: 10%;
 }
-.module5 .title span:nth-child(3) img{
+.module5 .title a img{
     width: 100%;
 }
 .news-swiper{
@@ -713,26 +720,12 @@ font-size: 0.32rem;
     left: 0;
     top: 4.4rem;
     width: 4.2rem;
-    animation: module6text7 1s linear infinite;
 }
 .module6 .top .text7 img{
     width: 15%;
     float: right;
 }
 
-
-
-@keyframes module6text7 {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
 
 .module6 .top  .text8{
     position: absolute;
@@ -923,4 +916,567 @@ font-size: 0.32rem;
     top:0.3rem;
     width:0.52rem;
     height: 0.52rem;
+}
+
+
+.module7{
+    height: 100%;
+    width: 100%;
+    background: url('./../images/wap/recruit-bg.jpg') no-repeat center;
+    background-size: cover;
+    position: relative;
+}
+.module7 .top{
+    margin-top: 0.95rem;
+    margin-left: 0.55rem;
+}
+.module7 .top p:nth-child(1){
+    font-size: 0.357rem;
+    font-family: "BaskOldFace";
+    color: rgb( 255, 255, 255 );
+}
+.module7 .top p:nth-child(2){
+    font-size: 0.5rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 255, 255, 255 );
+    margin-top: 0.35rem;
+    margin-bottom: 0.5rem;
+}
+.module7 .top a{
+    display: block;
+    width: 15%;
+}
+.module7 .top a img{
+ width: 100%;
+}
+
+.module7 .hotjobs,
+.module7 .longrecruit{
+   margin: 0.9rem 0.55rem 0.55rem 0.55rem;
+}
+.module7 .hotjobs .title,
+.module7 .longrecruit .title{
+    width: 100%;
+    font-size: 0.28rem;
+    line-height: 2;
+    font-family: "SourceHanSansCN";
+    color: rgb( 255, 255, 255 );
+    font-weight: bold;
+}
+.module7 .hotjobs p a{
+    display: inline-block;
+    width: 33%;
+    line-height: 2;
+    text-align: left;
+    font-size: 0.2rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 255, 255, 255 );
+}
+
+.module7 .longrecruit p a{
+    display: inline-block;
+    width: 50%;
+    line-height: 2;
+    text-align: left;
+    font-size: 0.2rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 255, 255, 255 );
+}
+
+
+.module8{
+    height: 100%;
+    width: 100%;
+    background: url('./../images/wap/thinktank-bg.jpg') no-repeat center;
+    background-size: cover;
+    position: relative;
+}
+
+.module8 .top{
+    margin-left: 0.5rem;
+    height: 3.3rem;
+}
+.module8 .top .btn{
+    width: 1.81rem;
+    height: 0.61rem;
+    margin-top: 0.9rem;
+    margin-bottom: 0.37rem;
+}
+.module8 .top .btn img{
+    width: 100%;
+}
+.module8 .top .text1,
+.module8 .top .text2{
+    line-height: 1.55;
+    font-size: 0.3rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 255, 255, 255 );
+}
+
+.module8 .top .text3{
+    width: 100%;
+    margin-top: 0.6rem;
+    display: block;
+}
+.module8 .top .text3 img{
+    width: 10%;
+}
+
+.module8 .thinktank-swiper{
+    margin-left: 0.5rem;
+    height: 6rem;
+    width: 100%;
+    position: relative;
+}
+.module8 .thinktank-swiper .swiper-slide {
+    width:75%;
+    height: 100%;
+}
+
+.module8 .thinktank-swiper .swiper-slide .image{
+    display: block;
+    width:100%;
+}
+.module8 .thinktank-swiper .swiper-slide p{
+    width: 100%;
+}
+.module8 .thinktank-swiper .swiper-slide p.title{
+    margin-top: 0.26rem;
+    font-size: 0.32rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 255, 255, 255 );
+    font-weight: bold;
+    line-height: 0.938
+}
+
+.module8 .thinktank-swiper .swiper-slide p.author{
+    margin-top: 0.3rem;
+    font-size: 0.16rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 255, 255, 255 );
+    line-height: 2.126;
+}
+.module8 .thinktank-swiper .swiper-slide .item{
+    margin-top: 0.2rem;
+  width: 100%;
+}
+.module8 .thinktank-swiper .swiper-slide .item p{
+    display: inline-block;
+    width:30%;
+    color: rgb( 255, 255, 255 );
+    font-size: 0.25rem;
+}
+
+.module8 .thinktank-swiper .swiper-slide .item .xinxi{
+    margin-bottom: -0.1rem;
+    margin-right: 0.2rem;
+    width: 0.43rem;
+    height: 0.37rem;
+}
+.module8 .thinktank-swiper .swiper-slide .item .look{
+    width: 0.48rem;
+    height: 0.28rem;
+    margin-right: 0.2rem;
+    margin-bottom: -0.05rem;
+}
+.module8 .thinktank-swiper .swiper-slide .item .heart{
+    width: 0.41rem;
+    height: 0.34rem;
+    margin-bottom: -0.1rem;
+    margin-right: 0.2rem;
+}
+
+.module8 .dialog {
+    z-index: 999;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, .5);
+}
+.module8 .dialog .mask{
+    position: absolute;
+    width: 5rem;
+    height: 6.74rem;
+    background-color: #fff;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.module8 .dialog .mask .title{
+    margin-top: 0.8rem;
+    margin-bottom: 0.2rem;
+    width: 100%;
+    text-align: center;
+    font-size: 0.3rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 0, 0, 0 );
+    line-height: 2.3;
+}
+.module8 .dialog .mask .item:nth-child(1){
+    margin-top: 0.9rem;
+}
+.module8 .dialog .mask .item{
+    width: 4.15rem;
+    height: 0.75rem;
+    line-height: 0.75rem;
+    margin: auto;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.module8 .dialog .mask  .yzm{
+ position: relative;
+}
+.module8 .dialog .mask  .yzm .verifyCodeImg{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1.4rem;
+    height: 0.75rem;
+
+}
+.module8 .dialog .mask .item span{
+    font-size: 0.25rem;
+    width: 0.9rem;
+}
+.module8 .dialog .mask .item input{
+    width: 2.5rem;
+}
+.module8 .dialog .mask .item input{
+    width: 2.5rem;
+}
+.module8 .dialog .mask .close{
+    position: absolute;
+    right: 0.3rem;
+    top:0.3rem;
+    width:0.52rem;
+    height: 0.52rem;
+}
+.module8 .dialog .mask .join_forgot{
+    width: 4.15rem;
+    height: 0.75rem;
+    line-height: 0.75rem;
+     margin:  0.4rem auto 0.2rem;
+    font-size: 0.2rem;
+}
+.module8 .dialog .mask .join_forgot span:nth-child(1){
+    display: inline-block;
+    width: 40%;
+    text-align: right;
+    float: left;
+}
+.module8 .dialog .mask .join_forgot span:nth-child(2){
+    display: inline-block;
+    width: 40%;
+    text-align: left;
+    float: right;
+}
+.module8 .dialog .mask  .login{
+    text-align: center;
+    width: 3.31rem;
+    height: 0.71rem;
+    margin: auto;
+}
+.module9 {
+    height: 100%;
+    width: 100%;
+    background: url('./../images/wap/oa-bg.jpg') no-repeat center;
+    background-size: cover;
+    position: relative;
+}
+.module9  .login-before{
+    text-align: center;
+    position: absolute;
+    height: 1.9rem;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.module9 .login-before .title{
+    font-size: 0.5rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 255, 255, 255 );
+    line-height: 1.84;
+}
+.module9 .login-before .login-btn{
+    width: 1.81rem;
+    height: 0.61rem;
+    display: block;
+    margin: auto;
+    margin-top: 0.6rem;
+}
+
+
+.module9 .dialog {
+    z-index: 999;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, .5);
+}
+.module9 .dialog .mask{
+    position: absolute;
+    width: 5rem;
+    height: 6.2rem;
+    background-color: #fff;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.module9 .dialog .mask .title{
+    margin-top: 0.8rem;
+    margin-bottom: 0.2rem;
+    width: 100%;
+    text-align: center;
+    font-size: 0.3rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 0, 0, 0 );
+    line-height: 2.3;
+}
+.module9 .dialog .mask .item:nth-child(1){
+    margin-top: 0.9rem;
+}
+.module9 .dialog .mask .item{
+    width: 4.15rem;
+    height: 0.75rem;
+    line-height: 0.75rem;
+    margin: auto;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.module9 .dialog .mask  .yzm{
+    position: relative;
+}
+.module9 .dialog .mask  .yzm .verifyCodeImg{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1.4rem;
+    height: 0.75rem;
+
+}
+.module9 .dialog .mask .item span{
+    font-size: 0.25rem;
+    width: 0.9rem;
+}
+.module9 .dialog .mask .item input{
+    width: 2.5rem;
+}
+.module9 .dialog .mask .item input{
+    width: 2.5rem;
+}
+.module9 .dialog .mask .close{
+    position: absolute;
+    right: 0.3rem;
+    top:0.3rem;
+    width:0.52rem;
+    height: 0.52rem;
+}
+.module9 .dialog .mask  .login{
+    text-align: center;
+    width: 3.31rem;
+    height: 0.71rem;
+    margin: auto;
+    margin-top: 0.6rem;
+}
+
+.module9 .login-after{
+    position: relative;
+    width: 100%;
+}
+.module9 .login-after .top{
+    margin-left: 0.62rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.5rem;
+}
+.module9 .login-after .top .btn{
+    width: 1.81rem;
+    height: 0.61rem;
+}
+.module9 .login-after .top .p1 {
+    margin-top:0.45rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 255, 255, 255 );
+    font-size: 0.4rem;
+    line-height: 1.55;
+}
+
+.module9 .login-after .top .p2 {
+    font-size: 0.4rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 255, 255, 255 );
+    line-height: 1.55;
+}
+
+.module9 .login-after .oa-swiper{
+    margin-left: 0.62rem;
+    height: 3.4rem;
+    width: 100%;
+    position: relative;
+    /*margin-top: 1rem;*/
+}
+.module9 .login-after .oa-swiper .oa-swiper-slide {
+    width:80%;
+    height: 100%;
+}
+.module9 .login-after .oa-swiper .oa-menu .item{
+    width: 32%;
+    display: inline-block;
+    margin-bottom: 0.2rem;
+}
+.oa_circle{
+    width: 0.12rem;
+    height: 0.12rem;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    top: 0.12rem;
+    right: 0.12rem;
+    background: #e90010;
+}
+.module9 .login-after .oa-swiper .oa-menu .item a{
+    padding: 0.25rem;
+    background: rgba(255, 255, 255, .9);
+    text-align: center;
+    display: inline-block;
+    border-radius: 0.1rem;
+    color: #333;
+    width: 1.5rem;
+    height: 1.5rem;
+    position: relative;
+}
+.module9 .login-after .oa-swiper .oa-menu .item a img{
+    margin: 0 auto 0.2rem;
+}
+
+.module9 .login-after .oa-swiper .oa-download {
+    background-color: rgb( 255, 255, 255 );
+    border-radius: 5px;
+}
+.module9 .login-after .oa-swiper .oa-download .title{
+    width: 4.55rem;
+    margin: auto;
+    font-size: 0.26rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 0, 0, 0 );
+    line-height: 1.808;
+}
+.module9 .login-after .oa-swiper .oa-download .title span{
+    display: inline-block;
+    margin-top: 0.3rem;
+    float: left;
+}
+.module9 .login-after .oa-swiper .oa-download .title .arrow_icon_btn{
+    display: inline-block;
+    margin-top: 0.45rem;
+    float: right;
+    width: 20%;
+}
+
+.module9 .login-after .oa-swiper .oa-download .download-list{
+    height: 2.2rem;
+    width: 4.55rem;
+    position: absolute;
+    margin: auto;
+    bottom: 0.5rem;
+    left: 0;
+    right: 0;
+    /*pointer-events: none;*/
+    /*touch-action:auto;*/
+    /*-webkit-overflow-scrolling: touch;*/
+    /*overflow-scrolling: touch;*/
+    /*overflow: scroll;*/
+}
+.download-list .item{
+    height: 0.55rem;
+    line-height: 0.55rem;
+    width: 100%;
+    border-bottom: 1px solid  rgba( 0, 0, 0,0.102 );
+    font-size: 0.18rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 0, 0, 0 );
+}
+.download-list .item .name{
+    display: inline-block;
+    width: 60%;
+}
+.download-list .item .size{
+    display: inline-block;
+    width: 15%;
+}
+.download-list .item .xiazai{
+    display: inline-block;
+    width: 10%;
+}
+.download-list .item .icon{
+  display: inline-block;
+    vertical-align: sub;
+    width: 10%;
+   text-align: right;
+}
+.download-list .item .icon .download-btn{
+    width: 0.27rem;
+    display: inline-block;
+    height: 0.2rem;
+}
+
+
+
+
+
+/*.module_back_scale {*/
+    /*animation: back_enlarge 2s forwards;*/
+    /*-webkit-animation: back_enlarge 2s forwards;*/
+/*}*/
+
+/*@keyframes back_enlarge {*/
+    /*0% {*/
+        /*background-size: 100% 100%;*/
+    /*}*/
+    /*100% {*/
+        /*background-size: 110% 110%;*/
+    /*}*/
+/*}*/
+
+/*@-webkit-keyframes back_enlarge {*/
+    /*0% {*/
+        /*background-size: 100% 100%;*/
+    /*}*/
+    /*100% {*/
+        /*background-size: 110% 110%;*/
+    /*}*/
+/*}*/
+
+
+
+
+
+
+.arrow_icon_btn{
+    animation: arrow_icon_btn 1s linear infinite;
+
+}
+
+
+@keyframes arrow_icon_btn {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

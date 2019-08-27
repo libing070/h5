@@ -1,0 +1,751 @@
+img {
+    width: 100%;
+}
+
+a {
+    color: #333;
+    display: block;
+}
+
+span {
+    display: inline-block;
+}
+
+.container {
+    padding-top: 1.1rem;
+}
+
+/* banner */
+
+.banner {
+    width: 100%;
+    position: relative;
+}
+
+.banner_txt {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.banner_top {
+    width: 63.5%;
+    height: 50%;
+    position: relative;
+    margin: 0 auto 0;
+    color: #fff;
+}
+
+.about_title2 {
+    float: left;
+    width: 50%;
+    padding: 20% 0% 0 0;
+}
+
+.about_title2 p:nth-child(1) {
+    font-size: 0.6rem;
+    font-family: 'SourceHanSansCN-Bold';
+}
+
+.about_title2 p:nth-child(1) {
+    font-size: 0.5rem;
+    font-family: 'BASKVILL';
+}
+
+.about_desc {
+    float: left;
+    width: 50%;
+    text-align: left;
+    padding: 20.5% 0 0 0.3rem;
+    font-family: 'SourceHanSansCN-Light';
+}
+
+.about_desc p:nth-child(1) {
+    margin-bottom: 0.4rem;
+}
+
+.about_desc p {
+    line-height: 0.26rem;
+}
+
+.banner_bottom {
+    width: 63.5%;
+    /* height: 50%; */
+    position: relative;
+    margin: 1rem auto 0;
+    color: #fff;
+    overflow: hidden;
+}
+
+.banner_bottom ul {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+}
+
+.banner_bottom ul li {
+    flex: auto;
+    vertical-align: top;
+    margin: 1%;
+    text-align: center
+}
+
+.banner_bottom ul li div {
+    display: inline-block;
+}
+
+.about_num {
+    display: inline-block;
+    margin-right: 0.1rem;
+}
+
+.about_num p {
+    font-size: 0.9rem;
+    font-family: 'GiveAHoot';
+}
+
+.about_numDesc {
+    display: inline-block;
+    color: #e90010;
+    vertical-align: top;
+    text-align: left;
+    margin-top: 0.18rem;
+}
+
+.about_numDesc p:nth-child(1) {
+    font-size: 0.18rem;
+    font-family: 'SourceHanSansCN-ExtraLight';
+}
+
+.about_numDesc p:nth-child(2) {
+    font-size: 0.18rem;
+    font-family: 'SourceHanSansCN-ExtraLight';
+}
+
+/* 经营理念 */
+
+.manageIdea {
+    width: 100%;
+    position: relative;
+}
+
+.manageBox {
+    padding: 0 3.5rem;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.manage_txt {
+    padding-top: 2.1rem;
+    position: relative;
+    width: 50%;
+}
+
+.manage_txt p {
+    position: relative;
+    z-index: 9;
+}
+
+.txt_1 p {
+    font-size: 0.6576rem;
+    font-family: 'SourceHanSansCN-Bold';
+}
+
+.manage_txt .lineRed {
+    width: 100%;
+    height: 0.25rem;
+    background: #d7000f;
+    position: relative;
+    top: -0.25rem;
+}
+
+.txt_2 {
+    margin: 1rem 0 0.3rem 0;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid #d7000f;
+}
+
+.txt_2 p:nth-child(1) {
+    color: #d7000f;
+    margin-bottom: 0.16rem;
+    font-family: 'SourceHanSansCN-Bold';
+}
+
+.txt_2 p:nth-child(2) {
+    font-family: 'SourceHanSansCN-Light';
+}
+
+.txt_3 {
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid #d7000f;
+}
+
+.txt_3 p:nth-child(1) {
+    color: #d7000f;
+    margin-bottom: 0.16rem;
+    font-family: 'SourceHanSansCN-Bold';
+}
+.txt_3 p:nth-child(2) {
+    font-family: 'SourceHanSansCN-Light';
+}
+.manage_img {
+    width: 50%;
+    padding: 1.3rem 0.32rem 0;
+}
+
+.line_left {
+    position: absolute;
+    top: 34%;
+    left: 0;
+    width: 3.06rem;
+    height: 1px;
+    background: #d7000f;
+}
+
+/* 发展历程 */
+
+.develop {
+    width: 100%;
+    position: relative;
+}
+
+.chartBox {
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.swiperBox {
+    width: 100%;
+    position: relative;
+    /* transform: translateX(-33.08rem); */
+    overflow: hidden;
+    height: 6rem;
+}
+
+.developSwiper {
+    width: 56.08rem;
+    position: relative;
+    transform: translateX(-11.9rem);
+    background: url('./../../images/page/developSwiper_bg.png') no-repeat;
+    background-size: 100% 100%;
+    /* overflow: hidden; */
+}
+
+.developSwiper {
+    float: left;
+}
+
+/* .chartBox ul::-webkit-scrollbar {
+    display: none
+} */
+
+.developSwiper li {
+    float: left;
+}
+
+/* .qc .echart_line {
+    top: 0.2rem;
+}
+
+.dw .echart_line {
+    top: 1.1rem;
+} */
+
+.qc {
+    width: 3.29rem;
+    position: relative;
+    top: 0.2rem;
+}
+
+.dw {
+    width: 4.62rem;
+    position: relative;
+    top: 1.1rem;
+}
+
+.cx {
+    width: 3.21rem;
+    position: relative;
+    top: 1.82rem;
+}
+
+.jq {
+    width: 3.3rem;
+    position: relative;
+    top: 0.05rem;
+}
+
+.yd {
+    width: 3.55rem;
+    position: relative;
+    top: 1.3rem;
+}
+
+.dsj {
+    width: 3.9rem;
+    position: relative;
+    top: 0.3rem;
+}
+
+.zne {
+    width: 4.1rem;
+    position: relative;
+    top: 0.8rem;
+}
+
+.zh {
+    width: 5.14rem;
+    position: relative;
+    top: 0.9rem;
+}
+
+.qc .line_black {
+    height: 4rem;
+}
+
+.dw .line_black {
+    height: 2.75rem;
+}
+
+.cx .line_black {
+    height: 2.85rem;
+}
+
+.jq .line_black {
+    height: 4.5rem;
+}
+
+.yd .line_black {
+    height: 2.65rem;
+}
+
+.dsj .line_black {
+    height: 4rem;
+}
+
+.zne .line_black {
+    height: 4rem;
+}
+
+.zh .line_black {
+    height: 3.3rem;
+}
+
+.echart_line {
+    float: left;
+    position: relative;
+}
+
+.lineBox {
+    position: relative;
+}
+
+.echart_circle {
+    width: 0.08rem;
+    height: 0.08rem;
+    background: #727272;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    clear: both;
+}
+
+.echart_circle_posi1 {
+    top: 0;
+}
+
+.echart_circle_posi2 {
+    bottom: 0;
+}
+
+.line_black {
+    width: 1px;
+    height: 4rem;
+    background: #727272;
+    margin: 0 auto 0;
+}
+
+.echart_date {
+    font-size: 0.28rem;
+}
+
+.echart_txt {
+    position: relative;
+    top: -0.1rem;
+}
+.echart_txt p:nth-child(1){
+    font-family: 'SourceHanSansCN-ExtraLight';
+}
+.echart_txt p:nth-child(2){
+    font-family: 'SourceHanSansCN-Light';
+}
+.developBtn {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 2rem;
+}
+
+.develop_next {
+    width: 0.5rem;
+    height: 0.5rem;
+    background: url('./../../images/turn_right_black.png') no-repeat center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 53%;
+    transform: translateX(-50%);
+}
+
+.develop_prev {
+    width: 0.5rem;
+    height: 0.5rem;
+    background: url('./../../images/turn_left_black.png') no-repeat center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 47%;
+    transform: translateX(-50%);
+}
+
+.developSwiper .active {
+    color: #d7000f;
+}
+
+.developSwiper .active .echart_circle {
+    background: #d7000f;
+}
+
+.developSwiper .active .line_black {
+    background: #d7000f;
+}
+
+/* 业内荣誉 */
+
+.honor {
+    position: relative;
+}
+
+.honor .honorBox {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.honor_cont {
+    padding: 0 3.5rem;
+    width: 100%;
+    /* height: 100%; */
+}
+
+.honor_lie {
+    width: 100%;
+    overflow: hidden;
+}
+
+.honor_lie li {
+    width: 33.333333%;
+    float: left;
+    color: #fff;
+    font-size: 0.2rem;
+    position: relative;
+}
+
+.honor_px {
+    text-align: center;
+}
+
+.honor_lie li img {
+    width: 0.73rem;
+    display: inline-block;
+    margin-right: 0.3rem;
+    /* float: left; */
+}
+
+.honor_lie li .honor_txt {
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+}
+
+.honor_lie li .honor_px:last-child {
+    text-align: right;
+}
+
+.honor_scon {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 1.5rem;
+}
+
+.scon_1 {
+    /* float: right; */
+    width: 100%;
+    overflow: hidden;
+}
+
+.scon_1 img {
+    float: right;
+    width: 2.1rem;
+    margin-right: 1px;
+}
+
+.scon_1 img:nth-child(1) {
+    margin: 0px;
+}
+
+.scon_1:nth-child(1) {
+    margin-bottom: 1px;
+}
+
+.banner_bottom2 {
+    width: 100%;
+    /* height: 50%; */
+    position: relative;
+    margin: 1rem auto 0;
+    color: #fff;
+    overflow: hidden;
+}
+
+.banner_bottom2 ul li:nth-child(1) {
+    text-align: left;
+}
+
+.banner_bottom2 ul li:nth-child(2) {
+    text-align: center;
+}
+
+.banner_bottom2 ul li:nth-child(3) {
+    text-align: center;
+}
+
+.banner_bottom2 ul li:nth-child(4) {
+    text-align: right;
+}
+
+.honorSwiper {
+    margin-top: 1rem;
+}
+
+.honor_pagination {
+    width: 63.5%;
+    margin-top: 0.8rem;
+}
+
+.swiper-pagination-bullet {
+    background: #fff !important;
+    margin: 0 0.06rem;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background: #e90010 !important;
+}
+
+/* 服务客户 */
+
+.previous {
+    width: 100%;
+    background: #ececec;
+    padding-bottom: 2rem;
+    position: relative;
+}
+
+.previousBox {
+    width: 63.5%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.previousBox li {
+    float: left;
+    margin-right: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.previousBox li:nth-child(5) {
+    margin-right: 0;
+}
+
+.previousBox li:nth-child(10) {
+    margin-right: 0;
+}
+
+.previousBox .swiper-slide img:nth-child(1) {
+    margin-bottom: 0.25rem;
+}
+
+.previous_pagination {
+    width: 100%;
+    margin-top: 0.8rem;
+}
+
+.previous .swiper-pagination-bullet {
+    opacity: 0.2;
+    background: #333 !important;
+}
+
+.previous .swiper-pagination-bullet-active {
+    opacity: 1 !important;
+    background: #d7000f !important;
+}
+
+/* team */
+
+.team {
+    width: 100%;
+    position: relative;
+}
+
+.teamBox {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.teamSwiperBox {
+    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
+    padding: 0.5rem 0;
+}
+
+.teamSwiper .swiper-slide {
+    transition: all .5s;
+}
+
+.teamSwiper .swiper-slide img {
+    margin-bottom: 0.3rem;
+}
+
+.teamSwiper .swiper-slide p {
+    color: #737373;
+    font-size: 0.16rem;
+    margin-bottom: 0.14rem;
+    text-align: center;
+    visibility: hidden;
+    font-family: 'SourceHanSansCN-Normal';
+}
+
+.teamActive {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: -webkit-linear-gradient(rgba(0, 0, 0, .1), rgba(233, 112, 120, 1));
+    /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(rgba(0, 0, 0, .1), rgba(233, 112, 120, 1));
+    /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(rgba(0, 0, 0, .1), rgba(233, 112, 120, 1));
+    /* Firefox 3.6 - 15 */
+    background: linear-gradient(rgba(0, 0, 0, .1), rgba(233, 112, 120, 1));
+    opacity: .5;
+    /* 标准的语法 */
+    height: 0.7rem;
+}
+
+.teamActive div {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0.05rem;
+    background: red;
+    opacity: 1;
+}
+
+.teamSwiper .swiper-slide-active {
+    transform: scale(1.1, 1.1);
+}
+
+.teamSwiper .swiper-slide-active p {
+    visibility: visible;
+}
+
+.teamSwiper .swiper-slide-active .teamActive {
+    display: block;
+}
+
+.teamSwiper .teamActive {
+    display: none;
+}
+
+.team_name {
+    position: relative;
+}
+
+.team_name p {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.18rem !important;
+    color: #fff !important;
+    visibility: visible !important;
+}
+
+.teamSwiper {
+    overflow: visible;
+}
+
+.swiper-button-next {
+    width: 0.5rem !important;
+    height: 0.5rem !important;
+    background: url('./../../images/turn_right_black.png') no-repeat center !important;
+    background-size: cover !important;
+    opacity: 1 !important;
+    transition: all .2s;
+    z-index: 999;
+}
+
+.swiper-button-prev {
+    width: 0.5rem !important;
+    height: 0.5rem !important;
+    background: url('./../../images/turn_left_black.png') no-repeat center !important;
+    background-size: cover !important;
+    opacity: 1 !important;
+    transition: all .2s;
+    z-index: 999;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    outline: none;
+}
+
+.teamBox .team_prev {
+    position: absolute;
+    left: 45%;
+    top: 105%;
+    width: 8%;
+    z-index: 999;
+}
+
+.teamBox .team_prev:hover {
+    background: url('./../../images/turn_left_act.png') no-repeat center !important;
+    transform: scale(1.1, 1.1);
+}
+
+.teamBox .team_next:hover {
+    background: url('./../../images/turn_right_act.png') no-repeat center !important;
+    transform: scale(1.1, 1.1);
+}
+
+.teamBox .team_next {
+    position: absolute;
+    left: 50%;
+    top: 105%;
+    width: 8%;
+    z-index: 999;
+}

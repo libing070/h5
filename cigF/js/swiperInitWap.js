@@ -3,14 +3,14 @@ $(function () {
     $("#wapNavMenu").on("click",".menu",function () {
         var that=this;
         if($(".menu-content").hasClass("close")){
-            aniTranslateX(['.menu-content'], ['100%', '0', ], 500, 200);
+            aniTranslateX(['.menu-content'], ['100%', '0', ], 200, 200);
             $(".menu-content").removeClass("close");
             setTimeout(function () {
                 $(that).attr("src","images/wap/nav-menu-close.jpg");
             },200)
 
         }else{
-            aniTranslateX(['.menu-content'], ['0', '100%', ], 500, 200);
+            aniTranslateX(['.menu-content'], ['0', '100%', ], 200, 200);
             $(".menu-content").addClass("close");
             setTimeout(function () {
                 $(that).attr("src","images/wap/nav-menu.jpg");
@@ -23,7 +23,8 @@ $(function () {
         direction: 'vertical',
         observer: true, //修改swiper自己或子元素时，自动初始化swiper
         observeParents: true, //修改swiper的父元素时，自动初始化swiper
-        mousewheel: true,
+        // mousewheel: true,
+       // speed:500,
         on: {
             slideNextTransitionStart: function () {
 
@@ -42,6 +43,7 @@ $(function () {
             slideChangeTransitionStart: function () {
                 console.log(this.activeIndex);
                 aniResetWap();
+                $(".outerSlide").removeClass("module_back_scale");
                 if (this.activeIndex == $('.module1').index('.outerSlide')) {
                     var index = $('.indexSwiper .swiper-slide-active').attr('data-swiper-slide-index');
                     switch(index) {
@@ -114,6 +116,60 @@ $(function () {
                     $(".news-swiper .t,.news-swiper .content").css('opacity', '0');
                     aniTranslateY(['.news-swiper .swiper-slide-active .t'], ['1rem', '0', ], 1000, 100);
                     aniTranslateY(['.news-swiper .swiper-slide-active .content'], ['1rem', '0', ], 1000, 500);
+                }
+                if(this.activeIndex == $('.module6').index('.outerSlide')){
+                    $(".module6").addClass("module_back_scale");
+                    aniTranslateY(['.wap_ani_30'], ['-1rem', '0',], 4000, 400);
+                    aniTranslateY(['.wap_ani_31'], ['-1rem', '0',], 4000, 200);
+                    aniTranslateY(['.wap_ani_32'], ['1rem', '0',], 4000, 600);
+                    aniTranslateY(['.wap_ani_33'], ['1rem', '0',], 4000, 800);
+                    aniTranslateY(['.wap_ani_34'], ['1rem', '0',], 4000, 1000);
+                    aniTranslateY(['.wap_ani_35'], ['1rem', '0',], 4000, 1000);
+                    aniTranslateX(['.wap_ani_36'], ['150%', '0',], 2000, 400);
+                    aniTranslateX(['.wap_ani_37'], ['150%', '0',], 2000, 600);
+
+                    aniTranslateX(['.wap_ani_38'], ['-150%', '0',], 2000, 400);
+                    aniTranslateX(['.wap_ani_39'], ['-150%', '0',], 2000, 600);
+                    aniTranslateX(['.wap_ani_40'], ['-150%', '0',], 2000, 800);
+
+                    aniTranslateX(['.wap_ani_41'], ['-150%', '0',], 2000, 400);
+                    aniTranslateX(['.wap_ani_42'], ['-150%', '0',], 2000, 600);
+                    aniTranslateX(['.wap_ani_43'], ['-150%', '0',], 2000, 800);
+
+                    aniTranslateX(['.wap_ani_44'], ['150%', '0',], 2000, 400);
+                    aniTranslateX(['.wap_ani_45'], ['150%', '0',], 2000, 600);
+                    aniTranslateX(['.wap_ani_46'], ['150%', '0',], 2000, 800);
+
+                    aniTranslateX(['.wap_ani_47'], ['150%', '0',], 2000, 400);
+                    aniTranslateX(['.wap_ani_48'], ['150%', '0',], 2000, 600);
+                    aniTranslateX(['.wap_ani_49'], ['150%', '0',], 2000, 800);
+                }
+                if(this.activeIndex == $('.module7').index('.outerSlide')){
+                    //招聘页面
+                    $(".module7").addClass("module_back_scale");
+                    aniTranslateY(['.wap_ani_50'], ['1rem', '0', ], 4000, 500);
+                    aniTranslateY(['.wap_ani_51'], ['1rem', '0', ], 4000, 1000);
+                    var hotjoblen=$(".module7 .hotjobsData").find("a").length;
+                    $(".hotjobsData,.longrecruitData").find("a").css('opacity', '0');
+                    for(var i=0;i<hotjoblen;i++){
+                        aniTranslateY(['.hotjobs-a-'+i], ['1rem', '0',], 2000, 200*(i+1));
+                    }
+                    var longrecruitlen=$(".module7 .longrecruitData").find("a").length;
+                    for(var i=0;i<longrecruitlen;i++){
+                        aniTranslateY(['.longrecruit-a-'+i], ['1rem', '0',], 2000, 200*(i+1));
+                    }
+                }
+                if(this.activeIndex == $('.module8').index('.outerSlide')){
+                    $(".module8").addClass("module_back_scale");
+                    $(".wap_ani_50,.wap_ani_51").css('opacity', '0');
+                    aniTranslateY(['.wap_ani_50'], ['1rem', '0', ], 1000, 200);
+                    aniTranslateY(['.wap_ani_51'], ['1rem', '0', ], 1000, 400);
+                }
+                if(this.activeIndex == $('.module9').index('.outerSlide')){
+                    $(".wap_ani_52,.wap_ani_53m,.wap_ani_54").css('opacity', '0');
+                    aniTranslateY(['.wap_ani_52'], ['1rem', '0', ], 1000, 200);
+                    aniTranslateY(['.wap_ani_53'], ['1rem', '0', ], 1000, 200);
+                    aniTranslateY(['.wap_ani_54'], ['1rem', '0', ], 1000, 400);
                 }
             }
         },
@@ -261,6 +317,53 @@ $(function () {
         }
     });
 
+    var thinktankSwiper = new Swiper('.thinktank-swiper', {
+        slidesPerView: 'auto',
+        loop:true,
+        spaceBetween: 20,
+        on:{
+            slideChangeTransitionEnd: function () {
+
+            }
+        }
+    });
+
+    var oaSwiper = new Swiper('.oa-swiper', {
+        observer: true, //修改swiper自己或子元素时，自动初始化swiper
+        observeParents: true, //修改swiper的父元素时，自动初始化swiper
+        slidesPerView: 'auto',
+        mousewheel: true,
+        loop:false,
+        spaceBetween: 20,
+        on:{
+            slideChangeTransitionEnd: function () {
+
+            }
+        }
+    });
+
+    var oaSwiper2 = new Swiper('.oa-swiper2', {
+        observer: true, //修改swiper自己或子元素时，自动初始化swiper
+        observeParents: true, //修改swiper的父元素时，自动初始化swiper
+        slidesPerView: 'auto',
+        mousewheel: true,
+        loop:false,
+        spaceBetween: 20,
+        on:{
+            slideChangeTransitionEnd: function () {
+
+            }
+        }
+    });
+
+    var downloadSwiper = new Swiper('.download-swiper', {
+        direction: 'vertical',
+        freeMode: true,
+        slidesPerView:4,
+        observer: true, //修改swiper自己或子元素时，自动初始化swiper
+        observeParents: true, //修改swiper的父元素时，自动初始化swiper
+
+    });
 
 })
 //动画

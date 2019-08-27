@@ -1,19 +1,35 @@
+.container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
 /* 导航 */
 
 .nav {
     width: 100%;
+    height: 1.1rem;
     position: absolute;
-    top: 5%;
+    top: 0;
     right: 0;
     z-index: 999;
 }
 
 .nav {
-    z-index: 999;
+    z-index: 800;
+    background: -webkit-linear-gradient(rgba(3,3,3,0.5), rgba(255,255,255,0)); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(rgba(3,3,3,0.5), rgba(255,255,255,0)); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(rgba(3,3,3,0.5), rgba(255,255,255,0)); /* Firefox 3.6 - 15 */
+    background: linear-gradient(rgba(3,3,3,0.5), rgba(255,255,255,0)); /* 标准的语法 */
 }
-
+.nav:hover{
+    background: -webkit-linear-gradient(rgba(0,0,0,0.5), rgba(255,255,255,0)); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(rgba(0,0,0,0.5), rgba(255,255,255,0)); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(rgba(0,0,0,0.5), rgba(255,255,255,0)); /* Firefox 3.6 - 15 */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(255,255,255,0)); /* 标准的语法 */
+}
 .nav ul {
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .nav ul li {
@@ -21,18 +37,133 @@
     margin-right: 3%;
     cursor: pointer;
     font-size: 0.16rem;
-    color: #fff;
+    z-index: 998;
+    font-family: 'SourceHanSansCN-Regular';
+    position: relative;
 }
 
-.nav ul li:hover {
+.nav ul li a {
+    color: #fff;
+    line-height: 1.1rem;
+}
+
+.nav ul li:hover a {
     color: #e90010;
 }
 
-.logo {
-    width: 11%;
+.nav ul li .submenu {
+    width: 1.5rem !important;
+    top: 85% !important;
+    background: rgba(245, 18, 33, .5)
+}
+
+.nav .triangle {
+    border-color: transparent transparent rgba(245, 18, 33, .5) transparent;
+}
+
+.nav2 {
     position: absolute;
-    top: 4%;
-    left: 4%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1.1rem;
+    background: #fff;
+    padding: 0 3.5rem;
+    z-index: 998;
+}
+
+.nav2 img {
+    height: 100%;
+    width: auto;
+}
+
+.nav2 .navBar {
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    right: 3.5rem;
+    top: 0;
+}
+
+.nav2 .navBar li {
+    float: left;
+    width: 16.6666667%;
+    height: 100%;
+    position: relative;
+}
+
+.nav2 .navBar li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 1.1rem;
+    font-size: 0.16rem;
+    text-align: center;
+    color: #000000;
+    font-family: 'SourceHanSansCN-Regular';
+}
+
+.nav2 ul li:hover .sibmenu {
+    color: #e90010;
+}
+
+.submenu {
+    display: none;
+    width: 1.9rem;
+    position: absolute;
+    top: 101%;
+    left: 50%;
+    color: #fff;
+    background: #db1927;
+    transform: translateX(-50%);
+    padding: 0 0.3rem;
+}
+
+.subList {
+    margin: 0.2rem 0;
+    font-size: 0.16rem;
+    text-align: center;
+}
+
+.subList a {
+    color: #fff !important;
+    line-height: 0.16rem !important;
+}
+
+.triangle {
+    width: 0.2rem;
+    height: 0.2rem;
+    /* border-top: 0.1rem solid #db1927;
+    border-right: 0.1rem solid #db1927;
+    border-left: 0.1rem solid #db1927;
+    border-bottom: 0.1rem solid #db1927; */
+    border-width: 0.1rem;
+    border-style: solid;
+    border-color: transparent transparent #db1927 transparent;
+    position: absolute;
+    top: -0.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/*  */
+
+.tyBox {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.tyBox img {
+    width: 100%;
+}
+
+.logo {
+    width: 23%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
     z-index: 999;
 }
 
@@ -144,7 +275,7 @@
 }
 
 .phoneIcon {
-    width: 11%;
+    width: 9%;
     position: absolute;
     bottom: 4%;
     left: 4%;
@@ -173,11 +304,13 @@
 
 .banner_left p:nth-child(1) {
     margin-bottom: 5%;
-    font-size: 0.45rem;
+    font-family: 'BASKVILL';
+    font-size: 0.5rem;
 }
 
 .banner_left p:nth-child(2) {
-    font-size: 0.5rem;
+    font-size: 0.6rem;
+    font-family: 'SourceHanSansCN-Bold';
 }
 
 .banner_left p:nth-child(3) {
@@ -230,7 +363,7 @@
 .swiper-button-next {
     width: 0.5rem !important;
     height: 0.5rem !important;
-    background: url(./../images/turn_right_act.png) no-repeat center !important;
+    background: url(./../images/turn_right_def.png) no-repeat center !important;
     background-size: cover !important;
     opacity: 1 !important;
     transition: all .2s;
@@ -245,9 +378,6 @@
     opacity: 1 !important;
     transition: all .2s;
     z-index: 999;
-    /* -webkit-transition: all .1s;
-    -moz-transition: all .1s;
-    -o-transition: all .1s; */
 }
 
 .swiper-button-next:hover {
@@ -261,6 +391,7 @@
 /* 首屏第二页 */
 
 .banner_right {
+    width: 21%;
     position: absolute;
     right: 10%;
     bottom: 0px;
@@ -275,13 +406,15 @@
 }
 
 .danwei img {
-    width: 3rem;
+    width: 100%;
 }
 
 .danwei p {
+    font-size: 0.2rem;
     border-bottom: 1px solid #e5e5e5;
     padding: 3% 0%;
     margin-bottom: 3%;
+    font-family: 'SourceHanSansCN-ExtraLight';
 }
 
 .danwei ul li {
@@ -328,6 +461,7 @@
 }
 
 .jiangxiang li {
+    margin-right: 0.2rem;
     display: inline-block;
     flex: 1;
     position: relative;
@@ -360,11 +494,13 @@
 }
 
 .about_title p:nth-child(1) {
-    font-size: 0.38rem;
+    font-size: 0.5rem;
+    font-family: 'BASKVILL';
 }
 
 .about_title p:nth-child(2) {
     font-size: 0.6rem;
+    font-family: 'SourceHanSansCN-Bold';
 }
 
 .about_desc {
@@ -375,8 +511,10 @@
 }
 
 .about_desc p {
-    font-size: 0.16rem;
+    font-size: 0.14rem;
     margin-bottom: 5%;
+    line-height: 0.25rem;
+    font-family: 'SourceHanSansCN-Light';
 }
 
 .about_bottom {
@@ -396,7 +534,7 @@
 }
 
 .about_bottom ul li {
-    /* float: left; */
+    flex: auto;
     /* width: 25%; */
     vertical-align: top;
     margin: 1%;
@@ -407,7 +545,8 @@
 }
 
 .about_num p {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
+    font-family: 'GiveAHoot';
 }
 
 .about_numDesc {
@@ -419,10 +558,12 @@
 
 .about_numDesc p:nth-child(1) {
     font-size: 0.24rem;
+    font-family: 'SourceHanSansCN-ExtraLight';
 }
 
 .about_numDesc p:nth-child(2) {
     font-size: 0.14rem;
+    font-family: 'SourceHanSansCN-ExtraLight';
 }
 
 /* .plus{
@@ -440,6 +581,7 @@
 }
 
 .products li {
+    overflow: hidden;
     float: left;
     width: 33.333333%;
 }
@@ -463,6 +605,14 @@
     left: 0;
 }
 
+.pro_img {
+    transition: all 5s;
+}
+
+.pro_imgHover {
+    transform: scale(1.2, 1.2);
+}
+
 .product_cont {
     color: #fff;
     position: absolute;
@@ -477,16 +627,19 @@
 }
 
 .pro_p1 {
-    font-size: 0.3rem;
+    font-size: 0.36rem;
+    font-family: 'BASKVILL';
 }
 
 .pro_p2 {
-    font-size: 0.3rem;
+    font-size: 0.32rem;
     margin: 0.9rem 0 0.35rem;
+    font-family: 'SourceHanSansCN-Bold';
 }
 
 .pro_p3 {
-    font-size: 0.15rem;
+    font-size: 0.14rem;
+    font-family: 'SourceHanSansCN-Light';
 }
 
 /* case */
@@ -512,6 +665,15 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.ani_33, .ani_34 {
+    font-size: 0.32rem;
+    font-family: 'SourceHanSansCN-Bold';
+}
+
+.ani_35 {
+    font-family: 'SourceHanSansCN-Light';
 }
 
 .case_next {
@@ -582,6 +744,14 @@
     width: 50%;
 }
 
+.news_title span:nth-child(1) {
+    font-family: 'BASKVILL';
+}
+
+.news_title span:nth-child(2) {
+    font-family: 'SourceHanSansCN-Bold';
+}
+
 .news_pic {
     position: relative;
     margin-bottom: 0.5rem;
@@ -598,6 +768,22 @@
 
 .newsSwiper .swiper-slide-next .news_mask {
     background: none;
+}
+
+.new_txt {
+    display: none;
+}
+
+.fofa-blod {
+    font-family: 'SourceHanSansCN-Bold';
+}
+
+.fofa-light {
+    font-family: 'SourceHanSansCN-Light';
+}
+
+.newsSwiper .swiper-slide-next .new_txt {
+    display: block;
 }
 
 .newsSwiper .fontSize24 {
@@ -623,14 +809,43 @@
 /* 联系我们 */
 
 .module6 {
-    background: url('./../images/contact_bg.jpg') no-repeat center;
-    background-size: cover;
+    /* background: url('./../images/contact_bg.jpg') no-repeat center;
+    background-size: cover; */
     color: #fff;
+}
+
+.module6_back {
+    animation: back_enlarge 10s forwards;
+}
+
+.module7_back {
+    animation: back_enlarge2 10s forwards;
+}
+
+@keyframes back_enlarge {
+    0% {
+        transform: scale(1)
+    }
+    100% {
+        transform: scale(1.1)
+    }
+}
+
+@keyframes back_enlarge2 {
+    0% {
+        transform: scale(1)
+    }
+    100% {
+        transform: scale(1.1)
+    }
 }
 
 .contact_us {
     width: 100%;
     height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .contact_us .arrow_icon {
@@ -659,16 +874,61 @@
     margin-bottom: 0.2rem;
 }
 
+.contact_title p:nth-child(1) {
+    font-family: 'BASKVILL';
+}
+
+.contact_title p:nth-child(2) {
+    font-family: 'SourceHanSansCN-Bold';
+}
+
+.ani_40 {
+    font-family: 'SourceHanSansCN-Medium';
+}
+
+.ani_41 {
+    font-family: 'SourceHanSansCN-ExtraLight';
+}
+
+.ani_42 {
+    font-family: 'SourceHanSansCN-Light';
+}
+
 .contact_phone {
     margin-bottom: 0.77rem;
     margin-top: 0.8rem;
-    border-bottom: 1px solid #fff;
+    /* border-bottom: 1px solid #fff; */
     padding-bottom: 0.2rem;
+    position: relative;
+}
+
+.line_contcat1 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+}
+
+.line_contcat2 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: #fff;
 }
 
 .cooper {
-    border-bottom: 1px solid #fff;
+    position: relative;
+    /* border-bottom: 1px solid #fff; */
     padding-bottom: 0.2rem;
+}
+
+.swhz {
+    display: inline-block;
+    font-family: 'SourceHanSansCN-Bold';
 }
 
 .contact_add {
@@ -683,14 +943,36 @@
     margin-bottom: 0.1rem;
 }
 
+.contact_add li p:nth-child(1) {
+    font-family: 'SourceHanSansCN-Medium';
+}
+
+.contact_add li p:nth-child(2) {
+    font-family: 'SourceHanSansCN-Bold';
+}
+
+.contact_add li p:nth-child(3) {
+    font-family: 'SourceHanSansCN-Bold';
+}
+
 .weixin {
     display: flex;
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-bottom: 1px solid #fff;
+    /* border-bottom: 1px solid #fff; */
     padding-bottom: 0.3rem;
+}
+
+.weixin .line_qrcode {
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    height: 1px;
+    background: #fff;
 }
 
 .weixin .flex_1 {
@@ -701,6 +983,7 @@
 
 .weixin p {
     margin-left: 0.1rem;
+    font-family: 'SourceHanSansCN-Light';
 }
 
 .copy {
@@ -806,8 +1089,11 @@
 .recruit {
     width: 100%;
     height: 100%;
-    background: url('./../images/recruit_bg.jpg') no-repeat center bottom;
-    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background: url('./../images/recruit_bg.jpg') no-repeat center;
+    background-size: cover; */
 }
 
 .recruit_cont {
@@ -825,8 +1111,14 @@
     color: #fff;
 }
 
+.welcome_box p:nth-child(1) {
+    font-family: 'BASKVILL';
+}
+
 .welcome_box a {
     color: #fff;
+    display: inline-block;
+    font-family: 'SourceHanSansCN-Normal';
 }
 
 .popular ul {
@@ -847,10 +1139,12 @@
 
 .recruit .marginEle {
     margin: 0.3rem 0 1rem 0;
+    font-family: 'SourceHanSansCN-ExtraLight';
 }
 
 .marginBt_5 {
     margin-bottom: 0.5rem;
+    font-family: 'SourceHanSansCN-Bold';
 }
 
 /* 智库 */
@@ -870,6 +1164,20 @@
     padding-left: 10%;
 }
 
+.tt_loginBtn {
+    width: 100;
+    background: rgba(233, 5, 21, .5);
+    padding: 0.1rem 0.2rem;
+    border-radius: 0.1rem;
+    color: #fff;
+    font-size: 0.2rem;
+    font-family: 'SourceHanSansCN-Regular';
+}
+
+.tt_loginBtn:hover {
+    background: rgba(233, 5, 21, 1);
+}
+
 .tt_right {
     float: left;
     width: 70%;
@@ -878,10 +1186,12 @@
 .tt_left .margin_tt_1 {
     margin-top: 0.55rem;
     margin-bottom: 0.1rem;
+    font-family: 'SourceHanSansCN-ExtraLight';
 }
 
 .tt_left .margin_tt_2 {
     margin-bottom: 0.85rem;
+    font-family: 'SourceHanSansCN-ExtraLight';
 }
 
 .tt_right img {
@@ -893,18 +1203,22 @@
     display: inline-block;
 }
 
-.tt_margin_1 {
+.tt_right .tt_margin_1 {
     margin-top: 0.3rem;
     margin-bottom: 0.2rem;
+    font-family: 'SourceHanSansCN-Light';
 }
 
-.tt_margin_2 {
+.tt_right .tt_margin_2 {
     margin-bottom: 0.25rem;
+    font-family: 'SourceHanSansCN-Bold';
 }
 
 .icons span {
     margin-right: 0.25rem;
     vertical-align: middle;
+    font-size: 0.14rem;
+    font-family: 'SourceHanSansCN-Normal';
 }
 
 .icons span img {
@@ -984,11 +1298,12 @@
     float: right;
     width: 30%;
     border-bottom: 1px solid #ccc;
-    padding-bottom: 0.11rem;
+    padding-bottom: 0.14rem;
 }
 
 .verifyCodeImg img {
     margin: 0;
+    width: 100%;
 }
 
 .verifyCode {
@@ -1027,6 +1342,7 @@
 
 .loginOA p {
     letter-spacing: 0.2rem;
+    font-family: 'SourceHanSansCN-ExtraLight';
 }
 
 .loginOA a {
@@ -1039,6 +1355,11 @@
     margin-top: 0.55rem;
     border-radius: 0.10rem;
     display: inline-block;
+    font-family: 'SourceHanSansCN-Regular';
+}
+
+.loginOA a:hover {
+    background: rgba(233, 0, 16, 1);
 }
 
 .oa_tt li {
@@ -1117,6 +1438,8 @@
 
 .oa_menu_ul li a p {
     margin-top: 0.2rem;
+    font-size: 0.16rem;
+    font-family: 'SourceHanSansCN-Regular';
 }
 
 .oa_circle {
@@ -1147,6 +1470,7 @@
 
 .wangpan p {
     margin-bottom: 0.4rem;
+    font-family: 'SourceHanSansCN-Medium';
 }
 
 .wangpan li {
@@ -1156,6 +1480,7 @@
 
 .wangpan li span {
     margin-right: 0.2rem;
+    font-family: 'SourceHanSansCN-Light';
 }
 
 .join_oa {
@@ -1174,6 +1499,15 @@
     margin-bottom: 0.75rem;
 }
 
+.OAName {
+    font-size: 0.26rem;
+    font-family: 'SourceHanSansCN-ExtraLight';
+}
+
+.OAName b {
+    font-family: 'SourceHanSansCN-Medium';
+}
+
 .joinOA {
     color: #fff;
     width: 1.2rem;
@@ -1183,5 +1517,84 @@
     background: rgba(233, 0, 16, .5);
     border-radius: 0.10rem;
     display: inline-block;
-    font-size: 0.2rem
+    font-size: 0.2rem;
+    font-family: 'SourceHanSansCN-Regular';
+}
+
+.joinOA:hover {
+    background: rgba(233, 0, 16, 1);
+}
+
+/* footer */
+
+.footer {
+    width: 100%;
+    padding: 1.2rem 3.5rem;
+    background: #f9f9f9;
+}
+
+.footer_cont {
+    width: 100%;
+}
+
+.footer_cont ul {
+    width: 100%;
+    overflow: hidden;
+}
+
+.footer_txt {
+    float: left;
+    width: 19%;
+}
+
+.footer_tit {
+    font-size: 0.16rem;
+    color: #000;
+    margin-bottom: 0.4rem;
+    font-family: 'SourceHanSansCN-Regular';
+}
+
+.footer_txt a {
+    display: block;
+    color: #9a9a9a;
+    font-size: 0.16rem;
+    margin-bottom: 0.1rem;
+    font-family: 'SourceHanSansCN-Regular';
+}
+
+.footer_txt {
+    text-align: center;
+}
+
+.footer_txt span {
+    text-align: left;
+}
+
+.footer_txt:first-child span {
+    float: left;
+    display: inline-block;
+}
+
+.footer_txt:last-child span {
+    float: right;
+}
+
+.footer_cont .footer_txt:first-child {
+    width: 16%;
+}
+
+.footer_cont .footer_txt:last-child {
+    width: 8%;
+}
+
+/* loading */
+
+.progress {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    z-index: 999;
 }

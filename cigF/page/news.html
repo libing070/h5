@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./../css/swiper.min.css">
+    <link rel="stylesheet" href="./../css/layer.css">
+    <link rel="stylesheet" href="./../css/base.css">
+    <link rel="stylesheet" href="./../css/base_pc.css">
+    <link rel="stylesheet" href="./../css/page/case.css">
+    <title>cig</title>
+</head>
+
+<body>
+    <div class="container case">
+        <div class="caseSwiper swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./../images/page/case_banner1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="case_cont">
+            <div class="case_nav">
+                <ul>
+                    <li>
+                        <a href="javascript:;">新意动态</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">新意荣耀</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">新意观点</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">行业观察</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="news_cont">
+                <ul>
+                    <!-- <li>
+                        <div class="news_imgBox">
+                            <img src="./../images/page/honor_prize_1.jpg" alt="">
+                        </div>
+                        <p class="news_p1">侧面看戛纳，除了创意这里还有什么</p>
+                        <p class="news_p2">作为戛纳狮子节的周边活动，“华人CMO大师班”赢得了越来越多国内顶级营销人的青睐。“华人CMO大师班”是一项面向华人营销领袖的培训交流活动。</p>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="case_loodMore" isLoad="1" pageIndex="2">
+                <img src="./../images/page/loadMoreIcon.png" alt="">
+                <p>加载更多</p>
+            </div>
+        </div>
+    </div>
+    <script src="./../js/jquery-1.11.2.min.js"></script>
+    <script src="./../js/jquery.cookie.js"></script>
+    <script src="./../js/anime.min.js"></script>
+    <script src="./../js/layer.js"></script>
+    <script src="./../js/rem.js"></script>
+    <script src="./../js/swiper.min.js"></script>
+    <script src="./../js/md5.js"></script>
+    <!-- <script src="./../js/swiperInit.js"></script> -->
+    <script src="./../js/common.js"></script>
+    <script src="./../js/page/page.js"></script>
+    <script src="./../js/baiduTemplate.js"></script>
+    <script id="navTemplate" type="text/template">
+
+    <ul>
+        <% for(var i=0; i< list.length; i++){%>
+        <li>
+            <div class="news_imgBox">
+                <%if(list[i].multimediaType==1){%>
+                <img src="<%=list[i].picUrl %>" alt="">
+                <%}else{%>
+                    <video src="<%=list[i].picUrl %>"></video>
+                <%}%>
+                <div class="teamActive">
+                    <div></div>
+                </div>
+            </div>
+            <p class="news_p1"><%=list[i].title%></p>
+            <p class="news_p2"><%=list[i].summary%></p>
+        </li>
+        <%}%>
+    </ul>
+       
+  
+    </script>
+    <script>
+        $(function () {
+            var urlParame = getUrlParam('index');
+            if (urlParame) {
+                for (let i = 1; i <= $('.case_nav ul li').length; i++) {
+                    if (i == urlParame) {
+                        var ele = $('.case_nav ul li')[i];
+                        $(ele).prev().find('a').addClass('act')
+                        loadData(1, i);
+                    }
+                }
+            } else {
+                $($('.case_nav ul li a')[0]).addClass('act');
+                loadData(1, 1);
+            }
+
+            var caseSwiper = new Swiper('.caseSwiper,swiper-container', {
+                loop: false,
+                observer: true, //修改swiper自己或子元素时，自动初始化swiper
+                observeParents: true, //修改swiper的父元素时，自动初始化swiper
+            });
+            $('.case_nav ul li').on('click', function () {
+                var menuIndex = $(this).index();
+                $('.case_nav ul li a').removeClass('act');
+                $(this).find('a').addClass('act');
+                console.log(menuIndex);
+                menuIndex++;
+                loadData(1, menuIndex);
+            });
+            ///api/News/GetRecommendNews(Portal_005)获取新闻推荐
+            $('.case_loodMore').on('click', function () {
+                if ($(this).attr('isLoad') == '1') {
+                    $(this).find('img').addClass('loadRotate');
+                    $(this).attr('isLoad', '2');
+                    var index = $(this).attr('pageIndex');
+                    var start = $('.case_nav .act').index('.case_nav li a')
+                    loadData($(this).attr('pageIndex'), ++start);
+                    index++;
+                    $(this).attr('pageIndex', index);
+                } else {
+                }
+            });
+            function loadData(pageIndex, start) {
+                $.request('/api/News/GetRecommendNews', {
+                    pageIndex: pageIndex || 1,
+                    pageSize: 10,
+                    timestamp: ts(),
+                    start: start,
+                    sign: createSign({
+                        "pageIndex": 1,
+                        "pageSize": 10,
+                        timestamp: ts(),
+                        start: start
+                    })
+                },
+                    function (res) {
+                        console.log(res);
+                        var data = {
+                            'list': res.data
+                        };
+                        // var data = res.data
+                        var bt = baidu.template;
+                        var html = bt('navTemplate', data);
+                        $('.news_cont').append(html);
+                        $('.case_loodMore').find('img').removeClass('loadRotate');
+                        $('.case_loodMore').attr('isLoad', '1');
+                    }
+                );
+            }
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,196 @@
+a{ text-decoration:none}
+.container{
+    width: 100%;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+}
+
+.content .banner1{
+     width: 100%;
+     position: relative;
+}
+
+
+.banner1 .swiper-pagination{
+    position: absolute;
+    bottom:0.3rem;
+}
+.banner1  .swiper-pagination-bullet {
+    width: 0.21rem;
+    height: 0.21rem;
+    text-align: center;
+    opacity: 1;
+    background: none;
+    background-image: url("../../images/wap/caseswpier-pag-icon.png");
+    background-size: 100%;
+}
+.banner1  .swiper-pagination-bullet-active {
+    width: 0.21rem;
+    height: 0.21rem;
+    background: none;
+    background-image: url("../../images/wap/caseswpier-pag-icon-active.png");
+    background-size: 100%;
+}
+.banner1  .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{
+    margin: 0 5px;
+}
+.banner2{
+    margin-top: 0.75rem;
+    border-bottom:1px solid rgba( 114, 114, 114 ,0.2);
+}
+.banner2 .banner2-swiper-slide{
+    font-size: 0.20rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 0, 0, 0 );
+    font-weight: bold;
+    line-height: 1.701;
+    height: 0.6rem;
+    text-align: center;
+}
+.banner2 .swiper-slide-active{
+    border-bottom:1px solid #d7000f;
+
+}
+
+.banner3{
+    margin-top: 0.8rem;
+    position: relative;
+    border-bottom: 1px solid rgba( 114, 114, 114 ,0.2);
+}
+
+.banner3-swiper-slide{
+    width: 100%;
+    position: relative;
+}
+.banner3-swiper-slide .list{
+    height: 3rem;
+    width: 100%;
+    position: relative;
+}
+.banner3-swiper-slide  .list .left-bg{
+    height: 3rem;
+    width: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.banner3-swiper-slide  .list .right-img{
+    height: 3rem;
+    width: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.banner3-swiper-slide  .list  .right-v-btn{
+    position: absolute;
+    width: 1.72rem;
+    height: 1.71rem;
+    top: 0;
+    right: 15%;
+    bottom: 0;
+    margin: auto;
+    z-index: 999;
+}
+.banner3-swiper-slide .list .left-v-btn{
+    position: absolute;
+    width: 1.72rem;
+    height: 1.71rem;
+    top: 0;
+    left: 15%;
+    bottom: 0;
+    margin: auto;
+    z-index: 999;
+}
+
+.banner3-swiper-slide .list .right-bg{
+    height: 3rem;
+    width: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+.banner3-swiper-slide  .list .left-img{
+    height: 3rem;
+    width: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.banner3-swiper-slide  .list:nth-child(odd) .text{
+    position: absolute;
+    top: 0.2rem;
+    left: 0.25rem;
+    margin: auto;
+    width: 3.25rem;
+    z-index: 2;
+}
+.banner3-swiper-slide .list:nth-child(even) .text{
+    position: absolute;
+    top: 0.2rem;
+    right: 0.25rem;
+    margin: auto;
+    width: 3.25rem;
+    z-index: 2;
+}
+
+.banner3-swiper-slide .list .text .p1{
+    font-size: 0.14rem;
+    font-family: "Microsoft YaHei";
+    color: rgb( 0, 0, 0 );
+    line-height: 1.786;
+    margin-bottom: 0.2rem;
+}
+.banner3-swiper-slide .list .text .p2{
+    font-size: 0.25rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 0, 0, 0 );
+    font-weight: bold;
+    line-height: 1.385;
+    text-align: left;
+}
+.banner3-swiper-slide .list .text .p3{
+    margin-top: 0.1rem;
+    font-size: 0.18rem;
+    font-family: "SourceHanSansCN";
+    color: rgba( 0, 0, 0, 0.702 );
+    line-height: 1.667;
+
+}
+.banner3 .load-more{
+    margin: 1rem;
+    text-align: center;
+}
+.banner3 .load-more .load-more-btn{
+    display: block;
+    margin: auto;
+}
+.banner3 .load-more .load-more-btn.active{
+    display: block;
+    margin: auto;
+    -webkit-animation:load-more 1s linear infinite;
+}
+.banner3 .load-more p{
+margin-top: 0.2rem;
+    font-size: 0.25rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 0, 0, 0 );
+    line-height: 1.701;
+}
+
+@-webkit-keyframes load-more {
+    0% {
+        transform: rotate(0deg);
+        box-shadow: 0px 0px 10px #fff;
+    }
+    50% {
+        transform: rotate(180deg);
+        box-shadow: 0px 0px 45px #fff;
+    }
+    100% {
+        transform: rotate(360deg);
+        box-shadow: 0px 0px 10px #fff;
+    }
+}

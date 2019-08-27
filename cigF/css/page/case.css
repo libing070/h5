@@ -1,0 +1,516 @@
+img {
+    width: 100%;
+}
+
+a {
+    color: #333;
+    display: block;
+}
+
+span {
+    display: inline-block;
+}
+
+video {
+    width: 100%;
+}
+
+.container {
+    padding-top: 1.1rem;
+}
+
+.case_cont {
+    width: 63.5%;
+    margin: 0.8rem auto;
+}
+
+.case_nav {
+    width: 100%;
+}
+
+.case_nav ul {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    /* border-bottom: 1px solid #e3e3e3; */
+}
+
+.case_nav ul li {
+    /* float: left;
+    margin-right: 0.7rem; */
+    flex: auto;
+    text-align: center;
+}
+
+.case_nav ul li:last-child {
+    margin: 0;
+}
+
+.case_nav ul li a {
+    color: #000;
+    font-size: 0.18rem;
+    height: 100%;
+    display: block;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid #e3e3e3;
+    box-sizing: border-box;
+    font-family: 'SourceHanSansCN-Bold';
+}
+
+.case_nav ul li:hover a {
+    border-bottom: 2px solid #d7000f;
+}
+
+.case_nav ul li .act {
+    border-bottom: 2px solid #d7000f;
+}
+
+.caseList {
+    width: 100%;
+    overflow: hidden;
+    /* margin-top: 0.8rem; */
+}
+
+.caseList .list {
+    /* float: left; */
+    width: 66.6666667%;
+    display: inline-block;
+    font-size: 0;
+}
+
+.caseList .list:nth-child(3n) {
+    margin-top: -0.03rem;
+}
+
+.list .list_txt {
+    float: left;
+    width: 50%;
+    min-height: 3rem;
+}
+
+.list img {
+    float: left;
+    width: 100%;
+    height: 3rem;
+}
+
+.list .imgBox {
+    float: left;
+    /* width: 100%;
+    height: 3rem; */
+}
+
+.list:nth-child(3n-2) .imgBox {
+    width: 100%;
+    float: none;
+}
+
+.list:nth-child(3n-2) {
+    width: 33.333333%;
+    float: left;
+}
+
+.list:nth-child(3n-2) img {
+    float: none;
+    width: 100%;
+}
+
+.list:nth-child(3n-2) .list_txt {
+    float: none;
+    width: 100%;
+}
+
+.list_txt {
+    background: #efefef;
+    padding: 0.6rem 0.3rem 0;
+    position: relative;
+}
+
+.txt_1 {
+    font-size: 0.14rem;
+    margin-bottom: 0.2rem;
+    font-family: 'SourceHanSansCN-Light';
+}
+
+.txt_2 {
+    font-size: 0.26rem;
+    font-family: 'SourceHanSansCN-Bold';
+}
+
+.txt_3 {
+    font-size: 0.16rem;
+    color: #6c6c6c;
+    font-family: 'SourceHanSansCN-Light';
+}
+
+.mg-top {
+    margin-top: 0.2rem;
+}
+
+.sj-top {
+    width: 0.4rem;
+    height: 0.4rem;
+    border-width: 0.2rem;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+    position: absolute;
+    top: -0.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.list:nth-child(3n-1) .list_txt {
+    float: right;
+}
+
+.list:nth-child(3n-1) .imgBox {
+    float: right;
+}
+
+.list:nth-child(3n-1) .sj-top {
+    top: 50%;
+    left: auto;
+    right: -0.4rem !important;
+    transform: translateY(-50%);
+    border-color: transparent transparent transparent #fff;
+}
+
+.list:nth-child(3n) .sj-top {
+    top: 50%;
+    left: -0.4rem;
+    transform: translateY(-50%);
+    border-color: transparent #fff transparent transparent;
+}
+
+.case_loodMore {
+    width: 100%;
+    text-align: center;
+    margin-top: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.case_loodMore img {
+    width: 0.33rem;
+    display: inline-block;
+}
+
+.case_loodMore p {
+    font-size: 0.16rem;
+    font-family: 'SourceHanSansCN-Light';
+}
+
+.list:hover .list_txt {
+    background: #db1927;
+}
+
+/* .list:hover .teamActive {
+    opacity: .5;
+} */
+
+.list:nth-child(3n-2):hover .teamActive {
+    opacity: .5;
+}
+
+.list:nth-child(3n-1):hover .teamActive {
+    opacity: .5;
+}
+
+.list:nth-child(3n):hover .teamActive {
+    opacity: .5;
+}
+
+.list:nth-child(3n-2):hover .sj-top {
+    border-color: transparent transparent #db1927 transparent;
+}
+
+.list:nth-child(3n-1):hover .sj-top {
+    border-color: transparent transparent transparent #db1927;
+}
+
+.list:nth-child(3n):hover .sj-top {
+    border-color: transparent #db1927 transparent transparent;
+}
+
+.list:hover .list_txt p {
+    color: #fff;
+}
+
+.imgBox {
+    width: 50%;
+    /* height: 3rem; */
+    position: relative;
+}
+
+.teamActive {
+    opacity: 0;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: -webkit-linear-gradient(rgba(0, 0, 0, .1), rgba(233, 112, 120, 1));
+    background: -o-linear-gradient(rgba(0, 0, 0, .1), rgba(233, 112, 120, 1));
+    background: -moz-linear-gradient(rgba(0, 0, 0, .1), rgba(233, 112, 120, 1));
+    background: linear-gradient(rgba(0, 0, 0, .1), rgba(233, 112, 120, 1));
+    /* opacity: .5; */
+    height: 0.7rem;
+}
+
+.teamActive div {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0.05rem;
+    background: red;
+    opacity: 1;
+}
+
+/* news */
+
+.news_cont {
+    width: 100%;
+    margin: 0.8rem auto 0;
+}
+
+.news_cont ul {
+    width: 100%;
+    overflow: hidden;
+}
+
+.news_cont ul li {
+    width: 32%;
+    margin-right: 2%;
+    float: left;
+}
+
+.news_cont ul li:nth-child(3n) {
+    margin-right: 0;
+}
+
+.news_cont ul li .news_p1 {
+    font-size: 0.26rem;
+    margin: 0.34rem 0 0.3rem;
+    font-family: 'SourceHanSansCN-Bold';
+}
+
+.news_cont ul li .news_p2 {
+    font-size: 0.16rem;
+    font-family: 'SourceHanSansCN-Light';
+}
+
+.news_imgBox {
+    position: relative;
+}
+
+.news_cont ul li:hover .teamActive {
+    opacity: 1;
+}
+
+/* 动画 */
+
+.loadRotate {
+    animation: newsRotate 1s linear infinite;
+    -webkit-animation: newsRotate 1s linear infinite;
+}
+
+@-webkit-keyframes newsRotate {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(180deg);
+    }
+}
+
+/* 案例详情 */
+
+.caseDetail {
+    width: 100%;
+}
+
+.caseDetail_cont {
+    background: #ededed;
+    padding-bottom: 1.20rem;
+}
+
+.details {
+    width: 63.5%;
+    margin: 0 auto;
+    padding: 0.6rem 1rem;
+    background: #fff;
+    position: relative;
+    top: -0.9rem;
+}
+
+.D-title {
+    font-size: 0.4rem;
+    color: #000;
+    text-align: center;
+    font-family: 'SourceHanSansCN-Bold';
+}
+
+.D-locl {
+    position: absolute;
+    top: -0.3rem;
+    left: 0;
+    color: #fff;
+    font-size: 0.14rem;
+    font-family: 'SourceHanSansCN-Normal';
+}
+
+.timeBox {
+    text-align: center;
+    color: #777777;
+    font-size: 0.14rem;
+    margin-top: 0.45rem;
+    margin-bottom: 0.7rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid #e5e5e5;
+    position: relative;
+    font-family: 'SourceHanSansCN-Normal';
+}
+
+.timeBox .time {
+    margin-right: 0.7rem;
+}
+
+.share {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.share i {
+    width: 0.16rem;
+    height: 0.16rem;
+    background: url('./../../images/page/share_icon.png') no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    vertical-align: text-bottom;
+    margin-right: 0.1rem;
+}
+
+.details p {
+    margin-bottom: 0.5rem;
+    font-size: 0.14rem;
+    font-family: 'SourceHanSansCN-Normal';
+}
+
+.Adver {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 0.6rem;
+}
+
+.Adver img {
+    float: left;
+    width: 49%;
+}
+
+.Adver img:first-child {
+    margin-right: 2%;
+}
+
+.btnBox {
+    margin: 1rem auto 0.5rem;
+    text-align: center;
+    border-top: 1px solid #e5e5e5;
+    padding-top: 0.5rem;
+}
+
+.closeBtn {
+    text-align: center;
+    display: inline-block;
+    color: #fff;
+    background: #000;
+    padding: 0.22rem 0.74rem;
+    border-radius: 0.1rem;
+    font-size: 0.18rem;
+    font-family: 'SourceHanSansCN-Regular';
+}
+
+/* 职达新意 */
+
+.jobBanner {
+    width: 100%;
+    position: relative;
+}
+
+.banner_link {
+    width: 31.75%;
+    background: #fff;
+    position: absolute;
+    bottom: 0.3rem;
+    right: 50%;
+    transform: translateX(100%);
+    padding: 0.3rem 0.4rem;
+    color: #d7000f;
+    font-size: 0.3rem;
+}
+
+.banner_link a {
+    float: right;
+    margin-top: 0.1rem;
+}
+
+.banner_link a img {
+    width: 1rem;
+}
+
+.job_line {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0.06rem;
+    background: #d7000f;
+}
+
+.job_cont {
+    width: 63.5%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.job_cont li {
+    float: left;
+    width: 50%;
+    overflow: hidden;
+}
+
+.job_swiperBtn {
+    width: 2.1rem;
+    height: 1.1rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .5);
+    z-index: 1;
+}
+
+.job_next {
+    width: 0.5rem;
+    height: 0.5rem;
+    background: url(./../../images/turn_right_def.png) no-repeat center;
+    background-size: 100%;
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+
+.job_prev {
+    width: 0.5rem;
+    height: 0.5rem;
+    background: url(./../../images/turn_left_def.png) no-repeat center;
+    background-size: 100%;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.job_swiper3 {
+    margin-bottom: 1.35rem;
+}

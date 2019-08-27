@@ -20,7 +20,29 @@ jQuery.extend({
             url: host + url,
             type: 'post',
             data: parame,
-            async: false, //默认为true 异步
+            async: false, //默认为true 异步  
+            dataType: 'json',
+            success: function (res) {
+                if (res.code == 1) {
+                    cb(res);
+                } else {
+                    layer.msg(res.message);
+                }
+            },
+            error: function () {
+                layer.msg('网络出现问题，请稍后再试!');
+            },
+        })
+    },
+    requestLogin: function (url, parame, cb) {
+        $.ajax({
+            url: host + url,
+            type: 'post',
+            xhrFields: {
+                withCredentials: true
+            },
+            data: parame,
+            async: false, //默认为true 异步  
             dataType: 'json',
             success: function (res) {
                 if (res.code == 1) {
@@ -38,7 +60,7 @@ jQuery.extend({
         $.ajax({
             url: host + url,
             type: 'get',
-            async: false, //默认为true 异步
+            async: false, //默认为true 异步  
             dataType: 'json',
             success: function (res) {
                 if (res.code == 1) {
@@ -50,6 +72,7 @@ jQuery.extend({
             },
         })
     }
+
 });
 //1.1 文字向上淡入 1.2白框升上来，图标上升复现 1.3白框从右到左出现结束红色继续，图标要类似效果
 //2.1背景下向上，文字上向下，数字变化
@@ -77,3 +100,52 @@ function aniReset() {
         $('.ani_' + i).css('opacity', '0');
     }
 }
+//时间戳
+function ts() {
+    return Math.round(new Date() / 1000);
+}
+// 新建md5加密值
+function createSign(dic) {
+    var jsonstr = JSON.stringify(objKeySort(dic));
+    var str1 = jsonstr.replace(new RegExp(':', 'g'), '=');
+    var str2 = str1.replace(new RegExp(',', 'g'), '&');
+    var str3 = str2.substring(1, str2.length - 1);
+    str3 = str3.replace(/\"/g, "");
+    var str = str3 + '&661C9A9B-6E9A-4C1E-92AA-B4F7B8D4DD3C'
+    var sign = hex_md5(str);
+    return sign;
+}
+//排序的函数
+function objKeySort(arys) {
+    //先用Object内置类的keys方法获取要排序对象的属性名，再利用Array原型上的sort方法对获取的属性名进行排序，newkey是一个数组
+    var newkey = Object.keys(arys).sort();
+    //console.log('newkey='+newkey);
+    var newObj = {}; //创建一个新的对象，用于存放排好序的键值对
+    for (var i = 0; i < newkey.length; i++) {
+        //遍历newkey数组
+        newObj[newkey[i]] = arys[newkey[i]];
+        //向新创建的对象中按照排好的顺序依次增加键值对
+    }
+    return newObj; //返回排好序的新对象
+}
+
+function playVideo(_this, k) {
+    var eleName = 'video' + k;
+    var videoName = document.getElementById(eleName);
+    // console.log(videoName);
+    videoName.play();
+    $(_this).hide();
+    videoName.addEventListener('ended', function () {
+        $(_this).show();
+    })
+}
+$(function () {
+
+    var nav = '<div class="nav"><ul class="navBar"><li><a class="sibmenu" href="javascript:;">营销智库</a><div class="submenu"><div class="triangle"></div><div class="subList"><a href="javascript:;">资讯</a></div><div class="subList"><a href="javascript:;">知识</a></div><div class="subList"><a href="javascript:;">活动</a></div></div></li><li><a class="sibmenu" href="./page/job.html">职达新意</a><div class="submenu"><div class="triangle"></div><div class="subList"><a href="javascript:;">意起精彩</a></div><div class="subList"><a href="javascript:;">社会招聘</a></div><div class="subList"><a href="javascript:;">校园招聘</a></div><div class="subList"><a href="javascript:;">实习生招聘</a></div><div class="subList"><a href="javascript:;">活水计划</a></div></div></li><li><a class="sibmenu" href="./page/news.html">新意资讯</a><div class="submenu" id="newsClick"><div class="triangle"></div><div class="subList"><a href="javascript:;">新意动态</a></div><div class="subList"><a href="javascript:;">新意荣誉</a></div><div class="subList"><a href="javascript:;">新意观点</a></div><div class="subList"><a href="javascript:;">行业观察</a></div></div></li><li><a class="sibmenu" href="./page/case.html">案例展示</a><div class="submenu" id="caseClick"><div class="triangle"></div><div class="subList"><a href="javascript:;">整合营销</a></div><div class="subList"><a href="javascript:;">内容营销</a></div><div class="subList"><a href="javascript:;">社会化与用户营销</a></div><div class="subList"><a href="javascript:;">大数据营销</a></div><div class="subList"><a href="javascript:;">视频营销</a></div><div class="subList"><a href="javascript:;">技术营销</a></div><div class="subList"><a href="javascript:;">互动体验</a></div><div class="subList"><a href="javascript:;">媒介营销</a></div></div></li><li><a class="sibmenu" href="./page/bigData_1.html">服务与产品</a><div class="submenu"><div class="triangle"></div><div class="subList"><a href="./page/bigData_1.html">数字整合营销</a></div><div class="subList"><a href="./page/bigData_2.html">大数据技术与工具</a></div><div class="subList"><a href="./page/bigData_3.html">数字影像</a></div></div></li><li><a class="sibmenu" href="./page/about_us.html">关于我们</a><div class="submenu"><div class="triangle"></div><div class="subList"><a href="./page/about_us.html#about_1">公司介绍</a></div><div class="subList"><a href="./page/about_us.html#about_2">经营理念</a></div><div class="subList"><a href="./page/about_us.html#about_3">发展历程</a></div><div class="subList"><a href="./page/about_us.html#about_4">服务客户</a></div><div class="subList"><a href="./page/about_us.html#about_5">高管团队</a></div></div></li></ul></div>'
+    $('#pc').prepend(nav);
+    $('.nav ul li').hover(function () {
+        $(this).find('.submenu').stop().slideDown();
+    }, function () {
+        $(this).find('.submenu').stop().slideUp();
+    });
+});

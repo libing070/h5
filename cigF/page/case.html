@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./../css/swiper.min.css">
+    <link rel="stylesheet" href="./../css/layer.css">
+    <link rel="stylesheet" href="./../css/base.css">
+    <link rel="stylesheet" href="./../css/base_pc.css">
+    <link rel="stylesheet" href="./../css/page/case.css">
+    <title>cig</title>
+</head>
+
+<body>
+    <div class="container case">
+        <div class="caseSwiper swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./../images/page/case_banner1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="case_cont">
+            <div class="case_nav">
+                <ul>
+                    <li>
+                        <a href="javascript:;">整合营销</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">内容营销</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">社会化与用户营销</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">大数据营销</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">视频营销</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">技术营销</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">互动体验</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">媒介营销</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="caseList">
+                
+            </div>
+            <div class="case_loodMore" isLoad="1" pageindex="2">
+                <img src="./../images/page/loadMoreIcon.png" alt="">
+                <p>加载更多</p>
+            </div>
+        </div>
+    </div>
+    <script src="./../js/jquery-1.11.2.min.js"></script>
+    <script src="./../js/jquery.cookie.js"></script>
+    <script src="./../js/anime.min.js"></script>
+    <script src="./../js/layer.js"></script>
+    <script src="./../js/rem.js"></script>
+    <script src="./../js/swiper.min.js"></script>
+    <script src="./../js/md5.js"></script>
+    <!-- <script src="./../js/swiperInit.js"></script> -->
+    <script src="./../js/common.js"></script>
+    <script src="./../js/page/page.js"></script>
+    <!-- <script src="./../js/interFace.js"></script> -->
+    <script src="./../js/baiduTemplate.js"></script>
+    <script id="navTemplate" type="text/template">
+
+            <% for(var i=0; i< list.length; i++){%>
+            <div class="list">
+                <div class="imgBox">
+                        <%if(list[i].multimediaType==1){%>
+                            <img src="<%=list[i].url %>" alt="">
+                            <%}else{%>
+                                <video src="<%=list[i].url %>"></video>
+                            <%}%>
+                    <div class="teamActive">
+                        <div></div>
+                    </div>
+                </div>
+                <div class="list_txt">
+                    <div class="sj-top"></div>
+                    <p class="txt_1">2019/8/20</p>
+                    <p class="txt_2"><%=list[i].serviceUser %></p>
+                    <p class="txt_2"><%=list[i].name %></p>
+                    <p class="txt_3 mg-top"><%=list[i].content %></p>      
+                </div>
+            </div>
+            <%}%>
+    
+    </script>
+    <script>
+        $(function () {
+            console.log(getUrlParam('index'))
+            var urlParame = getUrlParam('index');
+            if (urlParame) {
+                for (let i = 1; i <= $('.case_nav ul li').length; i++) {
+                    if (i == urlParame) {
+                        var ele = $('.case_nav ul li')[i];
+                        $(ele).prev().find('a').addClass('act')
+                        getList(1, i);
+                    }
+                }
+            } else {
+                $($('.case_nav ul li a')[0]).addClass('act');
+                getList(1, 1);
+            }
+
+            var caseSwiper = new Swiper('.caseSwiper,swiper-container', {
+                loop: false,
+                observer: true, //修改swiper自己或子元素时，自动初始化swiper
+                observeParents: true, //修改swiper的父元素时，自动初始化swiper
+            });
+            $('.case_nav ul li').on('click', function () {
+                var menuIndex = $(this).index();
+                $('.case_nav ul li a').removeClass('act');
+                $(this).find('a').addClass('act');
+                console.log(menuIndex);
+                menuIndex++;
+                getList(1, menuIndex);
+            });
+            ///api/Case/GetPagingList (Portal_003)获取案例分页列表
+            $('.case_loodMore').on('click', function () {
+                if ($(this).attr('isLoad') == '1') {
+                    $(this).find('img').addClass('loadRotate');
+                    $(this).attr('isLoad', '2');
+                    var index = $(this).attr('pageIndex');
+                    var start = $('.case_nav .act').index('.case_nav li a')
+                    getList($(this).attr('pageIndex'), ++start);
+                    index++;
+                    $(this).attr('pageIndex', index);
+                } else {
+                }
+            });
+            function getList(index, start) {
+                // var pageindex = $('.case_loodMore').attr('pageindex');
+                $.request('/api/Case/GetPagingList', {
+                    pageIndex: index || 1,
+                    pageSize: 10,
+                    timestamp: ts(),
+                    start: start,
+                    sign: createSign({
+                        "pageIndex": 1,
+                        "pageSize": 10,
+                        timestamp: ts(),
+                        start: start
+                    })
+                },
+                    function (res) {
+                        console.log(res);
+                        var data = {
+                            'list': res.data.caseList
+                        };
+                        var bt = baidu.template;
+                        var html = bt('navTemplate', data);
+                        console.log(html)
+                        $('.caseList').append(html);
+                        $('.case_loodMore').find('img').removeClass('loadRotate');
+                        $('.case_loodMore').attr('isLoad', '1');
+                    }
+                );
+            }
+
+        });
+
+    </script>
+</body>
+
+</html>

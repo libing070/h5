@@ -7,8 +7,7 @@ $(function () {
         on: {
             slideChangeTransitionStart: function () {
                 console.log(this.activeIndex)
-                // console.log($('.module1').index('.outerSlide'))
-                // var moduleIndex = $('.module2').index('.outerSlide');
+                $('.scrollBar .p1').html('0' + (this.activeIndex + 1))
                 aniReset();
                 $('.module6').removeClass('module6_back');
                 $('.recruit').removeClass('module7_back');
@@ -16,6 +15,21 @@ $(function () {
                 if (this.activeIndex == $('.module1').index('.outerSlide')) {
                     aniTranslateY(['.ani_1'], ['1rem', '0', ], 1000, 500);
                     aniTranslateY(['.ani_2'], ['1rem', '0', ], 1000, 1000);
+                    aniTranslateY(['.ani_3'], ['1rem', '0', ], 1000, 500);
+                    aniTranslateY(['.ani_4'], ['1rem', '0', ], 1000, 1000);
+                    aniTranslateY(['.ani_5'], ['1rem', '0', ], 1000, 500);
+                    aniTranslateY(['.ani_6'], ['1rem', '0', ], 1000, 1000);
+                    aniTranslateY(['.ani_7'], ['1rem', '0', ], 1000, 1500);
+                    aniTranslateY(['.ani_8'], ['1rem', '0', ], 1000, 2000);
+                    aniTranslateY(['.ani_9'], ['1rem', '0', ], 1000, 2500);
+                    aniTranslateY(['.ani_10'], ['1rem', '0', ], 1000, 500);
+                    aniTranslateY(['.ani_11'], ['1rem', '0', ], 1000, 1000);
+                    aniTranslateY(['.ani_12'], ['1rem', '0', ], 1000, 1500);
+                    aniTranslateX(['.ani_13'], ['70%', '0', ], 1000, 2000);
+                    aniTranslateX(['.ani_14'], ['100%', '0', ], 1000, 3000);
+                    for (let i = 1; i <= 12; i++) {
+                        aniTranslateX(['.ani_' + (i + 14)], ['2rem', '0', ], 1000, (2500 + 200 * i));
+                    }
                 }
                 if (this.activeIndex == $('.module2').index('.outerSlide')) {
                     aniRound(['.aniR_1'], [00, 17], 1, 3000);
@@ -65,7 +79,7 @@ $(function () {
                     aniTranslateX(['.ani_55'], ['2rem', '0', ], 1000, 1600);
                     aniTranslateT(['.ani_56'], ['60%', '40%', ], 1000, 1800);
                     aniTranslateW(['.line_qrcode'], ['0%', '100%', ], 1000, 2800);
-                    $('.module6').addClass('module6_back');
+                    $('.module6 .reImg').addClass('module6_back');
                 }
                 if (this.activeIndex == $('.module7').index('.outerSlide')) {
                     aniTranslateY(['.ani_57'], ['1rem', '0', ], 1000, 500);
@@ -82,7 +96,7 @@ $(function () {
                     aniTranslateX(['.ani_68'], ['2rem', '0', ], 1000, 2300);
                     aniTranslateX(['.ani_69'], ['2rem', '0', ], 1000, 2400);
                     aniTranslateX(['.ani_70'], ['2rem', '0', ], 1000, 2500);
-                    $('.recruit').addClass('module7_back');
+                    $('.module7 .reImg').addClass('module7_back');
                 }
                 if (this.activeIndex == $('.module8').index('.outerSlide')) {
                     aniTranslateY(['.ani_71'], ['1rem', '0', ], 1000, 500);
@@ -96,7 +110,9 @@ $(function () {
                 }
             },
             slideNextTransitionStart: function () {
-                $('.scrollBar ul li').eq(this.activeIndex).attr('class', 'active');
+                for (let i = 1; i <= this.activeIndex; i++) {
+                    $('.scrollBar ul li').eq(i).attr('class', 'active');
+                }
                 if (this.activeIndex == 8) {
                     $('.whiteIcon').attr('src', './images/redIcon.png');
                     $('.p2').css('color', '#e90010');
@@ -106,7 +122,11 @@ $(function () {
             },
             slidePrevTransitionStart: function () {
                 var index = this.activeIndex;
-                $('.scrollBar ul li').eq(++index).attr('class', '');
+                for (let i = $('.scrollBar ul li').length; i > this.activeIndex; i--) {
+                    console.log(i)
+                    $('.scrollBar ul li').eq(i).attr('class', '');
+                }
+
                 $('.whiteIcon').attr('src', './images/whiteIcon.png');
                 $('.p2').css('color', '#fff');
             },
@@ -146,7 +166,6 @@ $(function () {
                     aniTranslateX(['.ani_13'], ['70%', '0', ], 1000, 2000);
                     aniTranslateX(['.ani_14'], ['100%', '0', ], 1000, 3000);
                     for (let i = 1; i <= 12; i++) {
-                        console.log('.ani_1' + (i + 14))
                         aniTranslateX(['.ani_' + (i + 14)], ['2rem', '0', ], 1000, (2500 + 200 * i));
                     }
                 }
@@ -191,27 +210,27 @@ $(function () {
     $('.nav li').on('click', function () {
         if ($(this).index() == 5) { //关于我们
             var index = $('.module2').index('.outerSlide');
-            swiper1.slideTo(index)
+            swiper1.slideTo(index);
         }
         if ($(this).index() == 4) { //服务与产品
             var index = $('.module3').index('.outerSlide');
-            swiper1.slideTo(index)
+            swiper1.slideTo(index);
         }
         if ($(this).index() == 3) { //案例展示
             var index = $('.module4').index('.outerSlide');
-            swiper1.slideTo(index)
+            swiper1.slideTo(index);
         }
         if ($(this).index() == 2) { //新意资讯
             var index = $('.module5').index('.outerSlide');
-            swiper1.slideTo(index)
+            swiper1.slideTo(index);
         }
         if ($(this).index() == 1) { //职达新意
             var index = $('.module7').index('.outerSlide');
-            swiper1.slideTo(index)
+            swiper1.slideTo(index);
         }
         if ($(this).index() == 0) { //智库
             var index = $('.module8').index('.outerSlide');
-            swiper1.slideTo(index)
+            swiper1.slideTo(index);
         }
     });
 

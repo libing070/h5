@@ -1,5 +1,20 @@
 $(function () {
 
+    var ttName = localStorage.getItem('ttName');
+    var OAName = localStorage.getItem('OAName');
+    console.log(ttName);
+    if (ttName && localStorage.getItem('ttToken')) {
+        $('.margin_tt_1').html('<b>' + ttName + '</b>你好');
+        $('.tt_loginBtn').html('进入智库');
+    }
+    if (OAName && localStorage.getItem('OAToken')) {
+        $('.oaDesc').show();
+        $('.loginOA').hide();
+        $('.contact_mask').hide();
+        $('.OAName').html('<b>' + OAName + '</b>你好');
+        GetHomeInfo(localStorage.getItem('OAToken'));
+    }
+
 
     // 滚动条
     for (let i = 0; i < $('.outerSlide').length; i++) {
@@ -108,6 +123,7 @@ $(function () {
                     $('.contact_mask').hide();
                     cleartt();
                     localStorage.setItem('ttToken', res.data.userToken);
+                    localStorage.setItem('ttName', res.data.userName);
                     $('.margin_tt_1').html('<b>' + res.data.userName + '</b>你好');
                     $('.tt_loginBtn').html('进入智库');
                 });
@@ -145,35 +161,38 @@ $(function () {
                     clearOA();
                     $('.OAName').html('<b>' + res.data.userName + '</b> 你好');
                     localStorage.setItem('OAToken', res.data.userToken);
-
+                    localStorage.setItem('OAName', res.data.userName);
                     $.cookie('OAToken', res.data.userToken, {
                         expires: 7,
                         path: '/',
-                        domain: 'cig.com.cn',
+                        domain: '.cig.com.cn',
                         secure: true
                     });
-                    console.log($.cookie('OAToken'))
-                    $.request('/api/OA/GetHomeInfo', {
-                        userToken: res.data.userToken,
-                        timestamp: ts(),
-                        sign: createSign({
-                            userToken: res.data.userToken,
-                            timestamp: ts(),
-                        })
-                    }, function (res) {
-                        console.log(res);
-                        res.data.forEach((ele, k) => {
-                            $('.oa_menu_ul li').eq(k).find('a').attr('href', res.data[0].url);
-                            if (ele.extra != 0) {
-                                $('.oa_menu_ul li').eq(k).find('.oa_circle').show();
-                            }
-                        });
-                    });
+                    console.log($.cookie('OAToken'));
+                    GetHomeInfo(res.data.userToken);
                 });
             }
         );
     });
 
+    function GetHomeInfo(token) {
+        $.request('/api/OA/GetHomeInfo', {
+            userToken: token,
+            timestamp: ts(),
+            sign: createSign({
+                userToken: token,
+                timestamp: ts(),
+            })
+        }, function (res) {
+            console.log(res);
+            res.data.forEach((ele, k) => {
+                $('.oa_menu_ul li').eq(k).find('a').attr('href', res.data[0].url);
+                if (ele.extra != 0) {
+                    $('.oa_menu_ul li').eq(k).find('.oa_circle').show();
+                }
+            });
+        });
+    }
 });
 
 function clearCm() {

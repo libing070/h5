@@ -1,0 +1,405 @@
+img {
+    width: 100%;
+}
+
+a {
+    color: #333;
+    display: block;
+}
+
+span {
+    display: inline-block;
+}
+
+.container {
+    padding-top: 1.1rem;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    outline: none;
+}
+
+.banner_txt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+
+.bd_p1 {}
+
+.banner_txt .bd_p1:nth-child(1) {
+    font-family: 'BASKVILL';
+    font-size: 0.5rem;
+}
+
+.banner_txt .bd_p1:nth-child(2) {
+    font-size: 0.6rem;
+    font-family: 'SourceHanSansCN-Bold';
+}
+
+.bd_p2 {
+    font-size: 0.60rem;
+    margin: 0.75rem 0;
+    font-family: 'SourceHanSansCN-ExtraLight';
+}
+
+.bd_p3 {
+    font-size: 0.16rem;
+    white-space: nowrap;
+    margin-bottom: 0.1rem;
+    font-family: 'SourceHanSansCN-Light';
+}
+
+.service {
+    background: #f9f9f9;
+    position: relative;
+}
+
+.service_cont {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.service_pro {
+    width: 100%;
+}
+
+.service_pro ul {
+    width: 100%;
+    /* overflow: hidden; */
+    padding: 0 0.5rem;
+}
+
+.service_pro ul li {
+    width: 17%;
+    float: left;
+    margin-right: 3.75%;
+}
+
+.service_pro ul li:hover .ss_icon {
+    background: #fff;
+}
+
+.service_pro ul li:hover .pro_sub {
+    background: #d7000f;
+    color: #fff;
+    box-shadow: 0 0.1rem 0.2rem #f6939a;
+}
+
+.service_pro ul li:hover .ss_p2 {
+    color: #fff;
+}
+
+.service_pro ul li:hover .ss_line {
+    background: #fff;
+}
+
+.service_pro ul li:nth-child(5) {
+    margin-right: 0;
+}
+
+.pro_sub {
+    margin: 0 auto;
+    padding: 0.48rem 0;
+    background: #fff;
+    border-radius: 0.1rem;
+}
+
+.ss_icon {
+    width: 1.47rem;
+    height: 1.47rem;
+    margin: 0 auto;
+    background: #f9f9f9;
+    border-radius: 50%;
+}
+
+.ss_icon img {
+    display: inline-block;
+}
+
+.pro_sub p {
+    text-align: center;
+}
+
+.ss_p1 {
+    margin: 0.35rem 0 0.3rem 0;
+    font-size: 0.20rem;
+    font-family: 'SourceHanSansCN-Bold';
+}
+
+.ss_p2 {
+    font-size: 0.14rem;
+    color: #8d8d8d;
+    font-family: 'SourceHanSansCN-Light';
+    margin-bottom: 0.15rem !important;
+}
+
+.ss_line {
+    background: #d7000f;
+    width: 0.3rem;
+    height: 0.02rem;
+    margin: 0 auto 0.3rem;
+}
+
+.platform {
+    position: relative;
+}
+
+.platBox {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.plarform_cont {
+    width: 63.5%;
+    margin: 0 auto;
+}
+
+.plarform_cont li {
+    float: left;
+    width: 30%;
+    position: relative;
+    margin-right: 5%;
+}
+
+.plarform_cont li:last-child {
+    margin-right: 0;
+}
+
+.plat_line {
+    position: absolute;
+    bottom: -0.06rem;
+    left: 0;
+    width: 100%;
+    height: 0.06rem;
+    background: #d7000f;
+}
+
+.plat_desc {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #d7000f;
+    padding: 0.3rem;
+}
+
+.plat_desc p {
+    font-size: 0.16rem;
+    line-height: 0.25rem;
+    color: #fff;
+    font-family: 'SourceHanSansCN-Light';
+}
+
+.plat_desc a img {
+    width: 0.8rem;
+    margin-top: 0.35rem;
+}
+
+/* 第二页 */
+
+.bd3 .scheme {
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+}
+
+.bd3 .scheme li {
+    float: left;
+    width: 33.333333%;
+}
+
+.bd3 .scheme li img {
+    width: 100%;
+}
+
+.bd3 .zhankai {
+    width: 100%;
+    position: relative;
+}
+
+.bd3 .zk_cont {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.bd3 .zk_cont .zhankai_icon {
+    width: 1.48rem;
+    margin: 0 auto;
+}
+
+.bd3 .zk_cont p {
+    font-size: 0.26rem;
+    color: #000;
+    text-align: center;
+    margin-top: 0.8rem;
+    font-family: 'SourceHanSansCN-Bold';
+}
+.subP{
+    font-size: 0.16rem !important;
+    font-family: 'SourceHanSansCN-Light' !important;
+    color: #878787 !important;
+    margin-top: 0.5rem !important;
+}
+.bd1 .gategory {
+    background: #fff;
+    position: relative;
+    width: 100%;
+    padding: 0 2.25rem;
+}
+
+.bd1Swiper {}
+
+.bd1 .bd1Slide_cont {
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    /* transform: translate(-50%, -50%); */
+}
+
+.bd1Swiper .swiper-slide-active {}
+
+.slide_cont {
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    background: #d7000f;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bd1 .slideTxt {
+    text-align: center;
+    font-size: 0.14rem;
+    color: #8d8d8d;
+    position: relative;
+    top: -0.7rem;
+}
+
+.bd1 .slideTxt p {
+    margin-bottom: 0.05rem;
+    font-family: 'SourceHanSansCN-Light';
+    font-size: 0.14rem;
+}
+
+.bd1 .slide_cont img {
+    width: 0.8rem;
+    height: 0.8rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bd1 .slide_title {
+    font-size: 0.2rem !important;
+    color: #000;
+    font-family: 'SourceHanSansCN-Bold';
+}
+
+.bd1 .slide_line {
+    width: 0.3rem;
+    height: 0.02rem;
+    background: #d7000f;
+    margin: 0.3rem auto;
+}
+
+.bd1 .bd1-swiper-button {
+    width: 100%;
+    height: 0.5rem;
+    position: relative;
+    margin: 0 0 1.5rem;
+}
+
+.bd1 .bd1-swiper-button .gategory_prev {
+    background: url('./../../images/turn_left_black.png') no-repeat center !important;
+    background-size: cover !important;
+    left: 45% !important;
+}
+
+.bd1 .bd1-swiper-button .gategory_next {
+    background: url('./../../images/turn_right_black.png') no-repeat center !important;
+    background-size: cover !important;
+    right: 45% !important;
+}
+
+.bd1 .bd1_sub {
+    width: 100%;
+    position: relative;
+}
+
+.bd1 .sub_cont {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.bd1 .bd1SubSwiper {
+    width: 63.5%;
+}
+
+.bd1 .subSwiper_cont {
+    position: relative;
+}
+
+.bd1 .subSwiper_line {
+    width: 100%;
+    height: 0.06rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #d7000f;
+}
+
+.bd1 .subSwiper_txt {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #d7000f;
+    bottom: 0;
+    left: 0;
+    padding: 1rem 0.5rem;
+}
+
+.bd1 .subSwiper_txt img {
+    width: 1rem;
+    margin-top: 0.55rem;
+}
+
+.bd1 .subSwiper_txt p {
+    font-size: 0.16rem;
+    line-height: 0.25rem;
+    color: #fff;
+    font-family: 'SourceHanSansCN-Normal';
+}
+
+.bd1 .bd1-swiper-button .bd1_sub_prev {
+    background: url('./../../images/turn_left_def.png') no-repeat center !important;
+    background-size: cover !important;
+    left: 42% !important;
+}
+
+.bd1 .bd1-swiper-button .bd1_sub_next {
+    background: url('./../../images/turn_right_def.png') no-repeat center !important;
+    background-size: cover !important;
+    right: 42% !important;
+}
+
+.bd1_sub .bd1-swiper-button {
+    margin-top: 0.6rem;
+}

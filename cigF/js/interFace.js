@@ -22,14 +22,14 @@ $(function () {
                 str += '<div class="caseCont">' +
                     '<div class="case_float">' +
                     '<div class="case_txt">' +
-                    '<p class="fontSize30 ani_33">' + ele.serviceUser + '</p>' +
-                    '<p class="fontSize30 ani_34">' + ele.name + '</p>' +
+                    '<p class="fontSize32 ani_33">' + ele.serviceUser + '</p>' +
+                    '<p class="fontSize32 ani_34">' + ele.name + '</p>' +
                     ' </div>' +
                     '</div>' +
                     '<div class="case_float">' +
                     '<div class="case_txt">' +
-                    '<p class="fontSize16 ani_35">' + ele.content + '</p>' +
-                    '<a href="javascript:;" class="arrow_icon arrow_About ">' +
+                    '<p class="fontSize14 ani_35">' + ele.content + '</p>' +
+                    '<a href="./page/case.html" class="arrow_icon arrow_About ">' +
                     '<img class="" src="./images/arrow_icon.png" alt="">' +
                     '</a>' +
                     '</div>' +
@@ -68,20 +68,20 @@ $(function () {
         }
     );
     // (Portal_003)获取案例分页列表
-    // $.request('/api/Case/GetPagingList', {
-    //         pageIndex: 1,
-    //         pageSize: 10,
-    //         timestamp: ts(),
-    //         sign: createSign({
-    //             "pageIndex": 1,
-    //             "pageSize": 10,
-    //             timestamp: ts()
-    //         })
-    //     },
-    //     function (res) {
-    //         console.log(res);
-    //     }
-    // );
+    $.request('/api/Case/GetPagingList', {
+            pageIndex: 1,
+            pageSize: 10,
+            timestamp: ts(),
+            sign: createSign({
+                "pageIndex": 1,
+                "pageSize": 10,
+                timestamp: ts()
+            })
+        },
+        function (res) {
+            console.log(res);
+        }
+    );
     $('.download').attr('href', host + '/api/File/Download?type=1&sourceId=1&timestamp=' + ts())
     //文件下载
     // $.request('/api/File/Download', {
@@ -283,7 +283,7 @@ $(function () {
         function (res) {
             // console.log(res);
             var moduleCode = res.data[0].moduleCode;
-            if (moduleCode == '09') { //1 
+            if (moduleCode == '09') { //1
                 $('.module9').insertBefore($('.module1'));
                 aniTranslateY(['.ani_76'], ['1rem', '0', ], 1000, 500);
             }
@@ -341,8 +341,8 @@ $(function () {
                     '<div class="news_pic"><img src="' + ele.picUrl + '" alt="">' +
                     '<div class="news_mask"></div>' +
                     '</div>' +
-                    '<p class="fontSize24 new_txt ani_36">' + ele.title + '</p>' +
-                    '<p class="fontSize14 new_txt ani_37">' + ele.summary + '</p>' +
+                    '<p class="fontSize26 new_txt fofa-blod ani_36">' + ele.title + '</p>' +
+                    '<p class="fontSize14 new_txt fofa-light ani_37">' + ele.summary + '</p>' +
                     '</div>';
             });
             $('.newsSwiper .swiper-wrapper').html(str);
@@ -383,7 +383,7 @@ $(function () {
             res.data.forEach(function (ele, k) {
                 ttStr += '<div class="swiper-slide" id="' + ele.id + '">' +
                     '<img src="' + ele.picUrl + '" alt="">' +
-                    '<p class="fontSize12 tt_margin_1 ani_73">发布者：' + ele.createUserName + '</p>' +
+                    '<p class="fontSize14 tt_margin_1 ani_73">发布者：' + ele.createUserName + '</p>' +
                     '<p class="fontSize20 tt_margin_2 ani_74">' + ele.title + '</p>' +
                     '<p class="icons fontSize12 ani_75">' +
                     '<span class="">' +
@@ -446,43 +446,3 @@ $(function () {
     );
 
 });
-
-//时间戳
-function ts() {
-    return Math.round(new Date() / 1000);
-}
-// 新建md5加密值
-function createSign(dic) {
-    var jsonstr = JSON.stringify(objKeySort(dic));
-    var str1 = jsonstr.replace(new RegExp(':', 'g'), '=');
-    var str2 = str1.replace(new RegExp(',', 'g'), '&');
-    var str3 = str2.substring(1, str2.length - 1);
-    str3 = str3.replace(/\"/g, "");
-    var str = str3 + '&661C9A9B-6E9A-4C1E-92AA-B4F7B8D4DD3C'
-    var sign = hex_md5(str);
-    return sign;
-}
-//排序的函数
-function objKeySort(arys) {
-    //先用Object内置类的keys方法获取要排序对象的属性名，再利用Array原型上的sort方法对获取的属性名进行排序，newkey是一个数组
-    var newkey = Object.keys(arys).sort();
-    //console.log('newkey='+newkey);
-    var newObj = {}; //创建一个新的对象，用于存放排好序的键值对
-    for (var i = 0; i < newkey.length; i++) {
-        //遍历newkey数组
-        newObj[newkey[i]] = arys[newkey[i]];
-        //向新创建的对象中按照排好的顺序依次增加键值对
-    }
-    return newObj; //返回排好序的新对象
-}
-
-function playVideo(_this, k) {
-    var eleName = 'video' + k;
-    var videoName = document.getElementById(eleName);
-    // console.log(videoName);
-    videoName.play();
-    $(_this).hide();
-    videoName.addEventListener('ended', function () {
-        $(_this).show();
-    })
-}
