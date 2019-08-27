@@ -265,68 +265,7 @@ $(function () {
     });
 
 
-    var caseSwiper = new Swiper('.caseSwiper', {
-        slidesPerView:1,
-        slidesPerColumn: 2,
-        spaceBetween: 30,
-        pagination: {
-            el: '.case-swiper-pagination',
-            clickable: true,
-        },
-        on:{
-            slideChangeTransitionEnd: function(event){
-                var len=$(".caseSwiper").find("video").length;
-                $(".caseSwiper .case-swiper-video-btn").show();
-                for(var i=0;i<len;i++){
-                    $(".caseSwiper").find("video").get(i).pause();
-                }
-            },
-            slideChangeTransitionStart: function () {
-            $(".caseSwiper .server-user,.caseSwiper .name").css('opacity', '0');
-                // var columnIndexActive = $('.caseSwiper .swiper-pagination-bullet-active').attr('aria-label').split(" ")[3];//获取当前滑动到那一列
-                // console.log("columnindexActive"+columnIndexActive);
-                // var columnMaxIndex =parseInt($('.caseSwiper .case-swiper-slide:last').attr('data-swiper-column'))+1;//获取最后一列的column(总共有多少列)
-                // console.log("data-swiper-column"+columnMaxIndex);
-                // var index =parseInt($('.caseSwiper .case-swiper-slide').attr('data-swiper-column'))+1;//获取最后一列的column(总共有多少列)
-                aniTranslateY(['.server-user'], ['1rem', '0', ], 4000, 500);
-                aniTranslateY(['.name'], ['1rem', '0', ], 4000, 1000);
 
-
-
-            }
-        }
-    });
-    //新闻
-    var newsSwiper = new Swiper('.news-swiper', {
-        loop:true,
-        // freeMode: true,
-        slidesPerView: 'auto',
-        centeredSlides: true,
-        spaceBetween: 10,
-        // pagination: {
-        //     el: '.news-swiper-pagination',
-        //     clickable: true,
-        //
-        // },
-        on:{
-            slideChangeTransitionEnd: function () {
-                $(".news-swiper .t,.news-swiper .content").css('opacity', '0');
-                aniTranslateY(['.news-swiper .swiper-slide-active .t'], ['1rem', '0', ], 1000, 100);
-                aniTranslateY(['.news-swiper .swiper-slide-active .content'], ['1rem', '0', ], 1000, 500);
-            }
-        }
-    });
-
-    var thinktankSwiper = new Swiper('.thinktank-swiper', {
-        slidesPerView: 'auto',
-        loop:true,
-        spaceBetween: 20,
-        on:{
-            slideChangeTransitionEnd: function () {
-
-            }
-        }
-    });
 
     var oaSwiper = new Swiper('.oa-swiper', {
         observer: true, //修改swiper自己或子元素时，自动初始化swiper

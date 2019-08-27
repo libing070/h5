@@ -68,7 +68,7 @@ video {
 .caseList {
     width: 100%;
     overflow: hidden;
-    /* margin-top: 0.8rem; */
+    margin-top: 0.8rem;
 }
 
 .caseList .list {

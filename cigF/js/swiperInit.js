@@ -123,7 +123,7 @@ $(function () {
             slidePrevTransitionStart: function () {
                 var index = this.activeIndex;
                 for (let i = $('.scrollBar ul li').length; i > this.activeIndex; i--) {
-                    console.log(i)
+                    // console.log(i)
                     $('.scrollBar ul li').eq(i).attr('class', '');
                 }
 
@@ -174,11 +174,20 @@ $(function () {
             slideNextTransitionStart: function () {
                 $('.indexSwiper_prev').css("cssText", "background:url(./images/turn_left_def.png) no-repeat center !important;background-size:cover !important;");
                 $('.indexSwiper_next').css("cssText", "background:url(./images/turn_right_act.png) no-repeat center !important;background-size:cover !important;");
+                var index=$('.indexSwiper .swiper-slide-active').attr('data-swiper-slide-index');
+                console.log(index)
+                if(index==2){
+                    $('.indexSwiper_next').css("cssText", "background:url(./images/turn_right_black.png) no-repeat center !important;background-size:cover !important;");  
+                }
             },
             slidePrevTransitionStart: function () {
                 // console.log(1)
                 $('.indexSwiper_prev').css("cssText", "background:url(./images/turn_left_act.png) no-repeat center !important;background-size:cover !important;");
                 $('.indexSwiper_next').css("cssText", "background:url(./images/turn_right_def.png) no-repeat center !important;background-size:cover !important;");
+                var index=$('.indexSwiper .swiper-slide-active').attr('data-swiper-slide-index');
+                if(index==2){
+                    $('.indexSwiper_prev').css("cssText", "background:url(./images/turn_left_black.png) no-repeat center !important;background-size:cover !important;");  
+                }
             }
         },
     });

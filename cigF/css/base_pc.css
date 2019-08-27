@@ -4,6 +4,14 @@
     position: relative;
 }
 
+.loadState {
+    display: none;
+}
+
+a {
+    color: #fff;
+}
+
 /* 导航 */
 
 .nav {
@@ -17,17 +25,27 @@
 
 .nav {
     z-index: 800;
-    background: -webkit-linear-gradient(rgba(3,3,3,0.5), rgba(255,255,255,0)); /* Safari 5.1 - 6.0 */
-    background: -o-linear-gradient(rgba(3,3,3,0.5), rgba(255,255,255,0)); /* Opera 11.1 - 12.0 */
-    background: -moz-linear-gradient(rgba(3,3,3,0.5), rgba(255,255,255,0)); /* Firefox 3.6 - 15 */
-    background: linear-gradient(rgba(3,3,3,0.5), rgba(255,255,255,0)); /* 标准的语法 */
+    background: -webkit-linear-gradient(rgba(3, 3, 3, 0.5), rgba(255, 255, 255, 0));
+    /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(rgba(3, 3, 3, 0.5), rgba(255, 255, 255, 0));
+    /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(rgba(3, 3, 3, 0.5), rgba(255, 255, 255, 0));
+    /* Firefox 3.6 - 15 */
+    background: linear-gradient(rgba(3, 3, 3, 0.5), rgba(255, 255, 255, 0));
+    /* 标准的语法 */
 }
-.nav:hover{
-    background: -webkit-linear-gradient(rgba(0,0,0,0.5), rgba(255,255,255,0)); /* Safari 5.1 - 6.0 */
-    background: -o-linear-gradient(rgba(0,0,0,0.5), rgba(255,255,255,0)); /* Opera 11.1 - 12.0 */
-    background: -moz-linear-gradient(rgba(0,0,0,0.5), rgba(255,255,255,0)); /* Firefox 3.6 - 15 */
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(255,255,255,0)); /* 标准的语法 */
+
+.nav:hover {
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0));
+    /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0));
+    /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0));
+    /* Firefox 3.6 - 15 */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0));
+    /* 标准的语法 */
 }
+
 .nav ul {
     /* overflow: hidden; */
 }
@@ -650,6 +668,10 @@
     position: absolute;
     top: 0;
     left: 0;
+    color: #fff;
+}
+
+.caseCont a {
     color: #fff;
 }
 
@@ -1597,4 +1619,31 @@
     left: 0;
     background: #fff;
     z-index: 999;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loading img {
+    width: 2rem;
+}
+
+.prog {
+    width: 2rem;
+    height: 0.01rem;
+    background: #fff;
+    position: relative;
+}
+
+.prog .loadProColor {
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #d7000f;
 }

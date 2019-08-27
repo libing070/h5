@@ -19,10 +19,11 @@
 </head>
 
 <body>
-    <div class="container" id="pc" style="display: none">
+    <div class="container loadState" id="pc" style="display: none">
         <div class="containerOuter swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide outerSlide module1">
+
                     <div class="indexSwiper swiper-container">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
@@ -31,7 +32,7 @@
                                         <p class="ani_1">Marketing Expert in the Digital </p>
                                         <p class="txt_margin ani_2">数字时代营销专家</p>
                                         <a class="arrow_icon arrow_1 " href="javascript:;">
-                                            <img class="ani_0" src="./images/arrow_icon.png" alt="">
+                                            <img class="" src="./images/arrow_icon.png" alt="">
                                         </a>
                                     </div>
                                 </div>
@@ -246,28 +247,7 @@
                 <div class="swiper-slide outerSlide module4">
                     <div class="caseSwiper swiper-container">
                         <div class="swiper-wrapper">
-                            <!-- <div class="swiper-slide">
-                                <video src="./audio/cigKV.mp4"></video>
-                                <div class="caseCont">
-                                    <div class="case_float">
-                                        <div class="case_txt">
-                                            <p class="fontSize30">123</p>
-                                            <p class="fontSize30">12</p>
-                                        </div>
-                                    </div>
-                                    <div class="case_float">
-                                        <div class="case_txt">
-                                            <p class="fontSize16">123</p>
-                                            <a href="javascript:;" class="arrow_icon arrow_About ">
-                                                <img class="" src="./images/arrow_icon.png" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="play">
-                                        <img src="./images/play.png" alt="">
-                                    </div>
-                                </div>
-                            </div> -->
+
                         </div>
                         <div class="swiper-button case-button">
                             <div class="swiper-button-prev case_prev"></div>
@@ -569,14 +549,7 @@
                                             </a>
                                         </p>
                                         <ul>
-                                            <!-- <li>
-                                                <a href="javascript:;">
-                                                    <span class="fontSize14">2019年新意互动集团介绍字条</span>
-                                                    <span class="fontSize14">56M</span>
-                                                    <span class="fontSize14">下载</span>
-                                                    <img src="./images/dl-black.png" alt="">
-                                                </a>
-                                            </li> -->
+
                                         </ul>
                                     </div>
                                 </div>
@@ -634,8 +607,16 @@
         <img class="phoneIcon" src="./images/phone_icon.png" />
         <!-- mouseIcon -->
         <img class="mouseIcon" src="./images/mouseIcon.png" />
+        <div class="progress">
+            <div class="loading">
+                <img src="./images/loading_logo.png" alt="">
+                <div class="prog" proNum="1">
+                    <div class="loadProColor" run1="true" run2="true" run3="true" run4="true" run5="true" run6="true"></div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="container"  id="wap" style="display: none;overflow: hidden">
+    <div class="container loadState"  id="wap" style="display: none;overflow: hidden">
         <input type="hidden" id="concatCmid" value="1">
         <div class="nav" id="wapNavMenu">
             <img class="log" src="images/wap/log.jpg">
@@ -1065,7 +1046,14 @@
                 </div>
            </div>
         </div>
-
+        <div class="progress">
+            <div class="loading">
+                <img class="loding-log" src="./images/loading_logo.png" alt="">
+                <div class="prog" proNum="1">
+                    <div class="loadProColor" run1="true" run2="true" run3="true" run4="true" run5="true" run6="true"></div>
+                </div>
+            </div>
+        </div>
 
     </div>
     <script src="./js/jquery-1.11.2.min.js"></script>
@@ -1075,35 +1063,9 @@
     <script src="./js/rem.js"></script>
     <script src="./js/swiper.min.js"></script>
     <script src="./js/md5.js"></script>
-
-    <!--<script src="./js/swiperInit.js"></script>-->
-    <script src="./js/common.js"></script>
     <script src="./js/initJs.js?v=1"></script>
-    <!--<script src="./js/base.js"></script>-->
-    <!--<script src="./js/interFace.js"></script>-->
+    <script src="./js/common.js"></script>
 
-    <!--<script src="./js/animation.js"></script>-->
-    <!--<script>-->
-
-        <!--// layer.msg('123')-->
-        <!--function browserRedirect() {-->
-            <!--var sUserAgent = navigator.userAgent.toLowerCase();-->
-            <!--var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";-->
-            <!--var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";-->
-            <!--var bIsMidp = sUserAgent.match(/midp/i) == "midp";-->
-            <!--var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";-->
-            <!--var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";-->
-            <!--var bIsAndroid = sUserAgent.match(/android/i) == "android";-->
-            <!--var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";-->
-            <!--var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";-->
-
-            <!--if (!(bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM)) {-->
-                <!--return checkBrowser = 0; //pc-->
-            <!--} else {-->
-                <!--return checkBrowser = 1; //wap-->
-            <!--}-->
-        <!--}-->
-    <!--</script>-->
 </body>
 
 </html>

@@ -699,11 +699,7 @@
                     }
                 });
                 /**/
-                // $('.swiperBox').width($('.developSwiper').width() * 3)
-                // $('.developSwiper').clone(true).before('.swiperBox');
-                // $('.developSwiper').clone(true).after('.swiperBox');
-                // console.log($('.developSwiper').clone(true))
-                // console.log($('.developSwiper').css("transform").split(',')[4])
+
                 $('.develop_next').on('click', function () {
                     if ($('.developBtn').attr('clickType') == 1) {
                         $('.developBtn').attr('clickType', '2');
@@ -715,8 +711,9 @@
                     $('.developSwiper li').eq(activeIndex).removeClass('active');
                     var activeLiWidth = $('.developSwiper li').eq(activeIndex).width();//当前li的宽度
                     var initTranslate = $('.developSwiper').css("transform").split(',')[4];
-                    aniTranslateX(['.developSwiper'], [initTranslate, (initTranslate - activeLiWidth) + 'px'], 1000, 0);
 
+                    aniTranslateX(['.developSwiper'], [initTranslate, (initTranslate - activeLiWidth) + 'px'], 1000, 0, 'right');
+                    // console.log(activeIndex)
                 });
                 $('.develop_prev').on('click', function () {
                     if ($('.developBtn').attr('clickType') == 1) {
@@ -728,13 +725,11 @@
                     var activeIndex = $('.developSwiper .active').index('.developSwiper li');//当前li的下标
                     var activeLiWidth = $('.developSwiper li').eq(activeIndex).width();//上一个li的宽度
                     $('.developSwiper li').eq(++activeIndex).removeClass('active');
-
                     var initTranslate = $('.developSwiper').css("transform").split(',')[4];
-                    aniTranslateX(['.developSwiper'], [parseInt(initTranslate), (parseInt(initTranslate) + activeLiWidth) + 'px'], 1000, 0);
-                    console.log(activeIndex, parseInt(initTranslate), activeLiWidth)
+                    aniTranslateX(['.developSwiper'], [parseInt(initTranslate), (parseInt(initTranslate) + activeLiWidth) + 'px'], 1000, 0, 'left');
                 });
             });
-            function aniTranslateX(className, unit, duration, delay, loop) {
+            function aniTranslateX(className, unit, duration, delay, type) {
                 anime({
                     targets: className,
                     translateX: unit,
@@ -745,16 +740,21 @@
                     complete: function (anim) {
                         // console.log(anim)
                         var activeIndex = $('.developSwiper .active').index('.developSwiper li');//当前li的下标
+                        console.log(activeIndex)
                         setTimeout(() => {
-                            if (activeIndex == 11) {
-                                $('.developSwiper li').removeClass('active');
-                                $('.developSwiper li').eq(3).addClass('active');
-                                $('.developSwiper').css("transform", "translateX(-4rem)");
+                            if (type == 'right') {
+                                if (activeIndex == 11) {
+                                    $('.developSwiper li').removeClass('active');
+                                    $('.developSwiper li').eq(3).addClass('active');
+                                    $('.developSwiper').css("transform", "translateX(-4rem)");
+                                }
                             }
-                            if (activeIndex == 3) {
-                                $('.developSwiper li').removeClass('active');
-                                $('.developSwiper li').eq(11).addClass('active');
-                                $('.developSwiper').css("transform", "translateX(-35rem)");
+                            if (type == 'left') {
+                                if (activeIndex == 3) {
+                                    $('.developSwiper li').removeClass('active');
+                                    $('.developSwiper li').eq(11).addClass('active');
+                                    $('.developSwiper').css("transform", "translateX(-35rem)");
+                                }
                             }
                             $('.developBtn').attr('clickType', '1');
                         }, 500);

@@ -27,16 +27,16 @@
             <div class="case_nav">
                 <ul>
                     <li>
-                        <a href="javascript:;">新意动态</a>
+                        <a href="javascript:;" type="20">新意动态</a>
                     </li>
                     <li>
-                        <a href="javascript:;">新意荣耀</a>
+                        <a href="javascript:;" type="21">新意荣耀</a>
                     </li>
                     <li>
-                        <a href="javascript:;">新意观点</a>
+                        <a href="javascript:;" type="22">新意观点</a>
                     </li>
                     <li>
-                        <a href="javascript:;">行业观察</a>
+                        <a href="javascript:;" type="23">行业观察</a>
                     </li>
                 </ul>
             </div>
@@ -98,8 +98,9 @@
                 for (let i = 1; i <= $('.case_nav ul li').length; i++) {
                     if (i == urlParame) {
                         var ele = $('.case_nav ul li')[i];
-                        $(ele).prev().find('a').addClass('act')
-                        loadData(1, i);
+                        $(ele).prev().find('a').addClass('act');
+                        var type = $(ele).prev().find('a').attr('type');
+                        loadData(1, type);
                     }
                 }
             } else {
@@ -113,12 +114,10 @@
                 observeParents: true, //修改swiper的父元素时，自动初始化swiper
             });
             $('.case_nav ul li').on('click', function () {
-                var menuIndex = $(this).index();
                 $('.case_nav ul li a').removeClass('act');
                 $(this).find('a').addClass('act');
-                console.log(menuIndex);
-                menuIndex++;
-                loadData(1, menuIndex);
+                var type = $(this).find('a').attr('type');
+                loadData(1, type);
             });
             ///api/News/GetRecommendNews(Portal_005)获取新闻推荐
             $('.case_loodMore').on('click', function () {
@@ -126,24 +125,24 @@
                     $(this).find('img').addClass('loadRotate');
                     $(this).attr('isLoad', '2');
                     var index = $(this).attr('pageIndex');
-                    var start = $('.case_nav .act').index('.case_nav li a')
-                    loadData($(this).attr('pageIndex'), ++start);
+                    var type = $('.case_nav .act').index('.case_nav li a')
+                    loadData($(this).attr('pageIndex'), ++type);
                     index++;
                     $(this).attr('pageIndex', index);
                 } else {
                 }
             });
-            function loadData(pageIndex, start) {
-                $.request('/api/News/GetRecommendNews', {
+            function loadData(pageIndex, type) {
+                $.request('/api/News/GetPagingList', {
                     pageIndex: pageIndex || 1,
                     pageSize: 10,
                     timestamp: ts(),
-                    start: start,
+                    type: type,
                     sign: createSign({
                         "pageIndex": 1,
                         "pageSize": 10,
                         timestamp: ts(),
-                        start: start
+                        type: type
                     })
                 },
                     function (res) {
