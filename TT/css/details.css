@@ -1,0 +1,151 @@
+.details{
+    position: relative;
+    width: 100%;
+}
+
+.bar{
+    position: absolute;
+    left: 3.5rem;
+    top: 1.6rem;
+    cursor: pointer;
+    z-index: 2;
+}
+ .bar a{
+     cursor: pointer;
+    font-size: 0.14rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 255, 255, 255 );
+    text-transform: uppercase;
+}
+.details .content{
+    width: 100%;
+    background-color: #ededed;
+}
+.information{
+    position: relative;
+    margin: 0 3.5rem;
+    padding-bottom: 1rem;
+    background-color: white;
+}
+.information .title{
+    text-align: center;
+    font-size: 0.32rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 1, 1, 1 );
+    text-transform: uppercase;
+}
+.information .videoss{
+    margin-top: 1rem;
+    cursor: pointer;
+    width: 100%;
+    position: relative;
+}
+.information .videoss .video_box{
+    margin: auto;
+    width: 8.6rem;
+    height: 5.1rem;
+}
+.information .videoss .video_box .video-bg{
+    position: relative;
+    margin: auto;
+    width: 8.6rem;
+    height: 5.1rem;
+    z-index: 2;
+}
+.information .videoss .video_box .video-btn{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 1.32rem;
+    height: 1.31rem;
+    z-index: 3;
+}
+.information .videoss .video_box .video{
+    width: 8.6rem;
+    height: 5.1rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.information .bottom {
+    text-align: center;
+    margin: auto;
+    margin-top: 0.5rem;
+    width: 3rem;
+    height: 0.2rem;
+    display: -webkit-flex;
+    display: flex;
+
+}
+
+.information .bottom .item {
+    -webkit-flex: 1;
+    flex: 1;
+    text-align: center;
+}
+
+.information .bottom .item img {
+    height: 100%;
+    display: inline-block;
+    padding-right: 0.12rem;
+}
+
+.information .bottom .item span {
+    vertical-align: super;
+    font-size: 0.16rem;
+    display: inline-block
+}
+
+.information .text{
+    margin:0.2rem 1.05rem 0;
+    font-size: 0.14rem;
+    font-family: "SimSun";
+    color: rgb( 0, 0, 0 );
+    text-transform: uppercase;
+    line-height: 2.286;
+    padding-bottom: 0.5rem;
+
+}
+.information :last-child{
+    /*border-bottom: 1px solid rgba(0,0,0,0.1);*/
+    /*margin: 0 1.05rem;*/
+ }
+
+
+.message-box{
+    margin: 0 3.5rem;
+    margin-top:0.6rem ;
+    background-color: white;
+}
+.message-box .top-reply{
+    margin: 0 1.05rem;
+}
+.message-box .top-reply p{
+    font-size: 0.18rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 0, 0, 0 );
+    text-transform: uppercase;
+    line-height: 5.167;
+}
+.message-box .top-reply textarea{
+    width: 100%;
+    height: 1rem;
+}
+.message-box .top-reply div{
+    margin-top: 0.2rem;
+
+    width: 100%;
+    text-align: right;
+}
+.message-box .top-reply div img{
+    width: 1.61rem;
+    height: 0.51rem;
+    display: inline-block;
+}

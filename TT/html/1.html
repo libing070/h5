@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="../js/common/jquery-1.11.2.min.js"></script>
+    <script src="../js/common/layer.js"></script>
+    <script src="./../js/common.js"></script>
+    <script src="../js/common/md5.js"></script>
+    <script>
+        // 对文章发表评论，或者对评论进行二级评论
+        // $.request('/api/Comment/Publish', {
+        //     forumId: 1,
+        //     commentId: 0,
+        //     content: '123',
+        //     timestamp: ts(),
+        //     // token:'',
+        //     sign: createSign({
+        //         forumId: 1,
+        //         commentId: 0,
+        //         content: '123',
+        //         timestamp: ts(),
+        //     })
+        // },
+        //     function (res) {
+        //         console.log(res);
+        //     }
+        // );
+        // /api/Comment/Delete(TT_012)删除评论
+        // $.request('/api/Comment/Delete', {
+        //     forumId: 1,
+        //     commentId: 1,
+
+        //     timestamp: ts(),
+        //     // token:'',
+        //     sign: createSign({
+        //         forumId: 1,
+        //         commentId: 1,
+
+        //         timestamp: ts(),
+        //     })
+        // },
+        //     function (res) {
+        //         console.log(res);
+        //     }
+        // );
+        ///api/Comment/Pagelist获取文章的评论
+        // $.request('/api/Comment/Pagelist', {
+        //     forumId: 1,
+        //     pageIndex: 1,
+        //     pageSize: 10,
+        //     timestamp: ts(),
+        //     // token:'',
+        //     sign: createSign({
+        //         forumId: 1,
+        //         pageIndex: 1,
+        //         pageSize: 10,
+        //         timestamp: ts(),
+        //     })
+        // },
+        //     function (res) {
+        //         console.log(res);
+        //     }
+        // );
+        ///api/Forum/UserLike 用户点赞接口
+        // $.request('/api/Forum/UserLike', {
+        //     forumId: 1,
+        //     commentId: 1,
+        //     likeType: 1,
+        //     userToken: 'jhi8jybFw3UqL75CT7dUi6ebK3ms9hD877TjkRT70If8WnN3f28xYB7zSalnnhdZGvySX9MuzxIf4Fnl+xMyNQ==',
+        //     timestamp: ts(),
+        //     sign: createSign({
+        //         forumId: 1,
+        //         commentId: 1,
+        //         likeType: 1,
+        //         userToken: 'jhi8jybFw3UqL75CT7dUi6ebK3ms9hD877TjkRT70If8WnN3f28xYB7zSalnnhdZGvySX9MuzxIf4Fnl+xMyNQ==',
+        //         timestamp: ts(),
+        //     })
+        // },
+        //     function (res) {
+        //         console.log(res);
+        //     }
+        // );
+        ///api/Forum/GetForumInfo (Thinktank_019~Thinktank_022)获取智库首页内容
+        // $.request('/api/Forum/GetForumInfo', {
+        //     timestamp: ts(),
+        //     sign: createSign({
+        //         timestamp: ts(),
+        //     })
+        // },
+        //     function (res) {
+        //         console.log(res);
+        //     }
+        // );
+        // /api/Forum/Publish (TT_004)发布文章
+        // $.request('/api/Forum/Publish', {
+        //     timestamp: ts(),
+        //     Title: 1,
+        //     Summary: 123,
+        //     PicUrl: 'aasd',
+        //     Type: 1,
+        //     Content: 'adwd',
+        //     sign: createSign({
+        //         timestamp: ts(),
+        //         Title: 1,
+        //         Summary: 123,
+        //         PicUrl: 'aasd',
+        //         Type: 1,
+        //         Content: 'adwd',
+        //     })
+        // },
+        //     function (res) {
+        //         console.log(res);
+        //     }
+        // );
+        // /api/Forum/PageList(TT_005) 我的文章列表
+        // $.request('/api/Forum/PageList', {
+        //     timestamp: ts(),
+        //         state: 0,
+        //     pageIndex: 1,
+        //     pageSize: 10,
+        //     sign: createSign({
+        //         timestamp: ts(),
+        //         state: 0,
+        //         pageIndex: 1,
+        //         pageSize: 10,
+        //     })
+        // },
+        //     function (res) {
+        //         console.log(res);
+        //     }
+        // );
+
+
+        // /api/Forum/GetForumCount(TT_006)获取我的文章各个状态的数量
+        // $.request('/api/Forum/GetForumCount', {
+        //         timestamp: ts(),
+        //         userToken: 'jhi8jybFw3UqL75CT7dUi6ebK3ms9hD877TjkRT70If8WnN3f28xYB7zSalnnhdZGvySX9MuzxIf4Fnl+xMyNQ==',
+        //         sign: createSign({
+        //             timestamp: ts(),
+        //             userToken: 'jhi8jybFw3UqL75CT7dUi6ebK3ms9hD877TjkRT70If8WnN3f28xYB7zSalnnhdZGvySX9MuzxIf4Fnl+xMyNQ==',
+        //         })
+        //     },
+        //     function (res) {
+        //         console.log(res);
+        //     }
+        // );
+
+        // /api/Forum/GetForumDetail(TT_007)根据ID获取文章内容，并且阅读数+1
+        // $.request('/api/Forum/GetForumDetail', {
+        //         timestamp: ts(),
+        //     id:1,
+        //         sign: createSign({
+        //             timestamp: ts(),
+        //             id:1,
+        //         })
+        //     },
+        //     function (res) {
+        //         console.log(res);
+        //     }
+        // );
+
+     ///api/Forum/GetForumDetailForEdit(TT_007)根据ID获取文章内容
+     //    $.request('/api/Forum/GetForumDetailForEdit', {
+     //            timestamp: ts(),
+     //            id:1,
+     //            sign: createSign({
+     //                timestamp: ts(),
+     //                id:1,
+     //            })
+     //        },
+     //        function (res) {
+     //            console.log(res);
+     //        }
+     //    );
+       //api/Forum/GetForumDetailForEditEvent(TT_008)编辑文章内容
+             //  $.request('/api/Forum/GetForumDetailForEdit', {
+        //          timestamp: ts(),
+        //          id:1,
+        //      Title:1212,
+        //      Summary:111,
+        //      PicUrl:111,
+        //      Type:1,
+        //      Content:111,
+        //          sign: createSign({
+        //              timestamp: ts(),
+        //              id:1,
+        //              Title:1212,
+        //              Summary:111,
+        //              PicUrl:111,
+        //              Type:1,
+        //              Content:111,
+        //          })
+        //      },
+        //      function (res) {
+        //          console.log(res);
+        //      }
+        //  );
+        ///api/Forum/DeleteForum(TT_012)删除文章
+
+           // $.request('/api/Forum/DeleteForum', {
+           //         timestamp: ts(),
+           //         id:1,
+           //         sign: createSign({
+           //             timestamp: ts(),
+           //             id:1,
+           //         })
+           //     },
+           //     function (res) {
+           //         console.log(res);
+           //     }
+           // );
+
+  ///api/Forum/UserShare(TT_016)分享文章+1
+  //
+  //       $.request('/api/Forum/UserShare', {
+  //               timestamp: ts(),
+  //               forumId:1,
+  //               sign: createSign({
+  //                   timestamp: ts(),
+  //                   forumId:1,
+  //               })
+  //           },
+  //           function (res) {
+  //               console.log(res);
+  //           }
+  //       );
+   ///api/Forum/GetForumPagingList(TT_025)获取文章/知识分页列表
+
+        // $.request('/api/Forum/GetForumPagingList', {
+        //         timestamp: ts(),
+        //         forumType:1,
+        //         pageIndex: 1,
+        //         pageSize: 10,
+        //         sign: createSign({
+        //             timestamp: ts(),
+        //             forumType:1,
+        //             pageIndex: 1,
+        //             pageSize: 10,
+        //         })
+        //     },
+        //     function (res) {
+        //         console.log(res);
+        //     }
+        // );
+
+        ///api/Forum/GetActivityPagingList(TT_027)获取活动分页列表
+        // $.request('/api/Forum/GetActivityPagingList', {
+        //         timestamp: ts(),
+        //         activityType:1,
+        //         pageIndex: 1,
+        //         pageSize: 10,
+        //         sign: createSign({
+        //             activityType: ts(),
+        //             forumType:1,
+        //             pageIndex: 1,
+        //             pageSize: 10,
+        //         })
+        //     },
+        //     function (res) {
+        //         console.log(res);
+        //     }
+        // );
+///api/Forum/GetActivityInfo(TT_028)获取活动详情
+//         $.request('/api/Forum/GetActivityInfo', {
+//                 timestamp: ts(),
+//                 forumId:13,
+//
+//                 sign: createSign({
+//                     activityType: ts(),
+//                     forumId:13,
+//
+//                 })
+//             },
+//             function (res) {
+//                 console.log(res);
+//             }
+//         );
+///api/Forum/GetWeekReadSort(TT_024、TT_024)获取一周阅读排行
+//         $.request('/api/Forum/GetWeekReadSort', {
+//                 timestamp: ts(),
+//                 forumType:0,
+//
+//                 sign: createSign({
+//                     activityType: ts(),
+//                     forumType:0,
+//
+//                 })
+//             },
+//             function (res) {
+//                 console.log(res);
+//             }
+//         );
+  ///api/Forum/ActivityApply(TT_029)活动报名
+  //       $.request('/api/Forum/ActivityApply', {
+  //               timestamp: ts(),
+  //               name:0,
+  //           company:1,
+  //           office:1,
+  //           mobile:1,
+  //           email:1,
+  //           forumId:13,
+  //
+  //               sign: createSign({
+  //                   activityType: ts(),
+  //                   name:0,
+  //                   company:1,
+  //                   office:1,
+  //                   mobile:1,
+  //                   email:1,
+  //                   forumId:13,
+  //               })
+  //           },
+  //           function (res) {
+  //               console.log(res);
+  //           }
+  //       );
+///api/Forum/GetKeyVersionInfo(TT_037)获取智库KV
+//                 $.request('/api/Forum/GetKeyVersionInfo', {
+//                         timestamp: ts(),
+//                         sign: createSign({
+//                             activityType: ts(),
+//
+//                         })
+//                     },
+//                     function (res) {
+//                         console.log(res);
+//                     }
+//                 );
+
+
+
+
+
+        //时间戳
+        function ts() {
+            return Math.round(new Date() / 1000);
+        }
+        // 新建md5加密值
+        function createSign(dic) {
+            var jsonstr = JSON.stringify(objKeySort(dic));
+            var str1 = jsonstr.replace(new RegExp(':', 'g'), '=');
+            var str2 = str1.replace(new RegExp(',', 'g'), '&');
+            var str3 = str2.substring(1, str2.length - 1);
+            str3 = str3.replace(/\"/g, "");
+            var str = str3 + '&661C9A9B-6E9A-4C1E-92AA-B4F7B8D4DD3C'
+            var sign = hex_md5(str);
+            return sign;
+        }
+        //排序的函数
+        function objKeySort(arys) {
+            //先用Object内置类的keys方法获取要排序对象的属性名，再利用Array原型上的sort方法对获取的属性名进行排序，newkey是一个数组
+            var newkey = Object.keys(arys).sort();
+            //console.log('newkey='+newkey);
+            var newObj = {}; //创建一个新的对象，用于存放排好序的键值对
+            for (var i = 0; i < newkey.length; i++) {
+                //遍历newkey数组
+                newObj[newkey[i]] = arys[newkey[i]];
+                //向新创建的对象中按照排好的顺序依次增加键值对
+            }
+            return newObj; //返回排好序的新对象
+        }
+
+        function playVideo(_this, k) {
+            var eleName = 'video' + k;
+            var videoName = document.getElementById(eleName);
+            // console.log(videoName);
+            videoName.play();
+            $(_this).hide();
+            videoName.addEventListener('ended', function () {
+                $(_this).show();
+            })
+        }
+    </script>
+</body>
+
+</html>
