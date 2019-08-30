@@ -28,8 +28,36 @@
     <div class="content">
         <div class="information">
              <p class="title">华为nova_3e_无添加自拍</p>
+             <p class="top" style="display: none">
+                <span class="item mes"><img src="./images/message-icon.png"><span >2</span></span>
+                <span class="item"><img src="./images/view-icon.png"><span>2</span></span>
+                <span class="item"><img src="./images/vote-icon.png"><span>3</span></span>
+                <span class="item"><img src="./images/share-btn.png"><span>分享</span></span>
+            </p>
+            <p class="line"></p>
+            <!--图片-->
+            <div class="images" style="">
+                <div class="index_swiperBtn">
+                    <a href="javascript:;" class="index_next index_next1"></a>
+                    <a href="javascript:;" class="index_prev index_prev1"></a>
+                </div>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">   <img class="video-bg" src="./images/details-s1.jpg"></div>
+                        <div class="swiper-slide">   <img class="video-bg" src="./images/details-s1.jpg"></div>
+                        <div class="swiper-slide">   <img class="video-bg" src="./images/details-s1.jpg"></div>
+                        <div class="swiper-slide">   <img class="video-bg" src="./images/details-s1.jpg"></div>
+                    </div>
+                    <!-- 如果需要分页器 -->
+                    <div class="swiper-pagination"></div>
+                    <!-- 如果需要导航按钮 -->
+                </div>
+            </div>
+            <!--图文-->
+            <div class="graphic"></div>
+
             <!--视频-->
-            <div class="videoss">
+            <div class="videoss" style="display: none">
                 <div class="video_box">
                     <img class="video-bg" src="./images/video-bg.png">
                     <img class="video-btn" src="images/video-btn.png">
@@ -37,7 +65,7 @@
                 </div>
             </div>
             <p class="bottom">
-                <span class="item"><img src="./images/message-icon.png"><span >2</span></span>
+                <span class="item mes"><img src="./images/message-icon.png"><span >2</span></span>
                 <span class="item"><img src="./images/view-icon.png"><span>2</span></span>
                 <span class="item"><img src="./images/vote-icon.png"><span>3</span></span>
                 <span class="item"><img src="./images/share-btn.png"><span>分享</span></span>
@@ -54,10 +82,7 @@
                 纵观三支视频，都充分展现了每一位年轻女孩追求真实自我，将落点放在“前置2400万 自然美妆”的产品卖点，回归自然纯粹的一面，与“无添加”的态度海报在基调上保持一致性，营造了温暖治愈系的画风。小清新与大自然元素的加持将广告做出美感，让人在无形中对这种“无添加”产生由衷的认同感和归属感。
 
             </p>
-            <!--图片-->
-            <div class="images"></div>
-            <!--图文-->
-            <div class="graphic"></div>
+
         </div>
         <div class="message-box">
             <div class="top-reply">
@@ -65,6 +90,140 @@
                 <textarea></textarea>
                 <div>
                     <img src="images/published-btn.png">
+                </div>
+            </div>
+            <div class="reply-list">
+                <p>评论</p>
+                <div class="list-box">
+                 <div class="list-box-A">
+                    <div class="list-box-A-title">
+                        <div class="title-left">
+                            <img class="icon" src="images/headportrait.png">
+                            <span class="name">朱迪</span>
+                            <span class="time">2019-8-6</span>
+                        </div>
+                        <div class="title-right">
+                            <span class="s1 mes"><img class="icon" src="./images/message-icon.png"><span class="nums">2</span></span>
+                            <span class="s1 vote"><img class="icon" src="./images/vote-icon.png"><span class="nums">3</span></span>
+                        </div>
+                    </div>
+                    <div class="list-box-A-con">这个作品很好，我很喜欢，加油加油加油加油加油！</div>
+                    <div class="list-box-A-textarea" style="display: none">
+                        <textarea class="textarea"></textarea>
+                        <div class="reply-btn">
+                            <img src="images/reply-btn.png">
+                        </div>
+                    </div>
+                    <div class="list-box-B">
+                        <div class="list-box-B-title">
+                            <div class="list-li-left">
+                                <span class="name">王迪迪</span>
+                                <span class="static">回复</span>
+                                <span class="name">王迪</span>
+                                <span class="time">半个小时前</span>
+                            </div>
+                            <div class="list-li-right">
+                                <span class="s1 del">删除</span>
+                                <span class="s1 mes"><img class="icon" src="./images/message-icon.png"><span class="nums">2</span></span>
+                                <span class="s1 vote"><img class="icon" src="./images/vote-icon.png"><span class="nums">3</span></span>
+                            </div>
+                        </div>
+                        <div class="list-box-B-con">这个作品很好，我很喜欢，加油加油加油加油加油！</div>
+                        <div class="list-box-B-textarea" style="display: none">
+                            <textarea class="textarea"></textarea>
+                            <div class="reply-btn">
+                                <img src="images/reply-btn.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-box-B">
+                        <div class="list-box-B-title">
+                            <div class="list-li-left">
+                                <span class="name">王迪迪</span>
+                                <span class="static">回复</span>
+                                <span class="name">王迪</span>
+                                <span class="time">半个小时前</span>
+                            </div>
+                            <div class="list-li-right">
+                                <span class="s1 del">删除</span>
+                                <span class="s1 mes"><img class="icon" src="./images/message-icon.png"><span class="nums">2</span></span>
+                                <span class="s1 vote"><img class="icon" src="./images/vote-icon.png"><span class="nums">3</span></span>
+                            </div>
+                        </div>
+                        <div class="list-box-B-con">这个作品很好，我很喜欢，加油加油加油加油加油！</div>
+                        <div class="list-box-B-textarea" style="display: none">
+                            <textarea class="textarea"></textarea>
+                            <div class="reply-btn">
+                                <img src="images/reply-btn.png">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="list-box-B">
+                         <div class="list-box-B-title">
+                             <div class="list-li-left">
+                                 <span class="name">王迪迪</span>
+                                 <span class="static">回复</span>
+                                 <span class="name">王迪</span>
+                                 <span class="time">半个小时前</span>
+                             </div>
+                             <div class="list-li-right">
+                                 <span class="s1 del">删除</span>
+                                 <span class="s1 mes"><img class="icon" src="./images/message-icon.png"><span class="nums">2</span></span>
+                                 <span class="s1 vote"><img class="icon" src="./images/vote-icon.png"><span class="nums">3</span></span>
+                             </div>
+                         </div>
+                         <div class="list-box-B-con">这个作品很好，我很喜欢，加油加油加油加油加油！</div>
+                        <div class="list-box-B-textarea" style="display: none">
+                            <textarea class="textarea"></textarea>
+                            <div class="reply-btn">
+                                <img src="images/reply-btn.png">
+                            </div>
+                        </div>
+                     </div>
+                </div>
+                 <div class="list-box-A">
+                    <div class="list-box-A-title">
+                        <div class="title-left">
+                            <img class="icon" src="images/headportrait.png">
+                            <span class="name">朱迪</span>
+                            <span class="time">2019-8-6</span>
+                        </div>
+                        <div class="title-right">
+                            <span class="s1 mes"><img class="icon" src="./images/message-icon.png"><span class="nums">2</span></span>
+                            <span class="s1 vote"><img class="icon" src="./images/vote-icon.png"><span class="nums">3</span></span>
+                        </div>
+                    </div>
+                    <div class="list-box-A-con">这个作品很好，我很喜欢，加油加油加油加油加油！</div>
+                     <div class="list-box-A-textarea" style="display: none">
+                         <textarea class="textarea"></textarea>
+                         <div class="reply-btn">
+                             <img src="images/reply-btn.png">
+                         </div>
+                     </div>
+                    <div class="list-box-B">
+                        <div class="list-box-B-title">
+                            <div class="list-li-left">
+                                <span class="name">王迪迪</span>
+                                <span class="static">回复</span>
+                                <span class="name">王迪</span>
+                                <span class="time">半个小时前</span>
+                            </div>
+                            <div class="list-li-right">
+                                <span class="s1 del">删除</span>
+                                <span class="s1 mes"><img class="icon" src="./images/message-icon.png"><span class="nums">2</span></span>
+                                <span class="s1 vote"><img class="icon" src="./images/vote-icon.png"><span class="nums">3</span></span>
+                            </div>
+                        </div>
+                        <div class="list-box-B-con">这个作品很好，我很喜欢，加油加油加油加油加油！</div>
+                        <div class="list-box-B-textarea" STYLE="display: none">
+                          <textarea class="textarea"></textarea>
+                          <div class="reply-btn">
+                            <img src="images/reply-btn.png">
+                          </div>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>

@@ -6,6 +6,16 @@ $(function () {
         var v = document.getElementById("video1");
         v.play();
     });
+
+
+    $(".registr").on("click",'.active-reg-btn',function () {
+          $(".dialog").fadeIn();
+        //  $("body,html").css('overflow',"hidden");
+    })
+    $(".dialog").on("click",'.close-btn',function () {
+        $(".dialog").fadeOut();
+        //$("body,html").css('overflow',"auto");
+    })
 });
 
 async function init() {
@@ -31,25 +41,7 @@ activemouseEvents = () => {
             }, 500);
         })
 
-        $(".list-box").on("click", ".list-box-A .list-box-A-title .mes", function () {
-            $(this).parent().parent().siblings('.list-box-A-textarea').slideToggle("slow");
-        });
-        $(".list-box").on("click", ".list-box-B .list-box-B-title .mes", function () {
-            $(this).parent().parent().siblings('.list-box-B-textarea').slideToggle("slow");
-        })
-        $(".list-box").on("click", ".list-box-B .list-box-B-title .del", function () {
-            var that = this;
-            layer.confirm('确定删除该挑评论?', {
-                icon: 3, title: '提示', yes: function (index) {
-                    layer.close(index);
-                    $(that).parent().parent().parent('.list-box-B').fadeOut();
-                },
-                cancel: function (index, layero) {
-                    layer.close(index);
-                }
-            });
 
-        })
     }, 10);
 }
 

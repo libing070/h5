@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/layer.css">
+    <!-- 适配wap pad/pc -->
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/base_pc.css">
+    <link rel="stylesheet" href="./css/activedetails.css">
+    <link rel="stylesheet" href="./css/swiper_reset.css">
+    <title>活动详情</title>
+</head>
+
+<body>
+<div class="container details" id="details">
+    <!--pc代码 -->
+    <!--头部导航-->
+    <div class="header"></div>
+    <img style="width: 100%;display: block" class="top-bg" src="./images/details-top-bg.png"/>
+    <p class="bar"><a href="./index.html">首页- </a> <a class="" href="">活动</a><a>- 详情</a></p>
+
+    <div class="content">
+        <div class="information">
+             <p class="title">华为nova_3e_无添加自拍</p>
+             <p class="top" style="">
+                <span class="item"><span>发布时间：   2019-9-9</span></span>
+                <span class="item"><span>发布者：新意互动</span></span>
+                <span class="share item"><img src="./images/share-btn.png"><span>分享</span></span>
+
+            </p>
+            <p class="line"></p>
+            <!--图片-->
+            <div class="images" style="display: block">
+                <div class="index_swiperBtn">
+                    <a href="javascript:;" class="index_next index_next1"></a>
+                    <a href="javascript:;" class="index_prev index_prev1"></a>
+                </div>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">   <img class="video-bg" src="./images/details-s1.jpg"></div>
+                        <div class="swiper-slide">   <img class="video-bg" src="./images/details-s1.jpg"></div>
+                        <div class="swiper-slide">   <img class="video-bg" src="./images/details-s1.jpg"></div>
+                        <div class="swiper-slide">   <img class="video-bg" src="./images/details-s1.jpg"></div>
+                    </div>
+                    <!-- 如果需要分页器 -->
+                    <div class="swiper-pagination"></div>
+                    <!-- 如果需要导航按钮 -->
+                </div>
+            </div>
+            <!--图文-->
+            <div class="graphic"></div>
+
+            <!--视频-->
+            <div class="videoss" style="display: none">
+                <div class="video_box">
+                    <img class="video-bg" src="./images/video-bg.png">
+                    <img class="video-btn" src="images/video-btn.png">
+                    <video class="video"  id="video1" controls src="./video/audi1.mp4" poster=""></video>
+                </div>
+            </div>
+            <p class="text">
+                三支影片，由新意旗下NDC创意团队，携手亚太广告导演罗景壬共同完成。从创意概念“无添加自拍”的确定，到故事脚本的商榷，NDC创意团队与华为大中华区市场部充分沟通，在双方的高度合作与共同努力下，希望传递给用户的，不只是理性层面的强大功能，更重要的是，深入用户的真实生活，为产品创造坚实的情感意义。
+
+                纵观三支视频，都充分展现了每一位年轻女孩追求真实自我，将落点放在“前置2400万 自然美妆”的产品卖点，回归自然纯粹的一面，与“无添加”的态度海报在基调上保持一致性，营造了温暖治愈系的画风。小清新与大自然元素的加持将广告做出美感，让人在无形中对这种“无添加”产生由衷的认同感和归属感。
+
+            </p>
+            <p class="text">
+                三支影片，由新意旗下NDC创意团队，携手亚太广告导演罗景壬共同完成。从创意概念“无添加自拍”的确定，到故事脚本的商榷，NDC创意团队与华为大中华区市场部充分沟通，在双方的高度合作与共同努力下，希望传递给用户的，不只是理性层面的强大功能，更重要的是，深入用户的真实生活，为产品创造坚实的情感意义。
+
+                纵观三支视频，都充分展现了每一位年轻女孩追求真实自我，将落点放在“前置2400万 自然美妆”的产品卖点，回归自然纯粹的一面，与“无添加”的态度海报在基调上保持一致性，营造了温暖治愈系的画风。小清新与大自然元素的加持将广告做出美感，让人在无形中对这种“无添加”产生由衷的认同感和归属感。
+
+            </p>
+            <div class="registr">
+                <img class="active-reg-btn" src="./images/active-reg-btn.png">
+
+            </div>
+        </div>
+
+    </div>
+    <!--头部轮播-->
+    <!--底部导航-->
+    <div class="footer"></div>
+
+    <div class="dialog" style="display: none">
+        <div class="form">
+          <img class="close-btn" src="images/close.png">
+            <p class="title">填写报名信息</p>
+            <div class="item"><span>姓名</span><input type="text" value=""></div>
+            <div class="item"><span>公司</span><input type="text" value=""></div>
+            <div class="item"><span>职位</span><input type="text" value=""></div>
+            <div class="item"><span>手机</span><input type="text" value=""></div>
+            <div class="item"><span>邮箱</span><input type="text" value="" placeholder="选填"></div>
+            <div class="submit">
+                <img class="submit-btn" src="./images/submit-btn.png">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./js/common/jquery-1.11.2.min.js"></script>
+<script src="./js/common/jquery.cookie.js"></script>
+<script src="./js/common/anime.min.js"></script>
+<script src="./js/common/layer.js"></script>
+<script src="./js/common/rem.js"></script>
+<script src="./js/common/swiper.min.js"></script>
+<script src="./js/common/md5.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/activedetails.js"></script>
+
+</body>
+
+</html>
