@@ -25,7 +25,11 @@ $(function () {
     //
     $('.products li').hover(function () {
         var index = $(this).index();
-        // console.log(index);
+         console.log(index);
+         if(index==0){
+             $('.logo').attr("src",'./images/logo-white2.png');
+
+         }
         $(this).find('.product_bg1').stop().animate({
             'opacity': '0'
         }, 500);
@@ -35,6 +39,8 @@ $(function () {
         // console.log($(this).find('.pro_arrow'))
     }, function () {
         var index = $(this).index();
+        $('.logo').attr("src",'./images/logo.png');
+
         $(this).find('.product_bg1').stop().animate({
             'opacity': '1'
         }, 500);

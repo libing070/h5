@@ -73,7 +73,7 @@ $(function () {
                         '</div>' +
                         '<div class="case_float">' +
                         '<div class="case_txt">' +
-                        '<p class="fontSize14 ani_35">' + ele.content + '</p>' +
+                        '<p class="fontSize18 ani_35">' + ele.content + '</p>' +
                         '<a href="./page/case.html" class="arrow_icon arrow_About ">' +
                         '<img class="" src="./images/arrow_icon.png" alt="">' +
                         '</a>' +
@@ -353,7 +353,7 @@ $(function () {
                         '<div class="news_mask"></div>' +
                         '</div>' +
                         '<p class="fontSize26 new_txt fofa-blod ani_36">' + ele.title + '</p>' +
-                        '<p class="fontSize14 new_txt fofa-light ani_37">' + ele.summary + '</p>' +
+                        '<p class="fontSize18 new_txt fofa-light ani_37">' + ele.summary + '</p>' +
                         '</a></div>';
                 });
                 $('.newsSwiper .swiper-wrapper').html(str);

@@ -13,6 +13,7 @@ $(function () {
                 $('.recruit').removeClass('module7_back');
                 // console.log(this.activeIndex);
                 if (this.activeIndex == $('.module1').index('.outerSlide')) {
+                    $('.logo').attr("src",'./images/logo-white2.png');
                     aniTranslateY(['.ani_1'], ['1rem', '0', ], 1000, 500);
                     aniTranslateY(['.ani_2'], ['1rem', '0', ], 1000, 1000);
                     aniTranslateY(['.ani_3'], ['1rem', '0', ], 1000, 500);
@@ -32,31 +33,41 @@ $(function () {
                     }
                 }
                 if (this.activeIndex == $('.module2').index('.outerSlide')) {
-                    aniRound(['.aniR_1'], [00, 17], 1, 3000);
-                    aniRound(['.aniR_2'], [000, 900], 1, 3000);
-                    aniRound(['.aniR_3'], [000, 600], 1, 3000);
-                    aniRound(['.aniR_4'], [00, 40], 1, 3000);
+                    $('.logo').attr("src",'./images/logo-white2.png');
+
+                    aniRound(['.aniR_1'], ['00', 17], 1, 3000);
+                    aniRound(['.aniR_2'], ['000', 100], 1, 3000);
+                    aniRound(['.aniR_3'], ['000', 500], 1, 3000);
+                    aniRound(['.aniR_4'], ['0', 3], 1, 3000);
                     aniTranslateY(['.ani_27'], ['1rem', '0', ], 1000, 500);
                     aniTranslateY(['.ani_28'], ['1rem', '0', ], 1000, 1000);
                     aniTranslateY(['.ani_29'], ['-1rem', '0', ], 1000, 1500);
                 }
                 if (this.activeIndex == $('.module3').index('.outerSlide')) {
+                    $('.logo').attr("src",'./images/logo.png');
+
                     // aniTranslateW(['.pro_p1'],)
                     aniTranslateX(['.ani_30'], ['-1rem', '0', ], 1000, 500);
                     aniTranslateX(['.ani_31'], ['-1rem', '0', ], 1000, 1000);
                     aniTranslateX(['.ani_32'], ['-1rem', '0', ], 1000, 1500);
                 }
                 if (this.activeIndex == $('.module4').index('.outerSlide')) {
+                    $('.logo').attr("src",'./images/logo.png');
+
                     aniTranslateY(['.ani_33'], ['1rem', '0', ], 1000, 500);
                     aniTranslateY(['.ani_34'], ['1rem', '0', ], 1000, 1000);
                     aniTranslateY(['.ani_35'], ['1rem', '0', ], 1000, 1500);
                 }
                 if (this.activeIndex == $('.module5').index('.outerSlide')) {
+                    $('.logo').attr("src",'./images/logo.png');
+
                     aniTranslateY(['.aniN_1'], ['0.5rem', '0', ], 1000, 500);
                     aniTranslateY(['.ani_36'], ['1rem', '0', ], 1000, 500);
                     aniTranslateY(['.ani_37'], ['1rem', '0', ], 1000, 1000);
                 }
                 if (this.activeIndex == $('.module6').index('.outerSlide')) {
+                    $('.logo').attr("src",'./images/logo.png');
+
                     aniTranslateX(['.ani_38'], ['-2rem', '0', ], 1000, 500);
                     aniTranslateX(['.ani_39'], ['-2rem', '0', ], 1000, 700);
                     aniTranslateX(['.ani_40'], ['-2rem', '0', ], 1000, 900);
@@ -82,6 +93,8 @@ $(function () {
                     $('.module6 .reImg').addClass('module6_back');
                 }
                 if (this.activeIndex == $('.module7').index('.outerSlide')) {
+                    $('.logo').attr("src",'./images/logo.png');
+
                     aniTranslateY(['.ani_57'], ['1rem', '0', ], 1000, 500);
                     aniTranslateY(['.ani_58'], ['1rem', '0', ], 1000, 1000);
                     aniTranslateY(['.ani_59'], ['1rem', '0', ], 1000, 1500);
@@ -99,6 +112,8 @@ $(function () {
                     $('.module7 .reImg').addClass('module7_back');
                 }
                 if (this.activeIndex == $('.module8').index('.outerSlide')) {
+                    $('.logo').attr("src",'./images/logo.png');
+
                     aniTranslateY(['.ani_71'], ['1rem', '0', ], 1000, 500);
                     aniTranslateY(['.ani_72'], ['1rem', '0', ], 1000, 1000);
                     aniTranslateY(['.ani_73'], ['1rem', '0', ], 1000, 1500);
@@ -106,6 +121,8 @@ $(function () {
                     aniTranslateY(['.ani_75'], ['1rem', '0', ], 1000, 2500);
                 }
                 if (this.activeIndex == $('.module9').index('.outerSlide')) {
+                    $('.logo').attr("src",'./images/logo.png');
+
                     aniTranslateY(['.ani_76'], ['1rem', '0', ], 1000, 500);
                 }
             },
@@ -146,11 +163,15 @@ $(function () {
                 // console.log(index);
                 aniReset();
                 if (index == 0) {
+                    $('.logo').attr("src",'./images/logo-white2.png');
+
                     // aniTranslateW(['.ani_0'], ['0', '1rem', ], 4000, 500);
                     aniTranslateY(['.ani_1'], ['1rem', '0', ], 1000, 500);
                     aniTranslateY(['.ani_2'], ['1rem', '0', ], 1000, 1000);
                 }
                 if (index == 1) {
+                    $('.logo').attr("src",'./images/logo.png');
+
                     aniTranslateY(['.ani_3'], ['1rem', '0', ], 1000, 500);
                     aniTranslateY(['.ani_4'], ['1rem', '0', ], 1000, 1000);
                     aniTranslateY(['.ani_5'], ['1rem', '0', ], 1000, 500);
@@ -160,6 +181,8 @@ $(function () {
                     aniTranslateY(['.ani_9'], ['1rem', '0', ], 1000, 2500);
                 }
                 if (index == 2) {
+                    $('.logo').attr("src",'./images/logo.png');
+
                     aniTranslateY(['.ani_10'], ['1rem', '0', ], 1000, 500);
                     aniTranslateY(['.ani_11'], ['1rem', '0', ], 1000, 1000);
                     aniTranslateY(['.ani_12'], ['1rem', '0', ], 1000, 1500);

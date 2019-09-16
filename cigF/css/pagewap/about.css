@@ -17,7 +17,7 @@ a{ text-decoration:none}
 .banner1 .about_title{
     position: absolute;
     width: 3.3rem;
-    top: 1.1rem;
+    top: 1.7rem;
     left: 0.5rem;
 
 }
@@ -36,11 +36,11 @@ a{ text-decoration:none}
 .banner1 .about_desc{
     position: absolute;
     width: 3.3rem;
-    top: 1.1rem;
+    top: 1.7rem;
     right: 0.5rem;
 }
 .banner1 .about_desc p:nth-child(1){
-    font-size: 0.18rem;
+    font-size: 0.2rem;
     font-family: "SourceHanSansCN";
     color: rgb( 255, 255, 255 );
     text-transform: uppercase;
@@ -57,7 +57,7 @@ a{ text-decoration:none}
 
 .banner1 .about_bottom {
     width: 100%;
-    height: 35%;
+    height: 33%;
     position: absolute;
     bottom: 0;
     color: #fff;
@@ -82,9 +82,9 @@ a{ text-decoration:none}
 .banner1 .about_bottom .item .desc{
     display: inline-block;
     vertical-align: top;
-    margin-top: 0.25rem;
+    margin-top: 0.22rem;
     margin-left: 0.1rem;
-    font-size: 0.18rem;
+    font-size: 0.22rem;
     font-family: "SourceHanSansCN";
     color: rgb( 233, 0, 16 );
 }
@@ -110,7 +110,7 @@ a{ text-decoration:none}
     width: 100%;
 }
 .content .banner3 .con{
-    overflow-x: scroll;
+    overflow-x: hidden;
     margin-top: 2.5rem;
     width: 100%;
     position: absolute;
@@ -182,7 +182,7 @@ a{ text-decoration:none}
     margin-bottom: 0.1rem;
 }
 .echart_txt .f-c{
-    font-size: 0.2rem;
+    font-size: 0.22rem;
     font-family: "SourceHanSansCN";
     color: rgb( 0, 0, 0 );
 }
@@ -275,7 +275,7 @@ a{ text-decoration:none}
     background-size: cover;
     position: absolute;
     top: 0;
-    left: 53%;
+    left: 60%;
     transform: translateX(-50%);
 }
 
@@ -286,7 +286,7 @@ a{ text-decoration:none}
     background-size: cover;
     position: absolute;
     top: 0;
-    left: 47%;
+    left: 40%;
     transform: translateX(-50%);
 }
 
@@ -300,6 +300,10 @@ a{ text-decoration:none}
 
 .developSwiper .active .line_black {
     background: #d7000f;
+}
+.developSwiper .active  .echart_txt .f-t,
+.developSwiper .active  .echart_txt .f-c{
+    color: #d7000f;
 }
 
 
@@ -344,7 +348,7 @@ a{ text-decoration:none}
     width:45%;
 }
 .content .banner4 .con .honor_px img {
-    width: 0.73rem;
+    width: 1.2rem;
     display: inline-block;
     margin-right: 0.3rem;
 }
@@ -353,11 +357,11 @@ a{ text-decoration:none}
     display: inline-block;
     vertical-align: top;
     text-align: left;
-    font-size: 0.175rem;
+    font-size: 0.24rem;
     font-family: "SourceHanSansCN";
     color: rgb( 255, 255, 255 );
     text-transform: uppercase;
-    line-height: 1.7;
+    line-height:2;
 }
 .content .banner4 .con .imglist{
     margin-top: 1rem;
@@ -395,16 +399,16 @@ a{ text-decoration:none}
 .banner4 .about_bottom .item .desc{
     display: inline-block;
     vertical-align: top;
-    margin-top: 0.25rem;
+    margin-top: 0.22rem;
     margin-left: 0.1rem;
-    font-size: 0.18rem;
+    font-size: 0.22rem;
     font-family: "SourceHanSansCN";
     color: rgb( 233, 0, 16 );
 }
 .banner4 .swiper-container{
   margin: auto;
     width: 90%;
-    margin-top: 0.9rem;
+    margin-top: 5.9rem;
     padding-bottom: 0.7rem;
 }
 .banner5{
@@ -593,15 +597,15 @@ a{ text-decoration:none}
     z-index: 999;
 }
 
-.teamBox .team_prev:hover {
-    background: url('./../../images/turn_left_act.png') no-repeat center !important;
-    transform: scale(1.1, 1.1);
-}
+/*.teamBox .team_prev:hover {*/
+    /*background: url('./../../images/turn_left_act.png') no-repeat center !important;*/
+    /*transform: scale(1.1, 1.1);*/
+/*}*/
 
-.teamBox .team_next:hover {
-    background: url('./../../images/turn_right_act.png') no-repeat center !important;
-    transform: scale(1.1, 1.1);
-}
+/*.teamBox .team_next:hover {*/
+    /*background: url('./../../images/turn_right_act.png') no-repeat center !important;*/
+    /*transform: scale(1.1, 1.1);*/
+/*}*/
 
 .teamBox .team_next {
     position: absolute;

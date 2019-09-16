@@ -144,12 +144,18 @@ a{ text-decoration:none}
     margin-bottom: 0.2rem;
 }
 .banner3-swiper-slide .list .text .p2{
-    font-size: 0.25rem;
+    font-size: 0.22rem;
     font-family: "SourceHanSansCN";
     color: rgb( 0, 0, 0 );
     font-weight: bold;
     line-height: 1.385;
     text-align: left;
+    text-overflow: ellipsis;
+    /*white-space: nowrap;*/
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
 }
 .banner3-swiper-slide .list .text .p3{
     margin-top: 0.1rem;
@@ -157,6 +163,12 @@ a{ text-decoration:none}
     font-family: "SourceHanSansCN";
     color: rgba( 0, 0, 0, 0.702 );
     line-height: 1.667;
+    text-overflow: ellipsis;
+    /*white-space: nowrap;*/
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
 
 }
 .banner3 .load-more{

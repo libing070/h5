@@ -78,6 +78,7 @@ a{ text-decoration:none}
 .banner3-swiper-slide .list .bg{
     width: 100%;
     position: relative;
+    height: 3rem;
 }
 
 
@@ -88,13 +89,25 @@ a{ text-decoration:none}
     color: rgb( 61, 61, 61 );
     font-weight: bold;
     line-height: 1.385;
+    text-overflow: ellipsis;
+    /*white-space: nowrap;*/
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
 }
 .banner3-swiper-slide .list .p2{
-    font-size: 0.18rem;
+    font-size: 0.2rem;
     font-family: "SimSun";
     color: rgba( 0, 0, 0, 0.6 );
     text-transform: uppercase;
     line-height: 1.667;
+    text-overflow: ellipsis;
+    /*white-space: nowrap;*/
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
 }
 .banner3 .load-more{
     margin: 1rem;

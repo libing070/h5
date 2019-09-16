@@ -49,7 +49,7 @@ a{ text-decoration:none}
 }
 .banner1 .banner_txt .bd_p4 {
     line-height: 1.667;
-    font-size: 0.18rem;
+    font-size: 0.22rem;
     font-family: "SourceHanSansCN";
     color: rgb( 255, 255, 255 );
 }
@@ -149,9 +149,10 @@ a{ text-decoration:none}
 }
 .banner2 .con .swiper1 .swiper-slide .p2{
     line-height: 1.667;
-    font-size: 0.18rem;
+    font-size: 0.22rem;
     font-family: "SourceHanSansCN";
     color: rgba( 0, 0, 0, 0.6 );
+    padding: 0 0.5rem;
 }
 
 
@@ -160,6 +161,7 @@ a{ text-decoration:none}
     left: 0;
     bottom: 0;
     margin: auto;
+    height: 0.55rem;
     right: 0;
     width: 30%;
     z-index: 999;
@@ -262,12 +264,12 @@ a{ text-decoration:none}
     margin: auto;
 }
 .banner3 .text .item .after .p1{
-    margin: 1rem 0.6rem;
-    margin-bottom: 0.4rem;
-    font-size: 0.18rem;
+    margin:0.6rem;
+    margin-bottom: 0.2rem;
+    font-size: 0.22rem;
     font-family: "SimSun";
     color: rgb( 255, 255, 255 );
-    line-height: 1.813;
+    line-height: 1.5;
 
 }
 .banner3 .text .item .after .arrow_icon{

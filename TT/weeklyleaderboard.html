@@ -1,43 +1,81 @@
 <img class="title" src="images/index-banner2-title.png">
 <div class="swiper-container">
     <div class="swiper-wrapper">
-        <div class="swiper-slide" style="background-image: url('./images/index-banner2-s1.png')">
-            <div class="con">
-                <img class="icon" src="images/know-icon.png">
-                <div class="number">01</div>
-                <div class="desc">侧面看戛纳除了创意还有什么除了创意还有什么</div>
-            </div>
-        </div>
-        <div class="swiper-slide" style="background-image: url('./images/index-banner2-s2.png')">
-            <div class="con">
-                <img class="icon" src="images/article-icon.png">
+        <!--<div class="swiper-slide" style="background-image: url('./images/index-banner2-s1.png')">-->
+            <!--<div class="con">-->
+                <!--<img class="icon" src="images/know-icon.png">-->
+                <!--<div class="number">01</div>-->
+                <!--<div class="desc">侧面看戛纳除了创意还有什么除了创意还有什么</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="swiper-slide" style="background-image: url('./images/index-banner2-s2.png')">-->
+            <!--<div class="con">-->
+                <!--<img class="icon" src="images/article-icon.png">-->
 
-                <div class="number">02</div>
-                <div class="desc">侧面看戛纳 除了创意侧面看戛纳侧面看戛纳还有什么</div>
-            </div>
-        </div>
-        <div class="swiper-slide" style="background-image: url('./images/index-banner2-s3.png')">
-            <div class="con">
-                <img class="icon" src="images/article-icon.png">
+                <!--<div class="number">02</div>-->
+                <!--<div class="desc">侧面看戛纳 除了创意侧面看戛纳侧面看戛纳还有什么</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="swiper-slide" style="background-image: url('./images/index-banner2-s3.png')">-->
+            <!--<div class="con">-->
+                <!--<img class="icon" src="images/article-icon.png">-->
 
-                <div class="number">03</div>
-                <div class="desc">侧面看戛纳 除了创侧面看戛纳意还有什么</div>
-            </div>
-        </div>
-        <div class="swiper-slide" style="background-image: url('./images/index-banner2-s4.png')">
-            <div class="con">
-                <img class="icon" src="images/article-icon.png">
-                <div class="number">04</div>
-                <div class="desc">侧面看戛纳侧面看戛纳 除了创意还有什么</div>
-            </div>
-        </div>
-        <div class="swiper-slide" style="background-image: url('./images/index-banner2-s5.png')">
-            <div class="con">
-                <img class="icon" src="images/know-icon.png">
-                <div class="number">05</div>
-                <div class="desc">侧面看戛纳 除了创侧面看戛纳意还有什么</div>
-            </div>
-        </div>
+                <!--<div class="number">03</div>-->
+                <!--<div class="desc">侧面看戛纳 除了创侧面看戛纳意还有什么</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="swiper-slide" style="background-image: url('./images/index-banner2-s4.png')">-->
+            <!--<div class="con">-->
+                <!--<img class="icon" src="images/article-icon.png">-->
+                <!--<div class="number">04</div>-->
+                <!--<div class="desc">侧面看戛纳侧面看戛纳 除了创意还有什么</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="swiper-slide" style="background-image: url('./images/index-banner2-s5.png')">-->
+            <!--<div class="con">-->
+                <!--<img class="icon" src="images/know-icon.png">-->
+                <!--<div class="number">05</div>-->
+                <!--<div class="desc">侧面看戛纳 除了创侧面看戛纳意还有什么</div>-->
+            <!--</div>-->
+        <!--</div>-->
     </div>
     <div class="swiper-pagination"></div>
 </div>
+
+<script>
+        $(function () {
+            //api/Forum/GetWeekReadSort(TT_024、TT_024)获取一周阅读排行
+
+            function GetWeekReadSort() {
+                $.request('/api/Forum/GetWeekReadSort', {
+                        "timestamp": ts(),
+                        sign: createSign({
+                            "timestamp": ts(),
+                        })
+                    },
+                    function (res) {
+                        var str = '';
+                        res.data.forumInfo.forEach((ele, k) => {
+                           // var url='./images/index-banner2-s1.png';
+                             var url=ele.picUrl;
+                            str+='<div ids="'+ele.id+'" class="swiper-slide" style="background-image: url('+url+')">';
+                            str+=' <div class="con">';
+                            var icon=ele.type==0?'images/article-icon.png':'images/know-icon.png';  // 0文章 1知识;
+                            str+='  <img class="icon" src="'+icon+'">';
+                            str+='  <div class="number">'+(++k)+'</div>';
+                            str+='   <div class="desc">'+ele.summary+'</div>';
+                            str+='    </div>';
+                            str+='    </div>';
+
+                        });
+                        $('.weeklyleaderboard .swiper-container .swiper-wrapper').append(str);
+                    }
+                );
+            }
+            GetWeekReadSort();
+
+            $(".weeklyleaderboard .swiper-container .swiper-wrapper").on("click",'.swiper-slide',function () {
+                window.location.href='./details.html?id='+$(this).attr("ids");
+            })
+        });
+</script>

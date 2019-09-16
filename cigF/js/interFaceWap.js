@@ -114,6 +114,10 @@ $(function () {
         );
     }
 
+    $('.caseSwiper .swiper-wrapper').on("click",'.arrow',function () {
+        window.location.href='./pagewap/case.html?inittype=26&initialSlide=0';
+    })
+
     // //(Portal_005)获取新闻推荐
     function GetRecommendNews() {
         $.request('/api/News/GetRecommendNews', {

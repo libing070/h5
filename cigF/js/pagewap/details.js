@@ -4,35 +4,17 @@ $(function () {
     var sp=url.split("?")[1];
     if(sp.indexOf('caseId')>-1){
         GetUrlParam('caseId');
-        $(".case-news-url").attr("href","./../pagewap/case.html").html("案例");
+        $(".case-news-url").attr("href","./../pagewap/case.html?inittype=26&initialSlide=2").html("案例");
         loadDetails("caseId","Case/CaseInfo?caseId="+GetUrlParam('caseId'));
 
     }else if(sp.indexOf('newsId')>-1){
         GetUrlParam('newsId');
-        $(".case-news-url").attr("href","./../pagewap/information.html").html("新闻");
+        $(".case-news-url").attr("href","./../pagewap/information.html?inittype=20&initialSlide=0").html("新闻");
         loadDetails("newsId","News/NewsDetail?newsId="+GetUrlParam('newsId'));
 
     }
 
-    function GetUrlParam(paraName) {
-        var url = document.location.toString();
-        var arrObj = url.split("?");
-        if (arrObj.length > 1) {
-            var arrPara = arrObj[1].split("&");
-            var arr;
-            for (var i = 0; i < arrPara.length; i++) {
-                arr = arrPara[i].split("=");
 
-                if (arr != null && arr[0] == paraName) {
-                    return arr[1];
-                }
-            }
-            return "";
-        }
-        else {
-            return "";
-        }
-    }
 
 
     function  loadDetails(type,url) {
@@ -64,9 +46,16 @@ $(function () {
                        }
                    }
 
+          //
+          // //  $("#share_box .social-share").attr("data-url",window.location.href);
+          //  // $("#share_box .social-share").attr("data-title",$(".banner2").find('.p1').html());
+          //      document.write('');
+
             }
         );
     }
+
+
 
     $(".banner3").on("click",".video-btn",function () {
         var len=$(".banner3").find("video").length;

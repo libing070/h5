@@ -9,9 +9,6 @@
 // 09 OA
 
 
-
-
-
 var host = 'http://219.143.155.183:8899';
 // var host = 'http://172.16.101.119:8899';
 jQuery.extend({
@@ -19,8 +16,11 @@ jQuery.extend({
         $.ajax({
             url: host + url,
             type: 'post',
+            xhrFields: {
+                withCredentials: true
+            },
             data: parame,
-            async: false, //默认为true 异步  
+            async: false, //默认为true 异步
             dataType: 'json',
             success: function (res) {
                 if (res.code == 1) {
@@ -94,16 +94,19 @@ function createSign(dic) {
     var sign = hex_md5(str);
     return sign;
 }
+
 //重置动画
 function aniReset() {
     for (let i = 0; i < 100; i++) {
         $('.ani_' + i).css('opacity', '0');
     }
 }
+
 //时间戳
 function ts() {
     return Math.round(new Date() / 1000);
 }
+
 // 新建md5加密值
 function createSign(dic) {
     var jsonstr = JSON.stringify(objKeySort(dic));
@@ -115,6 +118,7 @@ function createSign(dic) {
     var sign = hex_md5(str);
     return sign;
 }
+
 //排序的函数
 function objKeySort(arys) {
     //先用Object内置类的keys方法获取要排序对象的属性名，再利用Array原型上的sort方法对获取的属性名进行排序，newkey是一个数组
@@ -139,9 +143,30 @@ function playVideo(_this, k) {
         $(_this).show();
     })
 }
+
+function GetUrlParam(paraName) {
+    var url = document.location.toString();
+    var arrObj = url.split("?");
+    if (arrObj.length > 1) {
+        var arrPara = arrObj[1].split("&");
+        var arr;
+        for (var i = 0; i < arrPara.length; i++) {
+            arr = arrPara[i].split("=");
+
+            if (arr != null && arr[0] == paraName) {
+                return arr[1];
+            }
+        }
+        return "";
+    }
+    else {
+        return "";
+    }
+}
+
 $(function () {
 
-    var nav = '<div class="nav"><ul class="navBar"><li><a class="sibmenu" href="javascript:;">营销智库</a><div class="submenu"><div class="triangle"></div><div class="subList"><a href="javascript:;">资讯</a></div><div class="subList"><a href="javascript:;">知识</a></div><div class="subList"><a href="javascript:;">活动</a></div></div></li><li><a class="sibmenu" href="./page/job.html">职达新意</a><div class="submenu"><div class="triangle"></div><div class="subList"><a href="javascript:;">意起精彩</a></div><div class="subList"><a href="javascript:;">社会招聘</a></div><div class="subList"><a href="javascript:;">校园招聘</a></div><div class="subList"><a href="javascript:;">实习生招聘</a></div><div class="subList"><a href="javascript:;">活水计划</a></div></div></li><li><a class="sibmenu" href="./page/news.html">新意资讯</a><div class="submenu" id="newsClick"><div class="triangle"></div><div class="subList"><a href="./page/news.html?index=1">新意动态</a></div><div class="subList"><a href="./page/news.html?index=2">新意荣誉</a></div><div class="subList"><a href="./page/news.html?index=3">新意观点</a></div><div class="subList"><a href="./page/news.html?index=4">行业观察</a></div></div></li><li><a class="sibmenu" href="./page/case.html">案例展示</a><div class="submenu" id="caseClick"><div class="triangle"></div><div class="subList"><a href="./page/case.html?index=1">整合营销</a></div><div class="subList"><a href="./page/case.html?index=2">内容营销</a></div><div class="subList"><a href="./page/case.html?index=3">社会化与用户营销</a></div><div class="subList"><a href="./page/case.html?index=4">大数据营销</a></div><div class="subList"><a href="./page/case.html?index=5">视频营销</a></div><div class="subList"><a href="./page/case.html?index=6">技术营销</a></div><div class="subList"><a href="./page/case.html?index=7">互动体验</a></div><div class="subList"><a href="./page/case.html?index=8">媒介营销</a></div></div></li><li><a class="sibmenu" href="./page/bigData_1.html">服务与产品</a><div class="submenu"><div class="triangle"></div><div class="subList"><a href="./page/bigData_1.html">数字整合营销</a></div><div class="subList"><a href="./page/bigData_2.html">大数据技术与工具</a></div><div class="subList"><a href="./page/bigData_3.html">数字影像</a></div></div></li><li><a class="sibmenu" href="./page/about_us.html">关于我们</a><div class="submenu"><div class="triangle"></div><div class="subList"><a href="./page/about_us.html#about_1">公司介绍</a></div><div class="subList"><a href="./page/about_us.html#about_2">经营理念</a></div><div class="subList"><a href="./page/about_us.html#about_3">发展历程</a></div><div class="subList"><a href="./page/about_us.html#about_4">服务客户</a></div><div class="subList"><a href="./page/about_us.html#about_5">高管团队</a></div></div></li></ul></div>'
+    var nav = '<div class="nav"><ul class="navBar"><li><a class="sibmenu" href="javascript:;">营销智库</a><div class="submenu"><div class="triangle"></div><div class="subList"><a href="javascript:;">资讯</a></div><div class="subList"><a href="javascript:;">知识</a></div><div class="subList"><a href="javascript:;">活动</a></div></div></li><li><a class="sibmenu" href="./page/job.html">职达新意</a><div class="submenu"><div class="triangle"></div><div class="subList"><a href="javascript:;">意起精彩</a></div><div class="subList"><a href="https://cig.zhiye.com/Social"target="_blank">社会招聘</a></div><div class="subList"><!--<a href="javascript:;">校园招聘</a>--></div><div class="subList"><a href="https://cig.zhiye.com/Intern"target="_blank">实习生招聘</a></div><div class="subList"><a href="http://neitui.zhiye.com/cig#vertify%2Fwechat"target="_blank">内部推荐</a></div></div></li><li><a class="sibmenu" href="./page/news.html">新意资讯</a><div class="submenu" id="newsClick"><div class="triangle"></div><div class="subList"><a href="./page/news.html?index=1">新意动态</a></div><div class="subList"><a href="./page/news.html?index=2">新意荣誉</a></div><div class="subList"><a href="./page/news.html?index=3">新意观点</a></div><div class="subList"><a href="./page/news.html?index=4">行业观察</a></div></div></li><li><a class="sibmenu" href="./page/case.html">案例展示</a><div class="submenu" id="caseClick"><div class="triangle"></div><div class="subList"><a href="./page/case.html?index=1">整合营销</a></div><div class="subList"><a href="./page/case.html?index=2">内容营销</a></div><div class="subList"><a href="./page/case.html?index=3">社会化与用户营销</a></div><div class="subList"><a href="./page/case.html?index=4">大数据营销</a></div><div class="subList"><a href="./page/case.html?index=5">视频营销</a></div><div class="subList"><a href="./page/case.html?index=6">技术营销</a></div><div class="subList"><a href="./page/case.html?index=7">互动体验</a></div><div class="subList"><a href="./page/case.html?index=8">媒介营销</a></div></div></li><li><a class="sibmenu" href="./page/bigData_1.html">服务与产品</a><div class="submenu"><div class="triangle"></div><div class="subList"><a href="./page/bigData_1.html">数字整合营销</a></div><div class="subList"><a href="./page/bigData_2.html">大数据应用</a></div><div class="subList"><a href="./page/bigData_3.html">数字影像</a></div></div></li><li><a class="sibmenu" href="./page/about_us.html">关于我们</a><div class="submenu"><div class="triangle"></div><div class="subList"><a href="./page/about_us.html#about_1">公司介绍</a></div><div class="subList"><a href="./page/about_us.html#about_2">经营理念</a></div><div class="subList"><a href="./page/about_us.html#about_3">发展历程</a></div><div class="subList"><a href="./page/about_us.html#about_4">服务客户</a></div><div class="subList"><!--<a href="./page/about_us.html#about_5">高管团队</a>--></div></div></li></ul></div>'
     $('#pc').prepend(nav);
     $('.nav ul li').hover(function () {
         $(this).find('.submenu').stop().slideDown();

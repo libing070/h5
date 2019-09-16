@@ -1,4 +1,13 @@
 $(function () {
+
+    var inittype=20;
+    var initialSlide=0;
+    var url = window.location.href;
+    var sp=url.split("?")[1];
+    if(sp.indexOf('inittype')>-1){
+        inittype= GetUrlParam('inittype');
+        initialSlide= GetUrlParam('initialSlide');
+    }
 var swiper1 = new Swiper('.banner1', {
     loop:true,
     slidesPerView: 1,
@@ -34,6 +43,7 @@ var swiper1 = new Swiper('.banner1', {
         observeParents: true, //修改swiper的父元素时，自动初始化swiper
         slidesPerView:1,
         loop:false,
+        initialSlide :initialSlide,
         spaceBetween:0,
         on:{
             slideChangeTransitionEnd: function(event){
@@ -67,6 +77,7 @@ var swiper1 = new Swiper('.banner1', {
             function (res) {
                 if(pageIndex>res.data.pageCount){
                     $(".banner3 .load-more").find("p").html("没有更多了");
+					$(".banner3 .load-more").find(".load-more-btn").removeClass("active");
                     $(".banner3 .load-more").attr("hasmore","0");
                     return;
                 }
@@ -99,11 +110,13 @@ var swiper1 = new Swiper('.banner1', {
 
     }
 
-    loadNewList(20,1);//默认加载第一个
+    loadNewList(inittype,1);//默认加载第一个
 
     $(".banner3").on("click",".load-more",function () {
         var hasMore=$(".banner3 .load-more").attr("hasmore");//1更多 0 没有
         if(hasMore==0){
+            $(".banner3 .load-more").find(".load-more-btn").removeClass("active");
+
             $(".banner3").find('.load-more').off();
              return;
         }
@@ -137,9 +150,14 @@ var swiper1 = new Swiper('.banner1', {
 
     });
 
-    $(".banner3 .swiper-slide").on("click",".text",function () {
-        var newsId=$(this).parent(".list").attr("newsId");
-        console.log($(this).parent(".list").attr("newsId"));
+    // $(".banner3 .swiper-slide").on("click",".text",function () {
+    //     var newsId=$(this).parent(".list").attr("newsId");
+    //     console.log($(this).parent(".list").attr("newsId"));
+    //     window.location.href = "./../pagewap/details.html?newsId="+newsId;
+    // })
+    $(".banner3 .swiper-slide").on("click",".list",function () {
+        var newsId=$(this).attr("newsId");
+        console.log($(this).attr("newsId"));
         window.location.href = "./../pagewap/details.html?newsId="+newsId;
     })
 });

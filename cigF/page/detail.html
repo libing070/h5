@@ -11,7 +11,24 @@
     <link rel="stylesheet" href="./../css/base.css">
     <link rel="stylesheet" href="./../css/base_pc.css">
     <link rel="stylesheet" href="./../css/page/case.css">
-    <title>cig</title>
+    <script type="text/javascript" ckharset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&uuid=&pophcol=2&lang=zh"></script>
+    <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+    <title>CIG新意互动</title>
+    <style>
+        .Adver{
+            position: relative;
+        }
+        .Adver .video-btn{
+          position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top:0 ;
+            margin: auto;
+            width: 15%;
+            z-index: 9;
+        }
+    </style>
 </head>
 
 <body>
@@ -20,31 +37,36 @@
             <img src="./../images/page/caseDetail_bg.jpg" alt="">
             <div class="details">
                 <div class="D-locl">
-                    <span>首页</span>-<span>案例</span>-<span>详情</span>
+                    <span><a style="color: white" href="./../index.html">首页- </a> </span>-<span><a style="color: white"  class="case-news-url"></a></span>-<span>详情</span>
                 </div>
-                <h1 class="D-title">华为nova 3e 无添加自拍</h1>
+                <h1 class="D-title"></h1>
                 <div class="timeBox">
-                    <span class="time">发布时间：2019-8-6</span>
-                    <span>发布者：新意互动</span>
-                    <span class="share"><i></i>分享</span>
+                    <span class="time">发布时间：</span>
+                    <span class="fbz">发布者：</span>
+                    <span class="share"><i></i>分享 <div style="float: right;margin-top: 0rem;" class="bshare-custom" title="新意互动" url="" summary="描述信息"></div></span>
+
                 </div>
-                <p>当一众手机品牌都在喊着美颜、滤镜的营销噱头的时候，在同质化的拍照概念面前，如何抓取年轻受众稀缺的注意力？随着华为品牌的全球化进程，对创意品质的需求也在日益提升。伴随HUAWEI nova
-                    3e新品上市传播，我们希望通过“无添加自拍”的创意概念，不仅将“自然美妆”的卖点说到目标消费群体心坎上，更要将“无添加的自然”打造成HUAWEI nova 3e品牌的记忆符号。</p>
+
                 <div class="Adver">
-                    <img src="./../images/page/Adver1.jpg" alt="">
-                    <img src="./../images/page/Adver2.jpg" alt="">
+                    <img class="bg" style="display: none" src="" alt="">
+                    <img class="video-btn" style="display: none"  src="./../images/play.png">
+                    <video width="100%" height="100%" controls style="object-fit:cover;display: none" id="video" src="" preload="auto"></video>
+                    <!-- <img src="./../images/page/Adver2.jpg" alt=""> -->
                 </div>
-                <p>三支影片，由新意旗下NDC创意团队，携手亚太广告导演罗景壬共同完成。从创意概念“无添加自拍”的确定，到故事脚本的商榷，NDC创意团队与华为大中华区市场部充分沟通，在双方的高度合作与共同努力下，希望传递给用户的，不只是理性层面的强大功能，更重要的是，深入用户的真实生活，为产品创造坚实的情感意义。
+                <p class="content_1">
+                </p>
+                <!-- <p>三支影片，由新意旗下NDC创意团队，携手亚太广告导演罗景壬共同完成。从创意概念“无添加自拍”的确定，到故事脚本的商榷，NDC创意团队与华为大中华区市场部充分沟通，在双方的高度合作与共同努力下，希望传递给用户的，不只是理性层面的强大功能，更重要的是，深入用户的真实生活，为产品创造坚实的情感意义。
                 </p>
                 <p>纵观三支视频，都充分展现了每一位年轻女孩追求真实自我，将落点放在“前置2400万
                     自然美妆”的产品卖点，回归自然纯粹的一面，与“无添加”的态度海报在基调上保持一致性，营造了温暖治愈系的画风。小清新与大自然元素的加持将广告做出美感，让人在无形中对这种“无添加”产生由衷的认同感和归属感。
-                </p>
-                <div class="btnBox">
-                    <a href="javascript:;" class="closeBtn">关闭</a>
-                </div>
+                </p> -->
+                <!--<div class="btnBox">-->
+                    <!--<a href="javascript:;" class="closeBtn">关闭</a>-->
+                <!--</div>-->
             </div>
         </div>
     </div>
+
     <script src="./../js/jquery-1.11.2.min.js"></script>
     <script src="./../js/jquery.cookie.js"></script>
     <script src="./../js/anime.min.js"></script>
@@ -60,17 +82,94 @@
     <script>
         $(function () {
             var url;
-            if (window.location.search.indexOf('caseId')>-1) {
+            if (window.location.search.indexOf('caseId') > -1) {
                 var caseId = getUrlParam('caseId');
                 url = '/api/Case/CaseInfo?caseId=' + caseId;
+                $(".case-news-url").attr("href","./case.html").html("案例");
+                $.requestGet(url, function (res) {
+                    console.log(res);
+                    $('.D-title').text(res.data.name);
+                    $('.time').html('发布时间:' + res.data.updateTime);
+                    $('.fbz').html('发布者:' + res.data.serviceUser);
+                    if (res.data.multimediaType == 1) {
+                        $('.Adver').find('.bg').attr('src', res.data.url).show();
+                    }else{
+                        $('.Adver').find('.video-btn').show();
+                        $('.Adver').find('video').attr('src', res.data.url).show();
+                    }
+
+                    $('.content_1').html(res.data.content);
+                });
             } else {
                 var newsId = getUrlParam('newsId');
                 url = '/api/News/NewsDetail?newsId=' + newsId;
+                $(".case-news-url").attr("href","./news.html").html("新闻");
+                $.requestGet(url, function (res) {
+                    console.log(res);
+                    $('.D-title').text(res.data.title);
+                    $('.time').html('发布时间:' + res.data.updateTime);
+                    $('.fbz').html('发布者:' + res.data.UpdateUserName);
+                    if (res.data.multimediaType == 1) {
+                        $('.Adver').find('.bg').attr('src', res.data.picUrl).show();
+                    }else{
+                        $('.Adver').find('.video-btn').show();
+                        $('.Adver').find('video').attr('src', res.data.picUrl).show();
+                    }
+                    $('.content_1').html(res.data.content);
+                });
             }
-            $.requestGet(url, function (res) {
-                console.log(res);
+
+
+            $(".Adver").on("click",".video-btn",function () {
+                var len=$(".Adver").find("video").length;
+                $(".Adver .video-btn").show();
+                for(var i=0;i<len;i++){
+                    $(".Adver").find("video").get(i).pause();
+                }
+                $(this).hide();
+                var myVideo=$(this).siblings("video").get(0);
+                myVideo.play();
+                myVideo.addEventListener('ended', playsss);
+                function playsss() {
+                    $(".Adver .video-btn").show();
+                    myVideo.removeEventListener("ended", playsss);
+
+                }
+
             });
         });
+
+        $(document).ready(function() {
+            iBShare.init();    //初始化
+        });
+
+        //bShare分享
+        var iBShare = {
+            //初始化
+            init: function() {
+                var $shareBox = $(".bshare-custom");
+                //加载分享工具
+                var tools = '';
+                tools += '<a title="分享到新浪微博" class="bshare-sinaminiblog"></a>';
+                tools += '<a title="分享到人人网" class="bshare-renren"></a>';
+                tools += '<a title="分享到腾讯微博" class="bshare-qqmb"></a>';
+                tools += '<a title="分享到网易微博" class="bshare-neteasemb"></a>';
+                tools += '<a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a>';
+                $shareBox.append(tools);
+                //绑定分享事件
+                $shareBox.children("a").click(function() {
+                    var parents = $(this).parent();
+                    bShare.addEntry({
+                        title: parents.attr("title"),
+                        url: window.location.href,
+                        summary: $(".D-title").html(),
+                       // pic: window.location.host+"/cigF/images/page/logo.png",
+                        pic: window.location.host+"/web/images/page/logo.png"
+
+                    });
+                });
+            }
+        }
     </script>
 </body>
 

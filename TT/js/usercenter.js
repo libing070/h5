@@ -1,0 +1,388 @@
+$(function () {
+    if(!localStorage.getItem('ttToken')){
+        window.location.href='./index.html'
+    }else{
+      var  nickname= localStorage.getItem('ttName');
+        $(".left-nav .nickname").html(nickname);
+    }
+
+    init();
+
+
+    $(".left-nav").on("click",'.item-menu',function () {
+        $(this).addClass("active").siblings().removeClass("active");
+        $(this).find("span").css( "color","rgb( 233, 0, 16 )") ;
+        $(this).find(".sanjiao").attr("src","images/sanjiao-icon-red.png");
+        $(this).siblings().find("span").css( "color","") ;
+        $(this).siblings().find(".sanjiao").attr("src","images/sanjiao-icon.png");
+         var index= $(this).attr("type");
+          for( var i=0;i<$('.right-content').find('.wrap').length;i++){
+              if($('.right-content').find('.wrap').eq(i).attr("type")==index){
+                  $('.right-content').find('.wrap').eq(i).show();
+                  if(index==1){//初始化加载我的发布列表（默认加载‘已发布’）
+                      GetForumCount();
+                      $(".mypublish .mypu-menu .item").eq(0).click();
+                  }
+                  if(index==4){//初始化加载消息管理 系统消息
+                      $(".right-content .mess .pu-menu .item").eq(0).click();
+                  }
+              }else{
+                  $('.right-content').find('.wrap').eq(i).hide();
+              }
+          }
+    })
+
+    //我的发布切换事件
+    $(".mypublish .mypu-menu").on("click",'.item',function () {
+        $(this).addClass("active").siblings().removeClass("active");
+        var type=$(this).attr("type");
+        $(".mypublish-load-more").find("p").html("加载更多");
+        $(".mypublish-load-more").attr("hasmore","1").attr("pageIndex","1").attr("type",type);
+        $('.mypublish .mybox').html("");
+        loadPageList(type,1);
+    })
+
+    ///api/Forum/GetForumCount(TT_006)获取我的文章各个状态的数量
+    function GetForumCount() {
+        $.request('/api/Forum/GetForumCount', {
+                timestamp: ts(),
+                userToken:localStorage.getItem("ttToken")||'',
+                sign: createSign({
+                    userToken:localStorage.getItem("ttToken")||'',
+                    timestamp: ts(),
+                })
+            },
+            function (res) {
+               $(".mypublishcount").html('('+res.data.publish+')');
+                $(".waitingcount").html('('+res.data.waiting+')');
+                $(".rejectcount").html('('+res.data.reject+')');
+                $(".draftcount").html('('+res.data.draft+')');
+            }
+        );
+    }
+
+
+
+    //api/Forum/PageList(TT_005) 我的文章列表(我的发布)
+    function loadPageList(type,pageIndex){
+        $.request('/api/Forum/PageList', {
+                timestamp: ts(),
+                state:type,// 0 提交待审核 1 已发布 2 未通过 3 草稿
+                pageIndex:pageIndex||1,
+                pageSize:10,
+                userToken:localStorage.getItem("ttToken")||'',
+                sign: createSign({
+                    timestamp: ts(),
+                    state:type,
+                    pageIndex:pageIndex||1,
+                    pageSize:10,
+                    userToken:localStorage.getItem("ttToken")||'',
+                })
+            },
+            function (res) {
+                if(pageIndex>res.data.pageCount){
+                    $(".mypublish-load-more").find("p").html("没有更多了");
+                    $(".mypublish-load-more").find(".load-more-btn").removeClass("active");
+                    $(".mypublish-load-more").attr("hasmore","0");
+                    return;
+                }
+                if(res.data.list!=""){
+                    var str = '';
+                    res.data.list.forEach((ele, k) => {
+                        str += '<div class="box">';
+                        str += '   <div class="top">';
+                        str += '   <img class="bg" src="'+ele.PicUrl+'">';
+                        str += '   <img class="bg-mask" src="images/my-pu-box-bg-mask.png">';
+                        str += '   <p class="bottom">';
+                        str += '   <span class="item"><img src="./images/message-icon-white.png"><span >'+ele.CommentCount+'</span></span>';
+                        str += '<span class="item"><img src="./images/view-icon-white.png"><span>'+ele.VisitCount+'</span></span>';
+                        str += ' <span class="item"><img src="./images/vote-icon-white.png"><span>'+ele.LikeCount+'</span></span>';
+                        str += ' </p>';
+                        str += ' <div class="mask" style="display: none">';
+                        str += '   <div class="flex">';
+                        str += '   <div class="item edit" type="'+ele.Type+'"  ids="'+ele.Id+'"><img src="images/edit-icon.png"><span style="color: #cb0404">编辑</span></div>';
+                        str += ' <div class="item del" ids="'+ele.Id+'"><img src="images/delete-icon.png"><span>删除</span></div>';
+                        str += '</div>';
+                        str += '</div>';
+                        str += '</div>';
+                        str += '<div class="title">'+ele.Title+'-'+ele.Summary+'</div>';
+                        str += '   <div class="desc">'+ele.Content+'</div>';
+                        str += ' </div>';
+                    });
+                    $('.mypublish .mybox').append(str);
+                    $(".mypublish-load-more").find(".load-more-btn").removeClass("active");
+
+                }else{
+                    $(".mypublish-load-more").find("p").html("没有更多了");
+                }
+            }
+        );
+    }
+    $(".mypublish").on("click",'.mypublish-load-more',function () {
+        var type=$(this).attr("type");
+        $(".mypublish-load-more").find(".load-more-btn").addClass("active");
+        var hasMore=  $(".mypublish-load-more").attr("hasmore");//1更多 0 没有
+        if(hasMore==0){
+            $(".mypublish-load-more").off();
+            $(".mypublish-load-more").find(".load-more-btn").removeClass("active");
+            return;
+        }
+        var pageIndex=$(this).attr("pageIndex");
+        pageIndex=++pageIndex;
+        $(this).attr("pageIndex",pageIndex);
+        loadPageList(type,pageIndex);
+    });
+
+
+    //--发布内容--//
+    $(".right-content").on("click",'.fabu .pu-menu .item',function () {
+        console.log( $(this).attr("type"));
+        $(this).addClass("active").siblings().removeClass("active");
+        var len= $(".content-display").length;
+        for(var i=0;i<len;i++){
+            if($(".content-display").eq(i).attr("type")==$(this).attr("type")){
+                $(".content-display").eq(i).addClass("active").show();
+            }else{
+                $(".content-display").eq(i).removeClass("active").hide();
+            }
+        }
+    });
+
+    $(".right-content .publish .mybox").on("mouseenter", ".box", function() {
+        $(this).find(".top").children('.mask').stop().slideDown();
+    });
+    $(".right-content .publish .mybox").on("mouseleave", ".box", function() {
+        $(this).find(".top").children('.mask').stop().slideUp();
+    });
+
+
+    //我的发布-我的喜欢  点击删除
+    $(".right-content").on("click", ".mybox .box .top .mask .del", function () {
+        var that = this;
+         var id=$(this).attr("ids");
+        layer.confirm('确定删除?', {
+            icon: 3, title: '提示', yes: function (index) {
+                ///api/Forum/DeleteForum(TT_012)删除文章
+                $.request('/api/Forum/DeleteForum', {
+                        timestamp: ts(),
+                        id:id,
+                        userToken:localStorage.getItem("ttToken")||'',
+                        sign: createSign({
+                            timestamp: ts(),
+                            userToken:localStorage.getItem("ttToken")||'',
+                            id:id,
+                        })
+                    },
+                    function (res) {
+                        layer.close(index);
+                       // $(that).parent().parent().parent().parent().fadeOut();
+                        GetForumCount();
+                        $(".mypublish .mypu-menu .item.active").click();
+                    }
+                );
+
+            },
+            cancel: function (index, layero) {
+                layer.close(index);
+            }
+        });
+    });
+
+    //我的发布-我的喜欢  点击编辑
+    $(".right-content").on("click", ".mybox .box .top .mask .edit", function () {
+        var type=$(this).attr("Type");// 0资讯  1 知识  4活动
+        var index=type==4?2:type;
+        var id=$(this).attr("ids");
+        $(".left-nav .item-menu").eq(0).click();//切换到发布内容
+        $(".right-content .fabu .pu-menu .item").eq(index).click();//根据type定位到资讯知识活动
+        GetForumDetailForEdit(id,index);
+    });
+    //api/Forum/GetForumDetailForEdit(TT_007)根据ID获取文章内容
+function GetForumDetailForEdit(id,index) {
+    $.request('/api/Forum/GetForumDetailForEdit', {
+            timestamp: ts(),
+            id:id,
+            userToken:localStorage.getItem("ttToken")||'',
+            sign: createSign({
+                timestamp: ts(),
+                id:id,
+                userToken:localStorage.getItem("ttToken")||'',
+            })
+        },
+        function (res) {
+            $(".content-display.active").find(".title").attr("ids",res.data.Id);
+            $(".content-display.active").find(".title").val(res.data.Title);
+            $(".content-display.active").find(".summary-textarea").val(res.data.Summary);
+            ++index;
+            UE.getEditor('editor'+(index)).setHeight(200);
+            UE.getEditor('editor'+(index)).setContent(res.data.Content);
+            $(".content-display.active").find(".url-input").val(res.data.PicUrl);
+        }
+    );
+}
+
+
+
+
+    //  账户密码
+    $(".myaccount .form").on("click",'.btn',function () {
+        var userName=$('.myaccount .form .userName').val();
+        var password=$('.myaccount .form .password').val();
+        var confirmPassword=$('.myaccount .form .confirmPassword').val();
+        if (!userName) {
+            layer.msg('请填写用户名');
+            return;
+        };
+        if (!password) {
+            layer.msg('请填写密码');
+            return;
+        };
+        if (!confirmPassword) {
+            layer.msg('请填写确认密码');
+            return;
+        };
+        if (password!=confirmPassword) {
+            layer.msg('两次密码不一致');
+            return;
+        }
+
+        $.request('/api/User/ModifyPassword', {
+                timestamp: ts(),
+                userName:userName,
+                  password:password,
+                 confirmPassword:confirmPassword,
+                 sign: createSign({
+                    password:password,
+                    confirmPassword:confirmPassword,
+                    timestamp: ts(),
+                    userName:userName,
+                })
+            },
+            function (res) {
+                layer.msg(res.message);
+                if(res.code==1){
+                    localStorage.removeItem('ttToken');
+                    localStorage.removeItem('ttName');
+                    $(".container .header .register").show();
+                    $(".container .header .signin").show();
+                    $(".container .header .exit").hide();
+                    $(".container .header .users").hide();
+                    setTimeout(function () {
+                        window.location.href='./userhome.html'
+                    },2000);
+                }
+
+            }
+        );
+
+    })
+
+
+    //消息管理
+    $(".right-content").on("click",'.mess .pu-menu .item',function () {
+        console.log( $(this).attr("type"));
+        $(this).addClass("active").siblings().removeClass("active");
+        if( $(this).attr("type")=='system'){//系统消息
+             $(".system-content").show();
+             $(".comment-box").hide();
+            $('.system-detail').hide();
+            $(".system-load-more").find("p").html("加载更多");
+            $(".system-load-more").attr("hasmore","1").attr("pageIndex","1");
+            loadSystemMessage(1);
+        }else{//评论管理
+            $(".comment-box").show();
+            $(".system-content").hide();
+            $('.system-detail').hide();
+        }
+    })
+    //api/Message/GetPagingList获取用户的消息(系统消息)
+    function loadSystemMessage(pageIndex){
+        $.request('/api/Message/GetPagingList', {
+                timestamp: ts(),
+                pageIndex:pageIndex||1,
+                pageSize:10,
+                sign: createSign({
+                    pageIndex:pageIndex||1,
+                    pageSize:10,
+                    timestamp: ts(),
+                })
+            },
+            function (res) {
+                if(pageIndex>res.data.pageCount){
+                    $(".system-load-more").find("p").html("没有更多了");
+                    $(".system-load-more").find(".load-more-btn").removeClass("active");
+                    $(".system-load-more").attr("hasmore","0");
+                    return;
+                }
+
+                var str='';
+                res.data.list.forEach((ele, k) => {
+                    str+='<div class="box"><span class="desc">您发布的《XXXXXX》为能审核通过</span><span class="time">2019-8-6</span></div>';
+                });
+                $(".mess .system-box").append(str);
+            }
+        );
+    }
+
+    //系统消息加载更多
+    $(".mess").on("click",'.system-load-more',function () {
+        var type=$(this).attr("type");
+        $(".system-load-more").find(".load-more-btn").addClass("active");
+        var hasMore=  $(".system-load-more").attr("hasmore");//1更多 0 没有
+        if(hasMore==0){
+            $(".system-load-more").off();
+            $(".system-load-more").find(".load-more-btn").removeClass("active");
+            return;
+        }
+        var pageIndex=$(this).attr("pageIndex");
+        pageIndex=++pageIndex;
+        $(this).attr("pageIndex",pageIndex);
+        loadSystemMessage(type,pageIndex);
+    });
+
+
+    //消息管理-系统管理 点击列表
+    $(".right-content").on("click",'.mess .system-content .system-box .box',function () {
+         $('.system-detail').show();
+         $(".system-content").hide();
+    });
+    //消息管理-系统管理 点击返回
+    $(".right-content").on("click",'.mess .system-detail .system-menu',function () {
+        $('.system-detail').hide();
+        $(".system-content").show();
+    });
+    //消息管理-评论管理  点击删除
+    $(".right-content").on("click", ".comment-box .box .del", function () {
+        var that = this;
+        layer.confirm('确定删除?', {
+            icon: 3, title: '提示', yes: function (index) {
+                layer.close(index);
+                $(that).parent().fadeOut();
+            },
+            cancel: function (index, layero) {
+                layer.close(index);
+            }
+        });
+    });
+
+
+});
+
+async  function init() {
+    await loadModule();
+    await activemouseEvents();
+}
+ loadModule = () => {
+    $("#usercenter .header").load("header.html");//加载头部导航
+    $("#usercenter .footer").load("footer.html");//加载底部导航
+}
+ activemouseEvents = () => {
+    setTimeout(function () {
+        $('#usercenter .header .nav ul li').hover(function () {
+            $(this).find('.submenu').stop().slideDown();
+        }, function () {
+            $(this).find('.submenu').stop().slideUp();
+        });
+    },100);
+}
+

@@ -1,0 +1,160 @@
+
+/*--登录注册 --*/
+
+.user-dialog{
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    /*background: rgba(0, 0, 0, 0.5);*/
+
+}
+.user-dialog .mask{
+    background-color: rgb(255,255,255);
+}
+.user-dialog .mask{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 3.5rem;
+    bottom: 0;
+    width: 5rem;
+
+}
+.user-dialog .mask .close{
+    cursor: pointer;
+    position: absolute;
+    right: 0.3rem;
+    top: 0.3rem;
+    width: 0.27rem;
+}
+.user-dialog .mask.login{
+    height: 6.1rem;
+}
+.user-dialog .mask.register{
+    height: 6.6rem;
+}
+.user-dialog .mask.findpassword{
+    height: 6.1rem;
+}
+.user-dialog .mask .title{
+    font-size: 0.28rem;
+    text-align: center;
+    margin-top: 0.72rem;
+    margin-bottom: 0.2rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 0, 0, 0 );
+}
+
+.user-dialog .mask .item{
+    margin: auto;
+    width: 3.3rem;
+    height: 0.73rem;
+    border-bottom: 1px solid rgba( 0, 0, 0,0.102 );
+}
+.user-dialog .mask .item span{
+    line-height: 0.73rem;
+    font-size: 0.16rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 119, 119, 119 );
+    padding-right: 0.1rem;
+}
+.user-dialog .mask .item .yzmleft{
+    display: inline-block;
+    width: 60%;
+    height: 0.73rem;
+    border-bottom: 1px solid rgba( 0, 0, 0,0.102 );
+
+}
+.user-dialog .mask .item .yzmright{
+    display: inline-block;
+    width: 30%;
+    height: 0.73rem;
+    float: right;
+    border-bottom: 1px solid rgba( 0, 0, 0,0.102 );
+}
+
+.user-dialog .mask .flex-box{
+    display: -webkit-flex;
+    display: flex;
+    margin: auto;
+    height: 0.73rem;
+    width: 3.3rem;
+    line-height: 0.73rem;
+}
+.user-dialog .mask .flex-box div{
+    -webkit-flex: 1;
+    flex: 1;
+    font-size: 0.16rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 0, 0, 0 );
+    text-align: center;
+}
+.user-dialog .mask .btn{
+    cursor: pointer;
+    width: 3.31rem;
+    height: 0.61rem;
+    margin: auto;
+}
+
+.user-dialog .clause{
+    font-size: 0.14rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 0, 0, 0 );
+    height: 0.4rem;
+    width: 3.3rem;
+    line-height: 0.4rem;
+    margin: auto;
+    text-align: center;
+}
+
+.user-dialog  .wechat-logon{
+    width: 3.31rem;
+    margin: auto;
+    height: 0.18rem;
+}
+.user-dialog  .wechat-logon img{
+    cursor: pointer;
+    height: 0.18rem;
+    margin: auto;
+    margin-top: 0.2rem;
+}
+
+.home-list{
+    position: relative;
+    width: 100%;
+
+}
+.home-list .top-title{
+    margin: auto;
+    width: 12rem;
+    height: 1.15rem;
+    display: -webkit-box;
+    display: flex;
+    flex-direction:row;
+    justify-content:space-between;
+}
+.home-list .top-title .box{
+    font-size: 0.18rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 0, 0, 0 );
+    line-height: 1.15rem;
+}
+.all-list-layout{
+  width: 12rem;
+    position: relative;
+    background-color: white;
+    margin: auto;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+}
+.all-list-layout .box{
+    width: 3.7rem;
+    height: 3.7rem;
+    margin-bottom: 0.42rem;
+}

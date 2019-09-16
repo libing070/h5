@@ -49,9 +49,10 @@ a{ text-decoration:none}
 }
 .banner1 .banner_txt .bd_p4 {
     line-height: 1.667;
-    font-size: 0.18rem;
+    font-size: 0.22rem;
     font-family: "SourceHanSansCN";
     color: rgb( 255, 255, 255 );
+    padding: 0 0.6rem;
 }
 
 
@@ -120,7 +121,7 @@ a{ text-decoration:none}
     margin: 0.3rem auto 0.3rem;
 }
 .banner2 .con .swiper1 .swiper-slide .p2{
-    font-size: 0.18rem;
+    font-size: 0.2rem;
     font-family: "SourceHanSansCN";
     color: rgba( 0, 0, 0, 0.6 );
 }
@@ -194,9 +195,9 @@ a{ text-decoration:none}
 }
 .banner3 .con .item .text{
     background-color: rgb( 215, 0, 15 );
-    padding: 0.5rem 0.7rem;
-    padding-bottom: 0.3rem;
-    font-size: 0.18rem;
+    padding: 0.3rem 0.7rem;
+    padding-bottom: 0.2rem;
+    font-size: 0.22rem;
     font-family: "SourceHanSansCN";
     color: rgb( 255, 255, 255 );
     line-height: 1.667;

@@ -1,0 +1,82 @@
+a{ text-decoration:none}
+.container{
+    width: 100%;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+}
+
+.content .banner1{
+     width: 100%;
+     position: relative;
+}
+.banner1 .bar{
+    position: absolute;
+    left: 0.5rem;
+    top: 1rem;
+    font-size: 0.16rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 237, 237, 237 );
+    text-transform: uppercase;
+}
+.banner2{
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid rgba( 114, 114, 114 ,0.2);
+}
+ .banner2 .p1{
+     text-align: center;
+     font-size: 0.40rem;
+     font-family: "SourceHanSansCN";
+     color: rgb( 1, 1, 1 );
+     font-weight: bold;
+     text-transform: uppercase;
+     line-height: 1.75;
+     margin: 0.65rem 0 0.4rem 0;
+ }
+.banner2 .d1{
+    margin-bottom: 0.3rem;
+    width: 100%;
+    font-size: 0.16rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 119, 119, 119 );
+    text-transform: uppercase;
+    display: -webkit-flex;
+    display: flex;
+}
+.banner2 .d1 .p{
+    -webkit-flex: 1;
+    flex: 1;
+    text-align: center;
+}
+.banner3{
+     width: 100%;
+    border-bottom: 1px solid rgba( 114, 114, 114 ,0.2);
+}
+.banner3 .t{
+    width: 6.4rem;
+    margin: auto;
+    font-size: 0.18rem;
+    font-family: "SimSun";
+    color: rgb( 0, 0, 0 );
+    text-transform: uppercase;
+    line-height: 1.778;
+    margin-bottom: 0.7rem;
+    margin-top: 0.7rem;
+}
+.banner3 .i{
+    width: 6.4rem;
+    margin: auto;
+}
+
+.banner4{
+    position: relative;
+    width: 100%;
+    height: 0.71rem;
+    margin: 0.82rem 0;
+}
+.banner4 img{
+    height: 0.71rem;
+    width: 2.21rem;
+    margin: auto;
+}

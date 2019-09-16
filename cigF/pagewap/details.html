@@ -8,12 +8,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="../css/swiper.min.css">
-    <link rel="stylesheet" href="../css/layer.css">
+    <!--<link rel="stylesheet" href="../css/layer.css">-->
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/pagewap/base_wap.css">
     <link rel="stylesheet" href="../css/swiper_reset.css">
     <link rel="stylesheet" href="../css/pagewap/details.css">
-    <title>案例详情</title>
+    <!--<script src="../js/pagewap/layer_mobile/layer.js"></script>-->
+
+    <!--&lt;!&ndash; share css & js &ndash;&gt;-->
+    <!--<link rel="stylesheet" href="../js/pagewap/share/css/share.min.css">-->
+    <!--<script src="../js/pagewap/share/js/social-share.min.js"></script>-->
+    <!--<style type="text/css">-->
+        <!--.social-share .social-share-icon{width: 50px !important;height: 50px !important;line-height: 50px !important;margin-left: 0.5rem;}-->
+        <!--.share_title{color:#c01414;text-align: center;font-size: 0.38rem;line-height: 1rem;}-->
+    <!--</style>-->
+
+    <script type="text/javascript" ckharset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&uuid=&pophcol=2&lang=zh"></script>
+    <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+    <title>CIG新意互动</title>
 </head>
 
 <body>
@@ -31,34 +43,44 @@
                 <p class="p">发布者：<span class="author"></span></p>
                 <p class="p">
                     <img style="display: inline-block;width: 0.21rem;height: 0.24rem" class="icon" src="../images/wap/level2/casedetails/share.png">
-                    <span style="padding-left: 5px;height: 0.24rem;line-height: 0.24rem;display: inline-block;vertical-align: super">分享</span></p>
+                    <span style="padding-left: 5px;height: 0.24rem;line-height: 0.24rem;display: inline-block;vertical-align: super">分享</span><div style="margin-left: 0.2rem;float: right;margin-top: -0.05rem;" class="bshare-custom" title="新意互动" url="" summary="描述信息" pic=""></div></p>
             </div>
         </div>
         <div class="banner3">
-            <p class="t"></p>
+
             <!--<p class="i">-->
                 <!--&lt;!&ndash;<img style="width: 3.08rem;display: inline-block" class="icon" src="../images/wap/level2/casedetails/1.jpg">&ndash;&gt;-->
                 <!--&lt;!&ndash;<img style="width: 3.08rem;display: inline-block" class="icon" src="../images/wap/level2/casedetails/2.jpg">&ndash;&gt;-->
             <!--</p>-->
             <p class="i video" style="display: none">
                 <img class="video-btn"  src="../images/wap/video-btn.png">
-                <video width="100%" height="100%" poster="" x5-playsinline="" playsinline="" webkit-playsinline="" class="right-img" style="object-fit:cover;" id="video" src="" preload="auto"></video>
+                <video width="100%"  height="100%" poster="" x5-playsinline="" playsinline="" webkit-playsinline="" class="right-img" style="object-fit:cover;" id="video" src="" preload="auto"></video>
             </p>
             <p class="i images" style="display: none">
                 <img  style="width: 100%" class="icon" id="images" src="">
             </p>
-
+            <p class="t"></p>
         </div>
-        <div  class="banner4">
-            <img  src="../images/wap/level2/casedetails/casedetails-close-btn.png">
-        </div>
+        <!--<div  class="banner4">-->
+            <!--<img  src="../images/wap/level2/casedetails/casedetails-close-btn.png">-->
+        <!--</div>-->
     </div>
     <div class="footer"></div>
+    <div id="share_box" style="display:none;">
+    <h1 class="share_title">分享到</h1>
+    <div class="social-share" data-initialized="true" style="text-align: center;">
+      <a href="#" class="social-share-icon icon-weibo"></a>
+      <a href="#" class="social-share-icon icon-wechat"></a>
+      <a href="#" class="social-share-icon icon-qq"></a>
+      <a href="#" class="social-share-icon icon-qzone"></a>
+    </div>
+     </div>
 </div>
+
 <script src="../js/jquery-1.11.2.min.js"></script>
 <script src="../js/jquery.cookie.js"></script>
 <script src="../js/anime.min.js"></script>
-<script src="../js/layer.js"></script>
+<!--<script src="../js/layer.js"></script>-->
 <script src="../js/rem.js"></script>
 <script src="../js/swiper.min.js"></script>
 <script src="../js/md5.js"></script>
@@ -67,7 +89,67 @@
 <script src="../js/pagewap/details.js?v=1"></script>
 <script src="../js/pagewap/base.js?v=1"></script>
 
+<script>
+    // $(function () {
+    //    setTimeout(function () {
+    //        var $config = {
+    //            url:window.location.href, // 网址，默认使用 window.location.href
+    //            source:window.location.href, // 来源（QQ空间会用到）, 默认读取head标签：<meta name="site" content="http://overtrue" />
+    //            title:'CIG新意互动', // 标题，默认读取 document.title 或者 <meta name="title" content="share.js" />
+    //            origin:'', // 分享 @ 相关 twitter 账号
+    //            description:$(".banner2").find('.p1').html(), // 描述, 默认读取head标签：<meta name="description" content="PHP弱类型的实现原理分析" />
+    //            image:'', // 图片, 默认取网页中第一个img标签
+    //            sites:['qzone', 'qq', 'weibo','wechat', 'douban'], // 启用的站点
+    //            disabled:['google', 'facebook', 'twitter'], // 禁用的站点
+    //            wechatQrcodeTitle:'微信扫一扫：分享', // 微信二维码提示文字
+    //            wechatQrcodeHelper:'<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>'
+    //        };
+    //        socialShare('.social-share', $config);
+    //    },10);
+    // })
+    //
+    //
+    //
+    // //弹出页面层
+    // function do_share(){
+    //     layer.open({
+    //         type: 1
+    //         ,content: $('#share_box').html()
+    //         ,anim: 'up'
+    //         ,style: 'position:fixed; bottom:0; left:0; width: 100%; padding:10px 0; border:none;'
+    //     });
+    // }
+    $(document).ready(function() {
+        iBShare.init();    //初始化
+    });
 
+    //bShare分享
+    var iBShare = {
+        //初始化
+        init: function() {
+            var $shareBox = $(".bshare-custom");
+            //加载分享工具
+            var tools = '';
+            tools += '<a title="分享到新浪微博" class="bshare-sinaminiblog"></a>';
+            tools += '<a title="分享到人人网" class="bshare-renren"></a>';
+            tools += '<a title="分享到QQ空间" class="bshare-qzone"></a>';
+            tools += '<a title="分享到网易微博" class="bshare-neteasemb"></a>';
+            $shareBox.append(tools);
+            //绑定分享事件
+            $shareBox.children("a").click(function() {
+                var parents = $(this).parent();
+                bShare.addEntry({
+                    title: parents.attr("title"),
+                    url: window.location.href,
+                    summary: $(".D-title").html(),
+                    // pic: window.location.host+"/cigF/images/page/logo.png",
+                    pic: window.location.host+"/web/images/page/logo.png"
+                });
+            });
+        }
+    }
+
+</script>
 </body>
 
 </html>

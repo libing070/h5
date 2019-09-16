@@ -2,10 +2,13 @@ $(function () {
 
     //wap移动端导航事件
     $(".container").on("click"," .nav .menu",function () {
+
         var that=this;
         if($(".menu-content").hasClass("close")){
             aniTranslateX(['.menu-content'], ['100%', '0', ], 200, 200);
             $(".menu-content").removeClass("close");
+           // $(".container").css("overflow-y","hidden");
+
             setTimeout(function () {
                 $(that).attr("src","../images/wap/nav-menu-close.jpg");
             },200)
@@ -13,6 +16,8 @@ $(function () {
         }else{
             aniTranslateX(['.menu-content'], ['0', '100%', ], 200, 200);
             $(".menu-content").addClass("close");
+           // $(".container").css("overflow-y","scroll");
+
             setTimeout(function () {
                 $(that).attr("src","../images/wap/nav-menu.jpg");
             },200)

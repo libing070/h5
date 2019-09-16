@@ -25,6 +25,9 @@ $(function () {
         observeParents: true, //修改swiper的父元素时，自动初始化swiper
         // mousewheel: true,
        // speed:500,
+        navigation:{
+            nextEl:'.scroll-more .arrow_icon_btn'
+        },
         on: {
             slideNextTransitionStart: function () {
 
@@ -42,6 +45,7 @@ $(function () {
             },
             slideChangeTransitionStart: function () {
                 console.log(this.activeIndex);
+                $(".scroll-more").show();
                 aniResetWap();
                 $(".outerSlide").removeClass("module_back_scale");
                 if (this.activeIndex == $('.module1').index('.outerSlide')) {
@@ -68,6 +72,7 @@ $(function () {
                             aniTranslateY(['.wap_ani_14'], ['1rem', '0', ], 4000, 1000);
                             aniTranslateY(['.wap_ani_15'], ['1rem', '0', ], 4000, 1500);
                             aniTranslateY(['.wap_ani_16'], ['1rem', '0', ], 4000, 2000);
+                            aniTranslateY(['.wap_ani_166'], ['1.5rem', '0', ], 4000, 2500);
                             $(".banner3 .banner_top .txt_margin").css("margin-bottom","10%");
                             $(".swiper-button").css("left","6%").css("top","40%");
                             break;
@@ -80,32 +85,45 @@ $(function () {
                     aniTranslateY(['.wap_ani_18'], ['1rem', '0', ], 1000, 1000);
                     aniTranslateY(['.wap_ani_19'], ['-1rem', '0', ], 1000, 1000);
                     aniRound(['.wap_aniR_1'], ['00', 17], 1, 3000);
-                    aniRound(['.wap_aniR_2'], ['000', 900], 1, 3000);
-                    aniRound(['.wap_aniR_3'], ['00', 40], 1, 3000);
-                    aniRound(['.wap_aniR_4'], ['000', 600], 1, 3000);
+                    aniRound(['.wap_aniR_2'], ['000', 100], 1, 3000);
+                    aniRound(['.wap_aniR_3'], ['0', 3], 1, 3000);
+                    aniRound(['.wap_aniR_4'], ['000', 500], 1, 3000);
                 }
                 if(this.activeIndex == $('.module3').index('.outerSlide')){
-                    var index = $('.productSwiper .swiper-slide-active').attr('data-swiper-slide-index');
-                    $(".swiper-button").css("left","10%").css("top","84%");
-                    switch(index) {
-                        case '0':
-                            aniTranslateY(['.wap_ani_21'], ['1rem', '0', ], 4000, 500);
+                    $('.module3_1').css('transition','all 1s').css("height",'33%').find("a").css("opacity",1);
+                    $('.module3_2').css('transition','all 1s').css("height",'33%').find("a").css("opacity",1);
+                    $('.module3_3').css('transition','all 1s').css("height",'33%').find("a").css("opacity",1);
+                    $('.module3_1,.module3_2,.module3_3').find(".con").css('transition','all 1s').hide();
+                           aniTranslateY(['.wap_ani_21'], ['1rem', '0', ], 4000, 500);
                             aniTranslateY(['.wap_ani_22'], ['1rem', '0', ], 4000, 1000);
-                            aniTranslateY(['.wap_ani_23'], ['1rem', '0', ], 4000, 1500);
-                            break;
-                        case '1':
-                            aniTranslateY(['.wap_ani_24'], ['1rem', '0', ], 4000, 500);
-                            aniTranslateY(['.wap_ani_25'], ['1rem', '0', ], 4000, 1000);
-                            aniTranslateY(['.wap_ani_26'], ['1rem', '0', ], 4000, 1500);
-                            break;
-                        case '2':
+                            // aniTranslateY(['.wap_ani_23'], ['1rem', '0', ], 4000, 1500);
                             aniTranslateY(['.wap_ani_27'], ['1rem', '0', ], 4000, 500);
                             aniTranslateY(['.wap_ani_28'], ['1rem', '0', ], 4000, 1000);
-                            aniTranslateY(['.wap_ani_29'], ['1rem', '0', ], 4000, 1500);
-                            break;
-                        default:
-
-                    }
+                            // aniTranslateY(['.wap_ani_29'], ['1rem', '0', ], 4000, 1500);
+                            aniTranslateY(['.wap_ani_24'], ['1rem', '0', ], 4000, 500);
+                            aniTranslateY(['.wap_ani_25'], ['1rem', '0', ], 4000, 1000);
+                            // aniTranslateY(['.wap_ani_26'], ['1rem', '0', ], 4000, 1500);
+                    // var index = $('.productSwiper .swiper-slide-active').attr('data-swiper-slide-index');
+                    // $(".swiper-button").css("left","10%").css("top","84%");
+                    // switch(index) {
+                    //     case '0':
+                    //         aniTranslateY(['.wap_ani_21'], ['1rem', '0', ], 4000, 500);
+                    //         aniTranslateY(['.wap_ani_22'], ['1rem', '0', ], 4000, 1000);
+                    //         aniTranslateY(['.wap_ani_23'], ['1rem', '0', ], 4000, 1500);
+                    //         break;
+                    //     case '1':
+                    //         aniTranslateY(['.wap_ani_24'], ['1rem', '0', ], 4000, 500);
+                    //         aniTranslateY(['.wap_ani_25'], ['1rem', '0', ], 4000, 1000);
+                    //         aniTranslateY(['.wap_ani_26'], ['1rem', '0', ], 4000, 1500);
+                    //         break;
+                    //     case '2':
+                    //         aniTranslateY(['.wap_ani_27'], ['1rem', '0', ], 4000, 500);
+                    //         aniTranslateY(['.wap_ani_28'], ['1rem', '0', ], 4000, 1000);
+                    //         aniTranslateY(['.wap_ani_29'], ['1rem', '0', ], 4000, 1500);
+                    //         break;
+                    //     default:
+                    //
+                    // }
                 }
                 if(this.activeIndex == $('.module4').index('.outerSlide')){
                     $(".caseSwiper .server-user,.caseSwiper .name").css('opacity', '0');
@@ -166,6 +184,7 @@ $(function () {
                     aniTranslateY(['.wap_ani_51'], ['1rem', '0', ], 1000, 400);
                 }
                 if(this.activeIndex == $('.module9').index('.outerSlide')){
+                    $(".scroll-more").hide();
                     $(".wap_ani_52,.wap_ani_53m,.wap_ani_54").css('opacity', '0');
                     aniTranslateY(['.wap_ani_52'], ['1rem', '0', ], 1000, 200);
                     aniTranslateY(['.wap_ani_53'], ['1rem', '0', ], 1000, 200);
@@ -208,6 +227,7 @@ $(function () {
                     aniTranslateY(['.wap_ani_14'], ['1rem', '0', ], 4000, 1000);
                     aniTranslateY(['.wap_ani_15'], ['1rem', '0', ], 4000, 1500);
                     aniTranslateY(['.wap_ani_16'], ['1rem', '0', ], 4000, 2000);
+                    aniTranslateY(['.wap_ani_166'], ['1.5rem', '0', ], 4000, 2500);
                     $(".banner3 .banner_top .txt_margin").css("margin-bottom","10%");
                     $(".swiper-button").css("left","6%").css("top","40%");
                 }
@@ -265,7 +285,38 @@ $(function () {
     });
 
 
+$(".module3").on("click",'.item',function () {
+    var index=$(this).index();
 
+       if(index==0){
+           $(this).css('transition','all 1s').css("height",'53%');
+           $('.module3_2').css('transition','all 1s').css("height",'23%').find("a").css("opacity",0);
+           $('.module3_3').css('transition','all 1s').css("height",'23%').find("a").css("opacity",0);
+       }
+      if(index==1){
+        $(this).css('transition','all 1s').css("height",'53%');
+        $('.module3_1').css('transition','all 1s').css("height",'23%').find("a").css("opacity",0);
+        $('.module3_3').css('transition','all 1s').css("height",'23%').find("a").css("opacity",0);
+      }
+      if(index==2){
+        $(this).css('transition','all 1s').css("height",'53%');
+        $('.module3_1').css('transition','all 1s').css("height",'23%').find("a").css("opacity",0);
+        $('.module3_2').css('transition','all 1s').css("height",'23%').find("a").css("opacity",0);
+      }
+    if($(this).hasClass("active")){
+        $(this).removeClass("active").siblings().removeClass("active");
+        $('.module3_1').css('transition','all 1s').css("height",'33%').find("a").css("opacity",1);
+        $('.module3_2').css('transition','all 1s').css("height",'33%').find("a").css("opacity",1);
+        $('.module3_3').css('transition','all 1s').css("height",'33%').find("a").css("opacity",1);
+        $(this).find(".con").css('transition','all 1s').css("opacity",0).hide();
+        return;
+    }else{
+        $(this).addClass("active").siblings().removeClass("active").find("a").css("opacity",0);
+        $(this).find("a").css("opacity",1);
+        $(this).find(".con").css('transition','all 1s').show().css("opacity",1);
+        $(this).siblings().find(".con").css('transition','all 1s').hide().css("opacity",0);
+    }
+})
 
     var oaSwiper = new Swiper('.oa-swiper', {
         observer: true, //修改swiper自己或子元素时，自动初始化swiper

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./../css/base.css">
     <link rel="stylesheet" href="./../css/base_pc.css">
     <link rel="stylesheet" href="./../css/page/case.css">
-    <title>cig</title>
+    <title>CIG新意互动</title>
 </head>
 
 <body>
@@ -30,7 +30,7 @@
                         <a href="javascript:;" type="20">新意动态</a>
                     </li>
                     <li>
-                        <a href="javascript:;" type="21">新意荣耀</a>
+                        <a href="javascript:;" type="21">新意荣誉</a>
                     </li>
                     <li>
                         <a href="javascript:;" type="22">新意观点</a>
@@ -51,9 +51,9 @@
                     </li> -->
                 </ul>
             </div>
-            <div class="case_loodMore" isLoad="1" pageIndex="2">
-                <img src="./../images/page/loadMoreIcon.png" alt="">
-                <p>加载更多</p>
+            <div class="case_loodMore" hasmore="1" pageIndex="1">
+                <img style="cursor: pointer" src="./../images/page/loadMoreIcon.png" alt="">
+                <p style="width: 2rem;cursor: pointer;margin: auto">加载更多</p>
             </div>
         </div>
     </div>
@@ -73,18 +73,20 @@
     <ul>
         <% for(var i=0; i< list.length; i++){%>
         <li>
-            <div class="news_imgBox">
-                <%if(list[i].multimediaType==1){%>
-                <img src="<%=list[i].picUrl %>" alt="">
-                <%}else{%>
-                    <video src="<%=list[i].picUrl %>"></video>
-                <%}%>
-                <div class="teamActive">
-                    <div></div>
-                </div>
-            </div>
-            <p class="news_p1"><%=list[i].title%></p>
-            <p class="news_p2"><%=list[i].summary%></p>
+            <a href="./detail.html?newsId=<%=list[i].id%>">
+                    <div class="news_imgBox">
+                            <%if(list[i].multimediaType==1){%>
+                            <img src="<%=list[i].picUrl %>" alt="">
+                            <%}else{%>
+                                <video src="<%=list[i].picUrl %>"></video>
+                            <%}%>
+                            <div class="teamActive">
+                                <div></div>
+                            </div>
+                        </div>
+                        <p class="news_p1"><%=list[i].title%></p>
+                        <p class="news_p2"><%=list[i].summary%></p>
+            </a>
         </li>
         <%}%>
     </ul>
@@ -97,15 +99,16 @@
             if (urlParame) {
                 for (let i = 1; i <= $('.case_nav ul li').length; i++) {
                     if (i == urlParame) {
-                        var ele = $('.case_nav ul li')[i];
-                        $(ele).prev().find('a').addClass('act');
-                        var type = $(ele).prev().find('a').attr('type');
+                        var ele = $('.case_nav ul li')[(i - 1)];
+                        $(ele).find('a').addClass('act');
+                        var type = $(ele).find('a').attr('type');
+                        console.log(ele, i)
                         loadData(1, type);
                     }
                 }
             } else {
                 $($('.case_nav ul li a')[0]).addClass('act');
-                loadData(1, 1);
+                loadData(1, 20);
             }
 
             var caseSwiper = new Swiper('.caseSwiper,swiper-container', {
@@ -117,19 +120,19 @@
                 $('.case_nav ul li a').removeClass('act');
                 $(this).find('a').addClass('act');
                 var type = $(this).find('a').attr('type');
+                $(".case_loodMore").attr("pageIndex",'1').attr("hasmore","1");
+                $('.case_loodMore').find('p').html("加载更多");
                 loadData(1, type);
             });
             ///api/News/GetRecommendNews(Portal_005)获取新闻推荐
             $('.case_loodMore').on('click', function () {
-                if ($(this).attr('isLoad') == '1') {
+                if( $('.case_loodMore').attr("hasmore")==1){
                     $(this).find('img').addClass('loadRotate');
-                    $(this).attr('isLoad', '2');
                     var index = $(this).attr('pageIndex');
-                    var type = $('.case_nav .act').index('.case_nav li a')
-                    loadData($(this).attr('pageIndex'), ++type);
+                    var type = $('.case_nav .act').attr('type');
                     index++;
                     $(this).attr('pageIndex', index);
-                } else {
+                    loadData($(this).attr('pageIndex'), type);
                 }
             });
             function loadData(pageIndex, type) {
@@ -146,16 +149,26 @@
                     })
                 },
                     function (res) {
-                        console.log(res);
+                        if(res.data.newsList.length==0){
+                            $('.case_loodMore').attr("hasmore","0");
+                            $('.case_loodMore').find('img').removeClass('loadRotate');
+                            $('.case_loodMore').find('p').html("没有更多了");
+                            return;
+                        }
                         var data = {
-                            'list': res.data
+                            'list': res.data.newsList
                         };
                         // var data = res.data
                         var bt = baidu.template;
                         var html = bt('navTemplate', data);
-                        $('.news_cont').append(html);
+                        console.log(html)
+                        if ( $('.case_loodMore').attr("pageIndex")!=1) {
+                            $('.news_cont').append(html);
+                        } else {
+                            $('.news_cont').html(html);
+                        }
+
                         $('.case_loodMore').find('img').removeClass('loadRotate');
-                        $('.case_loodMore').attr('isLoad', '1');
                     }
                 );
             }

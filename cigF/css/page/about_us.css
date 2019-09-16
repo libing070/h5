@@ -71,10 +71,10 @@ span {
 }
 
 .banner_bottom {
-    width: 63.5%;
+    width: 75.5%;
     /* height: 50%; */
     position: relative;
-    margin: 1rem auto 0;
+    margin: 1.5rem auto 0;
     color: #fff;
     overflow: hidden;
 }
@@ -102,7 +102,7 @@ span {
 }
 
 .about_num p {
-    font-size: 0.9rem;
+    font-size: 2rem;
     font-family: 'GiveAHoot';
 }
 
@@ -111,7 +111,7 @@ span {
     color: #e90010;
     vertical-align: top;
     text-align: left;
-    margin-top: 0.18rem;
+    margin-top: 0.3rem;
 }
 
 .about_numDesc p:nth-child(1) {
@@ -376,6 +376,7 @@ span {
 
 .echart_date {
     font-size: 0.28rem;
+    font-family: 'GiveAHoot';
 }
 
 .echart_txt {
@@ -385,8 +386,9 @@ span {
 .echart_txt p:nth-child(1){
     font-family: 'SourceHanSansCN-ExtraLight';
 }
-.echart_txt p:nth-child(2){
-    font-family: 'SourceHanSansCN-Light';
+.echart_txt p:nth-child(2),
+.echart_txt p:nth-child(3){
+    font-family: 'SourceHanSansCN-Bold';
 }
 .developBtn {
     width: 100%;
@@ -477,6 +479,7 @@ span {
     display: inline-block;
     vertical-align: top;
     text-align: left;
+    font-family: 'SourceHanSansCN-Light';
 }
 
 .honor_lie li .honor_px:last-child {
@@ -535,7 +538,7 @@ span {
 }
 
 .honorSwiper {
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .honor_pagination {
@@ -552,6 +555,38 @@ span {
 .swiper-pagination-bullet-active {
     background: #e90010 !important;
 }
+
+.honorSwiperBtn {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 3.9rem;
+}
+
+.honorSwiper_next {
+    outline: none;
+    width: 0.5rem;
+    height: 0.5rem;
+    background: url('./../../images/turn_right_def.png') no-repeat center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 85%;
+    transform: translateX(-50%);
+}
+
+.honorSwiper_prev {
+    outline: none;
+    width: 0.5rem;
+    height: 0.5rem;
+    background: url('./../../images/turn_left_def.png') no-repeat center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 15%;
+    transform: translateX(-50%);
+}
+
 
 /* 服务客户 */
 
@@ -600,6 +635,38 @@ span {
     opacity: 1 !important;
     background: #d7000f !important;
 }
+
+.previousSwiperBtn {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 4.6rem;
+}
+
+.previousSwiper_next {
+    outline: none;
+    width: 0.5rem;
+    height: 0.5rem;
+    background: url('./../../images/turn_right_black.png') no-repeat center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 85%;
+    transform: translateX(-50%);
+}
+
+.previousSwiper_prev {
+    outline: none;
+    width: 0.5rem;
+    height: 0.5rem;
+    background: url('./../../images/turn_left_black.png') no-repeat center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 15%;
+    transform: translateX(-50%);
+}
+
 
 /* team */
 
@@ -723,6 +790,7 @@ span {
 .swiper-button-prev, .swiper-button-next {
     outline: none;
 }
+
 
 .teamBox .team_prev {
     position: absolute;

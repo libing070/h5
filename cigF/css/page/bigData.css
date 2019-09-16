@@ -47,7 +47,7 @@ span {
 }
 
 .bd_p3 {
-    font-size: 0.16rem;
+    font-size: 0.18rem;
     white-space: nowrap;
     margin-bottom: 0.1rem;
     font-family: 'SourceHanSansCN-Light';
@@ -76,9 +76,9 @@ span {
 }
 
 .service_pro ul li {
-    width: 17%;
+    width: 18%;
     float: left;
-    margin-right: 3.75%;
+    margin-right: 2%;
 }
 
 .service_pro ul li:hover .ss_icon {
@@ -133,7 +133,7 @@ span {
 }
 
 .ss_p2 {
-    font-size: 0.14rem;
+    font-size: 0.17rem;
     color: #8d8d8d;
     font-family: 'SourceHanSansCN-Light';
     margin-bottom: 0.15rem !important;
@@ -189,11 +189,11 @@ span {
     left: 0;
     width: 100%;
     background: #d7000f;
-    padding: 0.3rem;
+    padding: 0.2rem 0.3rem;
 }
 
 .plat_desc p {
-    font-size: 0.16rem;
+    font-size: 0.18rem;
     line-height: 0.25rem;
     color: #fff;
     font-family: 'SourceHanSansCN-Light';
@@ -245,12 +245,14 @@ span {
     margin-top: 0.8rem;
     font-family: 'SourceHanSansCN-Bold';
 }
-.subP{
-    font-size: 0.16rem !important;
+
+.subP {
+    font-size: 0.18rem !important;
     font-family: 'SourceHanSansCN-Light' !important;
     color: #878787 !important;
     margin-top: 0.5rem !important;
 }
+
 .bd1 .gategory {
     background: #fff;
     position: relative;
@@ -283,7 +285,7 @@ span {
 
 .bd1 .slideTxt {
     text-align: center;
-    font-size: 0.14rem;
+    font-size: 0.18rem;
     color: #8d8d8d;
     position: relative;
     top: -0.7rem;
@@ -292,7 +294,8 @@ span {
 .bd1 .slideTxt p {
     margin-bottom: 0.05rem;
     font-family: 'SourceHanSansCN-Light';
-    font-size: 0.14rem;
+    font-size: 0.18rem;
+    padding: 0 0.2rem;
 }
 
 .bd1 .slide_cont img {
@@ -307,7 +310,7 @@ span {
 .bd1 .slide_title {
     font-size: 0.2rem !important;
     color: #000;
-    font-family: 'SourceHanSansCN-Bold';
+    font-family: 'SourceHanSansCN-Bold' !important;
 }
 
 .bd1 .slide_line {
@@ -326,13 +329,13 @@ span {
 
 .bd1 .bd1-swiper-button .gategory_prev {
     background: url('./../../images/turn_left_black.png') no-repeat center !important;
-    background-size: cover !important;
+    background-size: 100% !important;
     left: 45% !important;
 }
 
 .bd1 .bd1-swiper-button .gategory_next {
     background: url('./../../images/turn_right_black.png') no-repeat center !important;
-    background-size: cover !important;
+    background-size: 100% !important;
     right: 45% !important;
 }
 
@@ -382,7 +385,7 @@ span {
 }
 
 .bd1 .subSwiper_txt p {
-    font-size: 0.16rem;
+    font-size: 0.18rem;
     line-height: 0.25rem;
     color: #fff;
     font-family: 'SourceHanSansCN-Normal';
@@ -402,4 +405,52 @@ span {
 
 .bd1_sub .bd1-swiper-button {
     margin-top: 0.6rem;
+}
+
+.scheme_box {
+    position: relative;
+}
+
+.scheme_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* padding: 30% 0 0; */
+    display: flex;
+    align-items: center
+}
+
+.pBox {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.scheme_bg p {
+    color: #fff;
+    font-family: 'SourceHanSansCN-Light';
+    font-size: 0.18rem;
+    text-align: center;
+    /* display: table-cell;
+    vertical-align: middle; */
+}
+
+.scheme_p1 {
+    font-size: 0.26rem !important;
+    margin-bottom: 0.3rem;
+}
+
+.scheme_p2 {
+    display: none;
+}
+
+.scheme_bg:hover {
+    background: #d7000f;
+}
+.scheme_bg:hover .scheme_p2{
+    display: block;
 }

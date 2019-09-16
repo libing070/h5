@@ -49,7 +49,7 @@ a{ text-decoration:none}
 }
 .banner1 .banner_txt .bd_p4 {
     line-height: 1.667;
-    font-size: 0.18rem;
+    font-size: 0.22rem;
     font-family: "SourceHanSansCN";
     color: rgb( 255, 255, 255 );
 }
@@ -91,7 +91,7 @@ a{ text-decoration:none}
     position: absolute;
     text-align: center;
     left: 0;
-    top: 1.48rem;
+    top: 1.28rem;
     right: 0;
     margin: auto;
 }
@@ -103,7 +103,7 @@ a{ text-decoration:none}
     display: block;
 }
 .banner2 .item .after .pp1 span:nth-child(2){
-    font-size: 0.18rem;
+    font-size: 0.22rem;
     font-family: "SimSun";
     color: rgb( 255, 255, 255 );
     line-height: 1.667;
@@ -178,7 +178,7 @@ a{ text-decoration:none}
     margin-bottom: 0.45rem;
 }
 .content .banner3 .text .t5{
-    font-size: 0.18rem;
+    font-size: 0.22rem;
     font-family: "SourceHanSansCN";
     color: rgba( 0, 0, 0, 0.6 );
     line-height: 1.667;

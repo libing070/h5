@@ -2,6 +2,8 @@ $(function () {
     var swiper = new Swiper('.banner4-swpier1', {
         slidesPerView: 3,
         spaceBetween: 10,
+        slidesPerGroup: 3,
+        loopFillGroupWithBlank: true,
         pagination: {
             el: '.swpier1-swiper-pagination',
             clickable: true,
@@ -9,6 +11,8 @@ $(function () {
     });
 
     var swiper1 = new Swiper('.banner5-swpier1', {
+        slidesPerGroup: 3,
+        loopFillGroupWithBlank: true,
         slidesPerView: 3,
         spaceBetween: 0,
         pagination: {
@@ -32,8 +36,13 @@ $(function () {
         slidesPerView: 'auto',
         spaceBetween: 30,
         on: {
-            slideChangeTransitionStart: function () {
-
+            slideNextTransitionStart: function () {
+                $('.team_prev').css("cssText", "background:url(../images/turn_left_black.png) no-repeat center !important;background-size:cover !important;");
+                $('.team_next').css("cssText", "background:url(../images/turn_right_act.png) no-repeat center !important;background-size:cover !important;");
+            },
+            slidePrevTransitionStart: function () {
+                $('.team_prev').css("cssText", "background:url(../images/turn_left_act.png) no-repeat center !important;background-size:cover !important;");
+                $('.team_next').css("cssText", "background:url(../images/turn_right_black.png) no-repeat center !important;background-size:cover !important;");
             }
         }
     });
@@ -45,10 +54,16 @@ $(function () {
         }
         $('.developSwiper .active').next().addClass('active');
         var activeIndex = $('.developSwiper .active').index();//当前li的下标
+        if(activeIndex>=8){
+            $('.developBtn').attr('clickType', '1');
+            $('.developSwiper .active').next().removeClass('active');
+            return
+        }
+        console.log(activeIndex);
         $('.developSwiper .item').eq(activeIndex).removeClass('active');
         var activeLiWidth = $('.developSwiper .item').eq(activeIndex).width();//当前li的宽度
         var initTranslate = $('.developSwiper').css("transform").split(',')[4];
-        aniTranslateX(['.developSwiper'], [initTranslate, (initTranslate - activeLiWidth) + 'px'], 1000, 0);
+        aniTranslateX(['.developSwiper'], [initTranslate, (initTranslate - activeLiWidth) -(activeIndex==7?0:10)+ 'px'], 1000, 0);
         console.log(initTranslate, activeLiWidth)
     });
     $('.develop_prev').on('click', function () {
@@ -59,11 +74,16 @@ $(function () {
         }
         $('.developSwiper .active').prev().addClass('active');
         var activeIndex = $('.developSwiper .active').index();
+        if(activeIndex<=0){
+            $('.developBtn').attr('clickType', '1');
+          $('.developSwiper .active').prev().removeClass('active');
+            return
+        }
         var activeLiWidth = $('.developSwiper .item').eq(activeIndex).width();//上一个li的宽度
         $('.developSwiper .item').eq(++activeIndex).removeClass('active');
 
         var initTranslate = $('.developSwiper').css("transform").split(',')[4];
-        aniTranslateX(['.developSwiper'], [parseInt(initTranslate), (parseInt(initTranslate) + activeLiWidth) + 'px'], 1000, 0);
+        aniTranslateX(['.developSwiper'], [parseInt(initTranslate), (parseInt(initTranslate) + activeLiWidth)+10 + 'px'], 1000, 0);
         console.log(activeIndex, parseInt(initTranslate), activeLiWidth)
     });
 
@@ -79,19 +99,19 @@ function aniTranslateX(className, unit, duration, delay, loop) {
             // console.log(anim)
             var activeIndex = $('.developSwiper .active').index();
             console.log(activeIndex);
-          //  setTimeout(() => {
-                if (activeIndex == 11) {
-                    $('.developSwiper .item').removeClass('active');
-                    $('.developSwiper .item').eq(3).addClass('active');
-                    $('.developSwiper').css("transform", "translateX(-1rem)");
-                }
-                if (activeIndex == 3) {
-                    $('.developSwiper .item').removeClass('active');
-                    $('.developSwiper .item').eq(11).addClass('active');
-                    $('.developSwiper').css("transform", "translateX(34rem)");
-                }
+            setTimeout(() => {
+          //       if (activeIndex == 11) {
+          //           $('.developSwiper .item').removeClass('active');
+          //           $('.developSwiper .item').eq(3).addClass('active');
+          //           $('.developSwiper').css("transform", "translateX(-1rem)");
+          //       }
+          //       if (activeIndex == 3) {
+          //           $('.developSwiper .item').removeClass('active');
+          //           $('.developSwiper .item').eq(11).addClass('active');
+          //           $('.developSwiper').css("transform", "translateX(34rem)");
+          //       }
                 $('.developBtn').attr('clickType', '1');
-           // }, 100);
+            }, 100);
         }
     });
 }

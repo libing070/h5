@@ -32,6 +32,26 @@
     width: 0.61rem;
     /*animation: navmenu 1s linear infinite;*/
 }
+.scroll-more{
+    position: absolute;
+    bottom: 0.2rem;
+    margin: auto;
+    z-index: 1;
+    left: 0;
+    text-align: center;
+    right: 0;
+}
+.scroll-more img{
+    display: inline-block;
+    height: 0.5rem;
+}
+.scroll-more span{
+    display: inline-block;
+    height: 100%;
+    font-size: 0.2rem;
+    color: white;
+}
+
 
 @keyframes navmenu {
     0% {
@@ -73,18 +93,18 @@ font-size: 0.32rem;
     font-family: "SourceHanSansCN";
     color: rgb( 255, 255, 255 );
     text-align: left;
-    margin: 0.3rem 0;
+    margin: 0.15rem 0;
 
 }
 .menu-content .content .item .list{
-    font-size: 0.18rem;
+    font-size: 0.22rem;
     font-family: "SourceHanSansCN";
     color: rgba( 255, 255, 255, 0.6 );
     margin: 0.3rem 0;
 }
 .menu-content .content .item .list span{
     display: inline-block;
-    padding-right: 0.3rem;
+    padding-right: 0.2rem;
 
 }
 
@@ -268,13 +288,17 @@ font-size: 0.32rem;
     background: url('./../images/wap/banner2-bottom-bg.jpg') no-repeat center;
 }
 
-.banner3 .banner-bottom .img{
-    display: block;
-    width: 90%;
-    margin: 0.6rem auto;
+.banner3 .banner-bottom .box{
+ height: 1.4rem;
 
 }
+.banner3 .banner-bottom .box img{
+   display: inline-block;
+    height: 1.2rem;
+    width: auto;
+    padding: 0.1rem;
 
+}
 .swiper-button {
     position: absolute;
     left: 10%;
@@ -317,7 +341,7 @@ font-size: 0.32rem;
     float: left;
     width: 45%;
     text-align: left;
-    padding: 15% 5% 0 0;
+    padding: 10% 5% 0 0;
 }
 
 .about .about_title p:nth-child(1) {
@@ -337,11 +361,11 @@ font-size: 0.32rem;
     float: left;
     width: 55%;
     text-align: left;
-    padding: 38% 0 0 0;
+    padding: 30% 0 0 0;
 }
 
 .about .about_desc p {
-    font-size: 0.18rem;
+    font-size: 0.21rem;
     font-family: "SourceHanSansCN";
     color: rgb( 255, 255, 255 );
     text-transform: uppercase;
@@ -363,7 +387,7 @@ font-size: 0.32rem;
     overflow: hidden;
 }
 .about .about_bottom .item{
-    height: 50%;
+    height: 45%;
     width: 100%;
     display: -webkit-flex;
     display: flex;
@@ -381,13 +405,30 @@ font-size: 0.32rem;
 }
 .about .about_bottom .item .desc{
     vertical-align: top;
-    margin-top: -0.6rem;
+    margin-top: -0.4rem;
     margin-left: -0.4rem;
-    font-size: 0.18rem;
+    font-size: 0.21rem;
     font-family: "SourceHanSansCN";
     color: rgb( 233, 0, 16 );
 }
-
+.module3_1{
+    width: 100%;
+    height: 33%;
+    background: url('./../images/products_big1.png') no-repeat;
+    background-size: cover;
+}
+.module3_2{
+    width: 100%;
+    height: 33%;
+    background: url('./../images/products_big2.png') no-repeat;
+    background-size: cover;
+}
+.module3_3{
+    width: 100%;
+    height: 33%;
+    background: url('./../images/products_big3.png') no-repeat;
+    background-size: cover;
+}
 
 /* 第三屏*/
 
@@ -395,24 +436,24 @@ font-size: 0.32rem;
     position: relative;
 }
 
-.product1 {
-    width: 100%;
-    height: 100%;
-    background: url('./../images/wap/product_shuzizhenghe_01.jpg') no-repeat center;
-    background-size: cover;
-}
-.product2 {
-    width: 100%;
-    height: 100%;
-    background: url('./../images/wap/product_bigdata_02.jpg') no-repeat center;
-    background-size: cover;
-}
-.product3 {
-    width: 100%;
-    height: 100%;
-    background: url('./../images/wap/product_shuziyingxiang_03.jpg') no-repeat center;
-    background-size: cover;
-}
+/*.product1 {*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*background: url('./../images/products_act0.jpg') no-repeat center;*/
+    /*background-size: cover;*/
+/*}*/
+/*.product2 {*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*background: url('./../images/products_act1.jpg') no-repeat center;*/
+    /*background-size: cover;*/
+/*}*/
+/*.product3 {*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*background: url('./../images/products_act2.jpg') no-repeat center;*/
+    /*background-size: cover;*/
+/*}*/
 .product p{
     padding-left: 0.5rem;
     padding-right: 0.5rem;
@@ -421,11 +462,11 @@ font-size: 0.32rem;
     font-size: 0.33rem;
     font-family: "BaskOldFace";
     color: rgb( 255, 255, 255 );
-    padding-top: 2rem;
+    padding-top: 1rem;
 }
 
 .product p:nth-child(2){
-    padding-top: 0.6rem;
+    padding-top: 0.3rem;
     font-size: 0.40rem;
     font-family: "SourceHanSansCN";
     color: rgb( 255, 255, 255 );
@@ -434,7 +475,7 @@ font-size: 0.32rem;
 
 .product p:nth-child(3){
     padding-top: 0.3rem;
-    font-size: 0.2rem;
+    font-size: 0.21rem;
     font-family: "SourceHanSansCN";
     color: rgb( 255, 255, 255 );
     line-height: 1.833;
@@ -442,7 +483,7 @@ font-size: 0.32rem;
 .product a{
     padding-left: 0.5rem;
     display: block;
-    padding-top: 1.05rem;
+    padding-top: 0.3rem;
     width: 20%;
 }
 .product a img{
@@ -635,7 +676,7 @@ font-size: 0.32rem;
     width: 5.85rem !important;
     margin: auto;
     padding-top: 0.3rem;
-    font-size: 0.18rem;
+    font-size: 0.2rem;
     font-family: "SourceHanSansCN";
     color: rgb( 255, 255, 255 );
 }
@@ -651,7 +692,7 @@ font-size: 0.32rem;
 
 .module6 .top{
     position: absolute;
-    top: 0.9rem;
+    top: 0.2rem;
     left: 0;
     right: 0;
     width: 6.45rem;
@@ -753,11 +794,11 @@ font-size: 0.32rem;
 .module6 .bottom{
     position: absolute;
     color: rgb( 255, 255, 255 );
-    top: 6.3rem;
+    top: 5.3rem;
     left: 0;
     right: 0;
     width: 6.45rem;
-    height: 3.5rem;
+    height: 5rem;
     margin: auto;
 }
 
@@ -777,7 +818,7 @@ font-size: 0.32rem;
     font-family: "SourceHanSansCN";
     color: rgb( 255, 255, 255 );
     text-transform: uppercase;
-    line-height: 0.2rem;
+    line-height: 2;
 }
 .module6 .bottom .address p:nth-child(3){
     font-size: 0.18rem;
@@ -795,7 +836,7 @@ font-size: 0.32rem;
 .module6 .bottom .address2{
     position: absolute;
     left: 0;
-    bottom: 0;
+    top: 2rem;
 }
 
 .module6 .bottom .address3{
@@ -807,8 +848,15 @@ font-size: 0.32rem;
 .module6 .bottom .address4{
     position: absolute;
     right: 0;
-    bottom: 0;
+    top: 2rem;
 }
+.module6 .bottom .address5{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin-bottom: -0.5rem;
+}
+
 
 .module6 .dialog {
     z-index: 999;
@@ -1036,6 +1084,7 @@ font-size: 0.32rem;
 .module8 .thinktank-swiper .swiper-slide .image{
     display: block;
     width:100%;
+    max-height: 3.5rem;
 }
 .module8 .thinktank-swiper .swiper-slide p{
     width: 100%;
@@ -1297,23 +1346,23 @@ font-size: 0.32rem;
 }
 .module9 .login-after .top{
     margin-left: 0.62rem;
-    margin-top: 0.3rem;
-    margin-bottom: 0.5rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
 }
 .module9 .login-after .top .btn{
     width: 1.81rem;
     height: 0.61rem;
 }
 .module9 .login-after .top .p1 {
-    margin-top:0.45rem;
+    margin-top:0rem;
     font-family: "SourceHanSansCN";
     color: rgb( 255, 255, 255 );
-    font-size: 0.4rem;
+    font-size: 0.3rem;
     line-height: 1.55;
 }
 
 .module9 .login-after .top .p2 {
-    font-size: 0.4rem;
+    font-size: 0.3rem;
     font-family: "SourceHanSansCN";
     color: rgb( 255, 255, 255 );
     line-height: 1.55;
@@ -1328,12 +1377,12 @@ font-size: 0.32rem;
 }
 .module9 .login-after .oa-swiper .oa-swiper-slide {
     width:80%;
-    height: 100%;
+    height: 96%;
 }
 .module9 .login-after .oa-swiper .oa-menu .item{
     width: 32%;
     display: inline-block;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.1rem;
 }
 .oa_circle{
     width: 0.12rem;
@@ -1385,7 +1434,7 @@ font-size: 0.32rem;
 }
 
 .module9 .login-after .oa-swiper .oa-download .download-list{
-    height: 2.2rem;
+    height: 2rem;
     width: 4.55rem;
     position: absolute;
     margin: auto;

@@ -116,7 +116,10 @@
 .banner4-arrow-icon .arrow_icon_btn {
     width: 100%;
 }
-
+.index-banner3 .bottom,
+.index-banner4 .bottom{
+    margin-bottom: 0.1rem !important;
+}
 .index-banner5 {
     width: 100%;
     position: relative;

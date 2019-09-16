@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./../css/base.css">
     <link rel="stylesheet" href="./../css/base_pc.css">
     <link rel="stylesheet" href="./../css/page/case.css">
-    <title>cig</title>
+    <title>CIG新意互动</title>
 </head>
 
 <body>
@@ -55,9 +55,9 @@
             <div class="caseList">
 
             </div>
-            <div class="case_loodMore" isLoad="1" pageindex="2">
-                <img src="./../images/page/loadMoreIcon.png" alt="">
-                <p>加载更多</p>
+            <div class="case_loodMore" hasmore="1" pageindex="1">
+                <img style="cursor: pointer" src="./../images/page/loadMoreIcon.png" alt="">
+                <p style="width: 2rem;cursor: pointer;margin: auto">加载更多</p>
             </div>
         </div>
     </div>
@@ -77,6 +77,7 @@
 
             <% for(var i=0; i< list.length; i++){%>
             <div class="list">
+                    <a href="./detail.html?caseId=<%=list[i].id%>">
                 <div class="imgBox">
                         <%if(list[i].multimediaType==1){%>
                             <img src="<%=list[i].url %>" alt="">
@@ -94,26 +95,27 @@
                     <p class="txt_2"><%=list[i].name %></p>
                     <p class="txt_3 mg-top"><%=list[i].content %></p>      
                 </div>
+            </a>
             </div>
             <%}%>
     
     </script>
     <script>
         $(function () {
-            console.log(getUrlParam('index'))
+            // console.log(getUrlParam('index'))
             var urlParame = getUrlParam('index');
             if (urlParame) {
                 for (let i = 1; i <= $('.case_nav ul li').length; i++) {
                     if (i == urlParame) {
-                        var ele = $('.case_nav ul li')[i];
-                        $(ele).prev().find('a').addClass('act')
-                        var type = $(ele).prev().find('a').attr('type');
+                        var ele = $('.case_nav ul li')[(i - 1)];
+                        $(ele).find('a').addClass('act');
+                        var type = $(ele).find('a').attr('type');
                         getList(1, type);
                     }
                 }
             } else {
                 $($('.case_nav ul li a')[0]).addClass('act');
-                getList(1, 1);
+                getList(1, 24);
             }
 
             var caseSwiper = new Swiper('.caseSwiper,swiper-container', {
@@ -122,55 +124,57 @@
                 observeParents: true, //修改swiper的父元素时，自动初始化swiper
             });
             $('.case_nav ul li').on('click', function () {
-                // var menuIndex = $(this).index();
-                // $('.case_nav ul li a').removeClass('act');
-                // $(this).find('a').addClass('act');
-                // console.log(menuIndex);
-                // menuIndex++;
-                // getList(1, menuIndex);
                 $('.case_nav ul li a').removeClass('act');
                 $(this).find('a').addClass('act');
                 var type = $(this).find('a').attr('type');
+                $(".case_loodMore").attr("pageIndex",'1').attr("hasmore","1");
+                $('.case_loodMore').find('p').html("加载更多");
                 getList(1, type);
             });
             ///api/Case/GetPagingList (Portal_003)获取案例分页列表
             $('.case_loodMore').on('click', function () {
-                if ($(this).attr('isLoad') == '1') {
+                if( $('.case_loodMore').attr("hasmore")==1){
                     $(this).find('img').addClass('loadRotate');
-                    $(this).attr('isLoad', '2');
                     var index = $(this).attr('pageIndex');
-                    var type = $('.case_nav .act').index('.case_nav li a')
-                    getList($(this).attr('pageIndex'), ++type);
+                    var type = $('.case_nav .act').attr('type');
                     index++;
                     $(this).attr('pageIndex', index);
-                } else {
+                    getList($(this).attr('pageIndex'), type);
                 }
             });
             function getList(index, type) {
-                // var pageindex = $('.case_loodMore').attr('pageindex');
                 $.request('/api/Case/GetPagingList', {
                     pageIndex: index || 1,
                     pageSize: 10,
                     timestamp: ts(),
                     type: type,
                     sign: createSign({
-                        "pageIndex": 1,
+                        "pageIndex": index || 1,
                         "pageSize": 10,
                         timestamp: ts(),
                         type: type
                     })
                 },
                     function (res) {
-                        console.log(res);
+                    if(res.data.caseList.length==0){
+                        $('.case_loodMore').attr("hasmore","0");
+                        $('.case_loodMore').find('img').removeClass('loadRotate');
+                        $('.case_loodMore').find('p').html("没有更多了");
+                        return;
+                    }
+                        // console.log(res);
                         var data = {
                             'list': res.data.caseList
                         };
                         var bt = baidu.template;
                         var html = bt('navTemplate', data);
-                        console.log(html)
-                        $('.caseList').append(html);
+                        // console.log(html)
+                        if ( $('.case_loodMore').attr("pageIndex")!=1) {
+                            $('.caseList').append(html);
+                        } else {
+                            $('.caseList').html(html);
+                        }
                         $('.case_loodMore').find('img').removeClass('loadRotate');
-                        $('.case_loodMore').attr('isLoad', '1');
                     }
                 );
             }

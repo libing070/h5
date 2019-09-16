@@ -1,5 +1,82 @@
 $(function () {
     init();
+    //api/Forum/GetActivityPagingList(TT_027)获取活动分页列表
+
+    function loadList(type ,pageIndex) {
+        $.request('/api/Forum/GetForumPagingList', {
+                timestamp: ts(),
+                activityType:type,// 1 进行中 2 已结束
+                pageIndex:pageIndex||1,
+                pageSize:10,
+                sign: createSign({
+                    timestamp: ts(),
+                    activityType:type,
+                    pageIndex:pageIndex||1,
+                    pageSize:10,
+                })
+            },
+            function (res) {
+                if(pageIndex>res.data.pageCount){
+                    $(".load-more"+type).find("p").html("没有更多了");
+                    $(".load-more"+type).find(".load-more-btn").removeClass("active");
+                    $(".load-more"+type).attr("hasmore","0");
+                    return;
+                }
+                if(res.data.forumList!=""){
+                    if(res.data.forumList.length<3){
+                        $(".all-list-layout"+type).css("justify-content","space-evenly");
+                    }
+                    //文章
+                    var str = '';
+                    res.data.forumList.forEach((ele, k) => {
+                        str+='<div forumId="'+ele.id+'" class="box ">';
+                       // str+='<img style="width: 100%" src="images/index-banner3-s1.png">';
+                         str+='<img forumId="'+ele.id+'" style="width: 100%" class="click-img" src="'+ele.picUrl+'">';
+                        str+='<div class="content">';
+                        str+='<p class="time">'+ele.createTime+'</p>';
+                        str+='<p class="title">'+ele.title+'</p>';
+                        str+='<p class="desc">'+ele.summary+'</p>';
+                        str+='</div>';
+                        str+='<p class="bottom">';
+                        str +='<span class="item"><img src="./images/message-icon.png"><span >'+ele.commentCount+'</span></span>';
+                        str +='<span class="item"><img src="./images/view-icon.png"><span>'+ele.visitCount+'</span></span>';
+                        str +='<span class="item"><img src="./images/vote-icon.png"><span>'+ele.likeCount+'</span></span>';
+                        str+='</p>';
+                        str+='</div>';
+                    });
+                    $('.all-list-layout'+type).append(str);
+                    $(".load-more"+type).find(".load-more-btn").removeClass("active");
+
+                }else{
+                    $(".load-more"+type).find("p").html("没有更多了");
+                }
+            }
+        );
+    }
+    loadList(1,1);//1 进行中
+    loadList(2,1);//2 已结束
+    //活动点击事件跳转到活动详情
+    $(".all-list-layout").on("click",'.click-img',function () {
+        window.location.href='./active-details.html?forumId='+$(this).attr("forumId");
+    })
+
+
+    $(".load-more").on("click",function () {
+        var type=$(this).attr("type");
+        $(".load-more"+type).find(".load-more-btn").addClass("active");
+        var hasMore=$(".load-more"+type).attr("hasmore");//1更多 0 没有
+        if(hasMore==0){
+            $('.load-more'+type).off();
+            $(".load-more"+type).find(".load-more-btn").removeClass("active");
+            return;
+        }
+        var pageIndex=$(this).attr("pageIndex");
+        pageIndex=++pageIndex;
+        $(this).attr("pageIndex",pageIndex);
+        loadList(type,pageIndex);
+    });
+
+
 });
 
 async  function init() {
@@ -9,7 +86,8 @@ async  function init() {
 }
  loadModule = () => {
     $("#active .header").load("header.html");//加载头部导航
-    $("#active .index-banner1").load("topswiper.html");//加载头部轮播
+
+     $("#active .index-banner1").load("topswiper.html");//加载头部轮播
      $("#active .index-banner3").load("weeklyleaderboard.html");//加载头部轮播
     $("#active .footer").load("footer.html");//加载底部导航
 }
@@ -32,8 +110,9 @@ async  function init() {
         }, function () {
             $(this).find('.desc').stop().slideUp();
         });
+        $("#active .header .nav .navBar").find("li").find("a.active").css("color","#ff0000");//加载头部导航
 
-    },10);
+    },100);
 }
 
 initSwiper=()=>{

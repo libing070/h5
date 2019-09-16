@@ -20,6 +20,7 @@
 .details .content{
     width: 100%;
     background-color: #ededed;
+    padding-bottom: 1rem;
 }
 .information{
     position: relative;

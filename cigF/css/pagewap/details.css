@@ -10,6 +10,7 @@ a{ text-decoration:none;
 .content .banner1{
      width: 100%;
      position: relative;
+    margin-top: 0.9rem;
 }
 .banner1 .bar{
     position: absolute;
@@ -47,13 +48,16 @@ a{ text-decoration:none;
     text-transform: uppercase;
     display: -webkit-flex;
     display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 .banner2 .d1 .p{
-    -webkit-flex: 1;
-    flex: 1;
+    /*-webkit-flex: 1;*/
+    /*flex: 1;*/
     text-align: center;
 }
 .banner3{
+    margin-top: 0.3rem;
      width: 100%;
     border-bottom: 1px solid rgba( 114, 114, 114 ,0.2);
 }
@@ -83,7 +87,7 @@ a{ text-decoration:none;
     right: 0;
     bottom: 0;
     margin: auto;
-    z-index: 999;
+    z-index: 1;
 }
 .banner4{
     position: relative;

@@ -1,4 +1,14 @@
 $(function () {
+    var inittype=24;
+    var initialSlide=0;
+    var url = window.location.href;
+    var sp=url.split("?")[1];
+    if(sp.indexOf('inittype')>-1){
+        inittype= GetUrlParam('inittype');
+        initialSlide= GetUrlParam('initialSlide');
+    }
+
+
 var swiper1 = new Swiper('.banner1', {
     loop:true,
     slidesPerView: 1,
@@ -41,7 +51,7 @@ var swiper1 = new Swiper('.banner1', {
         loop:false,
         spaceBetween:30,
         centeredSlides: true,
-        initialSlide :2 ,//默认选中第2个
+        initialSlide :initialSlide ,//默认选中第2个
         controller: {
             control: swiper3, //控制Swiper1
         },
@@ -58,7 +68,7 @@ var swiper1 = new Swiper('.banner1', {
     });
     swiper3.controller.control = swiper2;
 
-    loadCaseList(26,1);//默认加载 社会化与用户营销
+    loadCaseList(inittype,1);//默认加载 社会化与用户营销
 
 
     function loadCaseList(type,pageIndex) {
@@ -79,6 +89,7 @@ var swiper1 = new Swiper('.banner1', {
               //  console.log(res);
                 if(pageIndex>res.data.pageCount){
                     $(".banner3 .load-more").find("p").html("没有更多了");
+					 $(".banner3 .load-more").find(".load-more-btn").removeClass("active");
                     $(".banner3 .load-more").attr("hasmore","0");
                     return;
                 }
@@ -91,7 +102,7 @@ var swiper1 = new Swiper('.banner1', {
                             str += '<img class="right-img" src="'+ele.url+'">';
                         }else{
                             str+=' <img class="right-v-btn video-btn"  src="../images/wap/video-btn.png">';
-                            str += '<video  poster="" x5-playsinline="" playsinline="" webkit-playsinline="" class="right-img" style="object-fit:cover;"src="'+ele.url+'" preload="auto"></video>';
+                             str += '<video  poster="" x5-playsinline="" playsinline="" webkit-playsinline="" class="right-img" style="object-fit:cover;"src="'+ele.url+'" preload="auto"></video>';
                         }
                     }else{
                         str += '<img class="right-bg" src="../images/wap/level2/case/case-list-bg-right.png">';
@@ -124,6 +135,7 @@ var swiper1 = new Swiper('.banner1', {
         $(".banner3 .load-more").find(".load-more-btn").addClass("active");
         var hasMore=$(".banner3 .load-more").attr("hasmore");//1更多 0 没有
         if(hasMore==0){
+            $(".banner3 .load-more").find(".load-more-btn").removeClass("active");
             $(".banner3").find('.load-more').off();
             return;
         }
@@ -154,9 +166,14 @@ var swiper1 = new Swiper('.banner1', {
     });
 
 
-    $(".banner3 .swiper-slide").on("click",".left-bg,.right-bg,.text",function () {
-        var caseId=$(this).parent(".list").attr("caseId");
-        console.log($(this).parent(".list").attr("caseId"));
+    // $(".banner3 .swiper-slide").on("click",".left-bg,.right-bg,.text",function () {
+    //     var caseId=$(this).parent(".list").attr("caseId");
+    //     console.log($(this).parent(".list").attr("caseId"));
+    //     window.location.href = "./../pagewap/details.html?caseId="+caseId;
+    // })
+    $(".banner3 .swiper-slide").on("click",".list",function () {
+        var caseId=$(this).attr("caseId");
+        console.log($(this).attr("caseId"));
         window.location.href = "./../pagewap/details.html?caseId="+caseId;
     })
 

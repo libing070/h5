@@ -7,40 +7,73 @@
 </div>
 <div class="swiper-container">
     <div class="swiper-wrapper">
-        <div class="swiper-slide">
-            <img style="width: 100%" src="images/index-banner1-s1.jpg">
-            <div class="content">
-                <p class="ani_1" style="width: 10%;margin-bottom: 0.4rem"><img  style="width: 100%" src="images/audi-log.png"></p>
-                <p class="ani_2">2018年奥迪 #Goooo Home#</p>
-                <p class="ani_3">新春致意数字创意营销</p>
-            </div>
+        <!--<div class="swiper-slide">-->
+            <!--<img style="width: 100%" src="images/index-banner1-s1.jpg">-->
+            <!--<div class="content">-->
+                <!--<p class="ani_1" style="width: 10%;margin-bottom: 0.4rem"><img  style="width: 100%" src="images/audi-log.png"></p>-->
+                <!--<p class="ani_2">2018年奥迪 #Goooo Home#</p>-->
+                <!--<p class="ani_3">新春致意数字创意营销</p>-->
+            <!--</div>-->
 
-        </div>
-        <div class="swiper-slide">
-            <img style="width: 100%" src="images/index-banner1-s1.jpg">
-            <div class="content">
-                <p class="ani_4" style="width: 10%;margin-bottom: 0.4rem"><img style="width: 100%" src="images/audi-log.png"></p>
-                <p class="ani_5">2018年奥迪 #Goooo Home#</p>
-                <p class="ani_6">新春致意数字创意营销</p>
-            </div>
-        </div>
-        <div class="swiper-slide">
-            <img style="width: 100%" src="images/index-banner1-s1.jpg">
-            <div class="content">
-                <p class="ani_7" style="width: 10%;margin-bottom: 0.4rem"><img style="width: 100%" src="images/audi-log.png"></p>
-                <p class="ani_8">2018年奥迪 #Goooo Home#</p>
-                <p class="ani_9">新春致意数字创意营销</p>
-            </div>
-        </div>
-        <div class="swiper-slide">
-            <img style="width: 100%" src="images/index-banner1-s1.jpg">
-            <div class="content">
-                <p class="ani_10" style="width: 10%;margin-bottom: 0.4rem"><img style="width: 100%" src="images/audi-log.png"></p>
-                <p class="ani_11">2018年奥迪 #Goooo Home#</p>
-                <p class="ani_12">新春致意数字创意营销</p>
-            </div>
-        </div>
+        <!--</div>-->
+        <!--<div class="swiper-slide">-->
+            <!--<img style="width: 100%" src="images/index-banner1-s1.jpg">-->
+            <!--<div class="content">-->
+                <!--<p class="ani_4" style="width: 10%;margin-bottom: 0.4rem"><img style="width: 100%" src="images/audi-log.png"></p>-->
+                <!--<p class="ani_5">2018年奥迪 #Goooo Home#</p>-->
+                <!--<p class="ani_6">新春致意数字创意营销</p>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="swiper-slide">-->
+            <!--<img style="width: 100%" src="images/index-banner1-s1.jpg">-->
+            <!--<div class="content">-->
+                <!--<p class="ani_7" style="width: 10%;margin-bottom: 0.4rem"><img style="width: 100%" src="images/audi-log.png"></p>-->
+                <!--<p class="ani_8">2018年奥迪 #Goooo Home#</p>-->
+                <!--<p class="ani_9">新春致意数字创意营销</p>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="swiper-slide">-->
+            <!--<img style="width: 100%" src="images/index-banner1-s1.jpg">-->
+            <!--<div class="content">-->
+                <!--<p class="ani_10" style="width: 10%;margin-bottom: 0.4rem"><img style="width: 100%" src="images/audi-log.png"></p>-->
+                <!--<p class="ani_11">2018年奥迪 #Goooo Home#</p>-->
+                <!--<p class="ani_12">新春致意数字创意营销</p>-->
+            <!--</div>-->
+        <!--</div>-->
     </div>
     <!-- Add Pagination -->
     <div class="swiper-pagination"></div>
 </div>
+
+<script>
+    $(function () {
+        //api/Forum/GetKeyVersionInfo((TT_037)获取智库KV
+
+        function GetKeyVersionInfo() {
+            $.request('/api/Forum/GetKeyVersionInfo', {
+                    "timestamp": ts(),
+                    sign: createSign({
+                        "timestamp": ts(),
+                    })
+                },
+                function (res) {
+                    var str = '';
+                    res.data.keyVersionList.forEach((ele, k) => {
+                        str+=' <div class="swiper-slide">';
+                        str+='  <img style="width: 100%" src="'+ele.KeyVisionUrl+'">';
+                        str+='   <div class="content">';
+                        str+='   <p class="ani_1" style="width: 10%;margin-bottom: 0.4rem"><img  style="width: 100%" src="images/audi-log.png"></p>';
+                        str+='    <p class="ani_2">2018年奥迪 #Goooo Home#</p>';
+                        str+=' <p class="ani_3">新春致意数字创意营销</p>';
+                        str+='     </div>';
+                        str+='   </div>';
+                    });
+                    $('.top-swiper .swiper-container .swiper-wrapper').append(str);
+                }
+            );
+        }
+        GetKeyVersionInfo();
+
+    });
+</script>
+

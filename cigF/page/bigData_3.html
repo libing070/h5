@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./../css/base.css">
     <link rel="stylesheet" href="./../css/base_pc.css">
     <link rel="stylesheet" href="./../css/page/bigData.css">
-    <title>cig</title>
+    <title>CIG新意互动</title>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
         <div class="banner">
             <img src="./../images/page/bigData-banner3.jpg" alt="">
             <div class="banner_txt">
-                <p class="bd_p1">DigiTal Image</p>
+                <p class="bd_p1">Digital Image</p>
                 <p class="bd_p1">数字影像</p>
                 <p class="bd_p2">可视化链接虚拟与现实</p>
                 <p class="bd_p3">将可视化技术成熟应用到产品设计、制造及营销宣传等各阶段。</p>
@@ -29,13 +29,70 @@
         </div>
         <ul class="scheme">
             <li>
-                <img src="./../images/page/bd_scheme_1.jpg" alt="">
+                <div class="scheme_box">
+                    <img src="./../images/page/bd_scheme_1.jpg" alt="">
+                    <div class="scheme_bg">
+                        <div class="pBox">
+                            <p class="scheme_p1">可视化数据资产管理</p>
+                            <p class="scheme_p2">基于产品工业数据的数字体验营销资产管理方案，</p>
+                            <p class="scheme_p2">通过工业模型数据的轻量化、结构化处理组成数据资产库，</p>
+                            <p class="scheme_p2">并进行系统化的管理。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="scheme_box">
+                    <img src="./../images/page/bd_scheme_2.jpg" alt="">
+                    <div class="scheme_bg">
+                        <div class="pBox">
+                            <p class="scheme_p1">CGI及实拍影像解决方案</p>
+                            <p class="scheme_p2">采用丰富独特的创意，结合CG电脑图形处理技术、</p>
+                            <p class="scheme_p2">帮助企业创作高品质影片、</p>
+                            <p class="scheme_p2">静帧图像等可视化营销内容素材，</p>
+                            <p class="scheme_p2">并可将CG与实拍结合，使虚拟与现实完美融合。</p>
+                        </div>
+                    </div>
+                </div>
             </li>
             <li>
-                <img src="./../images/page/bd_scheme_2.jpg" alt="">
+                <div class="scheme_box">
+                    <img src="./../images/page/bd_scheme_3.jpg" alt="">
+                    <div class="scheme_bg">
+                        <div class="pBox">
+                            <p class="scheme_p1">数字演员解决方案</p>
+                            <p class="scheme_p2">通过数字扫描以及雕塑技术，塑造数字世界中的虚拟演员、</p>
+                            <p class="scheme_p2">数字分身的概念。可赋予虚拟角色灵魂，</p>
+                            <p class="scheme_p2">并高度还原任何人类的面部表情及肢体表演，</p>
+                            <p class="scheme_p2">可应用于虚拟现实（VR）、影视制作、展会活动、科教娱乐、虚拟社交等领域。</p>
+                        </div>
+                    </div>
+                </div>
             </li>
             <li>
-                <img src="./../images/page/bd_scheme_3.jpg" alt="">
+                <div class="scheme_box">
+                    <img src="./../images/page/bd_scheme_4.jpg" alt="">
+                    <div class="scheme_bg">
+                        <div class="pBox">
+                            <p class="scheme_p1">互动体验解决方案</p>
+                            <p class="scheme_p2">精研VR、AR、全息投影等虚拟影像互动技术，</p>
+                            <p class="scheme_p2">通过360°3D实时渲染技术，</p>
+                            <p class="scheme_p2">搭配高品质的CGI制作水准和互动创意，</p>
+                            <p class="scheme_p2">为企业针对自身的实际营销需求，</p>
+                            <p class="scheme_p2">提供合适的虚拟影像互动展示解决方案。</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="scheme_box">
+                    <img src="./../images/page/bd_scheme_5.jpg" alt="">
+                    <div class="scheme_bg">
+                        <div class="pBox">
+                            <p class="scheme_p1">影视制作解决方案</p>
+                            <p class="scheme_p2">面向跨媒体时代，</p>
+                            <p class="scheme_p2">结合数字引擎以实时交互方式自主开发影视内容IP，</p>
+                            <p class="scheme_p2">定义并向创作者提供相关技术、流程和工具。</p>
+                        </div>
+                    </div>
+                </div>
             </li>
         </ul>
         <div class="zhankai">
@@ -45,6 +102,9 @@
                 <img class="zhankai_icon" src="./../images/page/zhankai_icon.png" alt="">
                 <p>全球高端可视化解决方案供应商</p>
                 <p class="subP">由数字艺术家、科学家、营销领域专家等组成的专业团队，将可视化技术成熟应用到产品设计、制造及营销宣传等各阶段。</p>
+                <a class="arrow_icon" href="http://www.bitone.com" target="_blank">
+                    <img style="width: 15%;margin: auto;margin-top: 0.2rem" class="arrow_icon_btn" src="../images/arrow_icon_banner3.png">
+                </a>
             </div>
         </div>
     </div>
@@ -61,7 +121,14 @@
     <!-- <script src="./js/interFace.js"></script> -->
     <script>
         $(function () {
+            $('.zhankai').hover(function () {
+                $(this).find('.zhankai_icon').attr("src","./../images/page/zhankai_icon.png");
+                $(this).find('.arrow_icon_btn').attr("src","./../images/arrow_red.png")
 
+            }, function () {
+                $(this).find('.zhankai_icon').attr("src","./../images/page/zhankai_icon.png");
+                $(this).find('.arrow_icon_btn').attr("src","./../images/arrow_icon_banner3.png")
+            });
         });
 
     </script>

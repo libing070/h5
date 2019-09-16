@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/layer.css">
+    <!-- 适配wap pad/pc -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/base_pc.css">
+    <link rel="stylesheet" href="css/usercenter.css">
+    <link rel="stylesheet" href="css/swiper_reset.css">
+    <script type="text/javascript" charset="utf-8" src="./ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./ueditor/ueditor.all.min.js"> </script>
+    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+    <script type="text/javascript" charset="utf-8" src="./ueditor/lang/zh-cn/zh-cn.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./js/common/plupload.full.min.js"></script>
+    <title>个人中心</title>
+</head>
+
+<body>
+<div class="container usercenter" id="usercenter">
+    <!--pc代码 -->
+    <!--头部导航-->
+    <div class="header">
+    </div>
+    <!--头部轮播-->
+    <div class="index-banner1" style="padding-top: 1.1rem">
+        <img style="width: 100%" src="images/usercenter-title-bg.png">
+    </div>
+    <div class="index-banner2">
+        <div class="no">
+            <div class="left-nav">
+                <div class="head"><img  src="images/headportrait1.png"></div>
+                <div class="nickname"></div>
+                <div class="we">欢迎回到新意智库</div>
+
+                <p type="0" class="item-menu active" style="margin-top: 0.28rem"><span>发布内容</span><img class="sanjiao" src="images/sanjiao-icon-red.png"></p>
+                <p type="1" class="item-menu"><span>我的发布</span><img class="sanjiao" src="images/sanjiao-icon.png"></p>
+                <p type="2" class="item-menu"><span>我的喜欢</span><img class="sanjiao" src="images/sanjiao-icon.png"></p>
+                <p type="3" class="item-menu"><span>账户密码</span><img  class="sanjiao"src="images/sanjiao-icon.png"></p>
+                <p type="4" class="item-menu"><span>消息管理</span><img class="sanjiao" src="images/sanjiao-icon.png"></p>
+            </div>
+        </div>
+
+        <div class="right-content">
+            <!--发布内容-->
+            <div type="0" class="wrap publishcontent fabu">
+                <div class="pu-menu">
+                    <div class="item active" type="zixun" typenum="0">资讯</div>
+                    <div class="item" type="know" typenum="1">知识</div>
+                    <div class="item" type="activity" typenum="4">活动</div>
+                </div>
+                <div class="content-display active" type="zixun">
+                    <input type="text" placeholder="标题" ids="" class="title">
+                    <textarea placeholder="摘要" class="summary-textarea"></textarea>
+                    <div class="eduit-wrap eduit-wrap1" type="1"></div>
+                    <div class="upload"><div class="pickfileProcess"><span class="line"></span></div><input disabled base64="" placeholder="请选择您要上传的文件,支持（jpg,gif,png,mp4）"  type="text" class="url-input"><a class="file" id="pickfiles1" ></a><img class="upload-btn"    src="images/upload-file-btn.png"></div>
+                    <div class="submit"><img src="images/publish-content-btn.png"></div>
+                </div>
+                <div class="content-display" style="display: none" type="know">
+                    <input type="text" placeholder="标题" ids="" class="title">
+                    <textarea placeholder="摘要" class="summary-textarea"></textarea>
+                    <div class="eduit-wrap eduit-wrap2" type="2"></div>
+                    <div class="upload"><div class="pickfileProcess"><span class="line"></span></div><input disabled base64=""placeholder="请选择您要上传的文件,支持（jpg,gif,png,mp4）" type="text" class="url-input"><a class="file" id="pickfiles2" ></a><img class="upload-btn"   src="images/upload-file-btn.png"></div>
+                    <div class="submit"><img src="images/publish-content-btn.png"></div>
+                </div>
+                <div class="content-display" style="display:none;" type="activity">
+                    <input type="text" placeholder="标题" ids="" class="title">
+                    <textarea placeholder="摘要" class="summary-textarea"></textarea>
+                    <div class="eduit-wrap eduit-wrap3"  type="3" ></div>
+                    <div class="upload"><div class="pickfileProcess"><span class="line"></span></div><input disabled base64="" placeholder="请选择您要上传的文件,支持（jpg,gif,png,mp4）" type="text" class="url-input"><a class="file" id="pickfiles3" ></a><img class="upload-btn"  src="images/upload-file-btn.png"></div>
+                    <div class="submit"><img src="images/publish-content-btn.png"></div>
+                </div>
+
+            </div>
+
+            <!--我的发布-->
+            <div type="1" class="wrap publish mypublish" style="display: none">
+                <div class="my-title">我的发布</div>
+                <div class="mypu-menu">
+                    <div class="item active" type="1"><span>已发布</span><span class="mypublishcount"></span></div>
+                    <div class="item"  type="0"><span>待审核</span><span class="waitingcount"></span></div>
+                    <div class="item"  type="2"><span>未通过</span><span class="rejectcount"></span></div>
+                    <div class="item"  type="3"><span>草稿箱</span><span class="draftcount"></span></div>
+                </div>
+                <div class="mybox">
+                    <!--<div class="box">-->
+                        <!--<div class="top">-->
+                            <!--<img class="bg" src="images/my-pu-box-bg1.png">-->
+                            <!--<img class="bg-mask" src="images/my-pu-box-bg-mask.png">-->
+                            <!--<p class="bottom">-->
+                                <!--<span class="item"><img src="./images/message-icon-white.png"><span >2</span></span>-->
+                                <!--<span class="item"><img src="./images/view-icon-white.png"><span>2</span></span>-->
+                                <!--<span class="item"><img src="./images/vote-icon-white.png"><span>3</span></span>-->
+                            <!--</p>-->
+                            <!--<div class="mask" style="display: none">-->
+                                <!--<div class="flex">-->
+                                    <!--<div class="item edit"><img src="images/edit-icon.png"><span style="color: #cb0404">编辑</span></div>-->
+                                    <!--<div class="item del"><img src="images/delete-icon.png"><span>删除</span></div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="title">侧面看戛纳除了创意还有什么</div>-->
+                        <!--<div class="desc">作为戛纳狮子节的周边活动，_华人CMO大师班_赢得了越来越多国内顶级营销人的青睐</div>-->
+                    <!--</div>-->
+                    <!--<div class="box">-->
+                        <!--<div class="top">-->
+                            <!--<img class="bg" src="images/my-pu-box-bg1.png">-->
+                            <!--<img class="bg-mask" src="images/my-pu-box-bg-mask.png">-->
+                            <!--<p class="bottom">-->
+                                <!--<span class="item"><img src="./images/message-icon-white.png"><span >2</span></span>-->
+                                <!--<span class="item"><img src="./images/view-icon-white.png"><span>2</span></span>-->
+                                <!--<span class="item"><img src="./images/vote-icon-white.png"><span>3</span></span>-->
+                            <!--</p>-->
+                            <!--<div class="mask" style="display: none">-->
+                                <!--<div class="flex">-->
+                                    <!--<div class="item edit"><img src="images/edit-icon.png"><span style="color: #cb0404">编辑</span></div>-->
+                                    <!--<div class="item del"><img src="images/delete-icon.png"><span>删除</span></div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="title">侧面看戛纳除了创意还有什么</div>-->
+                        <!--<div class="desc">作为戛纳狮子节的周边活动，_华人CMO大师班_赢得了越来越多国内顶级营销人的青睐</div>-->
+                    <!--</div>-->
+                    <!--<div class="box">-->
+                        <!--<div class="top">-->
+                            <!--<img class="bg" src="images/my-pu-box-bg1.png">-->
+                            <!--<img class="bg-mask" src="images/my-pu-box-bg-mask.png">-->
+                            <!--<p class="bottom">-->
+                                <!--<span class="item"><img src="./images/message-icon-white.png"><span >2</span></span>-->
+                                <!--<span class="item"><img src="./images/view-icon-white.png"><span>2</span></span>-->
+                                <!--<span class="item"><img src="./images/vote-icon-white.png"><span>3</span></span>-->
+                            <!--</p>-->
+                            <!--<div class="mask" style="display: none">-->
+                                <!--<div class="flex">-->
+                                    <!--<div class="item edit"><img src="images/edit-icon.png"><span style="color: #cb0404">编辑</span></div>-->
+                                    <!--<div class="item del"><img src="images/delete-icon.png"><span>删除</span></div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="title">侧面看戛纳除了创意还有什么</div>-->
+                        <!--<div class="desc">作为戛纳狮子节的周边活动，_华人CMO大师班_赢得了越来越多国内顶级营销人的青睐</div>-->
+                    <!--</div>-->
+                    <!--<div class="box">-->
+                        <!--<div class="top">-->
+                            <!--<img class="bg" src="images/my-pu-box-bg1.png">-->
+                            <!--<img class="bg-mask" src="images/my-pu-box-bg-mask.png">-->
+                            <!--<p class="bottom">-->
+                                <!--<span class="item"><img src="./images/message-icon-white.png"><span >2</span></span>-->
+                                <!--<span class="item"><img src="./images/view-icon-white.png"><span>2</span></span>-->
+                                <!--<span class="item"><img src="./images/vote-icon-white.png"><span>3</span></span>-->
+                            <!--</p>-->
+                            <!--<div class="mask" style="display: none">-->
+                                <!--<div class="flex">-->
+                                    <!--<div class="item edit"><img src="images/edit-icon.png"><span style="color: #cb0404">编辑</span></div>-->
+                                    <!--<div class="item del"><img src="images/delete-icon.png"><span>删除</span></div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="title">侧面看戛纳除了创意还有什么</div>-->
+                        <!--<div class="desc">作为戛纳狮子节的周边活动，_华人CMO大师班_赢得了越来越多国内顶级营销人的青睐</div>-->
+                    <!--</div>-->
+                    <!--<div class="box">-->
+                        <!--<div class="top">-->
+                            <!--<img class="bg" src="images/my-pu-box-bg1.png">-->
+                            <!--<img class="bg-mask" src="images/my-pu-box-bg-mask.png">-->
+                            <!--<p class="bottom">-->
+                                <!--<span class="item"><img src="./images/message-icon-white.png"><span >2</span></span>-->
+                                <!--<span class="item"><img src="./images/view-icon-white.png"><span>2</span></span>-->
+                                <!--<span class="item"><img src="./images/vote-icon-white.png"><span>3</span></span>-->
+                            <!--</p>-->
+                            <!--<div class="mask" style="display: none">-->
+                                <!--<div class="flex">-->
+                                    <!--<div class="item edit"><img src="images/edit-icon.png"><span style="color: #cb0404">编辑</span></div>-->
+                                    <!--<div class="item del"><img src="images/delete-icon.png"><span>删除</span></div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="title">侧面看戛纳除了创意还有什么</div>-->
+                        <!--<div class="desc">作为戛纳狮子节的周边活动，_华人CMO大师班_赢得了越来越多国内顶级营销人的青睐</div>-->
+                    <!--</div>-->
+                </div>
+                <div class="load-more mypublish-load-more" style="margin-bottom: 0;margin-top: 1rem" type="1"  pageIndex="1" hasmore="1">
+                    <img class="load-more-btn" src="./images/load-more-icon-black.png">
+                    <p>加载更多</p>
+                </div>
+            </div>
+            <!--我的喜欢-->
+            <div type="2" class="wrap publish mylike" style="display: none">
+                <div class="my-title">我的喜欢</div>
+                <div class="mybox">
+                    <div class="box">
+                        <div class="top">
+                            <img class="bg" src="images/my-pu-box-bg1.png">
+                            <img class="bg-mask" src="images/my-pu-box-bg-mask.png">
+                            <p class="bottom">
+                                <span class="item"><img src="./images/message-icon-white.png"><span >2</span></span>
+                                <span class="item"><img src="./images/view-icon-white.png"><span>2</span></span>
+                                <span class="item"><img src="./images/vote-icon-white.png"><span>3</span></span>
+                            </p>
+                            <div class="mask" style="display: none">
+                                <div class="flex">
+                                    <div class="item edit"><img src="images/edit-icon.png"><span style="color: #cb0404">编辑</span></div>
+                                    <div class="item del"><img src="images/delete-icon.png"><span>删除</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="title">侧面看戛纳除了创意还有什么</div>
+                        <div class="desc">作为戛纳狮子节的周边活动，_华人CMO大师班_赢得了越来越多国内顶级营销人的青睐</div>
+                    </div>
+                    <div class="box">
+                        <div class="top">
+                            <img class="bg" src="images/my-pu-box-bg1.png">
+                            <img class="bg-mask" src="images/my-pu-box-bg-mask.png">
+                            <p class="bottom">
+                                <span class="item"><img src="./images/message-icon-white.png"><span >2</span></span>
+                                <span class="item"><img src="./images/view-icon-white.png"><span>2</span></span>
+                                <span class="item"><img src="./images/vote-icon-white.png"><span>3</span></span>
+                            </p>
+                            <div class="mask" style="display: none">
+                                <div class="flex">
+                                    <div class="item edit"><img src="images/edit-icon.png"><span style="color: #cb0404">编辑</span></div>
+                                    <div class="item del"><img src="images/delete-icon.png"><span>删除</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="title">侧面看戛纳除了创意还有什么</div>
+                        <div class="desc">作为戛纳狮子节的周边活动，_华人CMO大师班_赢得了越来越多国内顶级营销人的青睐</div>
+                    </div>
+                    <div class="box">
+                        <div class="top">
+                            <img class="bg" src="images/my-pu-box-bg1.png">
+                            <img class="bg-mask" src="images/my-pu-box-bg-mask.png">
+                            <p class="bottom">
+                                <span class="item"><img src="./images/message-icon-white.png"><span >2</span></span>
+                                <span class="item"><img src="./images/view-icon-white.png"><span>2</span></span>
+                                <span class="item"><img src="./images/vote-icon-white.png"><span>3</span></span>
+                            </p>
+                            <div class="mask" style="display: none">
+                                <div class="flex">
+                                    <div class="item edit"><img src="images/edit-icon.png"><span style="color: #cb0404">编辑</span></div>
+                                    <div class="item del"><img src="images/delete-icon.png"><span>删除</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="title">侧面看戛纳除了创意还有什么</div>
+                        <div class="desc">作为戛纳狮子节的周边活动，_华人CMO大师班_赢得了越来越多国内顶级营销人的青睐</div>
+                    </div>
+                    <div class="box">
+                        <div class="top">
+                            <img class="bg" src="images/my-pu-box-bg1.png">
+                            <img class="bg-mask" src="images/my-pu-box-bg-mask.png">
+                            <p class="bottom">
+                                <span class="item"><img src="./images/message-icon-white.png"><span >2</span></span>
+                                <span class="item"><img src="./images/view-icon-white.png"><span>2</span></span>
+                                <span class="item"><img src="./images/vote-icon-white.png"><span>3</span></span>
+                            </p>
+                            <div class="mask" style="display: none">
+                                <div class="flex">
+                                    <div class="item edit"><img src="images/edit-icon.png"><span style="color: #cb0404">编辑</span></div>
+                                    <div class="item del"><img src="images/delete-icon.png"><span>删除</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="title">侧面看戛纳除了创意还有什么</div>
+                        <div class="desc">作为戛纳狮子节的周边活动，_华人CMO大师班_赢得了越来越多国内顶级营销人的青睐</div>
+                    </div>
+                </div>
+                <div class="load-more load-more1" style="margin-bottom: 0;margin-top: 1rem" type="1"  pageIndex="1" hasmore="1">
+                    <img class="load-more-btn" src="./images/load-more-icon-black.png">
+                    <p>加载更多</p>
+                </div>
+            </div>
+            <!--账户密码-->
+            <div type="3" class="wrap publish myaccount" style="display: none">
+                <div class="my-title">账户密码</div>
+                <div class="form">
+                    <div class="head"><img src="images/headportrait1.png"></div>
+                    <div class="input-item"><span class="name">用户名</span><span style="opacity: 0;">名</span><input class="userName" type="text"></div>
+                    <div class="input-item"><span class="name">设置密码</span><input class="password" type="password"></div>
+                    <div class="input-item"><span class="name"> 确认密码</span><input class="confirmPassword" type="password"></div>
+                    <div class="btn"><img src="images/my-submit-update-btn.png"></div>
+                </div>
+
+            </div>
+            <!--消息管理-->
+            <div type="4" class="wrap publishcontent mess" style="display: none">
+                <div class="pu-menu">
+                    <div class="item active" type="system">系统消息</div>
+                    <div class="item" type="comment">评论管理</div>
+                </div>
+                <div class="system-content">
+                    <div class="system-menu">
+                        <div class="item">标题</div>
+                        <div class="item">时间</div>
+                    </div>
+                    <div class="system-box">
+                        <div class="box"><span class="desc">您发布的《XXXXXX》为能审核通过</span><span class="time">2019-8-6</span></div>
+                        <div class="box"><span class="desc">您发布的《XXXXXX》为能审核通过</span><span class="time">2019-8-6</span></div>
+                        <div class="box"><span class="desc">您发布的《XXXXXX》为能审核通过</span><span class="time">2019-8-6</span></div>
+                        <div class="box"><span class="desc">您发布的《XXXXXX》为能审核通过</span><span class="time">2019-8-6</span></div>
+                        <div class="box"><span class="desc">您发布的《XXXXXX》为能审核通过</span><span class="time">2019-8-6</span></div>
+                        <div class="box"><span class="desc">您发布的《XXXXXX》为能审核通过</span><span class="time">2019-8-6</span></div>
+                    </div>
+                    <div class="load-more system-load-more" style="margin-bottom: 0;margin-top: 1rem" pageIndex="1" hasmore="1">
+                        <img class="load-more-btn" src="./images/load-more-icon-black.png">
+                        <p>加载更多</p>
+                    </div>
+
+                </div>
+                <div class="system-detail" style="display: none">
+                    <div class="system-menu">
+                        <div class="item" style="cursor: pointer"><img style="display: inline-block;vertical-align: middle;padding-right: 0.1rem" src="images/back-icon.png">返回</div>
+                    </div>
+                    <div class="detail-content">
+                        <p class="box">当一众手机品牌都在喊着美颜、滤镜的营销噱头的时候，在同质化的拍照概念面前，如何抓取年轻受众稀缺的注意力？随着华为品牌的全球化进程，对创意品质的需求也在日益提升。伴随HUAWEI nova 3e新品上市传播，我们希望通过“无添加自拍”的创意概念，不仅将“自然美妆”的卖点说到目标消费群体心坎上，更要将“无添加的自然”打造成HUAWEI nova 3e品牌的记忆符号。</p>
+                        <p class="box">三支影片，由新意旗下NDC创意团队，携手亚太广告导演罗景壬共同完成。从创意概念“无添加自拍”的确定，到故事脚本的商榷，NDC创意团队与华为大中华区市场部充分沟通，在双方的高度合作与共同努力下，希望传递给用户的，不只是理性层面的强大功能，更重要的是，深入用户的真实生活，为产品创造坚实的情感意义。</p>
+                        <p class="box">纵观三支视频，都充分展现了每一位年轻女孩追求真实自我，将落点放在“前置2400万 自然美妆”的产品卖点，回归自然纯粹的一面，与“无添加”的态度海报在基调上保持一致性，营造了温暖治愈系的画风。小清新与大自然元素的加持将广告做出美感，让人在无形中对这种“无添加”产生由衷的认同感和归属感。</p>
+                    </div>
+                </div>
+                <div class="comment-box" style="display: none">
+                    <div class="box">
+                        <img class="head" src="images/headportrait1.png">
+                        <p class="desc">
+                            <span class="p1">王迪迪</span>
+                            <span class="p2">评论了文章</span>
+                            <span class="p1">《华为NOVA 3E 无添加自拍》</span>
+                            <span class="p2">2019-8-6 14:30</span><br/>
+                            <span class="p2">加油加油加油加油！</span>
+                        </p>
+                        <p class="del"><img style="display: inline-block;vertical-align: sub;padding-right: 0.05rem" src="images/delete-icon.png">删除</p>
+                    </div>
+                    <div class="box">
+                        <img class="head" src="images/headportrait1.png">
+                        <p class="desc">
+                            <span class="p1">王迪迪</span>
+                            <span class="p2">评论了文章</span>
+                            <span class="p1">《华为NOVA 3E 无添加自拍》</span>
+                            <span class="p2">2019-8-6 14:30</span><br/>
+                            <span class="p2">加油加油加油加油！</span>
+                        </p>
+                        <p class="del"><img style="display: inline-block;vertical-align: sub;padding-right: 0.05rem" src="images/delete-icon.png">删除</p>
+                    </div>
+                    <div class="box">
+                        <img class="head" src="images/headportrait1.png">
+                        <p class="desc">
+                            <span class="p1">王迪迪</span>
+                            <span class="p2">评论了文章</span>
+                            <span class="p1">《华为NOVA 3E 无添加自拍》</span>
+                            <span class="p2">2019-8-6 14:30</span><br/>
+                            <span class="p2">加油加油加油加油！</span>
+                        </p>
+                        <p class="del"><img style="display: inline-block;vertical-align: sub;padding-right: 0.05rem" src="images/delete-icon.png">删除</p>
+                    </div>
+                    <div class="box">
+                        <img class="head" src="images/headportrait1.png">
+                        <p class="desc">
+                            <span class="p1">王迪迪</span>
+                            <span class="p2">评论了文章</span>
+                            <span class="p1">《华为NOVA 3E 无添加自拍》</span>
+                            <span class="p2">2019-8-6 14:30</span><br/>
+                            <span class="p2">加油加油加油加油！</span>
+                        </p>
+                        <p class="del"><img style="display: inline-block;vertical-align: sub;padding-right: 0.05rem" src="images/delete-icon.png">删除</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--底部导航-->
+    <div class="footer"></div>
+</div>
+<script src="js/common/jquery-1.11.2.min.js"></script>
+<script src="js/common/jquery.cookie.js"></script>
+<script src="js/common/anime.min.js"></script>
+<script src="js/common/layer.js"></script>
+<script src="js/common/rem.js"></script>
+<script src="js/common/swiper.min.js"></script>
+<script src="js/common/md5.js"></script>
+<script src="js/common.js"></script>
+<script src="js/basePc.js"></script>
+<script src="js/usercenter.js"></script>
+<script type="text/javascript">
+
+    for( var n=1;n<=3;n++){
+        var script = document.createElement('script');
+        script.type = 'text/plain';
+        script.id = 'editor'+n;
+        script.style.width='100%';
+        script.style.height='100%';
+        $('.eduit-wrap'+n).append(script);
+        //实例化编辑器
+        // 建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+    }
+
+    var ue1 = UE.getEditor('editor1');
+    var ue2 = UE.getEditor('editor2');
+    var ue3 = UE.getEditor('editor3');
+    ue1.ready(function() {
+        ue1.setHeight(200);
+        //设置编辑器的内容
+        ue1.setContent('可供编辑的内容');
+    });
+    ue2.ready(function() {
+        ue2.setHeight(200);
+        //设置编辑器的内容
+        ue2.setContent('可供编辑的内容');
+    });
+    ue3.ready(function() {
+        ue3.setHeight(200);
+        //设置编辑器的内容
+        ue3.setContent('可供编辑的内容');
+    });
+
+
+    //判断图片格式和大小
+    // function validate_img(ele) {
+    //     // 返回 M，保留小数点后两位
+    //    //  layer.msg((ele.files[0].size/(1024*1024)).toFixed(2));
+    //    //  var file=ele.value;
+    //    //  if (!/.(gif|jpg|jpeg|png|GIF|JPG|bmp)$/.test(file)) {
+    //    //      layer.msg("图片类型必须是.gif,jpeg,jpg,png,bmp中的一种");
+    //    //      return false;
+    //    //  } else {
+    //    //      if (((ele.files[0].size).toFixed(2)) >= (1024 * 1024*10)) {
+    //    //          layer.msg("请上传小于5M的图片");
+    //    //          return false;
+    //    //      }
+    //    //  }
+    //     var url = null;
+    //     var fileObj = document.getElementById("upload_file").files[0];
+    //     if (window.createObjcectURL != undefined) {
+    //         url = window.createOjcectURL(fileObj);
+    //     } else if (window.URL != undefined) {
+    //         url = window.URL.createObjectURL(fileObj);
+    //     } else if (window.webkitURL != undefined) {
+    //         url = window.webkitURL.createObjectURL(fileObj);
+    //     }
+    //     $(".url-input").val(url);//绝对路径地址
+    //
+    //     //创建文件读取器
+    //     var reader=new FileReader();
+    //     reader.readAsDataURL(fileObj);
+    //     reader.onload=function (e) {
+    //         var imgBase64Data = e.target.result;
+    //         $(".url-input").attr('base64',imgBase64Data);//base64地址
+    //     }
+    // }
+
+
+    //文件上传功能 触发的id
+    var ids = new Array("pickfiles1","pickfiles2","pickfiles3");
+    $.each(ids,function(i,n){
+        var self = this.toString();
+        console.log(self);
+        //实例化一个plupload上传对象
+        var uploader = new plupload.Uploader({
+            browse_button : self, //触发文件选择对话框的按钮，为那个元素id
+            url : host+ '/Upload/api/File/Upload',//服务器端的上传页面地址
+            chunk_size: '20kb',//分片上传文件时，每片文件被切割成的大小，为数字时单位为字节
+            unique_names: true,//当值为true时会为每个上传的文件生成一个唯一的文件名，并作为额外的参数post到服务器端，参数明为name,值为生成的文件名。
+            max_file_size: '10mb',//限制为2MB
+            filters: [{title: "Image files",extensions: "jpg,gif,png,mp4"}]//图片限制
+        });
+        //在实例对象上调用init()方法进行初始化
+        uploader.init();
+        //绑定各种事件，并在事件监听函数中做你想做的事
+        uploader.bind('FilesAdded',function(uploader,files){
+            if (files.length > 1) {
+                 layer.msg('只能选择一个文件');
+                  return;
+             }else{
+                $("#"+self).siblings('.url-input').val("当前上传的文件名称："+files[0].name);
+             }
+        });
+
+        //会在文件上传过程中不断触发，可以用此事件来显示上传进度监听（比如说上传进度）
+        uploader.bind('UploadProgress',function(up, file) {
+            $("#"+self).siblings('.pickfileProcess').find(".line").css("width",file.percent+'%');
+        });
+
+        //传成功触发，ps:data是返回值（第三个参数是返回值）
+        uploader.bind('FileUploaded',function(uploader,files,data){
+            var json= JSON.parse(data.response);
+            layer.msg(json.message);
+            setTimeout(function () {
+                if(json.message.indexOf('不支持')!=-1){
+                    $("#"+self).siblings('.pickfileProcess').find(".line").css("width",0);
+                    $("#"+self).siblings('.url-input').val('');
+                }else{
+                    $("#"+self).siblings('.url-input').val(json.filename);
+                }
+            },1500);
+
+        });
+
+        $("#"+self).siblings('.upload-btn').on("click",function () {
+            if( $("#"+self).siblings('.url-input').val()==""){
+                layer.msg("请选择您要上传的文件");
+                return;
+            }else{
+                uploader.start();
+            }
+        })
+
+    });
+
+
+
+    $(function () {
+        $(".fabu").on("click",'.content-display.active .submit img',function () {
+            var type= $('.fabu .pu-menu').find('.item.active').attr("typenum");
+            var Id=$(".content-display.active").find(".title").attr("ids");
+            var Title=$(".content-display.active").find(".title").val();
+            var Summary=$(".content-display.active").find(".summary-textarea").val();
+            var typeNum= $(".content-display.active").find(".eduit-wrap").attr("type");
+            var hasContents= UE.getEditor('editor'+typeNum).hasContents();
+            var Content= UE.getEditor('editor'+typeNum).getContent();
+            var PicUrl=$(".content-display.active").find(".url-input").val();
+          //  PicUrl='http://219.143.155.183:8899/Upload/20190823/a68a901e-cacb-4d83-923c-18f972317ed7.jpg';
+           //PicUrl='http://219.143.155.183:8899/file/case2.jpg';
+            //PicUrl='http://219.143.155.183:8899/file/case1.jpg';
+            var MultimediaType=1;//图片
+            if(PicUrl.indexOf("mp4")!=-1){
+                MultimediaType=2//视频
+            }
+            if(!Title){
+                layer.msg("请填写标题");
+                return;
+            }
+            if(!Summary){
+                layer.msg("请填写摘要");
+                return;
+            }
+            if(!hasContents){
+                layer.msg("请填写内容");
+                return;
+            }
+            if(!PicUrl){
+                layer.msg("请上传文件");
+                return;
+            }
+
+            var url='';
+            if(Id==""){//新增
+             url='/api/Forum/Publish'
+            }else{//编辑
+              url='/api/Forum/GetForumDetailForEditEvent'
+            }
+
+            $.request(url, {
+                    timestamp: ts(),
+                    Id:Id,
+                    type:type,
+                    Title:Title,
+                    Summary:Summary,
+                    PicUrl:PicUrl,
+                    MultimediaType:MultimediaType,
+                    Content:Content,
+                    token:localStorage.getItem("ttToken")||'',
+                    sign: createSign({
+                        timestamp: ts(),
+                        Id:Id,
+                        type:type,
+                        Title:Title,
+                        Summary:Summary,
+                        PicUrl:PicUrl,
+                        MultimediaType:MultimediaType,
+                        Content:Content,
+                        token:localStorage.getItem("ttToken")||'',
+                    })
+                },
+                function (res) {
+                    layer.msg(res.message);
+                     setTimeout(function () {
+                         resetPublish();
+                         $(".left-nav .item-menu").eq(1).click();
+                     },1500);
+                }
+            );
+        });
+    })
+
+
+    function resetPublish(){
+        $(".content-display").find(".title").val('');
+        $(".content-display").find(".summary-textarea").val('');
+        $(".content-display").find(".url-input").val('');
+        ue1.ready(function() {
+            ue1.setHeight(200);
+            //设置编辑器的内容
+            ue1.setContent('可供编辑的内容');
+        });
+        ue2.ready(function() {
+            ue2.setHeight(200);
+            //设置编辑器的内容
+            ue2.setContent('可供编辑的内容');
+        });
+        ue3.ready(function() {
+            ue3.setHeight(200);
+            //设置编辑器的内容
+            ue3.setContent('可供编辑的内容');
+        });
+    }
+</script>
+</body>
+
+</html>

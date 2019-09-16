@@ -1,40 +1,110 @@
 <div class="nav">
     <ul class="navBar">
-        <li><a class="sibmenu" href="./index.html">首页</a>
-            <div class="submenu">
-                <div class="triangle"></div>
-                <div class="subList"><a href="">1111</a></div>
-                <div class="subList"><a href="">2222</a></div>
-                <div class="subList"><a href="">3333</a></div>
-            </div>
+        <li><a class="sibmenu index" href="./index.html">首页</a>
+            <!--<div class="submenu">-->
+                <!--<div class="triangle"></div>-->
+                <!--<div class="subList"><a href="">1111</a></div>-->
+                <!--<div class="subList"><a href="">2222</a></div>-->
+                <!--<div class="subList"><a href="">3333</a></div>-->
+            <!--</div>-->
         </li>
-        <li><a class="sibmenu" href="./article.html">文章</a>
-            <div class="submenu">
-                <div class="triangle"></div>
-                <div class="subList"><a href="">1111</a></div>
-                <div class="subList"><a href="">2222</a></div>
-                <div class="subList"><a href="">3333</a></div>
-            </div>
+        <li><a class="sibmenu article" href="./article.html">资讯</a>
+            <!--<div class="submenu">-->
+                <!--<div class="triangle"></div>-->
+                <!--<div class="subList"><a href="">1111</a></div>-->
+                <!--<div class="subList"><a href="">2222</a></div>-->
+                <!--<div class="subList"><a href="">3333</a></div>-->
+            <!--</div>-->
         </li>
-        <li><a class="sibmenu" href="./know.html">知识</a>
-            <div class="submenu">
-                <div class="triangle"></div>
-                <div class="subList"><a href="">1111</a></div>
-                <div class="subList"><a href="">2222</a></div>
-                <div class="subList"><a href="">3333</a></div>
-            </div>
+        <li><a class="sibmenu know" href="./know.html">知识</a>
+            <!--<div class="submenu">-->
+                <!--<div class="triangle"></div>-->
+                <!--<div class="subList"><a href="">1111</a></div>-->
+                <!--<div class="subList"><a href="">2222</a></div>-->
+                <!--<div class="subList"><a href="">3333</a></div>-->
+            <!--</div>-->
         </li>
-        <li><a class="sibmenu" href="./active.html">活动</a>
-            <div class="submenu">
-                <div class="triangle"></div>
-                <div class="subList"><a href="">1111</a></div>
-                <div class="subList"><a href="">2222</a></div>
-                <div class="subList"><a href="">3333</a></div>
-            </div>
+        <li><a class="sibmenu active" href="./active.html">活动</a>
+            <!--<div class="submenu">-->
+                <!--<div class="triangle"></div>-->
+                <!--<div class="subList"><a href="">1111</a></div>-->
+                <!--<div class="subList"><a href="">2222</a></div>-->
+                <!--<div class="subList"><a href="">3333</a></div>-->
+            <!--</div>-->
         </li>
-        <li style="float: right"><img style="display: inline-block;vertical-align: middle;padding-right: 0.1rem" src="./images/login-on-off.png"><a style="display: inline-block">退出</a></li>
-        <li style="float: right"><img style="display: inline-block;vertical-align: middle;padding-right: 0.1rem" src="./images/user-icon.png"><a style="display: inline-block">朱迪</a></li>
+        <li class="register" style="float: right"><img style="display: inline-block;vertical-align: text-bottom;width:0.26rem;padding-right: 0.1rem" src="./images/reg-icon.png"><a style="display: inline-block;color: black">注册</a></li>
+        <li class="signin"style="float: right"><img style="display: inline-block;vertical-align: text-top;width: 0.25rem;;padding-right: 0.1rem" src="./images/user-icon-black.png"><a style="display: inline-block;color: black">登录</a></li>
+
+        <li class="exit" style="float: right"><img style="display: inline-block;vertical-align: middle;padding-right: 0.1rem" src="./images/login-on-off.png"><a style="display: inline-block">退出</a></li>
+        <li class="users" style="float: right"><img style="display: inline-block;vertical-align: middle;padding-right: 0.1rem" src="./images/user-icon.png"><a style="display: inline-block"></a></li>
     </ul>
 </div>
 <!-- logo -->
 <img class="logo" src="./images/logo.png" alt="">
+
+
+<script>
+    $(function () {
+        console.log("当前登录用户的token:"+localStorage.getItem('ttToken'));
+        initParams();
+        //登录
+        $(".container .nav ul").on("click",'.signin',function () {
+            window.location.href='./userhome.html?type=0';//登录
+        });
+         //注册
+        $(".container .nav ul").on("click",'.register',function () {
+            window.location.href='./userhome.html?type=1';//注册
+        });
+        //个人中心
+        $(".container .nav ul").on("click",'.users',function () {
+            window.location.href='./usercenter.html';
+        });
+        $(".container .nav ul").on("click",'.exit',function () {
+            layer.confirm('确定退出?', {
+                icon: 3, title: '提示', yes: function (index) {
+                    layer.close(index);
+                    localStorage.removeItem('ttToken');
+                    localStorage.removeItem('ttName');
+                    $(".container .header .register").show();
+                    $(".container .header .signin").show();
+                    $(".container .header .exit").hide();
+                    $(".container .header .users").hide();
+                    window.location.href='./index.html'
+                },
+                cancel: function (index, layero) {
+                    layer.close(index);
+                }
+            });
+
+        })
+
+    });
+    function initParams() {
+        var ttName = localStorage.getItem('ttName');
+        if (ttName && localStorage.getItem('ttToken')) {
+            $(".container .header .exit").show();
+            $(".container .header .users").show().find("a").html(ttName);
+            $(".container .header .register").hide();
+            $(".container .header .signin").hide();
+
+        }else{
+            $(".container .header .register").show();
+            $(".container .header .signin").show();
+            $(".container .header .exit").remove();
+            $(".container .header .users").remove();
+
+        }
+        var  url=window.location.href;
+        if(url.indexOf("user")>-1){//个人中心  注意 凡是个人中心 html文件命名加上user前缀
+            $(".container .header .nav").addClass("before").removeClass("after");
+            setTimeout(function () {
+                $(".container .footer img").attr("src","./images/footer-bg-white.png");
+            },100);
+        }else{//非个人中心
+            $(".container .header .nav").addClass("after").removeClass("before");
+            setTimeout(function () {
+            $(".container .footer img").attr("src","./images/footer-bg.png");
+            },100);
+        }
+    }
+</script>
