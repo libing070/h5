@@ -77,7 +77,10 @@
                     <div class="upload"><div class="pickfileProcess"><span class="line"></span></div><input disabled base64="" placeholder="请选择您要上传的文件,支持（jpg,gif,png,mp4）" type="text" class="url-input"><a class="file" id="pickfiles3" ></a><img class="upload-btn"  src="images/upload-file-btn.png"></div>
                     <div class="submit"><img src="images/publish-content-btn.png"></div>
                 </div>
-
+                <div class="submitted-pages" style="display: none">
+                    <img src="images/coffee.png">
+                    <p><span class="s1">倒计时</span><span class="s2">5</span><span class="s1">秒</span><span class="s3">立即返回我的作品</span></p>
+                </div>
             </div>
 
             <!--我的发布-->
@@ -187,8 +190,8 @@
                     <!--</div>-->
                 </div>
                 <div class="load-more mypublish-load-more" style="margin-bottom: 0;margin-top: 1rem" type="1"  pageIndex="1" hasmore="1">
-                    <img class="load-more-btn" src="./images/load-more-icon-black.png">
-                    <p>加载更多</p>
+                    <img style="display: none" class="load-more-btn active" src="./images/load-more-icon-black.png">
+                    <p>点击加载更多</p>
                 </div>
             </div>
             <!--我的喜欢-->
@@ -512,103 +515,6 @@
 
     });
 
-
-
-    $(function () {
-        $(".fabu").on("click",'.content-display.active .submit img',function () {
-            var type= $('.fabu .pu-menu').find('.item.active').attr("typenum");
-            var Id=$(".content-display.active").find(".title").attr("ids");
-            var Title=$(".content-display.active").find(".title").val();
-            var Summary=$(".content-display.active").find(".summary-textarea").val();
-            var typeNum= $(".content-display.active").find(".eduit-wrap").attr("type");
-            var hasContents= UE.getEditor('editor'+typeNum).hasContents();
-            var Content= UE.getEditor('editor'+typeNum).getContent();
-            var PicUrl=$(".content-display.active").find(".url-input").val();
-          //  PicUrl='http://219.143.155.183:8899/Upload/20190823/a68a901e-cacb-4d83-923c-18f972317ed7.jpg';
-           //PicUrl='http://219.143.155.183:8899/file/case2.jpg';
-            //PicUrl='http://219.143.155.183:8899/file/case1.jpg';
-            var MultimediaType=1;//图片
-            if(PicUrl.indexOf("mp4")!=-1){
-                MultimediaType=2//视频
-            }
-            if(!Title){
-                layer.msg("请填写标题");
-                return;
-            }
-            if(!Summary){
-                layer.msg("请填写摘要");
-                return;
-            }
-            if(!hasContents){
-                layer.msg("请填写内容");
-                return;
-            }
-            if(!PicUrl){
-                layer.msg("请上传文件");
-                return;
-            }
-
-            var url='';
-            if(Id==""){//新增
-             url='/api/Forum/Publish'
-            }else{//编辑
-              url='/api/Forum/GetForumDetailForEditEvent'
-            }
-
-            $.request(url, {
-                    timestamp: ts(),
-                    Id:Id,
-                    type:type,
-                    Title:Title,
-                    Summary:Summary,
-                    PicUrl:PicUrl,
-                    MultimediaType:MultimediaType,
-                    Content:Content,
-                    token:localStorage.getItem("ttToken")||'',
-                    sign: createSign({
-                        timestamp: ts(),
-                        Id:Id,
-                        type:type,
-                        Title:Title,
-                        Summary:Summary,
-                        PicUrl:PicUrl,
-                        MultimediaType:MultimediaType,
-                        Content:Content,
-                        token:localStorage.getItem("ttToken")||'',
-                    })
-                },
-                function (res) {
-                    layer.msg(res.message);
-                     setTimeout(function () {
-                         resetPublish();
-                         $(".left-nav .item-menu").eq(1).click();
-                     },1500);
-                }
-            );
-        });
-    })
-
-
-    function resetPublish(){
-        $(".content-display").find(".title").val('');
-        $(".content-display").find(".summary-textarea").val('');
-        $(".content-display").find(".url-input").val('');
-        ue1.ready(function() {
-            ue1.setHeight(200);
-            //设置编辑器的内容
-            ue1.setContent('可供编辑的内容');
-        });
-        ue2.ready(function() {
-            ue2.setHeight(200);
-            //设置编辑器的内容
-            ue2.setContent('可供编辑的内容');
-        });
-        ue3.ready(function() {
-            ue3.setHeight(200);
-            //设置编辑器的内容
-            ue3.setContent('可供编辑的内容');
-        });
-    }
 </script>
 </body>
 

@@ -18,7 +18,7 @@ $(function () {
             function (res) {
                 if(pageIndex>res.data.pageCount){
                     $(".load-more"+type).find("p").html("没有更多了");
-                    $(".load-more"+type).find(".load-more-btn").removeClass("active");
+                    $(".load-more"+type).find(".load-more-btn").hide();
                     $(".load-more"+type).attr("hasmore","0");
                     return;
                 }
@@ -45,7 +45,7 @@ $(function () {
                         str+='</div>';
                     });
                     $('.all-list-layout'+type).append(str);
-                    $(".load-more"+type).find(".load-more-btn").removeClass("active");
+                    $(".load-more"+type).find(".load-more-btn").hide();
 
                 }else{
                     $(".load-more"+type).find("p").html("没有更多了");
@@ -63,11 +63,11 @@ $(function () {
 
     $(".load-more").on("click",function () {
         var type=$(this).attr("type");
-        $(".load-more"+type).find(".load-more-btn").addClass("active");
+        $(".load-more"+type).find(".load-more-btn").show();
         var hasMore=$(".load-more"+type).attr("hasmore");//1更多 0 没有
         if(hasMore==0){
             $('.load-more'+type).off();
-            $(".load-more"+type).find(".load-more-btn").removeClass("active");
+            $(".load-more"+type).find(".load-more-btn").hide();
             return;
         }
         var pageIndex=$(this).attr("pageIndex");

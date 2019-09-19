@@ -37,20 +37,23 @@ span {
 
 .banner_txt .bd_p1:nth-child(2) {
     font-size: 0.6rem;
-    font-family: 'SourceHanSansCN-Bold';
+    /*font-family: 'SourceHanSansCN-Bold';*/
+    font-family:'Microsoft YaHei';
 }
 
 .bd_p2 {
     font-size: 0.60rem;
     margin: 0.75rem 0;
-    font-family: 'SourceHanSansCN-ExtraLight';
+    font-family:'Microsoft YaHei';
+    /*font-family: 'SourceHanSansCN-ExtraLight';*/
 }
 
 .bd_p3 {
     font-size: 0.18rem;
     white-space: nowrap;
     margin-bottom: 0.1rem;
-    font-family: 'SourceHanSansCN-Light';
+    /*font-family: 'SourceHanSansCN-Light';*/
+    /*font-family:'黑体';*/
 }
 
 .service {
@@ -129,13 +132,16 @@ span {
 .ss_p1 {
     margin: 0.35rem 0 0.3rem 0;
     font-size: 0.20rem;
-    font-family: 'SourceHanSansCN-Bold';
+    /*font-family: 'SourceHanSansCN-Bold';*/
+    /*font-family:'黑体';*/
+    font-weight: 600;
 }
 
 .ss_p2 {
     font-size: 0.17rem;
     color: #8d8d8d;
-    font-family: 'SourceHanSansCN-Light';
+    /*font-family: 'SourceHanSansCN-Light';*/
+    font-family:'Microsoft YaHei';
     margin-bottom: 0.15rem !important;
 }
 
@@ -196,7 +202,8 @@ span {
     font-size: 0.18rem;
     line-height: 0.25rem;
     color: #fff;
-    font-family: 'SourceHanSansCN-Light';
+    /*font-family: 'SourceHanSansCN-Light';*/
+    font-family:'Microsoft YaHei';
 }
 
 .plat_desc a img {
@@ -243,12 +250,14 @@ span {
     color: #000;
     text-align: center;
     margin-top: 0.8rem;
-    font-family: 'SourceHanSansCN-Bold';
+    /*font-family: 'SourceHanSansCN-Bold';*/
+    font-family:'Microsoft YaHei';
 }
 
 .subP {
     font-size: 0.18rem !important;
-    font-family: 'SourceHanSansCN-Light' !important;
+    /*font-family: 'SourceHanSansCN-Light' !important;*/
+    font-family:'Microsoft YaHei' !important;
     color: #878787 !important;
     margin-top: 0.5rem !important;
 }
@@ -293,7 +302,8 @@ span {
 
 .bd1 .slideTxt p {
     margin-bottom: 0.05rem;
-    font-family: 'SourceHanSansCN-Light';
+    /*font-family: 'SourceHanSansCN-Light';*/
+    /*font-family:'黑体';*/
     font-size: 0.18rem;
     padding: 0 0.2rem;
 }
@@ -310,7 +320,9 @@ span {
 .bd1 .slide_title {
     font-size: 0.2rem !important;
     color: #000;
-    font-family: 'SourceHanSansCN-Bold' !important;
+    /*font-family: 'SourceHanSansCN-Bold' !important;*/
+    font-family:'' !important;
+    font-weight: 600;
 }
 
 .bd1 .slide_line {
@@ -388,7 +400,8 @@ span {
     font-size: 0.18rem;
     line-height: 0.25rem;
     color: #fff;
-    font-family: 'SourceHanSansCN-Normal';
+    /*font-family: 'SourceHanSansCN-Normal';*/
+    font-family: 'Microsoft YaHei';
 }
 
 .bd1 .bd1-swiper-button .bd1_sub_prev {
@@ -432,7 +445,8 @@ span {
 
 .scheme_bg p {
     color: #fff;
-    font-family: 'SourceHanSansCN-Light';
+    /*font-family: 'SourceHanSansCN-Light';*/
+    font-family: 'Microsoft YaHei';
     font-size: 0.18rem;
     text-align: center;
     /* display: table-cell;

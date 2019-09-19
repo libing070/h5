@@ -1,5 +1,7 @@
 $(function () {
-
+    $('html, body').animate({
+        scrollTop: $("body").offset().top
+    }, 500);
     var inittype=20;
     var initialSlide=0;
     var url = window.location.href;
@@ -7,9 +9,11 @@ $(function () {
     if(sp.indexOf('inittype')>-1){
         inittype= GetUrlParam('inittype');
         initialSlide= GetUrlParam('initialSlide');
+        $('.banner3 .load-more').attr('type',inittype);
     }
 var swiper1 = new Swiper('.banner1', {
     loop:true,
+    autoplay:true,
     slidesPerView: 1,
     centeredSlides: true,
     pagination: {
@@ -24,9 +28,10 @@ var swiper1 = new Swiper('.banner1', {
 });
 
 
+
     var swiper2 = new Swiper('.banner2', {
-        observer: true, //修改swiper自己或子元素时，自动初始化swiper
-        observeParents: true, //修改swiper的父元素时，自动初始化swiper
+        observer: false, //修改swiper自己或子元素时，自动初始化swiper
+        observeParents: false, //修改swiper的父元素时，自动初始化swiper
         slidesPerView:4,
         loop:false,
         spaceBetween:30,
@@ -39,12 +44,12 @@ var swiper1 = new Swiper('.banner1', {
         }
     });
     var swiper3 = new Swiper('.banner3', {
-        observer: true, //修改swiper自己或子元素时，自动初始化swiper
-        observeParents: true, //修改swiper的父元素时，自动初始化swiper
+        observer: false, //修改swiper自己或子元素时，自动初始化swiper
+        observeParents: false, //修改swiper的父元素时，自动初始化swiper
         slidesPerView:1,
         loop:false,
-        initialSlide :initialSlide,
         spaceBetween:0,
+        initialSlide :initialSlide,
         on:{
             slideChangeTransitionEnd: function(event){
                 $('.banner2 .swiper-slide').removeClass('swiper-slide-active');
@@ -53,12 +58,41 @@ var swiper1 = new Swiper('.banner1', {
                 $(".banner3 .load-more").attr("type",type);//切换改变当前type
                 $(".banner3 .load-more").attr("pageIndex",1);//切换后默认为1
                 $(".banner3 .load-more").attr("hasmore",1);//1更多 0 没有
-                $(".banner3 .load-more").find("p").html("加载更多");
+                $(".banner3 .load-more").find("p").html("点击加载更多");
+                var title=$('.banner2 .swiper-slide').eq(this.activeIndex).html();
+                $('head .meta-description').attr("content",'CIG新意互动官网新意资讯，为您展示新意互动'+title+'的资讯，助您进一步了解新意互动动态和信息');
+                $('head .meta-keywords').attr("content",title+',CIG新意互动官网');
+                $("head title").html(title+"_新意资讯_CIG新意互动官网");
                 loadNewList(type,1);
             },
         }
 
     });
+
+    var isbool=true;
+    $(window).on('scroll', function (e) {
+        var t=$(window).scrollTop();
+        var h=document.body.scrollHeight;
+        var c=document.documentElement.clientHeight;
+        console.log(h+"===="+t+"===="+c);
+        var sp_bottom=h-t-c;//距离底部的距离
+        var hasMore=$(".banner3 .load-more").attr("hasmore");//1更多 0 没有
+        if( hasMore==1&&isbool){
+            if(sp_bottom<450){
+                isbool=false;
+                var pageIndex =$('.banner3 .load-more').attr('pageIndex');
+                var type = $('.banner3 .load-more').attr('type');
+                pageIndex++;
+                $('.banner3 .load-more').attr('pageIndex', pageIndex);
+                setTimeout(function () {
+                    loadNewList(type,pageIndex);
+                },100);
+
+            }
+        }
+
+    });
+
     //获取新闻列表
     function loadNewList(type,pageIndex) {
         console.log(type+"===="+pageIndex);
@@ -77,8 +111,9 @@ var swiper1 = new Swiper('.banner1', {
             function (res) {
                 if(pageIndex>res.data.pageCount){
                     $(".banner3 .load-more").find("p").html("没有更多了");
-					$(".banner3 .load-more").find(".load-more-btn").removeClass("active");
+					$(".banner3 .load-more").find(".load-more-btn").hide();
                     $(".banner3 .load-more").attr("hasmore","0");
+                    isbool=false;
                     return;
                 }
                 var str = '';
@@ -89,7 +124,7 @@ var swiper1 = new Swiper('.banner1', {
                     }else{
                         str+='<div class="bg">';
                         str+='  <img class="video-btn"  src="../images/wap/video-btn.png">';
-                        str+='<video width="100%" height="100%" poster="" x5-playsinline="" playsinline="" webkit-playsinline="" class="video video1" style="object-fit:cover;" id="video1" src="'+ele.picUrl+'" preload="auto"></video>';
+                        str+='<video width="100%"  poster="" x5-playsinline="" playsinline="" webkit-playsinline="" class="video video1" style="object-fit:cover; height: 100%" id="video1" src="'+ele.picUrl+'" preload="auto"></video>';
                         str+=' </div>';
                     }
                     str+='<div class="text">';
@@ -102,32 +137,42 @@ var swiper1 = new Swiper('.banner1', {
                 if(pageIndex==1){
                     $('.banner3 .swiper-slide').attr("type",type).html("");
                 }
-                $('.banner3 .swiper-slide').attr("type",type).append(str);
-                $(".banner3 .load-more").find(".load-more-btn").removeClass("active");
-
+                $('.banner3 .banner3-swiper-slide').attr("type",type).append(str);
+                $(".banner3 .load-more").find(".load-more-btn").hide();
+                isbool=true;
             }
         );
 
     }
 
-    loadNewList(inittype,1);//默认加载第一个
-
-    $(".banner3").on("click",".load-more",function () {
-        var hasMore=$(".banner3 .load-more").attr("hasmore");//1更多 0 没有
-        if(hasMore==0){
-            $(".banner3 .load-more").find(".load-more-btn").removeClass("active");
-
-            $(".banner3").find('.load-more').off();
-             return;
+   loadNewList(inittype,1);//默认加载第一个
+    var ttttt="";
+    for(var i=0;i<$('.banner2 .swiper-slide').length;i++){
+        if($('.banner2 .swiper-slide').eq(i).attr("type")==inittype){
+            ttttt= $('.banner2 .swiper-slide').eq(i).html();
+            break;
         }
-        $(".banner3 .load-more").find(".load-more-btn").addClass("active");
+    }
+    $('head .meta-description').attr("content",'CIG新意互动官网新意资讯，为您展示新意互动'+ttttt+'的资讯，助您进一步了解新意互动动态和信息');
+    $('head .meta-keywords').attr("content",ttttt+',CIG新意互动官网');
+    $("head title").html(ttttt+"_新意资讯_CIG新意互动官网");
 
-        var type= $(this).attr("type");
-       var pageIndex=$(this).attr("pageIndex");
-        pageIndex=++pageIndex;
-        $(this).attr("pageIndex",pageIndex);
-        loadNewList(type,pageIndex);
-    });
+    // $(".banner3").on("click",".load-more",function () {
+    //     var hasMore=$(".banner3 .load-more").attr("hasmore");//1更多 0 没有
+    //     if(hasMore==0){
+    //         $(".banner3 .load-more").find(".load-more-btn").hide();
+    //
+    //         $(".banner3").find('.load-more').off();
+    //          return;
+    //     }
+    //     $(".banner3 .load-more").find(".load-more-btn").show();
+    //
+    //     var type= $(this).attr("type");
+    //    var pageIndex=$(this).attr("pageIndex");
+    //     pageIndex=++pageIndex;
+    //     $(this).attr("pageIndex",pageIndex);
+    //     loadNewList(type,pageIndex);
+    // });
 
 
 

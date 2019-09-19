@@ -147,6 +147,13 @@ $(function () {
                 $('.whiteIcon').attr('src', './images/whiteIcon.png');
                 $('.p2').css('color', '#fff');
             },
+            slideChangeTransitionEnd: function(){
+                var len=$(".banner1").find(".pcbanner1video").length;
+                $(".banner1 .play img").show();
+                for(var i=0;i<len;i++){
+                    $(".banner1").find(".pcbanner1video").get(i).pause();
+                }
+            },
         },
     });
     var swiper2 = new Swiper('.indexSwiper,swiper-container', {
@@ -194,17 +201,22 @@ $(function () {
                 }
 
             },
+            slideChangeTransitionEnd: function(){
+                var len=$(".banner1").find(".pcbanner1video").length;
+                $(".banner1 .play img").show();
+                for(var i=0;i<len;i++){
+                    $(".banner1").find(".pcbanner1video").get(i).pause();
+                }
+            },
             slideNextTransitionStart: function () {
                 $('.indexSwiper_prev').css("cssText", "background:url(./images/turn_left_def.png) no-repeat center !important;background-size:cover !important;");
                 $('.indexSwiper_next').css("cssText", "background:url(./images/turn_right_act.png) no-repeat center !important;background-size:cover !important;");
                 var index=$('.indexSwiper .swiper-slide-active').attr('data-swiper-slide-index');
-                console.log(index)
                 if(index==2){
                     $('.indexSwiper_next').css("cssText", "background:url(./images/turn_right_black.png) no-repeat center !important;background-size:cover !important;");  
                 }
             },
             slidePrevTransitionStart: function () {
-                // console.log(1)
                 $('.indexSwiper_prev').css("cssText", "background:url(./images/turn_left_act.png) no-repeat center !important;background-size:cover !important;");
                 $('.indexSwiper_next').css("cssText", "background:url(./images/turn_right_def.png) no-repeat center !important;background-size:cover !important;");
                 var index=$('.indexSwiper .swiper-slide-active').attr('data-swiper-slide-index');

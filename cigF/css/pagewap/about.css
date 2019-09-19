@@ -23,14 +23,14 @@ a{ text-decoration:none}
 }
 .banner1  .about_title p:nth-child(1){
     font-size: 0.5rem;
-    font-family: "SourceHanSansCN";
+    font-family: "Microsoft YaHei";
     color: rgb( 255, 255, 255 );
     font-weight: bold;
 }
 
 .banner1 .about_title p:nth-child(2){
     font-size: 0.40rem;
-    font-family: "BaskOldFace";
+    font-family: "Microsoft YaHei";
     color: rgb( 255, 255, 255 );
 }
 .banner1 .about_desc{
@@ -41,7 +41,7 @@ a{ text-decoration:none}
 }
 .banner1 .about_desc p:nth-child(1){
     font-size: 0.2rem;
-    font-family: "SourceHanSansCN";
+    font-family: "Microsoft YaHei";
     color: rgb( 255, 255, 255 );
     text-transform: uppercase;
     line-height: 1.667;
@@ -49,7 +49,7 @@ a{ text-decoration:none}
 .banner1 .about_desc p:nth-child(2){
     margin-top: 0.4rem;
     font-size: 0.18rem;
-    font-family: "SourceHanSansCN";
+    font-family: "Microsoft YaHei";
     color: rgb( 255, 255, 255 );
     text-transform: uppercase;
     line-height: 1.667;
@@ -76,7 +76,7 @@ a{ text-decoration:none}
 .banner1 .about_bottom .item .num{
     display: inline-block;
     font-size: 1rem;
-    font-family: "GiveAHoot";
+    font-family: "Microsoft YaHei";
     color: rgb( 255, 255, 255 );
 }
 .banner1 .about_bottom .item .desc{
@@ -85,7 +85,7 @@ a{ text-decoration:none}
     margin-top: 0.22rem;
     margin-left: 0.1rem;
     font-size: 0.22rem;
-    font-family: "SourceHanSansCN";
+    font-family: "Microsoft YaHei";
     color: rgb( 233, 0, 16 );
 }
 .content .banner2{
@@ -177,13 +177,13 @@ a{ text-decoration:none}
 
 .echart_txt .f-t{
     font-size: 0.5rem;
-    font-family: "SourceHanSansCN";
+    font-family: "Microsoft YaHei";
     color: rgb( 0, 0, 0 );
     margin-bottom: 0.1rem;
 }
 .echart_txt .f-c{
     font-size: 0.22rem;
-    font-family: "SourceHanSansCN";
+    font-family: "Microsoft YaHei";
     color: rgb( 0, 0, 0 );
 }
 .div-2002{
@@ -358,7 +358,7 @@ a{ text-decoration:none}
     vertical-align: top;
     text-align: left;
     font-size: 0.24rem;
-    font-family: "SourceHanSansCN";
+    font-family: "Microsoft YaHei";
     color: rgb( 255, 255, 255 );
     text-transform: uppercase;
     line-height:2;
@@ -393,7 +393,7 @@ a{ text-decoration:none}
 .banner4 .about_bottom .item .num{
     display: inline-block;
     font-size: 1rem;
-    font-family: "GiveAHoot";
+    font-family: "Microsoft YaHei";
     color: rgb( 255, 255, 255 );
 }
 .banner4 .about_bottom .item .desc{
@@ -402,7 +402,7 @@ a{ text-decoration:none}
     margin-top: 0.22rem;
     margin-left: 0.1rem;
     font-size: 0.22rem;
-    font-family: "SourceHanSansCN";
+    font-family: "Microsoft YaHei";
     color: rgb( 233, 0, 16 );
 }
 .banner4 .swiper-container{

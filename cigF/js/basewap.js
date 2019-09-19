@@ -1,5 +1,4 @@
 $(function () {
-
     var ttName = localStorage.getItem('ttName');
     var OAName = localStorage.getItem('OAName');
     console.log(ttName);
@@ -10,6 +9,7 @@ $(function () {
     if (OAName && localStorage.getItem('OAToken')) {
         $('.module9 .login-after').fadeIn();
         $('.module9 .login-before').fadeOut();
+        $('.module9 .login-after .top .p1 .name').html(OAName);
         GetHomeInfo(localStorage.getItem('OAToken'));
     }
 
@@ -88,6 +88,22 @@ $(function () {
         var contact=$(".module6 .dialog .mask2 .concatMobile").val();
         var remark=$(".module6 .dialog .mask2 .concatContent").val();
         console.log(type,name, companyName, companyAddr, contact, remark);
+        if(name==""){
+            layer.msg("请填写姓名");
+            return;
+        }
+        if(companyName==""){
+            layer.msg("请填写公司姓名");
+            return;
+        }
+        if(companyAddr==""){
+            layer.msg("请填写公司地址");
+            return;
+        }
+        if(contact==""){
+            layer.msg("请填写联系方式");
+            return;
+        }
         $.request('/api/Client/ContactUs', {
             type: type,
             name: name,
@@ -106,7 +122,9 @@ $(function () {
                 timestamp: ts(),
             })
         }, function (res) {
-            console.log(res.message);
+            if(res.code==1){
+                localStorage.setItem('roleId',"3");
+            }
             layer.msg(res.message, function () {
                 $(".module6 .dialog .mask2 .close").click();
             });
@@ -184,8 +202,7 @@ $(function () {
                 })
             },
             function (res) {
-                console.log(res);
-                layer.msg(res.message, function () {
+                if(res.code==1){
                     $('.module9 .dialog,.module9 .dialog .mask').fadeOut();
                     $('.module9 .login-before').fadeOut();
                     $('.module9 .login-after').fadeIn();
@@ -199,13 +216,14 @@ $(function () {
                         domain: '.cig.com.cn',
                         secure: true
                     });
-                    console.log($.cookie('OAToken'));
                    GetHomeInfo(res.data.userToken);
-                });
+                };
+                layer.msg(res.message);
             }
         );
     });
     function GetHomeInfo(token) {
+       //  var res={"code":1,"message":"操作成功!","data":[{"name":"待办事宜","icon":"http://webimg.cig.com.cnoa_icon/bell-icon.png","url":"http://oa.cig.com.cn","extra":"34"},{"name":"日常办公","icon":"http://webimg.cig.com.cnoa_icon/soipt-icon.png","url":"http://oa.cig.com.cn","extra":""},{"name":"公共资源","icon":"http://webimg.cig.com.cnoa_icon/coins-icon.png","url":"http://oa.cig.com.cn","extra":""},{"name":"平台链接","icon":"http://webimg.cig.com.cnoa_icon/link-icon.png","url":"http://oa.cig.com.cn","extra":""},{"name":"成长体系","icon":"http://webimg.cig.com.cnoa_icon/forest-icon.png","url":"http://oa.cig.com.cn","extra":""},{"name":"新意新桥","icon":"http://webimg.cig.com.cnoa_icon/clipmark-icon.png","url":"http://oa.cig.com.cn","extra":""},{"name":"考勤","icon":"http://webimg.cig.com.cnoa_icon/kaoqin-icon.png","url":"http://oa.cig.com.cn","extra":""},{"name":"会议室预定","icon":"http://webimg.cig.com.cnoa_icon/huiyishi-icon.png","url":"http://oa.cig.com.cn","extra":""},{"name":"费用报销","icon":"http://webimg.cig.com.cnoa_icon/feiyongbaoxiao-icon.png","url":"http://oa.cig.com.cn","extra":""}],"oaUrl":"http://oa.cig.com.cn"}
         $.request('/api/OA/GetHomeInfo', {
             userToken: token,
             timestamp: ts(),
@@ -214,14 +232,20 @@ $(function () {
                 timestamp: ts(),
             })
         }, function (res) {
-            console.log(res);
-            console.log($('.oa-swiper .oa-menu .item').length);
-            res.data.forEach((ele, k) => {
-                $('.oa-swiper .oa-menu .item').eq(k).find('a').attr('href', res.data[0].url);
-                // if (ele.extra != 0) {
-                //     $('.oa-swiper .oa-menu .item').eq(k).find('.oa_circle').show();
-                // }
-            });
+            $(".login-after .joinoa").attr("href",res.oaUrl);
+            var str='';
+            for(var i=0;i<res.data.length;i++){
+                str+='<div class="item">';
+                str+='     <a class="bell" style="position: relative" href="'+res.data[i].url+'" target="_blank">';
+                str+='   <img src="'+res.data[i].icon+'" alt="">';
+                str+='   <p class="fontSize16">'+res.data[i].name+'</p>';
+                if(i==0){
+                    str+='  <span class="oa_circle"></span>';
+                }
+                str+='  </a>';
+                str+='  </div>';
+            }
+            $(".oa-swiper .oa-menu").append(str);
         });
     }
 

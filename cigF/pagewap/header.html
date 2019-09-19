@@ -7,11 +7,12 @@
     <div class="content">
         <div class="item">
             <div class="title"><a style="color: #fff" href="./about.html">关于我们</a></div>
-            <div class="list">
-                <span><a style="color:rgba( 255, 255, 255, 0.6 )" href="./about.html">公司介绍</a></span>
-                <span><a style="color: rgba( 255, 255, 255, 0.6 )" href="./about.html">经营理念</a></span>
-                <span><a style="color:rgba( 255, 255, 255, 0.6 )" href="./about.html">发展历程</a></span>
-                <span><a style="color:rgba( 255, 255, 255, 0.6 )" href="./about.html">客户服务</a></span>
+            <div class="list about-list">
+                <span><a style="color:rgba( 255, 255, 255, 0.6 )" href="./about.html#abuotbanner1">公司介绍</a></span>
+                <span><a style="color: rgba( 255, 255, 255, 0.6 )" href="./about.html#abuotbanner2">经营理念</a></span>
+                <span><a style="color:rgba( 255, 255, 255, 0.6 )" href="./about.html#abuotbanner3">发展历程</a></span>
+                <span><a style="color:rgba( 255, 255, 255, 0.6 )" href="./about.html#abuotbanner4">行业荣誉</a></span>
+                <span><a style="color:rgba( 255, 255, 255, 0.6 )" href="./about.html#abuotbanner5">客户服务</a></span>
             </div>
         </div>
         <div class="item">
@@ -49,13 +50,13 @@
             <div class="title"><a style="color: #fff" href="./job.html">职达新意</a></div>
             <div class="list">
                 <span><a style="color: rgba( 255, 255, 255, 0.6 )" href="./job.html">意起精彩</a></span>
-                <span><a style="color: rgba( 255, 255, 255, 0.6 )" href="https://cig.zhiye.com/Social"target="_blank">社会招聘</a></span>
-                <span><a style="color: rgba( 255, 255, 255, 0.6 )" href="https://cig.zhiye.com/Intern"target="_blank">实习生招聘</a></span>
-                <span><a style="color: rgba( 255, 255, 255, 0.6 )" href="http://neitui.zhiye.com/cig#vertify%2Fwechat"target="_blank">内部推荐</a></span>
+                <span><a style="color: rgba( 255, 255, 255, 0.6 )" href="//cig.zhiye.com/Social"target="_blank">社会招聘</a></span>
+                <span><a style="color: rgba( 255, 255, 255, 0.6 )" href="//cig.zhiye.com/Intern"target="_blank">实习生招聘</a></span>
+                <span><a style="color: rgba( 255, 255, 255, 0.6 )" href="//neitui.zhiye.com/cig#vertify%2Fwechat"target="_blank">内部推荐</a></span>
                 <!--<span><a style="color: rgba( 255, 255, 255, 0.6 )" href="./job.html">活水计划</a></span>-->
             </div>
         </div>
-        <div class="item">
+        <div class="item" style="display: none">
             <div class="title"><a style="color: #fff" href="#">营销智库</a></div>
             <div class="list"><span><a style="color:rgba( 255, 255, 255, 0.6 )" href="#">资讯</a></span>
                 <span><a style="color: rgba( 255, 255, 255, 0.6 )" href="#">作品</a></span>
@@ -67,6 +68,14 @@
 
 <script>
     $(function () {
+
+ $(".about-list").on("click",'span a',function () {
+     if(window.location.href.indexOf('about')>-1){
+         $(".menu-content").removeClass("close");
+         $(".container .nav .menu").attr("src","../images/wap/nav-menu.jpg");
+         $(".container .nav .menu").click();
+     }
+ })
         $("#wapNavMenu").on("click",'.log',function () {
             window.location.href='./../index.html'
         });

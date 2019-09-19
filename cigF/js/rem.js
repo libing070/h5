@@ -10,13 +10,24 @@ if (window.addEventListener) {
 function setHtmlFontSize() {
     var w;
     if (browserRedirect() == 0) {
-        w = 1900
+
+        if(window.screen.width>1920){
+            w = 3800;
+        }else{
+            w = 1900;
+        }
+        console.log("document.documentElement.clientWidth "+document.documentElement.clientWidth +" 屏幕宽度："+window.screen.width+"  设置宽度："+w);
     }
     if (browserRedirect() == 1) {
         w = 750
     }
     // 1366是设计稿的宽度，当大于1366时采用1366宽度，比例也是除以13.66
-    deviceWidth = document.documentElement.clientWidth > w ? w : document.documentElement.clientWidth
+    if(window.screen.width>1920){
+        deviceWidth = w;
+    }else{
+        deviceWidth = document.documentElement.clientWidth > w ? w : document.documentElement.clientWidth
+
+    }
     document.getElementsByTagName('html')[0].style.cssText = 'font-size:' + deviceWidth / (w / 100) + 'px !important'
 }
 

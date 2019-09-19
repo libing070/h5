@@ -62,7 +62,7 @@
 
 .menu-content .content{
     position: absolute;
-    width: 6.11rem;
+    width: 6.2rem;
     height: 10.8rem;
     top: 0;
     bottom: 0;
@@ -75,7 +75,7 @@
 }
 .menu-content .content .item .title{
     font-size: 0.32rem;
-    font-family: "SourceHanSansCN";
+    font-family: "Microsoft YaHei";
     color: rgb( 255, 255, 255 );
     text-align: left;
     margin: 0.15rem 0;
@@ -83,7 +83,7 @@
 }
 .menu-content .content .item .list{
     font-size: 0.22rem;
-    font-family: "SourceHanSansCN";
+    font-family: "Microsoft YaHei";
     color: rgba( 255, 255, 255, 0.6 );
     margin: 0.3rem 0;
 }
@@ -109,14 +109,14 @@
 .footer-top .item .title a{
     margin-bottom: 0.3rem;
     font-size: 0.25rem;
-    font-family: "SourceHanSansCN";
+    font-family: "Microsoft YaHei";
     color: rgb( 61, 61, 61 );
 }
 .footer-top .item  .list a{
     display: inline-block;
     margin-top: 0.2rem;
     font-size: 0.22rem;
-    font-family: "SourceHanSansCN";
+    font-family: "Microsoft YaHei";
     color: rgba( 61, 61, 61, 0.6 );
 }
 .footer-top .item .list span{
@@ -131,11 +131,34 @@
     font-size: 0.18rem;
     padding-top: 0.25rem;
     text-align: center;
-    font-family: "SourceHanSansCN";
+    font-family: "Microsoft YaHei";
     color: rgba( 255, 255, 255, 0.6 );
     line-height: 1.889;
 }
 
+.footer-bottom .text{
+    color: rgba(255,255,255,0.5);
+    position: absolute;
+    width: 2rem;
+    left: 0;
+    right: 0;
+    bottom: 0.6rem;
+    height: 0.5rem;
+    margin: auto;
+}
+.footer-bottom  .text a{
+    line-height: 0.5rem;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.18rem;
+}
+.footer-bottom  .text a.s1{
+    cursor: pointer;
+    float: left;
+}
+.footer-bottom  .text a.s2{
+    float: right;
+    cursor: pointer;
+}
 
 
 

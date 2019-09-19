@@ -29,13 +29,13 @@ a{ text-decoration:none}
 
 .banner1 .banner_txt .bd_p1 {
     font-size: 0.4rem;
-    font-family: "BaskOldFace";
+    font-family: "Microsoft YaHei";
     color: rgb( 255, 255, 255 );
 }
 
 .banner1 .banner_txt .bd_p2 {
     font-size: 0.57rem;
-    font-family: "SourceHanSansCN";
+    font-family: "Microsoft YaHei";
     color: rgb( 255, 255, 255 );
     font-weight: bold;
     margin: 0.18rem 0 0.8rem 0;
@@ -43,14 +43,14 @@ a{ text-decoration:none}
 
 .banner1 .banner_txt .bd_p3 {
     font-size: 0.57rem;
-    font-family: "SourceHanSansCN";
+    font-family: "Microsoft YaHei";
     color: rgb( 255, 255, 255 );
     margin-bottom: 0.7rem;
 }
 .banner1 .banner_txt .bd_p4 {
     line-height: 1.667;
     font-size: 0.22rem;
-    font-family: "SourceHanSansCN";
+    font-family: "Microsoft YaHei";
     color: rgb( 255, 255, 255 );
 }
 
@@ -78,12 +78,12 @@ a{ text-decoration:none}
 }
 .banner2 .con .title .p1{
     font-size: 0.40rem;
-    font-family: "BaskOldFace";
+    font-family: "Microsoft YaHei";
     color: rgb( 0, 0, 0 );
 }
 .banner2 .con .title .p2{
     font-size: 0.57rem;
-    font-family: "SourceHanSansCN";
+    font-family: "Microsoft YaHei";
     color: rgb( 0, 0, 0 );
     font-weight: bold;
     line-height: 1.62;
@@ -137,7 +137,7 @@ a{ text-decoration:none}
 .banner2 .con .swiper1 .swiper-slide .p1{
     margin-top: -1rem;
     font-size: 0.3rem;
-    font-family: "SourceHanSansCN";
+    font-family: "Microsoft YaHei";
     color: #d7000f;
     font-weight: bold;
 }
@@ -150,7 +150,7 @@ a{ text-decoration:none}
 .banner2 .con .swiper1 .swiper-slide .p2{
     line-height: 1.667;
     font-size: 0.22rem;
-    font-family: "SourceHanSansCN";
+    font-family: "Microsoft YaHei";
     color: rgba( 0, 0, 0, 0.6 );
     padding: 0 0.5rem;
 }
@@ -202,7 +202,7 @@ a{ text-decoration:none}
 }
  .banner3 .text .t1{
     font-size: 0.40rem;
-     font-family: "BaskOldFace";
+     font-family: "Microsoft YaHei";
      color: rgb( 255, 255, 255 );
     margin-top: 1.6rem;
     margin-bottom: 0.25rem;
@@ -211,7 +211,7 @@ a{ text-decoration:none}
  .banner3 .text .t2{
     margin-bottom: 0.9rem;
     font-size: 0.5rem;
-    font-family: "SourceHanSansCN";
+    font-family: "Microsoft YaHei";
      color: rgb( 255, 255, 255 );
     font-weight: bold;
     line-height: 0.776;
@@ -267,7 +267,7 @@ a{ text-decoration:none}
     margin:0.6rem;
     margin-bottom: 0.2rem;
     font-size: 0.22rem;
-    font-family: "SimSun";
+    font-family: "Microsoft YaHei";
     color: rgb( 255, 255, 255 );
     line-height: 1.5;
 

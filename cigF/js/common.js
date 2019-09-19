@@ -9,7 +9,7 @@
 // 09 OA
 
 
-var host = 'http://219.143.155.183:8899';
+var host = '//219.143.155.183:8899';
 // var host = 'http://172.16.101.119:8899';
 jQuery.extend({
     request: function (url, parame, cb) {
@@ -20,17 +20,19 @@ jQuery.extend({
                 withCredentials: true
             },
             data: parame,
-            async: false, //默认为true 异步
+            async: true, //默认为true 异步
             dataType: 'json',
             success: function (res) {
                 if (res.code == 1) {
                     cb(res);
-                } else {
-                    layer.msg(res.message);
+                }else {
+                    if(res.message!='用户认证失败'){
+                        layer.msg(res.message);
+                    }
                 }
             },
             error: function () {
-                layer.msg('网络出现问题，请稍后再试!');
+                // layer.msg('网络出现问题，请稍后再试!');
             },
         })
     },
@@ -42,7 +44,7 @@ jQuery.extend({
                 withCredentials: true
             },
             data: parame,
-            async: false, //默认为true 异步  
+            async: true, //默认为true 异步
             dataType: 'json',
             success: function (res) {
                 if (res.code == 1) {
@@ -60,7 +62,7 @@ jQuery.extend({
         $.ajax({
             url: host + url,
             type: 'get',
-            async: false, //默认为true 异步  
+            async: true, //默认为true 异步
             dataType: 'json',
             success: function (res) {
                 if (res.code == 1) {
@@ -133,6 +135,19 @@ function objKeySort(arys) {
     return newObj; //返回排好序的新对象
 }
 
+function banner1playVideo(_this) {
+    $(_this).hide();
+    var myVideo=$(_this).siblings("video").get(0);
+    myVideo.play();
+    myVideo.addEventListener('ended', playsss);
+    function playsss() {
+        $(_this).show();
+        myVideo.removeEventListener("ended", playsss);
+
+    }
+}
+
+
 function playVideo(_this, k) {
     var eleName = 'video' + k;
     var videoName = document.getElementById(eleName);
@@ -164,9 +179,113 @@ function GetUrlParam(paraName) {
     }
 }
 
+function ScollPostion() {
+    var t, l, w, h;
+    if (document.documentElement && document.documentElement.scrollTop) {
+        t = document.documentElement.scrollTop;
+        l = document.documentElement.scrollLeft;
+        w = document.documentElement.scrollWidth;
+        h = document.documentElement.scrollHeight;
+    } else if (document.body) {
+        t = document.body.scrollTop;
+        l = document.body.scrollLeft;
+        w = document.body.scrollWidth;
+        h = document.body.scrollHeight;
+    }
+    return {
+        top: t,
+        left: l,
+        width: w,
+        height: h,
+        bottom:h-t-document.documentElement.clientHeight
+    };
+}
+
+const allIp=[
+    '219.143.155.162',
+    '219.143.155.163',
+    '219.143.155.164',
+    '219.143.155.165',
+    '219.143.155.166',
+    '219.143.155.167',
+    '219.143.155.168',
+    '219.143.155.169',
+    '219.143.155.170',
+    '219.143.155.171',
+    '219.143.155.172',
+    '219.143.155.173',
+    '219.143.155.174',
+    '219.143.155.175',
+    '219.143.155.176',
+    '219.143.155.177',
+    '219.143.155.178',
+    '219.143.155.179',
+    '219.143.155.180',
+    '219.143.155.181',
+    '219.143.155.182',
+    '219.143.155.183',
+    '219.143.155.184',
+    '219.143.155.185',
+    '219.143.155.186',
+    '219.143.155.187',
+    '219.143.155.188',
+    '219.143.155.189',
+    '219.143.155.190',
+
+    '223.71.26.105',
+    '223.71.26.106',
+    '223.71.26.107',
+    '223.71.26.108',
+    '223.71.26.109',
+    '223.71.26.110',
+
+    '112.65.175.128',
+
+    '112.65.175.130',
+    '112.65.175.131',
+    '112.65.175.132',
+    '112.65.175.133',
+    '112.65.175.134',
+
+    '119.131.244.144',
+
+    '119.131.244.146',
+    '119.131.244.147',
+    '119.131.244.148',
+    '119.131.244.149',
+
+    '27.115.37.216',
+
+    '27.115.37.218',
+    '27.115.37.219',
+    '27.115.37.220',
+    '27.115.37.221',
+    '27.115.37.222',
+
+    '124.65.130.94',
+
+    '114.251.64.192',
+    '114.251.64.193',
+    '114.251.64.194',
+    '114.251.64.195',
+    '114.251.64.196',
+    '114.251.64.197',
+    '114.251.64.198',
+    '114.251.64.199',
+    '114.251.64.200',
+    '114.251.64.201',
+    '114.251.64.202',
+    '114.251.64.203',
+    '114.251.64.204',
+    '114.251.64.205',
+    '114.251.64.206',
+    '114.251.64.207',
+
+    '180.167.225.126'];
+
 $(function () {
 
-    var nav = '<div class="nav"><ul class="navBar"><li><a class="sibmenu" href="javascript:;">营销智库</a><div class="submenu"><div class="triangle"></div><div class="subList"><a href="javascript:;">资讯</a></div><div class="subList"><a href="javascript:;">知识</a></div><div class="subList"><a href="javascript:;">活动</a></div></div></li><li><a class="sibmenu" href="./page/job.html">职达新意</a><div class="submenu"><div class="triangle"></div><div class="subList"><a href="javascript:;">意起精彩</a></div><div class="subList"><a href="https://cig.zhiye.com/Social"target="_blank">社会招聘</a></div><div class="subList"><!--<a href="javascript:;">校园招聘</a>--></div><div class="subList"><a href="https://cig.zhiye.com/Intern"target="_blank">实习生招聘</a></div><div class="subList"><a href="http://neitui.zhiye.com/cig#vertify%2Fwechat"target="_blank">内部推荐</a></div></div></li><li><a class="sibmenu" href="./page/news.html">新意资讯</a><div class="submenu" id="newsClick"><div class="triangle"></div><div class="subList"><a href="./page/news.html?index=1">新意动态</a></div><div class="subList"><a href="./page/news.html?index=2">新意荣誉</a></div><div class="subList"><a href="./page/news.html?index=3">新意观点</a></div><div class="subList"><a href="./page/news.html?index=4">行业观察</a></div></div></li><li><a class="sibmenu" href="./page/case.html">案例展示</a><div class="submenu" id="caseClick"><div class="triangle"></div><div class="subList"><a href="./page/case.html?index=1">整合营销</a></div><div class="subList"><a href="./page/case.html?index=2">内容营销</a></div><div class="subList"><a href="./page/case.html?index=3">社会化与用户营销</a></div><div class="subList"><a href="./page/case.html?index=4">大数据营销</a></div><div class="subList"><a href="./page/case.html?index=5">视频营销</a></div><div class="subList"><a href="./page/case.html?index=6">技术营销</a></div><div class="subList"><a href="./page/case.html?index=7">互动体验</a></div><div class="subList"><a href="./page/case.html?index=8">媒介营销</a></div></div></li><li><a class="sibmenu" href="./page/bigData_1.html">服务与产品</a><div class="submenu"><div class="triangle"></div><div class="subList"><a href="./page/bigData_1.html">数字整合营销</a></div><div class="subList"><a href="./page/bigData_2.html">大数据应用</a></div><div class="subList"><a href="./page/bigData_3.html">数字影像</a></div></div></li><li><a class="sibmenu" href="./page/about_us.html">关于我们</a><div class="submenu"><div class="triangle"></div><div class="subList"><a href="./page/about_us.html#about_1">公司介绍</a></div><div class="subList"><a href="./page/about_us.html#about_2">经营理念</a></div><div class="subList"><a href="./page/about_us.html#about_3">发展历程</a></div><div class="subList"><a href="./page/about_us.html#about_4">服务客户</a></div><div class="subList"><!--<a href="./page/about_us.html#about_5">高管团队</a>--></div></div></li></ul></div>'
+    var nav = '<div class="nav"><ul class="navBar"><li style="display: none"><a class="sibmenu" href="javascript:;">营销智库</a><div class="submenu"><div class="triangle"></div><div class="subList"><a href="javascript:;">资讯</a></div><div class="subList"><a href="javascript:;">知识</a></div><div class="subList"><a href="javascript:;">活动</a></div></div></li><li><a class="sibmenu" href="./page/job.html">职达新意</a><div class="submenu"><div class="triangle"></div><div class="subList"><a href="javascript:;">意起精彩</a></div><div class="subList"><a href="//cig.zhiye.com/Social"target="_blank">社会招聘</a></div><div class="subList"><!--<a href="javascript:;">校园招聘</a>--></div><div class="subList"><a href="//cig.zhiye.com/Intern"target="_blank">实习生招聘</a></div><div class="subList"><a href="//neitui.zhiye.com/cig#vertify%2Fwechat"target="_blank">内部推荐</a></div></div></li><li><a class="sibmenu" href="./page/news.html">新意资讯</a><div class="submenu" id="newsClick"><div class="triangle"></div><div class="subList"><a href="./page/news.html?index=1">新意动态</a></div><div class="subList"><a href="./page/news.html?index=2">新意荣誉</a></div><div class="subList"><a href="./page/news.html?index=3">新意观点</a></div><div class="subList"><a href="./page/news.html?index=4">行业观察</a></div></div></li><li><a class="sibmenu" href="./page/case.html">案例展示</a><div class="submenu" id="caseClick"><div class="triangle"></div><div class="subList"><a href="./page/case.html?index=1">整合营销</a></div><div class="subList"><a href="./page/case.html?index=2">内容营销</a></div><div class="subList"><a href="./page/case.html?index=3">社会化与用户营销</a></div><div class="subList"><a href="./page/case.html?index=4">大数据营销</a></div><div class="subList"><a href="./page/case.html?index=5">视频营销</a></div><div class="subList"><a href="./page/case.html?index=6">技术营销</a></div><div class="subList"><a href="./page/case.html?index=7">互动体验</a></div><div class="subList"><a href="./page/case.html?index=8">媒介营销</a></div></div></li><li><a class="sibmenu" href="./page/bigData_1.html">服务与产品</a><div class="submenu"><div class="triangle"></div><div class="subList"><a href="./page/bigData_1.html">数字整合营销</a></div><div class="subList"><a href="./page/bigData_2.html">大数据应用</a></div><div class="subList"><a href="./page/bigData_3.html">数字影像</a></div></div></li><li><a class="sibmenu" href="./page/about_us.html">关于我们</a><div class="submenu"><div class="triangle"></div><div class="subList"><a href="./page/about_us.html#about_1">公司介绍</a></div><div class="subList"><a href="./page/about_us.html#about_2">经营理念</a></div><div class="subList"><a href="./page/about_us.html#about_3">发展历程</a></div><div class="subList"><a href="./page/about_us.html#about_3_4">行业荣誉</a></div><div class="subList"><a href="./page/about_us.html#about_4">服务客户</a></div><div class="subList"><!--<a href="./page/about_us.html#about_5">高管团队</a>--></div></div></li></ul></div>'
     $('#pc').prepend(nav);
     $('.nav ul li').hover(function () {
         $(this).find('.submenu').stop().slideDown();

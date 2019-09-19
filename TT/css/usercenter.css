@@ -522,3 +522,30 @@
     width: 0;
     border-bottom: 1px solid red;
 }
+
+.submitted-pages{
+    margin-top: 1rem;
+    width: 100%;
+}
+.submitted-pages img{
+    width: 50%;
+    margin: auto;
+    margin-top: 0.5rem;
+}
+.submitted-pages p{
+    margin-top: 0.7rem;
+    text-align: center;
+}
+.submitted-pages p .s1{
+    font-size: 0.16rem;
+    color: rgb( 119, 119, 119 );
+}
+.submitted-pages p .s2{
+    font-size: 0.16rem;
+    color: rgb( 233, 0, 16 );
+}
+.submitted-pages p .s3{
+    cursor: pointer;
+    font-size: 0.16rem;
+    padding-left: 0.3rem;
+}

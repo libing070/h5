@@ -1,47 +1,67 @@
+@charset "UTF-8";
+
 @font-face {
-    font-family: 'BASKVILL';
-    src: url('../font/BASKVILL.ttf') format('truetype')
+    font-family: "BASKVILL";
+    src: url("./../font/BASKVILL.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-    font-family: 'GiveAHoot';
-    src: url('./../font/GiveAHoot.otf') format('truetype')
+    font-family: "GiveAHoot";
+    src: url("./../font/GiveAHoot.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
 }
 
-@font-face {
-    font-family: 'SourceHanSansCN-Bold';
-    src: url('./../font/SourceHanSansCN-Bold.otf') format('truetype')
-}
+/*@font-face {*/
+    /*font-family: "SourceHanSansCN-Bold";*/
+    /*src:url("./../font/SourceHanSansCN-Bold.otf") format("truetype");*/
+    /*font-weight: normal;*/
+    /*font-style: normal;*/
+/*}*/
 
-@font-face {
-    font-family: 'SourceHanSansCN-ExtraLight';
-    src: url('./../font/SourceHanSansCN-ExtraLight.otf') format('truetype')
-}
+/*@font-face {*/
+    /*font-family: "SourceHanSansCN-ExtraLight";*/
+    /*src: url("./../font/SourceHanSansCN-ExtraLight.otf") format("opentype");*/
+    /*font-weight: normal;*/
+    /*font-style: normal;*/
+/*}*/
 
-@font-face {
-    font-family: 'SourceHanSansCN-Heavy';
-    src: url('./../font/SourceHanSansCN-Heavy.otf') format('truetype')
-}
+/*@font-face {*/
+    /*font-family: "SourceHanSansCN-Heavy";*/
+    /*src: url("./../font/SourceHanSansCN-Heavy.otf") format("opentype");*/
+    /*font-weight: normal;*/
+    /*font-style: normal;*/
+/*}*/
 
-@font-face {
-    font-family: 'SourceHanSansCN-Light';
-    src: url('./../font/SourceHanSansCN-Light.otf') format('truetype')
-}
+/*@font-face {*/
+    /*font-family: "SourceHanSansCN-Light";*/
+    /*src: url("./../font/SourceHanSansCN-Light.otf") format("opentype");*/
+    /*font-weight: normal;*/
+    /*font-style: normal;*/
+/*}*/
 
-@font-face {
-    font-family: 'SourceHanSansCN-Medium';
-    src: url('./../font/SourceHanSansCN-Medium.otf') format('truetype')
-}
+/*@font-face {*/
+    /*font-family: "SourceHanSansCN-Medium";*/
+    /*src: url("./../font/SourceHanSansCN-Medium.otf") format("opentype");*/
+    /*font-weight: normal;*/
+    /*font-style: normal;*/
+/*}*/
 
-@font-face {
-    font-family: 'SourceHanSansCN-Normal';
-    src: url('./../font/SourceHanSansCN-Normal.otf') format('truetype')
-}
+/*@font-face {*/
+    /*font-family: "SourceHanSansCN-Normal";*/
+    /*src: url("./../font/SourceHanSansCN-Normal.otf") format("opentype");*/
+    /*font-weight: normal;*/
+    /*font-style: normal;*/
+/*}*/
 
-@font-face {
-    font-family: 'SourceHanSansCN-Regular';
-    src: url('./../font/SourceHanSansCN-Regular.otf') format('truetype')
-}
+/*@font-face {*/
+    /*font-family: "SourceHanSansCN-Regular";*/
+    /*src: url("./../font/SourceHanSansCN-Regular.otf") format("opentype");*/
+    /*font-weight: normal;*/
+    /*font-style: normal;*/
+/*}*/
 
 * {
     padding: 0;
@@ -54,7 +74,9 @@ body, html {
     height: 100%;
     font-size: 0.1rem;
 }
-
+body>a{
+    display: none;/*盟友统计生成的a标签影响布局*/
+}
 li {
     list-style: none;
 }

@@ -1,51 +1,70 @@
 $(function () {
     // 接口
     // (Portal_011)获取模块排序
-    $.request('/api/Module/GetModuleList', {
-            roleId: 1,
-            timestamp: ts(),
-            sign: createSign({
-                roleId: 1,
-                timestamp: ts(),
-            })
-        },
-        function (res) {
-            var moduleCode = res.data[0].moduleCode;
-            if (moduleCode == '09') { //1 
-                $('.module9').insertBefore($('.module1'));
-                aniTranslateY(['.ani_76'], ['1rem', '0', ], 1000, 500);
-            }
-            if (moduleCode == '06') { //6 联系
-                $('.module6').insertBefore($('.module1'));
-                aniTranslateX(['.ani_38'], ['-2rem', '0', ], 1000, 500);
-                aniTranslateX(['.ani_39'], ['-2rem', '0', ], 1000, 700);
-                aniTranslateX(['.ani_40'], ['-2rem', '0', ], 1000, 900);
-                aniTranslateX(['.ani_41'], ['-2rem', '0', ], 1000, 1100);
-                aniTranslateX(['.ani_42'], ['-2rem', '0', ], 1000, 1200);
-                aniTranslateW(['.line_contcat1'], ['0%', '100%', ], 1000, 2000);
-                aniTranslateX(['.ani_43'], ['-2rem', '0', ], 1000, 1400);
-                aniTranslateW(['.line_contcat2'], ['0%', '100%', ], 1000, 2400);
-                aniTranslateX(['.ani_44'], ['2rem', '0', ], 1000, 500);
-                aniTranslateX(['.ani_45'], ['2rem', '0', ], 1000, 600);
-                aniTranslateX(['.ani_46'], ['2rem', '0', ], 1000, 700);
-                aniTranslateX(['.ani_47'], ['2rem', '0', ], 1000, 800);
-                aniTranslateX(['.ani_48'], ['2rem', '0', ], 1000, 900);
-                aniTranslateX(['.ani_49'], ['2rem', '0', ], 1000, 1000);
-                aniTranslateX(['.ani_50'], ['2rem', '0', ], 1000, 1100);
-                aniTranslateX(['.ani_51'], ['2rem', '0', ], 1000, 1200);
-                aniTranslateX(['.ani_52'], ['2rem', '0', ], 1000, 1300);
-                aniTranslateX(['.ani_53'], ['2rem', '0', ], 1000, 1400);
-                aniTranslateX(['.ani_54'], ['2rem', '0', ], 1000, 1500);
-                aniTranslateX(['.ani_55'], ['2rem', '0', ], 1000, 1600);
-                aniTranslateT(['.ani_56'], ['60%', '40%', ], 1000, 1800);
-                aniTranslateW(['.line_qrcode'], ['0%', '100%', ], 1000, 2800);
-                $('.module6').addClass('module6_back');
-            }
-            loading(1, function () {
-                getList();
-            });
+
+    var roleId=localStorage.getItem("roleId");
+
+    if(roleId!=3){//排除不是合伙伙伴
+       var currIp =returnCitySN["cip"];
+        if(allIp.indexOf(currIp)>-1){//是员工
+           localStorage.setItem("roleId","2");
+        }else{//普通用户
+            localStorage.setItem("roleId","1");
+
         }
-    );
+
+    }
+   //console.log(returnCitySN["cip"]+','+returnCitySN["cname"]);
+    function firstApi() {
+        $.request('/api/Module/GetModuleList', {
+                roleId: localStorage.getItem("roleId"),
+                timestamp: ts(),
+                sign: createSign({
+                    roleId: localStorage.getItem("roleId"),
+                    timestamp: ts(),
+                })
+            },
+            function (res) {
+                var moduleCode = res.data[0].moduleCode;
+                if (moduleCode == '09') { //1
+                    $('.module9').insertBefore($('.module1'));
+                    aniTranslateY(['.ani_76'], ['1rem', '0', ], 1000, 500);
+                }
+                if (moduleCode == '06') { //6 联系
+                    $('.module6').insertBefore($('.module1'));
+                    $('.logo').attr("src",'./images/logo.png');
+                    aniTranslateX(['.ani_38'], ['-2rem', '0', ], 1000, 500);
+                    aniTranslateX(['.ani_39'], ['-2rem', '0', ], 1000, 700);
+                    aniTranslateX(['.ani_40'], ['-2rem', '0', ], 1000, 900);
+                    aniTranslateX(['.ani_41'], ['-2rem', '0', ], 1000, 1100);
+                    aniTranslateX(['.ani_42'], ['-2rem', '0', ], 1000, 1200);
+                    aniTranslateW(['.line_contcat1'], ['0%', '100%', ], 1000, 2000);
+                    aniTranslateX(['.ani_43'], ['-2rem', '0', ], 1000, 1400);
+                    aniTranslateW(['.line_contcat2'], ['0%', '100%', ], 1000, 2400);
+                    aniTranslateX(['.ani_44'], ['2rem', '0', ], 1000, 500);
+                    aniTranslateX(['.ani_45'], ['2rem', '0', ], 1000, 600);
+                    aniTranslateX(['.ani_46'], ['2rem', '0', ], 1000, 700);
+                    aniTranslateX(['.ani_47'], ['2rem', '0', ], 1000, 800);
+                    aniTranslateX(['.ani_48'], ['2rem', '0', ], 1000, 900);
+                    aniTranslateX(['.ani_49'], ['2rem', '0', ], 1000, 1000);
+                    aniTranslateX(['.ani_50'], ['2rem', '0', ], 1000, 1100);
+                    aniTranslateX(['.ani_51'], ['2rem', '0', ], 1000, 1200);
+                    aniTranslateX(['.ani_52'], ['2rem', '0', ], 1000, 1300);
+                    aniTranslateX(['.ani_53'], ['2rem', '0', ], 1000, 1400);
+                    aniTranslateX(['.ani_54'], ['2rem', '0', ], 1000, 1500);
+                    aniTranslateX(['.ani_55'], ['2rem', '0', ], 1000, 1600);
+                    aniTranslateT(['.ani_56'], ['60%', '40%', ], 1000, 1800);
+                    aniTranslateW(['.line_qrcode'], ['0%', '100%', ], 1000, 2800);
+                    $('.module6 .reImg').addClass('module6_back');
+                }
+                // loading(1, function () {
+                //     getList();
+                // });
+                loading();
+            }
+        );
+    }
+
     // (Portal_003)获取首页案例信息
     function getList() {
         $.request('/api/Case/GetList', {
@@ -62,7 +81,7 @@ $(function () {
                     if (ele.multimediaType == 1) {
                         str += '<img src="' + ele.url + '"/>'
                     } else if (ele.multimediaType == 2) {
-                        str += '<video id="video' + k + '" src="' + ele.url + '"></video>'
+                        str += '<video muted loop autoplay="autoplay" id="video' + k + '" src="' + ele.url + '"></video>'
                     }
                     str += '<div class="caseCont">' +
                         '<div class="case_float">' +
@@ -80,9 +99,9 @@ $(function () {
                         '</div>' +
                         '</div>';
                     if (ele.multimediaType == 2) {
-                        str += '<div class="play" onclick="playVideo(this,' + k + ')">' +
-                            '<img src="./images/play.png" alt="">' +
-                            '</div>'
+                        // str += '<div class="play" onclick="playVideo(this,' + k + ')">' +
+                        //     '<img src="./images/play.png" alt="">' +
+                        //     '</div>'
                     }
                     str += '</div>' +
                         '</a></div>';
@@ -107,12 +126,22 @@ $(function () {
                             aniTranslateY(['.ani_33'], ['1rem', '0', ], 1000, 500);
                             aniTranslateY(['.ani_34'], ['1rem', '0', ], 1000, 1000);
                             aniTranslateY(['.ani_35'], ['1rem', '0', ], 1000, 1500);
+                        },
+                        slideNextTransitionStart: function () {
+                            $('.case_prev').css("cssText", "background:url(./images/turn_left_def.png) no-repeat center !important;background-size:cover !important;");
+                            $('.case_next').css("cssText", "background:url(./images/turn_right_act.png) no-repeat center !important;background-size:cover !important;");
+
+                        },
+                        slidePrevTransitionStart: function () {
+                            $('.case_prev').css("cssText", "background:url(./images/turn_left_act.png) no-repeat center !important;background-size:cover !important;");
+                            $('.case_next').css("cssText", "background:url(./images/turn_right_def.png) no-repeat center !important;background-size:cover !important;");
                         }
                     }
                 });
-                loading(2, function () {
-                    GetJobInfo();
-                });
+                // loading(2, function () {
+                //     GetJobInfo();
+                // });
+                loading();
             }
         );
     }
@@ -318,9 +347,10 @@ $(function () {
                 });
                 $('.longTimeJob').append(str2);
                 $('.recruit .arrow_icon').attr('href', res.data.moreUrl);
-                loading(3, function () {
-                    GetRecommendNews();
-                });
+                // loading(3, function () {
+                //     GetRecommendNews();
+                // });
+                loading();
             }
         );
     }
@@ -353,7 +383,7 @@ $(function () {
                         '<div class="news_mask"></div>' +
                         '</div>' +
                         '<p class="fontSize26 new_txt fofa-blod ani_36">' + ele.title + '</p>' +
-                        '<p class="fontSize18 new_txt fofa-light ani_37">' + ele.summary + '</p>' +
+                        '<p class="fontSize18 new_txt fofa-light ani_37" style="display: none">' + ele.summary + '</p>' +
                         '</a></div>';
                 });
                 $('.newsSwiper .swiper-wrapper').html(str);
@@ -376,12 +406,22 @@ $(function () {
                             aniReset();
                             aniTranslateY(['.ani_36'], ['1rem', '0', ], 1000, 500);
                             aniTranslateY(['.ani_37'], ['1rem', '0', ], 1000, 1000);
+                        },
+                        slideNextTransitionStart: function () {
+                            $('.news_prev').css("cssText", "background:url(./images/turn_left_def.png) no-repeat center !important;background-size:cover !important;");
+                            $('.news_next').css("cssText", "background:url(./images/turn_right_act.png) no-repeat center !important;background-size:cover !important;");
+
+                        },
+                        slidePrevTransitionStart: function () {
+                            $('.news_prev').css("cssText", "background:url(./images/turn_left_act.png) no-repeat center !important;background-size:cover !important;");
+                            $('.news_next').css("cssText", "background:url(./images/turn_right_def.png) no-repeat center !important;background-size:cover !important;");
                         }
                     }
                 });
-                loading(4, function () {
-                    GetHomeRecommendInfo();
-                });
+                // loading(4, function () {
+                //     GetHomeRecommendInfo();
+                // });
+                loading();
             }
         );
     }
@@ -426,9 +466,10 @@ $(function () {
                     slidesPerView: 3,
                     spaceBetween: 20,
                 });
-                loading(5, function () {
-                    GetHomeNetDiscInfo();
-                });
+                loading();
+                // loading(5, function () {
+                //     GetHomeNetDiscInfo();
+                // });
             }
         );
     }
@@ -461,36 +502,50 @@ $(function () {
                     $(this).find('a').css('color', '#333');
                     $(this).find('img').attr('src', './images/dl-black.png');
                 });
-                loading(6);
+                 loading();
             }
         );
     }
+    function init() {
+        firstApi();
+        getList();
+        GetJobInfo();
+        GetRecommendNews();
+        GetHomeRecommendInfo();
+        GetHomeNetDiscInfo();
+    }
+    init();
+
 });
 
-function loading(num, callback) {
-    var len = 6;
-    var sq = Math.round(100 / len);
-    var index = (num - 1) * sq;
-    var nowPro = num * sq;
-    var timer;
-    timer = setInterval(function () {
-        index++;
-        if (index <= nowPro) {
-            if (index >= 100) {
-                clearInterval(timer);
-                $('.loadProColor').width('100%');
-                setTimeout(() => {
-                    $('.progress').hide();
-                    $('.loadState').show();
-                    aniTranslateY(['.ani_1'], ['1rem', '0', ], 1000, 500);
-                    aniTranslateY(['.ani_2'], ['1rem', '0', ], 1000, 1000);
-                }, 1000);
-            } else {
-                $('.loadProColor').width(index + '%');
-            }
-        } else {
-            clearInterval(timer);
-            callback();
-        }
-    }, 30);
+
+function loading() {
+    currentWidth ++;
 }
+
+var totalWidth = 6;
+var currentWidth = 0;
+var progress = 0;
+var step = 5;
+var timer = setInterval(function () {
+    var tmp = progress + step;
+    if (tmp == 100) {
+        $('.loadProColor').width('100%');
+        clearInterval(timer);
+        setTimeout(() => {
+            $('.progress').hide();
+            $('.loadState').show();
+            aniTranslateY(['.ani_1'], ['1rem', '0', ], 1000, 500);
+            aniTranslateY(['.ani_2'], ['1rem', '0', ], 1000, 1000);
+        }, 500);
+    }else if (tmp < (parseInt(currentWidth/totalWidth)*100) && tmp<100) {
+        progress = tmp;
+        var width = parseInt(progress*currentWidth/totalWidth);
+        // if (width<100) {
+            console.log(width);
+            $('.loadProColor').width(width + '%');
+        // }
+    }else {
+        console.log('waiting');
+    }
+}, 30);

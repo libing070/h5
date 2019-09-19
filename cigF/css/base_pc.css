@@ -56,7 +56,8 @@ a {
     cursor: pointer;
     font-size: 0.18rem;
     z-index: 998;
-    font-family: 'SourceHanSansCN-Regular';
+    /*font-family: 'SourceHanSansCN-Regular';*/
+    font-family: 'Microsoft YaHei';
     position: relative;
 }
 
@@ -115,10 +116,12 @@ a {
     width: 100%;
     height: 100%;
     line-height: 1.1rem;
-    font-size: 0.18rem;
+    font-size: 0.16rem;
     text-align: center;
     color: #000000;
-    font-family: 'SourceHanSansCN-Regular';
+    /*font-family: 'SourceHanSansCN-Regular';*/
+    /*font-family:'黑体';*/
+    /*font-weight: 400;*/
 }
 
 .nav2 ul li:hover .sibmenu {
@@ -252,8 +255,26 @@ a {
 .banner1 {
     width: 100%;
     height: 100%;
-    background: url('./../images/index_bg1.jpg') no-repeat center;
-    background-size: cover;
+    /*background: url('./../images/index_bg1.jpg') no-repeat center;*/
+    /*background-size: cover;*/
+}
+.banner1 .play{
+    width: 100%;
+   position: relative;
+
+}
+.banner1 .play img{
+    cursor: pointer;
+    width: 10%;
+    z-index: 999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.banner1 .play video{
+    position: relative;
+    width: 100%;
 }
 
 .banner2 {
@@ -328,7 +349,8 @@ a {
 
 .banner_left p:nth-child(2) {
     font-size: 0.6rem;
-    font-family: 'SourceHanSansCN-Bold';
+    font-family:'Microsoft YaHei';
+    /*font-family: 'SourceHanSansCN-Bold';*/
 }
 
 .banner_left p:nth-child(3) {
@@ -432,7 +454,8 @@ a {
     border-bottom: 1px solid #e5e5e5;
     padding: 3% 0%;
     margin-bottom: 3%;
-    font-family: 'SourceHanSansCN-ExtraLight';
+    /*font-family: 'SourceHanSansCN-ExtraLight';*/
+    font-family:'Microsoft YaHei';
 }
 
 .danwei ul li {
@@ -520,7 +543,8 @@ a {
 
 .about_title p:nth-child(2) {
     font-size: 0.6rem;
-    font-family: 'SourceHanSansCN-Bold';
+    font-family:'Microsoft YaHei';
+    /*font-family: 'SourceHanSansCN-Bold';*/
 }
 
 .about_desc {
@@ -534,7 +558,8 @@ a {
     font-size: 0.18rem;
     margin-bottom: 5%;
     line-height: 0.25rem;
-    font-family: 'SourceHanSansCN-Light';
+    /*font-family: 'SourceHanSansCN-Light';*/
+    font-family:'Microsoft YaHei';
 }
 
 .about_bottom {
@@ -578,12 +603,14 @@ a {
 
 .about_numDesc p:nth-child(1) {
     font-size: 0.24rem;
-    font-family: 'SourceHanSansCN-ExtraLight';
+    /*font-family: 'SourceHanSansCN-ExtraLight';*/
+    font-family:'Microsoft YaHei';
 }
 
 .about_numDesc p:nth-child(2) {
     font-size: 0.18rem;
-    font-family: 'SourceHanSansCN-ExtraLight';
+    /*font-family: 'SourceHanSansCN-ExtraLight';*/
+    font-family:'Microsoft YaHei';
 }
 
 /* .plus{
@@ -654,12 +681,14 @@ a {
 .pro_p2 {
     font-size: 0.32rem;
     margin: 0.9rem 0 0.35rem;
-    font-family: 'SourceHanSansCN-Bold';
+    /*font-family: 'SourceHanSansCN-Bold';*/
+    font-family:'Microsoft YaHei';
 }
 
 .pro_p3 {
     font-size: 0.18rem;
-    font-family: 'SourceHanSansCN-Light';
+    /*font-family: 'SourceHanSansCN-Light';*/
+    font-family:'Microsoft YaHei';
 }
 
 /* case */
@@ -693,11 +722,13 @@ a {
 
 .ani_33, .ani_34 {
     font-size: 0.32rem;
-    font-family: 'SourceHanSansCN-Bold';
+    /*font-family: 'SourceHanSansCN-Bold';*/
+    font-family:'Microsoft YaHei';
 }
 
 .ani_35 {
-    font-family: 'SourceHanSansCN-Light';
+    /*font-family: 'SourceHanSansCN-Light';*/
+    font-family:'Microsoft YaHei';
 }
 
 .case_next {
@@ -732,6 +763,7 @@ a {
 .caseSwiper video {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 .caseSwiper img {
@@ -754,6 +786,7 @@ a {
 
 .module5 .swiper-slide img {
     width: 100%;
+    max-height: 3.8rem;
 }
 
 .news_title {
@@ -773,7 +806,8 @@ a {
 }
 
 .news_title span:nth-child(2) {
-    font-family: 'SourceHanSansCN-Bold';
+    /*font-family: 'SourceHanSansCN-Bold';*/
+    font-family:'Microsoft YaHei';
 }
 
 .news_pic {
@@ -799,15 +833,30 @@ a {
 }
 
 .fofa-blod {
-    font-family: 'SourceHanSansCN-Bold';
+    /*font-family: 'SourceHanSansCN-Bold';*/
+    font-family:'Microsoft YaHei';
 }
 
 .fofa-light {
-    font-family: 'SourceHanSansCN-Light';
+    /*font-family: 'SourceHanSansCN-Light';*/
+    font-family:'Microsoft YaHei';
 }
 
-.newsSwiper .swiper-slide-next .new_txt {
+.newsSwiper .swiper-slide-next .new_txt.fofa-blod {
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+.newsSwiper .swiper-slide-next .new_txt.fofa-light {
+    margin-top: 0.1rem;
     display: block;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
 }
 
 .newsSwiper .fontSize24 {
@@ -839,6 +888,7 @@ a {
 }
 
 .module6_back {
+    width: 100%;
     animation: back_enlarge 10s forwards;
 }
 
@@ -906,19 +956,23 @@ a {
 }
 
 .contact_title p:nth-child(2) {
-    font-family: 'SourceHanSansCN-Bold';
+    /*font-family: 'SourceHanSansCN-Bold';*/
+    font-family:'Microsoft YaHei';
 }
 
 .ani_40 {
-    font-family: 'SourceHanSansCN-Medium';
+    /*font-family: 'SourceHanSansCN-Medium';*/
+    font-family:'Microsoft YaHei';
 }
 
 .ani_41 {
-    font-family: 'SourceHanSansCN-ExtraLight';
+    /*font-family: 'SourceHanSansCN-ExtraLight';*/
+    font-family:'Microsoft YaHei';
 }
 
 .ani_42 {
-    font-family: 'SourceHanSansCN-Light';
+    /*font-family: 'SourceHanSansCN-Light';*/
+    font-family:'Microsoft YaHei';
 }
 
 .contact_phone {
@@ -955,7 +1009,8 @@ a {
 
 .swhz {
     display: inline-block;
-    font-family: 'SourceHanSansCN-Bold';
+    /*font-family: 'SourceHanSansCN-Bold';*/
+    font-family:'Microsoft YaHei';
 }
 
 .contact_add {
@@ -971,19 +1026,23 @@ a {
 }
 
 .contact_add li p:nth-child(1) {
-    font-family: 'SourceHanSansCN-Medium';
+    /*font-family: 'SourceHanSansCN-Medium';*/
+    font-family:'Microsoft YaHei';
 }
 
 .contact_add li p:nth-child(2) {
-    font-family: 'SourceHanSansCN-ExtraLight';
+    /*font-family: 'SourceHanSansCN-ExtraLight';*/
+    font-family:'Microsoft YaHei';
 }
 
 .contact_add li p:nth-child(3) {
-    font-family: 'SourceHanSansCN-Light';
+    /*font-family: 'SourceHanSansCN-Light';*/
+    font-family:'Microsoft YaHei';
 }
 
 .contact_add li p:nth-child(5) {
-    font-family: 'SourceHanSansCN-Light';
+    /*font-family: 'SourceHanSansCN-Light';*/
+    font-family:'Microsoft YaHei';
 }
 
 .weixin {
@@ -1014,14 +1073,18 @@ a {
 
 .weixin p {
     margin-left: 0.1rem;
-    font-family: 'SourceHanSansCN-Light';
+    /*font-family: 'SourceHanSansCN-Light';*/
+    font-family:'Microsoft YaHei';
 }
 
 .copy {
     position: absolute;
     left: 0;
+    font-size: 0.14rem;
     bottom: 0.2rem;
-    width: 100%;
+    margin: auto;
+    right: 0;
+    width: 75%;
 }
 
 .copy p:nth-child(1) {
@@ -1033,7 +1096,32 @@ a {
     float: right;
     margin-right: 0.2rem;
 }
-
+.copy2{
+   position: relative;
+}
+.copy2 .text{
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    height: 0.5rem;
+    width: 1.5rem;
+}
+.copy2 .text a{
+    line-height: 0.5rem;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.14rem;
+}
+.copy2 .text a.s1{
+    cursor: pointer;
+    float: left;
+}
+.copy2 .text a.s2{
+    float: right;
+    cursor: pointer;
+}
 .contact_mask {
     display: none;
     width: 100%;
@@ -1149,7 +1237,8 @@ a {
 .welcome_box a {
     color: #fff;
     display: inline-block;
-    font-family: 'SourceHanSansCN-Normal';
+    /*font-family: 'SourceHanSansCN-Normal';*/
+    font-family:'Microsoft YaHei';
 }
 
 .popular ul {
@@ -1170,12 +1259,14 @@ a {
 
 .recruit .marginEle {
     margin: 0.3rem 0 1rem 0;
-    font-family: 'SourceHanSansCN-ExtraLight';
+    /*font-family: 'SourceHanSansCN-ExtraLight';*/
+    font-family:'Microsoft YaHei';
 }
 
 .marginBt_5 {
     margin-bottom: 0.5rem;
-    font-family: 'SourceHanSansCN-Bold';
+    /*font-family: 'SourceHanSansCN-Bold';*/
+    font-family:'Microsoft YaHei';
 }
 
 /* 智库 */
@@ -1196,13 +1287,14 @@ a {
 }
 
 .tt_loginBtn {
-    width: 100;
+    /*width: 100;*/
     background: rgba(233, 5, 21, .5);
     padding: 0.1rem 0.2rem;
     border-radius: 0.1rem;
     color: #fff;
     font-size: 0.2rem;
-    font-family: 'SourceHanSansCN-Regular';
+    /*font-family: 'SourceHanSansCN-Regular';*/
+    font-family:'Microsoft YaHei';
 }
 
 .tt_loginBtn:hover {
@@ -1217,12 +1309,14 @@ a {
 .tt_left .margin_tt_1 {
     margin-top: 0.55rem;
     margin-bottom: 0.1rem;
-    font-family: 'SourceHanSansCN-ExtraLight';
+    /*font-family: 'SourceHanSansCN-ExtraLight';*/
+    font-family:'Microsoft YaHei';
 }
 
 .tt_left .margin_tt_2 {
     margin-bottom: 0.85rem;
-    font-family: 'SourceHanSansCN-ExtraLight';
+    /*font-family: 'SourceHanSansCN-ExtraLight';*/
+    font-family:'Microsoft YaHei';
 }
 
 .tt_right img {
@@ -1237,19 +1331,27 @@ a {
 .tt_right .tt_margin_1 {
     margin-top: 0.3rem;
     margin-bottom: 0.2rem;
-    font-family: 'SourceHanSansCN-Light';
+    /*font-family: 'SourceHanSansCN-Light';*/
+    font-family:'Microsoft YaHei';
 }
 
 .tt_right .tt_margin_2 {
     margin-bottom: 0.25rem;
-    font-family: 'SourceHanSansCN-Bold';
+    /*font-family: 'SourceHanSansCN-Bold';*/
+    font-family:'Microsoft YaHei';
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
 }
 
 .icons span {
     margin-right: 0.25rem;
     vertical-align: middle;
     font-size: 0.14rem;
-    font-family: 'SourceHanSansCN-Normal';
+    /*font-family: 'SourceHanSansCN-Normal';*/
+    font-family:'Microsoft YaHei';
 }
 
 .icons span img {
@@ -1316,20 +1418,20 @@ a {
 
 .verifyCodeDiv {
     float: left;
-    width: 60%;
+    width: 50%;
     border-bottom: 1px solid #ccc;
-    padding-bottom: 0.2rem;
+    padding-bottom: 0.15rem;
 }
 
 .verifyCodeDiv input {
-    width: 60%;
+    width: 50%;
 }
 
 .verifyCodeImg {
     float: right;
-    width: 30%;
+    width: 40%;
     border-bottom: 1px solid #ccc;
-    padding-bottom: 0.14rem;
+    /*padding-bottom: 0.14rem;*/
 }
 
 .verifyCodeImg img {
@@ -1373,7 +1475,8 @@ a {
 
 .loginOA p {
     letter-spacing: 0.2rem;
-    font-family: 'SourceHanSansCN-ExtraLight';
+    /*font-family: 'SourceHanSansCN-ExtraLight';*/
+    font-family:'Microsoft YaHei';
 }
 
 .loginOA a {
@@ -1386,7 +1489,8 @@ a {
     margin-top: 0.55rem;
     border-radius: 0.10rem;
     display: inline-block;
-    font-family: 'SourceHanSansCN-Regular';
+    /*font-family: 'SourceHanSansCN-Regular';*/
+    font-family:'Microsoft YaHei';
 }
 
 .loginOA a:hover {
@@ -1470,7 +1574,8 @@ a {
 .oa_menu_ul li a p {
     margin-top: 0.2rem;
     font-size: 0.14rem;
-    font-family: 'SourceHanSansCN-Regular';
+    /*font-family: 'SourceHanSansCN-Regular';*/
+    font-family:'Microsoft YaHei';
 }
 
 .oa_circle {
@@ -1501,7 +1606,8 @@ a {
 
 .wangpan p {
     margin-bottom: 0.4rem;
-    font-family: 'SourceHanSansCN-Medium';
+    /*font-family: 'SourceHanSansCN-Medium';*/
+    font-family:'Microsoft YaHei';
 }
 
 .wangpan li {
@@ -1511,7 +1617,8 @@ a {
 
 .wangpan li span {
     margin-right: 0.2rem;
-    font-family: 'SourceHanSansCN-Light';
+    /*font-family: 'SourceHanSansCN-Light';*/
+    font-family:'Microsoft YaHei';
 }
 
 .join_oa {
@@ -1532,11 +1639,13 @@ a {
 
 .OAName {
     font-size: 0.26rem;
-    font-family: 'SourceHanSansCN-ExtraLight';
+    /*font-family: 'SourceHanSansCN-ExtraLight';*/
+    font-family:'Microsoft YaHei';
 }
 
 .OAName b {
-    font-family: 'SourceHanSansCN-Medium';
+    /*font-family: 'SourceHanSansCN-Medium';*/
+    font-family:'Microsoft YaHei';
 }
 
 .joinOA {
@@ -1549,7 +1658,8 @@ a {
     border-radius: 0.10rem;
     display: inline-block;
     font-size: 0.2rem;
-    font-family: 'SourceHanSansCN-Regular';
+    /*font-family: 'SourceHanSansCN-Regular';*/
+    font-family:'Microsoft YaHei';
 }
 
 .joinOA:hover {
@@ -1582,7 +1692,8 @@ a {
     font-size: 0.18rem;
     color: #000;
     margin-bottom: 0.4rem;
-    font-family: 'SourceHanSansCN-Regular';
+    /*font-family: 'SourceHanSansCN-Regular';*/
+    /*font-family:'黑体';*/
 }
 
 .footer_txt a {
@@ -1590,7 +1701,8 @@ a {
     color: #9a9a9a;
     font-size: 0.16rem;
     margin-bottom: 0.1rem;
-    font-family: 'SourceHanSansCN-Regular';
+    /*font-family: 'SourceHanSansCN-Regular';*/
+    /*font-family:'黑体';*/
 }
 
 .footer_txt {
@@ -1655,4 +1767,13 @@ a {
     top: 0;
     left: 0;
     background: #d7000f;
+}
+
+
+
+@media screen and (min-width:1921px) and (max-width:3840px) {
+    .module5 .swiper-slide img {
+        width: 100%;
+        max-height: 5rem;
+    }
 }

@@ -57,7 +57,7 @@ $(function () {
             function (res) {
                 if(pageIndex>res.data.pageCount){
                     $(".comment-load-more").find("p").html("没有更多了");
-                    $(".comment-load-more").find(".load-more-btn").removeClass("active");
+                    $(".comment-load-more").find(".load-more-btn").hide();
                     $(".comment-load-more").attr("hasmore","0");
                     return;
                 }
@@ -114,7 +114,7 @@ $(function () {
                  }
 
                  $(".message-box .reply-list .list-box").append(str);
-                $(".comment-load-more").find(".load-more-btn").removeClass("active");
+                $(".comment-load-more").find(".load-more-btn").hide();
             }
         );
     }
@@ -156,11 +156,11 @@ $(function () {
 
     $(".message-box").on("click",'.comment-load-more',function () {
         var type=$(this).attr("type");
-        $(".comment-load-more").find(".load-more-btn").addClass("active");
+        $(".comment-load-more").find(".load-more-btn").show();
         var hasMore=  $(".comment-load-more").attr("hasmore");//1更多 0 没有
         if(hasMore==0){
             $(".comment-load-more").off();
-            $(".comment-load-more").find(".load-more-btn").removeClass("active");
+            $(".comment-load-more").find(".load-more-btn").hide();
             return;
         }
         var pageIndex=$(this).attr("pageIndex");

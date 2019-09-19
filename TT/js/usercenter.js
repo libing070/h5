@@ -19,6 +19,16 @@ $(function () {
           for( var i=0;i<$('.right-content').find('.wrap').length;i++){
               if($('.right-content').find('.wrap').eq(i).attr("type")==index){
                   $('.right-content').find('.wrap').eq(i).show();
+                  if(index==0){//发布内容
+                    $(".fabu .content-display").each(function () {
+                        $(this).find(".title").attr("ids","");
+                        $(this).find(".title").val("");
+                        $(this).find(".summary-textarea").val("");
+                        $(this).find(".url-input").val("");
+                        UE.getEditor('editor'+$(this).index()).setContent('可供编辑的内容');
+                        $(".right-content .fabu .pu-menu .item").eq(0).click();
+                    })
+                  }
                   if(index==1){//初始化加载我的发布列表（默认加载‘已发布’）
                       GetForumCount();
                       $(".mypublish .mypu-menu .item").eq(0).click();
@@ -36,7 +46,7 @@ $(function () {
     $(".mypublish .mypu-menu").on("click",'.item',function () {
         $(this).addClass("active").siblings().removeClass("active");
         var type=$(this).attr("type");
-        $(".mypublish-load-more").find("p").html("加载更多");
+        $(".mypublish-load-more").find("p").html("点击加载更多");
         $(".mypublish-load-more").attr("hasmore","1").attr("pageIndex","1").attr("type",type);
         $('.mypublish .mybox').html("");
         loadPageList(type,1);
@@ -82,7 +92,7 @@ $(function () {
             function (res) {
                 if(pageIndex>res.data.pageCount){
                     $(".mypublish-load-more").find("p").html("没有更多了");
-                    $(".mypublish-load-more").find(".load-more-btn").removeClass("active");
+                    $(".mypublish-load-more").find(".load-more-btn").hide();
                     $(".mypublish-load-more").attr("hasmore","0");
                     return;
                 }
@@ -110,7 +120,7 @@ $(function () {
                         str += ' </div>';
                     });
                     $('.mypublish .mybox').append(str);
-                    $(".mypublish-load-more").find(".load-more-btn").removeClass("active");
+                    $(".mypublish-load-more").find(".load-more-btn").hide();
 
                 }else{
                     $(".mypublish-load-more").find("p").html("没有更多了");
@@ -120,11 +130,11 @@ $(function () {
     }
     $(".mypublish").on("click",'.mypublish-load-more',function () {
         var type=$(this).attr("type");
-        $(".mypublish-load-more").find(".load-more-btn").addClass("active");
+        $(".mypublish-load-more").find(".load-more-btn").show();
         var hasMore=  $(".mypublish-load-more").attr("hasmore");//1更多 0 没有
         if(hasMore==0){
             $(".mypublish-load-more").off();
-            $(".mypublish-load-more").find(".load-more-btn").removeClass("active");
+            $(".mypublish-load-more").find(".load-more-btn").hide();
             return;
         }
         var pageIndex=$(this).attr("pageIndex");
@@ -133,10 +143,133 @@ $(function () {
         loadPageList(type,pageIndex);
     });
 
+    var  clock;
+    $(".fabu").on("click",'.content-display.active .submit img',function () {
+        var type= $('.fabu .pu-menu').find('.item.active').attr("typenum");
+        var Id=$(".content-display.active").find(".title").attr("ids");
+        var Title=$(".content-display.active").find(".title").val();
+        var Summary=$(".content-display.active").find(".summary-textarea").val();
+        var typeNum= $(".content-display.active").find(".eduit-wrap").attr("type");
+        var hasContents= UE.getEditor('editor'+typeNum).hasContents();
+        var Content= UE.getEditor('editor'+typeNum).getContent();
+        var PicUrl=$(".content-display.active").find(".url-input").val();
+
+        var random=['http://219.143.155.183:8899/Upload/20190905/o_1djvmmtuf1ub0vqd5so10i9tmrf_长安马自达-案例展示板.jpg',
+            'http://219.143.155.183:8899/Upload/20190823/a68a901e-cacb-4d83-923c-18f972317ed7.jpg',
+            'http://219.143.155.183:8899/Upload/20190823/a68a901e-cacb-4d83-923c-18f972317ed7.jpg',
+            'http://219.143.155.183:8899/file/case2.jpg',
+            'http://219.143.155.183:8899/file/case1.jpg',
+            'http://219.143.155.183:8899/Upload/20190829/o_1dje7p5ks2t916ch1hchsl014o9f_Koala.jpg'];
+        var index = Math.floor(Math.random()*random.length);//取得随机数的索引
+        PicUrl=random[index];//根据索引取得随机数
+        var MultimediaType=1;//图片
+
+
+        if(PicUrl.indexOf("mp4")!=-1){
+            MultimediaType=2//视频
+        }
+        if(!Title){
+            layer.msg("请填写标题");
+            return;
+        }
+        if(!Summary){
+            layer.msg("请填写摘要");
+            return;
+        }
+        if(!hasContents){
+            layer.msg("请填写内容");
+            return;
+        }
+        if(!PicUrl){
+            layer.msg("请上传文件");
+            return;
+        }
+
+
+
+
+        var url='',params={};
+        if(Id==""){//新增
+            url='/api/Forum/Publish';
+            params= {
+                timestamp: ts(),
+                //  Id:Id||'',
+                type:type,
+                Title:Title,
+                Summary:Summary,
+                PicUrl:PicUrl,
+                MultimediaType:MultimediaType,
+                Content:Content,
+                token:localStorage.getItem("ttToken")||'',
+                sign: createSign({
+                    timestamp: ts(),
+                    //   Id:Id||'',
+                    type:type,
+                    Title:Title,
+                    Summary:Summary,
+                    PicUrl:PicUrl,
+                    MultimediaType:MultimediaType,
+                    Content:Content,
+                    token:localStorage.getItem("ttToken")||'',
+                })
+            }
+        }else{//编辑
+            url='/api/Forum/GetForumDetailForEditEvent';
+            params= {
+                timestamp: ts(),
+                Id:Id,
+                type:type,
+                Title:Title,
+                Summary:Summary,
+                PicUrl:PicUrl,
+                MultimediaType:MultimediaType,
+                Content:Content,
+                token:localStorage.getItem("ttToken")||'',
+                sign: createSign({
+                    timestamp: ts(),
+                    Id:Id,
+                    type:type,
+                    Title:Title,
+                    Summary:Summary,
+                    PicUrl:PicUrl,
+                    MultimediaType:MultimediaType,
+                    Content:Content,
+                    token:localStorage.getItem("ttToken")||'',
+                })
+            }
+        }
+
+        $.request(url,params,
+            function (res) {
+                layer.msg(res.message);
+                $(".submitted-pages").show();
+                $(".content-display.active").hide();
+                var  totalTime= $('.submitted-pages p .s2').html();
+                clock = window.setInterval(() => {
+                    totalTime--;
+                    $('.submitted-pages p .s2').html(totalTime);
+                    if (totalTime <=0) {
+                        window.clearInterval(clock);
+                        $(".submitted-pages").hide();
+                        resetPublish();
+                        $(".left-nav .item-menu").eq(1).click();
+                    }
+                },1000);
+            }
+        );
+    });
+
+    //发布完成 立即返回按钮
+    $(".right-content").on("click",'.fabu .submitted-pages .s3',function () {
+        window.clearInterval(clock);
+        $(".submitted-pages").hide();
+        $('.submitted-pages p .s2').html(5);
+            resetPublish();
+            $(".left-nav .item-menu").eq(1).click();
+    });
 
     //--发布内容--//
     $(".right-content").on("click",'.fabu .pu-menu .item',function () {
-        console.log( $(this).attr("type"));
         $(this).addClass("active").siblings().removeClass("active");
         var len= $(".content-display").length;
         for(var i=0;i<len;i++){
@@ -386,3 +519,23 @@ async  function init() {
     },100);
 }
 
+function resetPublish(){
+    $(".content-display").find(".title").val('');
+    $(".content-display").find(".summary-textarea").val('');
+    $(".content-display").find(".url-input").val('');
+    ue1.ready(function() {
+        ue1.setHeight(200);
+        //设置编辑器的内容
+        ue1.setContent('可供编辑的内容');
+    });
+    ue2.ready(function() {
+        ue2.setHeight(200);
+        //设置编辑器的内容
+        ue2.setContent('可供编辑的内容');
+    });
+    ue3.ready(function() {
+        ue3.setHeight(200);
+        //设置编辑器的内容
+        ue3.setContent('可供编辑的内容');
+    });
+}

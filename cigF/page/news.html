@@ -6,22 +6,51 @@
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta class="meta-description" name="description" content="CIG新意互动官网新意资讯，为您展示新意动态、新意荣誉、新意观点、行业观察">
+    <meta class="meta-keywords" name="keywords" content="新意资讯,CIG新意互动官网">
     <link rel="stylesheet" href="./../css/swiper.min.css">
     <link rel="stylesheet" href="./../css/layer.css">
     <link rel="stylesheet" href="./../css/base.css">
     <link rel="stylesheet" href="./../css/base_pc.css">
     <link rel="stylesheet" href="./../css/page/case.css">
-    <title>CIG新意互动</title>
+    <script type="text/javascript" src="//s9.cnzz.com/z_stat.php?id=1278042079&web_id=1278042079"></script>
+
+    <title class="title">新意资讯_CIG新意互动官网</title>
 </head>
 
 <body>
     <div class="container case">
         <div class="caseSwiper swiper-container">
             <div class="swiper-wrapper">
+                <!--<div class="swiper-slide">-->
+                    <!--<img src="./../images/page/news_banner1.jpg" alt="">-->
+                <!--</div>-->
+                <!--<div class="swiper-slide">-->
+                    <!--<img src="./../images/page/news_banner2.jpg" alt="">-->
+                <!--</div>-->
+                <!--<div class="swiper-slide">-->
+                    <!--<img src="./../images/page/news_banner3.jpg" alt="">-->
+                <!--</div>-->
+                <!--<div class="swiper-slide">-->
+                    <!--<img src="./../images/page/news_banner4.jpg" alt="">-->
+                <!--</div>-->
+                <!--<div class="swiper-slide">-->
+                    <!--<img src="./../images/page/news_banner5.jpg" alt="">-->
+                <!--</div>-->
+                <!--<div class="swiper-slide">-->
+                    <!--<img src="./../images/page/news_banner6.jpg" alt="">-->
+                <!--</div>-->
+                <!--<div class="swiper-slide">-->
+                    <!--<img src="./../images/page/news_banner7.jpg" alt="">-->
+                <!--</div>-->
                 <div class="swiper-slide">
-                    <img src="./../images/page/case_banner1.jpg" alt="">
+                    <img src="./../images/page/news_banner9.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./../images/page/news_banner8.jpg" alt="">
                 </div>
             </div>
+            <div class="swiper-pagination"></div>
         </div>
         <div class="case_cont">
             <div class="case_nav">
@@ -52,8 +81,8 @@
                 </ul>
             </div>
             <div class="case_loodMore" hasmore="1" pageIndex="1">
-                <img style="cursor: pointer" src="./../images/page/loadMoreIcon.png" alt="">
-                <p style="width: 2rem;cursor: pointer;margin: auto">加载更多</p>
+                <img style="display: none" class="loadRotate" src="./../images/page/loadMoreIcon.png" alt="">
+                <p style="width: 2rem;cursor: pointer;margin: auto;display: none">点击加载更多</p>
             </div>
         </div>
     </div>
@@ -78,7 +107,7 @@
                             <%if(list[i].multimediaType==1){%>
                             <img src="<%=list[i].picUrl %>" alt="">
                             <%}else{%>
-                                <video src="<%=list[i].picUrl %>"></video>
+                                <video muted loop autoplay="autoplay" style="object-fit: fill;width: 100%" src="<%=list[i].picUrl %>"></video>
                             <%}%>
                             <div class="teamActive">
                                 <div></div>
@@ -95,6 +124,9 @@
     </script>
     <script>
         $(function () {
+            $('html, body').animate({
+                scrollTop: $("body").offset().top
+            }, 500);
             var urlParame = getUrlParam('index');
             if (urlParame) {
                 for (let i = 1; i <= $('.case_nav ul li').length; i++) {
@@ -102,32 +134,46 @@
                         var ele = $('.case_nav ul li')[(i - 1)];
                         $(ele).find('a').addClass('act');
                         var type = $(ele).find('a').attr('type');
-                        console.log(ele, i)
+                        $('head .meta-description').attr("content",'CIG新意互动官网新意资讯，为您展示新意互动'+$(ele).find('a').html()+'的资讯，助您进一步了解新意互动动态和信息');
+                        $('head .meta-keywords').attr("content",$(ele).find('a').html()+',CIG新意互动官网');
+                        $("head title").html($(ele).find('a').html()+"_新意资讯_CIG新意互动官网");
                         loadData(1, type);
                     }
                 }
             } else {
                 $($('.case_nav ul li a')[0]).addClass('act');
                 loadData(1, 20);
+                $('head .meta-description').attr("content",'CIG新意互动官网新意资讯，为您展示新意互动新意动态的资讯，助您进一步了解新意互动动态和信息');
+                $('head .meta-keywords').attr("content",'新意动态,CIG新意互动官网');
+                $("head title").html("新意动态_新意资讯_CIG新意互动官网");
             }
 
             var caseSwiper = new Swiper('.caseSwiper,swiper-container', {
-                loop: false,
+                loop: true,
+                autoplay:true,
                 observer: true, //修改swiper自己或子元素时，自动初始化swiper
                 observeParents: true, //修改swiper的父元素时，自动初始化swiper
+                pagination: {
+                    el: '.swiper-pagination',
+                    // type: 'fraction'
+                    clickable: true,
+                },
             });
             $('.case_nav ul li').on('click', function () {
                 $('.case_nav ul li a').removeClass('act');
                 $(this).find('a').addClass('act');
                 var type = $(this).find('a').attr('type');
                 $(".case_loodMore").attr("pageIndex",'1').attr("hasmore","1");
-                $('.case_loodMore').find('p').html("加载更多");
+                $('.case_loodMore').find('p').html("点击加载更多");
+                $('head .meta-description').attr("content",'CIG新意互动官网新意资讯，为您展示新意互动'+$(this).find('a').html()+'的资讯，助您进一步了解新意互动动态和信息');
+                $('head .meta-keywords').attr("content",$(this).find('a').html()+',CIG新意互动官网');
+                $("head title").html($(this).find('a').html()+"_新意资讯_CIG新意互动官网");
                 loadData(1, type);
             });
             ///api/News/GetRecommendNews(Portal_005)获取新闻推荐
             $('.case_loodMore').on('click', function () {
                 if( $('.case_loodMore').attr("hasmore")==1){
-                    $(this).find('img').addClass('loadRotate');
+                    $(this).find('img').show();
                     var index = $(this).attr('pageIndex');
                     var type = $('.case_nav .act').attr('type');
                     index++;
@@ -135,6 +181,27 @@
                     loadData($(this).attr('pageIndex'), type);
                 }
             });
+
+
+            var isbool=true;
+            //滚动加载
+            $(window).on('scroll', function () {
+                // console.log(ScollPostion());
+                var sp_bottom=ScollPostion().bottom;//距离底部的距离
+                if( $('.case_loodMore').attr("hasmore")==1&&isbool){
+                    if(sp_bottom<600){
+                        isbool=false;
+                        var index =$('.case_loodMore').attr('pageIndex');
+                        var type = $('.case_nav .act').attr('type');
+                        index++;
+                        $('.case_loodMore').attr('pageIndex', index);
+                        loadData($('.case_loodMore').attr('pageIndex'), type);
+                    }
+
+                }
+            });
+
+
             function loadData(pageIndex, type) {
                 $.request('/api/News/GetPagingList', {
                     pageIndex: pageIndex || 1,
@@ -151,8 +218,9 @@
                     function (res) {
                         if(res.data.newsList.length==0){
                             $('.case_loodMore').attr("hasmore","0");
-                            $('.case_loodMore').find('img').removeClass('loadRotate');
+                            $('.case_loodMore').find('img').hide();
                             $('.case_loodMore').find('p').html("没有更多了");
+                            isbool=false;
                             return;
                         }
                         var data = {
@@ -161,14 +229,15 @@
                         // var data = res.data
                         var bt = baidu.template;
                         var html = bt('navTemplate', data);
-                        console.log(html)
+                        // console.log(html)
                         if ( $('.case_loodMore').attr("pageIndex")!=1) {
                             $('.news_cont').append(html);
                         } else {
                             $('.news_cont').html(html);
                         }
 
-                        $('.case_loodMore').find('img').removeClass('loadRotate');
+                        $('.case_loodMore').find('img').hide();
+                        isbool=true;
                     }
                 );
             }

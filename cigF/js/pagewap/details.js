@@ -25,6 +25,9 @@ $(function () {
                        $(".banner2 .d1").find('p .time').html(data.createTime.split(" ")[0]);
                        $(".banner2 .d1").find('p .author').html(data.serviceUser);
                        $(".banner3 .t").html(data.content);
+                       $("head .meta-description").attr("content",data.summary.length>=100?data.summary.substr(0,100):data.summary);
+                       $("head .meta-keywords").attr("content",data.name);
+                       $("head title").html(data.name+"_CIG新意互动官网");
                        if(data.multimediaType==1){
                            $(".images").show();
                            $("#images").attr("src",data.url);
@@ -37,6 +40,9 @@ $(function () {
                        $(".banner2 .d1").find('p .time').html(data.createTime.split(" ")[0]);
                        $(".banner2 .d1").find('p .author').html(data.createUserName);
                        $(".banner3 .t").html(data.content);
+                       $("head .meta-description").attr("content",data.summary.length>=100?data.summary.substr(0,100):data.summary);
+                       $("head .meta-keywords").attr("content",data.title);
+                       $("head title").html(data.title+"_CIG新意互动官网");
                        if(data.multimediaType==1){
                            $(".images").show();
                            $("#images").attr("src",data.picUrl);

@@ -46,7 +46,8 @@ span {
 
 .about_title2 p:nth-child(1) {
     font-size: 0.6rem;
-    font-family: 'SourceHanSansCN-Bold';
+    /*font-family: 'SourceHanSansCN-Bold';*/
+    font-family:'Microsoft YaHei';
 }
 
 .about_title2 p:nth-child(1) {
@@ -59,7 +60,8 @@ span {
     width: 50%;
     text-align: left;
     padding: 20.5% 0 0 0.3rem;
-    font-family: 'SourceHanSansCN-Light';
+    /*font-family: 'SourceHanSansCN-Light';*/
+    font-family:'Microsoft YaHei';
 }
 
 .about_desc p:nth-child(1) {
@@ -116,12 +118,14 @@ span {
 
 .about_numDesc p:nth-child(1) {
     font-size: 0.18rem;
-    font-family: 'SourceHanSansCN-ExtraLight';
+    /*font-family: 'SourceHanSansCN-ExtraLight';*/
+    font-family:'Microsoft YaHei';
 }
 
 .about_numDesc p:nth-child(2) {
     font-size: 0.18rem;
-    font-family: 'SourceHanSansCN-ExtraLight';
+    /*font-family: 'SourceHanSansCN-ExtraLight';*/
+    font-family:'Microsoft YaHei';
 }
 
 /* 经营理念 */
@@ -153,7 +157,8 @@ span {
 
 .txt_1 p {
     font-size: 0.6576rem;
-    font-family: 'SourceHanSansCN-Bold';
+    font-family:'Microsoft YaHei';
+    /*font-family: 'SourceHanSansCN-Bold';*/
 }
 
 .manage_txt .lineRed {
@@ -173,11 +178,13 @@ span {
 .txt_2 p:nth-child(1) {
     color: #d7000f;
     margin-bottom: 0.16rem;
-    font-family: 'SourceHanSansCN-Bold';
+    /*font-family: 'SourceHanSansCN-Bold';*/
+    font-family:'Microsoft YaHei';
 }
 
 .txt_2 p:nth-child(2) {
-    font-family: 'SourceHanSansCN-Light';
+    /*font-family: 'SourceHanSansCN-Light';*/
+    font-family:'Microsoft YaHei';
 }
 
 .txt_3 {
@@ -188,10 +195,12 @@ span {
 .txt_3 p:nth-child(1) {
     color: #d7000f;
     margin-bottom: 0.16rem;
-    font-family: 'SourceHanSansCN-Bold';
+    /*font-family: 'SourceHanSansCN-Bold';*/
+    font-family:'Microsoft YaHei';
 }
 .txt_3 p:nth-child(2) {
-    font-family: 'SourceHanSansCN-Light';
+    /*font-family: 'SourceHanSansCN-Light';*/
+    font-family:'Microsoft YaHei';
 }
 .manage_img {
     width: 50%;
@@ -384,11 +393,13 @@ span {
     top: -0.1rem;
 }
 .echart_txt p:nth-child(1){
-    font-family: 'SourceHanSansCN-ExtraLight';
+    /*font-family: 'SourceHanSansCN-ExtraLight';*/
+    font-family:'Microsoft YaHei';
 }
 .echart_txt p:nth-child(2),
 .echart_txt p:nth-child(3){
-    font-family: 'SourceHanSansCN-Bold';
+    /*font-family: 'SourceHanSansCN-Bold';*/
+    font-family:'Microsoft YaHei';
 }
 .developBtn {
     width: 100%;
@@ -479,7 +490,8 @@ span {
     display: inline-block;
     vertical-align: top;
     text-align: left;
-    font-family: 'SourceHanSansCN-Light';
+    /*font-family: 'SourceHanSansCN-Light';*/
+    font-family:'Microsoft YaHei';
 }
 
 .honor_lie li .honor_px:last-child {
@@ -703,7 +715,8 @@ span {
     margin-bottom: 0.14rem;
     text-align: center;
     visibility: hidden;
-    font-family: 'SourceHanSansCN-Normal';
+    /*font-family: 'SourceHanSansCN-Normal';*/
+    font-family:'Microsoft YaHei';
 }
 
 .teamActive {
@@ -816,4 +829,18 @@ span {
     top: 105%;
     width: 8%;
     z-index: 999;
+}
+
+@media screen and (min-width:1921px) and (max-width:3840px) {
+    .container{
+        overflow-x: hidden;
+    }
+    .honorSwiperBtn {
+        width: 114%;
+        left: -1.8rem;
+        bottom: 7.5rem;
+    }
+    .previousSwiperBtn {
+        bottom: 5.5rem;
+    }
 }

@@ -12,7 +12,7 @@ span {
 }
 
 video {
-    width: 100%;
+    /*width: 100%;*/
 }
 
 .container {
@@ -54,7 +54,8 @@ video {
     padding-bottom: 0.4rem;
     border-bottom: 1px solid #e3e3e3;
     box-sizing: border-box;
-    font-family: 'SourceHanSansCN-Bold';
+    /*font-family: 'SourceHanSansCN-Bold';*/
+    font-weight: 600;
 }
 
 .case_nav ul li:hover a {
@@ -85,13 +86,13 @@ video {
 .list .list_txt {
     float: left;
     width: 50%;
-    min-height: 3rem;
+    height: 2.1rem;
 }
 
 .list img {
     float: left;
     width: 100%;
-    height: 3rem;
+    height: 2.1rem;
 }
 
 .list .imgBox {
@@ -101,7 +102,8 @@ video {
 }
 
 .list:nth-child(3n-2) .imgBox {
-    width: 100%;
+    width: auto;
+    height: 2.1rem;
     float: none;
 }
 
@@ -119,38 +121,43 @@ video {
     float: none;
     width: 100%;
 }
+.list .imgBox video{
+    height: 2.1rem;
+}
 
 .list_txt {
     background: #efefef;
-    padding: 0.6rem 0.3rem 0;
+    padding: 0.2rem 0.3rem 0;
     position: relative;
 }
 
 .txt_1 {
     font-size: 0.14rem;
     margin-bottom: 0.2rem;
-    font-family: 'SourceHanSansCN-Light';
+    /*font-family: 'SourceHanSansCN-Light';*/
 }
 
 .txt_2 {
     font-size: 0.2rem;
-    font-family: 'SourceHanSansCN-Bold';
+    /*font-family: 'SourceHanSansCN-Bold';*/
     text-overflow: ellipsis;
     /*white-space: nowrap;*/
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
+    font-weight: 600;
 }
 
 .txt_3 {
     font-size: 0.16rem;
     color: #6c6c6c;
-    font-family: 'SourceHanSansCN-Light';
+    /*font-family: 'SourceHanSansCN-Light';*/
+    font-weight: lighter;
 }
 
 .mg-top {
-    margin-top: 0.2rem;
+    margin-top: 0.1rem;
     text-overflow: ellipsis;
     /*white-space: nowrap;*/
     display: -webkit-box;
@@ -209,7 +216,7 @@ video {
 
 .case_loodMore p {
     font-size: 0.16rem;
-    font-family: 'SourceHanSansCN-Light';
+    /*font-family: 'SourceHanSansCN-Light';*/
 }
 
 .list:hover .list_txt {
@@ -250,7 +257,7 @@ video {
 
 .imgBox {
     width: 50%;
-     height: 3rem;
+     /*height: 3rem;*/
     position: relative;
 }
 
@@ -294,6 +301,8 @@ video {
     width: 32%;
     margin-right: 2%;
     float: left;
+    margin-bottom: 0.5rem;
+    height: 3.5rem;
 }
 
 .news_cont ul li:nth-child(3n) {
@@ -302,36 +311,41 @@ video {
 
 .news_cont ul li .news_p1 {
     font-size: 0.26rem;
-    margin: 0.34rem 0 0.3rem;
-    font-family: 'SourceHanSansCN-Bold';
+    margin: 0.2rem 0 0.1rem;
+    /*font-family: 'SourceHanSansCN-Bold';*/
     text-overflow: ellipsis;
     /*white-space: nowrap;*/
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
     overflow: hidden;
+    font-weight: 600;
 }
 
 .news_cont ul li .news_p2 {
     font-size: 0.16rem;
-    font-family: 'SourceHanSansCN-Light';
+    /*font-family: 'SourceHanSansCN-Light';*/
     text-overflow: ellipsis;
     /*white-space: nowrap;*/
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
     overflow: hidden;
+    font-weight: lighter;
 }
 
 .news_imgBox {
     position: relative;
-    height: 3rem;
 }
 .news_imgBox img{
-    height: 3rem;
+    width: 100%;
+    height: 2.25rem;
 }
 .news_cont ul li:hover .teamActive {
     opacity: 1;
+}
+.news_imgBox video{
+    height: 2.25rem;
 }
 
 /* 动画 */
@@ -374,7 +388,7 @@ video {
     font-size: 0.4rem;
     color: #000;
     text-align: center;
-    font-family: 'SourceHanSansCN-Bold';
+    /*font-family: 'SourceHanSansCN-Bold';*/
 }
 
 .D-locl {
@@ -383,7 +397,7 @@ video {
     left: 0;
     color: #fff;
     font-size: 0.14rem;
-    font-family: 'SourceHanSansCN-Normal';
+    /*font-family: 'SourceHanSansCN-Normal';*/
 }
 
 .timeBox {
@@ -395,7 +409,7 @@ video {
     padding-bottom: 0.3rem;
     border-bottom: 1px solid #e5e5e5;
     position: relative;
-    font-family: 'SourceHanSansCN-Normal';
+    /*font-family: 'SourceHanSansCN-Normal';*/
 }
 
 .timeBox .time {
@@ -422,7 +436,7 @@ video {
 .details p {
     /*margin-bottom: 0.5rem;*/
     font-size: 0.14rem;
-    font-family: 'SourceHanSansCN-Normal';
+    /*font-family: 'SourceHanSansCN-Normal';*/
 }
 
 .Adver {
@@ -455,7 +469,7 @@ video {
     padding: 0.22rem 0.74rem;
     border-radius: 0.1rem;
     font-size: 0.18rem;
-    font-family: 'SourceHanSansCN-Regular';
+    /*font-family: 'SourceHanSansCN-Regular';*/
 }
 
 /* 职达新意 */
@@ -541,4 +555,43 @@ video {
 
 .job_swiper3 {
     margin-bottom: 1.35rem;
+}
+
+ .swiper-pagination-bullet {
+     width: 9px;
+     height: 9px;
+     margin: 0 0.06rem !important;
+    opacity: 1;
+    background: white !important;
+}
+
+ .swiper-pagination-bullet-active {
+    opacity: 1 !important;
+    background: #d7000f !important;
+}
+
+@media screen and (min-width:1921px) and (max-width:3840px) {
+    .list .list_txt {
+        height: 3.1rem;
+    }
+    .list img {
+        height: 3.1rem;
+    }
+    .list:nth-child(3n-2) .imgBox {
+        height: 3.1rem;
+    }
+
+    .list .imgBox video{
+       height: 3.1rem;
+    }
+
+    .news_cont ul li {
+        height: 4.5rem;
+    }
+    .news_imgBox img{
+        height: 3.25rem;
+    }
+    .news_imgBox video{
+        height: 3.25rem;
+    }
 }

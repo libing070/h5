@@ -6,12 +6,16 @@
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta class="meta-description" name="description" content="CIG新意互动案例展示，为您展示整合营销、内容营销、社会化与用户营销、大数据营销、视频营销、技术营销、互动体验、媒介营销的案例展示。">
+    <meta class="meta-keywords" name="keywords" content="案例展示,CIG新意互动官网">
     <link rel="stylesheet" href="./../css/swiper.min.css">
     <link rel="stylesheet" href="./../css/layer.css">
     <link rel="stylesheet" href="./../css/base.css">
     <link rel="stylesheet" href="./../css/base_pc.css">
     <link rel="stylesheet" href="./../css/page/case.css">
-    <title>CIG新意互动</title>
+    <script type="text/javascript" src="//s9.cnzz.com/z_stat.php?id=1278042079&web_id=1278042079"></script>
+
+    <title class="title">案例展示_CIG新意互动官网</title>
 </head>
 
 <body>
@@ -21,8 +25,41 @@
                 <div class="swiper-slide">
                     <img src="./../images/page/case_banner1.jpg" alt="">
                 </div>
+                <!--<div class="swiper-slide">-->
+                    <!--<img src="./../images/page/case_banner2.jpg" alt="">-->
+                <!--</div>-->
+                <!--<div class="swiper-slide">-->
+                    <!--<img src="./../images/page/case_banner3.jpg" alt="">-->
+                <!--</div>-->
+                <!--<div class="swiper-slide">-->
+                    <!--<img src="./../images/page/case_banner4.jpg" alt="">-->
+                <!--</div>-->
+                <!--<div class="swiper-slide">-->
+                    <!--<img src="./../images/page/case_banner5.jpg" alt="">-->
+                <!--</div>-->
+                <!--<div class="swiper-slide">-->
+                    <!--<img src="./../images/page/case_banner6.jpg" alt="">-->
+                <!--</div>-->
+                <!--<div class="swiper-slide">-->
+                    <!--<img src="./../images/page/case_banner7.jpg" alt="">-->
+                <!--</div>-->
+                <div class="swiper-slide">
+                    <img src="./../images/page/case_banner8.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./../images/page/case_banner9.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./../images/page/case_banner10.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./../images/page/case_banner12.jpg" alt="">
+                </div>
             </div>
+            <div class="swiper-pagination"></div>
+
         </div>
+
         <div class="case_cont">
             <div class="case_nav">
                 <ul>
@@ -56,8 +93,8 @@
 
             </div>
             <div class="case_loodMore" hasmore="1" pageindex="1">
-                <img style="cursor: pointer" src="./../images/page/loadMoreIcon.png" alt="">
-                <p style="width: 2rem;cursor: pointer;margin: auto">加载更多</p>
+                <img style="display: none" class="loadRotate" src="./../images/page/loadMoreIcon.png" alt="">
+                <p style="width: 2rem;cursor: pointer;margin: auto;display: none">点击加载更多</p>
             </div>
         </div>
     </div>
@@ -82,7 +119,7 @@
                         <%if(list[i].multimediaType==1){%>
                             <img src="<%=list[i].url %>" alt="">
                             <%}else{%>
-                                <video src="<%=list[i].url %>"></video>
+                                <video muted loop autoplay="autoplay" style="object-fit: fill;width: 100%" src="<%=list[i].url %>"></video>
                             <%}%>
                     <div class="teamActive">
                         <div></div>
@@ -90,7 +127,7 @@
                 </div>
                 <div class="list_txt">
                     <div class="sj-top"></div>
-                    <p class="txt_1">2019/8/20</p>
+                    <!--<p class="txt_1">2019/8/20</p>-->
                     <p class="txt_2"><%=list[i].serviceUser %></p>
                     <p class="txt_2"><%=list[i].name %></p>
                     <p class="txt_3 mg-top"><%=list[i].content %></p>      
@@ -101,47 +138,87 @@
     
     </script>
     <script>
+
         $(function () {
+            $('html, body').animate({
+                scrollTop: $("body").offset().top
+            }, 500);
             // console.log(getUrlParam('index'))
             var urlParame = getUrlParam('index');
             if (urlParame) {
                 for (let i = 1; i <= $('.case_nav ul li').length; i++) {
                     if (i == urlParame) {
+
                         var ele = $('.case_nav ul li')[(i - 1)];
                         $(ele).find('a').addClass('act');
                         var type = $(ele).find('a').attr('type');
+                        $('head .meta-description').attr("content",'CIG新意互动案例展示，为您展示新意互动在'+$(ele).find('a').html()+'领域的案例，助您进一步了解新意互动强大的科技营销实力。');
+                        $('head .meta-keywords').attr("content",$(ele).find('a').html()+',CIG新意互动官网');
+                        $("head title").html($(ele).find('a').html()+"_案例展示_CIG新意互动官网");
                         getList(1, type);
                     }
                 }
             } else {
                 $($('.case_nav ul li a')[0]).addClass('act');
                 getList(1, 24);
+                $('head .meta-description').attr("content",'CIG新意互动案例展示，为您展示新意互动在整合营销领域的案例，助您进一步了解新意互动强大的科技营销实力。');
+                $('head .meta-keywords').attr("content",'整合营销,CIG新意互动官网');
+                $("head title").html("整合营销_案例展示_CIG新意互动官网");
             }
 
             var caseSwiper = new Swiper('.caseSwiper,swiper-container', {
-                loop: false,
+                loop: true,
+                autoplay:true,
                 observer: true, //修改swiper自己或子元素时，自动初始化swiper
                 observeParents: true, //修改swiper的父元素时，自动初始化swiper
+                pagination: {
+                    el: '.swiper-pagination',
+                    // type: 'fraction'
+                    clickable: true,
+                },
             });
             $('.case_nav ul li').on('click', function () {
                 $('.case_nav ul li a').removeClass('act');
                 $(this).find('a').addClass('act');
                 var type = $(this).find('a').attr('type');
+                $('head .meta-description').attr("content",'CIG新意互动案例展示，为您展示新意互动在'+$(this).find('a').html()+'领域的案例，助您进一步了解新意互动强大的科技营销实力。');
+                $('head .meta-keywords').attr("content",$(this).find('a').html()+',CIG新意互动官网');
+                $("head title").html($(this).find('a').html()+"_案例展示_CIG新意互动官网");
                 $(".case_loodMore").attr("pageIndex",'1').attr("hasmore","1");
-                $('.case_loodMore').find('p').html("加载更多");
+                $('.case_loodMore').find('p').html("点击加载更多");
                 getList(1, type);
             });
             ///api/Case/GetPagingList (Portal_003)获取案例分页列表
-            $('.case_loodMore').on('click', function () {
-                if( $('.case_loodMore').attr("hasmore")==1){
-                    $(this).find('img').addClass('loadRotate');
-                    var index = $(this).attr('pageIndex');
-                    var type = $('.case_nav .act').attr('type');
-                    index++;
-                    $(this).attr('pageIndex', index);
-                    getList($(this).attr('pageIndex'), type);
+            // $('.case_loodMore').on('click', function () {
+            //     if( $('.case_loodMore').attr("hasmore")==1){
+            //         $(this).find('img').show();
+            //         var index = $(this).attr('pageIndex');
+            //         var type = $('.case_nav .act').attr('type');
+            //         index++;
+            //         $(this).attr('pageIndex', index);
+            //         getList($(this).attr('pageIndex'), type);
+            //     }
+            // });
+
+            var isbool=true;
+            //滚动加载
+            $(window).on('scroll', function () {
+               // console.log(ScollPostion());
+                var sp_bottom=ScollPostion().bottom;//距离底部的距离
+                    if( $('.case_loodMore').attr("hasmore")==1&&isbool){
+                      if(sp_bottom<600){
+                          isbool=false;
+                        var index =$('.case_loodMore').attr('pageIndex');
+                        var type = $('.case_nav .act').attr('type');
+                        index++;
+                        $('.case_loodMore').attr('pageIndex', index);
+                        getList($('.case_loodMore').attr('pageIndex'), type);
+                    }
+
                 }
             });
+
+
             function getList(index, type) {
                 $.request('/api/Case/GetPagingList', {
                     pageIndex: index || 1,
@@ -158,8 +235,9 @@
                     function (res) {
                     if(res.data.caseList.length==0){
                         $('.case_loodMore').attr("hasmore","0");
-                        $('.case_loodMore').find('img').removeClass('loadRotate');
+                        $('.case_loodMore').find('img').hide();
                         $('.case_loodMore').find('p').html("没有更多了");
+                        isbool=false;
                         return;
                     }
                         // console.log(res);
@@ -174,10 +252,12 @@
                         } else {
                             $('.caseList').html(html);
                         }
-                        $('.case_loodMore').find('img').removeClass('loadRotate');
+                        $('.case_loodMore').find('img').hide();
+                        isbool=true;
                     }
                 );
-            }
+            };
+
 
         });
 

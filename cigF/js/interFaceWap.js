@@ -1,59 +1,73 @@
 $(function () {
 
     // (Portal_011)获取模块排序
-    $.request('/api/Module/GetModuleList', {
-            roleId: 1,
-            timestamp: ts(),
-            sign: createSign({
-                roleId: 1,
-                timestamp: ts(),
-            })
-        },
-        function (res) {
-            // console.log(res);
-            var moduleCode = res.data[0].moduleCode;
-            if (moduleCode == '09') { //1
-                $('.module9').insertBefore($('.module1'));
-                $(".wap_ani_52,.wap_ani_53m,.wap_ani_54").css('opacity', '0');
-                aniTranslateY(['.wap_ani_52'], ['1rem', '0', ], 1000, 200);
-                aniTranslateY(['.wap_ani_53'], ['1rem', '0', ], 1000, 200);
-                aniTranslateY(['.wap_ani_54'], ['1rem', '0', ], 1000, 400);
-            }
-            if (moduleCode == '06') { //6 联系
-                aniResetWap();
-                $('.module6').insertBefore($('.module1'));
-                $(".module6").addClass("module_back_scale");
-                aniTranslateY(['.wap_ani_30'], ['-1rem', '0',], 4000, 400);
-                aniTranslateY(['.wap_ani_31'], ['-1rem', '0',], 4000, 200);
-                aniTranslateY(['.wap_ani_32'], ['1rem', '0',], 4000, 600);
-                aniTranslateY(['.wap_ani_33'], ['1rem', '0',], 4000, 800);
-                aniTranslateY(['.wap_ani_34'], ['1rem', '0',], 4000, 1000);
-                aniTranslateY(['.wap_ani_35'], ['1rem', '0',], 4000, 1000);
-                aniTranslateX(['.wap_ani_36'], ['150%', '0',], 2000, 400);
-                aniTranslateX(['.wap_ani_37'], ['150%', '0',], 2000, 600);
+    var roleId=localStorage.getItem("roleId");
 
-                aniTranslateX(['.wap_ani_38'], ['-150%', '0',], 2000, 400);
-                aniTranslateX(['.wap_ani_39'], ['-150%', '0',], 2000, 600);
-                aniTranslateX(['.wap_ani_40'], ['-150%', '0',], 2000, 800);
-
-                aniTranslateX(['.wap_ani_41'], ['-150%', '0',], 2000, 400);
-                aniTranslateX(['.wap_ani_42'], ['-150%', '0',], 2000, 600);
-                aniTranslateX(['.wap_ani_43'], ['-150%', '0',], 2000, 800);
-
-                aniTranslateX(['.wap_ani_44'], ['150%', '0',], 2000, 400);
-                aniTranslateX(['.wap_ani_45'], ['150%', '0',], 2000, 600);
-                aniTranslateX(['.wap_ani_46'], ['150%', '0',], 2000, 800);
-
-                aniTranslateX(['.wap_ani_47'], ['150%', '0',], 2000, 400);
-                aniTranslateX(['.wap_ani_48'], ['150%', '0',], 2000, 600);
-                aniTranslateX(['.wap_ani_49'], ['150%', '0',], 2000, 800);
-            }
-
-            loading(1, function () {
-                getList();
-            });
+    if(roleId!=3){//排除不是合伙伙伴
+        var currIp =returnCitySN["cip"];
+        if(allIp.indexOf(currIp)>-1){//是员工
+            localStorage.setItem("roleId","2");
+        }else{//普通用户
+            localStorage.setItem("roleId","1");
         }
-    );
+    }
+    function firstApi() {
+        $.request('/api/Module/GetModuleList', {
+                roleId: localStorage.getItem("roleId"),
+                timestamp: ts(),
+                sign: createSign({
+                    roleId: localStorage.getItem("roleId"),
+                    timestamp: ts(),
+                })
+            },
+            function (res) {
+                // console.log(res);
+                var moduleCode = res.data[0].moduleCode;
+                if (moduleCode == '09') { //1
+                    $('.module9').insertBefore($('.module1'));
+                    $(".wap_ani_52,.wap_ani_53m,.wap_ani_54").css('opacity', '0');
+                    aniTranslateY(['.wap_ani_52'], ['1rem', '0', ], 1000, 200);
+                    aniTranslateY(['.wap_ani_53'], ['1rem', '0', ], 1000, 200);
+                    aniTranslateY(['.wap_ani_54'], ['1rem', '0', ], 1000, 400);
+                }
+                if (moduleCode == '06') { //6 联系
+                    aniResetWap();
+                    $('.module6').insertBefore($('.module1'));
+                    $(".module6").addClass("module_back_scale");
+                    aniTranslateY(['.wap_ani_30'], ['-1rem', '0',], 4000, 400);
+                    aniTranslateY(['.wap_ani_31'], ['-1rem', '0',], 4000, 200);
+                    aniTranslateY(['.wap_ani_32'], ['1rem', '0',], 4000, 600);
+                    aniTranslateY(['.wap_ani_33'], ['1rem', '0',], 4000, 800);
+                    aniTranslateY(['.wap_ani_34'], ['1rem', '0',], 4000, 1000);
+                    aniTranslateY(['.wap_ani_35'], ['1rem', '0',], 4000, 1000);
+                    aniTranslateX(['.wap_ani_36'], ['150%', '0',], 2000, 400);
+                    aniTranslateX(['.wap_ani_37'], ['150%', '0',], 2000, 600);
+
+                    aniTranslateX(['.wap_ani_38'], ['-150%', '0',], 2000, 400);
+                    aniTranslateX(['.wap_ani_39'], ['-150%', '0',], 2000, 600);
+                    aniTranslateX(['.wap_ani_40'], ['-150%', '0',], 2000, 800);
+
+                    aniTranslateX(['.wap_ani_41'], ['-150%', '0',], 2000, 400);
+                    aniTranslateX(['.wap_ani_42'], ['-150%', '0',], 2000, 600);
+                    aniTranslateX(['.wap_ani_43'], ['-150%', '0',], 2000, 800);
+
+                    aniTranslateX(['.wap_ani_44'], ['150%', '0',], 2000, 400);
+                    aniTranslateX(['.wap_ani_45'], ['150%', '0',], 2000, 600);
+                    aniTranslateX(['.wap_ani_46'], ['150%', '0',], 2000, 800);
+
+                    aniTranslateX(['.wap_ani_47'], ['150%', '0',], 2000, 400);
+                    aniTranslateX(['.wap_ani_48'], ['150%', '0',], 2000, 600);
+                    aniTranslateX(['.wap_ani_49'], ['150%', '0',], 2000, 800);
+                }
+
+                // loading(1, function () {
+                //     getList();
+                // });
+                loading();
+            }
+        );
+
+    }
 
 
     // (Portal_003)获取首页案例信息
@@ -73,8 +87,9 @@ $(function () {
                         str+='<img style="object-fit:cover;width:100%;height:100%" src="' + ele.url + '">';
                     }else if(ele.multimediaType == 2){//视频
                         str += '<div class="swiper-slide case-swiper-slide video">';
-                        str+='<img class="case-swiper-video-btn" onclick="playVideo(this,' + k + ')" src="./images/wap/video-btn.png">';
-                        str+='<video  controls="controls"  poster="" x5-playsinline="" playsinline="" webkit-playsinline="" class="video" style="object-fit:cover;" height="100%" width="100%" id="caseVideo' + k + '"  src="'+ele.url+'" preload="auto"></video>';
+                        // str+='<img style="width: 100%" class="caseVideo-bg" src="">';
+                        str+='<img class="case-swiper-video-btn" onclick="playVideowap(this,' + k + ')" src="./images/wap/video-btn.png">';
+                        str+='<video  controls="controls"  poster="" x5-playsinline="" playsinline="" webkit-playsinline="" class="video case-video" style="object-fit:cover;" height="100%" width="100%" id="caseVideo' + k + '"  src="'+ele.url+'" preload="auto"></video>';
                     }
                     str +='<p class="server-user">'+ele.serviceUser+'</p>';
                     str +='<p class="name">'+ele.name+'</p>';
@@ -107,15 +122,49 @@ $(function () {
                     }
                 });
 
-                loading(2, function () {
-                    GetRecommendNews();
-                });
+                // var imgList=[];
+                // setTimeout(function () {
+                //     var len=$(".case-video").length;
+                //     for(var i=0;i<len;i++){
+                //         (function(i){
+                //             document.getElementsByClassName('case-video')[i].addEventListener('loadeddata',captureImage(i))
+                //         })(i);
+                //     };
+                //     setTimeout(function () {
+                //         console.log(imgList);
+                //
+                //     },1000);
+                //     function captureImage(i) {
+                //         setTimeout(function () {
+                //             video=document.getElementsByClassName('case-video')[i];
+                //             var canvas = document.createElement("canvas");
+                //             canvas.width = video.videoWidth ;
+                //             canvas.height = video.videoHeight;
+                //             canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+                //             var img = new Image();
+                //             img.setAttribute("crossOrigin",'Anonymous');
+                //             img.src = canvas.toDataURL("image/png");
+                //             img.width = 330;
+                //             img.height = 210;
+                //             imgList.push(img.src);
+                //             document.getElementsByClassName('caseVideo-bg')[i].setAttribute("src",img.src);
+                //         },1000);
+                //
+                //     };
+                //
+                // },1000);
+
+                // loading(2, function () {
+                //     GetRecommendNews();
+                // });
+                loading();
+
             }
         );
     }
 
     $('.caseSwiper .swiper-wrapper').on("click",'.arrow',function () {
-        window.location.href='./pagewap/case.html?inittype=26&initialSlide=0';
+        window.location.href='./pagewap/case.html?inittype=24&initialSlide=0';
     })
 
     // //(Portal_005)获取新闻推荐
@@ -130,9 +179,9 @@ $(function () {
                 var str = '';
                 res.data.forEach((ele, k) => {
                     str+='<div class="swiper-slide news-swiper-slide">';
-                    str+='<img style="width:100%;" src="'+ele.picUrl+'">';
+                    str+='<img style="max-height: 3.5rem" src="'+ele.picUrl+'">';
                     str+='<p newsId="'+ele.id+'" class="t">'+ele.title+'</p>';
-                    str+='<p  newsId="'+ele.id+'"class="content">'+ele.summary+'</p>';
+                    str+='<p style="display: none"  newsId="'+ele.id+'"class="content">'+ele.summary+'</p>';
                     str+='</div>';
 
                 });
@@ -143,7 +192,7 @@ $(function () {
                     // freeMode: true,
                     slidesPerView: 'auto',
                     centeredSlides: true,
-                    spaceBetween: 10,
+                    spaceBetween: 30,
                     // pagination: {
                     //     el: '.news-swiper-pagination',
                     //     clickable: true,
@@ -158,9 +207,11 @@ $(function () {
                     }
                 });
 
-                loading(3, function () {
-                    GetJobInfo();
-                });
+                // loading(3, function () {
+                //     GetJobInfo();
+                // });
+
+                loading();
             }
         );
     }
@@ -202,10 +253,12 @@ $(function () {
                     str2+='<a class="longrecruit-a-'+k+'" href="' + ele.jobUrl + '">'+ele.jobTitle+'</a>';
                 });
                 $('.longrecruitData').append(str2);
+                $(".module7 .top .a").attr("href", res.data.moreUrl);
+                // loading(4, function () {
+                //     GetHomeRecommendInfo();
+                // });
 
-                loading(4, function () {
-                    GetHomeRecommendInfo();
-                });
+                loading();
             }
 
         );
@@ -249,9 +302,9 @@ $(function () {
                     }
                 });
 
-                loading(5, function () {
-                    GetHomeNetDiscInfo();
-                });
+
+
+                loading();
             }
         );
     }
@@ -288,7 +341,8 @@ $(function () {
                     wpStr +='</div>';
                 })
                 $('.download-swiper-wrapper').append(wpStr);
-                loading(6);
+                // loading(6);
+                loading();
             }
         );
     }
@@ -299,6 +353,17 @@ $(function () {
     $('.verifyCodeImg img').on('click', function () {
         $(this).attr('src', host + '/api/VerifyCode/CreateCode?' + ts());
     });
+
+
+    function init() {
+        firstApi();
+        getList();
+        GetJobInfo();
+        GetRecommendNews();
+        GetHomeRecommendInfo();
+        GetHomeNetDiscInfo();
+    }
+    init();
 
 });
 
@@ -331,47 +396,78 @@ function objKeySort(arys) {
     return newObj; //返回排好序的新对象
 }
 
-function playVideo(_this, k) {
-    // var eleName = 'caseVideo' + k;
-    // $(_this).hide();
-    // var myVideo=$(_this).siblings("video").get(0);
-    // myVideo.play();
-    // myVideo.addEventListener('ended', playsss);
-    // function playsss() {
-    //     console.log(1);
-    //     $(".caseSwiper .case-swiper-video-btn").show();
-    //     myVideo.removeEventListener("ended", playsss);
-    //
-    // }
+function playVideowap(_this, k) {
+    var eleName = 'caseVideo' + k;
+    $(_this).hide();
+    $(_this).siblings(".caseVideo-bg").hide();
+    var myVideo=$(_this).siblings("video").get(0);
+    myVideo.play();
+    myVideo.addEventListener('ended', playsss);
+    function playsss() {
+        $(".caseSwiper .case-swiper-video-btn").show();
+        myVideo.removeEventListener("ended", playsss);
+
+    }
  }
 
 
-function loading(num, callback) {
-    var len = 6;
-    var sq = Math.round(100 / len);
-    var index = (num - 1) * sq;
-    var nowPro = num * sq;
-    var timer;
-    timer = setInterval(function () {
-        index++;
-        if (index <= nowPro) {
-            if (index >= 100) {
-                clearInterval(timer);
-                $('.loadProColor').width('100%');
-                setTimeout(() => {
-                    $('.progress').hide();
-                    $('.loadState').show();
-                    $(".wap_ani_1,.wap_ani_2").css("opacity","0");
-                    aniTranslateY(['.wap_ani_1'], ['1rem', '0', ], 1000, 500);
-                    aniTranslateY(['.wap_ani_2'], ['1rem', '0', ], 1000, 1000);
-                }, 1000);
-            } else {
-                $('.loadProColor').width(index + '%');
-            }
-        } else {
-            clearInterval(timer);
-            callback();
-        }
-    }, 30);
+// function loading(num, callback) {
+//     var len = 6;
+//     var sq = Math.round(100 / len);
+//     var index = (num - 1) * sq;
+//     var nowPro = num * sq;
+//     var timer;
+//     timer = setInterval(function () {
+//         index++;
+//         if (index <= nowPro) {
+//             if (index >= 100) {
+//                 clearInterval(timer);
+//                 $('.loadProColor').width('100%');
+//                 setTimeout(() => {
+//                     $('.progress').hide();
+//                     $('.loadState').show();
+//                     $(".wap_ani_1,.wap_ani_2").css("opacity","0");
+//                     aniTranslateY(['.wap_ani_1'], ['1rem', '0', ], 1000, 500);
+//                     aniTranslateY(['.wap_ani_2'], ['1rem', '0', ], 1000, 1000);
+//                 }, 1000);
+//             } else {
+//                 $('.loadProColor').width(index + '%');
+//             }
+//         } else {
+//             clearInterval(timer);
+//             callback();
+//         }
+//     }, 30);
+// }
+
+function loading() {
+    currentWidth ++;
 }
+
+var totalWidth = 6;
+var currentWidth = 0;
+var progress = 0;
+var step = 5;
+var timer = setInterval(function () {
+    var tmp = progress + step;
+    if (tmp == 100) {
+        $('.loadProColor').width('100%');
+        clearInterval(timer);
+        setTimeout(() => {
+            $('.progress').hide();
+            $('.loadState').show();
+            aniTranslateY(['.ani_1'], ['1rem', '0', ], 1000, 500);
+            aniTranslateY(['.ani_2'], ['1rem', '0', ], 1000, 1000);
+        }, 500);
+    }else if (tmp < (parseInt(currentWidth/totalWidth)*100) && tmp<100) {
+        progress = tmp;
+        var width = parseInt(progress*currentWidth/totalWidth);
+        // if (width<100) {
+        console.log(width);
+        $('.loadProColor').width(width + '%');
+        // }
+    }else {
+        console.log('waiting');
+    }
+}, 30);
 
