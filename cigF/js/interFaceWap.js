@@ -91,7 +91,7 @@ $(function () {
                         str+='<img class="case-swiper-video-btn" onclick="playVideowap(this,' + k + ')" src="./images/wap/video-btn.png">';
                         str+='<video  controls="controls"  poster="" x5-playsinline="" playsinline="" webkit-playsinline="" class="video case-video" style="object-fit:cover;" height="100%" width="100%" id="caseVideo' + k + '"  src="'+ele.url+'" preload="auto"></video>';
                     }
-                    str +='<p class="server-user">'+ele.serviceUser+'</p>';
+                    // str +='<p class="server-user">'+ele.serviceUser+'</p>';
                     str +='<p class="name">'+ele.name+'</p>';
                     str +='<p  class="arrow"><img caseId="'+ele.id+'" class="arrow_icon_btn" src="images/arrow_icon.png"></p>';
                     str += '</div>';

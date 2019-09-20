@@ -37,6 +37,29 @@ a{ text-decoration:none}
 .banner1  .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{
     margin: 0 5px;
 }
+
+.nav-bar-menu{
+    margin-top: 0.4rem;
+    width: 100%;
+    height: 1rem;
+    display: -webkit-flex;
+    display: flex;
+    line-height: 1rem;
+    border-bottom: 1px solid rgba( 114, 114, 114 ,0.2);
+}
+.nav-bar-menu .item{
+    text-align: center;
+    font-size: 0.20rem;
+    font-family: "Microsoft YaHei";
+    color: rgb( 0, 0, 0 );
+    font-weight: bold;
+    flex: 1;
+}
+.nav-bar-menu .item.active{
+    border-bottom: 1px solid #d7000f;
+
+}
+
 .banner2{
     margin-top: 0.75rem;
     border-bottom:1px solid rgba( 114, 114, 114 ,0.2);

@@ -11,9 +11,18 @@ $(function () {
         initialSlide= GetUrlParam('initialSlide');
         $('.banner3 .load-more').attr('type',inittype);
     }
+    for(var i=0;i<$(".nav-bar-menu .item").length;i++){
+        if($(".nav-bar-menu .item").eq(i).attr("type")==inittype){
+            $(".nav-bar-menu .item").eq(i).addClass("active").siblings().removeClass("active");
+        }
+    }
+
+
 var swiper1 = new Swiper('.banner1', {
     loop:true,
-    autoplay:true,
+    autoplay:{
+        disableOnInteraction: false,
+    },
     slidesPerView: 1,
     centeredSlides: true,
     pagination: {
@@ -27,39 +36,26 @@ var swiper1 = new Swiper('.banner1', {
     }
 });
 
-
-
-    var swiper2 = new Swiper('.banner2', {
-        observer: false, //修改swiper自己或子元素时，自动初始化swiper
-        observeParents: false, //修改swiper的父元素时，自动初始化swiper
-        slidesPerView:4,
-        loop:false,
-        spaceBetween:30,
-        on:{
-            tap: function(){
-                $('.banner2 .swiper-slide').removeClass('swiper-slide-active');
-                $('.banner2 .swiper-slide').eq(this.clickedIndex).addClass('swiper-slide-active');
-                swiper3.slideTo(this.clickedIndex);
-            },
-        }
-    });
     var swiper3 = new Swiper('.banner3', {
-        observer: false, //修改swiper自己或子元素时，自动初始化swiper
-        observeParents: false, //修改swiper的父元素时，自动初始化swiper
+        observer: true, //修改swiper自己或子元素时，自动初始化swiper
+        observeParents: true, //修改swiper的父元素时，自动初始化swiper
         slidesPerView:1,
         loop:false,
         spaceBetween:0,
         initialSlide :initialSlide,
         on:{
             slideChangeTransitionEnd: function(event){
-                $('.banner2 .swiper-slide').removeClass('swiper-slide-active');
-                $('.banner2 .swiper-slide').eq(this.activeIndex).addClass('swiper-slide-active');
-                var type= $('.banner2 .swiper-slide').eq(this.activeIndex).attr("type");
+                var type= $('.banner3 .swiper-slide').eq(this.activeIndex).attr("type");
+                for(var i=0;i<$(".nav-bar-menu .item").length;i++){
+                    if($(".nav-bar-menu .item").eq(i).attr("type")==type){
+                        $(".nav-bar-menu .item").eq(i).addClass("active").siblings().removeClass("active");
+                    }
+                }
                 $(".banner3 .load-more").attr("type",type);//切换改变当前type
                 $(".banner3 .load-more").attr("pageIndex",1);//切换后默认为1
                 $(".banner3 .load-more").attr("hasmore",1);//1更多 0 没有
                 $(".banner3 .load-more").find("p").html("点击加载更多");
-                var title=$('.banner2 .swiper-slide').eq(this.activeIndex).html();
+                var title=$('.banner3 .swiper-slide').eq(this.activeIndex).html();
                 $('head .meta-description').attr("content",'CIG新意互动官网新意资讯，为您展示新意互动'+title+'的资讯，助您进一步了解新意互动动态和信息');
                 $('head .meta-keywords').attr("content",title+',CIG新意互动官网');
                 $("head title").html(title+"_新意资讯_CIG新意互动官网");
@@ -69,12 +65,17 @@ var swiper1 = new Swiper('.banner1', {
 
     });
 
+    $(".nav-bar-menu").on("click",'.item',function () {
+        var index=$(this).attr("index");
+        swiper3.slideTo(index);
+    });
+
     var isbool=true;
     $(window).on('scroll', function (e) {
         var t=$(window).scrollTop();
         var h=document.body.scrollHeight;
         var c=document.documentElement.clientHeight;
-        console.log(h+"===="+t+"===="+c);
+        // console.log(h+"===="+t+"===="+c);
         var sp_bottom=h-t-c;//距离底部的距离
         var hasMore=$(".banner3 .load-more").attr("hasmore");//1更多 0 没有
         if( hasMore==1&&isbool){
@@ -135,9 +136,9 @@ var swiper1 = new Swiper('.banner1', {
 
                 });
                 if(pageIndex==1){
-                    $('.banner3 .swiper-slide').attr("type",type).html("");
+                    $('.banner3 .banner3-swiper-slide').html("");
                 }
-                $('.banner3 .banner3-swiper-slide').attr("type",type).append(str);
+                $('.banner3 .banner3-swiper-slide'+type).append(str);
                 $(".banner3 .load-more").find(".load-more-btn").hide();
                 isbool=true;
             }

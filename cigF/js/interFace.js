@@ -86,7 +86,7 @@ $(function () {
                     str += '<div class="caseCont">' +
                         '<div class="case_float">' +
                         '<div class="case_txt">' +
-                        '<p class="fontSize32 ani_33">' + ele.serviceUser + '</p>' +
+                        // '<p class="fontSize32 ani_33">' + ele.serviceUser + '</p>' +
                         '<p class="fontSize32 ani_34">' + ele.name + '</p>' +
                         ' </div>' +
                         '</div>' +

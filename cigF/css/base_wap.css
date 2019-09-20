@@ -139,6 +139,11 @@ font-size: 0.32rem;
     /*background-size: cover;*/
 }
 
+.banner1 .module1-banner1-video{ /*安卓下视频层级太高问题 挡住了菜单*/
+    height: 1px !important;
+    visibility: hidden !important;
+    display: none !important;
+}
 .banner1 .banner_top {
     position: absolute;
     left: 10%;
@@ -526,7 +531,7 @@ font-size: 0.32rem;
     top: 1.95rem;
     font-size: 0.32rem;
     font-family: "Microsoft YaHei";
-    color: rgb( 255, 255, 255 );
+    color: rgba( 0, 0, 0 ,0.5);
     font-weight: bold;
 }
 .case-swiper-slide.image .arrow{
@@ -556,7 +561,7 @@ font-size: 0.32rem;
     top: 1.95rem;
     font-size: 0.32rem;
     font-family: "Microsoft YaHei";
-    color: rgb( 255, 255, 255 );
+    color: rgba( 0, 0, 0 ,0.5);
     font-weight: bold;
 }
 .case-swiper-slide.video .arrow{

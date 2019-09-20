@@ -128,7 +128,7 @@
                 <div class="list_txt">
                     <div class="sj-top"></div>
                     <!--<p class="txt_1">2019/8/20</p>-->
-                    <p class="txt_2"><%=list[i].serviceUser %></p>
+                    <!--<p class="txt_2"><%=list[i].serviceUser %></p>-->
                     <p class="txt_2"><%=list[i].name %></p>
                     <p class="txt_3 mg-top"><%=list[i].content %></p>      
                 </div>
@@ -168,7 +168,9 @@
 
             var caseSwiper = new Swiper('.caseSwiper,swiper-container', {
                 loop: true,
-                autoplay:true,
+                autoplay:{
+                    disableOnInteraction: false,
+                },
                 observer: true, //修改swiper自己或子元素时，自动初始化swiper
                 observeParents: true, //修改swiper的父元素时，自动初始化swiper
                 pagination: {

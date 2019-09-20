@@ -13,7 +13,9 @@ $(function () {
     }
 var swiper1 = new Swiper('.banner1', {
     loop:true,
-    autoplay:true,
+    autoplay:{
+        disableOnInteraction: false,
+    },
     slidesPerView: 1,
     centeredSlides: true,
     pagination: {
@@ -159,7 +161,7 @@ var swiper1 = new Swiper('.banner1', {
                     }
                     str += '<div class="text">';
                     // str += '<p class="p1">2019 / 8 / 20</p>';
-                    str += '<p class="p2">'+ele.serviceUser+ele.name+'</p>';
+                    str += '<p class="p2">'+ele.name+'</p>';
                     str += ' <p class="p3">'+ele.content+'</p>';
                     str += '</div>';
                     str += '</div>';

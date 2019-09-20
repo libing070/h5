@@ -5,6 +5,9 @@ $(function () {
         if($(".menu-content").hasClass("close")){
             aniTranslateX(['.menu-content'], ['100%', '0', ], 200, 200);
             $(".menu-content").removeClass("close");
+            // if(isAndroid()){
+            //     $(".module1 .banner1 .play video").addClass("module1-banner1-video");
+            // }
             setTimeout(function () {
                 $(that).attr("src","images/wap/nav-menu-close.jpg");
             },200)
@@ -12,6 +15,9 @@ $(function () {
         }else{
             aniTranslateX(['.menu-content'], ['0', '100%', ], 200, 200);
             $(".menu-content").addClass("close");
+            // if(isAndroid()){
+            //   $(".module1 .banner1 .play video").removeClass("module1-banner1-video");
+            // }
             setTimeout(function () {
                 $(that).attr("src","images/wap/nav-menu.jpg");
             },200)
@@ -48,7 +54,13 @@ $(function () {
                 $(".scroll-more").show();
                 aniResetWap();
                 $(".outerSlide").removeClass("module_back_scale");
+                // if(isAndroid()) {
+                //     $(".module1 .banner1 .play video").addClass("module1-banner1-video");//安卓机 视频层级太高
+                // }
                 if (this.activeIndex == $('.module1').index('.outerSlide')) {
+                    // if(isAndroid()) {
+                    //     $(".module1 .banner1 .play video").removeClass("module1-banner1-video");//安卓机 视频层级太高
+                    // }
                     var index = $('.indexSwiper .swiper-slide-active').attr('data-swiper-slide-index');
                     switch(index) {
                         case '0':

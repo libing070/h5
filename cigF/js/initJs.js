@@ -27,7 +27,7 @@ if(browserRedirect()==0){
     document.getElementById("wap").style.display="block";
     $("#pc").remove();
     $(".scrollBar,.phoneIcon,.mouseIcon").hide();
-    document.write('<script src="./js/interFaceWap.js"></script>');
+    document.write('<script src="./js/interFaceWap.js?v=1"></script>');
     document.write('<script src="./js/swiperInitWap.js"></script>');
     document.write('<script src="./js/basewap.js"></script>');
 
