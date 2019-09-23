@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="./css/swiper.min.css">
     <link rel="stylesheet" href="./css/layer.css">
     <!-- 适配wap pad/pc -->
-    <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/base_pc.css?v=1" media="(min-width:767px)">
-    <link rel="stylesheet" href="./css/base_wap.css?v=1" media="(max-width:767px)">
+    <link rel="stylesheet" href="./css/base.css?v=1">
+    <link rel="stylesheet" href="./css/base_pc.css?v=2" media="(min-width:767px)">
+    <link rel="stylesheet" href="./css/base_wap.css?v=2" media="(max-width:767px)">
     <link rel="stylesheet" href="./css/swiper_reset.css">
     <link rel="stylesheet" href="./css/animation.css">
     <script src="//res.wx.qq.com/open/js/jweixin-1.2.0.js" type="text/javascript" charset="utf-8"></script>
@@ -37,7 +37,7 @@
                                 <div class="play">
                                     <!--<img src="./images/play.png" alt="" onclick="banner1playVideo(this,'ban1')">-->
                                     <!--<video  class="pcbanner1video"src="./video/CIG%20KV2.mp4"></video>-->
-                                    <video class="" muted loop autoplay="autoplay" src="./video/2.mp4"></video>
+                                    <video class="" muted loop autoplay="autoplay" src="./video/2.mp4?v=1"></video>
                                 </div>
 
                                 <div class="banner_left" style="pointer-events: none">
@@ -177,7 +177,7 @@
                                             </div>
                                             <div class="about_numDesc">
                                                 <p><span style="color:#fff ">亿+</span></p>
-                                                <p>汽车大数据</p>
+                                                <p>中高端消费人群数据</p>
                                             </div>
                                         </li>
 
@@ -667,7 +667,7 @@
                             <div class="swiper-slide">
                             <div class="banner banner1">
                                 <div class="play" style="width: 100%;height: 100%;position: relative">
-                                    <!--<img class="all-video-play-btn" src="./images/play.png">-->
+                                    <img class="all-video-play-btn" style="display: none" src="./images/play.png">
                                     <video id="vido_one" preload  x5-playsinline="" playsinline="" webkit-playsinline="true" muted loop autoplay="autoplay" style="object-fit: cover;width: 100%;height: 100%" src="./video/1.mp4"></video>
                                 </div>
                                 <div class="banner_top">
@@ -767,9 +767,9 @@
                         <div class="about_bottom">
                             <div class="item">
                                 <div class="num wap_aniR_1" style="margin-left: -0.5rem">17</div>
-                                <div class="desc" style="margin-left: -1.1rem"><span style="color:#fff ">年</span><br/>全案代理经验</div>
+                                <div class="desc" style="margin-left: -0.7rem"><span style="color:#fff ">年</span><br/>全案代理经验</div>
                                 <div class="num wap_aniR_3" style="margin-left: 0">3</div>
-                                <div class="desc" style="margin-left: -1rem"><span style="color:#fff ">亿+</span><br/>汽车大数据</div>
+                                <div class="desc" style="margin-left: -0.8rem"><span style="color:#fff ">亿+</span><br/>中高端消费人群数据</div>
 
                                 <!--<div class="num wap_aniR_1" style="padding-left: 0.1rem">17</div>-->
                                 <!--<div class="desc" style=""><span style="color:#fff ">年</span><br/>全案代理经验</div>-->
@@ -780,9 +780,9 @@
                             </div>
                             <div class="item">
                                 <div class="num wap_aniR_4">500</div>
-                                <div class="desc" style="margin-left: -0.6rem"><span style="color:#fff ">+</span><br/>行业奖项</div>
+                                <div class="desc" style="margin-left: -0.3rem"><span style="color:#fff ">+</span><br/>行业奖项</div>
                                 <div class="num wap_aniR_2">100</div>
-                                <div class="desc" style="margin-left: -0.6rem"><span style="color:#fff ">+</span><br/>服务品牌</div>
+                                <div class="desc" style="margin-left: -0.3rem"><span style="color:#fff ">+</span><br/>服务品牌</div>
                             </div>
 
                         </div>
@@ -1223,6 +1223,8 @@
     // document.addEventListener("WeixinJSBridgeReady",function() {
     //     document.getElementById('vido_one').play();
     // }, false);
+
+
 </script>
 
 </body>

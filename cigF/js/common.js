@@ -73,9 +73,80 @@ jQuery.extend({
                 console.log('error');
             },
         })
-    }
+    },
+    /**
+     * 调用微信分享
+     * @param {title,desc,imgUrl} cfgs
+     * @param {type,url} param
+     */
+    share: function (cfgs) {
+        var wxInfo = {};
+        var locaH = window.location.href;
+        var baseurl = locaH.substring(0, window.location.href.lastIndexOf('/') + 1);
+        var cfg = {
+            share_url: locaH,
+            title: cfgs.title,
+            desc: cfgs.desc,
+            imgUrl: baseurl + cfgs.imgUrl
+        };
+        $.ajax({
+            type: "POST",
+            url: host + '/api/Weixin/JsApi' + '?timestamp=' + new Date().getTime() + '&url=' + encodeURIComponent(locaH),
+            dataType: 'json',
+            async: true, //异步
+            cache: false, //不需要缓存
+            data: {},
+            success: function (e) {
+                wxInfo = e;
+                if (isWeiXin()) {
+                    wx.config({
+                        debug: false,
+                        appId: wxInfo.appId,
+                        timestamp: wxInfo.timestamp,
+                        nonceStr: wxInfo.nonceStr,
+                        signature: wxInfo.signature,
+                        jsApiList: [
+                            'onMenuShareTimeline', 'onMenuShareAppMessage'
+                        ]
+                    });
+                    wx.ready(function () {
+                        wx.onMenuShareTimeline({
+                            title: cfg.title, // 分享标题
+                            desc: cfg.desc, // 分享描述
+                            link: cfg.share_url, // 分享链接
+                            imgUrl: cfg.imgUrl, // 分享图标
+                            success: function () {
+                                // 用户确认分享后执行的回调函数
+                            },
+                            cancel: function () {
+                                // 用户取消分享后执行的回调函数
+                            }
+                        });
+                        wx.onMenuShareAppMessage({
+                            title: cfg.title, // 分享标题
+                            desc: cfg.desc, // 分享描述
+                            link: cfg.share_url, // 分享链接
+                            imgUrl: cfg.imgUrl, // 分享图标
+                            type: '', // 分享类型,music、video或link，不填默认为link
+                            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                            success: function () {
+                                // 用户确认分享后执行的回调函数
+                            },
+                            cancel: function () {
+                                // 用户取消分享后执行的回调函数
+                            }
+                        });
+                    });
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+            }
+        })
+    },
 
 });
+
+
 //1.1 文字向上淡入 1.2白框升上来，图标上升复现 1.3白框从右到左出现结束红色继续，图标要类似效果
 //2.1背景下向上，文字上向下，数字变化
 //3.1左到右出现，鼠标浮动背景放大
@@ -308,12 +379,18 @@ function isWeiXin(){
 
 
 $(function () {
-
     var nav = '<div class="nav"><ul class="navBar"><li style="display: none"><a class="sibmenu" href="javascript:;">营销智库</a><div class="submenu"><div class="triangle"></div><div class="subList"><a href="javascript:;">资讯</a></div><div class="subList"><a href="javascript:;">知识</a></div><div class="subList"><a href="javascript:;">活动</a></div></div></li><li><a class="sibmenu" href="./page/job.html">职达新意</a><div class="submenu"><div class="triangle"></div><div class="subList"><a href="javascript:;">意起精彩</a></div><div class="subList"><a href="//cig.zhiye.com/Social"target="_blank">社会招聘</a></div><div class="subList"><!--<a href="javascript:;">校园招聘</a>--></div><div class="subList"><a href="//cig.zhiye.com/Intern"target="_blank">实习生招聘</a></div><div class="subList"><a href="//neitui.zhiye.com/cig#vertify%2Fwechat"target="_blank">内部推荐</a></div></div></li><li><a class="sibmenu" href="./page/news.html">新意资讯</a><div class="submenu" id="newsClick"><div class="triangle"></div><div class="subList"><a href="./page/news.html?index=1">新意动态</a></div><div class="subList"><a href="./page/news.html?index=2">新意荣誉</a></div><div class="subList"><a href="./page/news.html?index=3">新意观点</a></div><div class="subList"><a href="./page/news.html?index=4">行业观察</a></div></div></li><li><a class="sibmenu" href="./page/case.html">案例展示</a><div class="submenu" id="caseClick"><div class="triangle"></div><div class="subList"><a href="./page/case.html?index=1">整合营销</a></div><div class="subList"><a href="./page/case.html?index=2">内容营销</a></div><div class="subList"><a href="./page/case.html?index=3">社会化与用户营销</a></div><div class="subList"><a href="./page/case.html?index=4">大数据营销</a></div><div class="subList"><a href="./page/case.html?index=5">视频营销</a></div><div class="subList"><a href="./page/case.html?index=6">技术营销</a></div><div class="subList"><a href="./page/case.html?index=7">互动体验</a></div><div class="subList"><a href="./page/case.html?index=8">媒介营销</a></div></div></li><li><a class="sibmenu" href="./page/bigData_1.html">服务与产品</a><div class="submenu"><div class="triangle"></div><div class="subList"><a href="./page/bigData_1.html">数字整合营销</a></div><div class="subList"><a href="./page/bigData_2.html">大数据应用</a></div><div class="subList"><a href="./page/bigData_3.html">数字影像</a></div></div></li><li><a class="sibmenu" href="./page/about_us.html">关于我们</a><div class="submenu"><div class="triangle"></div><div class="subList"><a href="./page/about_us.html#about_1">公司介绍</a></div><div class="subList"><a href="./page/about_us.html#about_2">经营理念</a></div><div class="subList"><a href="./page/about_us.html#about_3">发展历程</a></div><div class="subList"><a href="./page/about_us.html#about_3_4">行业荣誉</a></div><div class="subList"><a href="./page/about_us.html#about_4">服务客户</a></div><div class="subList"><!--<a href="./page/about_us.html#about_5">高管团队</a>--></div></div></li></ul></div>'
     $('#pc').prepend(nav);
     $('.nav ul li').hover(function () {
         $(this).find('.submenu').stop().slideDown();
     }, function () {
         $(this).find('.submenu').stop().slideUp();
+    });
+
+    $.share({
+        title: 'CIG新意互动官网',
+        desc: '数字时代营销专家',
+        imgUrl: 'weixin_share.jpg',
+        share_url:window.location.href
     });
 });

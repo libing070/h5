@@ -1591,15 +1591,16 @@ font-size: 0.32rem;
 
 }
 
-/*.all-video-play-btn{*/
-    /*position: absolute;*/
-    /*left: 0;*/
-    /*right: 0;*/
-    /*margin: auto;*/
-    /*top: 0;*/
-    /*bottom: 0;*/
-    /*width: 1.31rem;*/
-/*}*/
+.all-video-play-btn{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    width: 1.31rem;
+    z-index: 9999;
+}
 
 @keyframes arrow_icon_btn {
     0% {
