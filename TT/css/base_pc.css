@@ -154,6 +154,26 @@ a {
     flex: 1;
     text-align: center;
 }
+.footer .content2{
+    position: absolute;
+    width: 2rem;
+    height: 1rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    cursor: pointer;
+    display: -webkit-flex;
+    display: flex;
+}
+.footer .content2 a{
+    opacity: 0.7;
+    font-size: 0.15rem;
+    -webkit-flex: 1;
+    line-height: 1rem;
+    flex: 1;
+    text-align: center;
+}
 /************************** 顶部导航结束 ************************* */
 
 
@@ -576,9 +596,24 @@ a {
      margin: auto;
      margin-bottom: 0.1rem;
     -webkit-animation:load-more 1s linear infinite;
+     animation:load-more 1s linear infinite;
 }
 
 @keyframes load-more {
+    0% {
+        transform: rotate(0deg);
+        box-shadow: 0px 0px 10px #fff;
+    }
+    50% {
+        transform: rotate(180deg);
+        box-shadow: 0px 0px 45px #fff;
+    }
+    100% {
+        transform: rotate(360deg);
+        box-shadow: 0px 0px 10px #fff;
+    }
+}
+@-webkit-keyframes load-more {
      0% {
          transform: rotate(0deg);
          box-shadow: 0px 0px 10px #fff;

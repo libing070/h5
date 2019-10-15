@@ -33,7 +33,4 @@ if(browserRedirect()==0){
     document.write('<script src="./js/interFaceWap.js"></script>');
     document.write('<script src="./js/swiperInitWap.js"></script>');
     document.write('<script src="./js/baseWap.js"></script>');
-
-
-
 }

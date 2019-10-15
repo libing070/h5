@@ -21,5 +21,45 @@ $(function () {
     }, function () {
         $(this).attr("src","./images/scrollTop.jpg");
     });
+
+    //api/Forum/UserLike用户点赞接口
+    $(".container").on("click",'.vote-icon-img-detail',function () {
+        var that=this;
+        if((!localStorage.getItem("ttToken"))||localStorage.getItem("ttToken")===""){
+            layer.msg('请先登录');
+            return;
+        }
+        if($(this).attr("src").indexOf('vote-icon-red.png')>-1){
+            layer.msg('您已点过赞');
+            return;
+        }
+        var forumId=$(this).attr("forumId");
+        var commentId=$(this).attr("commentId");
+        console.log(forumId+"   "+commentId);
+        $.request('/api/Forum/UserLike', {
+                timestamp: ts(),
+                forumId:forumId,
+                commentId:commentId||0,
+                userToken:localStorage.getItem("ttToken")||'',
+                sign: createSign({
+                    userToken:localStorage.getItem("ttToken")||'',
+                    forumId:forumId,
+                    commentId:commentId||0,
+                    timestamp: ts(),
+                })
+            },
+            function (res) {
+                layer.msg(res.message);
+                if(res.code==1){
+                    $(that).attr("src","./images/vote-icon-red.png");
+                    var num=$(that).siblings('span').html();
+                    num++;
+                    $(that).siblings('span').html(num);
+                }
+            }
+        );
+    });
+
+
 });
 

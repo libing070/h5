@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*
+    * 判断平年闰年
+    * y:年份数字，四位
+    * */
+    function isOrdinaryYear(y) {
+        if((y%4===0 && y % 100 !== 0)|| y % 400 === 0 ){
+            return false
+        }
+        return true;
+    }
+    /*
+    * 判断是否满足18岁
+    * time : 用户选中日期 格式2001-09-09
+    * */
+    function satisfy(time) {
+       var t= new Date(time).getTime();
+        var nowDate = new Date(); // 当前时间
+        var mouth = nowDate.getMonth()+1;
+        var day = nowDate.getDate();
+        var year = nowDate.getFullYear()-18;
+        if (mouth === 2 && day >= 28){
+            day = isOrdinaryYear(year) ? 28 : 29;
+        }
+        var oldDate = new Date(year+'-'+mouth+'-'+day).getTime();
+        return oldDate < t ? '不满18岁' : '满18岁';
+    }
+
+    console.log(satisfy('2001-09-09'));
+</script>

@@ -41,7 +41,7 @@ $(function () {
                         str+='<p class="bottom">';
                         str +='<span class="item"><img src="./images/message-icon.png"><span >'+ele.commentCount+'</span></span>';
                         str +='<span class="item"><img src="./images/view-icon.png"><span>'+ele.visitCount+'</span></span>';
-                        str +='<span class="item"><img src="./images/vote-icon.png"><span>'+ele.likeCount+'</span></span>';
+                        str +='<span class="item"><img forumId="'+ele.id+'"  class="vote-icon-img" src="./images/vote-icon.png"><span>'+ele.likeCount+'</span></span>';
                         str+='</p>';
                         str+='</div>';
                     });

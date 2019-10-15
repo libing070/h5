@@ -161,7 +161,7 @@ $(function () {
             'http://219.143.155.183:8899/file/case1.jpg',
             'http://219.143.155.183:8899/Upload/20190829/o_1dje7p5ks2t916ch1hchsl014o9f_Koala.jpg'];
         var index = Math.floor(Math.random()*random.length);//取得随机数的索引
-        PicUrl=random[index];//根据索引取得随机数
+     //   PicUrl=random[index];//根据索引取得随机数
         var MultimediaType=1;//图片
 
 

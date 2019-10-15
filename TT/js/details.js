@@ -20,6 +20,7 @@ $(function () {
                     $(".information .message-icon").html(data.CommentCount);
                     $(".information .view-icon").html(data.VisitCount);
                     $(".information .vote-icon").html(data.LikeCount);
+                    $(".information .vote-icon-img").attr("forumId",id);
                     $(".information p.text").html(data.Content);
 
                     if(data.MultimediaType==1){
@@ -73,7 +74,7 @@ $(function () {
                      str+='   </div>';
                      str+='  <div class="title-right">';
                      str+='  <span class="s1 mes"><img class="icon" src="./images/message-icon.png"><span class="nums">'+list[i].CommentCount+'</span></span>';
-                     str+=' <span class="s1 vote"><img class="icon vote-icon-img" commentId="'+list[i].Id+'" src="./images/vote-icon.png"><span class="nums">'+list[i].LikeCount+'</span></span>';
+                     str+=' <span class="s1 vote"><img  forumId="'+id+'" class="icon vote-icon-img vote-icon-img-detail" commentId="'+list[i].Id+'" src="./images/vote-icon.png"><span class="nums">'+list[i].LikeCount+'</span></span>';
                      str+=' </div>';
                      str+=' </div>';
                      str+=' <div class="list-box-A-con">'+list[i].Content+'</div>';
@@ -97,14 +98,14 @@ $(function () {
                          str+='   <div class="list-li-right">';
                          str+='  <span class="s1 del">删除</span>';
                          str+='   <span class="s1 mes"><img class="icon" src="./images/message-icon.png"><span class="nums">'+subList[k].CommentCount+'</span></span>';
-                         str+='<span class="s1 vote"><img class="icon vote-icon-img" commentId="'+list[i].Id+'" src="./images/vote-icon.png"><span class="nums">'+subList[k].LikeCount+'</span></span>';
+                         str+='<span class="s1 vote"><img class="icon vote-icon-img vote-icon-img-detail" forumId="'+id+'" commentId="'+list[i].Id+'" src="./images/vote-icon.png"><span class="nums">'+subList[k].LikeCount+'</span></span>';
                          str+=' </div>';
                          str+=' </div>';
                          str+='<div class="list-box-B-con">'+subList[k].Content+'</div>';
                          str+='<div class="list-box-B-textarea" style="display: none">';
                          str+='   <textarea class="textarea"></textarea>';
                          str+='    <div class="reply-btn">';
-                         str+='    <img class="class-reply-btn-img" commentId="'+subList[k].Id+'"  src="images/reply-btn.png">';
+                         str+='    <img class="class-reply-btn-img"  commentId="'+subList[k].Id+'"  src="images/reply-btn.png">';
                          str+='   </div>';
                          str+='   </div>';
                          str+='   </div>';
@@ -169,27 +170,7 @@ $(function () {
         Pagelist(pageIndex);
     });
 
-    //api/Forum/UserLike用户点赞接口
-    $(".message-box").on("click",'.vote-icon-img',function () {
-        var commentId=$(this).attr("commentId");
-        console.log(commentId);
-        $.request('/api/Forum/UserLike', {
-                timestamp: ts(),
-                forumId:id,
-                commentId:commentId,
-                userToken:localStorage.getItem("ttToken")||'',
-                sign: createSign({
-                    userToken:localStorage.getItem("ttToken")||'',
-                    forumId:id,
-                    commentId:commentId,
-                    timestamp: ts(),
-                })
-            },
-            function (res) {
-                layer.msg(res.message);
-            }
-        );
-    });
+
 
 
     $('.video_box .video-btn').on('click', function () {

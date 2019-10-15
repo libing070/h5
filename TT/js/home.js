@@ -168,7 +168,7 @@ $(function () {
     ///api/User/MobileIsExists手机号是否存在
     // api/Mobile/SendMessage手机验证码发送
     //获取手机验证码事件
-    var totalTime=10;
+    var totalTime=60;
     $(".container").on("click",".register .countDown",function () {
         var that=this;
         var mobile=$(".container .register .yzmleft .mobile").val();
@@ -217,7 +217,7 @@ $(function () {
                                     if (totalTime < 0) {
                                         window.clearInterval(clock);
                                         $(that).html('重新发送');
-                                        totalTime = 10;
+                                        totalTime = 60;
                                         $(that).addClass("canClick");
                                     }
                                 },1000);
@@ -344,7 +344,7 @@ $(function () {
                         if (totalTime < 0) {
                             window.clearInterval(clock);
                             $(that).html('重新发送');
-                            totalTime = 10;
+                            totalTime = 60;
                             $(that).addClass("canClick");
                         }
                     },1000);

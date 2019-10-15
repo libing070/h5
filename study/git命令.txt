@@ -110,3 +110,27 @@ https://unbug.github.io/codelf 字段命名
 https://c.runoob.com/codedemo/3391  css transform 
 
 https://blog.csdn.net/u012207345/article/details/81867816 移动端手势事件浅析
+
+https://segmentfault.com/a/1190000020399839?utm_source=tag-newest  js之数组内置方法
+https://www.cnblogs.com/gaoht/  特效博客
+https://www.cnblogs.com/gaoht/p/11276277.html  原型原型链
+http://219.143.155.183:8899/swagger/index.html 新意接口外网
+http://172.16.101.119:8899/swagger/index.html  新意接口内网
+
+http://www.alltoall.net   在线转换工具
+
+https://www.cnblogs.com/wendaobai/articles/6248736.html  js模板引擎
+
+
+baiwen 123.abc  OA 
+lmhwolf 123456 智库
+libing lb8561070   jhi8jybFw3VTKZOarrhy17ED+ApycExc5UIgrfuslTj8WnN3f28xYB7zSalnnhdZlFQXkRNqccgf4Fnl+xMyNQ==
+wxh wxh   jhi8jybFw3VXenqHpJRjXLED+ApycExc7FqumDGjvE7csLbpYrKVKsRWykHAxSxusmcrjtgh8GU=
+ http://219.143.155.183:8899/web/
+
+ http://h5tt.skyengine.cn/cigF/index.html
+
+ http://web.cig.com.cn/
+
+ <meta name="description" content="">
+    <meta name="keywords" content="">

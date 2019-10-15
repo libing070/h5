@@ -337,7 +337,7 @@
                             <span class="p2">2019-8-6 14:30</span><br/>
                             <span class="p2">加油加油加油加油！</span>
                         </p>
-                        <p class="del"><img style="display: inline-block;vertical-align: sub;padding-right: 0.05rem" src="images/delete-icon.png">删除</p>
+                        <p class="del"><img style="display: inline-block;vertical-align: middle;padding-right: 0.05rem" src="images/delete-icon.png">删除</p>
                     </div>
                     <div class="box">
                         <img class="head" src="images/headportrait1.png">
@@ -348,7 +348,7 @@
                             <span class="p2">2019-8-6 14:30</span><br/>
                             <span class="p2">加油加油加油加油！</span>
                         </p>
-                        <p class="del"><img style="display: inline-block;vertical-align: sub;padding-right: 0.05rem" src="images/delete-icon.png">删除</p>
+                        <p class="del"><img style="display: inline-block;vertical-align: middle;padding-right: 0.05rem" src="images/delete-icon.png">删除</p>
                     </div>
                     <div class="box">
                         <img class="head" src="images/headportrait1.png">
@@ -359,7 +359,7 @@
                             <span class="p2">2019-8-6 14:30</span><br/>
                             <span class="p2">加油加油加油加油！</span>
                         </p>
-                        <p class="del"><img style="display: inline-block;vertical-align: sub;padding-right: 0.05rem" src="images/delete-icon.png">删除</p>
+                        <p class="del"><img style="display: inline-block;vertical-align: middle;padding-right: 0.05rem" src="images/delete-icon.png">删除</p>
                     </div>
                     <div class="box">
                         <img class="head" src="images/headportrait1.png">
@@ -370,7 +370,7 @@
                             <span class="p2">2019-8-6 14:30</span><br/>
                             <span class="p2">加油加油加油加油！</span>
                         </p>
-                        <p class="del"><img style="display: inline-block;vertical-align: sub;padding-right: 0.05rem" src="images/delete-icon.png">删除</p>
+                        <p class="del"><img style="display: inline-block;vertical-align: middle;padding-right: 0.05rem" src="images/delete-icon.png">删除</p>
                     </div>
                 </div>
             </div>
@@ -383,6 +383,8 @@
 <script src="js/common/jquery-1.11.2.min.js"></script>
 <script src="js/common/jquery.cookie.js"></script>
 <script src="js/common/anime.min.js"></script>
+<!--<script src="js/common/underscore.js"></script>&lt;!&ndash;JavaScript 工具库 算法&ndash;&gt;-->
+<!--<script src="js/common/lodash.js"></script>&lt;!&ndash;JavaScript 工具库算法&ndash;&gt;-->
 <script src="js/common/layer.js"></script>
 <script src="js/common/rem.js"></script>
 <script src="js/common/swiper.min.js"></script>
@@ -474,6 +476,11 @@
         });
         //在实例对象上调用init()方法进行初始化
         uploader.init();
+
+        uploader.setOption("multipart_params", {
+               "FileName":plupload.guid()   
+        });
+
         //绑定各种事件，并在事件监听函数中做你想做的事
         uploader.bind('FilesAdded',function(uploader,files){
             if (files.length > 1) {
@@ -515,6 +522,13 @@
 
     });
 
+    // console.log(_.chunk([1,2,3,4,5,6,7,8,9],2));
+    // var users = [
+    //     { 'user': 'barney',  'active': true },
+    //     { 'user': 'fred',    'active': false },
+    //     { 'user': 'pebbles', 'active': false }
+    // ];
+    // console.log(_.dropRightWhile(users, function(o) { return !o.active; }));
 </script>
 </body>
 
