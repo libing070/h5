@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="./css/base_pc.css">
     <link rel="stylesheet" href="./css/details.css">
     <link rel="stylesheet" href="./css/swiper_reset.css">
+    <script type="text/javascript" src="./js/common/qrcode.min.js"></script>
+
     <title>详情</title>
 </head>
 
@@ -33,7 +35,9 @@
                 <span class="item"><img src="./images/view-icon.png"><span class="view-icon" ></span></span>
                 <span class="item"><img class="vote-icon-img vote-icon-img-detail" forumId=""  src="./images/vote-icon.png"><span class="vote-icon"></span></span>
                 <span class="item"><img src="./images/share-btn.png"><span>分享</span></span>
-            </p>
+                 <span class="item share-item"><img class="share-img share-wx-img" style="" src="images/share-wx-iocn.png"><img class="share-img share-xl-img" style="" src="images/share-xl-icon.png"></span>
+
+             </p>
             <p class="line"></p>
             <!--图片-->
             <div class="images" style="">
@@ -66,9 +70,11 @@
                 <span class="item"><img  src="./images/view-icon.png"><span class="view-icon">2</span></span>
                 <span class="item"><img class="vote-icon-img vote-icon-img-detail" forumId="" src="./images/vote-icon.png"><span class="vote-icon" >3</span></span>
                 <span class="item"><img src="./images/share-btn.png"><span>分享</span></span>
+                <span class="item share-item"><img class="share-img share-wx-img" style="" src="images/share-wx-iocn.png"><img class="share-img share-xl-img" style="" src="images/share-xl-icon.png"></span>
             </p>
             <p class="text">
             </p>
+
 
         </div>
         <div class="message-box">
@@ -233,7 +239,25 @@
 <script src="./js/common.js"></script>
 <script src="./js/basePc.js"></script>
 <script src="./js/details.js"></script>
-
+<script>
+    $(".share-wx-img").on("click",function () {
+        layer.open({
+            type: 1,
+            title:'分享二维码',
+            area: ['360px', '340px'], //宽高
+            content: '<div id="qrcode" style="width:200px; height:200px;margin: auto; margin-top:15px;"></div><div style="margin-top: 10px;font-size: 14px;text-align: center;padding: 0 50px">打开微信，点击底部的“发现”使用“扫一扫”即可将网页分享至朋友圈。</div>'
+        });
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            width : 200,
+            height : 200
+        });
+        qrcode.makeCode(window.location.href);
+    });
+    $(".share-xl-img").on("click",function () {
+        var title=$(".information .title").html();
+        window.open('http://v.t.sina.com.cn/share/share.php?pic=' +window.location.host +'/TT/images/share-logo.png&title=' + title + '&url=' + window.location.href + '&','微博分享','width=700, height=580, top=320, left=180, toolbar=no, menubar=no, scrollbars=no, location=yes, resizable=no, status=no');
+    })
+</script>
 </body>
 
 </html>

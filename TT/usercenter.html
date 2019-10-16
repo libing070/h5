@@ -471,7 +471,7 @@
             url : host+ '/Upload/api/File/Upload',//服务器端的上传页面地址
             chunk_size: '20kb',//分片上传文件时，每片文件被切割成的大小，为数字时单位为字节
             unique_names: true,//当值为true时会为每个上传的文件生成一个唯一的文件名，并作为额外的参数post到服务器端，参数明为name,值为生成的文件名。
-            max_file_size: '10mb',//限制为2MB
+            max_file_size: '10mb',//限制为10MB
             filters: [{title: "Image files",extensions: "jpg,gif,png,mp4"}]//图片限制
         });
         //在实例对象上调用init()方法进行初始化

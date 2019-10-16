@@ -116,7 +116,7 @@
     text-align: center;
     margin: auto;
     margin-top: 0.5rem;
-    width: 3rem;
+    width: 5rem;
     height: 0.2rem;
     display: -webkit-flex;
     display: flex;
@@ -140,7 +140,12 @@
     font-size: 0.16rem;
     display: inline-block
 }
-
+.information .top .item.share-item img,
+.information .bottom .item.share-item img{
+    margin-top: -0.05rem;
+    width: 0.48rem;
+    height: auto;
+}
 .information .text{
     margin:0.2rem 1.05rem 0;
     font-size: 0.14rem;
