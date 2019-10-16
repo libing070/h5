@@ -1,0 +1,152 @@
+
+archie2010
+
+${原来姹紫嫣红开遍，似这般都付与扣钉八哥}
+StringUtils工具类
+1 abbreviate方法
+缩写一段文字
+Java代码
+
+    StringUtils.abbreviate("abcdefghijklmno", -1, 10) = "abcdefg..."  
+
+StringUtils.abbreviate("abcdefghijklmno", -1, 10) = "abcdefg..."
+
+
+
+2 isBlank和isEmpty区别
+Java代码
+
+    StringUtils.isBlank(" ")       = true  
+    StringUtils.isEmpty(" ")       = false  
+
+StringUtils.isBlank(" ")       = true
+StringUtils.isEmpty(" ")       = false
+
+
+
+3 join方法
+Java代码
+
+    StringUtils.join(["a", "b", "c"], "--")  = "a--b--c"  
+    StringUtils.join(list, ",")  
+
+StringUtils.join(["a", "b", "c"], "--")  = "a--b--c"
+StringUtils.join(list, ",")
+
+
+
+4 replaceOnce方法 替换目标字符串一次
+Java代码
+
+    StringUtils.replaceOnce("aba", "a", "")    = "ba"  
+
+StringUtils.replaceOnce("aba", "a", "")    = "ba"
+
+
+
+5 overlay方法 会覆盖原来的字符串
+Java代码
+
+    StringUtils.overlay("abcdef", "zzzz", -1, 4)  = "zzzzef"  
+
+StringUtils.overlay("abcdef", "zzzz", -1, 4)  = "zzzzef"
+
+
+
+6 chomp方法 切掉后面的字符串
+Java代码
+
+    StringUtils.chomp("foobar", "bar") = "foo"  
+    StringUtils.chomp("foobar", "baz") = "foobar"  
+
+StringUtils.chomp("foobar", "bar") = "foo"
+StringUtils.chomp("foobar", "baz") = "foobar"
+
+
+
+7 chopNewline方法 去掉回车符 \r\n
+
+8 padding方法 补齐方法
+Java代码
+
+    StringUtils.padding(3, 'e')  = "eee"  
+
+StringUtils.padding(3, 'e')  = "eee"
+
+
+
+9 center居中方法
+Java代码
+
+    StringUtils.center("a", 4)    = " a  "  
+
+StringUtils.center("a", 4)    = " a  "
+
+
+
+10 capitalize方法 首字母大写
+Java代码
+
+    StringUtils.capitalize("cat") = "Cat"  
+
+StringUtils.capitalize("cat") = "Cat"
+
+
+
+11 swapCase方法 大小写颠倒
+Java代码
+
+    StringUtils.swapCase("The dog has a BONE") = "tHE DOG HAS A bone"  
+
+StringUtils.swapCase("The dog has a BONE") = "tHE DOG HAS A bone"
+
+
+
+12 isAlpha方法 检查字符串是否只有unicode字母
+Java代码
+
+    StringUtils.isAlpha("abc")  = true  
+    StringUtils.isAlpha("ab2c") = false  
+    StringUtils.isAlpha("ab-c") = false  
+
+StringUtils.isAlpha("abc")  = true
+StringUtils.isAlpha("ab2c") = false
+StringUtils.isAlpha("ab-c") = false
+
+
+
+13 isAlphaSpace方法 检查字符串是否只有unicode字母和‘ ’ 空格
+Java代码
+
+    StringUtils.isAlphaSpace("ab2c") = false  
+    StringUtils.isAlphaSpace("ab c") = true  
+    StringUtils.isAlphaSpace("ab-c") = false  
+
+StringUtils.isAlphaSpace("ab2c") = false
+StringUtils.isAlphaSpace("ab c") = true
+StringUtils.isAlphaSpace("ab-c") = false
+
+
+
+14 isAlphanumeric方法 检查字符串是否只有unicode字母和数字
+15 isAlphanumericSpace方法 检查字符串是否只有unicode字母和数字和空格
+16 isAsciiPrintable方法 检查字符串是否只有可打印的ASCII编码的的字符
+Java代码
+
+    StringUtils.isAsciiPrintable("!ab-c~") = true  
+    StringUtils.isAsciiPrintable("\u0020") = true  
+    StringUtils.isAsciiPrintable("Ceki G\u00fclc\u00fc") = false  
+
+StringUtils.isAsciiPrintable("!ab-c~") = true
+StringUtils.isAsciiPrintable("\u0020") = true
+StringUtils.isAsciiPrintable("Ceki G\u00fclc\u00fc") = false
+
+
+
+17 isNumeric方法 检查字符串是否只有数字
+18 isWhitespace方法 检查字符串是否都是空格
+
+19 reverse方法 颠倒字符串
+Java代码
+
+    StringUtils.reverse("bat") = "tab"  
