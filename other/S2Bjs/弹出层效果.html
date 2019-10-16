@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<style>
+			#divOver
+			{
+				position:absolute;
+				top:5;
+				left:5;
+				width:102%;
+				height:101%;
+				background-color:#000000;
+				filter:Alpha(Opacity=50);	
+				display:none;
+				z-index:10;
+				margin : 0px;
+				padding:0px;
+			}
+			.divOver
+			{
+				position:absolute;
+				background-color:#FFFFFF;
+				top:30%;
+				left:30%;
+				width:280;
+				height:100;
+				border:dashed 1px #999999;
+				z-index:20;
+				display:none;
+			}
+			.divOver h1
+			{
+				background-color:#0000FF;
+				color:#FFFFFF;
+				font-size:12px;
+			}
+			.divOver h1 a
+			{
+				color:#FFFFFF;
+				text-decoration:none;
+				float:right;
+			}
+		</style>
+		<script>
+			var hand;
+			function closed(str)
+			{
+				document.getElementById("divOver").style.display="none";
+				document.getElementById(str).style.display="none";
+			}
+			function show(str)
+			{
+				document.getElementById("divOver").style.display="block";
+				document.getElementById(str).style.display="block";
+				//change(str);
+			}
+			
+		</script>
+	</head>
+	<body>
+		<input type="button" onClick="show('divLogin')" value="登陆"><br>
+		<div id="divOver"></div>
+		<div class="divOver" id="divMsg">
+			<h1><a href="javaScript:void(0)" onClick="closed('divMsg')">×</a>系统提示</h1>
+			你好
+		</div>
+		<div class="divOver" id="divLogin">
+			<h1><a href="javaScript:void(0)" onClick="closed('divLogin')">×</a>登陆</h1>
+			<form>
+				<table>
+					<tr><td>用户名：</td><td><input name="userName"></td></tr>
+					<tr><td>密  码：</td><td><input type="password" name="userPwd"></td></tr>
+					<tr><td></td><td><input type="submit" value="登陆" onClick="closed('divLogin')"></td></tr>
+				</table>
+			</form>
+		</div>
+	</body>
+</html>

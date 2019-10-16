@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>层的切换</title>
+<meta http-equiv="content-type" content="text/html; charset=gbk">
+</head>
+<body bgcolor="#FFFFFF" onLoad="MM_preloadImages('btn_search_pic2.gif')">
+<style type="text/css">
+	#layer1{
+		border:1px solid #999999;
+	 	border-top:none;
+	 	position:absolute; 
+	 	width:400px; 
+	 	height:200px;
+	 	background-color: #336699;
+		visibility: visible		
+	}
+	#layer2{
+		border:1px solid #999999;
+	 	border-top:none;
+	 	position:absolute; 
+	 	width:400px; 
+	 	height:200px;
+	 	background-color: #FF9900;
+		visibility: visible			
+	}
+	#layer3{
+		border:1px solid #999999;
+	 	border-top:none;
+	 	position:absolute; 
+	 	width:400px; 
+	 	height:200px;
+	 	background-color: #EEEBBB;
+		visibility: visible			
+	}
+	
+	td{
+		cursor:hand;	
+	}
+	
+</style>
+<script language="JavaScript">
+	function show(obj)
+	{
+		for(var i=0;i<document.getElementsByTagName("TD").length;i++)
+		{
+			if(document.getElementsByTagName("TD")[i]==obj)
+			{
+				document.getElementById("layer"+(i+1)).style.visibility="visible";
+			}
+			else
+			{
+				
+				document.getElementById("layer"+(i+1)).style.visibility="hidden";
+			}
+		}
+	}
+</script>
+<table style="border:1px dotted #6699FF">
+	<tr>
+		<td align="left" bgcolor="#336699" onMouseMove="show(this);">
+		选项卡一
+		</td>
+		<td align="left" bgcolor="#FF9900" onMouseMove="show(this);">
+		选项卡二
+		</td>
+		<td align="left" bgcolor="#EEEBBB" onMouseMove="show(this);">
+		选项卡三
+		</td>
+	</tr>
+</table>
+<div id="layer1">
+	<H1 align="center">这是选项卡一</H1>
+</div>
+<div id="layer2">
+	<H1 align="center">这是选项卡二</H1>
+</div>
+<div id="layer3">
+	<H1 align="center">这是选项卡三</H1>
+</div>
+</body>
+</html> 

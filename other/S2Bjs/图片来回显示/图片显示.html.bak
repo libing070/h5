@@ -1,0 +1,36 @@
+<style type="text/css">
+	#myimg{
+		
+			/* progid:DXImageTransform.Microsoft.Iris(duration=2,irisStyle=STAR)
+			progid:DXImageTransform.Microsoft.CheckerBoard(duration=2, direction='left')
+			progid:DXImageTransform.Microsoft.Fade(duration=2)
+			progid:DXImageTransform.Microsoft.Pixelate(duration=3, enabled='false') */
+		filter:	progid:DXImageTransform.Microsoft.RandomDissolve(duration=2)
+			/* progid:DXImageTransform.Microsoft.Spiral(duration=3, GridSizeX=25, GridSizeY=25) */
+	}
+</style>
+<script language="javascript">
+	//创建用于保存文件名的数组
+	var images=new Array("nanyanghushi2.jpg","nanyanghushi3.jpg","nanyanghushi4.jpg","华辉1.jpg","华辉2.jpg","nanyanghushi1.jpg");
+	var count=0;
+	setTimeout("autoShowImage()","2000");
+	//创建自动图片显示（由时钟来控制）
+	function autoShowImage()
+	{
+		//document.getElementById("myimg").filters[0].Apply();
+		document.getElementById("myimg").src="pic/"+images[count];
+		//document.getElementById("myimg").filters[0].play();
+		count++;
+		if(count==6){
+			count=0;
+		}
+		//setTimeout("autoShowImage()","5000");
+	}
+</script>	
+<table style="border:2px solid #567BE3">
+  <tr>
+    <td align="center">
+		<img id="myimg" src="pic/nanyanghushi1.jpg" border="0" width="300" height="200"/>
+	</td>
+  </tr>
+</table>

@@ -1,0 +1,109 @@
+
+<html>
+	<head>
+		<style>
+			.divD
+			{
+				position:absolute;
+				height:360;
+				width:100;
+				background-color:#FF6600;
+				filter:Alpha(Opacity=70);
+			}
+			.divD h1 a
+			{
+				text-decoration:none;
+				font-size:16px;
+				float:right;
+				color:#ffffff;
+			}
+		</style>
+		<script>
+			function closed()
+			{
+				document.getElementById("divLeft").style.display="none";
+				document.getElementById("divRight").style.display="none";
+			}
+			function  divPosition()
+			{
+				var objL=document.getElementById("divLeft").style;
+				var objR=document.getElementById("divRight").style;
+				with(objL)
+				{
+					top=document.body.scrollTop+60;
+					left=document.body.scrollLeft+60;
+					display="";
+				}
+				with(objR)
+				{
+					top=document.body.scrollTop+60;
+					left=document.body.clientWidth+document.body.scrollLeft-160;
+					display="";
+				}
+			}
+			
+			window.onscroll=divPosition;
+			window.onresize=divPosition;
+			window.onload=divPosition;
+			
+		</script>
+	</head>
+	<body>
+		<div class="divD" id="divLeft">
+			<h1><a href="javaScript:void(0)" onclick="closed()">¡Á</a></h1>
+			
+		</div>
+		<div class="divD" id="divRight">
+			<h1 style="height:16px"><a href="javaScript:void(0)" onclick="closed()">¡Á</a></h1>
+			
+		</div>
+		<p>fdsafdsa
+		  <br />
+		fdsfds
+		fdsa
+		fdsa
+		fds
+		fds
+		afds
+		afds
+		afds
+		afd
+		safd
+		saf
+		dsafdsa</p>
+		<p>fds</p>
+		<p>fdsa</p>
+		<p>fdsaf</p>
+		<p>dsaf</p>
+		<p>dsaf</p>
+		<p>dsaf</p>
+		<p>ds</p>
+		<p>fdsa</p>
+		<p>fdsa</p>
+		<p>fdsa</p>
+		<p>fdsa</p>
+		<p>fdsa</p>
+		<p>fds</p>
+		<p>afds</p>
+		<p>afds</p>
+		<p>afds</p>
+		<p>afdafdsfdsafdsfds</p>
+		<p>fds</p>
+		<p>fds</p>
+		<p>fds</p>
+		<p>fdsa</p>
+		<p>fdsaf</p>
+		<p>dsafdsafds</p>
+		<p>fdsa</p>
+		<p>fdsa</p>
+		<p>fdsa</p>
+		<p>fdsa</p>
+		<p>fdsafd</p>
+		<p>safdfdsa</p>
+		<p>fdsa</p>
+		<p>fds</p>
+		<p>fdsa</p>
+		<p>fdsa</p>
+		<p>&nbsp; </p>
+	</body>
+</html>

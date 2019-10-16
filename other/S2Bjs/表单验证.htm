@@ -1,0 +1,275 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+		<title>普通javascipt版本</title>
+	</head>
+	
+	<script language="JavaScript">
+		//验证表单必填
+		function validateForm()
+		{
+			if(document.regForm.username.value=="")
+			{
+				alert("姓名不能为空!");
+				return false;
+			}
+			
+			if(document.regForm.password.value=="")
+			{
+				alert("密码不能为空!");
+				return false;
+			}
+			
+			//定义一个变量，保存复选框被选中的个数
+			var count=0;
+			for(var i=0;i<document.regForm.favorite.length;i++)
+			{
+				if(document.regForm.favorite[i].checked)
+				{
+					count++;
+				}
+			}
+			
+			if(count==0)
+			{
+				alert("you need select a favorite");
+				return false;
+			}
+			return true;
+		}
+		
+		//获取层的内容
+		function getDivOne()
+		{
+			var divOne=document.getElementById("divOne");
+			var content=divOne.innerHTML;
+			
+			var spanDiv=document.getElementById("spanDiv");
+			spanDiv.innerHTML=content;
+		}
+		
+		//获取表格的内容
+		function getDateTable()
+		{
+			var dateTable=document.getElementById("dataTable");
+			var tds=dateTable.getElementsByTagName("td");
+			var str="";
+			
+			for(var i=0;i<tds.length;i++)
+			{
+				str=str+tds[i].innerHTML+" ";
+			}
+			
+			var spanTable=document.getElementById("spanTable");
+			spanTable.innerHTML=str;
+		}
+		
+		//追加一列
+		function addColumn()
+		{
+			//注：追加行的时候，最好在tbody中追加，而尽量不要直接在table中追加
+			
+			//下面的例子是直接在table中的行中追加列。
+			var table=document.getElementById("addTable");
+			var tr=table.getElementsByTagName("tr")[0];
+			var td=document.createElement("td");
+			
+			//创建一个文本对象
+			var content=document.createTextNode("this is a add column");
+			
+			//追加元素
+			td.appendChild(content);
+			tr.appendChild(td);
+		}
+		
+		//删除元素
+		function deleteRow()
+		{
+			//要在table中删除行，必须通过tbody元素来删除
+			var deleteTableBody=document.getElementById("deleteTableBody");
+			var tr=deleteTableBody.getElementsByTagName("tr")[0];
+			deleteTableBody.removeChild(tr);
+		}
+		
+		//改变字体的颜色
+		function changeColor()
+		{
+			var chgFont=document.getElementById("chgFont");
+			chgFont.setAttribute("color","red");
+		}
+		
+		//动态添加事件
+		function addEvent()
+		{
+			var spanHref=document.getElementById("spanHref");
+			var aHref=document.createElement("input");
+			aHref.setAttribute("type","button");
+			aHref.setAttribute("value","click me");
+			
+			aHref.onclick=function(){clickme();}
+			spanHref.appendChild(aHref);
+		}
+		
+		function clickme()
+		{
+			alert("you click me!!");
+		}
+		
+		
+		//层的显示与隐藏
+		function hideDiv()
+		{
+			var hideDiv=document.getElementById("hideDiv");
+			var hideBtn=document.getElementById("hideBtn");
+			
+			if(hideDiv.style.display=="none")
+			{
+				hideBtn.setAttribute("value","hide"); 
+				hideDiv.style.display="block";
+			}
+			else
+			{
+				hideBtn.setAttribute("value","show"); 
+				hideDiv.style.display="none";
+			}
+		}
+		
+		//设置span中的样式
+		function setCss()
+		{
+			var spanCss=document.getElementById("spanCss");
+			
+			//IE:
+			spanCss.style.cssText="font-weight:bold;color:red";
+			
+			//FireFox、Opera:
+			spanCss.setAttribute("style","font-weight:bold;color:red");
+		}
+	</script>
+	<body>
+		<H1>普通javascipt版本</H1>
+		<form id="regForm" name="regForm" method="post" action="">
+		  <table width="479" border="1">
+		    <tr>
+		      <td width="131">name:</td>
+		      <td width="332"><label>
+		        <input type="text" name="username" />
+		      </label></td>
+		    </tr>
+		    <tr>
+		      <td>password:</td>
+		      <td><label>
+		        <input type="text" name="password" />
+		      </label></td>
+		    </tr>
+		    <tr>
+		      <td>sex:</td>
+		      <td><label>
+		        <input type="radio" name="sex" value="man" checked="true"/>
+		        man 
+		        <input type="radio" name="sex" value="woman" />
+		        woman
+		      </label></td>
+		    </tr>
+		    <tr>
+		      <td>favorite:</td>
+		      <td><label>
+		        <input type="checkbox" id="f1" name="favorite" value="movie" />
+		      	movie 
+		      <input type="checkbox" id="f2" name="favorite" value="game" />
+		      game 
+		      <input type="checkbox" id="f3" name="favorite" value="football" />
+		      football</label></td>
+		    </tr>
+		    <tr>
+		      <td>country:</td>
+		      <td><label>
+		        <select name="country">
+					<option value="china">china</option>
+					<option value="canda">canda</option>
+					<option value="australia">australia</option>
+		        </select>
+		      </label></td>
+		    </tr>
+		    <tr>
+		      <td>&nbsp;</td>
+		      <td><label>
+		          <input type="submit" name="Submit" value="Submit" onclick="return validateForm();"/>
+		      </label></td>
+		    </tr>
+		  </table>
+		</form>
+		
+		<h1>获取层的内容</h1>
+		<div id="divOne">
+			this is div one
+		</div>
+		<span id="spanDiv"></span>
+		<input type="button" onclick="getDivOne();" value="获取层的内容"><br/>
+		
+		<h1>获取表格内容</h1>
+		<table id="dataTable" border="1">
+			<tr>
+				<td id="id1">hello</td>
+				<td id="id2">welcome</td>
+				<td id="id3">jack</td>
+			</tr>
+		</table><br/>
+		<span id="spanTable"></span>
+		<input type="button" onclick="getDateTable();" value="获取表格的内容">
+		
+		<h1>追加元素</h1>
+		<table id="addTable" border="1">
+			<tr>
+				<td>hello</td>
+			</tr>
+		</table><br/>
+		<input type="button" onclick="addColumn();" value="追加一列">
+		
+		<h1>删除元素</h1>
+		<table id="deleteTable" border="1">
+			<tbody id="deleteTableBody">
+			<tr>
+				<td>hello</td>
+				<td>world</td>
+			</tr>
+			<tr>
+				<td>jack</td>
+				<td>jonse</td>
+			</tr>
+			</tbody>
+		</table><br/>
+		<input type="button" onclick="deleteRow();" value="删除元素">
+		
+		<h1>设置元素的属性</h1>
+		<table>
+			<tr>
+				<td>
+					<font id="chgFont">看颜色变化</font>
+				</td>
+			</tr>			
+		</table>
+		<input type="button" onclick="changeColor();" value="变化属性"/>
+		
+		
+		<h1>动态设置元素的事件</h1>
+		<span id="spanHref"></span>
+		<input type="button" onclick="addEvent();" value="添加一个事件"/>
+		
+		<h1>组件的隐藏与显示</h1>
+		<div id="hideDiv">
+			<table>
+			<tr>
+				<td>
+					<font color="red">层的显示与隐藏</font>
+				</td>
+			</tr>			
+			</table>
+		</div>
+		<input type="button" id="hideBtn" onclick="hideDiv();" value="隐藏"/><br/><br/>
+		
+		<span id="spanCss">设置我的样式</span><br/><br/>
+		<input type="button" id="cssBtn" onclick="setCss();" value="设置样式"/>
+	</body>
+</html>
