@@ -136,7 +136,104 @@ a {
 .footer img {
     width: 100%;
 }
+.footer .footer-top{
+    height: 3.35rem;
+    width: 100%;
+    background-color: #F4F4F4;
+}
+.footer .footer-top .wrap{
+     height: 100%;
+    width: 12rem;
+    margin: auto;
+    padding-top: 0.7rem;
+}
+.footer .footer-top .wrap .item{
+    display: inline-block;
+}
+.footer .footer-top .wrap .bg{
+    vertical-align: top;
+    height: 0.41rem;
+    width: 1.5rem;
+}
+.footer .footer-top .wrap .desc{
+    color: rgb( 119, 119, 119 );
+    font-size: 0.14rem;
+    width: 5.15rem;
+    margin-left: 0.4rem;
+    padding-right: 0.85rem;
+    height: 2.2rem;
+    line-height: 2.14;
+    border-right: 1px solid rgb(213, 213, 213);
+}
+.footer .footer-top .wrap .right{
+    height: 2.2rem;
+    vertical-align: top;
+    width: 4.8rem;
+}
+.footer .footer-top .wrap .r1{
+    color: black;
+    font-size: 0.18rem;
+    text-align: right;
+}
+.footer .footer-top .wrap .r1 .span2{
+    border-right: 1px solid rgb(213, 213, 213);
+    border-left: 1px solid rgb(213, 213, 213);
+}
+.footer .footer-top .wrap .r1 span{
+    padding: 0 0.1rem;
+    font-weight: bold;
+}
+.footer .footer-top .wrap .r2{
+    text-align: right;
+     color: rgb( 119, 119, 119 );
+    font-size: 0.22rem;
+    margin-top: 0.45rem;
+    margin-bottom: 0.25rem;
+}
+.footer .footer-top .wrap .r2 .r2-item{
 
+   display: inline-block;
+    width: 0.3rem;
+    height: 0.3rem;
+    vertical-align: text-bottom;
+}
+.footer .footer-top .wrap .r3{
+    text-align: right;
+    color: rgb( 119, 119, 119 );
+    font-size: 0.22rem;
+    margin-bottom: 0.3rem;
+}
+.footer .footer-top .wrap .r3 .r3-item{
+    display: inline-block;
+    width: 0.3rem;
+    height: 0.3rem;
+    vertical-align: text-bottom;
+}
+
+.footer .footer-top .wrap .r4{
+    text-align: right;
+    color: rgb( 119, 119, 119 );
+    font-size: 0.14rem;
+}
+.footer .footer-bottom{
+    padding: 0 0.5rem;
+    height: 1rem;
+    width: 100%;
+    background-color: #000000;
+}
+.footer .footer-bottom span{
+    line-height: 1rem;
+    height: 100%;
+    display: inline-block;
+    color: rgba( 255, 255, 255, 0.6 );
+    font-size: 0.14rem;
+}
+.footer .footer-bottom span.float_left{
+    float: left;
+}
+.footer .footer-bottom span.float_right{
+    float: right;
+}
 .footer .content {
     right: 3.5rem;
     top: 0.7rem;

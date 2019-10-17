@@ -101,12 +101,12 @@
         if(url.indexOf("user")>-1){//个人中心  注意 凡是个人中心 html文件命名加上user前缀
             $(".container .header .nav").addClass("before").removeClass("after");
             setTimeout(function () {
-                $(".container .footer img").attr("src","./images/footer-bg-white.png");
+                $(".container .footer>img").attr("src","./images/footer-bg-white.png");
             },100);
         }else{//非个人中心
             $(".container .header .nav").addClass("after").removeClass("before");
             setTimeout(function () {
-            $(".container .footer img").attr("src","./images/footer-bg.png");
+            $(".container .footer>img").attr("src","./images/footer-bg.png");
             },100);
         }
     }
