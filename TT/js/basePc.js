@@ -40,10 +40,12 @@ $(function () {
                 timestamp: ts(),
                 forumId:forumId,
                 commentId:commentId||0,
+                likeType:commentId==undefined?1:2,//1 帖子 2 评论
                 userToken:localStorage.getItem("ttToken")||'',
                 sign: createSign({
                     userToken:localStorage.getItem("ttToken")||'',
                     forumId:forumId,
+                    likeType:commentId==undefined?1:2,//1 帖子 2 评论
                     commentId:commentId||0,
                     timestamp: ts(),
                 })

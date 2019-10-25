@@ -5,11 +5,13 @@ $(function () {
     //api/Forum/GetForumDetail(TT_007)根据ID获取文章内容，并且阅读数+1
     function GetForumDetail() {
             $.request('/api/Forum/GetForumDetail', {
-                    "timestamp": ts(),
+                    timestamp: ts(),
                     id:id,
+                    userToken:localStorage.getItem('ttToken')||'',
                     sign: createSign({
                         id:id,
-                        "timestamp": ts(),
+                        userToken:localStorage.getItem('ttToken')||'',
+                        timestamp: ts(),
                     })
                 },
                 function (res) {
@@ -21,6 +23,9 @@ $(function () {
                     $(".information .view-icon").html(data.VisitCount);
                     $(".information .vote-icon").html(data.LikeCount);
                     $(".information .vote-icon-img").attr("forumId",id);
+                    if(data.IsLike){
+                        $(".information .vote-icon-img").attr("src",'./images/vote-icon-red.png');
+                    }
                     $(".information p.text").html(data.Content);
 
                     if(data.MultimediaType==1){
@@ -46,12 +51,12 @@ $(function () {
                  forumId:id,
                  pageIndex:pageIndex||1,
                  pageSize:10,
-                token:localStorage.getItem("ttToken")||'',
+                userToken:localStorage.getItem("ttToken")||'',
                  sign: createSign({
                     forumId:id,
                     pageIndex:pageIndex||1,
                     pageSize:10,
-                     token:localStorage.getItem("ttToken")||'',
+                     userToken:localStorage.getItem("ttToken")||'',
                     "timestamp": ts(),
                 })
             },
@@ -65,16 +70,21 @@ $(function () {
                  var str='';
                  var list= res.data.list;
                  for (var i=0;i<list.length;i++){
-                     str+='<div class="list-box-A">';
+                     str+='<div rootId="'+list[i].Id+'" class="list-box-A">';
                      str+='<div class="list-box-A-title">';
                      str+='   <div class="title-left">';
                      str+='  <img class="icon" src="images/headportrait1.png">';
                      str+='   <span class="name">'+list[i].UserName+'</span>';
-                     str+='   <span class="time">'+list[i].Date+'</span>';
+                     str+='   <span class="time">'+timeago(list[i].Date)+'</span>';
                      str+='   </div>';
                      str+='  <div class="title-right">';
+                     if(list[i].IsMine){
+                         str+='  <span class="s1 del" style="font-weight: bold" forumId="'+id+'" commentId="'+list[i].Id+'" >删除</span>';
+                     }else{
+                         str+='  <span class="s1" ></span>';
+                     }
                      str+='  <span class="s1 mes"><img class="icon" src="./images/message-icon.png"><span class="nums">'+list[i].CommentCount+'</span></span>';
-                     str+=' <span class="s1 vote"><img  forumId="'+id+'" class="icon vote-icon-img vote-icon-img-detail" commentId="'+list[i].Id+'" src="./images/vote-icon.png"><span class="nums">'+list[i].LikeCount+'</span></span>';
+                     str+=' <span class="s1 vote"><img  forumId="'+id+'" class="icon vote-icon-img vote-icon-img-detail" commentId="'+list[i].Id+'" src="'+(list[i].IsLike?"./images/vote-icon-red.png":"./images/vote-icon.png")+'"><span class="nums">'+list[i].LikeCount+'</span></span>';
                      str+=' </div>';
                      str+=' </div>';
                      str+=' <div class="list-box-A-con">'+list[i].Content+'</div>';
@@ -90,15 +100,19 @@ $(function () {
                          str+='<div class="list-box-B">';
                          str+='    <div class="list-box-B-title">';
                          str+='   <div class="list-li-left">';
-                         str+='   <span class="name">王迪迪</span>';
+                         str+='   <span class="name">'+subList[k].UserName+'</span>';
                          str+='   <span class="static">回复</span>';
-                         str+='   <span class="name">王迪</span>';
-                         str+='   <span class="time">半个小时前</span>';
+                         str+='   <span class="name">'+subList[k].ToUserName+'</span>';
+                         str+='   <span class="time">'+timeago(subList[k].Date)+'</span>';
                          str+='  </div>';
                          str+='   <div class="list-li-right">';
-                         str+='  <span class="s1 del">删除</span>';
+                         if(subList[k].IsMine){
+                             str+='  <span class="s1 del" forumId="'+id+'" commentId="'+subList[k].Id+'" >删除</span>';
+                         }else{
+                             str+='  <span class="s1" ></span>';
+                         }
                          str+='   <span class="s1 mes"><img class="icon" src="./images/message-icon.png"><span class="nums">'+subList[k].CommentCount+'</span></span>';
-                         str+='<span class="s1 vote"><img class="icon vote-icon-img vote-icon-img-detail" forumId="'+id+'" commentId="'+list[i].Id+'" src="./images/vote-icon.png"><span class="nums">'+subList[k].LikeCount+'</span></span>';
+                         str+='<span class="s1 vote"><img class="icon vote-icon-img vote-icon-img-detail" forumId="'+id+'" commentId="'+subList[k].Id+'" src="'+(subList[k].IsLike?"./images/vote-icon-red.png":"./images/vote-icon.png")+'"><span class="nums">'+subList[k].LikeCount+'</span></span>';
                          str+=' </div>';
                          str+=' </div>';
                          str+='<div class="list-box-B-con">'+subList[k].Content+'</div>';
@@ -126,7 +140,11 @@ $(function () {
     $(".message-box").on("click",'.class-reply-btn-img',function () {
          var commentId=$(this).attr("commentId");
          var content=$(this).parent('.reply-btn').siblings('textarea').val();
-        console.log(content);
+         var that=this;
+        if(!localStorage.getItem("ttToken")){
+            layer.msg('请先登录');
+            return;
+        }
         if (!content) {
             layer.msg('请填写评论');
             return;
@@ -137,9 +155,9 @@ $(function () {
                 forumId:id,
                 commentId:commentId,
                 content:content,
-                token:localStorage.getItem("ttToken")||'',
+                userToken:localStorage.getItem("ttToken")||'',
                 sign: createSign({
-                    token:localStorage.getItem("ttToken")||'',
+                    userToken:localStorage.getItem("ttToken")||'',
                     forumId:id,
                     commentId:commentId,
                     content:content,
@@ -148,8 +166,14 @@ $(function () {
             },
             function (res) {
                 layer.msg(res.message);
-                $(".message-box .reply-list .list-box").html('');
-                Pagelist(1);
+                if(commentId==0){
+                    $(".message-box .reply-list .list-box").html('');
+                    $(that).parent('.reply-btn').siblings('textarea').val('');
+                     Pagelist(1);
+                }else{
+
+
+                }
             }
         );
     })
@@ -210,12 +234,33 @@ activemouseEvents = () => {
         $(".list-box").on("click", ".list-box-B .list-box-B-title .mes", function () {
             $(this).parent().parent().siblings('.list-box-B-textarea').slideToggle("slow");
         })
-        $(".list-box").on("click", ".list-box-B .list-box-B-title .del", function () {
+        $(".list-box").on("click", ".list-box-A .list-box-A-title .del,.list-box-B .list-box-B-title .del", function () {
             var that = this;
             layer.confirm('确定删除该评论?', {
                 icon: 3, title: '提示', yes: function (index) {
-                    layer.close(index);
-                    $(that).parent().parent().parent('.list-box-B').fadeOut();
+                    ///Comment/Delete(TT_012)删除评论
+                    $.request('/api/Comment/Delete', {
+                            timestamp: ts(),
+                            forumId:$(that).attr("forumId"),
+                            commentId:$(that).attr("commentId"),
+                            userToken:localStorage.getItem("ttToken")||'',
+                            sign: createSign({
+                                timestamp: ts(),
+                                userToken:localStorage.getItem("ttToken")||'',
+                                forumId:$(that).attr("forumId"),
+                                commentId:$(that).attr("commentId"),
+                            })
+                        },
+                        function (res) {
+                        if(res.code==1){
+                            layer.close(index);
+                            $(that).parent().parent().parent().fadeOut();
+                            layer.msg('删除成功！');
+                        }
+
+                        }
+                    );
+
                 },
                 cancel: function (index, layero) {
                     layer.close(index);

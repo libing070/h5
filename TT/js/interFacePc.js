@@ -5,8 +5,10 @@ $(function () {
     function GetForumInfo() {
         $.request('/api/Forum/GetForumInfo', {
                 "timestamp": ts(),
+                userToken:localStorage.getItem("ttToken")||'',
                 sign: createSign({
                     "timestamp": ts(),
+                    userToken:localStorage.getItem("ttToken")||'',
                 })
             },
             function (res) {
@@ -24,7 +26,7 @@ $(function () {
                     str +='<p class="bottom">';
                     str +='<span class="item"><img src="./images/message-icon.png"><span >'+ele.commentCount+'</span></span>';
                     str +='<span class="item"><img src="./images/view-icon.png"><span>'+ele.visitCount+'</span></span>';
-                    str +='<span class="item"><img forumId="'+ele.id+'" class="vote-icon-img" src="./images/vote-icon.png"><span>'+ele.likeCount+'</span></span>';
+                    str +='<span class="item"><img forumId="'+ele.id+'" class="vote-icon-img" src="'+(ele.IsLike?"./images/vote-icon-red.png":"./images/vote-icon.png")+'"><span>'+ele.likeCount+'</span></span>';
                     str +='</p>';
                     str +='</div>';
                 });
@@ -67,7 +69,7 @@ $(function () {
                          str4+=' <p style="cursor: pointer" class="bottom">';
                          str4+='  <span class="item"><img src="./images/message-icon.png"><span >'+recommendList[i].commentCount+'</span></span>';
                          str4+=' <span class="item"><img src="./images/view-icon.png"><span>'+recommendList[i].visitCount+'</span></span>';
-                         str4+=' <span class="item"><img forumId="'+recommendList[i].id+'"  class="vote-icon-img" src="./images/vote-icon.png"><span>'+recommendList[i].likeCount+'</span></span>';
+                         str4+=' <span class="item"><img forumId="'+recommendList[i].id+'"  class="vote-icon-img" src="'+(recommendList[i].IsLike?"./images/vote-icon-red.png":"./images/vote-icon.png")+'"><span>'+recommendList[i].likeCount+'</span></span>';
                          str4+=' </p>';
                          str4+=' </div>';
                          str4+='</div>';
@@ -83,7 +85,7 @@ $(function () {
                          str4+='  <p class="bottom">';
                          str4+='    <span class="item"><img src="./images/message-icon.png"><span >'+recommendList[i].commentCount+'</span></span>';
                          str4+=' <span class="item"><img src="./images/view-icon.png"><span>'+recommendList[i].visitCount+'</span></span>';
-                         str4+='  <span class="item"><img forumId="'+recommendList[i].id+'"  class="vote-icon-img" src="./images/vote-icon.png"><span>'+recommendList[i].likeCount+'</span></span>';
+                         str4+='  <span class="item"><img forumId="'+recommendList[i].id+'"  class="vote-icon-img" src="'+(recommendList[i].IsLike?"./images/vote-icon-red.png":"./images/vote-icon.png")+'"><span>'+recommendList[i].likeCount+'</span></span>';
                          str4+='  </p>';
                          str4+='   </div>';
                          str4+='  </div>';

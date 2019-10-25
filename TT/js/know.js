@@ -9,11 +9,13 @@ $(function () {
                 forumType:1, //知识
                 pageIndex:pageIndex||1,
                 pageSize:10,
+                userToken:localStorage.getItem("ttToken")||'',
                 sign: createSign({
                     timestamp: ts(),
                     forumType:1,
                     pageIndex:pageIndex||1,
                     pageSize:10,
+                    userToken:localStorage.getItem("ttToken")||'',
                 })
             },
             function (res) {
@@ -41,7 +43,7 @@ $(function () {
                         str+='<p class="bottom">';
                         str +='<span class="item"><img src="./images/message-icon.png"><span >'+ele.commentCount+'</span></span>';
                         str +='<span class="item"><img src="./images/view-icon.png"><span>'+ele.visitCount+'</span></span>';
-                        str +='<span class="item"><img forumId="'+ele.id+'"  class="vote-icon-img" src="./images/vote-icon.png"><span>'+ele.likeCount+'</span></span>';
+                        str +='<span class="item"><img forumId="'+ele.id+'"  class="vote-icon-img" src="'+(ele.IsLike?"./images/vote-icon-red.png":"./images/vote-icon.png")+'"><span>'+ele.likeCount+'</span></span>';
                         str+='</p>';
                         str+='</div>';
                     });

@@ -26,7 +26,7 @@ $(function () {
                         str4+=' <p class="bottom">';
                         str4+='    <span class="item"><img src="./images/message-icon.png"><span >'+recommendList[i].commentCount+'</span></span>';
                         str4+=' <span class="item"><img src="./images/view-icon.png"><span>'+recommendList[i].visitCount+'</span></span>';
-                        str4+='  <span class="item"><img src="./images/vote-icon.png"><span>'+recommendList[i].likeCount+'</span></span>';
+                        str4+='  <span class="item"><img src="'+(recommendList[i].IsLike?"./images/vote-icon-red.png":"./images/vote-icon.png")+'"><span>'+recommendList[i].likeCount+'</span></span>';
                         str4+=' </p>';
                         str4+=' </div>';
                 }
@@ -112,6 +112,7 @@ $(function () {
 
                     localStorage.setItem('ttToken', res.data.userToken);
                     localStorage.setItem('ttName', res.data.userName);
+                    //localStorage.setItem('UserId', res.data.IsMine);
                     setTimeout(function () {
                         window.location.href='./index.html';//登录
                     },2000);

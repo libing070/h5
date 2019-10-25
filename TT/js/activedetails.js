@@ -5,11 +5,13 @@ $(function () {
     function GetActivityInfo() {
         $.request('/api/Forum/GetActivityInfo', {
                 "timestamp": ts(),
-                  forumId:forumId,
+                userToken:localStorage.getItem("ttToken")||'',
+                forumId:forumId,
                   sign: createSign({
                   forumId:forumId,
                     "timestamp": ts(),
-                })
+                      userToken:localStorage.getItem("ttToken")||'',
+                  })
             },
             function (res) {
                 var str = '';

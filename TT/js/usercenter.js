@@ -33,6 +33,10 @@ $(function () {
                       GetForumCount();
                       $(".mypublish .mypu-menu .item").eq(0).click();
                   }
+                  if(index==2){//我的喜欢
+                      $('.mylike .mybox').html('');
+                      GetForumPagingListForUserLike(1);
+                  }
                   if(index==4){//初始化加载消息管理 系统消息
                       $(".right-content .mess .pu-menu .item").eq(0).click();
                   }
@@ -101,7 +105,12 @@ $(function () {
                     res.data.list.forEach((ele, k) => {
                         str += '<div class="box">';
                         str += '   <div class="top">';
-                        str += '   <img class="bg" src="'+ele.PicUrl+'">';
+                        if(ele.MultimediaType==2){
+                            str += ' <video class="bg" muted loop autoplay="autoplay" style="object-fit: fill;width: 100%"  src="'+ele.PicUrl+'""></video>';
+                        }else{
+                            str += '   <img class="bg" src="'+ele.PicUrl+'">';
+                        }
+
                         str += '   <img class="bg-mask" src="images/my-pu-box-bg-mask.png">';
                         str += '   <p class="bottom">';
                         str += '   <span class="item"><img src="./images/message-icon-white.png"><span >'+ele.CommentCount+'</span></span>';
@@ -115,8 +124,8 @@ $(function () {
                         str += '</div>';
                         str += '</div>';
                         str += '</div>';
-                        str += '<div class="title">'+ele.Title+'-'+ele.Summary+'</div>';
-                        str += '   <div class="desc">'+ele.Content+'</div>';
+                        str += '<div class="title">'+ele.Title+'</div>';
+                        str += '   <div class="desc">'+ele.Summary+'</div>';
                         str += ' </div>';
                     });
                     $('.mypublish .mybox').append(str);
@@ -161,7 +170,7 @@ $(function () {
             'http://219.143.155.183:8899/file/case1.jpg',
             'http://219.143.155.183:8899/Upload/20190829/o_1dje7p5ks2t916ch1hchsl014o9f_Koala.jpg'];
         var index = Math.floor(Math.random()*random.length);//取得随机数的索引
-     //   PicUrl=random[index];//根据索引取得随机数
+     //  PicUrl=random[index];//根据索引取得随机数
         var MultimediaType=1;//图片
 
 
@@ -200,7 +209,7 @@ $(function () {
                 PicUrl:PicUrl,
                 MultimediaType:MultimediaType,
                 Content:Content,
-                token:localStorage.getItem("ttToken")||'',
+                userToken:localStorage.getItem("ttToken")||'',
                 sign: createSign({
                     timestamp: ts(),
                     //   Id:Id||'',
@@ -210,7 +219,7 @@ $(function () {
                     PicUrl:PicUrl,
                     MultimediaType:MultimediaType,
                     Content:Content,
-                    token:localStorage.getItem("ttToken")||'',
+                    userToken:localStorage.getItem("ttToken")||'',
                 })
             }
         }else{//编辑
@@ -224,7 +233,7 @@ $(function () {
                 PicUrl:PicUrl,
                 MultimediaType:MultimediaType,
                 Content:Content,
-                token:localStorage.getItem("ttToken")||'',
+                userToken:localStorage.getItem("ttToken")||'',
                 sign: createSign({
                     timestamp: ts(),
                     Id:Id,
@@ -234,7 +243,7 @@ $(function () {
                     PicUrl:PicUrl,
                     MultimediaType:MultimediaType,
                     Content:Content,
-                    token:localStorage.getItem("ttToken")||'',
+                    userToken:localStorage.getItem("ttToken")||'',
                 })
             }
         }
@@ -244,7 +253,7 @@ $(function () {
                 layer.msg(res.message);
                 $(".submitted-pages").show();
                 $(".content-display.active").hide();
-                var  totalTime= $('.submitted-pages p .s2').html();
+                var  totalTime= 5;
                 clock = window.setInterval(() => {
                     totalTime--;
                     $('.submitted-pages p .s2').html(totalTime);
@@ -355,8 +364,81 @@ function GetForumDetailForEdit(id,index) {
 }
 
 
+    //我的喜欢列表
+    ///Forum/GetForumPagingListForUserLike我点赞的文章
+    function GetForumPagingListForUserLike(pageIndex) {
+        $.request('/api/Forum/GetForumPagingListForUserLike', {
+                timestamp: ts(),
+                pageIndex:pageIndex||1,
+                pageSize:10,
+                userToken:localStorage.getItem("ttToken")||'',
+                sign: createSign({
+                    timestamp: ts(),
+                    pageIndex:pageIndex||1,
+                    pageSize:10,
+                    userToken:localStorage.getItem("ttToken")||'',
+                })
+            },
+            function (res) {
+                if(pageIndex>res.data.pageCount){
+                    $(".myLike-load-more").find("p").html("没有更多了");
+                    $(".myLike-load-more").find(".load-more-btn").hide();
+                    $(".myLike-load-more").attr("hasmore","0");
+                    return;
+                }
+                if(res.data.forumList!=""){
+                    var str = '';
+                    res.data.forumList.forEach((ele, k) => {
+                        str += '<div id="'+ele.id+'" type="'+ele.type+'" class="box">';
+                        str += '   <div class="top">';
+                        str += '   <img class="bg" src="'+ele.picUrl+'">';
+                        str += '   <img class="bg-mask" src="images/my-pu-box-bg-mask.png">';
+                        str += '   <p class="bottom">';
+                        str += '   <span class="item"><img src="./images/message-icon-white.png"><span >'+ele.commentCount+'</span></span>';
+                        str += '<span class="item"><img src="./images/view-icon-white.png"><span>'+ele.visitCount+'</span></span>';
+                        str += ' <span class="item"><img src="'+(ele.IsLike?"./images/vote-icon-red.png":"./images/vote-icon-white.png")+'"><span>'+ele.likeCount+'</span></span>';
+                        str += ' </p>';
+                        // str += ' <div class="mask" style="display: none">';
+                        // str += '   <div class="flex">';
+                        // str += '   <div class="item edit" type="'+ele.type+'"  ids="'+ele.Id+'"><img src="images/edit-icon.png"><span style="color: #cb0404">编辑</span></div>';
+                        // str += ' <div class="item del" ids="'+ele.id+'"><img src="images/delete-icon.png"><span>删除</span></div>';
+                        // str += '</div>';
+                        // str += '</div>';
+                        str += '</div>';
+                        str += '<div class="title">'+ele.title+'</div>';
+                        str += '   <div class="desc">'+ele.summary+'</div>';
+                        str += ' </div>';
+                    });
+                    $('.mylike .mybox').append(str);
+                    $(".myLike-load-more").find(".load-more-btn").hide();
 
-
+                }else{
+                    $(".myLike-load-more").find("p").html("没有更多了");
+                }
+            }
+        );
+    }
+    $(".mylike").on("click",'.myLike-load-more',function () {
+        $(".myLike-load-more").find(".load-more-btn").show();
+        var hasMore=  $(".myLike-load-more").attr("hasmore");//1更多 0 没有
+        if(hasMore==0){
+            $(".myLike-load-more").off();
+            $(".myLike-load-more").find(".load-more-btn").hide();
+            return;
+        }
+        var pageIndex=$(this).attr("pageIndex");
+        pageIndex=++pageIndex;
+        $(this).attr("pageIndex",pageIndex);
+        GetForumPagingListForUserLike(pageIndex);
+    });
+    $(".mylike .mybox").on("click",'.box',function () {
+      var type= $(this).attr('type');//type=4 活动
+        if(type==4){
+            window.location.href='./active-details.html?forumId='+$(this).attr("id");
+        }else{
+            window.location.href='./details.html?id='+$(this).attr("id");
+        }
+    });
     //  账户密码
     $(".myaccount .form").on("click",'.btn',function () {
         var userName=$('.myaccount .form .userName').val();
@@ -426,16 +508,20 @@ function GetForumDetailForEdit(id,index) {
             $(".comment-box").show();
             $(".system-content").hide();
             $('.system-detail').hide();
+            $(".comment-box .comment-box-list").html('');
+            MyCommentList(1);
         }
     })
     //api/Message/GetPagingList获取用户的消息(系统消息)
     function loadSystemMessage(pageIndex){
         $.request('/api/Message/GetPagingList', {
                 timestamp: ts(),
+                userToken:localStorage.getItem("ttToken")||'',
                 pageIndex:pageIndex||1,
                 pageSize:10,
                 sign: createSign({
                     pageIndex:pageIndex||1,
+                    userToken:localStorage.getItem("ttToken")||'',
                     pageSize:10,
                     timestamp: ts(),
                 })
@@ -443,47 +529,116 @@ function GetForumDetailForEdit(id,index) {
             function (res) {
                 if(pageIndex>res.data.pageCount){
                     $(".system-load-more").find("p").html("没有更多了");
-                    $(".system-load-more").find(".load-more-btn").removeClass("active");
+                    $(".system-load-more").find(".load-more-btn").hide();
                     $(".system-load-more").attr("hasmore","0");
                     return;
                 }
+                if(res.data.list!=""){
+                    var str='';
+                    res.data.list.forEach((ele, k) => {
+                        str+='<div class="box"><span class="desc">您发布的《XXXXXX》为能审核通过</span><span class="time">2019-8-6</span></div>';
+                    });
+                    $(".mess .system-box").append(str);
+                    $(".system-load-more").find(".load-more-btn").hide();
+                }else{
+                    $(".system-load-more").find("p").html("没有更多了");
+                }
 
-                var str='';
-                res.data.list.forEach((ele, k) => {
-                    str+='<div class="box"><span class="desc">您发布的《XXXXXX》为能审核通过</span><span class="time">2019-8-6</span></div>';
-                });
-                $(".mess .system-box").append(str);
             }
         );
     }
 
     //系统消息加载更多
     $(".mess").on("click",'.system-load-more',function () {
-        var type=$(this).attr("type");
-        $(".system-load-more").find(".load-more-btn").addClass("active");
+        $(".system-load-more").find(".load-more-btn").show();
         var hasMore=  $(".system-load-more").attr("hasmore");//1更多 0 没有
         if(hasMore==0){
             $(".system-load-more").off();
-            $(".system-load-more").find(".load-more-btn").removeClass("active");
+            $(".system-load-more").find(".load-more-btn").hide();
             return;
         }
         var pageIndex=$(this).attr("pageIndex");
         pageIndex=++pageIndex;
         $(this).attr("pageIndex",pageIndex);
-        loadSystemMessage(type,pageIndex);
+        loadSystemMessage(pageIndex);
+
     });
 
 
-    //消息管理-系统管理 点击列表
-    $(".right-content").on("click",'.mess .system-content .system-box .box',function () {
-         $('.system-detail').show();
-         $(".system-content").hide();
+    // //消息管理-系统管理 点击列表
+    // $(".right-content").on("click",'.mess .system-content .system-box .box',function () {
+    //      $('.system-detail').show();
+    //      $(".system-content").hide();
+    // });
+    // //消息管理-系统管理 点击返回
+    // $(".right-content").on("click",'.mess .system-detail .system-menu',function () {
+    //     $('.system-detail').hide();
+    //     $(".system-content").show();
+    // });
+
+
+    //消息管理-评论管理 列表
+    ///Comment/MyCommentList我发布的评论
+  function MyCommentList(pageIndex) {
+      $.request('/api/Comment/MyCommentList', {
+              timestamp: ts(),
+              userToken:localStorage.getItem("ttToken")||'',
+              pageIndex:pageIndex||1,
+              pageSize:10,
+              sign: createSign({
+                  pageIndex:pageIndex||1,
+                  userToken:localStorage.getItem("ttToken")||'',
+                  pageSize:10,
+                  timestamp: ts(),
+              })
+          },
+          function (res) {
+              if(pageIndex>res.data.pageCount){
+                  $(".comment-load-more").find("p").html("没有更多了");
+                  $(".comment-load-more").find(".load-more-btn").hide();
+                  $(".comment-load-more").attr("hasmore","0");
+                  return;
+              }
+              if(res.data.list!=""){
+                  var str='';
+                  res.data.list.forEach((ele, k) => {
+                      str+='  <div class="box">';
+                      str+='   <img class="head" src="images/headportrait1.png">';
+                      str+='   <p class="desc">';
+                      str+='   <span class="p1">'+ele.UserName+'</span>';
+                      str+='   <span class="p2">评论了文章</span>';
+                      str+='   <span class="p1">《'+ele.ForumName+'》</span>';
+                      str+=' <span class="p2">'+(timeago(ele.Date))+'</span><br/>';
+                      str+=' <span class="p2">'+(ele.Content.length>30?(ele.Content.substring(0,30)+"..."):ele.Content)+'</span>';
+                      str+=' </p>';
+                      str+=' <p class="del"><img style="display: inline-block;vertical-align: middle;padding-right: 0.05rem" src="images/delete-icon.png">删除</p>';
+                      str+='   </div>';
+                  });
+                  $(".comment-box .comment-box-list").append(str);
+                  $(".comment-load-more").find(".load-more-btn").hide();
+              }else{
+                  $(".comment-load-more").find("p").html("没有更多了");
+              }
+
+          }
+      );
+  }
+//评论管理加载更多
+    $(".comment-box").on("click",'.comment-load-more',function () {
+        $(".comment-load-more").find(".load-more-btn").show();
+        var hasMore=  $(".comment-load-more").attr("hasmore");//1更多 0 没有
+        if(hasMore==0){
+            $(".comment-load-more").off();
+            $(".comment-load-more").find(".load-more-btn").hide();
+            return;
+        }
+        var pageIndex=$(this).attr("pageIndex");
+        pageIndex=++pageIndex;
+        $(this).attr("pageIndex",pageIndex);
+        MyCommentList(pageIndex);
+
     });
-    //消息管理-系统管理 点击返回
-    $(".right-content").on("click",'.mess .system-detail .system-menu',function () {
-        $('.system-detail').hide();
-        $(".system-content").show();
-    });
+
     //消息管理-评论管理  点击删除
     $(".right-content").on("click", ".comment-box .box .del", function () {
         var that = this;
