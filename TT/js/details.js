@@ -91,7 +91,7 @@ $(function () {
                      str+=' <div class="list-box-A-textarea" style="display: none">';
                      str+='   <textarea class="textarea"></textarea>';
                      str+='  <div class="reply-btn">';
-                     str+='  <img class="class-reply-btn-img" commentId="'+list[i].Id+'" src="images/reply-btn.png">';
+                     str+='  <img class="class-reply-btn-img" classs="1" commentId="'+list[i].Id+'" src="images/reply-btn.png">';
                      str+='  </div>';
                      str+='   </div>';
 
@@ -119,7 +119,7 @@ $(function () {
                          str+='<div class="list-box-B-textarea" style="display: none">';
                          str+='   <textarea class="textarea"></textarea>';
                          str+='    <div class="reply-btn">';
-                         str+='    <img class="class-reply-btn-img"  commentId="'+subList[k].Id+'"  src="images/reply-btn.png">';
+                         str+='    <img class="class-reply-btn-img" classs="2"  commentId="'+subList[k].Id+'"  src="images/reply-btn.png">';
                          str+='   </div>';
                          str+='   </div>';
                          str+='   </div>';
@@ -136,19 +136,54 @@ $(function () {
 
     Pagelist(1);
 
+    function appendSubComment(data) {
+        var str='';
+        str+='<div class="list-box-B">';
+        str+='    <div class="list-box-B-title">';
+        str+='   <div class="list-li-left">';
+        str+='   <span class="name">'+data.UserName+'</span>';
+        str+='   <span class="static">回复</span>';
+        str+='   <span class="name">'+data.ToUserName+'</span>';
+        str+='   <span class="time">'+timeago(data.Date)+'</span>';
+        str+='  </div>';
+        str+='   <div class="list-li-right">';
+        if(data.IsMine){
+            str+='  <span class="s1 del" forumId="'+id+'" commentId="'+data.Id+'" >删除</span>';
+        }else{
+            str+='  <span class="s1" ></span>';
+        }
+        str+='   <span class="s1 mes"><img class="icon" src="./images/message-icon.png"><span class="nums">'+data.CommentCount+'</span></span>';
+        str+='<span class="s1 vote"><img class="icon vote-icon-img vote-icon-img-detail" forumId="'+id+'" commentId="'+data.Id+'" src="'+(data.IsLike?"./images/vote-icon-red.png":"./images/vote-icon.png")+'"><span class="nums">'+data.LikeCount+'</span></span>';
+        str+=' </div>';
+        str+=' </div>';
+        str+='<div class="list-box-B-con">'+data.Content+'</div>';
+        str+='<div class="list-box-B-textarea" style="display: none">';
+        str+='   <textarea class="textarea"></textarea>';
+        str+='    <div class="reply-btn">';
+        str+='    <img class="class-reply-btn-img" classs="2"  commentId="'+data.Id+'"  src="images/reply-btn.png">';
+        str+='   </div>';
+        str+='   </div>';
+        str+='   </div>';
+        return str;
+    }
+
   ///api/Comment/Publish对文章发表评论，或者对评论进行二级评论
     $(".message-box").on("click",'.class-reply-btn-img',function () {
          var commentId=$(this).attr("commentId");
          var content=$(this).parent('.reply-btn').siblings('textarea').val();
          var that=this;
-        if(!localStorage.getItem("ttToken")){
-            layer.msg('请先登录');
-            return;
-        }
         if (!content) {
             layer.msg('请填写评论');
             return;
         }
+        if(!localStorage.getItem("ttToken")){
+            layer.msg('请先登录');
+            setTimeout(function () {
+                window.location.href='./userhome.html?type=0';//登录
+            },2000);
+            return;
+        }
+
 
         $.request('/api/Comment/Publish', {
                 timestamp: ts(),
@@ -166,12 +201,19 @@ $(function () {
             },
             function (res) {
                 layer.msg(res.message);
+                $(that).parent('.reply-btn').siblings('textarea').val('');
                 if(commentId==0){
                     $(".message-box .reply-list .list-box").html('');
-                    $(that).parent('.reply-btn').siblings('textarea').val('');
                      Pagelist(1);
                 }else{
-
+                    var str=appendSubComment(res.data);
+                   var classs=$(that).attr("classs");
+                    if(classs==1){//一级回复评论按钮
+                        $(that).parent('.reply-btn').parent('.list-box-A-textarea').after(str).slideToggle("slow");
+                    }else if(classs==2){//二级回复评论按钮
+                        $(that).parent('.reply-btn').parent('.list-box-B-textarea').slideToggle("slow");
+                        $(that).parent('.reply-btn').parent('.list-box-B-textarea').parent('.list-box-B').after(str);
+                    }
 
                 }
             }

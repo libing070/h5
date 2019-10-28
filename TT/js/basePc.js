@@ -27,6 +27,9 @@ $(function () {
         var that=this;
         if((!localStorage.getItem("ttToken"))||localStorage.getItem("ttToken")===""){
             layer.msg('请先登录');
+            setTimeout(function () {
+                window.location.href='./userhome.html?type=0';//登录
+            },2000);
             return;
         }
         if($(this).attr("src").indexOf('vote-icon-red.png')>-1){

@@ -501,7 +501,7 @@ function GetForumDetailForEdit(id,index) {
              $(".system-content").show();
              $(".comment-box").hide();
             $('.system-detail').hide();
-            $(".system-load-more").find("p").html("加载更多");
+            $(".system-load-more").find("p").html("点击加载更多");
             $(".system-load-more").attr("hasmore","1").attr("pageIndex","1");
             loadSystemMessage(1);
         }else{//评论管理
@@ -510,6 +510,8 @@ function GetForumDetailForEdit(id,index) {
             $('.system-detail').hide();
             $(".comment-box .comment-box-list").html('');
             MyCommentList(1);
+            $(".comment-load-more").find("p").html("点击加载更多");
+            $(".comment-load-more").attr("hasmore","1").attr("pageIndex","1");
         }
     })
     //api/Message/GetPagingList获取用户的消息(系统消息)
@@ -536,7 +538,7 @@ function GetForumDetailForEdit(id,index) {
                 if(res.data.list!=""){
                     var str='';
                     res.data.list.forEach((ele, k) => {
-                        str+='<div class="box"><span class="desc">您发布的《XXXXXX》为能审核通过</span><span class="time">2019-8-6</span></div>';
+                        str+='<div class="box"><span class="desc">您发布的《XXXXXX》未能审核通过</span><span class="time">2019-8-6</span></div>';
                     });
                     $(".mess .system-box").append(str);
                     $(".system-load-more").find(".load-more-btn").hide();
@@ -611,7 +613,7 @@ function GetForumDetailForEdit(id,index) {
                       str+=' <span class="p2">'+(timeago(ele.Date))+'</span><br/>';
                       str+=' <span class="p2">'+(ele.Content.length>30?(ele.Content.substring(0,30)+"..."):ele.Content)+'</span>';
                       str+=' </p>';
-                      str+=' <p class="del"><img style="display: inline-block;vertical-align: middle;padding-right: 0.05rem" src="images/delete-icon.png">删除</p>';
+                      str+=' <p class="del"  forumId="'+ele.ForumId+'" commentId="'+ele.Id+'"><img style="display: inline-block;vertical-align: middle;padding-right: 0.05rem" src="images/delete-icon.png">删除</p>';
                       str+='   </div>';
                   });
                   $(".comment-box .comment-box-list").append(str);
@@ -641,16 +643,49 @@ function GetForumDetailForEdit(id,index) {
 
     //消息管理-评论管理  点击删除
     $(".right-content").on("click", ".comment-box .box .del", function () {
+        //var that = this;
+        // layer.confirm('确定删除?', {
+        //     icon: 3, title: '提示', yes: function (index) {
+        //         layer.close(index);
+        //         $(that).parent().fadeOut();
+        //     },
+        //     cancel: function (index, layero) {
+        //         layer.close(index);
+        //     }
+        // });
+
         var that = this;
-        layer.confirm('确定删除?', {
+        layer.confirm('确定删除该评论?', {
             icon: 3, title: '提示', yes: function (index) {
-                layer.close(index);
-                $(that).parent().fadeOut();
+                ///Comment/Delete(TT_012)删除评论
+                $.request('/api/Comment/Delete', {
+                        timestamp: ts(),
+                        forumId:$(that).attr("forumId"),
+                        commentId:$(that).attr("commentId"),
+                        userToken:localStorage.getItem("ttToken")||'',
+                        sign: createSign({
+                            timestamp: ts(),
+                            userToken:localStorage.getItem("ttToken")||'',
+                            forumId:$(that).attr("forumId"),
+                            commentId:$(that).attr("commentId"),
+                        })
+                    },
+                    function (res) {
+                        if(res.code==1){
+                            layer.close(index);
+                            $(that).parent().fadeOut();
+                            layer.msg('删除成功！');
+                        }
+
+                    }
+                );
+
             },
             cancel: function (index, layero) {
                 layer.close(index);
             }
         });
+
     });
 
 

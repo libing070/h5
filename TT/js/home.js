@@ -7,7 +7,9 @@ $(function () {
     function GetForumInfo() {
         $.request('/api/Forum/GetForumInfo', {
                 "timestamp": ts(),
+                userToken:localStorage.getItem("ttToken")||'',
                 sign: createSign({
+                    userToken:localStorage.getItem("ttToken")||'',
                     "timestamp": ts(),
                 })
             },
