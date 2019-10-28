@@ -38,7 +38,6 @@ $(function () {
         }
         var forumId=$(this).attr("forumId");
         var commentId=$(this).attr("commentId");
-        console.log(forumId+"   "+commentId);
         $.request('/api/Forum/UserLike', {
                 timestamp: ts(),
                 forumId:forumId,
