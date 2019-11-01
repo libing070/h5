@@ -16,8 +16,15 @@ $(function () {
                 var str = '';
                 res.data.articleList.forEach((ele, k) => {
                     str +='<div class="swiper-slide box">';
-                   // str +='<a href="./details.html"><img style="width: 100%" src="images/index-banner3-s1.png"></a>';
-                    str +='<a href="./details.html?id='+ele.id+'"><img style="width: 100%" src="'+ele.picUrl+'"></a>';
+                   var url= '';
+                       NetPing(ele.picUrl,function (res) {
+                         if(!res){
+                             url='./images/404.png'
+                         }else{
+                             url=ele.picUrl;
+                         }
+                    })
+                    str +='<a href="./details.html?id='+ele.id+'"><img style="width: 100%" src="'+url+'"></a>';
                     str +='<div class="content">';
                     str +='<p class="time">'+ele.createTime+'</p>';
                     str +='<p class="title">'+ele.title+'</p>';
@@ -41,8 +48,15 @@ $(function () {
                 res.data.hotList.forEach((ele, k) => {
                     str3+='<div class="list click-list">';
                     str3+='<div class="top">';
-                   // str3+='<img class="click-img" forumId="13"  style="width: 100%;cursor: pointer" src="images/index-banner3-s1.png">';
-                    str3+='<img class="click-img" forumId="'+ele.id+'"  style="width: 100%;cursor: pointer" style="width: 100%" src="'+ele.picUrl+'">';
+                    var url= '';
+                    NetPing(ele.picUrl,function (res) {
+                        if(!res){
+                            url='./images/404.png'
+                        }else{
+                            url=ele.picUrl;
+                        }
+                    })
+                    str3+='<img class="click-img" forumId="'+ele.id+'"  style="width: 100%;cursor: pointer" style="width: 100%" src="'+url+'">';
                     str3+='<img class="icon" style="width: 30%" src="images/end-icon.png">';
                     str3+='<p class="time">'+ele.createTime+'</p>';
                     str3+='</div>';
@@ -58,7 +72,16 @@ $(function () {
                 for(var i=0;i<recommendList.length;i++){
                      if(i==0){
                          str4+='<div class="first click-list">';
-                         str4+=' <img class="click-img"  forumId="'+recommendList[i].id+'" src="'+recommendList[i].picUrl+'" style="width: 100%;display: block;cursor: pointer">';
+                         var url= '';
+                         NetPing(recommendList[i].picUrl,function (res) {
+                             if(!res){
+                                 url='./images/404.png'
+                             }else{
+                                 url=recommendList[i].picUrl;
+                             }
+                         })
+
+                         str4+=' <img class="click-img"  forumId="'+recommendList[i].id+'" src="'+url+'" style="width: 100%;display: block;cursor: pointer">';
                          str4+=' <img class="click-img rectangle"  forumId="'+recommendList[i].id+'" src="images/rectangle-icon.png" style="cursor: pointer">';
                          str4+=' <img class="hot-recommend" src="images/hot-recommend-icon.png">';
                          str4+=' <div class="text">';
@@ -77,7 +100,14 @@ $(function () {
 
                      }else{
                          str4+=' <div  class="box click-list">';
-                         str4+='  <img class="click-img" style="width: 100%;cursor: pointer"  forumId="'+recommendList[i].id+'" src="'+recommendList[i].picUrl+'">';
+                         NetPing(recommendList[i].picUrl,function (res) {
+                             if(!res){
+                                 url='./images/404.png'
+                             }else{
+                                 url=recommendList[i].picUrl;
+                             }
+                         })
+                         str4+='  <img class="click-img" style="width: 100%;cursor: pointer"  forumId="'+recommendList[i].id+'" src="'+url+'">';
                          str4+='   <div class="content">';
                          str4+='   <p class="time">'+recommendList[i].createTime+'</p>';
                          str4+='    <p class="title">'+recommendList[i].title+'</p>';

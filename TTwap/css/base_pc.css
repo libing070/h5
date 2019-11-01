@@ -1,0 +1,911 @@
+.container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+
+a {
+    color: #fff;
+    text-decoration: none;
+    outline: none !important;
+}
+
+/* 导航 */
+/*  */
+.logo {
+    width: 23%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    z-index: 2;
+}
+
+
+.nav {
+    width: 100%;
+    height: 1.1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 3rem;
+    z-index: 3;
+    background: url('./../images/nav-bg.png') no-repeat center;
+    background-size: cover;
+}
+
+.nav:hover {
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0));
+    /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0));
+    /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0));
+    /* Firefox 3.6 - 15 */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0));
+    /* 标准的语法 */
+}
+.nav ul li {
+    z-index: 2;
+    float: left;
+    margin-right: 3%;
+    cursor: pointer;
+    font-size: 0.16rem;
+    font-family: 'SourceHanSansCN-Regular';
+    position: relative;
+}
+
+.nav ul li a {
+    color: #fff;
+    line-height: 1.1rem;
+}
+
+.nav ul li:hover a {
+    color: #e90010;
+}
+
+.nav ul li .submenu {
+    width: 1.5rem !important;
+    top: 85% !important;
+    background: rgba(245, 18, 33, .5)
+}
+
+.nav .triangle {
+    border-color: transparent transparent rgba(245, 18, 33, .5) transparent;
+}
+
+.submenu {
+    display: none;
+    width: 1.9rem;
+    position: absolute;
+    top: 101%;
+    left: 50%;
+    color: #fff;
+    background: #db1927;
+    transform: translateX(-50%);
+    padding: 0 0.3rem;
+}
+
+.subList {
+    margin: 0.2rem 0;
+    font-size: 0.16rem;
+    text-align: center;
+}
+
+.subList a {
+    color: #fff !important;
+    line-height: 0.16rem !important;
+}
+
+.triangle {
+    width: 0.2rem;
+    height: 0.2rem;
+    border-width: 0.1rem;
+    border-style: solid;
+    border-color: transparent transparent #db1927 transparent;
+    position: absolute;
+    top: -0.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+ .footer {
+     width: 100%;
+     position: relative;
+ }
+/*.footer .top{*/
+    /*width: 100%;*/
+    /*position: relative;*/
+     /*height: 3.4rem;*/
+    /*background-color: rgb( 244, 244, 244 );*/
+ /*}*/
+/*.footer .bottom{*/
+    /*width: 100%;*/
+    /*position: relative;*/
+/*}*/
+
+.footer img{
+    width: 100%;
+}
+.footer .content{
+    right: 3.5rem;
+    top: 0.7rem;
+    position: absolute;
+    width: 2.7rem;
+    height: 0.2rem;
+    cursor: pointer;
+    display: -webkit-flex;
+    display: flex;
+    opacity: 0;
+}
+.footer .content div{
+    -webkit-flex: 1;
+    flex: 1;
+    text-align: center;
+}
+
+
+
+.index-banner1{
+    width: 100%;
+    position: relative;
+}
+
+.index-banner1 .swiper-pagination{
+    position: absolute;
+    left:2rem;
+    bottom: 0.36rem;
+    width: 20%;
+}
+
+.banner1-arrow-icon{
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 2rem;
+    height: 0.15rem;
+    width: 0.8rem;
+}
+.banner1-arrow-icon .arrow_icon_btn{
+     width: 100%;
+}
+
+.index-banner1  .swiper-slide{
+     position: relative;
+    width: 100%;
+}
+.index-banner1 .swiper-slide .content{
+
+    height: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.index-banner1 .swiper-slide .content p{
+    text-align: center;
+    margin: auto;
+    font-size: 0.5rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 255, 255, 255 );
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.438;
+}
+.index-banner1 .swiper-pagination{
+    position: absolute;
+    bottom: 0.36rem;
+    width: 20%;
+}
+
+
+
+
+.index-banner2{
+    position: relative;
+    height: 4.4rem;
+    background-color: rgb( 45, 45, 46 );
+    width: 100%;
+}
+.index-banner2 .title{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0.75rem;
+    width: 6.51rem;
+    height: 0.38rem;
+    margin: auto;
+}
+.index-banner2 .swiper-container{
+    position: absolute;
+    top: 1.55rem;
+    left: 0.95rem;
+    right: 0.95rem;
+
+    width: 90%;
+    height: 2.5rem;
+    margin: auto;
+}
+.index_swiperBtn {
+    width: 2.1rem;
+    height: 0.95rem;
+    position: absolute;
+    right: 3.5rem;
+    top: -0.95rem;
+    background: rgba(0, 0, 0, .5);
+    z-index: 1;
+}
+
+.index_next1{
+    width: 0.5rem;
+    height: 0.5rem;
+    background: url(./../images/turn_right_def.png) no-repeat center;
+    background-size: 100%;
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+
+.index_prev1{
+    width: 0.5rem;
+    height: 0.5rem;
+    background: url(./../images/turn_left_def.png) no-repeat center;
+    background-size: 100%;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+
+.index-banner3{
+    width: 100%;
+    position: relative;
+    height:7.4rem;
+    background-color: white;
+}
+.index-banner3 .left-bg{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    height: 6.2rem;
+    width: 5.5rem;
+    background-color:#e90010 ;
+    margin: auto;
+}
+.index-banner3 .left-bg .title{
+    position: absolute;
+    top: 0.75rem;
+    right: 1.3rem;
+    font-size: 0.4rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 255, 255, 255 );
+
+}
+.index-banner3 .swiper-container{
+    width: 12rem;
+    height: 3.7rem;
+    position: absolute;
+    top: 2.2rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.index-banner3 .swiper-slide .content{
+    border-radius: 1px;
+    position: absolute;
+    width: 3.4rem;
+    left: 0;
+    top: 2.1rem;
+    right: 0;
+    margin: auto;
+    height: 1.6rem;
+    background-color: rgb( 255, 255, 255 );
+}
+.index-banner3 .swiper-slide  .content .time{
+    text-align: center;
+    font-size: 0.14rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 255, 255, 255 );
+    text-transform: uppercase;
+    width: 1.12rem;
+    height: 0.32rem;
+    line-height: 0.32rem;
+    background-color: rgb( 0, 0, 0 );
+    opacity: 0.2;
+    margin: auto;
+    margin-top: 0.15rem;
+    margin-bottom: 0.15rem;
+}
+.index-banner3 .swiper-slide  .content  .title{
+    text-align: center;
+    font-size: 0.22rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 0, 0, 0 );
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.819;
+}
+.index-banner3 .swiper-slide .content .bottom{
+    width: 2.5rem;
+    height: 0.2rem;
+    margin: auto;
+    margin-top: 0.1rem;
+    display: -webkit-flex;
+    display: flex;
+}
+.index-banner3 .swiper-slide .content .bottom .item{
+    -webkit-flex: 1;
+    flex: 1;
+    text-align: center;
+}
+.index-banner3 .swiper-slide .content .bottom .item img{
+    height: 100%;
+    display: inline-block;
+    padding-right: 0.12rem;
+}
+.index-banner3 .swiper-slide .content .bottom .item span{
+    vertical-align: super;
+    font-size: 0.16rem;
+    display: inline-block
+}
+
+.banner3-arrow-icon{
+    position: absolute;
+    z-index: 2;
+    right: 3rem;
+    top: 1.3rem;
+    height: 0.16rem;
+    width: 0.81rem;
+}
+.banner3-arrow-icon .arrow_icon_btn{
+     width: 100%;
+}
+
+
+.index-banner4{
+    width: 100%;
+    position: relative;
+    height:7.4rem;
+    background-color: white;
+    margin-top: -0.6rem;
+}
+.index-banner4 .left-bg{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    height: 6.2rem;
+    width: 5.5rem;
+    background-color:#e90010 ;
+    margin: auto;
+}
+.index-banner4 .left-bg .title{
+    position: absolute;
+    top: 0.75rem;
+    right: 1.3rem;
+    font-size: 0.4rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 255, 255, 255 );
+
+}
+.index-banner4 .swiper-container{
+    width: 15.5rem;
+    height: 3.7rem;
+    position: absolute;
+    top: 2.2rem;
+    left: 3.5rem;
+    margin: auto;
+}
+
+.index-banner4 .swiper-slide .content{
+    border-radius: 1px;
+    position: absolute;
+    width: 3.4rem;
+    left: 0;
+    top: 2.1rem;
+    right: 0;
+    margin: auto;
+    height: 1.6rem;
+    background-color: rgb( 255, 255, 255 );
+}
+.index-banner4 .swiper-slide .content.max-height{
+    left: 0;
+    right: 0;
+    top: 1.6rem;
+    margin: auto;
+    position: absolute;
+    height: 2.1rem;
+}
+
+.index-banner4 .swiper-slide .content.max-height .time{
+    position: absolute;
+    background-color: rgb( 233, 0, 16 );
+    opacity: 0.6;
+    top: -0.15rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.index-banner4 .swiper-slide  .content.max-height .title{
+    margin-top: 0.3rem;
+    margin-bottom: 0.1rem;
+}
+.index-banner4 .swiper-slide .content.max-height .desc{
+    text-align: center;
+    font-size: 0.14rem;
+    width: 2.6rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 119, 119, 119 );
+    margin: auto;
+}
+.index-banner4 .swiper-slide .content.max-height .bottom{
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0.3rem;
+}
+.index-banner4 .swiper-slide  .content .time{
+    text-align: center;
+    font-size: 0.14rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 255, 255, 255 );
+    text-transform: uppercase;
+    width: 1.12rem;
+    height: 0.32rem;
+    line-height: 0.32rem;
+    background-color: rgb( 0, 0, 0 );
+    opacity: 0.2;
+    margin: auto;
+    margin-top: 0.15rem;
+    margin-bottom: 0.15rem;
+}
+.index-banner4 .swiper-slide  .content  .title{
+    text-align: center;
+    font-size: 0.22rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 0, 0, 0 );
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.819;
+}
+.index-banner4 .swiper-slide .content .bottom{
+    width: 2.5rem;
+    height: 0.2rem;
+    margin: auto;
+    margin-top: 0.1rem;
+    display: -webkit-flex;
+    display: flex;
+}
+.index-banner4 .swiper-slide .content .bottom .item{
+    -webkit-flex: 1;
+    flex: 1;
+    text-align: center;
+}
+.index-banner4 .swiper-slide .content .bottom .item img{
+    height: 100%;
+    display: inline-block;
+    padding-right: 0.12rem;
+}
+.index-banner4 .swiper-slide .content .bottom .item span{
+    vertical-align: super;
+    font-size: 0.16rem;
+    display: inline-block
+}
+
+.banner4-arrow-icon{
+    position: absolute;
+    z-index: 2;
+    right: 3rem;
+    top: 1.3rem;
+    height: 0.16rem;
+    width: 0.81rem;
+}
+.banner4-arrow-icon .arrow_icon_btn{
+    width: 100%;
+}
+
+.index-banner5{
+    width: 100%;
+    position: relative;
+}
+
+.index-banner5 .top-bg{
+     width: 100%;
+    height: 4.1rem;
+    background-color: rgb( 45, 45, 46 );
+}
+.index-banner5 .bottom-bg{
+    width: 100%;
+    height: 10rem;
+    background-color: white;
+}
+.index-banner5>.content{
+    position: absolute;
+    top: 0.85rem;
+    left: 0;
+    right: 0;
+    width: 12rem;
+    margin: auto;
+}
+.index-banner5 .content .activity{
+      width: 7.85rem;
+      float: left;
+}
+.index-banner5 .content .activity .top{
+    height: 0.42rem;
+    line-height: 0.42rem;
+    width: 100%;
+}
+.index-banner5 .content .activity .top .title{
+    font-size: 0.40rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 255, 255, 255 );
+    text-transform: uppercase;
+    float: left;
+}
+.index-banner5 .content .activity .top .arrow-icon{
+    float: right;
+    width: 10%;
+  }
+.index-banner5 .content .activity .top .arrow-icon img{
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.index-banner5 .activity-list{
+    width: 100%;
+    position: relative;
+    margin-top: 0.4rem;
+}
+.index-banner5 .activity-list .first{
+    width: 100%;
+    position: relative;
+}
+.index-banner5 .activity-list .first .rectangle{
+    position: absolute;
+    left: 0;
+    top: 7%;
+    right: 0;
+     width: 88%;
+    margin: auto;
+}
+.index-banner5 .activity-list .first  .hot-recommend{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10%;
+}
+.index-banner5 .activity-list .first .text{
+    height: 2rem;
+    width: 100%;
+    position: relative;
+    background-color: rgb( 244, 244, 244 );
+}
+.index-banner5 .activity-list .first .text .time{
+    position: absolute;
+    height: 0.3rem;
+    width: 1.1rem;
+    line-height: 0.3rem;
+    left: 0.45rem;
+    top: 0.35rem;
+    background-color: rgba( 0, 0, 0 ,0.2);
+    text-align: center;
+    font-size: 0.14rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 255, 255, 255 );
+}
+.index-banner5 .activity-list .first .text .right{
+    position: absolute;
+    left: 1.95rem;
+    top: 0;
+    height: 100%;
+}
+.index-banner5 .activity-list .first .text .right p:nth-child(1){
+    margin-top: 0.35rem;
+    margin-bottom: 0.15rem;
+    font-size: 0.22rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 0, 0, 0 );
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.index-banner5 .activity-list .first .text .right p:nth-child(2){
+    font-size: 0.14rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 119, 119, 119 );
+    text-transform: uppercase;
+}
+
+.index-banner5 .activity-list .first .text .right .bottom{
+    width: 2.5rem;
+    height: 0.2rem;
+    margin-top: 0.33rem;
+    display: -webkit-flex;
+    display: flex;
+}
+.index-banner5 .activity-list .first .text .right .bottom .item{
+    -webkit-flex: 1;
+    flex: 1;
+    text-align: center;
+}
+.index-banner5 .activity-list .first .text .right .bottom .item img{
+    height: 100%;
+    display: inline-block;
+    padding-right: 0.12rem;
+}
+.index-banner5 .activity-list .first .text .right .bottom .item span{
+    vertical-align: super;
+    font-size: 0.16rem;
+    display: inline-block
+}
+.index-banner5 .activity-list .list{
+    position: relative;
+    width: 3.7rem;
+}
+
+.index-banner5 .activity-list .list:nth-child(even){
+    float: left;
+}
+.index-banner5 .activity-list .list:nth-child(odd){
+    float: right;
+}
+.index-banner5 .activity-list .list .content{
+    border-radius: 1px;
+    position: absolute;
+    width: 3.4rem;
+    left: 0;
+    top: 2.1rem;
+    right: 0;
+    margin: auto;
+    height: 1.6rem;
+    background-color: rgb( 255, 255, 255 );
+}
+
+.index-banner5 .activity-list .list .content .time{
+    text-align: center;
+    font-size: 0.14rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 255, 255, 255 );
+    text-transform: uppercase;
+    width: 1.12rem;
+    height: 0.32rem;
+    line-height: 0.32rem;
+    background-color: rgb( 0, 0, 0 );
+    opacity: 0.2;
+    margin: auto;
+    margin-top: 0.15rem;
+    margin-bottom: 0.15rem;
+}
+.index-banner5 .activity-list .list  .content  .title{
+    text-align: center;
+    font-size: 0.22rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 0, 0, 0 );
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.819;
+}
+.index-banner5 .activity-list .list .content .bottom{
+    width: 2.5rem;
+    height: 0.2rem;
+    margin: auto;
+    margin-top: 0.1rem;
+    display: -webkit-flex;
+    display: flex;
+}
+.index-banner5 .activity-list .list .content .bottom .item{
+    -webkit-flex: 1;
+    flex: 1;
+    text-align: center;
+}
+.index-banner5 .activity-list .list .content .bottom .item img{
+    height: 100%;
+    display: inline-block;
+    padding-right: 0.12rem;
+}
+.index-banner5 .activity-list .list .content .bottom .item span{
+    vertical-align: super;
+    font-size: 0.16rem;
+    display: inline-block
+}
+
+.index-banner5 .content .hotactivity{
+    width: 3.7rem;
+    float: right;
+}
+.index-banner5 .content .hotactivity .title{
+    text-align: center;
+    font-size: 0.40rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 255, 255, 255 );
+    text-transform: uppercase;
+    height: 0.42rem;
+    line-height: 0.42rem;
+}
+
+.index-banner5 .content .hotactivity .list .desc{
+    border-radius: 1px;
+    position: relative;
+    width: 3.4rem;
+    margin: auto;
+    margin-top: -0.8rem;
+    height: 1.6rem;
+    background-color: rgb( 255, 255, 255 );
+}
+.index-banner5 .content .hotactivity .list  .desc .time{
+    text-align: center;
+    font-size: 0.14rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 255, 255, 255 );
+    text-transform: uppercase;
+    width: 1.12rem;
+    height: 0.32rem;
+    line-height: 0.32rem;
+    background-color: rgb( 0, 0, 0 );
+    opacity: 0.2;
+    margin: auto;
+    margin-top: 0.15rem;
+    margin-bottom: 0.15rem;
+}
+.index-banner5 .content .hotactivity .list  .desc  .title{
+    text-align: center;
+    font-size: 0.22rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 0, 0, 0 );
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.819;
+}
+.index-banner5 .content .hotactivity .list .desc .bottom{
+    width: 2.5rem;
+    height: 0.2rem;
+    margin: auto;
+    margin-top: 0.1rem;
+    display: -webkit-flex;
+    display: flex;
+}
+.index-banner5 .content .hotactivity .list .desc .bottom .item{
+    -webkit-flex: 1;
+    flex: 1;
+    text-align: center;
+}
+.index-banner5 .content .hotactivity .list .desc .bottom .item img{
+    height: 100%;
+    display: inline-block;
+    padding-right: 0.12rem;
+}
+.index-banner5 .content .hotactivity .list .desc .bottom .item span{
+    vertical-align: super;
+    font-size: 0.16rem;
+    display: inline-block
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.index_swiperNum{
+    height: 0.8rem;
+    width: 1rem;
+    position: absolute;
+    left: 2.2rem;
+    text-align: center;
+    line-height: 0.8rem;
+    top: 4rem;
+}
+.index_swiperNum .currnum{
+    display: inline-block;
+    font-size: 0.36rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 255, 255, 255 );
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.index_swiperNum .line{
+    color: rgb( 255, 255, 255 );
+    display: inline-block;
+    padding-left: 0.05rem;
+    padding-right: 0.05rem;
+
+}
+.index_swiperNum .total{
+    display: inline-block;
+    color: rgb( 255, 255, 255 );
+}
+.index_swiperBtn2 {
+    height: 2.1rem;
+    width: 0.95rem;
+    position: absolute;
+    left:2.1rem;
+    top: 2.2rem;
+}
+
+
+.index_next_vertical{
+    width: 0.5rem;
+    height: 0.5rem;
+    background: url(./../images/turn_right_def.png) no-repeat center;
+    background-size: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.index_prev_vertical{
+    width: 0.5rem;
+    height: 0.5rem;
+    background: url(./../images/turn_left_def.png) no-repeat center;
+    background-size: 100%;
+    position: absolute;
+    top: 40%;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+
+.swiper-pagination-bullet {
+    width: 0.08rem;
+    height: 0.09rem;
+    text-align: center;
+    opacity: 1;
+    background: none;
+    background-image: url("../images/swpier-pag-icon3.png");
+    background-size: 100%;
+}
+.swiper-pagination-bullet-active {
+    width: 0.08rem;
+    height: 0.09rem;
+    background: none;
+    background-image: url("../images/swpier-pag-icon-active2.png");
+    background-size: 100%;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{
+    margin: 0 5px;
+}
+
+
+
+
+
+
+
+.arrow_icon_btn{
+    animation: arrow_icon_btn 1s linear infinite;
+
+}
+
+
+@keyframes arrow_icon_btn {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 1;
+    }
+}

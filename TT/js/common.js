@@ -248,4 +248,48 @@ function timeago(dateTimeStamp){   //dateTimeStamp 2019-09-24 12:11:25 转换为
     return result;
 }
 
+function IsLoad(_url,fun){
+    $.ajax({
+        url:_url,
+        type:"get",
+        success:function(){
+            //说明请求的url存在，并且可以访问
+            if($.isFunction(fun)){
+                fun(true);
+            }
+        },
+        statusCode:{
+            404:function(){
+                //说明请求的url不存在
+                if($.isFunction(fun)){
+                    fun(false);
+                }
+            }
+        }
+    });
+}
 
+
+//判断请求的地址是否有效
+function NetPing(url,Done) {
+    $.ajax({
+        type: "GET",
+        cache: false,
+        url: url,
+        async: false,
+        data: "",
+        success: function() {
+            Done(true);
+        },
+        error: function() {
+            Done(false);
+        }
+    });
+
+}
+
+// NetPing('http://219.143.155.183:8899/Upload/20190823/8b636b03-10c5-4ec3-a5ff-35379453d9ce.jpg',function (res) {
+//     if(!res){
+//         alert('地址无效');
+//     }
+// })

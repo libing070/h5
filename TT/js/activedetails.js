@@ -20,8 +20,23 @@ $(function () {
                $(".information").find(".title").html(data.title);
                 $(".information").find(".createTime").html("发布时间："+data.createTime.split(" ")[0]);
                 $(".information").find(".createUserName").html("发布者："+(data.createUserName==""?"暂无":data.createUserName));
-                var picUrl=data.picUrl==null?"./images/details-s1.jpg":data.picUrl;
-                $(".information").find(".images .swiper-wrapper").append("<div class='swiper-slide'><img class='video-bg' src='"+picUrl+"'></div>");
+             if(data.multimediaType==2){
+                 $(".information").find(".videoss").show();
+                 $(".information").find(".videoss video").attr("src",data.picUrl);
+             }else{
+                 $(".information").find(".images").show();
+                 var url= '';
+                 NetPing(data.picUrl,function (res) {
+                     if(!res){
+                         url='./images/404.png'
+                     }else{
+                         url=data.picUrl;
+                     }
+                 })
+
+                 $(".information").find(".images .swiper-wrapper").append("<div class='swiper-slide'><img class='video-bg' src='"+url+"'></div>");
+             }
+                $(".information").find('.content-text').append(data.content);
             }
         );
     }

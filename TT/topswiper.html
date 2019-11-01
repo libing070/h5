@@ -60,7 +60,15 @@
                     var str = '';
                     res.data.keyVersionList.forEach((ele, k) => {
                         str+=' <div class="swiper-slide">';
-                        str+='  <img style="width: 100%" src="'+ele.KeyVisionUrl+'">';
+                        var url= '';
+                        NetPing(ele.KeyVisionUrl,function (res) {
+                            if(!res){
+                                url='./images/404.png'
+                            }else{
+                                url=ele.KeyVisionUrl;
+                            }
+                        })
+                        str+='  <img style="width: 100%" src="'+url+'">';
                         // str+='   <div class="content">';
                         // str+='   <p class="ani_1" style="width: 10%;margin-bottom: 0.4rem"><img  style="width: 100%" src="images/audi-log.png"></p>';
                         // str+='    <p class="ani_2">2018年奥迪 #Goooo Home#</p>';

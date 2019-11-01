@@ -3,7 +3,7 @@ $(function () {
     //api/Forum/GetActivityPagingList(TT_027)获取活动分页列表
 
     function loadList(type ,pageIndex) {
-        $.request('/api/Forum/GetForumPagingList', {
+        $.request('/api/Forum/GetActivityPagingList', {
                 timestamp: ts(),
                 activityType:type,// 1 进行中 2 已结束
                 pageIndex:pageIndex||1,
@@ -32,8 +32,15 @@ $(function () {
                     var str = '';
                     res.data.forumList.forEach((ele, k) => {
                         str+='<div forumId="'+ele.id+'" class="box ">';
-                       // str+='<img style="width: 100%" src="images/index-banner3-s1.png">';
-                         str+='<img forumId="'+ele.id+'" style="width: 100%" class="click-img" src="'+ele.picUrl+'">';
+                        var url= '';
+                        NetPing(ele.picUrl,function (res) {
+                            if(!res){
+                                url='./images/404.png'
+                            }else{
+                                url=ele.picUrl;
+                            }
+                        })
+                         str+='<img forumId="'+ele.id+'" style="width: 100%" class="click-img" src="'+url+'">';
                         str+='<div class="content">';
                         str+='<p class="time">'+ele.createTime+'</p>';
                         str+='<p class="title">'+ele.title+'</p>';

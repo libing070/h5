@@ -1,0 +1,1954 @@
+    .wap {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    
+    img {
+        width: 100%;
+    }
+    
+    a {
+        color: #fff;
+        display: block;
+    }
+    
+    span {
+        display: inline-block;
+    }
+    /*  */
+    
+    .i-header {
+        width: 100%;
+        height: 0.9rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+    
+    .wap-nav {
+        width: 100%;
+        height: 0.9rem;
+        background: rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0.15rem 0.5rem;
+        z-index: 2;
+    }
+    
+    .wap-nav a {
+        /* display: inline-block; */
+    }
+    
+    .wap-menu {
+        width: 0.6rem;
+        float: left;
+    }
+    
+    .wap-logo {
+        width: 1.65rem;
+        margin: 0.07rem auto;
+    }
+    
+    .wap-nav_my {
+        width: 0.6rem;
+        position: absolute;
+        top: 0.15rem;
+        right: 1.4rem;
+    }
+    
+    .wap-nav_close {
+        width: 0.6rem;
+        position: absolute;
+        top: 0.15rem;
+        right: 0.5rem;
+    }
+
+    .wap-nav_reg {
+        width: 0.6rem;
+        position: absolute;
+        top: 0.15rem;
+        right: 0.5rem;
+    }
+    
+    .wap_menuBox {
+        display: none;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 11;
+    }
+    
+    .wap_menuBox img {
+        width: 0.6rem;
+        position: absolute;
+        top: 0.15rem;
+        left: 0.5rem;
+    }
+    
+    .wap_menuBox ul {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .wap_menuBox ul li {
+        text-align: center;
+        font-family: 'SourceHanSansCN-Regular';
+        font-size: 0.32rem;
+        margin: 0.35rem 0;
+        color: #fff;
+    }
+    
+    .wap-banner {
+        width: 100%;
+        position: relative;
+    }
+    
+    .slide_cont {
+        width: 85%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    
+    .trademark {
+        width: 1.92rem;
+        margin: 0 auto 0.8rem;
+    }
+    
+    .slide_cont p {
+        color: #fff;
+        font-size: 0.45rem;
+        font-family: 'SourceHanSansCN-Bold';
+    }
+    
+    .turnBtn {
+        width: 0.8rem;
+        margin: 0.5rem auto 0;
+    }
+    
+    .ttSwiper_btn {
+        width: 2.3rem;
+        height: 0.8rem;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 1;
+    }
+    
+    .ttSwiper_btn .wapBanner_prev {
+        width: 0.5rem;
+        height: 0.5rem;
+        left: 0.4rem;
+        top: 0.6rem;
+        background: url('./../images/wap/turn_left_def.png') no-repeat center;
+        background-size: 100%;
+    }
+    
+    .ttSwiper_btn .wapBanner_next {
+        width: 0.5rem;
+        height: 0.5rem;
+        right: 0.4rem;
+        top: 0.6rem;
+        background: url('./../images/wap/turn_right_def.png') no-repeat center;
+        background-size: 100%;
+    }
+    
+    .wapBanner_pagination {
+        text-align: left;
+        padding-left: 0.2rem;
+    }
+    
+    .swiper-pagination-bullet {
+        width: 0.2rem;
+        height: 0.2rem;
+    }
+    
+    .swiper-pagination-bullet-active {
+        background: #e90010;
+    }
+    
+    .readRank {
+        width: 100%;
+        position: relative;
+        background: #2d2d2e;
+    }
+    
+    .readBox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .read_txt {
+        display: none;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 0.15rem 0.2rem;
+        color: #fff;
+        font-size: 0.18rem;
+        font-family: 'SourceHanSansCN-Bold';
+        background: rgba(0, 0, 0, 0.5);
+    }
+    
+    .zhbg {
+        width: 0.5rem;
+        height: 0.5rem;
+        background: #fff;
+        border-radius: 50%;
+        line-height: 0.5rem;
+        text-align: center;
+        color: #333;
+        font-size: 0.16rem;
+        float: left;
+        margin-right: 0.2rem;
+        margin-top: 0.1rem;
+    }
+    
+    .read_txt p {
+        font-size: 0.12rem;
+    }
+    
+    .jiaobiao {
+        width: 0.63rem;
+        height: 0.63rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+    }
+    
+    .article {
+        background: url('./../images/wap/article-icon.png') no-repeat;
+        background-size: 100%;
+    }
+    
+    .finished {
+        background: url('./../images/wap/finished-icon.png') no-repeat;
+        background-size: 100%;
+    }
+    
+    .knowledge {
+        background: url('./../images/wap/knowledge-icon.png') no-repeat;
+        background-size: 100%;
+    }
+    
+    .popular {
+        background: url('./../images/wap/popular-icon.png') no-repeat;
+        background-size: 100%;
+    }
+    
+    .paginationBox {
+        width: 100%;
+        height: 1.3rem;
+    }
+    
+    .readRankpagination {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+    
+    .readRankpagination .swiper-pagination-bullet {
+        margin: 0 4px;
+    }
+    
+    .wap-article {
+        width: 100%;
+        position: relative;
+        padding: 0.5rem 0 0.6rem 0;
+        overflow: hidden;
+    }
+    
+    .wap-art-title {
+        width: 2.8rem;
+        height: 6.2rem;
+        background: #e90010;
+        float: left;
+    }
+    
+    .wap-art-title p {
+        font-size: 0.4rem;
+        font-family: 'SourceHanSansCN-ExtraLight';
+        color: #fff;
+        margin: 0.8rem 0 0 0.5rem;
+    }
+    
+    .artSwiper {
+        width: 100%;
+        position: absolute;
+        top: 63%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+    
+    .kldSwiper {
+        width: 100%;
+        position: absolute;
+        top: 63%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+    
+    .art_txt {
+        width: 100%;
+        position: relative;
+    }
+    
+    .art_txt div {
+        background: #fff;
+        width: 95%;
+        margin: 0 auto;
+        padding: 0.15rem 0.3rem;
+        text-align: center;
+        position: relative;
+        top: -0.5rem;
+        box-shadow: 0 5px 5px #eaeaea;
+    }
+    
+    .art_time {
+        font-size: 0.16rem;
+        font-family: 'SourceHanSansCN-Light';
+        color: #fff;
+        background: #cccccc;
+        padding: 0 0.15rem;
+        margin-bottom: 0.2rem;
+    }
+    
+    .art_cont {
+        font-size: 0.26rem;
+        height: 0.8rem;
+        font-family: 'SourceHanSansCN-Bold';
+    }
+    
+    .art_icon {
+        /* margin-top: 0.2rem; */
+        margin-bottom: 0.1rem;
+    }
+    
+    .art_icon span {
+        font-size: 0.18rem;
+        font-family: 'SourceHanSansCN-Normal';
+        margin: 0 0.1rem;
+    }
+    
+    .art_icon span i {
+        display: inline-block;
+        width: 0.3rem;
+        height: 0.3rem;
+        background: url('./../images/wap/message-icon.png') no-repeat;
+        background-size: 100%;
+        vertical-align: text-top;
+    }
+    
+    .art_icon span:nth-child(2) i {
+        background: url('./../images/wap/view-icon.png') no-repeat;
+        background-size: 100%;
+    }
+    
+    .art_icon span:nth-child(3) i {
+        background: url('./../images/wap/heart-icon.png') no-repeat;
+        background-size: 100%;
+    }
+    
+    .artTurnBtn {
+        position: absolute;
+        top: 1.5rem;
+        right: 0.5rem;
+        margin: 0;
+    }
+    
+    .kldTurnBtn {
+        position: absolute;
+        top: 1.5rem;
+        right: 0.5rem;
+        margin: 0;
+    }
+    /* 活动 */
+    
+    .activity {
+        width: 100%;
+        position: relative;
+    }
+    
+    .active_title {
+        width: 100%;
+        position: relative;
+    }
+    
+    .actTurnBtn {
+        position: absolute;
+        top: 1rem;
+        right: 0.5rem;
+        margin: 0;
+    }
+    
+    .active_banner {
+        width: 100%;
+        position: relative;
+    }
+    
+    .pop-recomm {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0.9rem;
+    }
+    
+    .active_cont {
+        width: 100%;
+        padding: 0.35rem 0.5rem;
+        overflow: hidden;
+        display: flex;
+        background: #f4f4f4;
+    }
+    
+    .active_cont_left {
+        flex: 0 0 1.5rem;
+        margin-right: 0.35rem;
+    }
+    
+    .active_cont_left span {
+        padding: 0.05rem 0.15rem;
+        text-align: center;
+        color: #fff;
+        font-size: 0.16rem;
+        font-family: 'SourceHanSansCN-Light';
+        background: #c3c3c3;
+    }
+    
+    .active_cont_right {
+        flex: auto;
+    }
+    
+    .active_p1 {
+        font-size: 0.26rem;
+        font-family: 'SourceHanSansCN-Bold';
+        color: #000;
+    }
+    
+    .active_p2 {
+        font-size: 0.18rem;
+        font-family: 'SourceHanSansCN-Light';
+        color: #777777;
+        margin-top: 0.3rem;
+    }
+    
+    .act_icon {
+        margin-top: 0.2rem;
+    }
+    
+    .act_icon span {
+        margin: 0 0.6rem 0 0;
+    }
+    
+    .activeSwiper {
+        margin-top: 0.5rem;
+    }
+    
+    .activeSwiper .art_txt div {
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    }
+    /* 热门活动 */
+    
+    .popular_recommend {
+        width: 100%;
+        padding: 0.2rem;
+        /* margin-bottom: 1.35rem; */
+    }
+    
+    .wap_popular {
+        width: 100%;
+        border: 1px solid #eeeeee;
+        padding: 0.6rem 0.3rem;
+    }
+    
+    .pr_cont {
+        width: 100%;
+        overflow: hidden;
+        margin-top: 0.5rem;
+    }
+    
+    .pr_cont li {
+        width: 49%;
+        margin-bottom: 0.5rem;
+    }
+    
+    .pr_cont li:nth-child(2n-1) {
+        float: left;
+    }
+    
+    .pr_cont li:nth-child(2n) {
+        float: right;
+    }
+    
+    .pr_img {
+        width: 100%;
+        position: relative;
+    }
+    
+    .pr_img_time {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.5);
+        font-size: 0.16rem;
+        font-family: 'SourceHanSansCN-Light';
+        color: #fff;
+        padding: 0.07rem 0.15rem;
+        ;
+    }
+    
+    .pop_recomm_icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0.77rem;
+    }
+    
+    .pr_txt_cont {
+        width: 100%;
+    }
+    
+    .pr_txt_cont p:nth-child(1) {
+        font-size: 0.26rem;
+        color: #000;
+        font-family: 'SourceHanSansCN-Bold';
+        margin: 0.25rem 0;
+    }
+    
+    .pr_txt_cont p:nth-child(2) {
+        font-size: 0.16rem;
+        color: #777777;
+        font-family: 'SourceHanSansCN-Light';
+    }
+    
+    .footer {
+        margin-top: 1.35rem;
+        width: 100%;
+        background: #f4f4f4;
+    }
+    
+    .footer_1 {
+        width: 100%;
+        padding: 0.9rem 0.5rem;
+        display: flex;
+        /* margin-bottom: 0.5rem; */
+    }
+    
+    .footer_1 .footer_img {
+        width: 1.5rem;
+        float: left;
+        margin-right: 0.8rem;
+        flex: 0 0 1.5rem;
+    }
+    
+    .footer_1 div {
+        float: right;
+    }
+    
+    .footer_2 {
+        width: 100%;
+        position: relative;
+        padding: 0 0.5rem 0.9rem;
+    }
+    
+    .footer_nav {
+        border-top: 1px solid #d5d5d5;
+        width: 100%;
+        text-align: center;
+        padding-top: 0.5rem;
+        font-size: 0.2rem;
+        font-family: 'SourceHanSansCN-Normal';
+    }
+    
+    .footer_contact {
+        width: 100%;
+        text-align: center;
+        font-size: 0.2rem;
+        font-family: 'SourceHanSansCN-Regular';
+        color: #777777;
+        margin-top: 0.5rem;
+    }
+    
+    .footer_contact i {
+        display: inline-block;
+        width: 0.3rem;
+        height: 0.3rem;
+        line-height: 0.3rem;
+        text-align: center;
+        background: #c3c3c3;
+        border-radius: 50%;
+        font-style: normal;
+    }
+    
+    .footer_contact p {
+        margin-top: 0.2rem;
+    }
+    /* 文章 */
+    
+    .articleDiv {
+        width: 100%;
+        margin-top: 0.65rem;
+        position: relative;
+    }
+    
+    .acticle_cont_list {
+        width: 49%;
+    }
+    
+    .acticle_cont {
+        margin-top: 0.4rem;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .acticle_cont_list:nth-child(2n-1) {
+        float: left;
+    }
+    
+    .acticle_cont_list:nth-child(2n) {
+        float: right;
+    }
+    
+    .articleH .footer {
+        margin-top: 0;
+    }
+    
+    .case_loodMore {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 1.2rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #e3e3e3;
+    }
+    
+    .case_loodMore img {
+        width: 0.33rem;
+        display: inline-block;
+    }
+    
+    .case_loodMore p {
+        font-size: 0.16rem;
+        font-family: 'SourceHanSansCN-Light';
+    }
+    
+    .ongoing_title {
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    .ongoing {
+        width: 100%;
+        margin-top: 0.4rem;
+    }
+    
+    .ongoing .acticle_cont_list {
+        width: 100%;
+    }
+    
+    .kv {
+        overflow: hidden;
+    }
+    /* 详情 */
+    
+    .details {
+        width: 100%;
+        background: #fff;
+        padding: 0.7rem 0.55rem 0;
+        position: relative;
+        top: -0.9rem;
+    }
+    /* .details {
+    width: 63.5%;
+    margin: 0 auto;
+    padding: 0.6rem 1rem;
+    background: #fff;
+    position: relative;
+    top: -0.9rem;
+} */
+    
+    .D-locl {
+        position: absolute;
+        top: -0.5rem;
+        left: 0.55rem;
+        color: #fff;
+        font-size: 0.14rem;
+        font-family: 'SourceHanSansCN-Normal';
+    }
+    
+    .D-title {
+        font-size: 0.35rem;
+        color: #000;
+        text-align: center;
+        font-family: 'SourceHanSansCN-Bold';
+        padding-bottom: 0.6rem;
+        border-bottom: 1px solid #e5e5e5;
+        margin-bottom: 0.6rem;
+    }
+    
+    .timeBox {
+        text-align: center;
+        color: #777777;
+        font-size: 0.14rem;
+        margin-top: 0.45rem;
+        margin-bottom: 0.7rem;
+        padding-bottom: 0.3rem;
+        border-bottom: 1px solid #e5e5e5;
+        position: relative;
+        font-family: 'SourceHanSansCN-Normal';
+    }
+    
+    .timeBox .time {
+        margin-right: 0.4rem;
+    }
+    
+    .share {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    
+    .share i {
+        width: 0.16rem;
+        height: 0.16rem;
+        background: url('./../images/wap/share_icon.png') no-repeat;
+        background-size: 100%;
+        display: inline-block;
+        vertical-align: text-bottom;
+        margin-right: 0.1rem;
+    }
+    
+    .details p {
+        margin-bottom: 0.5rem;
+        font-size: 0.14rem;
+        font-family: 'SourceHanSansCN-Normal';
+    }
+    
+    .Adver {
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 0.6rem;
+    }
+    
+    .Adver img:first-child {
+        margin-right: 2%;
+    }
+    
+    .Adver img {
+        float: left;
+        width: 49%;
+    }
+    
+    .signUp {
+        width: 100%;
+        border-top: 1px solid #e5e5e5;
+        /* margin: 0 0.55rem; */
+        text-align: center;
+    }
+    
+    .signUp a {
+        display: inline-block;
+        color: #fff;
+        background: #e90010;
+        padding: 0.25rem 0.7rem;
+        font-size: 0.2rem;
+        font-family: 'SourceHanSansCN-Regular';
+        border-radius: 0.1rem;
+        margin: 0.8rem auto 0;
+    }
+    
+    .mediaBox {
+        width: 100%;
+    }
+    
+    .mediaBox .detailImg {
+        display: none;
+        width: 100%;
+    }
+    
+    .mediaBox .detailVideo {
+        display: none;
+        position: relative;
+    }
+    
+    .mediaBox .detailVideo video {
+        width: 100%;
+    }
+    
+    .videoBtn {
+        width: 1.3rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .detail-ct .art_icon {
+        width: 80%;
+        text-align: center;
+        margin: 0.3rem auto 0.4rem;
+    }
+    
+    .art_icon span {
+        /*vertical-align: text-bottom;*/
+    }
+    
+    .art_icon span i {
+        display: inline-block;
+        width: 0.3rem;
+        height: 0.3rem;
+        background: url(./../images/wap/message-icon.png) no-repeat;
+        background-size: 100%;
+        vertical-align: top;
+        margin: 0 0.05rem 0 0;
+        position: relative;
+        /*top: -0.02rem;*/
+    }
+    
+    .detail-ct .share {
+        position: static;
+    }
+    
+    .txtCont {
+        width: 100%;
+        padding-bottom: 0.5rem;
+        /* margin-bottom: 1rem; */
+        border-bottom: 1px solid #e5e5e5;
+    }
+    
+    .interval {
+        width: 100%;
+        height: 0.4rem;
+        ;
+        background: #ededed;
+    }
+    /* 评论 */
+    
+    .comment {
+        padding: 0.7rem 0.55rem 0;
+    }
+    
+    .comment h1 {
+        font-size: 0.22rem;
+        font-family: 'SourceHanSansCN-Normal';
+        margin-bottom: 0.3rem;
+    }
+    
+    .textareaBox {
+        width: 100%;
+        overflow: hidden;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #d5d5d5;
+    }
+    
+    .textareaBox textarea {
+        border: 1px solid #d5d5d5;
+        width: 100%;
+        height: 1rem;
+    }
+    
+    .tijiao {
+        float: right;
+        /* display: inline-block; */
+        font-size: 0.2rem;
+        font-family: 'SourceHanSansCN-Regular';
+        color: #fff;
+        padding: 0.25rem 0.7rem;
+        text-align: center;
+        line-height: 0.25rem;
+        background: #2a2a2a;
+        border-radius: 0.1rem;
+        margin-top: 0.1rem;
+    }
+    
+    .replyComment {
+        width: 100%;
+        padding: 0.7rem 0.55rem 0;
+    }
+    
+    .replyComment h1 {
+        font-size: 0.22rem;
+        font-family: 'SourceHanSansCN-Normal';
+        margin-bottom: 0.3rem;
+    }
+    
+    .commentBox {
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .commentBox .commentList {
+        width: 100%;
+        border-top: 1px solid #d5d5d5;
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+        overflow: hidden;
+    }
+    
+    .commentList:last-child {
+        border-bottom: 1px solid #d5d5d5;
+    }
+    
+    .cm_head {
+        width: 10%;
+        float: left;
+    }
+    
+    .cm_cont {
+        width: 65%;
+        float: left;
+        padding-left: 0.15rem;
+    }
+    
+    .cm_icon {
+        width: 25%;
+        float: left;
+        padding-top: 0.11rem;
+    }
+    
+    .avator {
+        width: 0.6rem;
+        height: 0.6rem;
+        border-radius: 50%;
+        position: relative;
+        background: #e9e9e9;
+    }
+    
+    .avator img {
+        position: absolute;
+        width: 0.3rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .cm_icon .art_icon {
+        width: 100%;
+        margin: 0;
+        text-align: right;
+    }
+    
+    .cm_icon .art_icon span {
+        margin: 0;
+    }
+    
+    .cm_icon .art_icon span:nth-child(1) {
+        margin-right: 0.2rem;
+    }
+    
+    .cm_icon span:nth-child(2) i {
+        background: url('./../images/wap/heart-icon.png') no-repeat;
+        background-size: 100%;
+    }
+    
+    .cm_title {
+        margin-top: 0.1rem;
+        margin-bottom: 0.2rem;
+    }
+    
+    .cm_name {
+        font-size: 0.18rem;
+        font-family: 'SourceHanSansCN-Normal';
+        margin-right: 0.3rem;
+    }
+    
+    .cm_time {
+        font-size: 0.16rem;
+        font-family: 'SourceHanSansCN-Light';
+        color: #777777;
+    }
+    
+    .cm_txt {
+        font-size: 0.18rem;
+        font-family: 'SourceHanSansCN-Regular';
+        color: #777777;
+    }
+    
+    .reply {
+        margin-top: 0.2rem;
+        width: 90%;
+        background: #f5f5f5;
+        overflow: hidden;
+        float: right;
+    }
+    
+    .reply li {
+        overflow: hidden;
+        padding: 0.1rem 0.2rem 0.3rem;
+    }
+    
+    .reply .cm_name {
+        margin-right: 0;
+    }
+    
+    .reply .cm_sour {
+        font-size: 0.18rem;
+        font-family: 'SourceHanSansCN-Normal';
+        color: #777777;
+    }
+    
+    .reply .cm_icon {
+        width: 30%;
+    }
+    
+    .reply .cm_cont {
+        width: 70%;
+    }
+    
+    .reply .remove {
+        font-family: 'SourceHanSansCN-Normal';
+        font-size: 0.18rem;
+        /*vertical-align: text-top;*/
+        position: relative;
+        /*top: -0.1rem;*/
+    }
+    
+    .reply_textarea {
+        float: left;
+        width: 100%;
+        padding-left: 0.15rem;
+        margin-top: 0.2rem;
+    }
+    
+    .reply_textarea textarea {
+        width: 100%;
+        border-color: #ededed;
+        height: 1rem;
+    }
+    
+    .publish {
+        float: right;
+        margin-top: 0.3rem;
+    }
+    
+    .publish a {
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.1rem;
+        background: #2a2a2a;
+        font-family: 'SourceHanSansCN-Regular';
+        font-size: 0.2rem;
+    }
+    
+    .loadMore {
+        width: 100%;
+        text-align: center;
+        margin-top: 0.45rem;
+    }
+    
+    .loadMore img {
+        width: 0.35rem;
+        margin: 0 auto;
+    }
+    
+    .loadMore p {
+        text-align: center;
+        font-family: 'SourceHanSansCN-Light';
+        font-size: 0.22rem;
+    }
+    
+    .swiper-pagination-bullet {
+        background: #fff;
+    }
+    
+    .swiper-pagination-bullet-active {
+        background: #e90010;
+    }
+    
+    .centers .wap-nav {
+        border-bottom: 3px solid #d7000f;
+    }
+    
+    .centers .wap-menu,
+    .centers .wap-nav_my,
+    .centers .wap-nav_close {
+        width: 0.32rem;
+        position: absolute;
+        top: 0.3rem;
+    }
+    
+    .centers .wap_menuBox img {
+        width: 0.32rem;
+        top: 0.3rem;
+    }
+    
+    .L-R {
+        position: relative;
+        width: 100%;
+        margin-top: 0.45rem;
+    }
+    
+    .c-title {
+        font-family: 'SourceHanSansCN-Regular';
+        font-size: 0.16rem;
+        color: #fff;
+        position: absolute;
+        left: 0.3rem;
+        bottom: 0.3rem;
+    }
+    
+    .c-l-r {
+        background: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 0.7rem 0;
+        width: 5rem;
+    }
+    
+    .c-l-r h1 {
+        font-family: 'SourceHanSansCN-ExtraLight';
+        font-size: 0.32rem;
+        color: #333;
+        text-align: center;
+        margin-bottom: 0.6rem;
+    }
+    
+    .login {
+        /*display: block;*/
+    }
+    
+    .regist {
+        /*display: none;*/
+        padding: 0.3rem 0;
+    }
+    
+    .regist h1 {
+        margin-bottom: 0.3rem;
+    }
+    
+    .forget-pwd {
+        /*display: none;*/
+    }
+    
+    .c-l-r input::-webkit-input-placeholder {
+        font-size: 0.18rem;
+        font-family: 'SourceHanSansCN-Regular';
+        color: #777777;
+    }
+    
+    .c-l-r input:-moz-placeholder {
+        font-size: 0.18rem;
+        font-family: 'SourceHanSansCN-Regular';
+        color: #777777;
+    }
+    
+    .c-l-r input:-ms-input-placeholder {
+        font-size: 0.18rem;
+        font-family: 'SourceHanSansCN-Regular';
+        color: #777777;
+    }
+    
+    .form-div {
+        width: 3.5rem;
+        margin: 0 auto;
+        font-family: 'SourceHanSansCN-Regular';
+        font-size: 0.18rem;
+    }
+    
+    .form-div li {
+        border-bottom: 1px solid #e5e5e5;
+        width: 100%;
+        display: flex;
+        padding-bottom: 0.2rem;
+        margin-bottom: 0.2rem;
+    }
+    
+    .form-div li label {
+        /* display: inline-block; */
+        width: 1rem;
+        flex: 0 0 1rem;
+    }
+    
+    .form-div li input {
+        flex: 1;
+        width: 100%;
+    }
+    
+    .verCode {
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .phone {
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 0.2rem;
+    }
+    
+    .phone .verCode-input {
+        width: 60%;
+    }
+    
+    .phone .verCode-img {
+        padding-bottom: 0.225rem;
+    }
+    
+    .phone .verCode-img a {
+        color: #000;
+        font-family: 'SourceHanSansCN-Regular';
+        font-size: 0.18rem;
+        text-align: center;
+    }
+    
+    .clause {
+        text-align: center;
+    }
+    
+    .clause input {
+        vertical-align: text-top;
+        position: relative;
+        top: 0.03rem;
+    }
+    
+    .clause span {
+        font-family: 'SourceHanSansCN-Regular';
+        font-size: 0.18rem;
+        color: #000;
+        vertical-align: text-top;
+    }
+    
+    .verCode-input {
+        float: left;
+        width: 65%;
+        display: flex;
+        padding-bottom: 0.2rem;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    
+    .verCode-input label {
+        width: 1rem;
+        flex: 0 0 1rem;
+    }
+    
+    .verCode-input input {
+        width: 100%;
+        flex: 1;
+    }
+    
+    .verCode-img {
+        float: right;
+        width: 30%;
+        padding-bottom: 0.2rem;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    
+    .verCode-img img {
+        height: 0.32rem;
+    }
+    
+    .forget {
+        width: 100%;
+        display: flex;
+        text-align: center;
+        margin-top: 0.35rem;
+    }
+    
+    .forget a {
+        color: #333;
+        font-size: 0.18rem;
+        font-family: 'SourceHanSansCN-Regular';
+        flex: 1;
+    }
+    
+    .loginBtn {
+        font-size: 0.2rem;
+        font-family: 'SourceHanSansCN-Regular';
+        width: 100%;
+        background: #d7000f;
+        text-align: center;
+        padding: 0.25rem 0;
+        border-radius: 0.1rem;
+        margin-top: 0.4rem;
+    }
+    
+    .wx_icon {
+        width: 100%;
+        margin-top: 0.2rem;
+    }
+    
+    .wx_icon img {
+        width: 0.6rem;
+        margin: 0 auto 0;
+    }
+    
+    .centers .wap-article {
+        padding-top: 0rem;
+    }
+    
+    .centers .wap-art-title {
+        background: none;
+    }
+    
+    .centers .wap-art-title p {
+        font-size: 0.22rem;
+        font-family: 'SourceHanSansCN-Normal';
+        color: #333;
+        margin-top: 1rem;
+    }
+    
+    .centers .footer {
+        margin-top: 0rem;
+    }
+    
+    .centers .artTurnBtn {
+        top: 1rem;
+    }
+    
+    .centers .kv {
+        margin-top: 0.45rem;
+    }
+    
+    .mc_info {
+        width: 100%;
+        background: #fff;
+    }
+    
+    .mc_title {
+        position: relative;
+        width: 90%;
+        margin: 0 auto;
+        padding-top: 0.7rem;
+        padding-bottom: 0.3rem;
+    }
+    
+    .mc_title img {
+        width: 1.2rem;
+        position: absolute;
+        top: -0.6rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .mc_title p {
+        text-align: center;
+        font-size: 0.22rem;
+    }
+    
+    .mc_name {
+        font-family: 'SourceHanSansCN-Medium';
+        font-size: 0.22rem;
+    }
+    
+    .mc_welcome {
+        font-family: 'SourceHanSansCN-ExtraLight';
+        font-size: 0.18rem;
+    }
+    
+    .mc_nav {
+        width: 90%;
+        margin: 0 auto 0.25rem;
+        padding: 0.25rem 0;
+        border-top: 1px solid #e5e5e5;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    
+    .mc_nav ul {
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .mc_nav ul li {
+        float: left;
+        width: 20%;
+    }
+    
+    .mc_nav ul li a {
+        text-align: center;
+        color: #000;
+        font-family: 'SourceHanSansCN-Regular';
+        font-size: 0.2rem;
+    }
+    
+    .mc_nav .mc_act a {
+        color: #d7000f !important;
+    }
+
+    .release_act a{
+        color: #d7000f !important;
+
+    }
+    .mc_subNav {
+        width: 100%;
+        background: #ededed;
+        padding-top: 0.4rem;
+    }
+    
+    .mc_subNav ul {
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .mc_subNav ul li {
+        width: 1.7rem;
+        height: 1rem;
+        float: left;
+    }
+    
+    .mc_subNav ul li a {
+        width: 100%;
+        height: 100%;
+        color: #000;
+        font-size: 0.22rem;
+        font-family: 'SourceHanSansCN-Regular';
+        text-align: center;
+        line-height: 1rem;
+    }
+    
+    .mc_subNav .mc_subAct {
+        background: #fff;
+    }
+    
+    .mg_subNav {
+        width: 100%;
+        background: #ededed;
+        padding-top: 0.4rem;
+    }
+    
+    .mg_subNav ul {
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .mg_subNav ul li {
+        width: 1.7rem;
+        height: 1rem;
+        float: left;
+    }
+    
+    .mg_subNav ul li a {
+        width: 100%;
+        height: 100%;
+        color: #000;
+        font-size: 0.22rem;
+        font-family: 'SourceHanSansCN-Regular';
+        text-align: center;
+        line-height: 1rem;
+    }
+    
+    .mg_subNav .mg_subAct {
+        background: #fff;
+    }
+    
+    .mc_content {
+        width: 90%;
+        margin: 0.3rem auto 0;
+    }
+    
+    .publish_mc_title {
+        width: 100%;
+        border: 1px solid #ededed;
+        padding: 0.18rem 0.15rem;
+    }
+    
+    .UEditor {
+        width: 100%;
+        margin-top: 0.3rem;
+        border: 1px solid #ededed;
+    }
+
+
+    .upload {
+        margin-top: 0.3rem;
+        margin-bottom: 0.7rem;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .upload .file{
+        position: absolute;
+        width: 4.5rem;
+        height: 0.6rem;
+        opacity: 0;
+    }
+    .upImg {
+        float: left;
+        width: 4.5rem;
+        height: 0.6rem;
+        border: 1px solid #e5e5e5;
+    }
+    
+    .upBtn {
+        float: right;
+        width: 1.7rem;
+        height: 0.6rem;
+        font-family: 'SourceHanSansCN-Regular';
+        font-size: 0.2rem;
+        text-align: center;
+        line-height: 0.6rem;
+        background: #2a2a2a;
+        border-radius: 0.1rem;
+    }
+
+    .upload .pickfileProcess{
+        position: absolute;
+        bottom: 0;
+        width: 4.5rem;
+
+    }
+    .upload .pickfileProcess .line{
+        display: block;
+        width: 0;
+        border-bottom: 1px solid red;
+    }
+    .publishing {
+        width: 2.1rem;
+        height: 0.7rem;
+        line-height: 0.7rem;
+        border-radius: 0.1rem;
+        background: #d7000f;
+        text-align: center;
+        margin: 0 auto 0.9rem;
+    }
+    
+    .centers .finished {
+        background: none;
+        width: 100%;
+        display: none;
+    }
+    
+    .centers .finished p {
+        font-size: 0.32rem;
+        font-family: 'SourceHanSansCN-ExtraLight';
+        text-align: center;
+    }
+    
+    .djs {
+        width: 100%;
+        margin-top: 0.6rem;
+        margin-bottom: 2.3rem;
+        text-align: center;
+    }
+    
+    .djs span {
+        font-size: 0.18rem;
+        font-family: 'SourceHanSansCN-Light';
+        color: #777777;
+        text-align: center;
+        margin-right: 0.2rem;
+    }
+    
+    .djs span i {
+        color: #e90010;
+        font-style: normal;
+    }
+    
+    .djs .reNow {
+        display: inline-block;
+        font-size: 0.18rem;
+        font-family: 'SourceHanSansCN-Regular';
+        color: #010101;
+        text-align: center;
+    }
+    
+    .finished img {
+        margin: 1rem auto 0.5rem;
+        width: 1.6rem;
+    }
+    
+    .myRelease {
+        width: 100%;
+        padding-top: 0.4rem;
+        background: #ededed;
+    }
+    
+    .myLike {
+        width: 100%;
+        padding-top: 0.4rem;
+        background: #ededed;
+    }
+    
+    .myName {
+        width: 100%;
+        padding-top: 0.4rem;
+        background: #ededed;
+    }
+    
+    .cont_c .loadMore {
+        background: #fff;
+        padding: 0.5rem 0 1rem 0;
+        margin: 0;
+    }
+    
+    .cont_c h1 {
+        width: 100%;
+        padding: 0.35rem 0 0.35rem 0.4rem;
+        border-bottom: 1px solid #e5e5e5;
+        font-size: 0.22rem;
+        font-family: 'SourceHanSansCN-Regular';
+        color: #000;
+        background: #fff;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;  /*//将元素设为盒子伸缩模型显示*/
+        -webkit-box-orient: vertical;  /*//伸缩方向设为垂直方向*/
+        -webkit-line-clamp: 1;   /*//超出1行隐藏，并显示省略号*/
+    }
+    
+    .release_cont {
+        width: 100%;
+        padding: 0 0.4rem;
+        background: #fff;
+    }
+    
+    .release_nav {
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .release_nav li {
+        float: left;
+        text-align: center;
+        width: 25%;
+    }
+    
+    .release_nav li a {
+        font-size: 0.18rem;
+        font-family: 'SourceHanSansCN-Normal';
+        color: #000;
+        padding: 0.3rem 0;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    
+    .release_list {
+        width: 100%;
+        overflow: hidden;
+        padding-top: 0.4rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    
+    .release_list li {
+        padding-bottom: 0.5rem;
+        height: 4.3rem;
+    }
+    
+    .release_list li:nth-child(odd) {
+        float: left;
+        width: 47%;
+    }
+    
+    .release_list li:nth-child(even) {
+        float: right;
+        width: 47%;
+    }
+    
+    .rl_img {
+        width: 100%;
+        height: 1.9rem;
+        max-height: 1.9rem;
+        position: relative;
+    }
+    .rl_img img{
+        height: 100%;
+    }
+    .rl_icon {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0rem;
+    }
+    
+    .rl_icon .art_icon {
+        display: flex;
+    }
+    
+    .rl_icon .art_icon span {
+        display: block;
+        flex: 1;
+        color: #fff;
+        text-align: center;
+    }
+    
+    .rl_icon .art_icon span:nth-child(1) i {
+        background: url('./../images/wap/rl-message.png') no-repeat;
+        background-size: 100%;
+    }
+    
+    .rl_icon .art_icon span:nth-child(2) i {
+        background: url('./../images/wap/rl-view.png') no-repeat;
+        background-size: 100%;
+    }
+    
+    .rl_icon .art_icon span:nth-child(3) i {
+        background: url('./../images/wap/heart-icon2.png') no-repeat;
+        background-size: 100%;
+    }
+    
+    .rl-h1 {
+        color: #000 !important;
+        font-size: 0.26rem !important;
+        font-family: 'SourceHanSansCN-Bold' !important;
+        padding: 0 !important;
+        border: 0 !important;
+        margin-top: 0.2rem;
+        margin-bottom: 0.15rem;
+
+    }
+    
+    .rl-txt {
+        font-size: 0.14rem;
+        font-family: 'SourceHanSansCN-Light';
+        color: #777777;
+        margin-bottom: 0.2rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+       display: -webkit-box;  /*//将元素设为盒子伸缩模型显示*/
+    -webkit-box-orient: vertical;  /*//伸缩方向设为垂直方向*/
+    -webkit-line-clamp: 3;   /*//超出3行隐藏，并显示省略号*/
+        height: 0.7rem;
+    }
+    
+    .operation {
+        width: 80%;
+        display: flex;
+    }
+    
+    .operation a {
+        flex: 1;
+        color: #333;
+        font-size: 0.18rem;
+        font-family: 'SourceHanSansCN-Normal';
+    }
+    
+    .operation a::before {
+        content: '';
+        display: inline-block;
+        width: 0.22rem;
+        height: 0.2rem;
+        position: relative;
+        top: 2px;
+        margin-right: 0.1rem;
+    }
+    
+    .operation a:nth-child(1)::before {
+        background: url('./../images/wap/pencil-icon.png') no-repeat;
+        background-size: 100% 100%;
+    }
+    
+    .operation a:nth-child(2)::before {
+        background: url('./../images/wap/trash-icon.png') no-repeat;
+        background-size: 100% 100%;
+    }
+    
+    .cont_c {
+        display: none;
+    }
+    
+    .mc_cont {
+        display: block;
+    }
+    
+    .mg_list {
+        width: 90%;
+        margin: 0 auto;
+        padding-top: 0.8rem;
+        /*padding-bottom: 3rem;*/
+    }
+    
+    .mg_list li {
+        width: 100%;
+        padding: 0.4rem 0;
+        border-top: 1px solid #e5e5e5;
+    }
+    
+    .mg_list li:last-child {
+        border-bottom: 1px solid #e5e5e5;
+    }
+    
+    .mg_box {
+        display: flex;
+    }
+    
+    .mg-avatar {
+        flex: 0 0 0.6rem;
+    }
+    
+    .mg-pinglun {
+        flex: 1;
+        padding-left: 0.2rem;
+    }
+    
+    .mg-pinglun p {
+        margin-bottom: 0.05rem;
+        font-size: 0.18rem;
+        font-family: 'SourceHanSansCN-Regular';
+        color: #777777;
+    }
+    
+    .mg-pinglun p span {
+        color: #000;
+    }
+    
+    .mg-del img {
+        width: 0.22rem;
+        display: inline-block;
+        position: relative;
+        top: 0.02rem;
+        vertical-align: sub;
+    }
+    
+    .sys {
+        width: 90%;
+        margin: 0 auto 3rem;
+        padding-bottom: 0.8rem;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    
+    .sys p {
+        font-size: 0.22rem;
+        font-family: 'SourceHanSansCN-Normal';
+        color: #000;
+        margin-top: 0.5rem;
+    }
+    
+    .sys a {
+        color: #000;
+        font-size: 0.14rem;
+        font-family: 'SourceHanSansCN-Regular';
+        padding: 0.3rem 0;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    
+    .sys a img {
+        display: inline-block;
+        width: 0.22rem;
+    }
+    /* .mg_list {
+        display: none;
+    } */
+    
+    .sys {
+        display: none;
+    }
+    
+    .sysEdit {
+        display: none;
+    }
+    
+    .sys_title {
+        color: #777;
+        margin-top: 0.2rem;
+        margin-bottom: 0.35rem;
+        font-size: 0.18rem;
+        font-family: 'SourceHanSansCN-Regular';
+        overflow: hidden;
+        padding: 0.2rem 0;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    
+    .sys_cont_list li {
+        font-size: 0.18rem;
+        font-family: 'SourceHanSansCN-Regular';
+        padding: 0.2rem;
+    }
+    
+    .sys_title span:nth-child(1) {
+        float: left;
+    }
+    
+    .sys_title span:nth-child(2) {
+        float: right;
+    }
+    
+    .sys_cont_list li:nth-child(2n-1) {
+        background: #f5f5f5;
+    }
+    
+    .sys_cont_list li span:nth-child(2) {
+        float: right;
+    }
+    
+    .resetPwd {
+        width: 4rem;
+        margin: 0 auto;
+        background: #fff;
+    }
+    
+    .reTitle {
+        width: 1.5rem;
+        margin: 1rem auto 0.5rem;
+    }
+    
+    .resetPwd li {
+        padding: 0.25rem 0;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    
+    .tjxg {
+        padding: 0.25rem 0;
+        width: 2rem;
+        text-align: center;
+        background: #2a2a2a;
+        color: #fff;
+        font-size: 0.2rem;
+        font-family: 'SourceHanSansCN-Regular';
+        border-radius: 0.1rem;
+        margin: 0.6rem auto 1.2rem;
+    }
+    
+    .resetPwd input::-webkit-input-placeholder {
+        font-size: 0.2rem;
+        font-family: 'SourceHanSansCN-Regular';
+    }
+    
+    .resetPwd input:-moz-placeholder {
+        font-size: 0.2rem;
+        font-family: 'SourceHanSansCN-Regular';
+    }
+    
+    .resetPwd input:-ms-input-placeholder {
+        font-size: 0.2rem;
+        font-family: 'SourceHanSansCN-Regular';
+    }
+
+    .loadMore .load-more-btn.active{
+        margin: auto;
+        margin-bottom: 0.1rem;
+        -webkit-animation:load-more 1s linear infinite;
+        animation:load-more 1s linear infinite;
+    }
+
+    @keyframes load-more {
+        0% {
+            transform: rotate(0deg);
+            box-shadow: 0px 0px 10px #fff;
+        }
+        50% {
+            transform: rotate(180deg);
+            box-shadow: 0px 0px 45px #fff;
+        }
+        100% {
+            transform: rotate(360deg);
+            box-shadow: 0px 0px 10px #fff;
+        }
+    }
+    @-webkit-keyframes load-more {
+        0% {
+            transform: rotate(0deg);
+            box-shadow: 0px 0px 10px #fff;
+        }
+        50% {
+            transform: rotate(180deg);
+            box-shadow: 0px 0px 45px #fff;
+        }
+        100% {
+            transform: rotate(360deg);
+            box-shadow: 0px 0px 10px #fff;
+        }
+    }

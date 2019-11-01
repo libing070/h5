@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/layer.css">
+    <!-- 适配wap pad/pc -->
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/base_pc.css" media="(min-width:767px)">
+    <link rel="stylesheet" href="./css/base_wap.css" media="(max-width:767px)">
+    <link rel="stylesheet" href="./css/swiper_reset.css">
+    <title>营销智库</title>
+</head>
+
+<body>
+    <div class="container detail-ct" id="wap">
+        <!--wap代码 -->
+        <div class="kv">
+            <img src="./images/wap/detail_kv.jpg" alt="">
+        </div>
+        <div class="details detail_2">
+            <div class="D-locl">
+                <span>首页</span>-<span>详情</span>-<span>图文</span>
+            </div>
+            <h1 class="D-title"></h1>
+            <div class="mediaBox">
+                <div class="detailImg swiper-container" style="display: none">
+                    <div class="swiper-wrapper">
+                        <!--<div class="swiper-slide">-->
+                            <!--<img src="./images/wap/details_poster.jpg" alt="">-->
+                        <!--</div>-->
+                        <!--<div class="swiper-slide">-->
+                            <!--<img src="./images/wap/details_poster.jpg" alt="">-->
+                        <!--</div>-->
+                        <!--<div class="swiper-slide">-->
+                            <!--<img src="./images/wap/details_poster.jpg" alt="">-->
+                        <!--</div>-->
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="detailVideo" style="display: none">
+                    <video src="" poster=""></video>
+                    <img class="videoBtn" src="./images/wap/video-btn.png" alt="">
+                </div>
+            </div>
+            <div class="art_icon">
+                <span><i></i><span class="message-icon"></span></span>
+                <span><i></i><span class="view-icon"></span></span>
+                <span><i class="vote-icon-img" forumid=""></i><span class="vote-icon"></span></span>
+                <span class="share"><i style="background: url('./images/wap/share-btn.png') no-repeat;background-size: 80%;margin-right: 0.2rem"></i>分享</span>
+            </div>
+            <div class="txtCont">
+                <p></p>
+            </div>
+        </div>
+        <!--<div class="details detail_1">-->
+            <!--<div class="D-locl">-->
+                <!--<span>首页</span>-<span>案例</span>-<span>详情</span>-->
+            <!--</div>-->
+            <!--<h1 class="D-title">华为nova 3e 无添加自拍</h1>-->
+            <!--<div class="timeBox">-->
+                <!--<span class="time">发布时间：2019-8-6</span>-->
+                <!--<span>发布者：新意互动</span>-->
+                <!--<span class="share"><i></i>分享</span>-->
+            <!--</div>-->
+            <!--<p>当一众手机品牌都在喊着美颜、滤镜的营销噱头的时候，在同质化的拍照概念面前，如何抓取年轻受众稀缺的注意力？随着华为品牌的全球化进程，对创意品质的需求也在日益提升。伴随HUAWEI nova 3e新品上市传播，我们希望通过“无添加自拍”的创意概念，不仅将“自然美妆”的卖点说到目标消费群体心坎上，更要将“无添加的自然”打造成HUAWEI nova 3e品牌的记忆符号。</p>-->
+            <!--<div class="Adver">-->
+                <!--<img src="./images/wap/Adver1.jpg" alt="">-->
+                <!--<img src="./images/wap/Adver2.jpg" alt="">-->
+            <!--</div>-->
+            <!--<p>三支影片，由新意旗下NDC创意团队，携手亚太广告导演罗景壬共同完成。从创意概念“无添加自拍”的确定，到故事脚本的商榷，NDC创意团队与华为大中华区市场部充分沟通，在双方的高度合作与共同努力下，希望传递给用户的，不只是理性层面的强大功能，更重要的是，深入用户的真实生活，为产品创造坚实的情感意义。-->
+            <!--</p>-->
+            <!--<p>纵观三支视频，都充分展现了每一位年轻女孩追求真实自我，将落点放在“前置2400万 自然美妆”的产品卖点，回归自然纯粹的一面，与“无添加”的态度海报在基调上保持一致性，营造了温暖治愈系的画风。小清新与大自然元素的加持将广告做出美感，让人在无形中对这种“无添加”产生由衷的认同感和归属感。-->
+            <!--</p>-->
+            <!--<div class="btnBox">-->
+                <!--<a href="javascript:;" class="closeBtn">关闭</a>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="interval"></div>
+        <div class="comment">
+            <h1>评论</h1>
+            <div class="textareaBox">
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <a commentId="0" href="javascript:;" class="tijiao">发表</a>
+            </div>
+        </div>
+        <div class="replyComment">
+            <h1>评论</h1>
+            <ul class="commentBox">
+                <!--<li class="commentList">-->
+                    <!--<div class="cm_head">-->
+                        <!--<div class="avator">-->
+                            <!--<img src="./images/wap/nav_my.png" alt="">-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="cm_cont">-->
+                        <!--<div class="cm_title">-->
+                            <!--<span class="cm_name">朱迪</span>-->
+                            <!--<span class="cm_time">2019-8-6</span>-->
+                        <!--</div>-->
+                        <!--<p class="cm_txt">这个作品很好，我很喜欢，加油加油加油加油加油！</p>-->
+                    <!--</div>-->
+                    <!--<div class="cm_icon">-->
+                        <!--<div class="art_icon">-->
+                            <!--<span><i></i>60</span>-->
+                            <!--<span><i></i>80</span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</li>-->
+                <!--<li class="commentList">-->
+                    <!--<div class="cm_head">-->
+                        <!--<div class="avator">-->
+                            <!--<img src="./images/wap/nav_my.png" alt="">-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="cm_cont">-->
+                        <!--<div class="cm_title">-->
+                            <!--<span class="cm_name">朱迪</span>-->
+                            <!--<span class="cm_time">2019-8-6</span>-->
+                        <!--</div>-->
+                        <!--<p class="cm_txt">这个作品很好，我很喜欢，加油加油加油加油加油！</p>-->
+                    <!--</div>-->
+                    <!--<div class="cm_icon">-->
+                        <!--<div class="art_icon">-->
+                            <!--<span><i></i>60</span>-->
+                            <!--<span><i></i>80</span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<ul class="reply">-->
+                        <!--<li>-->
+                            <!--<div class="cm_cont">-->
+                                <!--<div class="cm_title">-->
+                                    <!--<span class="cm_name">王迪迪</span>-->
+                                    <!--<span class="cm_sour">回复</span>-->
+                                    <!--<span class="cm_sour">朱迪</span>-->
+                                    <!--<span class="cm_time">半小时前</span>-->
+                                <!--</div>-->
+                                <!--<p class="cm_txt">这个作品很好，我很喜欢，加油加油加油加油加油！</p>-->
+                            <!--</div>-->
+                            <!--<div class="cm_icon">-->
+                                <!--<div class="art_icon">-->
+                                    <!--<span class="remove">删除</span>-->
+                                    <!--<span><i></i>60</span>-->
+                                    <!--<span><i></i>80</span>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<div class="cm_cont">-->
+                                <!--<div class="cm_title">-->
+                                    <!--<span class="cm_name">王迪迪</span>-->
+                                    <!--<span class="cm_sour">回复</span>-->
+                                    <!--<span class="cm_sour">朱迪</span>-->
+                                    <!--<span class="cm_time">半小时前</span>-->
+                                <!--</div>-->
+                                <!--<p class="cm_txt">这个作品很好，我很喜欢，加油加油加油加油加油！</p>-->
+                            <!--</div>-->
+                            <!--<div class="cm_icon">-->
+                                <!--<div class="art_icon">-->
+                                    <!--<span class="remove">删除</span>-->
+                                    <!--<span><i></i>60</span>-->
+                                    <!--<span><i></i>80</span>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="reply_textarea">-->
+                                <!--<textarea name="" id="" cols="30" rows="10"></textarea>-->
+                            <!--</div>-->
+                            <!--<div class="publish">-->
+                                <!--<a href="javascript:;">回复评论</a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li class="commentList">-->
+                    <!--<div class="cm_head">-->
+                        <!--<div class="avator">-->
+                            <!--<img src="./images/wap/nav_my.png" alt="">-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="cm_cont">-->
+                        <!--<div class="cm_title">-->
+                            <!--<span class="cm_name">朱迪</span>-->
+                            <!--<span class="cm_time">2019-8-6</span>-->
+                        <!--</div>-->
+                        <!--<p class="cm_txt">这个作品很好，我很喜欢，加油加油加油加油加油！</p>-->
+                    <!--</div>-->
+                    <!--<div class="cm_icon">-->
+                        <!--<div class="art_icon">-->
+                            <!--<span><i></i>60</span>-->
+                            <!--<span><i></i>80</span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</li>-->
+            </ul>
+        </div>
+        <div class="loadMore comment-load-more" pageIndex="1" hasmore="1">
+            <img class="load-more-btn active" style="display: none" src="./images/wap/load-more-icon-black.png">
+            <p>点击加载更多</p>
+        </div>
+    </div>
+    <script src="./js/common/jquery-1.11.2.min.js"></script>
+    <script src="./js/common/jquery.cookie.js"></script>
+    <script src="./js/common/anime.min.js"></script>
+    <script src="./js/common/layer.js"></script>
+    <script src="./js/common/rem.js"></script>
+    <script src="./js/common/swiper.min.js"></script>
+    <script src="./js/common/md5.js"></script>
+    <script src="./js/main.js?v=1"></script>
+    <script src="./js/common.js"></script>
+    <script>
+        $(function() {
+            var id=GetUrlParam("id");
+
+            var mySwiper = new Swiper('.detailImg,.swiper-container', {
+                loop: true,
+                autoplay: true, //可选选项，自动滑动
+                observer: true,
+                observeParents: true,
+                pagination: {
+                    el: '.detailImg .swiper-pagination',
+                },
+            })
+
+
+            //api/Forum/GetForumDetail(TT_007)根据ID获取文章内容，并且阅读数+1
+            function GetForumDetail() {
+                $.request('/api/Forum/GetForumDetail', {
+                        timestamp: ts(),
+                        id:id,
+                        userToken:localStorage.getItem('ttToken')||'',
+                        sign: createSign({
+                            id:id,
+                            userToken:localStorage.getItem('ttToken')||'',
+                            timestamp: ts(),
+                        })
+                    },
+                    function (res) {
+                        var str = '';
+                        var data= res.data;
+                        $(".details").attr('ids',id);
+                        $(".details").find(".D-title").html(data.Title+'-'+data.Summary);
+                        $(".details .message-icon").html(data.CommentCount);
+                        $(".details .view-icon").html(data.VisitCount);
+                        $(".details .vote-icon").html(data.LikeCount);
+                        $(".details .vote-icon-img").attr("forumId",id);
+                        if(data.IsLike){
+                            var s="url('./images/wap/heart-icon-red.png') no-repeat";
+                            $(".details .vote-icon-img").css("background",s).css("background-size","100%");
+                        }
+                        $(".details .txtCont p").html(data.Content);
+
+                        if(data.MultimediaType==2){
+                            $(".details .detailImg").hide();
+                            $(".details .detailVideo").show();
+                            $(".details .detailVideo video").attr("src",data.PicUrl);
+                        }else{
+                            $(".details .detailImg").show();
+                            $(".details .detailVideo").hide();
+                            var str=' <div class="swiper-slide"><img style="width: 100%" src="'+data.PicUrl+'" alt=""></div>';
+                            $(".details .detailImg .swiper-wrapper").append(str);
+                        }
+                    }
+                );
+            }
+            GetForumDetail();
+
+            //api/Comment/Pagelist获取文章的评论
+
+            function Pagelist(pageIndex) {
+                $.request('/api/Comment/Pagelist', {
+                        "timestamp": ts(),
+                        forumId:id,
+                        pageIndex:pageIndex||1,
+                        pageSize:10,
+                        userToken:localStorage.getItem("ttToken")||'',
+                        sign: createSign({
+                            forumId:id,
+                            pageIndex:pageIndex||1,
+                            pageSize:10,
+                            userToken:localStorage.getItem("ttToken")||'',
+                            "timestamp": ts(),
+                        })
+                    },
+                    function (res) {
+                        if(pageIndex>res.data.pageCount){
+                            $(".comment-load-more").find("p").html("没有更多了");
+                            $(".comment-load-more").find(".load-more-btn").hide();
+                            $(".comment-load-more").attr("hasmore","0");
+                            return;
+                        }
+                        var str='';
+                        var list= res.data.list;
+                        for (var i=0;i<list.length;i++){
+                            str+='<li class="commentList">';
+                            str+='    <div class="cm_head">';
+                            str+='  <div class="avator">';
+                            str+='   <img src="./images/wap/nav_my.png" alt="">';
+                            str+='   </div>';
+                            str+='     </div>';
+                            str+='    <div class="cm_cont">';
+                            str+='   <div class="cm_title">';
+                            str+='  <span class="cm_name">'+list[i].UserName+'</span>';
+                            str+='   <span class="cm_time">'+timeago(list[i].Date)+'</span>';
+                            if(list[i].IsMine){
+                                str+='  <span class="remove" classs="1"  forumId="'+id+'" commentId="'+list[i].Id+'"  style="float: right;font-size: 0.18rem">删除</span>';
+                            }
+
+                            str+='  </div>';
+                            str+='  <p class="cm_txt">'+list[i].Content+'</p>';
+                            str+='</div>';
+                            str+=' <div class="cm_icon">';
+                            str+='    <div class="art_icon">';
+                            str+='   <span class="mes"><i></i>'+list[i].CommentCount+'</span>';
+                            if(list[i].IsLike){
+                                var bg="background:url('./images/wap/heart-icon-red.png') no-repeat;background-size:100%";
+                                str+='  <span><i class="vote-icon-img" forumId="'+id+'" commentId="'+list[i].Id+'" style="'+bg+'"></i><span>'+list[i].LikeCount+'</span></span>';
+                            }else{
+                                str+='  <span><i class="vote-icon-img" forumId="'+id+'" commentId="'+list[i].Id+'"></i><span>'+list[i].LikeCount+'</span></span>';
+                            }
+                            str+=' </div>';
+                            str+='  </div>';
+                            str+=' <div style="display: none" class="reply_textarea">';
+                            str+='    <textarea name="" id="" cols="30" rows="10"></textarea>';
+                            str+='   </div>';
+                            str+='  <div style="display: none"  class="publish">';
+                            str+='   <a href="javascript:;"classs="1"  class="tijiao" commentId="'+list[i].Id+'">回复评论</a>';
+                            str+='   </div>';
+                            var subList=list[i].SubCommentList;
+                            str+=' <ul class="reply">';
+                            for (var k=0;k<subList.length;k++){
+                                str+='  <li>';
+                                str+='    <div class="cm_cont">';
+                                str+='   <div class="cm_title">';
+                                str+='  <span class="cm_name">'+subList[k].UserName+'</span>';
+                                str+='  <span class="cm_sour">回复</span>';
+                                str+='   <span class="cm_sour">'+subList[k].ToUserName+'</span>';
+                                str+='  <span class="cm_time">'+timeago(subList[k].Date)+'</span>';
+                                if(subList[k].IsMine){
+                                str+='  <span class="remove" classs="2" forumId="'+id+'" commentId="'+subList[k].Id+'" style="float: right">删除</span>';
+                                }
+                                str+='  </div>';
+                                str+='  <p class="cm_txt">'+subList[k].Content+'</p>';
+                                str+=' </div>';
+                                str+='<div class="cm_icon">';
+                                str+='   <div class="art_icon">';
+                                str+='  <span class="mes"><i></i>'+subList[k].CommentCount+'</span>';
+
+                                if(list[i].IsLike){
+                                    var bg="background:url('./images/wap/heart-icon-red.png') no-repeat;background-size:100%";
+                                    str+='  <span><i class="vote-icon-img" forumId="'+id+'" commentId="'+subList[k].Id+'"style="'+bg+'"></i><span>'+subList[k].LikeCount+'</span></span>';
+                                }else{
+                                    str+='  <span><i class="vote-icon-img" forumId="'+id+'" commentId="'+subList[k].Id+'"></i><span>'+subList[k].LikeCount+'</span></span>';
+                                }
+                                str+=' </div>';
+                                str+='</div>';
+                                str+=' <div style="display: none"  class="reply_textarea">';
+                                str+='    <textarea name="" id="" cols="30" rows="10"></textarea>';
+                                str+='   </div>';
+                                str+='  <div style="display: none"  class="publish">';
+                                str+='   <a  href="javascript:;" classs="2" commentId="'+subList[k].Id+'" class="tijiao">回复评论</a>';
+                                str+='   </div>';
+                                str+=' </li>';
+                            }
+                            str+='  </ul>';
+                            str+='  </li>';
+                        }
+
+                        $(".detail-ct .replyComment .commentBox").append(str);
+                        $(".comment-load-more").find(".load-more-btn").hide();
+                    }
+                );
+            }
+
+            Pagelist(1);
+
+            $(".detail-ct").on("click",'.comment-load-more',function () {
+                var type=$(this).attr("type");
+                $(".comment-load-more").find(".load-more-btn").show();
+                var hasMore=  $(".comment-load-more").attr("hasmore");//1更多 0 没有
+                if(hasMore==0){
+                    $(".comment-load-more").off();
+                    $(".comment-load-more").find(".load-more-btn").hide();
+                    return;
+                }
+                var pageIndex=$(this).attr("pageIndex");
+                pageIndex=++pageIndex;
+                $(this).attr("pageIndex",pageIndex);
+                Pagelist(pageIndex);
+            });
+
+
+
+            $(".detail-ct").on("click", ".replyComment .commentBox .mes", function () {
+                $(this).parent().parent().siblings('.reply_textarea').slideToggle("slow");
+                $(this).parent().parent().siblings('.publish').slideToggle("slow");
+            });
+
+
+
+            function appendSubComment(data) {
+                var str='';
+                str+='  <li>';
+                str+='    <div class="cm_cont">';
+                str+='   <div class="cm_title">';
+                str+='  <span class="cm_name">'+data.UserName+'</span>';
+                str+='  <span class="cm_sour">回复</span>';
+                str+='   <span class="cm_sour">'+data.ToUserName+'</span>';
+                str+='  <span class="cm_time">'+timeago(data.Date)+'</span>';
+                if(data.IsMine){
+                    str+='  <span class="remove"classs="2"  forumId="'+id+'" commentId="'+data.Id+'" style="float: right">删除</span>';
+                }
+                str+='  </div>';
+                str+='  <p class="cm_txt">'+data.Content+'</p>';
+                str+=' </div>';
+                str+='<div class="cm_icon">';
+                str+='   <div class="art_icon">';
+                str+='  <span class="mes"><i></i>'+data.CommentCount+'</span>';
+                str+=' <span><i class="vote-icon-img"  forumId="'+id+'" commentId="'+data.Id+'"></i><span>'+data.LikeCount+'</span></span>';
+                str+=' </div>';
+                str+='</div>';
+                str+=' <div style="display: none"  class="reply_textarea">';
+                str+='    <textarea name="" id="" cols="30" rows="10"></textarea>';
+                str+='   </div>';
+                str+='  <div style="display: none"  class="publish">';
+                str+='   <a  href="javascript:;" classs="2"  commentId="'+data.Id+'" class="tijiao">回复评论</a>';
+                str+='   </div>';
+                str+=' </li>';
+                return str;
+            }
+
+            ///api/Comment/Publish对文章发表评论，或者对评论进行二级评论
+            $(".detail-ct").on("click",'.tijiao',function () {
+                var commentId=$(this).attr("commentId");
+                if(commentId==0){//发表
+                    var content=$(this).siblings('textarea').val();
+                }else{//回复评论
+                    var content=$(this).parent('.publish').siblings('.reply_textarea').children('textarea').val();
+                }
+
+                var that=this;
+                if (!content) {
+                    layer.msg('请填写评论');
+                    return;
+                }
+                if(!localStorage.getItem("ttToken")){
+                    layer.msg('请先登录');
+                    setTimeout(function () {
+                        window.location.href='./userhome.html?type=0';//登录
+                    },2000);
+                    return;
+                }
+
+                $.request('/api/Comment/Publish', {
+                        timestamp: ts(),
+                        forumId:id,
+                        commentId:commentId,
+                        content:content,
+                        userToken:localStorage.getItem("ttToken")||'',
+                        sign: createSign({
+                            userToken:localStorage.getItem("ttToken")||'',
+                            forumId:id,
+                            commentId:commentId,
+                            content:content,
+                            timestamp: ts(),
+                        })
+                    },
+                    function (res) {
+                        layer.msg(res.message);
+                        if(commentId==0){
+                            $(that).siblings('textarea').val('');
+                            $(".detail-ct .replyComment .commentBox").html('');
+                            Pagelist(1);
+                        }else{
+                            var str=appendSubComment(res.data);
+                            var classs=$(that).attr("classs");
+                            if(classs==1){
+                                $(that).parent('.publish').siblings('.reply').prepend(str);
+                            }else{
+                                $(that).parent('.publish').parent('li').after(str);
+                            }
+                            $(that).parent('.publish').siblings('.reply_textarea').children('textarea').val('');
+                            $(that).parent('.publish').siblings('.reply_textarea').slideToggle("slow");
+                            $(that).parent('.publish').slideToggle("slow");
+
+                        }
+                    }
+                );
+            })
+
+           //删除评论
+            $(".detail-ct").on("click", ".replyComment .commentBox .remove", function () {
+                var that = this;
+                layer.confirm('确定删除该评论?', {
+                    icon: 3, title: '提示', yes: function (index) {
+                        ///Comment/Delete(TT_012)删除评论
+                        $.request('/api/Comment/Delete', {
+                                timestamp: ts(),
+                                forumId:$(that).attr("forumId"),
+                                commentId:$(that).attr("commentId"),
+                                userToken:localStorage.getItem("ttToken")||'',
+                                sign: createSign({
+                                    timestamp: ts(),
+                                    userToken:localStorage.getItem("ttToken")||'',
+                                    forumId:$(that).attr("forumId"),
+                                    commentId:$(that).attr("commentId"),
+                                })
+                            },
+                            function (res) {
+                                if(res.code==1){
+                                    layer.close(index);
+                                  var classs= $(that).attr("classs");
+                                  if(classs==1){
+                                      $(that).parent().parent().parent('.commentList').fadeOut();
+                                  }else{
+                                      $(that).parent().parent().parent('li').fadeOut();
+                                  }
+
+                                    layer.msg('删除成功！');
+                                }
+
+                            }
+                        );
+
+                    },
+                    cancel: function (index, layero) {
+                        layer.close(index);
+                    }
+                });
+
+            })
+
+
+        })
+    </script>
+</body>
+
+
+</html>

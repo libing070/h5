@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/layer.css">
+    <!-- 适配wap pad/pc -->
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/base_pc.css" media="(min-width:767px)">
+    <link rel="stylesheet" href="./css/base_wap.css" media="(max-width:767px)">
+    <link rel="stylesheet" href="./css/swiper_reset.css">
+    <title>营销智库</title>
+</head>
+
+<body>
+    <div class="container articleH" id="wap">
+        <!--wap代码 -->
+        <div class="wap-banner">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                </div>
+                <div class="swiper-pagination wapBanner_pagination"></div>
+            </div>
+            <div class="ttSwiper_btn">
+                <div class="swiper-button-prev wapBanner_prev"></div>
+                <div class="swiper-button-next wapBanner_next"></div>
+            </div>
+        </div>
+        <div class="articleDiv progressing">
+            <img class="ongoing_title articleTitle" src="./images/wap/ongoing_title.png" alt="">
+            <div class="ongoing">
+            </div>
+            <div class="acticle_cont">
+            </div>
+            <div class="case_loodMore loadMore" type="1" isload="1" pageindex="2">
+                <img src="./images/loadMoreIcon.png" alt="">
+                <p>加载更多</p>
+            </div>
+        </div>
+        <div class="articleDiv over">
+            <img class="articleTitle" src="./images/wap/finished_title.png" alt="">
+            <div class="acticle_cont ">
+            </div>
+            <div class="case_loodMore loadMore" type="2" isload="1" pageindex="2">
+                <img src="./images/loadMoreIcon.png" alt="">
+                <p>加载更多</p>
+            </div>
+        </div>
+
+    </div>
+    <script src="./js/common/jquery-1.11.2.min.js"></script>
+    <script src="./js/common/jquery.cookie.js"></script>
+    <script src="./js/common/anime.min.js"></script>
+    <script src="./js/common/layer.js"></script>
+    <script src="./js/common/rem.js"></script>
+    <script src="./js/common/swiper.min.js"></script>
+    <script src="./js/common/md5.js"></script>
+    <script src="./js/main.js?v=1"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/common/baiduTemplate.js"></script>
+
+    <!--banner-->
+    <script id="banner" type="text/html">           
+        <%for(var i=0;i<keyVersionList.length;i++){%>
+        <div class="swiper-slide">
+            <a href="<%=keyVersionList[i].Url%>">
+                <img src="<%=keyVersionList[i].KeyVisionUrl%>" alt="">
+                <div class="slide_cont">
+                    <img class="trademark" src="./images/wap/audi-icon.png" alt="">
+                    <p>2018年奥迪 #Goooo Home#
+                        新春致意数字创意营销</p>
+                    <a class="turnBtn bannerTurnBtn" href="javascript:;">
+                        <img src="./images/wap/turn_right.png" alt="">
+                    </a>
+                </div>
+            </a>
+        </div>
+        <%}%>
+    </script>
+
+    <script id="activity_progressing" type="text/html">
+        <%for(var i=0;i<forumList.length && i<2;i++) {%>
+        <div class="acticle_cont_list" forumId="<%=forumList[i].id%>">
+            <img src="<%=forumList[i].picUrl%>" alt="">
+            <div class="art_txt">
+                <div>
+                    <span class="art_time"><%=forumList[i].createTime.substr(0, 10)%></span>
+                    <p class="art_cont"><%=forumList[i].title%></p>
+                    <p class="art_icon">
+                        <span><i></i><%=forumList[i].commentCount%></span>
+                        <span><i></i><%=forumList[i].visitCount%></span>
+                        <%if (forumList[i].IsLike){%>
+                        <span><i style="background:url('./images/wap/heart-icon-red.png') no-repeat;background-size:100% "></i><%=forumList[i].likeCount%></span>
+                        <%}else{%>
+                        <span><i></i><%=forumList[i].likeCount%></span>
+                        <%}%>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <%}%>
+    </script>
+
+    <script id="activity" type="text/html">
+        <%for(var i=start;i<forumList.length;i++) {%>
+        <div class="acticle_cont_list" forumId="<%=forumList[i].id%>">
+            <img src="<%=forumList[i].picUrl%>" alt="">
+            <div class="art_txt">
+                <div>
+                    <span class="art_time"><%=forumList[i].createTime.substr(0, 10)%></span>
+                    <p class="art_cont"><%=forumList[i].title%></p>
+                    <p class="art_cont"><%=forumList[i].summary%></p>
+                    <p class="art_icon">
+                        <span><i></i><%=forumList[i].commentCount%></span>
+                        <span><i></i><%=forumList[i].visitCount%></span>
+                        <%if (forumList[i].IsLike){%>
+                        <span><i style="background:url('./images/wap/heart-icon-red.png') no-repeat;background-size:100% "></i><%=forumList[i].likeCount%></span>
+                        <%}else{%>
+                        <span><i></i><%=forumList[i].likeCount%></span>
+                        <%}%>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <%}%>
+    </script>
+
+    <script>
+
+        //获取活动列表 type=1进行中 2已结束
+        var getActivityList = function(type, page, limit, cb) {
+            if (typeof(limit) == 'function' && cb == null) {
+                cb = limit;
+                limit = null;
+            }
+            var params = {};
+            params={
+                activityType:type,
+                timestamp: ts(),
+                forumType:0, //文章
+                pageIndex:page?page:1,
+                pageSize:limit?limit:10,
+                userToken:localStorage.getItem("ttToken")||'',
+                sign: createSign({
+                    activityType:type,
+                    timestamp: ts(),
+                    forumType:0,
+                    pageIndex:page?page:1,
+                    pageSize:limit?limit:10,
+                    userToken:localStorage.getItem("ttToken")||'',
+                })
+            }
+
+
+            $.request("/api/Forum/GetActivityPagingList", params, function(res){
+                if (type == 1) {
+                    var start = 0;
+                    if (page == 1) {
+                        var html = baidu.template("activity_progressing", res.data);
+                        $(".ongoing").html(html);
+                        start = 2;
+                    }
+                    res.data.start = start;
+                    var html = baidu.template("activity", res.data);
+                    $(".progressing .acticle_cont").append(html);
+                    if (res.data.pageCount<=page) {
+                        $('.progressing .case_loodMore').hide();
+                    }else{
+                        $('.progressing .case_loodMore').attr('pageindex', page);
+                        cb && cb();
+                    }
+                }
+                if (type == 2) {
+                    res.data.start = 0;
+                    var html = baidu.template("activity", res.data);
+                    $(".over .acticle_cont").append(html);
+                    if (res.data.pageCount<=page) {
+                        $('.over .case_loodMore').hide();
+                    }else{
+                        $('.over .case_loodMore').attr('pageindex', page);
+                        cb && cb();
+                    }
+                }
+                
+            });
+        };
+
+        $(function () {
+            //banner
+            $.request("/api/Forum/GetKeyVersionInfo", null, function(res){
+                var html = baidu.template('banner',res.data);
+                $(".wap-banner .swiper-container .swiper-wrapper").html(html);
+                var wapBanner = new Swiper('.wap-banner .swiper-container', {
+                    observer: true, //修改swiper自己或子元素时，自动初始化swiper
+                    observeParents: true, //修改swiper的父元素时，自动初始化swiper
+                    autoplay: true,//可选选项，自动滑动
+                    loop: true,
+                    pagination: {
+                        el: '.wapBanner_pagination',
+                    },
+                    navigation: {
+                        nextEl: '.wapBanner_next',
+                        prevEl: '.wapBanner_prev',
+                    },
+                });
+            });
+
+            //获取进行中活动列表
+            getActivityList(1, 1);
+            //获取已结束活动列表
+            getActivityList(2, 1);
+            //设置加载更多
+            $(".case_loodMore").on("click", function(){
+                var that = $(this);
+                var page = that.attr("pageIndex");
+                page = parseInt(page) + 1;
+                type = that.attr("type");
+                that.find("img").addClass("active");
+                getActivityList(type, page, function(){
+                    that.find("img").removeClass("active");
+                });
+            });
+
+            $(".articleDiv").on("click",'.acticle_cont_list',function () {
+                window.location.href='./active-details.html?forumId='+$(this).attr("forumId");
+            })
+        })
+    </script>
+</body>
+
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <title>checkBrowser</title>
+    <link rel="stylesheet" href="./css/layer.css">
+</head>
+<style>
+.layer_notice{
+    padding: 10px;
+    overflow: hidden;
+}
+.title{
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+    .box{
+        width: 100%;
+        height: 160px;
+        padding: 10px;
+    }
+ .box .item{
+     cursor: pointer;
+     width: 90%;
+     height: 64px;
+     border: 1px solid #f3f3f3;
+     margin-bottom: 5px;
+    }
+.box .item .img,
+.box .item .ch{
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: middle;
+
+}
+.box .item .ch span{
+    display: block;
+}
+</style>
+<body id="body">
+<div class="layer_notice" style="display: none">
+    <div class="title">您当前的浏览器版本过低，存在安全风险，建议您升级浏览器</div>
+    <div class="box" >
+        <div class="item" url="https://www.google.cn/chrome/">
+            <img class="img" src="images/google.jpg">
+            <div class="ch"><span>谷歌浏览器（google）</span><span>下载</span></div>
+        </div>
+        <div class="item" url="https://download-ssl.firefox.com.cn/releases-sha2/stub/official/zh-CN/Firefox-latest.exe">
+            <img class="img" src="images/Firefox.jpg">
+            <div class="ch"><span>火狐浏览器（Firefox）</span><span>下载</span></div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="./js/common/jquery-1.11.2.min.js"></script>
+<script src="./js/common/layer.js"></script>
+<script>
+    $(function () {
+        var version=getBrowserInfo();
+        if(version.indexOf('IE')>-1){//ie浏览器
+            layer.alert('', {
+                skin: 'layui-layer-molv', //样式类名
+                closeBtn: 0,
+                type:1,
+                content: $('.layer_notice')
+            }, function(){
+            });
+        }else{//非ie
+
+        }
+
+        //点击下载
+        $("#body").on("click",'.item',function () {
+            window.location.href=$(this).attr("url");
+        })
+    });
+
+
+    function getBrowserInfo (){
+        var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+        var isOpera = userAgent.indexOf("Opera") > -1; //判断是否Opera浏览器
+        var isIE = userAgent.indexOf("compatible") > -1
+            && userAgent.indexOf("MSIE") > -1 && !isOpera; //判断是否IE浏览器
+        var isEdge = userAgent.indexOf("Edge") > -1; //判断是否IE的Edge浏览器
+        var isFF = userAgent.indexOf("Firefox") > -1; //判断是否Firefox浏览器
+        var isSafari = userAgent.indexOf("Safari") > -1
+            && userAgent.indexOf("Chrome") == -1; //判断是否Safari浏览器
+        var isChrome = userAgent.indexOf("Chrome") > -1
+            && userAgent.indexOf("Safari") > -1; //判断Chrome浏览器
+        var isIE11 = userAgent.indexOf("rv:11.0") > -1 //isIE11
+        if (isIE) {
+            var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+            reIE.test(userAgent);
+            var fIEVersion = parseFloat(RegExp["$1"]);
+            if(fIEVersion == 6){
+                return "IE6  "+"["+userAgent+"]";
+            } else if (fIEVersion == 7) {
+                return "IE7  "+"["+userAgent+"]";
+            } else if (fIEVersion == 8) {
+                return "IE8  "+"["+userAgent+"]";
+            } else if (fIEVersion == 9) {
+                return "IE9  "+"["+userAgent+"]";
+            } else if (fIEVersion == 10) {
+                return "IE10  "+"["+userAgent+"]";
+            } else if (fIEVersion == 11) {
+                return "IE11  "+"["+userAgent+"]";
+            } else {
+                return "0  "+"["+userAgent+"]";
+            }//IE版本过低
+            return "IE  "+"["+userAgent+"]";
+        }
+        if(isIE11){
+            return "IE11  "+"["+userAgent+"]"; //单独处理
+        }
+        if (isOpera) {
+            return "Opera  "+"["+userAgent+"]";
+        }
+        if (isEdge) {
+            return "Edge  "+"["+userAgent+"]";
+        }
+        if (isFF) {
+            return "Firefox  "+"["+userAgent+"]";
+        }
+        if (isSafari) {
+            return "Safari  "+"["+userAgent+"]";
+        }
+        if (isChrome) {
+            return "Chrome  "+"["+userAgent+"]";
+        }
+    }
+</script>
+</html>

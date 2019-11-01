@@ -37,6 +37,9 @@ $(function () {
                       $('.mylike .mybox').html('');
                       GetForumPagingListForUserLike(1);
                   }
+                  if(index==3){
+                      $(".myaccount .userName").val(localStorage.getItem('ttName'));
+                  }
                   if(index==4){//初始化加载消息管理 系统消息
                       $(".right-content .mess .pu-menu .item").eq(0).click();
                   }
@@ -391,7 +394,15 @@ function GetForumDetailForEdit(id,index) {
                     res.data.forumList.forEach((ele, k) => {
                         str += '<div id="'+ele.id+'" type="'+ele.type+'" class="box">';
                         str += '   <div class="top">';
-                        str += '   <img class="bg" src="'+ele.picUrl+'">';
+                        var url= '';
+                        NetPing(ele.picUrl,function (res) {
+                            if(!res){
+                                url='./images/404.png'
+                            }else{
+                                url=ele.picUrl;
+                            }
+                        })
+                        str += '   <img class="bg" src="'+url+'">';
                         str += '   <img class="bg-mask" src="images/my-pu-box-bg-mask.png">';
                         str += '   <p class="bottom">';
                         str += '   <span class="item"><img src="./images/message-icon-white.png"><span >'+ele.commentCount+'</span></span>';

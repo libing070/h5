@@ -28,15 +28,25 @@ $(function () {
                     }
                     $(".information p.text").html(data.Content);
 
-                    if(data.MultimediaType==1){
-                          var str='<div class="swiper-slide"><img class="video-bg" style="width: 100%" src="'+data.PicUrl+'"></div>';
-                        $(".information .images .swiper-container .swiper-wrapper").append(str);
-                        $(".information .images").show();
-                        $(".information .videoss").hide();
-                    }else{
+                    if(data.MultimediaType==2){
                         $(".information .videoss").show();
                         $(".information .images").hide();
                         $(".information .videoss video").attr('src',data.PicUrl);
+                    }else{
+                        var url= '';
+                        NetPing(data.PicUrl,function (res) {
+                            if(!res){
+                                url='./images/404.png'
+                            }else{
+                                url=data.PicUrl;
+                            }
+                        })
+                        var str='<div class="swiper-slide"><img class="video-bg" style="width: 100%" src="'+url+'"></div>';
+                        $(".information .images .swiper-container .swiper-wrapper").append(str);
+                        $(".information .images").show();
+                        $(".information .videoss").hide();
+
+
                     }
                 }
             );

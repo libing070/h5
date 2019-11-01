@@ -33,8 +33,15 @@ $(function () {
                     var str = '';
                     res.data.forumList.forEach((ele, k) => {
                         str+='<div ids="'+ele.id+'" class="box">';
-                        //str+='<img style="width: 100%" src="images/index-banner3-s1.png">';
-                         str+='<img class="jump-details-img" ids="'+ele.id+'" style="width: 100%" src="'+ele.picUrl+'">';
+                        var url= '';
+                        NetPing(ele.picUrl,function (res) {
+                            if(!res){
+                                url='./images/404.png'
+                            }else{
+                                url=ele.picUrl;
+                            }
+                        })
+                         str+='<img class="jump-details-img" ids="'+ele.id+'" style="width: 100%" src="'+url+'">';
                         str+='<div class="content">';
                         str+='<p class="time">'+ele.createTime+'</p>';
                         str+='<p class="title">'+ele.title+'</p>';

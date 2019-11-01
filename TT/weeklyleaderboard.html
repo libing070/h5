@@ -56,8 +56,15 @@
                     function (res) {
                         var str = '';
                         res.data.forumInfo.forEach((ele, k) => {
-                           // var url='./images/index-banner2-s1.png';
-                             var url=ele.picUrl;
+                            var url= '';
+                            NetPing(ele.picUrl,function (res) {
+                                if(!res){
+                                    url='./images/404.png'
+                                }else{
+                                    url=ele.picUrl;
+                                }
+                            })
+
                             str+='<div ids="'+ele.id+'" class="swiper-slide" style="background-image: url('+url+')">';
                             str+=' <div class="con">';
                             var icon=ele.type==0?'images/article-icon.png':'images/know-icon.png';  // 0文章 1知识;
