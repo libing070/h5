@@ -29,12 +29,45 @@ $ git push -u origin master -f
 
 4. git checkout [remote branch](若分支为本地分支，则需切换到服务器的远程分支)
 
-5. git pull
+$ git pull //更新代码带本地
+$ :wq  //提交信息
 
 若命令执行成功，则更新代码成功！
 
 
 git fetch origin master 从远程获取最新版本到本地
+
+
+团队代码更新提交
+
+git diff 
+
+git add .
+
+git commit -m '提交到本地仓库'
+
+git pull 
+
+git status
+
+:wq 合并
+
+git push
+
+//////////////////////
+
+ls  用来显示目录或具体文件列表
+ cd src 进入到src目录
+git add src //上传src下的文件
+git commit -m '提交到本地仓库'
+
+git status
+git push
+git pull
+
+
+
+
 
 
 
@@ -98,6 +131,7 @@ lixiaolong@skyengine.cn  11235813a
 https://www.cnblogs.com/e-cat/p/9453995.html  ui框架
 
 https://youzan.github.io/vant/#/zh-CN/intro  移动端ui
+http://m.sui.taobao.org/  移动端ui(淘宝)
 https://youzan.github.io/vant-weapp/#/intro   有赞小程序ui
 
 https://segmentfault.com/a/1190000007276635 h5自适应模板
@@ -114,7 +148,8 @@ https://blog.csdn.net/u012207345/article/details/81867816 移动端手势事件浅析
 https://segmentfault.com/a/1190000020399839?utm_source=tag-newest  js之数组内置方法
 https://www.cnblogs.com/gaoht/  特效博客
 https://www.cnblogs.com/gaoht/p/11276277.html  原型原型链
-http://219.143.155.183:8899/swagger/index.html 新意接口外网
+
+http://219.143.155.183:8899/api/swagger/index.html 新意接口外网
 http://172.16.101.119:8899/swagger/index.html  新意接口内网
 
 http://www.alltoall.net   在线转换工具
@@ -123,11 +158,15 @@ https://www.cnblogs.com/wendaobai/articles/6248736.html  js模板引擎
 
 https://blog.csdn.net/huweijun_2012/article/details/52107476  单独分享
 
+https://www.gaitubao.com/  改图片尺寸
+
 
 baiwen 123.abc  OA 
 lmhwolf 123456 智库
 libing lb8561070   jhi8jybFw3VTKZOarrhy17ED+ApycExc5UIgrfuslTj8WnN3f28xYB7zSalnnhdZlFQXkRNqccgf4Fnl+xMyNQ==
 wxh wxh   jhi8jybFw3VXenqHpJRjXLED+ApycExc7FqumDGjvE7csLbpYrKVKsRWykHAxSxusmcrjtgh8GU=
+
+libing0700 lb8561070  jhi8jybFw3XE1hKw8PhXfbED+ApycExcXSJXkwwu/Fre4DtNEOScPisEjkiGiIUwL25mtk7egLkUdxRkf/WCdA==
  http://219.143.155.183:8899/web/
 
  http://h5tt.skyengine.cn/cigF/index.html
@@ -136,3 +175,12 @@ wxh wxh   jhi8jybFw3VXenqHpJRjXLED+ApycExc7FqumDGjvE7csLbpYrKVKsRWykHAxSxusmcrjt
 
  <meta name="description" content="">
     <meta name="keywords" content="">
+
+https://github.com/46728217/4e_front_vue/invitations
+
+http://lipeng@123.56.180.12:8888/r/dz4e.git
+
+http://localhost/jsp/pc/index.jsp
+
+http://test.4e.skyengine.cn
+
