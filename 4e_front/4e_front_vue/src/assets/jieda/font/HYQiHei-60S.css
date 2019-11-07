@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "HYQiHei-60S";
+  src: url("HYQiHei-60S.woff2") format("woff2"),
+       url("HYQiHei-60S.woff") format("woff"),
+       url("HYQiHei-60S.ttf") format("truetype"),
+       url("HYQiHei-60S.eot") format("embedded-opentype"),
+       url("HYQiHei-60S.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}

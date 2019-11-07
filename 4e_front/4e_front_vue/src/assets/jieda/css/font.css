@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "font-hy-x4";
+  src: url("../font/HYQiHeiX4-35W-1.woff2") format("woff2"),
+       url("../font/HYQiHeiX4-35W-1.woff") format("woff"),
+       url("../font/HYQiHeiX4-35W-1.ttf") format("truetype"),
+       url("../font/HYQiHeiX4-35W-1.eot") format("embedded-opentype"),
+       url("../font/HYQiHeiX4-35W-1.svg") format("svg");
+} 
+@font-face {
+  font-family: "font-hy-x4-75";
+  src: url("../font/HYQiHeiX4-75W-5.woff2") format("woff2"),
+       url("../font/HYQiHeiX4-75W-5.woff") format("woff"),
+       url("../font/HYQiHeiX4-75W-5.ttf") format("truetype"),
+       url("../font/HYQiHeiX4-75W-5.eot") format("embedded-opentype"),
+       url("../font/HYQiHeiX4-75W-5.svg") format("svg");
+}
+@font-face {
+  font-family: "font-hy";
+  src: url("../font/HYQiHeiY1-35W-1.woff2") format("woff2"),
+       url("../font/HYQiHeiY1-35W-1.woff") format("woff"),
+       url("../font/HYQiHeiY1-35W-1.ttf") format("truetype"),
+       url("../font/HYQiHeiY1-35W-1.eot") format("embedded-opentype"),
+       url("../font/HYQiHeiY1-35W-1.svg") format("svg");
+}
+@font-face {
+  font-family: "font-hy-55";
+  src: url("../font/HYQiHeiY1-55W-3.woff2") format("woff2"),
+       url("../font/HYQiHeiY1-55W-3.woff") format("woff"),
+       url("../font/HYQiHeiY1-55W-3.ttf") format("truetype"),
+       url("../font/HYQiHeiY1-55W-3.eot") format("embedded-opentype"),
+       url("../font/HYQiHeiY1-55W-3.svg") format("svg");
+}
+@font-face {
+  font-family: "font-hy-75";
+  src: url("../font/HYQiHeiY1-75W-5.woff2") format("woff2"),
+       url("../font/HYQiHeiY1-75W-5.woff") format("woff"),
+       url("../font/HYQiHeiY1-75W-5.ttf") format("truetype"),
+       url("../font/HYQiHeiY1-75W-5.eot") format("embedded-opentype"),
+       url("../font/HYQiHeiY1-75W-5.svg") format("svg");
+}
+@font-face {
+  font-family: "font-hy-60S";
+  src: url("../font/HYQiHei-60S.woff2") format("woff2"),
+       url("../font/HYQiHei-60S.woff") format("woff"),
+       url("../font/HYQiHei-60S.ttf") format("truetype"),
+       url("../font/HYQiHei-60S.eot") format("embedded-opentype"),
+       url("../font/HYQiHei-60S.svg") format("svg");
+}
+@font-face {
+  font-family: "font-vw";
+  src: url("../font/VWHead-Regular.woff2") format("woff2"),
+       url("../font/VWHead-Regular.woff") format("woff"),
+       url("../font/VWHead-Regular.ttf") format("truetype"),
+       url("../font/VWHead-Regular.eot") format("embedded-opentype"),
+       url("../font/VWHead-Regular.svg") format("svg");
+}

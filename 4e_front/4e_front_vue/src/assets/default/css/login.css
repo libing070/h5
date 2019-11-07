@@ -1,0 +1,25 @@
+@charset "utf-8";
+.form-1 {width:16.85vw; min-width:320px; }
+.form-1 .field { width:100%; margin-top:27px; display:inline-table; padding:0;}
+.form-1 .field i {color:#000;left:16px; top:9px; position: absolute; height: 20px; width: 20px; text-align: center; padding-right:10px;}
+.form-1 .field_tip{height:14px; margin-top:10px; color:red}
+ .form-1 .field_btns{margin-top:15px;}
+ .form-1 input[type=text],.form-1 input[type=password] {color:#000;border: 1px solid #e2e6e9;border-radius:3px;height: 43px;line-height:43px;font-size: 14px; width:86%;padding-left:14%; -webkit-box-shadow: 0 0 0px 1000px white inset !important;} 
+.close{ background:url(../img/login4/icon-del.png) no-repeat; height: 26px;width: 26px; right:9px; top:29px; z-index:100;}
+.close:hover{ background:url(../img/login4/icon-del-hover.png) no-repeat;}
+.form-1 .button { width:100%; margin:25px auto; text-align:center;}
+.form-1 .input_button { background:#0765d6;height:45px; line-height:45px; width:190px; color:#fff; border:none; font-size:14px; border-radius:3px; display: inline-block;}
+
+.container > footer {padding-bottom: 1%; text-align:center;}
+.fl {float:left;}
+.fr {float:right;}
+.bc {color:#ebd6b7;font-size: 14px;}
+.bc img {width:20px; height:20px; margin-right:6px; vertical-align: bottom;}
+.field a {color:#92979d;font-size: 14px; line-height:45px; margin-top:0;}
+.field a:hover {text-decoration:underline;}
+.loginfoot{z-index:999;height:30px;line-height: 30px;color: #ffffff;background:#58595b;text-align: center; font-size:12px; position: fixed;bottom: 0;width: 100%;}
+.mr-28{margin-right: 28px;}
+.fn-22{font-size: 22px;}
+.login_content{width:100%; height:auto; overflow: hidden;}
+.login_content .picScroll-left{width:63vw; float:left; min-width:630px;}
+.login_content .indexbox{min-width:320px;width:17.2vw;background:#fff; height:auto; padding:2.5vw 10vw;  top:166px;right:12vw; z-index:999; position: absolute;}

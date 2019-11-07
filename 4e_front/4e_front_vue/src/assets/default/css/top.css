@@ -1,0 +1,67 @@
+@charset "utf-8";
+body,ul,li,h1,h2,h3,h4,h5,h6,form,dl,dd,ol{margin:0;padding:0;list-style:none;}
+html, body {height: 100%;/*overflow: hidden;*/min-width: 768px;}
+body, input, button, textarea { font-family: "microsoft yahei","Hiragino Sans GB", "Tahoma",  "simsun"; }
+em, strong { font-style: normal; }
+a{ text-decoration: none;}
+img{ border: 0; }
+LI{list-style-type:none;border-width:0;margin:0px;padding:0px}
+.fr{margin-bottom: 10px; margin-top: -10px;}
+.header{float: left; width:100%;height: 100%; }
+.topnav h1 {float:left;height:40px; line-height:40px;color: #fff;font-size: 20px;margin-left: 15px;}
+.topnav h1 .logo {overflow:hidden; display:inline-block; margin:0 20px; height:100%; vertical-align:middle}
+.topnav h1 .logo img{ vertical-align:middle; display:inline-block}
+.topnav h1 .logo i{ display:inline-block;vertical-align:middle;height:100%; font-size:16px; color:#fff; font-style:normal; font-weight:normal;}
+
+.header{background:#27303f; }
+.user-msg-btn em {color:#fff;background:#ed711f}
+.top-total{float:left;width: 100%;height: 100%;}
+.top-left{float:left;width: 18%;height: 100%;}
+.top-left img{ margin-top: 25px;margin-left: 15%;}
+.top-right{float:right;width: 12%;height: 100%;}
+.top-right img{ margin-top: 11px;margin-left: 40%;}
+.top-middle{float:left;width: 68%;height: 100%;}
+.top-middle-left{float:left;width: 50%;height: 100%;}
+.top-middle-right{float:right;width: 50%;height: 100%;}
+.menu-4e{width: 100%;margin-top: 25px;}
+.menu-4e li{display:inline;float:left;width: 15%;text-align:center;}
+.menu-4e li a{font-weight: 600;display:block;line-height:30px; font-family: "microsoft yahei";height: 30px;text-align:center;width: 100%;font-size: 15px;}
+.menu-user{width: 100%;margin-left: 59%;margin-top: 15px;}
+.menu-user li{display:inline;text-align:center;}
+.menu-user li a{display:block;float:left;color: black;line-height:50px; font-family: "microsoft yahei";height: 50px;text-align:center;width: 14%;font-size: 13px;}
+.black-unclick {color: black;}
+.default-click {border-bottom:2px solid #0099da;color: #0099da;}
+
+.topClick{background: #293038}
+.user-msg-btn {float:right; line-height:40px; position:relative; margin:0 20px;}
+.user-msg-btn em {font-size:13px;line-height:15px;display:inline-block;height:15px;padding:0 5px;border-radius:3px; position:absolute;left:20px; top:20px}
+.user-msg-btn span,.user-action-info-btn span {display:none }
+.user-msg-btn i{ color:#fff; font-size:26px;}
+.menu-left{ display:inline-block; vertical-align:middle; color:#fff; font-size:18px;margin-right:20px; font-weight:bold}
+.menu-left:hover{ text-decoration:none;}
+.box {
+  line-height:17px; margin-left:5px; font-style:normal; font-size:12px; padding:2px;
+  text-align:center; background-color:red; color:#fff; display:inline-block; min-width:17px; margin-top:3px;
+  position:relative; z-index:2;
+  -moz-border-radius:100%; /* Firefox */
+  -webkit-border-radius:100%; /* Safari 和 Chrome */
+  border-radius:100%; /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */
+  background-color:#F00;
+  /*behavior: url(../pte/PIE.htc);*/ /* 通知IE浏览器调用脚本作用于'box'类 */
+}
+.box2{ display:inline-block; float:left; *margin-top:2px;}
+/*20160615 zj*/
+.head-box{ display:inline-block;width:100%;float:left;}
+/* .head-tit{ display:inline-block;width:100%;height:100px;float:left;} */
+.head-left{ display:inline-block;float:left;padding:35px 0 35px 32px;}
+.head-middle{ display:inline-block;float:left;margin-top: 35px; margin-left: 38%;width:37%;}
+.head-right{ display:inline-block;float:right;padding:21.5px 32px 21.5px 0;}
+/* .head-tit img{ display:inline-block;vertical-align:middle;} */
+.topnav h1{width:175px;}
+.logo{ font-size:14px;color:#fff;}
+.pointer{cursor:pointer}
+/*2016 0927 */
+#popId{position:fixed;float:left;top:0;left:0;z-index:2; overflow:hidden;height:100%;width:100%; background:#000; opacity:0.5}
+.layer-box{width:100%; display:inline-block; position:fixed;left:0;top:0; z-index:2; text-align:center;}
+.layer-tip{ position:absolute;right:5%;top:50px;}
+.layer-main{ position:absolute;left:0;top:80px;width:100%;height:100%; display:inline-block; text-align:center;float:left; min-width:860px;}
