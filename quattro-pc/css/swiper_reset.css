@@ -1,0 +1,95 @@
+.kkkkv{
+    position: relative;
+}
+
+.kkkkv .swiper-pagination{
+    position: absolute;
+    bottom: 6rem;
+}
+
+.kkkkv .swiper-container{
+    margin-top: -0.1rem;
+}
+
+.kkkkv  .swiper-button-next, .children .swiper-button-prev{
+    top: 72%;
+}
+
+.car-swiper{
+    position: relative;
+}
+
+.car-swiper .swiper-pagination{
+    position: absolute;
+}
+
+.car-swiper .swiper-container{
+    /*position: static;*/
+    margin-top: -0.1rem;
+}
+
+.car-swiper  .swiper-button-next, .children .swiper-button-prev{
+    top: 72%;
+}
+
+
+
+
+.car-desc-swiper {
+    width: 100%;
+    position: relative;
+    margin-top: -5px;
+}
+.car-desc-swiper .swiper-pagination{
+    position: absolute;
+    bottom: 1rem;
+}
+
+.car-desc-swiper .swiper-container{
+    /*position: static;*/
+    margin-top: -0.1rem;
+    padding-bottom: 4rem;
+}
+.swiper1_btn{
+    width: 80%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
+    margin: auto;
+    margin-top: 2.6%;
+}
+
+
+.swiper1_btn .swiper1_next {
+    width: 2rem;
+    background: url('./../images/swiper1_prve.png') no-repeat center;
+    background-size: 45%;
+}
+
+.swiper1_btn .swiper1_prve {
+    width: 2rem;
+    background: url('./../images/swiper1_next.png') no-repeat center;
+    background-size: 45%;
+}
+.swiper-pagination-bullet{
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    opacity: 1;
+    display: inline-block;
+    border-radius: 100%;
+    background: white;
+
+}
+.swiper-pagination-bullet-active{
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 100%;
+    background: #3AB2DB;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{
+    margin: 0 5px;
+}

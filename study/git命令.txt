@@ -158,6 +158,11 @@ https://www.cnblogs.com/wendaobai/articles/6248736.html  js模板引擎
 
 https://blog.csdn.net/huweijun_2012/article/details/52107476  单独分享
 
+https://zixuephp.net/article-309.html  分享
+
+https://tinypng.com/
+https://www.yasuotu.com/
+
 https://www.gaitubao.com/  改图片尺寸
 
 
@@ -182,5 +187,18 @@ http://lipeng@123.56.180.12:8888/r/dz4e.git
 
 http://localhost/jsp/pc/index.jsp
 
+http://localhost/jsp/admin/index.jsp
+
 http://test.4e.skyengine.cn
 
+http://t.4e.skyengine.cn/
+
+
+http://www.cig.com.cn/zhiku/
+
+ http://h5tt.skyengine.cn/TTS/index.html
+
+供应商   testg    20191113
+管理员  admin   Ww1234
+经销商  dealer-test  Abc.123
+经销商  14704137773  20191113

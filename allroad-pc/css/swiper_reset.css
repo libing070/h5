@@ -1,0 +1,79 @@
+.swiper1 {
+    width: 100%;
+    position: relative;
+}
+
+
+
+.swiper-button-next, .swiper-button-prve {
+    outline: none;
+}
+
+.children .swiper1_btn .swiper1_next {
+     width: 10px;
+    background: url('../images/swiper1_next.png') no-repeat center;
+     background-size: 70%;
+
+}
+
+.children .swiper1_btn .swiper1_prve {
+    width: 10px;
+    background: url('../images/swiper1_prve.png') no-repeat center;
+     background-size: 70%;
+
+
+
+ }
+
+ .children{
+     position: relative;
+ }
+
+.children .swiper-pagination{
+    position: absolute;
+    bottom: 2rem;
+    width: 7rem;
+    left: auto;
+    right: 12rem;
+}
+.children  .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    text-align: center;
+    opacity: 1;
+    background: none;
+    background-image: url("../images/swiper-pag-icon.png");
+    background-size: 100%;
+}
+.children  .swiper-pagination-bullet-active {
+    width: 12px;
+    height: 12px;
+    background: none;
+    background-image: url("../images/swpier-pag--icon-active.png");
+    background-size: 100%;
+}
+.children  .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{
+    margin: 0 3px;
+}
+.children .swiper-container{
+    /*position: static;*/
+    /*margin-top: -0.1rem;*/
+}
+
+
+.preview .swiper-slide.active-nav{
+    transform: scale(1.4);
+    -ms-transform:scale(1.4);     /* IE 9 */
+    -moz-transform:scale(1.4);     /* Firefox */
+    -webkit-transform:scale(1.4); /* Safari 和 Chrome */
+    -o-transform:scale(1.4);
+    opacity: 1;
+}
+
+.swiper1_btn{
+    width: 8rem;
+    position: absolute;
+    bottom: 2.65rem;
+    right: 11.5rem;
+    z-index: 9;
+}
