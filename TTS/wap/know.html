@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/layer.css">
+    <!-- 适配wap pad/pc -->
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/base_wap.css" media="(max-width:767px)">
+    <link rel="stylesheet" href="./css/swiper_reset.css">
+    <title>营销智库</title>
+</head>
+
+<body>
+    <div class="container articleH" id="wap">
+        <!--wap代码 -->
+        <div class="wap-banner">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                </div>
+                <div class="swiper-pagination wapBanner_pagination"></div>
+            </div>
+            <div class="ttSwiper_btn">
+                <div class="swiper-button-prev wapBanner_prev"></div>
+                <div class="swiper-button-next wapBanner_next"></div>
+            </div>
+        </div>
+        <div class="articleDiv">
+            <img class="articleTitle" src="./images/wap/knowledge_title.png" alt="">
+            <div class="acticle_cont ">
+            </div>
+        </div>
+        <div class="loadMore acticle-load-more" style="margin-bottom: 0;" pageIndex="1" hasmore="1">
+            <img style="display: none" class="load-more-btn active" src="./images/wap/load-more-icon-black.png">
+            <p>点击加载更多</p>
+        </div>
+        <div class="readRank">
+            <img src="./images/wap/readRank_title.png" alt="">
+            <div class="swiper-container">
+            </div>
+            <div class="paginationBox">
+                <div class="swiper-pagination readRankpagination"></div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/common/jquery-1.11.2.min.js"></script>
+    <script src="./js/common/jquery.cookie.js"></script>
+    <script src="./js/common/anime.min.js"></script>
+    <script src="./js/common/layer.js"></script>
+    <script src="./js/common/rem.js"></script>
+    <script src="./js/common/swiper.min.js"></script>
+    <script src="./js/common/md5.js"></script>
+    <script src="./../js/main.js?v=1"></script>
+    <script src="./../js/common.js"></script>
+    <script src="./js/common/baiduTemplate.js"></script>
+
+    <!--banner-->
+    <script id="banner" type="text/html">           
+        <%for(var i=0;i<keyVersionList.length;i++){%>
+        <div class="swiper-slide">
+            <a href="<%=keyVersionList[i].Url%>">
+                <img src="<%=keyVersionList[i].KeyVisionUrl%>" style="height: 4rem" alt="">
+                <div class="slide_cont">
+                    <img class="trademark" src="./images/wap/audi-icon.png" alt="">
+                    <!--<p>2018年奥迪 #Goooo Home#-->
+                        <!--新春致意数字创意营销</p>-->
+                    <a class="turnBtn bannerTurnBtn" href="javascript:;">
+                        <img src="./images/wap/turn_right.png" alt="">
+                    </a>
+                </div>
+            </a>
+        </div>
+        <%}%>
+    </script>
+
+    <!--一周阅读排行-->
+    <script id="week_read_ranking" type="text/html">
+        <div class="swiper-wrapper">
+            <%for(var i=0;i<forumInfo.length;i++){%>
+            <div class="swiper-slide">
+                <a href="details.html?id=<%=forumInfo[i].id%>">
+                    <img src="<%=forumInfo[i].picUrl%>" style="height: 1.8rem" alt="">
+                    <div class="readBox">
+                        <%if (forumInfo[i].type==0){%>
+                        <div class="jiaobiao article"></div>
+                        <%}else{%>
+                        <div class="jiaobiao knowledge"></div>
+                        <%}%>
+                        <div class="read_txt">
+                            <div class="zhbg"><%=(i+1)>9?(i+1):('0'+(i+1))%></div>
+                            <p><%=forumInfo[i].title%></p>
+                            <p><%=forumInfo[i].summary%></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <%}%>
+        </div>
+    </script>
+
+    <!--知识-->
+    <script id="knowledge" type="text/html">
+        <%for(var i=0;i<forumList.length;i++) {%>
+        <div class="acticle_cont_list" ids="<%=forumList[i].id%>">
+            <img src="<%=forumList[i].picUrl%>" style="height: 2.4rem"alt="">
+            <div class="art_txt">
+                <div>
+                    <span class="art_time"><%=forumList[i].createTime.substr(0, 10)%></span>
+                    <p class="art_cont"><%=forumList[i].title%></p>
+                    <!--<p class="art_cont"><%=forumList[i].summary%></p>-->
+                    <p class="art_icon">
+                        <span><i></i><%=forumList[i].commentCount%></span>
+                        <span><i></i><%=forumList[i].visitCount%></span>
+                        <%if (forumList[i].IsLike){%>
+                        <span><i style="background:url('./images/wap/heart-icon-red.png') no-repeat;background-size:100% "></i><%=forumList[i].likeCount%></span>
+                        <%}else{%>
+                        <span><i></i><%=forumList[i].likeCount%></span>
+                        <%}%>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <%}%>
+    </script>
+
+    <script>
+
+        //获取知识列表
+        var getKnowledgeList = function(pageIndex) {
+            var   params={
+                timestamp: ts(),
+                forumType:1, //知识
+                pageIndex:pageIndex?pageIndex:1,
+                pageSize:10,
+                userToken:localStorage.getItem("ttToken")||'',
+                sign: createSign({
+                    timestamp: ts(),
+                    forumType:1,
+                    pageIndex:pageIndex?pageIndex:1,
+                    pageSize:10,
+                    userToken:localStorage.getItem("ttToken")||'',
+                })
+            }
+            $.request("/api/Forum/GetForumPagingList", params, function(res){
+                if(pageIndex>res.data.pageCount){
+                    $(".acticle-load-more").find("p").html("没有更多了");
+                    $(".acticle-load-more").find(".load-more-btn").hide();
+                    $(".acticle-load-more").attr("hasmore","0");
+                    return;
+                }
+                if(res.data.forumList!=""){
+                    for(var i=0;i<res.data.forumList.length;i++){
+                        NetPing(res.data.forumList[i].picUrl,function (re) {
+                            if(!re){
+                                res.data.forumList[i].picUrl='./images/wap/404.png'
+                            }else{
+                                res.data.forumList[i].picUrl= res.data.forumList[i].picUrl;
+                            }
+                        })
+                    }
+
+                    var html = baidu.template('knowledge',res.data);
+                    $(".articleDiv .acticle_cont").append(html);
+                    $(".acticle-load-more").find(".load-more-btn").hide();
+                }else{
+                    $(".acticle-load-more").find("p").html("没有更多了");
+                }
+            });
+        };
+
+        $(function () {
+            //banner
+            $.request("/api/Forum/GetKeyVersionInfo", null, function(res){
+                for(var i=0;i<res.data.keyVersionList.length;i++){
+                    NetPing(res.data.keyVersionList[i].KeyVisionUrl,function (re) {
+                        if(!re){
+                            res.data.keyVersionList[i].KeyVisionUrl='./images/wap/404.png'
+                        }else{
+                            res.data.keyVersionList[i].KeyVisionUrl= res.data.keyVersionList[i].KeyVisionUrl;
+                        }
+                    })
+                }
+                var html = baidu.template('banner',res.data);
+                $(".wap-banner .swiper-container .swiper-wrapper").html(html);
+                var wapBanner = new Swiper('.wap-banner .swiper-container', {
+                    observer: true, //修改swiper自己或子元素时，自动初始化swiper
+                    observeParents: true, //修改swiper的父元素时，自动初始化swiper
+                    autoplay: true,//可选选项，自动滑动
+                    loop: true,
+                    pagination: {
+                        el: '.wapBanner_pagination',
+                    },
+                    navigation: {
+                        nextEl: '.wapBanner_next',
+                        prevEl: '.wapBanner_prev',
+                    },
+                });
+            });
+            //获取第一页知识列表
+            getKnowledgeList(1);
+            //设置加载更多
+            $(".acticle-load-more").on("click", function(){
+                $(".acticle-load-more").find(".load-more-btn").show();
+                var hasMore=$(".acticle-load-more").attr("hasmore");//1更多 0 没有
+                if(hasMore==0){
+                    $('.acticle-load-more').off();
+                    $(".acticle-load-more").find(".load-more-btn").hide();
+                    return;
+                }
+                var pageIndex=$(this).attr("pageIndex");
+                pageIndex=++pageIndex;
+                $(this).attr("pageIndex",pageIndex);
+                getKnowledgeList(pageIndex);
+            });
+            //一周阅读排行
+            $.request("/api/Forum/GetWeekReadSort", null, function(res){
+                for(var i=0;i<res.data.forumInfo.length;i++){
+                    NetPing(res.data.forumInfo[i].picUrl,function (re) {
+                        if(!re){
+                            res.data.forumInfo[i].picUrl='./images/wap/404.png'
+                        }else{
+                            res.data.forumInfo[i].picUrl= res.data.forumInfo[i].picUrl;
+                        }
+                    })
+                }
+                var html = baidu.template('week_read_ranking',res.data);
+                $(".readRank .swiper-container").html(html);
+                var readRank = new Swiper('.readRank .swiper-container', {
+                    observer: true, //修改swiper自己或子元素时，自动初始化swiper
+                    observeParents: true, //修改swiper的父元素时，自动初始化swiper
+                    // autoplay: true,//可选选项，自动滑动
+                    loop: true,
+                    centeredSlides: true,
+                    slidesPerView: 2.2,
+                    spaceBetween: 20,
+                    pagination: {
+                        el: '.readRankpagination'
+                    },
+                    on: {
+                        slideChangeTransitionStart: function () {
+                            $('.readRank .swiper-slide').find('.read_txt').slideUp();
+                            $('.readRank .swiper-slide-active').find('.read_txt').slideDown();
+                        }
+                    }
+                }); 
+            });
+            // var urlParame = getUrlParam('type');
+            // if (urlParame == 1) {
+            //     $('.articleTitle').attr();
+            // }
+            // if (urlParame == 2) {
+            //     $('.articleTitle').attr();
+            // }
+            // if (urlParame == 3) {
+            //     $('.articleTitle').attr();
+            // }
+            $(".articleDiv").on("click",'.acticle_cont_list',function () {
+                window.location.href='./details.html?id='+$(this).attr("ids");
+            })
+        })
+    </script>
+</body>
+
+
+</html>

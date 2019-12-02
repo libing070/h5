@@ -50,7 +50,8 @@ $(function () {
         $(this).find('.pro_img').removeClass('pro_imgHover');
     });
     //    弹层关闭按钮
-    $('.close_btn').on('click', function () {
+    $('.close_btn').on('click', function (e) {
+        e.stopPropagation();
         $('.contact_mask').hide();
         clearCm();
     });
@@ -58,7 +59,8 @@ $(function () {
         $('.cm_1').show();
     });
     //联系我们留资
-    $('.selectIdentity img').on('click', function () {
+    $('.selectIdentity img').on('click', function (e) {
+        e.stopPropagation();
         var index = $(this).index();
         console.log(index)
         if (index == 0) {

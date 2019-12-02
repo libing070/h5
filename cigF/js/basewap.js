@@ -248,6 +248,10 @@ $(function () {
             $(".oa-swiper .oa-menu").append(str);
         });
     }
+    //网盘跳转到登录页面
+    $(".module9 .oa-swiper2 .oa-download .title").on("click",".arrow_icon_btn",function () {
+        window.location.href='https://pan.cig.com.cn/';
+    })
 
 });
 

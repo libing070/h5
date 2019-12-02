@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/layer.css">
+    <!-- 适配wap pad/pc -->
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/base_pc.css">
+    <link rel="stylesheet" href="./css/details.css">
+    <link rel="stylesheet" href="./css/swiper_reset.css">
+    <script type="text/javascript" src="./js/common/qrcode.min.js"></script>
+
+    <title>详情</title>
+    <style>
+        .text img{
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container details" id="details">
+    <!--pc代码 -->
+    <!--头部导航-->
+    <div class="header"></div>
+    <img style="width: 100%;display: block" class="top-bg" src="./images/details-top-bg.png"/>
+    <p class="bar"><a href="./index.html">首页- </a> <a class="" href="">资讯</a><a>- 详情</a></p>
+
+    <div class="content">
+        <div class="information">
+             <p class="title"></p>
+             <p class="top" style="display: none">
+                <span class="item mes"><img  src="./images/message-icon.png"><span class="message-icon"></span></span>
+                <span class="item"><img src="./images/view-icon.png"><span class="view-icon" ></span></span>
+                <span class="item"><img class="vote-icon-img vote-icon-img-detail" forumId=""  src="./images/vote-icon.png"><span class="vote-icon"></span></span>
+                <span class="item"><img src="./images/share-btn.png"><span>分享</span></span>
+                 <span class="item share-item"><img class="share-img share-wx-img" style="" src="images/share-wx-iocn.png"><img class="share-img share-xl-img" style="" src="images/share-xl-icon.png"></span>
+
+             </p>
+            <p class="line"></p>
+            <!--图片-->
+            <div class="images" style="">
+                <!--<div class="index_swiperBtn">-->
+                    <!--<a href="javascript:;" class="index_next index_next1"></a>-->
+                    <!--<a href="javascript:;" class="index_prev index_prev1"></a>-->
+                <!--</div>-->
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <!--<div class="swiper-slide">   <img class="video-bg" style="width: 100%" src="./images/details-s1.jpg"></div>-->
+                    </div>
+                    <!-- 如果需要分页器 -->
+                    <!--<div class="swiper-pagination"></div>-->
+                    <!-- 如果需要导航按钮 -->
+                </div>
+            </div>
+            <!--&lt;!&ndash;图文&ndash;&gt;-->
+            <!--<div class="graphic"></div>-->
+
+            <!--&lt;!&ndash;视频&ndash;&gt;-->
+            <!--<div class="videoss" style="display: none">-->
+                <!--<div class="video_box">-->
+                    <!--<img class="video-bg" src="./images/video-bg.png">-->
+                    <!--<img class="video-btn" src="images/video-btn.png">-->
+                    <!--<video class="video"  id="video1" controls src="" poster=""></video>-->
+                <!--</div>-->
+            <!--</div>-->
+            <p class="bottom" style="margin-bottom: 20px">
+                <span class="item mes"><img  src="./images/message-icon.png"><span class="message-icon">2</span></span>
+                <span class="item"><img  src="./images/view-icon.png"><span class="view-icon">2</span></span>
+                <span class="item"><img class="vote-icon-img vote-icon-img-detail" forumId="" src="./images/vote-icon.png"><span class="vote-icon" >3</span></span>
+                <span class="item"><img src="./images/share-btn.png"><span>分享</span></span>
+                <span class="item share-item"><img class="share-img share-wx-img" style="" src="images/share-wx-iocn.png"><img class="share-img share-xl-img" style="" src="images/share-xl-icon.png"></span>
+            </p>
+            <p class="text">
+            </p>
+
+
+        </div>
+        <div class="message-box">
+            <div class="top-reply">
+                <p>评论</p>
+                <textarea class="textarea"></textarea>
+                <div class="reply-btn">
+                    <img commentId="0" class="class-reply-btn-img" src="images/published-btn.png">
+                </div>
+            </div>
+            <div class="reply-list">
+                <p>评论</p>
+                <div class="list-box">
+                 <!--<div class="list-box-A">-->
+                    <!--<div class="list-box-A-title">-->
+                        <!--<div class="title-left">-->
+                            <!--<img class="icon" src="images/headportrait.png">-->
+                            <!--<span class="name">朱迪</span>-->
+                            <!--<span class="time">2019-8-6</span>-->
+                        <!--</div>-->
+                        <!--<div class="title-right">-->
+                            <!--<span class="s1 mes"><img class="icon" src="./images/message-icon.png"><span class="nums">2</span></span>-->
+                            <!--<span class="s1 vote"><img class="icon" src="./images/vote-icon.png"><span class="nums">3</span></span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="list-box-A-con">这个作品很好，我很喜欢，加油加油加油加油加油！</div>-->
+                    <!--<div class="list-box-A-textarea" style="display: none">-->
+                        <!--<textarea class="textarea"></textarea>-->
+                        <!--<div class="reply-btn">-->
+                            <!--<img src="images/reply-btn.png">-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="list-box-B">-->
+                        <!--<div class="list-box-B-title">-->
+                            <!--<div class="list-li-left">-->
+                                <!--<span class="name">王迪迪</span>-->
+                                <!--<span class="static">回复</span>-->
+                                <!--<span class="name">王迪</span>-->
+                                <!--<span class="time">半个小时前</span>-->
+                            <!--</div>-->
+                            <!--<div class="list-li-right">-->
+                                <!--<span class="s1 del">删除</span>-->
+                                <!--<span class="s1 mes"><img class="icon" src="./images/message-icon.png"><span class="nums">2</span></span>-->
+                                <!--<span class="s1 vote"><img class="icon" src="./images/vote-icon.png"><span class="nums">3</span></span>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="list-box-B-con">这个作品很好，我很喜欢，加油加油加油加油加油！</div>-->
+                        <!--<div class="list-box-B-textarea" style="display: none">-->
+                            <!--<textarea class="textarea"></textarea>-->
+                            <!--<div class="reply-btn">-->
+                                <!--<img src="images/reply-btn.png">-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="list-box-B">-->
+                        <!--<div class="list-box-B-title">-->
+                            <!--<div class="list-li-left">-->
+                                <!--<span class="name">王迪迪</span>-->
+                                <!--<span class="static">回复</span>-->
+                                <!--<span class="name">王迪</span>-->
+                                <!--<span class="time">半个小时前</span>-->
+                            <!--</div>-->
+                            <!--<div class="list-li-right">-->
+                                <!--<span class="s1 del">删除</span>-->
+                                <!--<span class="s1 mes"><img class="icon" src="./images/message-icon.png"><span class="nums">2</span></span>-->
+                                <!--<span class="s1 vote"><img class="icon" src="./images/vote-icon.png"><span class="nums">3</span></span>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="list-box-B-con">这个作品很好，我很喜欢，加油加油加油加油加油！</div>-->
+                        <!--<div class="list-box-B-textarea" style="display: none">-->
+                            <!--<textarea class="textarea"></textarea>-->
+                            <!--<div class="reply-btn">-->
+                                <!--<img src="images/reply-btn.png">-->
+                            <!--</div>-->
+                        <!--</div>-->
+
+                    <!--</div>-->
+                    <!--<div class="list-box-B">-->
+                         <!--<div class="list-box-B-title">-->
+                             <!--<div class="list-li-left">-->
+                                 <!--<span class="name">王迪迪</span>-->
+                                 <!--<span class="static">回复</span>-->
+                                 <!--<span class="name">王迪</span>-->
+                                 <!--<span class="time">半个小时前</span>-->
+                             <!--</div>-->
+                             <!--<div class="list-li-right">-->
+                                 <!--<span class="s1 del">删除</span>-->
+                                 <!--<span class="s1 mes"><img class="icon" src="./images/message-icon.png"><span class="nums">2</span></span>-->
+                                 <!--<span class="s1 vote"><img class="icon" src="./images/vote-icon.png"><span class="nums">3</span></span>-->
+                             <!--</div>-->
+                         <!--</div>-->
+                         <!--<div class="list-box-B-con">这个作品很好，我很喜欢，加油加油加油加油加油！</div>-->
+                        <!--<div class="list-box-B-textarea" style="display: none">-->
+                            <!--<textarea class="textarea"></textarea>-->
+                            <!--<div class="reply-btn">-->
+                                <!--<img src="images/reply-btn.png">-->
+                            <!--</div>-->
+                        <!--</div>-->
+                     <!--</div>-->
+                <!--</div>-->
+                 <!--<div class="list-box-A">-->
+                    <!--<div class="list-box-A-title">-->
+                        <!--<div class="title-left">-->
+                            <!--<img class="icon" src="images/headportrait.png">-->
+                            <!--<span class="name">朱迪</span>-->
+                            <!--<span class="time">2019-8-6</span>-->
+                        <!--</div>-->
+                        <!--<div class="title-right">-->
+                            <!--<span class="s1 mes"><img class="icon" src="./images/message-icon.png"><span class="nums">2</span></span>-->
+                            <!--<span class="s1 vote"><img class="icon" src="./images/vote-icon.png"><span class="nums">3</span></span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="list-box-A-con">这个作品很好，我很喜欢，加油加油加油加油加油！</div>-->
+                     <!--<div class="list-box-A-textarea" style="display: none">-->
+                         <!--<textarea class="textarea"></textarea>-->
+                         <!--<div class="reply-btn">-->
+                             <!--<img src="images/reply-btn.png">-->
+                         <!--</div>-->
+                     <!--</div>-->
+                    <!--<div class="list-box-B">-->
+                        <!--<div class="list-box-B-title">-->
+                            <!--<div class="list-li-left">-->
+                                <!--<span class="name">王迪迪</span>-->
+                                <!--<span class="static">回复</span>-->
+                                <!--<span class="name">王迪</span>-->
+                                <!--<span class="time">半个小时前</span>-->
+                            <!--</div>-->
+                            <!--<div class="list-li-right">-->
+                                <!--<span class="s1 del">删除</span>-->
+                                <!--<span class="s1 mes"><img class="icon" src="./images/message-icon.png"><span class="nums">2</span></span>-->
+                                <!--<span class="s1 vote"><img class="icon" src="./images/vote-icon.png"><span class="nums">3</span></span>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="list-box-B-con">这个作品很好，我很喜欢，加油加油加油加油加油！</div>-->
+                        <!--<div class="list-box-B-textarea" STYLE="display: none">-->
+                          <!--<textarea class="textarea"></textarea>-->
+                          <!--<div class="reply-btn">-->
+                            <!--<img src="images/reply-btn.png">-->
+                          <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                </div>
+            </div>
+            <div class="load-more comment-load-more" style="margin-bottom: 0;margin-top: 1rem" pageIndex="1" hasmore="1">
+                <img class="load-more-btn active" style="display: none" src="./images/load-more-icon-black.png">
+                <p>点击加载更多</p>
+            </div>
+        </div>
+    </div>
+    <!--头部轮播-->
+    <!--底部导航-->
+    <div class="footer"></div>
+</div>
+<script src="./js/common/jquery-1.11.2.min.js"></script>
+<script src="./js/common/jquery.cookie.js"></script>
+<script src="./js/common/anime.min.js"></script>
+<script src="./js/common/layer.js"></script>
+<script src="./js/common/rem.js"></script>
+<script src="./js/common/swiper.min.js"></script>
+<script src="./js/common/md5.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/basePc.js"></script>
+<script src="./js/details.js"></script>
+<script>
+    $(".share-wx-img").on("click",function () {
+        layer.open({
+            type: 1,
+            title:'分享二维码',
+            area: ['360px', '340px'], //宽高
+            content: '<div id="qrcode" style="width:200px; height:200px;margin: auto; margin-top:15px;"></div><div style="margin-top: 10px;font-size: 14px;text-align: center;padding: 0 50px">打开微信，点击底部的“发现”使用“扫一扫”即可将网页分享至朋友圈。</div>'
+        });
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            width : 200,
+            height : 200
+        });
+        var href=window.location.href;
+        var  hrefStart=href.split('details.html')[0];
+        var  hrefEnd=href.split('details.html')[1];
+
+        qrcode.makeCode(hrefStart+'wap/details.html'+hrefEnd);
+       // UserShare();
+    });
+    $(".share-xl-img").on("click",function () {
+        var title=$(".information .title").html();
+        window.open('http://v.t.sina.com.cn/share/share.php?pic=' +window.location.host +'/TT/images/share-logo.png&title=' + title + '&url=' + window.location.href + '&','微博分享','width=700, height=580, top=320, left=180, toolbar=no, menubar=no, scrollbars=no, location=yes, resizable=no, status=no');
+      //  UserShare();
+    })
+
+    function UserShare() {
+        $.request('/api/Forum/UserShare', {
+                timestamp: ts(),
+                forumId:$(".details").attr('ids'),
+                sign: createSign({
+                    timestamp: ts(),
+                    forumId:$(".details").attr('ids'),
+                })
+            },
+            function (res) {
+            }
+        );
+    }
+</script>
+</body>
+
+</html>

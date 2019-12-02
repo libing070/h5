@@ -21,14 +21,14 @@ if(browserRedirect()==0){
     document.getElementById("pc").style.display="block";
     $("#wap").remove();
     document.write('<script src="./js/interFace.js"></script>');
-    document.write('<script src="./js/swiperInit.js"></script>');
-    document.write('<script src="./js/base.js"></script>');
+    document.write('<script src="./js/swiperInit.js?v=2.1"></script>');
+    document.write('<script src="./js/base.js?v=2.2"></script>');
 }else{
     document.getElementById("wap").style.display="block";
     $("#pc").remove();
     $(".scrollBar,.phoneIcon,.mouseIcon").hide();
     document.write('<script src="./js/interFaceWap.js?v=1"></script>');
-    document.write('<script src="./js/swiperInitWap.js"></script>');
+    document.write('<script src="./js/swiperInitWap.js?v=1.01"></script>');
     document.write('<script src="./js/basewap.js"></script>');
 
 

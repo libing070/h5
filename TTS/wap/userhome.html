@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/layer.css">
+    <!-- 适配wap pad/pc -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/base_wap.css" media="(max-width:767px)">
+    <link rel="stylesheet" href="css/swiper_reset.css">
+    <title>营销智库</title>
+</head>
+<style>
+    .wap-nav {
+        background: #fff;
+    }
+</style>
+
+<body>
+    <div class="container centers userhome" id="wap">
+        <!--wap代码 -->
+        <div class="L-R">
+            <img src="images/wap/L&R_bg.jpg" alt="">
+            <!--<p class="c-title">华为nova 3e 无添加自拍</p>-->
+            <div class="c-l-r login" style="display: none">
+                <h1>欢迎来到CIG数字营销智库</h1>
+                <div class="form-div">
+                    <ul>
+                        <li>
+                            <label for="">账号</label>
+                            <input type="text" class="userName" name="" >
+                        </li>
+                        <li>
+                            <label for="">密码</label>
+                            <input type="password" class="password" name="" >
+                        </li>
+                    </ul>
+                    <div class="verCode">
+                        <div class="verCode-input">
+                            <label for="">验证码</label>
+                            <input type="text" class="verifyCode" name="">
+                        </div>
+                        <div class="verCode-img">
+                            <img src="" alt="">
+                        </div>
+                    </div>
+                    <div class="forget">
+                        <a class="join" type="1" href="javascript:;">加入智库</a>
+                        <a class="forget-pd"  type="2" href="javascript:;">忘记密码？</a>
+                    </div>
+                    <a class="loginBtn" href="javascript:;">登录</a>
+                </div>
+            </div>
+            <div class="c-l-r regist" style="display: none">
+                <h1>新用户注册</h1>
+                <div class="form-div">
+                    <ul>
+                        <li>
+                            <label for="">用户名</label>
+                            <input isExists="" type="text" class="userName" name="" >
+                        </li>
+                        <li>
+                            <label for="">密码</label>
+                            <input type="password" class="pwd" name="" >
+                        </li>
+                        <li>
+                            <label for="">确认密码</label>
+                            <input type="password" class="rePwd" name="" >
+                        </li>
+                    </ul>
+                    <div class="phone">
+                        <div class="verCode-input">
+                            <label for="">手机号码</label>
+                            <input type="text" class="mobile" name=""  isExists="">
+                        </div>
+                        <div class="verCode-img">
+                            <!-- <img src="" alt=""> -->
+                            <a href="javascript:;" class="countDown canClick">发送验证码</a>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>
+                            <label for="">验证码</label>
+                            <input type="text" class="regist_verCode" name="" >
+                        </li>
+                    </ul>
+                    <div class="clause">
+                        <input type="checkbox" name="" id="inputcheckbox">
+                        <label for="inputcheckbox" style="vertical-align: sub">新意智库注册条款</label>
+                    </div>
+                    <a class="loginBtn" href="javascript:;">提交</a>
+                    <!--<a class="wx_icon" href="javascript:;">-->
+                        <!--<img src="images/wap/wx-icon.png" alt="">-->
+                    <!--</a>-->
+                </div>
+            </div>
+            <div class="c-l-r forget-pwd" style="display: none">
+                <h1>找回密码</h1>
+                <div class="form-div">
+                    <div class="phone">
+                        <div class="verCode-input">
+                            <!-- <label for="">手机号码</label> -->
+                            <input type="text" class="mobile" name=""  placeholder="输入注册时的手机号">
+                        </div>
+                        <div class="verCode-img">
+                            <a href="javascript:;" class="countDown canClick">发送验证码</a>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>
+                            <input type="text" class="regist_verCode" name=""  placeholder="验证码">
+                        </li>
+                        <li>
+                            <input type="password" class="putPwd" name=""  placeholder="请输入新的密码">
+                        </li>
+                        <li>
+                            <input type="password" class="putPwdAgain" name=""  placeholder="再次输入新的密码">
+                        </li>
+                    </ul>
+                    <a class="loginBtn" href="javascript:;">提交</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="wap-article">
+            <div class="wap-art-title">
+                <p>作品推荐</p>
+            </div>
+            <a class="turnBtn artTurnBtn" href="javascript:;">
+                <img src="images/wap/turn_right_black.png" alt="">
+            </a>
+            <div class="artSwiper">
+                <div class=" swiper-container">
+                    <div class="swiper-wrapper">
+                       <!-- <div class="swiper-slide">
+                            <img src="images/wap/artSwiper_1.jpg" alt="">
+                            <div class="art_txt">
+                                <div>
+                                    <span class="art_time">2019-8-7</span>
+                                    <p class="art_cont">面看戛纳除了创意</p>
+                                    <p class="art_cont">还有什么</p>
+                                    <p class="art_icon">
+                                        <span><i></i>60</span>
+                                        <span><i></i>70</span>
+                                        <span><i></i>80</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>-->
+                        <!--<div class="swiper-slide">-->
+                            <!--<img src="images/wap/artSwiper_2.jpg" alt="">-->
+                            <!--<div class="art_txt">-->
+                                <!--<div>-->
+                                    <!--<span class="art_time">2019-8-7</span>-->
+                                    <!--<p class="art_cont">面看戛纳除了创意</p>-->
+                                    <!--<p class="art_cont">还有什么</p>-->
+                                    <!--<p class="art_icon">-->
+                                        <!--<span><i></i>60</span>-->
+                                        <!--<span><i></i>70</span>-->
+                                        <!--<span><i></i>80</span>-->
+                                    <!--</p>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="swiper-slide">-->
+                            <!--<img src="images/wap/artSwiper_3.jpg" alt="">-->
+                            <!--<div class="art_txt">-->
+                                <!--<div>-->
+                                    <!--<span class="art_time">2019-8-7</span>-->
+                                    <!--<p class="art_cont">面看戛纳除了创意</p>-->
+                                    <!--<p class="art_cont">还有什么</p>-->
+                                    <!--<p class="art_icon">-->
+                                        <!--<span><i></i>60</span>-->
+                                        <!--<span><i></i>70</span>-->
+                                        <!--<span><i></i>80</span>-->
+                                    <!--</p>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/common/jquery-1.11.2.min.js"></script>
+    <script src="js/common/jquery.cookie.js"></script>
+    <script src="js/common/anime.min.js"></script>
+    <script src="js/common/layer.js"></script>
+    <script src="js/common/rem.js"></script>
+    <script src="js/common/swiper.min.js"></script>
+    <script src="js/common/md5.js"></script>
+    <script src="./../js/common.js"></script>
+    <script src="js/baseWap.js"></script>
+    <script>
+        $(function() {
+            if (localStorage.getItem('ttToken')) {//登录状态
+                window.location.href=UserManager.base+'index.html';//跳转到首页
+            }
+            if(GetUrlParam("type")==0) {//登录
+               $(".userhome .L-R .login").show();
+            }else if(GetUrlParam("type")==1){//注册
+                $(".userhome .L-R .regist").show();
+            } else if(GetUrlParam("type")==2){//忘记密码
+                $(".userhome .L-R .forget-pwd").show();
+            }else{
+                window.location.href=UserManager.base+'index.html';//返回首页
+            }
+
+           $(".userhome .L-R .login").on("click",'.forget a',function () {
+              var type= $(this).attr("type");
+              if(type==1){//注册
+                  window.location.href='./userhome.html?type=1';//注册';//跳转到登录页面
+              }else if(type==2){//忘记密码
+                  window.location.href='./userhome.html?type=2';//忘记密码';//跳转到登录页面
+              }
+           })
+
+
+
+            //作品推荐
+            ///api/Forum/GetForumInfo(Thinktank_019~Thinktank_022)获取智库首页内容-作品推荐
+
+            function GetForumInfo() {
+                $.request('/api/Forum/GetForumInfo', {
+                        "timestamp": ts(),
+                        userToken:localStorage.getItem("ttToken")||'',
+                        sign: createSign({
+                            userToken:localStorage.getItem("ttToken")||'',
+                            "timestamp": ts(),
+                        })
+                    },
+                    function (res) {
+                        //作品推荐
+                        var str4='';
+                        var recommendList=res.data.recommendList;
+                        for(var i=0;i<recommendList.length;i++){
+                            NetPing(recommendList[i].picUrl,function (re) {
+                                if(!re){
+                                    recommendList[i].picUrl='./images/wap/404.png'
+                                }else{
+                                    recommendList[i].picUrl=recommendList[i].picUrl;
+                                }
+                            })
+                            str4+=' <div class="swiper-slide" forumId="'+recommendList[i].id+'" >';
+                            str4+='   <img src="'+recommendList[i].picUrl+'" alt="">';
+                            str4+='   <div class="art_txt">';
+                            str4+='   <div>';
+                            str4+='   <span class="art_time">'+recommendList[i].createTime+'</span>';
+                            str4+='   <p class="art_cont">'+recommendList[i].title+'</p>';
+                            str4+='   <p class="art_cont">'+recommendList[i].summary+'</p>';
+                            str4+='  <p class="art_icon">';
+                            str4+='  <span><i></i>'+recommendList[i].commentCount+'</span>';
+                            str4+=' <span><i></i>'+recommendList[i].visitCount+'</span>';
+                            str4+=' <span><i></i>'+recommendList[i].likeCount+'</span>';
+                            str4+=' </p>';
+                            str4+='  </div>';
+                            str4+='  </div>';
+                            str4+=' </div>';
+                        }
+                        $('.artSwiper .swiper-wrapper').append(str4);
+                    }
+                );
+            }
+            GetForumInfo();
+
+            $('.verCode-img img').attr('src', host + '/api/VerifyCode/CreateCode?' + ts());
+            var artSwiper = new Swiper('.artSwiper .swiper-container', {
+                observer: true, //修改swiper自己或子元素时，自动初始化swiper
+                observeParents: true, //修改swiper的父元素时，自动初始化swiper
+                // autoplay: true,//可选选项，自动滑动
+                loop: true,
+                centeredSlides: true,
+                slidesPerView: 2,
+                spaceBetween: 20,
+            });
+
+            //跳转到活动详情页面
+            $(".artSwiper .swiper-wrapper").on("click",'.swiper-slide',function () {
+                window.location.href='./active-details.html?forumId='+$(this).attr("forumId");
+            })
+
+
+            //刷新验证码
+            $('.verCode-img img').click(function(){
+                $(this).attr('src', host + '/api/VerifyCode/CreateCode?' + ts());
+            });
+
+            //登录
+            $(".login .loginBtn").click(function(){
+               userName = $.trim($(".login .userName").val());
+                password = $.trim($(".login .password").val());
+               verifyCode = $.trim($(".login .verifyCode").val());
+
+                if (userName=="") {
+                    layer.msg("请输入账号");
+                    return;
+                }
+                if (password=="") {
+                    layer.msg("请输入密码");
+                    return;
+                }
+                if (verifyCode=="") {
+                    layer.msg("请输入验证码");
+                    return;
+                }
+                $.request('/api/User/Login', {
+                        userName:userName,
+                        password:password,
+                        verifyCode:verifyCode,
+                        timestamp: ts(),
+                        sign: createSign({
+                            userName:userName,
+                            password:password,
+                            verifyCode:verifyCode,
+                            timestamp: ts(),
+                        })
+                    },
+                    function (res) {
+                        if(res.code==1){
+                            localStorage.setItem('ttToken', res.data.userToken);
+                            localStorage.setItem('ttName', res.data.userName);
+                            //localStorage.setItem('UserId', res.data.IsMine);
+                            setTimeout(function () {
+                                window.location.href=UserManager.base+'index.html';//登录
+                            },2000);
+                        }
+                        layer.msg(res.message);
+                    }
+                );
+
+            });
+
+            //api/User/UserNameIsExists用户名是否存在
+            //获取焦点
+            $(".userhome .L-R .regist").on("blur",'.userName',function () {
+                var that=this;
+                var userName=$(that).val();
+                if (!userName) {
+                    layer.msg('请填写用户名');
+                    return;
+                }
+                $.request('/api/User/UserNameIsExists', {
+                        userName: userName,
+                        timestamp: ts(),
+                        sign: createSign({
+                            userName: userName,
+                            timestamp: ts(),
+                        })
+                    },
+                    function (res) {
+                        if(res.data.isExists){//用户名已经存在
+                            layer.msg(res.message);
+                            $(".userhome .L-R .regist").find(".userName").attr("isExists","true");
+                        }else{
+                            layer.msg('该用户名可以使用');
+                            $(".userhome .L-R .regist").find(".userName").attr("isExists","");
+                        }
+                    }
+                );
+            });
+            //失去焦点
+            $(".userhome .L-R .regist").on("focus",'.userName',function () {
+              //  $(".userhome .L-R .regist").find(".userName").val("");
+            });
+
+
+            ///api/User/MobileIsExists手机号是否存在
+            // api/Mobile/SendMessage手机验证码发送
+            //获取手机验证码事件
+            var totalTime=60;
+            $(".userhome .L-R .regist").on("click",".countDown",function () {
+                var that=this;
+                var mobile=$(".userhome .L-R .regist .mobile").val();
+                var myregmobile = /^(1(([34578][0-9])|(47)|[8][01236789]))\d{8}$/;
+                if (!mobile) {
+                    layer.msg('请填写手机号');
+                    return;
+                }
+                if (!myregmobile.test(mobile)) {
+                    layer.msg('请填写正确手机号');
+                    return;
+                }
+                if(!$(that).hasClass("canClick")){
+                    return;
+                }
+                $.request('/api/User/MobileIsExists', {
+                        mobile: mobile,
+                        timestamp: ts(),
+                        sign: createSign({
+                            mobile: mobile,
+                            timestamp: ts(),
+                        })
+                    },
+                    function (res) {
+                        if(res.data.isExists){//手机号码已经存在
+                            layer.msg(res.message);
+                            $(".userhome .L-R .regist .mobile").attr("isExists","true");
+
+                        }else{
+                            $(".userhome .L-R .regist .mobile").attr("isExists","");
+                            $.request('/api/Mobile/SendMessage', {
+                                    mobile: mobile,
+                                    timestamp: ts(),
+                                    sign: createSign({
+                                        mobile: mobile,
+                                        timestamp: ts(),
+                                    })
+                                },
+                                function (res) {
+                                    if(res.code==1){
+                                        $(that).removeClass("canClick");
+                                        $(that).html(totalTime+'S');
+                                        let clock = window.setInterval(() => {
+                                            totalTime--;
+                                        $(that).html(totalTime + 'S');
+                                        if (totalTime < 0) {
+                                            window.clearInterval(clock);
+                                            $(that).html('重新发送');
+                                            totalTime = 60;
+                                            $(that).addClass("canClick");
+                                        }
+                                    },1000);
+                                    }
+                                    layer.msg(res.message);
+                                }
+                            );
+                        }
+                    }
+                );
+            });
+            //api/User/Register(TT_001)用户注册
+            //注册提交按钮事件
+            $(".userhome .L-R .regist").on("click",' .loginBtn',function () {
+                var that=this;
+                var userName=$(".userhome .L-R .regist .userName").val();
+                var password=$(".userhome .L-R .regist .pwd").val();
+                var confirmpassword=$(".userhome .L-R .regist .rePwd").val();
+                var myregmobile = /^(1(([34578][0-9])|(47)|[8][01236789]))\d{8}$/;
+                var mobile=$(".userhome .L-R .regist .mobile").val();
+                var mobileCode=$(".userhome .L-R .regist .regist_verCode").val();
+                // console.log(`--------------------`);
+                // console.log(`userName:`+userName);
+                // console.log(`password:`+password);
+                // console.log(`mobile:`+mobile);
+                // console.log(`mobileCode:`+mobileCode);
+                // console.log(`--------------------`);
+                if($(".container").find(".checkusername").attr("isExists")=="true"){
+                    return;
+                }
+                if (!userName) {
+                    layer.msg('请填写用户名');
+                    return;
+                }
+                if (!password) {
+                    layer.msg('请填写密码');
+                    return;
+                }
+                if (password!=confirmpassword) {
+                    layer.msg('两次密码不一致');
+                    return;
+                }
+                if (!mobile) {
+                    layer.msg('请填写手机号');
+                    return;
+                }
+                if (!myregmobile.test(mobile)) {
+                    layer.msg('请填写正确手机号');
+                    return;
+                }
+                if (!mobileCode) {
+                    layer.msg('请填写验证码');
+                    return;
+                }
+
+                if (!$(".container #inputcheckbox").is(":checked")) {
+                    layer.msg('请点击同意隐私条款');
+                    return;
+                }
+                $.request('/api/User/Register', {
+                        userName:userName,
+                        password:password,
+                        mobile: mobile,
+                        mobileCode:mobileCode,
+                        timestamp: ts(),
+                        sign: createSign({
+                            userName:userName,
+                            password:password,
+                            mobile: mobile,
+                            mobileCode:mobileCode,
+                            timestamp: ts(),
+                        })
+                    },
+                    function (res) {
+                        if(res.code==1){
+                            localStorage.setItem('ttToken', res.data.userToken);
+                            localStorage.setItem('ttName', res.data.userName);
+                            setTimeout(function () {
+                                window.location.href=UserManager.base+'index.html';//登录
+                            },2000);
+                        }
+                        layer.msg(res.message);
+                    }
+                );
+            });
+
+            $(".userhome .L-R .forget-pwd").on("click",".countDown",function () {
+                var that=this;
+                var mobile=$(".userhome .L-R .forget-pwd .mobile").val();
+                var myregmobile = /^(1(([34578][0-9])|(47)|[8][01236789]))\d{8}$/;
+                if (!mobile) {
+                    layer.msg('请填写手机号');
+                    return;
+                }
+                if (!myregmobile.test(mobile)) {
+                    layer.msg('请填写正确手机号');
+                    return;
+                }
+                if(!$(that).hasClass("canClick")){
+                    return;
+                }
+                $.request('/api/Mobile/SendMessage', {
+                        mobile: mobile,
+                        timestamp: ts(),
+                        sign: createSign({
+                            mobile: mobile,
+                            timestamp: ts(),
+                        })
+                    },
+                    function (res) {
+                        if(res.code==1){
+                            $(that).removeClass("canClick");
+                            $(that).html(totalTime+'S');
+                            let clock = window.setInterval(() => {
+                                totalTime--;
+                                $(that).html(totalTime + 'S');
+                                if (totalTime < 0) {
+                                    window.clearInterval(clock);
+                                    $(that).html('重新发送');
+                                    totalTime = 60;
+                                    $(that).addClass("canClick");
+                                }
+                            },1000);
+                        }
+                        layer.msg(res.message);
+                    }
+                );
+            });
+
+            $(".userhome .L-R .forget-pwd").on("click",".loginBtn",function () {
+                var that=this;
+                var mobile=$(".userhome .L-R .forget-pwd .mobile").val();
+                var myregmobile = /^(1(([34578][0-9])|(47)|[8][01236789]))\d{8}$/;
+                var password=$(".userhome .L-R .forget-pwd .putPwd").val();
+                var confirmpassword=$(".userhome .L-R .forget-pwd .putPwdAgain").val();
+                var mobileCode=$(".userhome .L-R .forget-pwd .regist_verCode").val();
+                if (!mobile) {
+                    layer.msg('请填写手机号');
+                    return;
+                }
+                if (!myregmobile.test(mobile)) {
+                    layer.msg('请填写正确手机号');
+                    return;
+                }
+                if (!mobileCode) {
+                    layer.msg('请填写验证码');
+                    return;
+                }
+
+                if (!password) {
+                    layer.msg('请填写密码');
+                    return;
+                }
+                if (password!=confirmpassword) {
+                    layer.msg('两次密码不一致');
+                    return;
+                }
+                $.request('/api/User/ForgetPwd', {
+                        password:password,
+                        mobile: mobile,
+                        mobileCode:mobileCode,
+                        timestamp: ts(),
+                        sign: createSign({
+                            password:password,
+                            mobile: mobile,
+                            mobileCode:mobileCode,
+                            timestamp: ts(),
+                        })
+                    },
+                    function (res) {
+                        if(res.code==1){
+                            setTimeout(function () {
+                                window.location.href='./userhome.html?type=0';//登录
+                            },2000);
+                        }
+                        layer.msg(res.message);
+                    }
+                );
+
+            });
+
+
+        });
+    </script>
+</body>
+
+
+</html>

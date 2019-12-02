@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/layer.css">
+    <!-- 适配wap pad/pc -->
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/base_wap.css" media="(max-width:767px)">
+    <link rel="stylesheet" href="./css/swiper_reset.css">
+    <title>营销智库</title>
+    <style>
+
+
+        .dialog{
+            z-index: 9999;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            background-color: rgba(0,0,0,0.6);
+        }
+        .dialog .form{
+            z-index: 5;
+            width: 5.07rem;
+            height: 6.9rem;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            background-color: rgb( 255, 255, 255 );
+        }
+        .dialog .form .close-btn{
+            width: 0.27rem;
+            cursor: pointer;
+            position: absolute;
+            right: 0.3rem;
+            top: 0.3rem;
+        }
+        .dialog .form .title{
+            margin-top: 0.8rem;
+            margin-bottom: 0.38rem;
+            text-align: center;
+            font-size: 16.351px;
+            font-family: "SourceHanSansCN";
+            color: rgb( 0, 0, 0 );
+            text-transform: uppercase;
+        }
+        .dialog .form .item{
+            font-size: 0.16rem;
+            font-family: "SourceHanSansCN";
+            color: rgb( 119, 119, 119 );
+            text-transform: uppercase;
+            width: 4rem;
+            height: 0.7rem;
+            line-height: 0.7rem;
+            margin: auto;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        .dialog .form .item span{
+            padding-right: 0.2rem;
+        }
+        .dialog .form .item input{
+            width: 70%;
+        }
+        .dialog .form .submit{
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+        .dialog .form .submit .submit-btn{
+            height: 0.61rem;
+            display: inline-block;
+        }
+        .share-icon{
+            position: absolute;
+            right: 0.2rem;
+            top: -0.02rem;
+        }
+        .share-icon i{
+            width: 0.3rem;
+            height: 0.3rem;
+            display: inline-block;
+            vertical-align: text-bottom;
+            margin-right: 0.1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container " id="wap">
+        <!--wap代码 -->
+        <div class="kv">
+            <img src="./images/wap/detail_kv.jpg" alt="">
+        </div>
+        <div class="details">
+            <div class="D-locl">
+                <span>首页</span>-<span>活动</span>-<span>详情</span>
+            </div>
+            <h1 class="D-title">华为nova 3e 111无添加自拍</h1>
+            <div class="timeBox">
+                <span class="time createTime">发布时间：2019-8-6</span>
+                <span class="createUserName">发布者：新意互动</span>
+                <span class="share" style="right: 0.6rem;"><i></i>分享</span>
+                <span class="share-icon share-xl-img" style="margin: 0"><i style="background: url('./images/wap/share-xl-icon.png') no-repeat;background-size: 100%;"></i></span>
+
+            </div>
+
+            <div class="Adver" style="display: none">
+                <img src="" style="width: 100%" alt="">
+            </div>
+
+            <!--视频-->
+            <div class="videoss" style="display: none">
+                <div class="video_box">
+                    <img class="video-bg" src="./../images/video-bg.png">
+                    <img class="video-btn" src="./../images/video-btn.png">
+                    <video class="video"  id="video1" controls src="" poster=""></video>
+                </div>
+            </div>
+            <p class="content-text"> </p>
+            <div class="btnBox">
+                <a href="javascript:;" class="closeBtn">关闭</a>
+            </div>
+        </div>
+        <div class="signUp registr">
+            <a href="javascript:;" class="active-reg-btn">活动报名</a>
+        </div>
+
+    </div>
+
+    <div class="dialog" style="display: none">
+        <div class="form">
+            <img class="close-btn" src="images/wap/close.png">
+            <p class="title">填写报名信息</p>
+            <div class="item"><span>姓名</span><input class="name" type="text" value=""></div>
+            <div class="item"><span>公司</span><input class="company" type="text" value=""></div>
+            <div class="item"><span>职位</span><input class="office" type="text" value=""></div>
+            <div class="item"><span>手机</span><input class="mobile" type="text" value=""></div>
+            <div class="item"><span>邮箱</span><input class="email" type="text" value="" placeholder="选填"></div>
+            <div class="submit">
+                <img style="width: auto" class="submit-btn" src="./images/wap/submit-btn.png">
+            </div>
+        </div>
+    </div>
+    <script src="./js/common/jquery-1.11.2.min.js"></script>
+    <script src="./js/common/jquery.cookie.js"></script>
+    <script src="./js/common/anime.min.js"></script>
+    <script src="./js/common/layer.js"></script>
+    <script src="./js/common/rem.js"></script>
+    <script src="./js/common/swiper.min.js"></script>
+    <script src="./js/common/md5.js"></script>
+    <script src="./../js/main.js?v=1"></script>
+    <script src="./../js/common.js"></script>
+    <script>
+        $(function () {
+            var forumId=GetUrlParam("forumId");
+            //api/Forum/GetActivityInfo(TT_028)获取活动详情
+            function GetActivityInfo() {
+                $.request('/api/Forum/GetActivityInfo', {
+                        "timestamp": ts(),
+                        userToken:localStorage.getItem("ttToken")||'',
+                        forumId:forumId,
+                        sign: createSign({
+                            forumId:forumId,
+                            "timestamp": ts(),
+                            userToken:localStorage.getItem("ttToken")||'',
+                        })
+                    },
+                    function (res) {
+                        var str = '';
+                        var data= res.data.forumInfo;
+                        $(".details").attr('forumid',forumId);
+                        $(".details").find(".D-title").html(data.title);
+                        $(".details").find(".createTime").html("发布时间："+data.createTime.split(" ")[0]);
+                        $(".details").find(".createUserName").html("发布者："+(data.createUserName==""?"暂无":data.createUserName));
+                        if(data.multimediaType==2){
+                            $(".details").find(".videoss").show();
+                            $(".details").find(".videoss video").attr("src",data.picUrl);
+                        }else{
+                            $(".details").find(".Adver").show();
+                            $(".details").find(".Adver").find('img').attr("src",data.picUrl);
+                        }
+                        $(".details").find('.content-text').append(data.content);
+                    }
+                );
+            }
+            GetActivityInfo();
+
+
+            $('.video_box .video-btn').on('click', function () {
+                $('.video_box .video-btn').hide();
+                $('.video_box .video-bg').hide();
+                var v = document.getElementById("video1");
+                v.play();
+            });
+
+
+            $(".registr").on("click",'.active-reg-btn',function () {
+                $(".dialog").fadeIn();
+            })
+            $(".dialog").on("click",'.close-btn',function () {
+                $(".dialog").fadeOut();
+            })
+
+            $(".dialog .form").on("click",'.submit-btn',function () {
+                var forumId=$(".details").attr("forumid");
+                var name=$(".dialog .form").find(".name").val();
+                var company=$(".dialog .form").find(".company").val();
+                var office=$(".dialog .form").find(".office").val();
+                var mobile=$(".dialog .form").find(".mobile").val();
+                var email=$(".dialog .form").find(".email").val();
+                var myregmobile = /^(1(([34578][0-9])|(47)|[8][01236789]))\d{8}$/;
+
+                if (!name) {
+                    layer.msg('请填写您的姓名');
+                    return;
+                }
+                if (!company) {
+                    layer.msg('请填写您的公司名称');
+                    return;
+                }
+                if (!office) {
+                    layer.msg('请填您的职位');
+                    return;
+                }
+                if (!mobile) {
+                    layer.msg('请填写您的手机号');
+                    return;
+                }
+                if (!myregmobile.test(mobile)) {
+                    layer.msg('请填写正确手机号');
+                    return;
+                }
+
+                ///api/Forum/ActivityApply(TT_029)活动报名
+                $.request('/api/Forum/ActivityApply', {
+                        forumId: forumId,
+                        name:name,
+                        company:company,
+                        office:office,
+                        mobile:mobile,
+                        email:email,
+                        timestamp: ts(),
+                        sign: createSign({
+                            forumId: forumId,
+                            name:name,
+                            company:company,
+                            office:office,
+                            mobile:mobile,
+                            email:email,
+                            timestamp: ts(),
+                        })
+                    },
+                    function (res) {
+                        layer.msg(res.message,function () {
+                            $(".dialog").find('input').each(function () {
+                                $(this).val("");
+                            })
+                            $(".dialog").fadeOut();
+                        });
+                    }
+                );
+
+            })
+
+
+            $(".share-xl-img").on("click",function () {
+                var title=$(".container .D-title").html();
+                window.open('http://v.t.sina.com.cn/share/share.php?pic=' +window.location.host +'/TTS/images/share-logo.png&title=' + title + '&url=' + window.location.href + '&','微博分享','width=700, height=580, top=320, left=180, toolbar=no, menubar=no, scrollbars=no, location=yes, resizable=no, status=no');
+            })
+        })
+
+
+    </script>
+</body>
+
+
+</html>

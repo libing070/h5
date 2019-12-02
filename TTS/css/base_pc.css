@@ -1,0 +1,732 @@
+.container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    outline: none !important;
+}
+
+/************************** 顶部导航开始 ************************* */
+.logo {
+    width: 23%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.nav.after{
+    width: 100%;
+    height: 1.1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 3rem;
+    z-index: 3;
+    background: url('./../images/nav-bg.png') no-repeat center;
+    background-size: cover;
+}
+.nav.before{
+    width: 100%;
+    height: 1.1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 3rem;
+    z-index: 3;
+    background-color: rgb(255,255,255);
+    border-bottom: 2px solid rgb( 215, 0, 15 );;
+}
+
+.nav.after:hover {
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0));
+    /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0));
+    /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0));
+    /* Firefox 3.6 - 15 */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0));
+    /* 标准的语法 */
+}
+
+.nav.before:hover{
+    background-color: rgb(255,255,255);
+}
+
+.nav ul li {
+    z-index: 2;
+    float: left;
+    margin-right: 3%;
+    cursor: pointer;
+    font-size: 0.18rem;
+    font-family: 'SourceHanSansCN-Regular';
+    position: relative;
+}
+
+.nav.after ul li a {
+    color: #fff;
+    line-height: 1.1rem;
+}
+.nav.before ul li a {
+    color: black;
+    line-height: 1.1rem;
+}
+
+.nav ul li:hover a {
+    color: #e90010;
+}
+
+.nav ul li .submenu {
+    width: 1.5rem !important;
+    top: 85% !important;
+    background: rgba(245, 18, 33, .8)
+}
+
+.nav .triangle {
+    border-color: transparent transparent rgba(245, 18, 33, .5) transparent;
+}
+
+.submenu {
+    display: none;
+    width: 1.9rem;
+    position: absolute;
+    top: 101%;
+    left: 50%;
+    color: #fff;
+    background: #db1927;
+    transform: translateX(-50%);
+    padding: 0 0.3rem;
+}
+
+.subList {
+    margin: 0.2rem 0;
+    font-size: 0.16rem;
+    text-align: center;
+}
+
+.subList a {
+    color: #fff !important;
+    line-height: 0.16rem !important;
+}
+
+.triangle {
+    width: 0.2rem;
+    height: 0.2rem;
+    border-width: 0.1rem;
+    border-style: solid;
+    border-color: transparent transparent #db1927 transparent;
+    position: absolute;
+    top: -0.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/************************** 顶部导航结束 ************************* */
+
+/************************** 底部导航开始 ************************* */
+.footer {
+    width: 100%;
+    position: relative;
+}
+
+.footer img {
+    width: 100%;
+}
+.footer .footer-top{
+    height: 3.35rem;
+    width: 100%;
+    background-color: #F4F4F4;
+}
+.footer .footer-top .wrap{
+     height: 100%;
+    width: 12rem;
+    margin: auto;
+    padding-top: 0.7rem;
+}
+.footer .footer-top .wrap .item{
+    display: inline-block;
+}
+.footer .footer-top .wrap .bg{
+    vertical-align: top;
+    height: 0.41rem;
+    width: 1.5rem;
+}
+.footer .footer-top .wrap .desc{
+    color: rgb( 119, 119, 119 );
+    font-size: 0.14rem;
+    width: 5.15rem;
+    margin-left: 0.4rem;
+    padding-right: 0.85rem;
+    height: 2.2rem;
+    line-height: 2.14;
+    border-right: 1px solid rgb(213, 213, 213);
+}
+.footer .footer-top .wrap .right{
+    height: 2.2rem;
+    vertical-align: top;
+    width: 4.8rem;
+}
+.footer .footer-top .wrap .r1{
+    color: black;
+    font-size: 0.18rem;
+    text-align: right;
+}
+.footer .footer-top .wrap .r1 .span2{
+    border-right: 1px solid rgb(213, 213, 213);
+    border-left: 1px solid rgb(213, 213, 213);
+}
+.footer .footer-top .wrap .r1 span{
+    padding: 0 0.1rem;
+    font-weight: bold;
+}
+.footer .footer-top .wrap .r2{
+    text-align: right;
+     color: rgb( 119, 119, 119 );
+    font-size: 0.22rem;
+    margin-top: 0.45rem;
+    margin-bottom: 0.25rem;
+}
+.footer .footer-top .wrap .r2 .r2-item{
+
+   display: inline-block;
+    width: 0.3rem;
+    height: 0.3rem;
+    vertical-align: text-bottom;
+}
+.footer .footer-top .wrap .r3{
+    text-align: right;
+    color: rgb( 119, 119, 119 );
+    font-size: 0.22rem;
+    margin-bottom: 0.3rem;
+}
+.footer .footer-top .wrap .r3 .r3-item{
+    display: inline-block;
+    width: 0.3rem;
+    height: 0.3rem;
+    vertical-align: text-bottom;
+}
+
+.footer .footer-top .wrap .r4{
+    text-align: right;
+    color: rgb( 119, 119, 119 );
+    font-size: 0.14rem;
+}
+.footer .footer-bottom{
+    padding: 0 0.5rem;
+    height: 1rem;
+    width: 100%;
+    background-color: #000000;
+}
+.footer .footer-bottom span{
+    line-height: 1rem;
+    height: 100%;
+    display: inline-block;
+    color: rgba( 255, 255, 255, 0.6 );
+    font-size: 0.14rem;
+}
+.footer .footer-bottom span.float_left{
+    float: left;
+}
+.footer .footer-bottom span.float_right{
+    float: right;
+}
+.footer .content {
+    right: 3.5rem;
+    top: 0.7rem;
+    position: absolute;
+    width: 2.7rem;
+    height: 0.2rem;
+    cursor: pointer;
+    display: -webkit-flex;
+    display: flex;
+    opacity: 0;
+}
+
+.footer .content div {
+    -webkit-flex: 1;
+    flex: 1;
+    text-align: center;
+}
+.footer .content2{
+    position: absolute;
+    width: 2rem;
+    height: 1rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    cursor: pointer;
+    display: -webkit-flex;
+    display: flex;
+}
+.footer .content2 a{
+    opacity: 0.7;
+    font-size: 0.15rem;
+    -webkit-flex: 1;
+    line-height: 1rem;
+    flex: 1;
+    text-align: center;
+}
+/************************** 顶部导航结束 ************************* */
+
+
+/************************** 顶部轮播开始 ************************* */
+.top-swiper {
+    width: 100%;
+    position: relative;
+}
+
+.top-swiper .swiper-pagination {
+    position: absolute;
+    left: 2rem;
+    bottom: 0.36rem;
+    width: 20%;
+}
+
+.top-swiper-arrow-icon {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 2rem;
+    height: 0.15rem;
+    width: 0.8rem;
+}
+
+.top-swiper-arrow-icon .arrow_icon_btn {
+    width: 100%;
+}
+
+.top-swiper .swiper-slide {
+    position: relative;
+    width: 100%;
+}
+
+.top-swiper .swiper-slide .content {
+
+    height: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.top-swiper .swiper-slide .content p {
+    text-align: center;
+    margin: auto;
+    font-size: 0.5rem;
+    font-family: "SourceHanSansCN";
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.438;
+}
+
+.top-swiper .swiper-pagination {
+    position: absolute;
+    bottom: 0.36rem;
+    width: 20%;
+}
+/************************** 顶部轮播结束 ************************* */
+
+
+/************************** 一周阅读排行榜开始 ************************* */
+
+.weeklyleaderboard {
+    position: relative;
+    height: 4.4rem;
+    background-color: rgb(45, 45, 46);
+    width: 100%;
+}
+
+.weeklyleaderboard .title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0.75rem;
+    width: 6.51rem;
+    height: 0.38rem;
+    margin: auto;
+}
+
+.weeklyleaderboard .swiper-container {
+    position: absolute;
+    top: 1.55rem;
+    left: 0.95rem;
+    right: 0.95rem;
+    width: 90%;
+    height: 2.5rem;
+    margin: auto;
+}
+
+.weeklyleaderboard .swiper-slide {
+    cursor: pointer;
+    width: 100%;
+    position: relative;
+    height: 1.8rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    transition: all 1s;
+}
+
+.weeklyleaderboard .swiper-slide:hover {
+    transform: scale(1.05); /* 放大0.1倍 */
+}
+
+.weeklyleaderboard .swiper-slide .con {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    height: 1.8rem;
+}
+
+.weeklyleaderboard .swiper-slide .con .icon {
+    position: absolute;
+    top: -0.22rem;
+    right: -0.22rem;
+    width: 0.86rem;
+    height: 0.86rem;
+}
+
+.weeklyleaderboard .swiper-slide .con .number {
+    position: absolute;
+    left: 0.2rem;
+    bottom: 0.2rem;
+    width: 0.4rem;
+    height: 0.4rem;
+    text-align: center;
+    line-height: 0.4rem;
+    border-radius: 100%;
+    background-color: red;
+    color: white;
+    z-index: 2;
+}
+
+.weeklyleaderboard .swiper-slide .con .desc {
+    opacity:  0;
+    position: absolute;
+    bottom: 0rem;
+    left: 0;
+    padding-left: 0.7rem;
+    padding-top: 0.2rem;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 0.8rem;
+    line-height: 1.375;
+    width: 100%;
+    font-size: 0.16rem;
+    font-family: "SourceHanSansCN";
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    transition: all 1s;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.weeklyleaderboard .swiper-slide:hover .desc{
+    transition: all 1s;
+    opacity: 1;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.weeklyleaderboard .swiper-slide:hover .con .number {
+    background-color: white;
+    color: red;
+}
+/************************** 一周阅读排行榜结束 ************************* */
+
+.index_next_vertical {
+    width: 0.5rem;
+    height: 0.5rem;
+    background: url(./../images/turn_right_def.png) no-repeat center;
+    background-size: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.index_prev_vertical {
+    width: 0.5rem;
+    height: 0.5rem;
+    background: url(./../images/turn_left_def.png) no-repeat center;
+    background-size: 100%;
+    position: absolute;
+    top: 40%;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.index_swiperBtn {
+    width: 2.1rem;
+    height: 0.95rem;
+    position: absolute;
+    right: 3.5rem;
+    bottom: 0rem;
+    background: rgba(0, 0, 0, .5);
+    z-index: 2;
+}
+
+.index_next1 {
+    width: 0.5rem;
+    height: 0.5rem;
+    background: url(./../images/turn_right_def.png) no-repeat center;
+    background-size: 100%;
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+
+.index_prev1 {
+    width: 0.5rem;
+    height: 0.5rem;
+    background: url(./../images/turn_left_def.png) no-repeat center;
+    background-size: 100%;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.swiper-pagination-bullet {
+    width: 0.08rem;
+    height: 0.09rem;
+    text-align: center;
+    opacity: 1;
+    background: none;
+    background-image: url("../images/swpier-pag-icon3.png");
+    background-size: 100%;
+}
+
+.swiper-pagination-bullet-active {
+    width: 0.08rem;
+    height: 0.09rem;
+    background: none;
+    background-image: url("../images/swpier-pag-icon-active2.png");
+    background-size: 100%;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 5px;
+}
+
+.arrow_icon_btn {
+    animation: arrow_icon_btn 1s linear infinite;
+
+}
+
+@keyframes arrow_icon_btn {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/************************** 排版开始 ************************* */
+
+.all-list-layout .box{
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+}
+.all-list-layout .box>img{
+    width: 3.69rem;
+    height: 2.4rem;
+}
+.all-list-layout .box .content {
+    border-radius: 1px;
+    position: absolute;
+    width: 3.4rem;
+    left: 0;
+    top: 2.1rem;
+    right: 0;
+    margin: auto;
+    height: 1.6rem;
+    background-color: rgb( 255, 255, 255 );
+    transition: all 1s;
+}
+
+.all-list-layout .box .content:hover {
+    top: 1.6rem;
+    height: 2.1rem;
+    box-shadow: 0px 0rem 0.1rem 1px rgba( 0, 0, 0,0.5 );
+}
+
+.all-list-layout .box .content .time {
+    text-align: center;
+    font-size: 0.14rem;
+    font-family: "SourceHanSansCN";
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    width: 1.12rem;
+    height: 0.32rem;
+    line-height: 0.32rem;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.2;
+    margin: auto;
+    margin-top: 0.15rem;
+    margin-bottom: 0.15rem;
+    transition: all 1s;
+}
+.all-list-layout .box .content:hover .time {
+    margin-top: -0.16rem;
+    background-color: rgb( 233, 0, 16 );
+    opacity: 0.8;
+    transition: all 1s;
+}
+.all-list-layout .box .content .title {
+    text-align: center;
+    font-size: 0.22rem;
+    font-family: "SourceHanSansCN";
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.819;
+    margin-bottom: 0.1rem;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+.all-list-layout .box .content .desc {
+    opacity:  0;
+    text-align: center;
+    font-size: 0.14rem;
+    width: 2.6rem;
+    font-family: "SourceHanSansCN";
+    color: rgb(119, 119, 119);
+    margin: auto;
+    transition: all 0.6s;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+}
+.all-list-layout .box .content:hover .desc {
+    opacity: 1;
+    transition: all 2s;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+}
+.all-list-layout .box .bottom {
+    width: 2.5rem;
+    position: absolute;
+    height: 0.2rem;
+    margin: auto;
+    left: 0;
+    bottom: 0.2rem;
+    margin-top: 0;
+    display: -webkit-flex;
+    display: flex;
+    right: 0;
+}
+
+.all-list-layout .box .bottom .item {
+    -webkit-flex: 1;
+    flex: 1;
+    text-align: center;
+}
+
+.all-list-layout .box .bottom .item img {
+    height: 100%;
+    display: inline-block;
+    padding-right: 0.12rem;
+}
+
+.all-list-layout .box .bottom .item span {
+    vertical-align: super;
+    font-size: 0.16rem;
+    display: inline-block
+}
+/************************** 排版结束 ************************* */
+
+.load-more{
+    cursor: pointer;
+    position: relative;
+    width: 1.5rem;
+    height: 0.9rem;
+    margin: auto;
+    margin-bottom: 0.1rem;
+}
+.load-more .load-more-btn{
+    width: 50%;
+    margin: auto;
+    margin-bottom: 0.1rem;
+   /*animation:load-more 1.5s linear infinite;*/
+}
+.load-more p{
+  text-align: center;
+    font-size: 0.16rem;
+}
+
+
+ .load-more .load-more-btn.active{
+     width: 50%;
+     margin: auto;
+     margin-bottom: 0.1rem;
+    -webkit-animation:load-more 1s linear infinite;
+     animation:load-more 1s linear infinite;
+}
+
+@keyframes load-more {
+    0% {
+        transform: rotate(0deg);
+        box-shadow: 0px 0px 10px #fff;
+    }
+    50% {
+        transform: rotate(180deg);
+        box-shadow: 0px 0px 45px #fff;
+    }
+    100% {
+        transform: rotate(360deg);
+        box-shadow: 0px 0px 10px #fff;
+    }
+}
+@-webkit-keyframes load-more {
+     0% {
+         transform: rotate(0deg);
+         box-shadow: 0px 0px 10px #fff;
+     }
+     50% {
+         transform: rotate(180deg);
+         box-shadow: 0px 0px 45px #fff;
+     }
+     100% {
+         transform: rotate(360deg);
+         box-shadow: 0px 0px 10px #fff;
+     }
+ }
+
+

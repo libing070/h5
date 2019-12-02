@@ -1,0 +1,401 @@
+.details{
+    position: relative;
+    width: 100%;
+}
+
+.bar{
+    position: absolute;
+    left: 3.5rem;
+    top: 1.6rem;
+    cursor: pointer;
+    z-index: 2;
+}
+ .bar a{
+     cursor: pointer;
+    font-size: 0.14rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 255, 255, 255 );
+    text-transform: uppercase;
+}
+.details .content{
+    width: 100%;
+    background-color: #ededed;
+    padding-bottom: 1rem;
+}
+.information{
+    position: relative;
+    margin: 0 3.5rem;
+    padding-bottom: 1rem;
+    background-color: white;
+    top: -0.7rem;
+}
+.information .title{
+    width: 8.6rem;
+    padding-top: 0.7rem;
+    margin: auto;
+    text-align: center;
+    font-size: 0.32rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 1, 1, 1 );
+    text-transform: uppercase;
+
+}
+.information  .line{
+    margin: 0 1.05rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.information  .images{
+    position: relative;
+    margin: auto;
+    width: 100%;
+}
+.information  .images .swiper-container{
+    width: 8.6rem;
+    height: 5.1rem;
+    margin: auto;
+}
+.index_swiperBtn{
+    z-index:1 ;
+    background: rgba(0, 0, 0, 0);
+    top: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+}
+.index_prev1{
+    left: 8%;
+}
+.index_next1{
+
+    left: 92%;
+}
+.information .videoss{
+    /*margin-top: 1rem;*/
+    cursor: pointer;
+    width: 100%;
+    position: relative;
+}
+.information .videoss .video_box{
+    margin: auto;
+    width: 8.6rem;
+    height: 5.1rem;
+}
+.information .videoss .video_box .video-bg{
+    position: relative;
+    margin: auto;
+    width: 8.6rem;
+    height: 5.1rem;
+    z-index: 2;
+}
+.information .videoss .video_box .video-btn{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 1.32rem;
+    height: 1.31rem;
+    z-index: 3;
+}
+.information .videoss .video_box .video{
+    width: 8.6rem;
+    height: 5.1rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.information .top,
+.information .bottom {
+    text-align: center;
+    margin: auto;
+    margin-top: 0.5rem;
+    width: 5rem;
+    height: 0.2rem;
+    display: -webkit-flex;
+    display: flex;
+
+}
+.information .top .item,
+.information .bottom .item {
+    -webkit-flex: 1;
+    flex: 1;
+    text-align: center;
+}
+.information .top .item img,
+.information .bottom .item img {
+    height: 100%;
+    display: inline-block;
+    padding-right: 0.12rem;
+}
+.information .top .item span,
+.information .bottom .item span {
+    vertical-align: super;
+    font-size: 0.16rem;
+    display: inline-block
+}
+.information .top .item.share-item img,
+.information .bottom .item.share-item img{
+    margin-top: -0.05rem;
+    width: 0.48rem;
+    height: auto;
+}
+.information .text{
+    margin:0.2rem 1.05rem 0;
+    font-size: 0.14rem;
+    font-family: "SimSun";
+    color: rgb( 0, 0, 0 );
+    text-transform: uppercase;
+    line-height: 2.286;
+    padding-bottom: 0.5rem;
+
+}
+.information>:last-child{
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    margin: 0 1.05rem;
+ }
+
+img,.del{
+ cursor: pointer;
+}
+.message-box{
+    margin: 0 3.5rem;
+    background-color: white;
+    padding-bottom: 1.5rem;
+}
+.message-box .top-reply{
+    margin: 0 1.05rem;
+}
+.message-box .top-reply p{
+    font-size: 0.18rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 0, 0, 0 );
+    text-transform: uppercase;
+    line-height: 5.167;
+}
+.message-box .top-reply textarea{
+    width: 100%;
+    height: 1rem;
+}
+.message-box .top-reply div{
+    margin-top: 0.2rem;
+    width: 100%;
+    text-align: right;
+}
+.message-box .top-reply div img{
+    width: 1.61rem;
+    height: 0.51rem;
+    display: inline-block;
+}
+
+ .reply-list{
+    margin-top: 0.5rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+
+}
+
+ .reply-list>p{
+    font-size: 0.18rem;
+    margin: 0 1.05rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 0, 0, 0 );
+    text-transform: uppercase;
+    line-height: 5.167;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+  .list-box-A{
+    margin: 0 1.05rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding-top: 0.25rem;
+    padding-bottom: 0.3rem;
+}
+
+.list-box-A-title{
+    width: 100%;
+    display: -webkit-flex;
+   display: flex;
+}
+.list-box-A-title .title-left{
+    -webkit-flex: 1;
+    flex: 1;
+    height: 0.33rem;
+    line-height: 0.33rem;
+}
+   .list-box-A-title .icon{
+    display: inline-block;
+    height: 0.33rem;
+    width: 0.33rem;
+    border-radius: 100%;
+}
+   .list-box-A-title .name{
+    font-family: "SourceHanSansCN";
+    color: rgb( 0, 0, 0 );
+    font-weight: bold;
+    display: inline-block;
+    height: 0.33rem;
+    line-height: 0.33rem;
+    vertical-align: top;
+    padding-left: 0.1rem;
+    padding-right: 0.4rem;
+    font-size: 0.15rem;
+
+}
+   .list-box-A-title .time{
+    display: inline-block;
+    height: 0.33rem;
+    line-height: 0.33rem;
+    vertical-align: top;
+    font-size: 0.15rem;
+
+}
+   .list-box-A-title .title-right{
+    height: 0.33rem;
+   width: 2.5rem;
+    line-height: 0.33rem;
+    display: -webkit-flex;
+    display: flex;
+}
+   .list-box-A-title .title-right .s1{
+    -webkit-flex: 1;
+    flex: 1;
+    height: 0.33rem;
+    text-align: right;
+    margin-left: 0.2rem;
+    line-height: 0.33rem;
+}
+   .list-box-A-title .title-right .s1 .icon{
+    display: inline-block;
+    height: 0.2rem;
+    width: auto;
+}
+   .list-box-A-title .title-right .s1 .nums{
+    vertical-align: super;
+    padding-left: 0.1rem;
+    font-size: 0.15rem;
+}
+
+.list-box-A .list-box-A-con{
+    margin-left: 0.43rem;
+    margin-top: 0.15rem;
+    margin-bottom: 0.25rem;
+}
+.list-box-A-textarea{
+    margin-left: 0.43rem;
+}
+.list-box-A-textarea .textarea{
+    width: 100%;
+    height: 1rem;
+
+}
+.list-box-A-textarea .reply-btn{
+    margin-top: 0.2rem;
+    width: 100%;
+    text-align: right;
+    padding-bottom: 0.2rem;
+}
+.list-box-A-textarea .reply-btn img{
+    width: 1.61rem;
+    height: 0.51rem;
+    display: inline-block;
+}
+
+.list-box-B{
+    margin-left: 0.43rem;
+    background-color: rgb( 245, 245, 245 );
+    padding:0 0.3rem;
+    padding-bottom: 0;
+}
+ .list-box-B-title{
+    width: 100%;
+    display: -webkit-flex;
+    display: flex;
+}
+ .list-box-B-title:first-child{
+    padding-top: 0.2rem;
+}
+ .list-box-B-title .list-li-left{
+    -webkit-flex: 1;
+    flex: 1;
+    height: 0.33rem;
+    line-height: 0.33rem;
+}
+ .list-box-B-title .list-li-left .static{
+    display: inline-block;
+    height: 0.33rem;
+    width: 0.43rem;
+    font-size: 0.15rem;
+}
+ .list-box-B-title .list-li-left .name{
+    font-family: "SourceHanSansCN";
+    color: rgb( 0, 0, 0 );
+    font-weight: bold;
+    display: inline-block;
+    height: 0.33rem;
+    line-height: 0.33rem;
+    vertical-align: top;
+    padding-right: 0.1rem;
+    font-size: 0.15rem;
+
+}
+ .list-box-B-title .list-li-left .time{
+    display: inline-block;
+    height: 0.33rem;
+    line-height: 0.33rem;
+    vertical-align: top;
+    font-size: 0.15rem;
+
+}
+ .list-box-B-title .list-li-right{
+    height: 0.33rem;
+    width: 2.5rem;
+    line-height: 0.33rem;
+    display: -webkit-flex;
+    display: flex;
+}
+ .list-box-B-title .list-li-right .s1{
+    -webkit-flex: 1;
+    flex: 1;
+    height: 0.33rem;
+    text-align: right;
+    margin-left: 0.2rem;
+    line-height: 0.33rem;
+}
+ .list-box-B-title .list-li-right .del{
+    font-weight: bold;
+}
+ .list-box-B-title .list-li-right .s1 .icon{
+    display: inline-block;
+    height: 0.2rem;
+    width: auto;
+}
+ .list-box-B-title .list-li-right .s1 .nums{
+    vertical-align: super;
+    padding-left: 0.1rem;
+    font-size: 0.15rem;
+}
+.list-box-B-con{
+    margin-top: 0.15rem;
+    padding-bottom: 0.15rem;
+}
+.list-box-B .textarea{
+    width: 100%;
+    height: 1rem;
+
+}
+.list-box-B  .reply-btn{
+    margin-top: 0.2rem;
+    width: 100%;
+    text-align: right;
+    padding-bottom: 0.2rem;
+}
+.list-box-B  .reply-btn img{
+    width: 1.61rem;
+    height: 0.51rem;
+    display: inline-block;
+}

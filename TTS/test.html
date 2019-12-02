@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .icoFontlist:hover
+    {
+        width: 225px;
+        max-height: 40px;
+        font-size: 12px;
+        /*border: 0px solid #ddd;*/
+        overflow: hidden;
+        text-align: left;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        /*color:blue;*/
+        text-decoration:underline;
+        cursor:pointer;
+    }
+    .icoFontlist{
+        width: 225px;
+        max-height: 40px;
+        font-size: 12px;
+        border: 0px solid #ddd;
+        color:#5f5f5f;
+        overflow: hidden;
+        text-align: left;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+</style>
+<body>
+<div class="icoFontlist" title="11111111111111111111111111111111111111111111111111111111111111111111111111111111111" >这里是全部的信息没有省略号，接下来演示如何处理超长文本显示省略号</div>
+</body>
+<script src="./js/common/jquery-1.11.2.min.js"></script>
+<script>
+    $(function () {
+        $.ajax({
+            url: 'http://4e.skyengine.cn/api/policy/data/list?qaId=174',
+            type: 'get',
+            async: false, //默认为true 异步
+            dataType : "jsonp",//数据类型为jsonp
+            jsonp : "jsonpCallback",//服务端用于接收callback调用的function名的参数
+            success: function (res) {
+              console.log(res);
+            },
+            error: function () {
+
+            },
+        })
+
+    });
+  // var arr=[8,22,12,44,5,1,222,345,90,26,2222,6,76];
+  //
+  //   var  quickSort=function(array) {
+  //       if (array.length <= 1) { return array; }
+  //       var pivotIndex=Math.floor(array.length / 2);
+  //       var pivot = array.splice(pivotIndex, 1)[0];
+  //       var left=[];
+  //       var right=[];
+  //       for (var i=0;i<array.length;i++){
+  //           if(array[i]<pivot){
+  //               left.push(array[i]);
+  //           } else{
+  //               right.push(array[i]);
+  //           }
+  //       }
+  //
+  //       return quickSort(left).concat([pivot],quickSort(right));
+  //   }
+  //
+  // console.log(quickSort(arr));
+
+
+
+  // var quickSort = function(arr) {
+  //
+  //     if (arr.length <= 1) { return arr; }
+  //
+  //     var pivotIndex = Math.floor(arr.length / 2);
+  //
+  //     var pivot = arr.splice(pivotIndex, 1)[0];
+  //
+  //     var left = [];
+  //
+  //     var right = [];
+  //
+  //     for (var i = 0; i < arr.length; i++){
+  //
+  //         if (arr[i] < pivot) {
+  //
+  //             left.push(arr[i]);
+  //
+  //         } else {
+  //
+  //             right.push(arr[i]);
+  //
+  //         }
+  //
+  //     }
+  //
+  //     return quickSort(left).concat([pivot], quickSort(right));
+  //
+  // };
+  // console.log(quickSort(arr));
+
+</script>
+</html>

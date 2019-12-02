@@ -4,10 +4,13 @@ $(function () {
         observer: true, //修改swiper自己或子元素时，自动初始化swiper
         observeParents: true, //修改swiper的父元素时，自动初始化swiper
         mousewheel: true,
+        longSwipesMs : 1000,
+        longSwipes:false,
+        threshold : 20,//拖动的临界值（单位为px），如果触摸距离小于该值滑块不会被拖动。
         on: {
             slideChangeTransitionStart: function () {
-                console.log(this.activeIndex)
-                $('.scrollBar .p1').html('0' + (this.activeIndex + 1))
+                console.log(this.activeIndex);
+                $('.scrollBar .p1').html('0' + (this.activeIndex + 1));
                 aniReset();
                 $('.module6').removeClass('module6_back');
                 $('.recruit').removeClass('module7_back');

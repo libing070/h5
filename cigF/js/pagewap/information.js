@@ -55,10 +55,10 @@ var swiper1 = new Swiper('.banner1', {
                 $(".banner3 .load-more").attr("pageIndex",1);//切换后默认为1
                 $(".banner3 .load-more").attr("hasmore",1);//1更多 0 没有
                 $(".banner3 .load-more").find("p").html("点击加载更多");
-                var title=$('.banner3 .swiper-slide').eq(this.activeIndex).html();
+                var title=$('.nav-bar-menu .item').eq(this.activeIndex).html();
                 $('head .meta-description').attr("content",'CIG新意互动官网新意资讯，为您展示新意互动'+title+'的资讯，助您进一步了解新意互动动态和信息');
                 $('head .meta-keywords').attr("content",title+',CIG新意互动官网');
-                $("head title").html(title+"_新意资讯_CIG新意互动官网");
+                $("body title").html(title+"_新意资讯_CIG新意互动官网");
                 loadNewList(type,1);
             },
         }
@@ -148,15 +148,15 @@ var swiper1 = new Swiper('.banner1', {
 
    loadNewList(inittype,1);//默认加载第一个
     var ttttt="";
-    for(var i=0;i<$('.banner2 .swiper-slide').length;i++){
-        if($('.banner2 .swiper-slide').eq(i).attr("type")==inittype){
-            ttttt= $('.banner2 .swiper-slide').eq(i).html();
+    for(var i=0;i<$('.nav-bar-menu .item').length;i++){
+        if($('.nav-bar-menu .item').eq(i).attr("type")==inittype){
+            ttttt= $('.nav-bar-menu .item').eq(i).html();
             break;
         }
     }
     $('head .meta-description').attr("content",'CIG新意互动官网新意资讯，为您展示新意互动'+ttttt+'的资讯，助您进一步了解新意互动动态和信息');
     $('head .meta-keywords').attr("content",ttttt+',CIG新意互动官网');
-    $("head title").html(ttttt+"_新意资讯_CIG新意互动官网");
+    $("body title").html(ttttt+"_新意资讯_CIG新意互动官网");
 
     // $(".banner3").on("click",".load-more",function () {
     //     var hasMore=$(".banner3 .load-more").attr("hasmore");//1更多 0 没有

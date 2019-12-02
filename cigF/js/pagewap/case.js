@@ -47,7 +47,7 @@ var swiper1 = new Swiper('.banner1', {
                 var title=$('.banner2 .swiper-slide').eq(this.activeIndex).html();
                 $('head .meta-description').attr("content",'CIG新意互动案例展示，为您展示新意互动在'+title+'领域的案例，助您进一步了解新意互动强大的科技营销实力。');
                 $('head .meta-keywords').attr("content",title+',CIG新意互动官网');
-                $("head title").html(title+"_案例展示_CIG新意互动官网");
+                $("body title").html(title+"_案例展示_CIG新意互动官网");
                 loadCaseList(type,1);
             },
         }
@@ -87,7 +87,7 @@ var swiper1 = new Swiper('.banner1', {
     }
     $('head .meta-description').attr("content",'CIG新意互动案例展示，为您展示新意互动在'+ttttt+'领域的案例，助您进一步了解新意互动强大的科技营销实力。');
     $('head .meta-keywords').attr("content",ttttt+',CIG新意互动官网');
-    $("head title").html(ttttt+"_案例展示_CIG新意互动官网");
+    $("body title").html(ttttt+"_案例展示_CIG新意互动官网");
 
 
 

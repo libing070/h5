@@ -1,0 +1,32 @@
+.all-list-layout{
+  width: 12rem;
+    position: relative;
+    background-color: white;
+    margin: auto;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+}
+.all-list-layout .box{
+    width: 3.7rem;
+    height: 3.7rem;
+    margin-bottom: 0.42rem;
+}
+.all-list-layout .box.big{
+    width: 5.8rem;
+    height: 4.8rem;
+    margin-bottom: 0.42rem;
+}
+.all-list-layout .box.big .content{
+    width: 5.5rem;
+    top: 3.1rem;
+    height: 1.8rem;
+}
+
+.all-list-layout .box.big .content:hover {
+    top: 2.6rem;
+    height: 2.3rem;
+}
+.all-list-layout .box.big .content:hover .time {
+    margin-top: -0.16rem;
+}

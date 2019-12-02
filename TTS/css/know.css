@@ -1,0 +1,14 @@
+.all-list-layout{
+  width: 12rem;
+    position: relative;
+    background-color: white;
+    margin: auto;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+}
+.all-list-layout .box{
+    width: 3.7rem;
+    height: 3.7rem;
+    margin-bottom: 0.42rem;
+}

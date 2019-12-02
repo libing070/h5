@@ -1,0 +1,232 @@
+.details{
+    position: relative;
+    width: 100%;
+}
+
+.bar{
+    position: absolute;
+    left: 3.5rem;
+    top: 1.6rem;
+    cursor: pointer;
+    z-index: 2;
+}
+ .bar a{
+     cursor: pointer;
+    font-size: 0.14rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 255, 255, 255 );
+    text-transform: uppercase;
+}
+.details .content{
+    width: 100%;
+    background-color: #ededed;
+}
+.information{
+    position: relative;
+    margin: 0 3.5rem;
+    padding-bottom: 1rem;
+    background-color: white;
+    top: -0.7rem;
+}
+.information .title{
+    width: 8.6rem;
+    padding-top: 0.7rem;
+    margin: auto;
+    text-align: center;
+    font-size: 0.32rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 1, 1, 1 );
+    text-transform: uppercase;
+
+}
+.information  .line{
+    margin: 0 1.05rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.information  .images{
+    position: relative;
+    margin: auto;
+    width: 100%;
+}
+.information  .images .swiper-container{
+    width: 8.6rem;
+    height: 5.1rem;
+    margin: auto;
+}
+.index_swiperBtn{
+    z-index:1 ;
+    background: rgba(0, 0, 0, 0);
+    top: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+}
+.index_prev1{
+    left: 8%;
+}
+.index_next1{
+
+    left: 92%;
+}
+.information .videoss{
+    /*margin-top: 1rem;*/
+    cursor: pointer;
+    width: 100%;
+    position: relative;
+}
+.information .videoss .video_box{
+    margin: auto;
+    width: 8.6rem;
+    height: 5.1rem;
+}
+.information .videoss .video_box .video-bg{
+    position: relative;
+    margin: auto;
+    width: 8.6rem;
+    height: 5.1rem;
+    z-index: 2;
+}
+.information .videoss .video_box .video-btn{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 1.32rem;
+    height: 1.31rem;
+    z-index: 3;
+}
+.information .videoss .video_box .video{
+    width: 8.6rem;
+    height: 5.1rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.information .top{
+    position: relative;
+    text-align: center;
+    margin: auto;
+    margin-top: 0.5rem;
+    width: 4rem;
+    height: 0.2rem;
+    display: -webkit-flex;
+    display: flex;
+
+}
+.information .top .item {
+    -webkit-flex: 1;
+    flex: 1;
+    text-align: center;
+}
+.information .top .item img {
+    height: 100%;
+    display: inline-block;
+    padding-right: 0.12rem;
+}
+.information .top .item span {
+    vertical-align: super;
+    font-size: 0.16rem;
+    display: inline-block
+}
+.information  .top .share{
+    position: absolute;
+    right: -2.8rem;
+    top: 0;
+}
+
+.information .text{
+    margin:0.2rem 1.05rem 0;
+    font-size: 0.14rem;
+    font-family: "SimSun";
+    color: rgb( 0, 0, 0 );
+    text-transform: uppercase;
+    line-height: 2.286;
+    padding-bottom: 0.5rem;
+
+}
+
+img,.del{
+ cursor: pointer;
+}
+
+.registr {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    margin: 0 1.05rem;
+    margin-top: 0.2rem;
+    text-align: center;
+    padding-bottom: 0.2rem;
+}
+.registr .active-reg-btn{
+    height: 0.61rem;
+    display: inline-block;
+}
+
+.dialog{
+    z-index: 9999;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: rgba(0,0,0,0.6);
+}
+.dialog .form{
+    z-index: 5;
+    width: 5.07rem;
+    height: 6.9rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: rgb( 255, 255, 255 );
+}
+.dialog .form .close-btn{
+    width: 0.27rem;
+    cursor: pointer;
+      position: absolute;
+       right: 0.3rem;
+    top: 0.3rem;
+}
+.dialog .form .title{
+    margin-top: 0.8rem;
+    margin-bottom: 0.38rem;
+    text-align: center;
+    font-size: 16.351px;
+    font-family: "SourceHanSansCN";
+    color: rgb( 0, 0, 0 );
+    text-transform: uppercase;
+}
+.dialog .form .item{
+    font-size: 0.16rem;
+    font-family: "SourceHanSansCN";
+    color: rgb( 119, 119, 119 );
+    text-transform: uppercase;
+    width: 3.3rem;
+    height: 0.7rem;
+    line-height: 0.7rem;
+    margin: auto;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.dialog .form .item span{
+    padding-right: 0.2rem;
+}
+.dialog .form .submit{
+    margin-top: 0.5rem;
+    text-align: center;
+}
+.dialog .form .submit .submit-btn{
+    height: 0.61rem;
+    display: inline-block;
+}

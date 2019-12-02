@@ -1,0 +1,143 @@
+@font-face {
+    font-family: 'BASKVILL';
+    src: url('./../font/BASKVILL.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'GiveAHoot';
+    src: url('./../font/GiveAHoot.otf') format('truetype')
+}
+
+@font-face {
+    font-family: 'SourceHanSansCN-Bold';
+    /*src: url('./../font/SourceHanSansCN-Bold.otf') format('truetype')*/
+}
+
+@font-face {
+    font-family: 'SourceHanSansCN-ExtraLight';
+    /*src: url('./../font/SourceHanSansCN-ExtraLight.otf') format('truetype')*/
+}
+
+@font-face {
+    font-family: 'SourceHanSansCN-Heavy';
+    /*src: url('./../font/SourceHanSansCN-Heavy.otf') format('truetype')*/
+}
+
+@font-face {
+    font-family: 'SourceHanSansCN-Light';
+    /*src: url('./../font/SourceHanSansCN-Light.otf') format('truetype')*/
+}
+
+@font-face {
+    font-family: 'SourceHanSansCN-Medium';
+    /*src: url('./../font/SourceHanSansCN-Medium.otf') format('truetype')*/
+}
+
+@font-face {
+    font-family: 'SourceHanSansCN-Normal';
+    /*src: url('./../font/SourceHanSansCN-Normal.otf') format('truetype')*/
+}
+
+@font-face {
+    font-family: 'SourceHanSansCN-Regular';
+    /*src: url('./../font/SourceHanSansCN-Regular.otf') format('truetype')*/
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-size: 0.1rem;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+}
+
+input {
+    background-color: transparent;
+    border: 0;
+}
+
+input:focus {
+    outline: none;
+}
+
+.fontSize12 {
+    font-size: 0.12rem;
+}
+
+.fontSize14 {
+    font-size: 0.14rem;
+}
+
+.fontSize16 {
+    font-size: 0.16rem;
+}
+
+.fontSize18 {
+    font-size: 0.18rem;
+}
+
+.fontSize20 {
+    font-size: 0.2rem;
+}
+
+.fontSize24 {
+    font-size: 0.24rem;
+}
+.fontSize26 {
+    font-size: 0.26rem;
+}
+.fontSize30 {
+    font-size: 0.3rem;
+}
+
+.fontSize32 {
+    font-size: 0.32rem;
+}
+
+.fontSize34 {
+    font-size: 0.34rem;
+}
+
+.fontSize36 {
+    font-size: 0.36rem;
+}
+
+.fontSize40 {
+    font-size: 0.4rem;
+}
+
+.fontSize50 {
+    font-size: 0.5rem;
+}
+
+.fontSize54 {
+    font-size: 0.54rem;
+}
+
+.fontSize56 {
+    font-size: 0.56rem;
+}
+
+.fontSize60 {
+    font-size: 0.6rem;
+}
+
+.float_left {
+    float: left;
+}

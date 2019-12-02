@@ -140,10 +140,63 @@ font-size: 0.32rem;
 }
 
 .banner1 .module1-banner1-video{ /*安卓下视频层级太高问题 挡住了菜单*/
-    height: 1px !important;
-    visibility: hidden !important;
-    display: none !important;
+    /*height: 1px !important;*/
+    /*visibility: hidden !important;*/
+    /*display: none !important;*/
+    animation:hideVideo 1s linear forwards;
+    -moz-animation:hideVideo 1s linear forwards;
+    -webkit-animation:hideVideo 1s linear forwards;
+    -o-animation:hideVideo 1s linear forwards;
 }
+
+
+@keyframes hideVideo {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@-webkit-keyframes hideVideo{
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@-moz-keyframes hideVideo{
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-o-keyframes hideVideo{
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
 .banner1 .banner_top {
     position: absolute;
     left: 10%;

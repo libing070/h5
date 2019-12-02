@@ -186,6 +186,7 @@ a {
     top: 0%;
     left: 0%;
     z-index: 999;
+    pointer-events: none;
 }
 
 .scrollBar {
@@ -1139,6 +1140,7 @@ a {
     transform: translate(-50%, -50%);
     background: #fff;
     padding: 1rem 0.8rem;
+    cursor: pointer;
 }
 
 .liuzi img {
@@ -1594,6 +1596,11 @@ a {
     border-radius: 0.1rem;
     color: #333;
     padding: 0.35rem 0.45rem;
+    position: absolute;
+    top: 35%;
+    width: 5rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .wangpan img {
@@ -1626,10 +1633,10 @@ a {
 }
 
 .posiCenter {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    /*position: absolute;*/
+    /*top: 60%;*/
+    /*left: 50%;*/
+    /*transform: translate(-50%, -50%);*/
 }
 
 .posiCenter p:nth-child(2) {
