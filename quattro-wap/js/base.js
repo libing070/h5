@@ -188,17 +188,17 @@ function makeDealer(cityName) {
 $(function () {
     utm = getQueryVariable('utm');
     channel = getQueryVariable('channel');
-    var itemsJpg=['kv1.jpg','kv1.jpg'];
-    var pos = Math.floor(Math.random()*itemsJpg.length);
-    var item = itemsJpg[pos];
-    $('.first').css("background-image","url(./images/"+item+")");
+    // var itemsJpg=['kv1.jpg','kv1.jpg'];
+    // var pos = Math.floor(Math.random()*itemsJpg.length);
+    // var item = itemsJpg[pos];
+    // $('.first').css("background-image","url(./images/"+item+")");
     setTimeout(function () {
         $('.first').css("display","none");
         $('.contentBody').css("display","block");
     $(".video").css("height", $(".video").height() + 'px');
     $(".video").css("width", $(".video").width() + 'px');
 
-    }, 1500);
+    }, 3000);
 
 
     var index = getQueryVariable('index');
@@ -209,8 +209,8 @@ $(function () {
     }
 
     $.share({
-        title: '奥迪旅行车家族，活出生命的辽阔',
-        desc: 'allroad邀您共同打开辽阔人生',
+        title: '明知山有雪 偏向雪山行',
+        desc: '奥迪quattro开板日，12月10日起全面开启！',
         imgUrl: 'weixin_share.jpg'
     });
 

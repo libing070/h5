@@ -84,7 +84,7 @@ body {
     width: 100%;
 }
 .logo-btn .btns{
-    width: 70%;
+    width: 75%;
     height: 1.5rem;
     text-align: right;
     position: absolute;
@@ -776,6 +776,7 @@ select::-ms-expand { display: none; }
     top: 0;
     left: 0;
     z-index: 999;
+    background-image: url("./../images/kv1.jpg");
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -785,6 +786,7 @@ select::-ms-expand { display: none; }
 
 @media screen and (min-height: 740px) {
     .first {
+        background-image: url("./../images/kv2.jpg");
         background-repeat: no-repeat;
         background-position: center top;
         background-size: cover;

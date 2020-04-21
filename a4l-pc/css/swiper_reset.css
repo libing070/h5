@@ -1,0 +1,172 @@
+.kkkkv{
+    position: relative;
+}
+
+.kkkkv .swiper-pagination{
+    position: absolute;
+    bottom: 6rem;
+}
+
+.kkkkv .swiper-container{
+    margin-top: -0.1rem;
+}
+
+.kkkkv  .swiper-button-next, .children .swiper-button-prev{
+    top: 72%;
+}
+
+.car-swiper{
+    position: relative;
+}
+
+.car-swiper .swiper-pagination{
+    position: absolute;
+}
+
+.car-swiper .swiper-container{
+    /*position: static;*/
+    margin-top: -0.1rem;
+}
+
+.car-swiper  .swiper-button-next, .children .swiper-button-prev{
+    top: 72%;
+}
+
+
+
+
+.car-desc-swiper {
+    width: 100%;
+    position: relative;
+    margin-top: -5px;
+}
+.car-desc-swiper .swiper-pagination{
+    position: absolute;
+    bottom: 1rem;
+}
+
+.car-desc-swiper .swiper-container{
+    /*position: static;*/
+    margin-top: -0.1rem;
+    padding-bottom: 4rem;
+}
+
+
+
+
+.vehicle-highlights  .swiper-container {
+    width: 100%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.vehicle-highlights   .swiper-slide {
+    background-size: cover;
+    background-position: center;
+}
+.vehicle-highlights  .gallery-top {
+    height: 80%;
+    width: 100%;
+}
+.vehicle-highlights   .gallery-thumbs {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+.vehicle-highlights  .gallery-thumbs .swiper-slide {
+    height: 100%;
+    opacity: 0.4;
+}
+.vehicle-highlights .gallery-thumbs .swiper-slide-thumb-active {
+    opacity: 1;
+}
+
+
+.parameter-swiper .swiper-container {
+    width: 85%;
+}
+.swiper1_btn{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    margin: auto;
+}
+
+
+.swiper1_btn .swiper1_next {
+    width: 5rem;
+    background: url('./../images/swiper1_prve.png') no-repeat center;
+    background-size: 45%;
+    outline:none;
+}
+
+.swiper1_btn .swiper1_prve {
+    width: 5rem;
+    background: url('./../images/swiper1_next.png') no-repeat center;
+    background-size: 45%;
+    outline:none;
+}
+
+.live-swiper .swiper1_next {
+    pointer-events: auto;
+    z-index: 100;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 5rem;
+    background: url('./../images/swiper1_prve.png') no-repeat center;
+    background-size: 45%;
+    outline:none;
+}
+
+.live-swiper .swiper1_prve {
+    pointer-events: auto;
+    z-index: 100;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 5rem;
+    background: url('./../images/swiper1_next.png') no-repeat center;
+    background-size: 45%;
+    outline:none;
+}
+
+.parameter-swiper .swiper-pagination{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+}
+
+.parameter-swiper .swiper-pagination-bullet{
+    width: 12px;
+    height: 11px;
+    text-align: center;
+    opacity: 1;
+    background: none;
+    background-image: url("../images/swpier-pag--icon.png");
+    background-size: 100%;
+    margin: 0 2px;
+    outline:none;
+
+}
+.parameter-swiper .swiper-pagination-bullet-active{
+    width: 12px;
+    height: 11px;
+    background: none;
+    background-image: url("../images/swpier-pag--icon-active.png");
+    background-size: 100%;
+    outline:none;
+}
+/*.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{*/
+    /*margin: 0 15px;*/
+/*}*/
