@@ -49,7 +49,7 @@ git commit -m '提交到本地仓库'
 git pull 
 
 git status
-
+按键盘左上角"Esc"
 :wq 合并
 
 git push
@@ -64,7 +64,9 @@ git commit -m '提交到本地仓库'
 git status
 git push
 git pull
-
+ 
+git log -stat 查阅最近的提交修改
+git diff 版本号码1 版本号码2 
 
 
 
@@ -164,6 +166,7 @@ https://tinypng.com/
 https://www.yasuotu.com/
 
 https://www.gaitubao.com/  改图片尺寸
+https://www.xunjieshipin.com/video/wmv2mp4
 
 
 baiwen 123.abc  OA 
@@ -191,14 +194,44 @@ http://localhost/jsp/admin/index.jsp
 
 http://test.4e.skyengine.cn
 
-http://t.4e.skyengine.cn/
+http://t.4e.skyengine.cn
+
+
 
 
 http://www.cig.com.cn/zhiku/
 
  http://h5tt.skyengine.cn/TTS/index.html
 
+http://localhost/jsp/mobile/login/do.jsp?method=login&goToUrl=%2Fjsp%2Fmobile%2Findex%2Fdo.jsp%3Fnull
+
+
+ http://4e.skyengine.cn/jsp/mobile/login/do.jsp?method=login&goToUrl=%2Fjsp%2Fmobile%2Findex%2Fdo.jsp%3Fnull
+
+ http://t.4e.skyengine.cn/jsp/mobile/login/do.jsp?method=login&goToUrl=%2Fjsp%2Fmobile%2Findex%2Fdo.jsp%3Fnull
+
+http://localhost/jsp/mobile/study/do.jsp?method=ranklist1&id=157
+http://localhost/jsp/mobile/platform/do.jsp?method=platform
+http://localhost/jsp/mobile/newmaterial/do.jsp?method=materiallist
+
+http://localhost/jsp/mobile/newmaterial/do.jsp?method=edit
+http://localhost/jsp/mobile/newmaterial/do.jsp?method=edit&dealerid=5176&batch=77
+
+http://localhost/jsp/mobile/newmaterial/do.jsp?method=show&dealerid=5176&batch=79&show=1
 供应商   testg    20191113
 管理员  admin   Ww1234
 经销商  dealer-test  Abc.123
 经销商  14704137773  20191113
+
+testzt    Abc.123
+
+https://www.bootstrap-table.com.cn
+
+https://yq.aliyun.com/articles/587092  常见的移动端H5页面开发遇到的坑和解决办法
+
+
+
+http://jeep.bitsmart.com.cn/#/sign-in
+账号：ceshi密码：ceshi123456
+18310270653 JEEPadmin
+http://39.107.143.212:8088/
