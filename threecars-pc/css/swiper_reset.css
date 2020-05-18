@@ -1,0 +1,178 @@
+
+
+.ceshi-group{
+    width: 100%;
+    position: relative;
+    z-index: 0;
+    margin-bottom: 1rem;
+}
+.ceshi-group .item{
+    position: relative;
+    width: 100%;
+}
+.ceshi-group .swiper-pagination{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10rem;
+
+}
+.ceshi-group .swiper-pagination-bullet{
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    opacity: 1;
+    background: none;
+    background-image: url("../images/swpier-pag--icon1.png");
+    background-size: 100%;
+    margin: 0 2px;
+    outline:none;
+
+}
+.ceshi-group .swiper-pagination-bullet-active{
+    width: 35px;
+    border-radius: 0;
+    background: url("../images/swpier-pag--icon-active1.png") no-repeat;
+    background-size: 100%;
+    outline:none;
+    margin: 0 2px;
+}
+
+.ceshi-group .ceshi-top{
+    overflow: hidden;
+    position: absolute;
+    width: 40%;
+    height: 8rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 2;
+}
+.ceshi-top .ceshi-top-slide{
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    width: 33.3333%;
+    height: 6rem;
+    float: left;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transition: 300ms;
+    transform: scale(1);
+    opacity: 1;
+}
+.ceshi-top .ceshi-top-slide.active{
+    transform: scale(1.1);
+    height: 8rem;
+    z-index: 1;
+    opacity: 1;
+}
+
+.peizhi{
+    position: relative;
+    margin-top: -5px;
+}
+.peizhi .bg{
+    width: 100%;
+
+}
+.peizhi .swiper-container{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 4rem;
+    width: 50%;
+    height: 70%;
+    margin: auto;
+}
+.peizhi .swiper-slide{
+    text-align: center;
+}
+.peizhi .swiper-slide img {
+    display: inline-block;
+    width: 60%;
+}
+.peizhi .swiper-pagination{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 1rem;
+
+}
+.peizhi .swiper-pagination-bullet{
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    opacity: 1;
+    background: none;
+    background-image: url("../images/swpier-pag--icon1.png");
+    background-size: 100%;
+    margin: 0 2px;
+    outline:none;
+
+}
+.peizhi .swiper-pagination-bullet-active{
+    width: 35px;
+    border-radius: 0;
+    background: url("../images/swpier-pag--icon-active1.png") no-repeat;
+    background-size: 100%;
+    outline:none;
+    margin: 0 2px;
+}
+
+/*.peizhi_swiper1_btn{*/
+    /*width: 75%;*/
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    /*bottom: 0.5rem;*/
+    /*z-index: 5;*/
+    /*margin: auto;*/
+    /*height: 2rem;*/
+    /*background-color: #2D93CA;*/
+/*}*/
+.swiper-container .peizhi_swiper1_next {
+    position: absolute;
+    right: 8rem;
+    width: 0.8rem;
+    top: auto;
+    bottom: 0.3rem;
+    background: url('./../images/ceshi_swiper1_prve.png') no-repeat center;
+    background-size: 100%;
+    outline:none;
+}
+
+.swiper-container .peizhi_swiper1_prve {
+    position: absolute;
+    left: 8rem;
+    width: 0.8rem;
+    top: auto;
+    bottom: 0.3rem;
+    background: url('./../images/ceshi_swiper1_next.png') no-repeat center;
+    background-size: 100%;
+    outline:none;
+}
+/*@media screen and (max-width: 1600px) and (min-width: 1367px){*/
+    /*.ceshi-group .swiper-pagination{*/
+        /*bottom: 10rem;*/
+
+    /*}*/
+/*}*/
+@media screen and (min-width: 1601px){
+    .ceshi-group .swiper-pagination{
+        bottom: 12rem;
+    }
+    .ceshi-group .ceshi-top{
+        height: 14rem;
+    }
+    .ceshi-top .ceshi-top-slide{
+        height: 8.5rem;
+
+    }
+    .ceshi-top .ceshi-top-slide.active{
+        height: 12rem;
+    }
+    .dealers .inquiry .wrap{
+        padding-top: 12rem;
+    }
+}

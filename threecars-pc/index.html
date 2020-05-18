@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>threecars-pc</title>
+    <link rel="icon" href="data:image/ico;base64,aWNv">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/swiper_reset.css?v=2121">
+     <link rel="stylesheet" href="./js/skin/layer.css" id="layui_layer_skinlayercss">
+    <link rel="stylesheet" href="./css/base.css?v=2.4">
+    <link rel="stylesheet" href="./css/swiper_reset.css?v=2">
+    <script src="./js/jquery-1.11.2.min.js?v=2"></script>
+    <script src="./js/layer.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/interface.js?v=5"></script>
+    <script src="./js/base.js?v=1.4"></script>
+
+</head>
+<body>
+    <div class="header">
+        <a href="https://www.audi.cn/cn/web/zh.html" target="_blank">
+            <img src="./images/head.png" alt="">
+        </a>
+    </div>
+
+    <div class="ceshi-group">
+        <div class="ceshi-top">
+                <!--<div class="ceshi-top-slide" type="a6l" style="background-image: url('images/top-a6l-active.png')"></div>-->
+                <!--<div class="ceshi-top-slide active" type="q5l" style="background-image: url('images/top-q5l-active.png')"></div>-->
+                <!--<div class="ceshi-top-slide" type="a4l" style="background-image: url('images/top-a4l-active.png')"></div>-->
+        </div>
+
+        <div class="ceshi-a6l-swiper item item_a6l" style="display: none">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img style="width: 100%" src="images/a6l/a6l-car1.jpg"></div>
+                    <div class="swiper-slide"><img style="width: 100%" src="images/a6l/a6l-car2.jpg"></div>
+                    <div class="swiper-slide"><img style="width: 100%" src="images/a6l/a6l-car3.jpg"></div>
+                </div>
+            </div>
+            <!--Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="ceshi-q5l-swiper item item_q5l" style="display: none">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img style="width: 100%" src="images/q5l/q5l-car1.jpg"></div>
+                    <div class="swiper-slide"><img style="width: 100%" src="images/q5l/q5l-car2.jpg"></div>
+                    <div class="swiper-slide"><img style="width: 100%" src="images/q5l/q5l-car3.jpg"></div>
+                </div>
+            </div>
+            <!--Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="ceshi-a4l-swiper item item_a4l" >
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img style="width: 100%" src="images/a4l/a4l-car1.jpg"></div>
+                    <div class="swiper-slide"><img style="width: 100%" src="images/a4l/a4l-car2.jpg"></div>
+                    <div class="swiper-slide"><img style="width: 100%" src="images/a4l/a4l-car3.jpg"></div>
+                    <div class="swiper-slide"><img style="width: 100%" src="images/a4l/a4l-car4.jpg"></div>
+                </div>
+            </div>
+            <!--Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <div class="book">
+        <img class="back-img" src="images/liuzi-back-a4l.png"/>
+        <div class="form">
+            <img class="book-title" src="images/book-title.png">
+            <div class="line_container">
+                <div class="select_container half jxs_container">
+                    <img src="images/select_narrow.png" class="select-icon">
+                    <select name="car" id="car" class="select" >
+                        <option value="">车型</option>
+                        <option value="A6L">A6L</option>
+                        <option value="Q5L">Q5L</option>
+                        <option value="A4L">A4L</option>
+                    </select>
+                </div>
+            </div>
+            <div class="line_container">
+                <input id="inputName" style="width: 100%" class="input half" type="text" value="" placeholder="请填写您的姓名">
+            </div>
+            <div class="line_container">
+                <input id="inputPhone"style="width: 100%"  class="input half"  type="text" value="" oninput="if(value.length>11)value=value.slice(0,11)" placeholder="请填写您的电话号码">
+            </div>
+            <div class="line_container">
+                <div class="select_container half">
+                    <img src="images/select_narrow.png" class="select-icon">
+                    <select class="select" id="province">
+                        <option class="select-option" ids="0" value="" selected>选择省份</option>
+                    </select>
+                </div>
+                <div class="select_container half">
+                    <img src="images/select_narrow.png" class="select-icon">
+                    <select class="select" id="city">
+                        <option class="select-option" ids="0" value="" selected>选择城市</option>
+                    </select>
+                </div>
+            </div>
+            <div class="line_container">
+                <div class="select_container half jxs_container">
+                    <img src="images/select_narrow.png" class="select-icon">
+                    <select class="select inputlength" id="jxsSelect">
+                        <option class="select-option" value="">请选择经销商</option>
+                    </select>
+                </div>
+            </div>
+            <div class="line_container" style="height:7.5rem;margin-top: 1rem">
+                <div class="address-msg">
+                    <div class="list title"></div>
+                    <div class="address_phone">
+                        <div class="list t address"><img src="images/location.png"><span class='key'></span></div>
+                        <div class="list t phone"><img src="images/phone.png"><span>销售热线：</span><span class='key'></span></div>
+                    </div>
+                    <div class="no-data" style="display: none">该城市暂无经销商，请搜索周边城市！</div>
+                </div>
+            </div>
+            <div class="line_container">
+                <div class="privacy">
+                    <input style="float: left;background: rgb(255, 255, 255); opacity: 0.7; color: rgb(51, 51, 51);vertical-align: text-top;
+    zoom: 200%;" type="checkbox" id="js_agreement" class="l"/>
+                    <label for="js_agreement" class="r">您的个人资料有可能会提交至厂商的授权经销商，与您进一步沟通试驾，购车等事宜。</label>
+                </div>
+            </div>
+            <div class="line_container">
+                <div class="submit">
+                    <img class="img r" style="cursor: pointer" src="images/submit.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="zhengce">
+        <img src="images/zhengce-q5l.jpg" style="width: 100%">
+    </div>
+    <div class="videobox" style="display: none">
+        <img class="video-bg" src="images/video_bg2.png"/>
+        <video id="video" class="video" style="display: none;"
+               controls src="video/audi.mp4" poster="">
+        </video>
+    </div>
+    <div class="peizhi peizhi-a6l"  style="display: none">
+        <img src="images/a6l-peizhi-bg.png" class="bg"/>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img  src="images/a6l/a6l-peizhi1.png"></div>
+                <div class="swiper-slide"><img  src="images/a6l/a6l-peizhi2.png"></div>
+                <div class="swiper-slide"><img  src="images/a6l/a6l-peizhi3.png"></div>
+                <div class="swiper-slide"><img  src="images/a6l/a6l-peizhi4.png"></div>
+                <div class="swiper-slide"><img  src="images/a6l/a6l-peizhi5.png"></div>
+                <div class="swiper-slide"><img  src="images/a6l/a6l-peizhi6.png"></div>
+                <div class="swiper-slide"><img  src="images/a6l/a6l-peizhi7.png"></div>
+                <div class="swiper-slide"><img  src="images/a6l/a6l-peizhi8.png"></div>
+                <div class="swiper-slide"><img  src="images/a6l/a6l-peizhi9.png"></div>
+                <div class="swiper-slide"><img  src="images/a6l/a6l-peizhi10.png"></div>
+                <div class="swiper-slide"><img  src="images/a6l/a6l-peizhi11.png"></div>
+                <div class="swiper-slide"><img  src="images/a6l/a6l-peizhi12.png"></div>
+            </div>
+            <!--Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev peizhi_swiper1_prve"></div>
+            <div class="swiper-button-next peizhi_swiper1_next"></div>
+        </div>
+
+    </div>
+    <div class="peizhi peizhi-q5l">
+        <img src="images/q5l-peizhi-bg.png" class="bg"/>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img  src="images/q5l/q5l-peizhi1.png"></div>
+                <div class="swiper-slide"><img  src="images/q5l/q5l-peizhi2.png"></div>
+                <div class="swiper-slide"><img  src="images/q5l/q5l-peizhi3.png"></div>
+                <div class="swiper-slide"><img  src="images/q5l/q5l-peizhi4.png"></div>
+                <div class="swiper-slide"><img  src="images/q5l/q5l-peizhi5.png"></div>
+                <div class="swiper-slide"><img  src="images/q5l/q5l-peizhi6.png"></div>
+            </div>
+            <!--Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev peizhi_swiper1_prve"></div>
+            <div class="swiper-button-next peizhi_swiper1_next"></div>
+        </div>
+
+    </div>
+
+    <div class="peizhi peizhi-a4l" style="display: none">
+        <img src="images/a4l-peizhi-bg.png" class="bg"/>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img  src="images/a4l/a4l-peizhi1.png"></div>
+                <div class="swiper-slide"><img  src="images/a4l/a4l-peizhi2.png"></div>
+                <div class="swiper-slide"><img  src="images/a4l/a4l-peizhi3.png"></div>
+                <div class="swiper-slide"><img  src="images/a4l/a4l-peizhi4.png"></div>
+                <div class="swiper-slide"><img  src="images/a4l/a4l-peizhi5.png"></div>
+                <div class="swiper-slide"><img  src="images/a4l/a4l-peizhi6.png"></div>
+                <div class="swiper-slide"><img  src="images/a4l/a4l-peizhi7.png"></div>
+                <div class="swiper-slide"><img  src="images/a4l/a4l-peizhi8.png"></div>
+                <div class="swiper-slide"><img  src="images/a4l/a4l-peizhi9.png"></div>
+            </div>
+            <!--Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev peizhi_swiper1_prve"></div>
+            <div class="swiper-button-next peizhi_swiper1_next"></div>
+        </div>
+
+    </div>
+    <div class="dealers">
+        <div class="inquiry" id="inquiry" style="margin-top: -2px">
+            <div class="wrap" style="background-image: url(./images/dealers-bg.png);">
+                <div class="local_search">
+                    <div class="local_put">
+                        <select class="pro_local" name="">
+                        </select>
+                        <select class="city_local" name="">
+                        </select>
+                    </div>
+                    <div class="search_put">
+                        <div class="inp">
+                            <input class="keyword" type="text" placeholder="请输入经销商名称">
+                            <img class="icon_search" src="./images/search-icon-end.png" alt="">
+                        </div>
+
+                    </div>
+                </div>
+                <ul class="jxs_list">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="right-menu">
+        <img class="yuyue" src="images/yuyue.png">
+        <img class="faxian" src="images/faxian.png">
+    </div>
+    <div class="bottom-menu" style="display: none">
+        <div class="mask">
+            <a class="item share"  href="javascript:void(0);">
+                <img src="images/dicon_03.png">
+                <span>分享</span>
+            </a>
+            <a class="item audi" href="https://www.audi.cn/cn/web/zh.html">
+                <img src="images/dicon_05.png">
+                <span>奥迪官网</span>
+            </a>
+            <a class="item weixin"  href="javascript:void(0);">
+                <img src="images/dicon_07.png">
+                <span>官方微信</span>
+            </a>
+            <a class="item weibo" href="https://weibo.com/iaudi">
+                <img src="images/dicon_09.png">
+                <span>官方微博</span>
+            </a>
+            <a class="item xiaochengxu"  href="javascript:void(0);">
+                <img src="images/xiaochengxu1.png">
+                <span>微信小程序</span>
+            </a>
+        </div>
+    </div>
+    <div class="dialog-pop share-dialog" style="display: none">
+        <a href="javascript:void(0);" class="liShare_wx" id="liShare_wx">
+            <img alt="Scan me!" src="images/Sporterweima.png?v=2"></a>
+        <a href="javascript:void((function(s,d,e){try{}catch(e){}var f='https://v.t.sina.com.cn/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=1087202303'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"
+           class="liShare_wb"><img src="images/share_wb.png" alt=""></a>
+    </div>
+
+    <div class="dialog-pop weixin-dialog" style="display: none">
+        <a href="javascript:void(0);" class="liShare_ewm"><img src="images/erweima.png" alt=""></a>
+    </div>
+    <div class="dialog-pop xiaochengxu-dialog" style="display: none">
+        <a href="javascript:void(0);" class="liShare_ewm"><img src="images/xiaochengxu.jpg" alt=""></a>
+    </div>
+</body>
+</html>
