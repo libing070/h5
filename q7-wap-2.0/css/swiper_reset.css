@@ -1,0 +1,139 @@
+
+
+.swiper1_btn{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    margin: auto;
+}
+
+
+.swiper1_btn .swiper1_next {
+    position: absolute;
+    right: 0;
+    /*width: 4rem;*/
+    background: url('./../images/swiper1_prve.png') no-repeat center;
+    background-size: 100%;
+    outline:none;
+}
+
+.swiper1_btn .swiper1_prve {
+    position: absolute;
+    left: 0;
+    /*width: 4rem;*/
+    background: url('./../images/swiper1_next.png') no-repeat center;
+    background-size: 100%;
+    outline:none;
+}
+.first-swiper{
+    position: relative;
+    margin-top: -5px;
+}
+.first-swiper .swiper-pagination{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 1rem;
+
+}
+
+.first-swiper .swiper-pagination-bullet{
+    outline: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50% 50%;
+    background: #ffffff;
+    margin: 0 5px;
+    opacity: 1 !important;
+
+}
+.first-swiper .swiper-pagination-bullet-active{
+    outline: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50% 50%;
+    background: #93745D;
+}
+
+.peizhi-swiper{
+    position: relative;
+    margin-top: -5px;
+}
+.peizhi_swiper1_btn{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 5.5rem;
+    z-index: 5;
+    margin: auto;
+}
+
+
+.peizhi_swiper1_btn .peizhi_swiper1_next {
+    position: absolute;
+    right: 1rem;
+    width: 1.5rem;
+    background: url('./../images/peizhi_swiper1_prve.png') no-repeat center;
+    background-size: 100%;
+    outline:none;
+}
+
+.peizhi_swiper1_btn .peizhi_swiper1_prve {
+    position: absolute;
+    left: 1rem;
+    width: 1.5rem;
+    background: url('./../images/peizhi_swiper1_next.png') no-repeat center;
+    background-size: 100%;
+    outline:none;
+}
+
+.desc-wrap{
+    position: relative;
+    margin-top: -1rem;
+}
+.desc-wrap .desc-bg{
+    width: 100%;
+}
+.desc-wrap .desc-swiper{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 5rem;
+    width:100%;
+    margin: auto;
+    text-align: center;
+}
+.desc-wrap .desc-swiper img{
+    width: 60%;
+    margin: auto;
+}
+.desc-wrap .swiper-pagination{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 1rem;
+
+}
+
+.desc-wrap .swiper-pagination-bullet{
+    outline: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50% 50%;
+    background: #ffffff;
+    margin: 0 5px;
+    opacity: 1 !important;
+
+}
+.desc-wrap .swiper-pagination-bullet-active{
+    outline: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50% 50%;
+    background: #93745D;
+}
