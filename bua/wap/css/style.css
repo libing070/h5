@@ -1,0 +1,124 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+body {
+    -webkit-text-size-adjust: 100% !important;
+    background-color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+/* a标签点击闪烁 */
+a, div, img {
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+}
+
+.bg {
+    width: 100%;
+}
+
+.video_container {
+    position: absolute;
+    top: 18%;
+    width: 66%;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+.video {
+    width: 100%;
+}
+
+.buy1 {
+    position: absolute;
+}
+.buy1 .img {
+    width: 100%;
+    border-radius: 5px 5px;
+    position: absolute;
+}
+
+.buy2 {
+    position: absolute;
+}
+.buy2 .img {
+    width: 100%;
+    border-radius: 5px 5px;
+    position: absolute;
+}
+
+.buy3 {
+    position: absolute;
+}
+.buy3 .img {
+    width: 100%;
+    border-radius: 5px 5px;
+    position: absolute;
+}
+
+.buy4 {
+    position: absolute;
+}
+.buy4 .img {
+    width: 100%;
+    border-radius: 5px 5px;
+    position: absolute;
+}
+
+.buy5 {
+    position: fixed;
+}
+.buy5 .img {
+    width: 100%;
+    border-radius: 5px 5px;
+    position: absolute;
+}
+
+.narrow {
+    width: 7%;
+    right: 13%;
+    position: absolute;
+    -webkit-animation-name: shake_box;
+    -ms-animation-name: shake_box;
+    animation-name: shake_box;
+    -webkit-animation-duration: 400ms;
+    -ms-animation-duration: 400ms;
+    animation-duration: 400ms;
+    -webkit-animation-iteration-count: infinite;
+    -ms-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake_box{
+    0% {transform: translate(0px, 0px)}
+    50% {transform: translate(3px, 0px)}
+    100% {transform: translate(0px, 0px)}
+}
+
+.top_fix {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    box-shadow: 0px 7px 5px #00000030;
+}
+

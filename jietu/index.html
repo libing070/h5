@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>深夜老板突然给我发了条信息</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css?v=2.2">
+    <script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?ce288f41b35eb2f74d5afb7be3abbfd4";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+</head>
+<body>
+	<input type="hidden" id="nickname" value="@nickname@"/>
+	<input type="hidden" id="avatar" value="@avatar@">
+	<input type="hidden" id="origin_avatar" value="@origin_avatar@">
+	<input type="hidden" id="openid" value="@openid@">
+	<input type="hidden" id="sex" value="@sex@">
+	<audio src="video/music1.mp3" id="music"></audio>
+	<div class="page loading">
+		<img class="loading_bg bg" src="./images/loading_bg.png"/>
+		<img class="loading_bg" src="./images/loading.png"/>
+		<div class="loading_progress"></div>
+		<div class="loading_txt" style="display: none;">0%</div>
+	</div>
+	<div class="page music" data-statue="1">
+		<img src="images/music_stop.png"/>
+	</div>
+	<div class="page first">
+		<img class="first_bg" src="./images/long.png"/>
+		<img class="first_cloud delay progress1" data-time="200" src="./images/first_cloud_1.png"/>
+		<img class="first_cloud delay progress1" data-time="600" src="./images/first_cloud_2.png"/>
+		<img class="first_cloud delay progress1" data-time="800" src="./images/first_cloud_3.png"/>
+		<img class="first_cloud delay progress1" data-time="1200" src="./images/first_cloud_txt.png"/>
+		<img class="first_move delay progress1" data-time="1800" src="./images/first_move_txt.png"/>
+		<img class="first_move delay progress1 move_animated hand" data-time="2200" src="./images/first_move_hand.png"/>
+		<img class="car_shake delay progress2 rotate_animated" data-time="100" src="./images/first_car_shake.png"/>
+		<img class="first_cloud_bottom delay progress2" data-time="500" src="./images/first_cloud_4.png"/>
+		<img class="first_cloud_bottom delay progress2" data-time="900" src="./images/first_cloud_txt1.png"/>
+		<img class="first_click_point delay progress2" data-time="1400" src="./images/first_click_point.png"/>
+		<img class="first_click_txt delay progress2" data-time="1800" src="./images/first_click_txt.png"/>
+		<img class="first_click_hand click delay progress2" data-time="1600" src="./images/first_click_hand.png"/>
+	</div>
+	<div class="page second">
+		<img class="second_bg" src="images/second_bg.png"/>
+		<img class="second_cloud delay" data-time="400" src="images/second_cloud.png">
+		<img class="second_cloud_txt delay" data-time="800" src="images/second_cloud_txt.png">
+		<img class="second_play delay" data-time="1200" src="images/second_play.png">
+		<img class="second_txt delay" data-time="1800" src="images/second_txt.png">
+		<img class="second_hand delay click hand" data-time="1600" src="images/second_hand.png">
+	</div>
+	<div class="page third">
+		<!-- <img class="third_bg" src="images/third_bg.png"/>
+		<img class="third_cloud delay" data-time="400" src="images/third_cloud_1.png">
+		<img class="third_cloud delay" data-time="800" src="images/third_cloud_2.png">
+		<img class="third_cloud delay" data-time="1200" src="images/third_cloud_3.png">
+		<img class="third_cloud_txt delay txt" data-time="1600" src="images/third_cloud_txt.png"> -->
+	</div>
+	<div class="page fourth" style="display: none">
+		<video style="position: relative;  object-fit: contain;" id="video1" x5-video-player-type="h5" x5-video-orientation="h5" x5-video-player-fullscreen="true" x-webkit-airplay="true" x5-playsinline="true" webkit-playsinline="true" playsinline="true"  src="video/996.mp4"></video>
+		<!-- <canvas id="canvas"></canvas> -->
+	</div>
+	<div class="page fifth">
+		<img class="fifth_bg" src="images/third_bg.png"/>
+		<audio id="downstairs" src="video/downstairs.mp3"></audio>>
+	</div>
+	<div class="page sixth">
+		<img class="sixth_bg" src="images/sixth_bg.png"/>
+		<img class="sixth_cloud delay" data-time="400" src="images/sixth_cloud.png">
+		<img class="sixth_cloud_txt delay" data-time="800" src="images/sixth_cloud_txt.png">
+		<img class="sixth_hand_point delay" data-time="1300" src="images/sixth_cloud_hand_point.png">
+		<img class="sixth_hand_txt delay" data-time="1500" src="images/sixth_cloud_hand_txt.png">
+		<img class="sixth_hand click delay" data-time="1700" src="images/sixth_cloud_hand.png">
+	</div>
+	<div class="page seventh">
+		<img class="seventh_bg" src="images/seventh_bg.png"/>
+		<img class="seventh_txt delay" data-time="400" src="images/seventh_txt.png">
+	</div>
+	<div class="page seventh_1">
+		<img class="seventh_1_bg" src="images/seventh_1_bg.png"/>
+		<img class="seventh_cloud delay top16" data-time="200" src="images/seventh_cloud_1.png"/>
+		<img class="seventh_cloud delay top16" data-time="500" src="images/seventh_cloud_2.png"/>
+		<img class="seventh_cloud delay top16" data-time="800" src="images/seventh_cloud_3.png"/>
+		<img class="seventh_cloud delay top16" data-time="1000" src="images/seventh_cloud_txt.png"/>
+		<img class="seventh_cloud delay" data-time="1200" src="images/seventh_cloud_point.png"/>
+		<img class="seventh_cloud delay" data-time="1500" src="images/seventh_cloud_txt1.png"/>
+		<img class="seventh_cloud hand click delay" data-time="1400" src="images/seventh_cloud_hand.png"/>
+	</div>
+	<div class="page eighth">
+		<img class="eighth_bg" src="images/eighth_bg.png"/>
+		<div class="input">
+			<input type="text" class="time"/>
+		</div>
+		<!--<img class="eighth_hand" src="images/eighth_hand.png"/>-->
+		<div class="eighth_submit">
+			<img class="schb" src="images/eighth_button.png"/>
+		</div>
+		<div class="generate" style="display: none;"><span>生成中</span></div>
+	</div>
+	<div class="page ninth">
+		<div class="container">
+			<img class="share_bg" src=""/>
+			<div class="info">
+				<div class="avatar"><img src=""/></div>
+				<div class="nickname"><span></span></div>
+			</div>
+			<div class="number"></div>
+			<div class="erweima">
+				<img src="images/erweima.png"/>
+			</div>
+		</div>
+		<img id="sdimg" src=""/>
+		<img class="footer" src="images/changan.png"/>
+	</div>
+</body>
+<!-- <script src="./js/jquery.min.js" /> -->
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="./js/preload.js"></script>
+<script src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+<script src="./js/share.js?v=3"></script>
+<script src="./js/html2canvas.min.js"></script>
+<script type="text/javascript">
+
+$(".loading_txt").css({"top": $(".loading .bg").height()/724*366+'px'});
+$(".loading_txt").show();
+$(window).load(function(){
+	$.get("avatar.php?openid="+$("#openid").val()+"&url="+$("#origin_avatar").val(), function(){});
+	$.share({
+        title: '深夜老板突然给我发了条信息',
+        desc: '引言：小捷，睡了吗？',
+        imgUrl: 'weixin_share.jpg',
+        share_url: "http://h5tt.skyengine.cn/jietu/index.php"
+    });
+
+    $("body").on("touchmove",function(event){
+		event.preventDefault();
+　　 });
+
+    var isIPhoneXPortrait = function() {
+    	return (window.screen.height === 812 && window.screen.width === 375)
+    		|| (window.screen.height === 896 && window.screen.width === 414);
+	}
+	var isIPhoneXLandscape = function() {
+		return (window.screen.height === 375 && window.screen.width === 812)
+			|| (window.screen.height === 414 && window.screen.width === 896);
+	}
+
+	var isIPhoneX = function() {
+		let flag = false;
+		var ua = navigator.userAgent;
+		ua = ua.toLowerCase();
+		if(/iphone/.test(ua)) { 
+			flag = isIPhoneXLandscape() || isIPhoneXPortrait();
+		}
+		return flag;
+	}
+	if (isIPhoneX()) {
+		$(".input").css({"bottom": "27.5%"});
+	}
+
+	$(".music img").click(function(){
+		var top = $(this).parent();
+		if (top.data('status')==0) {
+			top.data('status', 1);
+			music_start();
+			$(".music img").attr('src', 'images/music_stop.png');
+		}else{
+			top.data('status', 0);
+			music_pause();
+			$(".music img").attr('src', 'images/music_start.png');
+		}
+	});
+
+	var imgs = [
+		'images/long.png',
+		'images/music_start.png',
+		'images/music_stop.png',
+		'images/first_cloud_1.png',
+		'images/first_cloud_2.png',
+		'images/first_cloud_3.png',
+		'images/first_cloud_txt.png',
+		'images/first_move_txt.png',
+		'images/first_move_hand.png',
+		'images/first_car_shake.png',
+		'images/first_cloud_4.png',
+		'images/first_cloud_txt1.png',
+		'images/first_click_point.png',
+		'images/first_click_hand.png',
+		'images/first_click_txt.png',
+		'images/second_bg.png',
+		'images/second_cloud.png',
+		'images/second_cloud_txt.png',
+		'images/second_play.png',
+		'images/second_hand.png',
+		'images/second_txt.png',
+		'images/third_bg.png',
+		'images/third_cloud_1.png',
+		'images/third_cloud_2.png',
+		'images/third_cloud_3.png',
+		'images/third_cloud_txt.png',
+		'video/music1.mp3',
+		'video/996.mp4',
+		'images/sixth_bg.png',
+		'images/sixth_cloud.png',
+		'images/sixth_cloud_txt.png',
+		'images/sixth_cloud_hand.png',
+		'images/sixth_cloud_hand_point.png',
+		'images/sixth_cloud_hand_txt.png',
+		'images/seventh_1_bg.png',
+		'images/seventh_cloud_1.png',
+		'images/seventh_cloud_2.png',
+		'images/seventh_cloud_3.png',
+		'images/seventh_cloud_txt.png',
+		'images/seventh_cloud_txt1.png',
+		'images/seventh_cloud_point.png',
+		'images/seventh_cloud_hand.png',
+		'images/seventh_bg.png',
+		'images/seventh_txt.png',
+		'images/eighth_bg.png',
+		'images/eighth_hand.png',
+		'images/share1.png',
+		'images/share2.png',
+		'images/share3.png',
+		'images/share4.png',
+		'images/erweima.png',
+		'images/changan.png',
+	];
+
+	var index = 0,
+	    len = imgs.length,
+	    progress = $('.loading_progress');
+
+
+
+	//图片预加载
+	$.preload(imgs, {
+	    each: function (count) {
+	    	$('.loading_progress').css("background", "#fff");
+	    	$.queue(document,"progress",function(){
+	    		var total = 79 - 45;
+	    		var length = 45 + Math.round(total * (count+1) / len);
+	    		var txt = Math.round((count+1) / len * 100) + '%';
+	    		$(".loading_txt").html(txt);
+	    		progress.css({'width': length+'%'});
+	    		if (Math.round((count+1) / len==1)) {
+	    			$(".loading").fadeOut('slow');
+	    			first_start();
+	    			//eighth_start();
+	    			//fourth_start();
+	    			//seventh_start();
+	    			clearInterval(timer);
+	    		}
+	    	});
+	    }
+	});
+
+	var timer = setInterval(function(){
+	    $.dequeue(document,"progress");
+	}, 100);
+
+	var music_start = function(){
+		var music = document.getElementById("music");
+		if (window.WeixinJSBridge) {
+            WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+                music.play();
+            }, false);
+        } else {
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+                    music.play();
+                });
+            }, false);
+        }
+        music.play();
+	};
+	var music_pause = function(){
+		var music = document.getElementById("music");
+		if (window.WeixinJSBridge) {
+            WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+                music.pause();
+            }, false);
+        } else {
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+                    music.pause();
+                });
+            }, false);
+        }
+        music.pause();
+	};
+
+
+	//执行第一屏
+	var first_start = function() {
+		$('.first .first_bg').css({"opacity": "0"});
+		//music_start();
+		//新增自动下拉到指定位置
+		$(".first").fadeIn('fast', function(){
+			var scrollHeight = $('.first img').height()*0.77;
+			$('.first').animate({scrollTop:scrollHeight}, 1, function(){
+				$('.first .first_bg').css({"opacity": "1"});
+				$(".first .progress2").each(function(){
+					var that = $(this);
+					setTimeout(function(){
+						that.fadeIn('slow', function(){
+							if (that.hasClass("first_click_hand")) {
+								first_click_hand();
+							}
+						});
+					}, $(this).data('time'));
+				});
+			});
+		})
+	    /*$(".first").fadeIn('slow', function(){
+	    	$(".first .progress1").each(function(){
+		    	var that = $(this);
+		    	setTimeout(function(){
+					that.fadeIn('slow', function(){
+						if ($(this).hasClass("hand")) {
+							first_move();
+						}
+					});
+				}, $(this).data('time'));
+		    });
+	    });*/
+	};
+
+	//执行第一屏下拉事件
+	var startX = 0, startY = 0;
+	var first_move = function(){
+		$("body").on("touchstart", function(e) {
+		    if (e.cancelable) {
+		        if (!e.defaultPrevented) {
+		            e.preventDefault();
+		        }
+		    }	
+		    startX = e.originalEvent.changedTouches[0].pageX,
+		    startY = e.originalEvent.changedTouches[0].pageY;
+		});
+		$("body").on("touchend", function(e) {			
+		    if (e.cancelable) {
+		        if (!e.defaultPrevented) {
+		            e.preventDefault();
+		        }
+		    }			    
+		    moveEndX = e.originalEvent.changedTouches[0].pageX,
+		    moveEndY = e.originalEvent.changedTouches[0].pageY,
+		    X = moveEndX - startX,
+		    Y = moveEndY - startY;
+		    if ( Y < 0) {
+		    	$("body").off("touchstart touchend");
+		        var scrollHeight = $('.first img').height()*0.77;
+				$('.first').animate({scrollTop:scrollHeight}, 1000, function(){
+					$(".first .progress2").each(function(){
+						var that = $(this);
+						setTimeout(function(){
+							that.fadeIn('slow', function(){
+								if (that.hasClass("first_click_hand")) {
+									first_click_hand();
+								}
+							});
+						}, $(this).data('time'));
+					});
+				});
+		    }
+		});
+	};
+
+	//第一屏走进车
+	var first_click_hand = function() {
+		$(".first_click_hand").on('click', function(){
+			$(".first_click_hand").off('click');
+			$(".progress2,.first_cloud_bottom,.first_click_hand,.first_click_point,.first_click_txt").fadeOut('fast');
+			fourth_start();
+			return;
+			var lock = false;
+			$(".first_cloud_bottom,.first_click_hand,.first_click_point,.first_click_txt").fadeOut('slow', function(){
+				if (lock==false) {
+					lock = true;
+	            	$(".first").animate({},function(){
+	            		$('.first').css({'transition-duration': '2s', 'transform-origin': '80% 40%'});
+	            		setTimeout(function(){
+	            			$('.first').css({'transform':'scale(4)'});
+	            		}, 300);
+	            		setTimeout(function(){
+	            			$('.first').fadeOut('slow');
+	            			//second_start();
+	            			fourth_start();
+	            		}, 900);
+	            	});
+            	} 
+			})
+		});
+	};
+
+	//第二屏开始
+	var second_start = function() {
+		$('.second').fadeIn('slow', function(){
+			$(".second .delay").each(function(){
+				var that = $(this);
+				setTimeout(function(){
+					that.fadeIn('slow', function(){
+						if (that.hasClass("hand")) {
+						}
+					});
+				}, $(this).data('time'));
+			});
+		});
+	};
+
+	//第二屏点击播放
+	$(".second_hand").on("click", function(){
+		$(".second_hand").off("click");
+		$(".second").fadeOut("slow");
+		// $(".third").fadeIn("slow", function(){
+		// 	third_start();
+		// });
+		fourth_start();
+		
+	});
+	
+
+	//第三屏开始
+	// var third_start = function() {fourth_start();
+	// 	$(".third .delay").each(function(){
+	// 		var that = $(this);
+	// 		setTimeout(function(){
+	// 			that.fadeIn('slow', function(){
+	// 				if (that.hasClass("third_cloud_txt")) {
+	// 					setTimeout(function(){
+	// 						fourth_start();
+	// 					}, 800);
+	// 				}
+	// 			});
+	// 		}, $(this).data('time'));
+	// 	});
+	// };
+
+	//第四屏开始
+	var fourth_start = function() {
+		$(".third").fadeOut('slow');
+		$(".fourth").fadeIn('slow');
+
+		var video = document.getElementById("video1");
+		// var canvas = document.getElementById("canvas");
+		// var context = canvas.getContext("2d");
+		// canvas.width = window.innerWidth*2;
+		// canvas.height = window.innerHeight*2; 
+		function draw() {
+			if (window.WeixinJSBridge) {
+	            WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+	                video.play();
+	            }, false);
+	        } else {
+	            document.addEventListener("WeixinJSBridgeReady", function () {
+	                WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+	                    video.play();
+	                });
+	            }, false);
+	        }
+	        video.play();
+		  // 	timer = setInterval(function(){
+		  //   	context.drawImage(video, 0, 0, canvas.width, canvas.height);
+		 	// },40);
+		};
+		music_pause();
+		draw();
+		video.addEventListener('ended',function () {
+			clearInterval(timer);
+			music_start();
+	        setTimeout(function(){
+	        	fifth_start();
+	        }, 500)
+	    },false);
+
+		
+	};
+
+	//第五屏开始
+	var fifth_start = function() {
+		$(".fourth").fadeOut("slow");
+		$(".fifth").fadeIn("slow", function(){
+			var downstairs = document.getElementById("downstairs");
+			if (window.WeixinJSBridge) {
+	            WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+	                downstairs.play();
+	            }, false);
+	        } else {
+	            document.addEventListener("WeixinJSBridgeReady", function () {
+	                WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+	                    downstairs.play();
+	                });
+	            }, false);
+	        }
+	        downstairs.play();
+			downstairs.addEventListener('ended', function() {
+				setTimeout(function(){
+		        	sixth_start();
+		        }, 200)
+			})
+		});
+	};
+
+	//第六屏开始
+	var sixth_start = function() {
+		$(".fifth").fadeOut("slow");
+		$(".sixth").fadeIn("slow", function(){
+			$(".sixth .delay").each(function(){
+				var that = $(this);
+				setTimeout(function(){
+					that.fadeIn('slow', function(){
+						if (that.hasClass("sixth_hand")) {
+							sixth_click_hand();
+						}
+					});
+				}, $(this).data('time'));
+			});
+		});
+	};
+
+	//第六屏走进车门
+	var sixth_click_hand = function() {
+		$(".sixth_hand").on('click', function(){
+			$(".sixth_hand").off('click');
+			var lock = false;
+			$(".sixth_cloud, .sixth_hand_point, .sixth_hand_txt, .sixth_hand").fadeOut('slow', function(){
+				if (lock==false) {
+					lock = true;
+	            	$(".sixth").animate({},function(){
+	            		$('.sixth').css({'transition-duration': '2s', 'transform-origin': '55% 40%'});
+	            		setTimeout(function(){
+	            			$('.sixth').css({'transform':'scale(4)'});
+	            		}, 300);
+	            		setTimeout(function(){
+	            			seventh_start();
+	            		}, 900);
+	            	});
+            	} 
+			})
+		});
+	};
+
+	//第七屏开始
+	var seventh_start = function() {
+		$('.sixth').fadeOut('slow');
+		$('.seventh').fadeIn('slow', function(){
+		 	$(".seventh .delay").each(function(){
+				var that = $(this);
+				setTimeout(function(){
+					that.fadeIn('slow', function(){
+						if (that.hasClass("seventh_txt")) {
+							seventh_click_hand();
+						}
+					});
+				}, $(this).data('time'));
+			});
+		});
+	};
+
+	//第七屏点击
+	var seventh_click_hand = function() {
+		$(".seventh_txt").on('click', function(){
+			$(".seventh_txt").off('click');
+			seventh_1_start();
+		});
+		setTimeout(function(){
+			seventh_1_start();
+		}, 2000);
+	};
+
+	//第七加一屏幕开始
+	var seventh_1_start = function() {
+		$('.seventh').fadeOut('slow');
+		$('.seventh_1').fadeIn('slow', function(){
+		 	$(".seventh_1 .delay").each(function(){
+				var that = $(this);
+				setTimeout(function(){
+					that.fadeIn('slow', function(){
+						if (that.hasClass("hand")) {
+							seventh_1_click_hand();
+						}
+					});
+				}, $(this).data('time'));
+			});
+		});
+	};
+
+	//第七加一屏幕点击
+	var seventh_1_click_hand = function() {
+		$(".seventh_1 .hand").on('click', function(){
+			$(".seventh_1 .hand").off('click');
+			eighth_start();
+		});
+	};
+
+	//第八屏开始
+	var count = 0;
+	var eighth_start = function() {
+		//设置海报上的用户信息
+		$(".info .avatar img").attr('src', $("#avatar").val());
+		$(".info .nickname span").html($("#nickname").val());
+		$('.seventh').fadeOut('slow');
+		$('.eighth').fadeIn('slow', function(){
+			$('.ninth').show();
+			//选择海报,随机1-4
+			var random = function(min, max) {
+			  return Math.round(Math.random() * (max - min) ) + min;
+			}
+			var sex = $("#sex").val();
+			if (sex==0) {
+				//男女不分
+				count = random(1, 4);
+			}else if (sex==1) {
+				//男
+				count = random(1, 2);
+			}else {
+				//女
+				count = random(1, 2);
+				count = count + 2;
+			}
+			var img = "images/share"+count+".png";
+			$(".share_bg").attr('src', img);
+			//调整输入框位置
+			var bottom = $(".eighth img").height()/724*195 + 5;
+			$(".eighth .input").css({"bottom": bottom});
+			$(".time").focus();
+			$(".time").on('blur', function(){
+				//解决键盘顶起页面情况
+			    window.scroll(0,0);
+			});
+			$(".time").on('input propertychange', function(){
+				var value = $(this).val();
+				value = parseInt(value);
+				if (isNaN(value)) {
+					value = '';
+				}
+				
+				value += "";
+				if (value.length>3) {
+					value = value.substr(0, 3);
+				}
+				value = parseInt(value);
+				if (isNaN(value)) {
+					value = '';
+				}
+				if (value>365) {
+					value = 365;
+				}
+				value += "";
+				$(this).val(value);
+			});
+		});
+	};
+
+	$(".schb").on("click", function(){
+		var value = $(".input input").val()+"";
+		if (parseInt(value)<=20) {
+			var img = "images/share0.png";
+			$(".share_bg").attr('src', img);
+			count = 0;
+		}
+		if (value.length>0) {
+			numbers = value.split("");
+			for(var i=0;i<numbers.length;i++) {
+				var numObj = document.createElement("img");
+				numObj.src = "images/"+numbers[i]+".png";
+				$(".number").append(numObj);
+			}
+			//数字位置
+			if (count==1) {
+				$(".ninth .number").css({"top": $(".ninth img").height()/724*136-12+'px'});
+			} else if(count==0){
+				$(".ninth .number").css({"top": $(".ninth img").height()/724*135+'px'});
+			} else{
+				$(".ninth .number").css({"top": $(".ninth img").height()/724*132+'px'});
+			}
+			//二维码位置
+			$(".ninth .erweima").css({"top": $(".ninth img").height()/724*590+10+'px'});
+			//底部文字
+			$(".ninth .footer").css({"top": $(".ninth img").height()/724*570+30+'px'});
+			var start = new Date().getTime();
+            while (true) if (new Date().getTime() - start > 200) break;
+			$(".eighth .generate").fadeIn("slow");
+			var copyDom = $(".container");
+            var width = copyDom.offsetWidth;
+            var height = $(".share_bg").height();
+            copyDom.css({"height": height});
+            var scale = 2;
+            var canvas = document.createElement('canvas');
+            canvas.width = width*scale;
+            canvas.height = height*scale;
+            var content = canvas.getContext("2d");
+            content.scale(scale,scale);
+            var rect = copyDom.get(0).getBoundingClientRect();
+            content.translate(-rect.left,-rect.top);//
+            html2canvas(copyDom[0], {
+                dpi: window.devicePixelRatio*2,
+                scale:scale,
+                canvas:canvas,
+                width:width,
+                heigth:height,
+                backgroundColor:'#fff',
+                logging: false
+            }).then(function (canvas) {
+                var dataUrl = canvas.toDataURL();
+                $("#sdimg").attr('src', dataUrl);
+                $(".erweima").hide();
+                $(".footer").show();
+                ninth_start();
+            });
+			
+		}
+        $(this).unbind("click");
+	});
+
+	//第九屏开始
+	var ninth_start = function() {
+		$(".eighth").fadeOut('slow');
+		$(".page").css({"overflow": "scroll"});
+		$(".ninth").fadeIn('slow', function(){
+			
+		});
+	};
+})
+
+</script>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>你最大的靠山不是金钱、婚姻，而是...</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="true"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    <link rel="stylesheet" href="./css/style.css?v=2"/>
+    <script src="./js/jquery-1.11.2.min.js"></script>
+    <script src="./js/hm.js"></script>
+<!--     <script type="text/javascript"
+        src="https://api.map.baidu.com/api?ak=PlhFWpA02aoURjAOpnWcRGqw7AI8EEyO&v=2.0&services=false"></script>
+	<script type="text/javascript"
+        src="https://api.map.baidu.com/getscript?v=2.0&amp;ak=PlhFWpA02aoURjAOpnWcRGqw7AI8EEyO&amp;services=false&amp;t=20190622163250"></script> -->
+    <script type="text/javascript">
+    	var HM = new HM();
+    	function getQueryVariable(variable) {
+		    var query = window.location.search.substring(1);
+		    if(query.length>0){
+		        var vars = query.split("&");
+		        for (var i = 0; i < vars.length; i++) {
+		            var pair = vars[i].split("=");
+		            if (pair[0] == variable) {
+		                return pair[1];
+		            }
+		        }
+		    }
+		    return "default";
+		}
+
+		var utm = getQueryVariable("utm");
+		var channel = getQueryVariable("channel");
+
+    	function isMobile(){
+		   if(window.navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)) {
+		     return true; // 移动端
+		   }else{
+		     return false; // PC端
+		   }
+		}
+		var data = {};
+		if (isMobile()) {
+			window.location.href = "/bua/wap/index.html?utm="+utm+"&channel="+channel;
+		}else {
+			var random4 = function () {
+			    return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+			};
+			var createUUID = function () {
+			    return (random4() + random4() + "-" + random4() + "-" + random4() + "-" + random4() + random4());
+			}
+			var uuid = createUUID();
+			if (localStorage.getItem("uuid")==null) {
+				localStorage.setItem("uuid", uuid);
+			}else{
+				uuid = localStorage.getItem("uuid");
+			}
+			data.utm = utm;
+			data.channel = channel;
+			data.uuid = uuid;
+			data.province = "";
+			data.city = "";
+
+			HM.page_view(data);
+		}
+
+		
+
+   //  	var geolocation = new BMap.Geolocation();
+	  //   geolocation.getCurrentPosition(function (r) {
+	  //   	try {
+	  //   		data.province = r.address.province;
+	  //   		data.city = r.address.city;
+	  //   	}catch(e){}
+			// HM.page_view(data);
+	  //   }, function () {
+	  //   });
+    </script>
+</head>
+<body>
+	<div class="root">
+		<div class="bg">
+			<img src="./images/bua_pc_new.jpg" />
+		</div>
+		<div class="video_container">
+			<img class="video-bg" src="images/video_bg.png?v=1"/>
+			<video controls="controls" class="video" x5-playsinline="" playsinline="" webkit-playsinline="" id="myVideo" style="object-fit:cover;display: none;" height="100%"
+	       width="100%" src="./videos/video.mp4?v=1" preload="auto"></video>
+	        </video>
+		</div>
+		<div class="buy1">
+			<img class="img" src="./images/btn_buy1.png"/>
+			<img class="narrow" src="./images/narrow.png"/>
+		</div>
+		<div class="buy2">
+			<img class="img" src="./images/btn_buy1.png"/>
+			<img class="narrow" src="./images/narrow.png"/>
+		</div>
+		<div class="buy3">
+			<img class="img" src="./images/btn_buy1.png"/>
+			<img class="narrow" src="./images/narrow.png"/>
+		</div>
+		<div class="buy4">
+			<img class="img" src="./images/lingqu.png"/>
+			<img class="narrow" src="./images/narrow.png"/>
+		</div>
+	</div>
+</body>
+<script>
+	var hasInit = false;
+
+	var init = function(){
+		var height = $(".bg img").height();
+		var width = $("body").width();
+		if (height==0) {
+			setTimeout(function(){init();}, 100);
+			return;
+		}
+		if (hasInit == true) {
+			return;
+		}
+		$(".video_container").css("width", width*186/900);
+		$(".video_container").css("top", height*9.6/678);
+		$(".video_container").css("left", width*344/668);
+
+		var myVideo = document.getElementById("myVideo");
+	    $(".video-bg").on('click', function () {
+	        $('.video-bg').hide();
+	        $("#myVideo").fadeIn();
+	        myVideo.play();
+	    });
+	    $(".buy1").css('top', height*707/780);
+	    $(".buy1").css('left', width*164/580);
+	    $(".buy1").css('width', width*56/580);
+
+	    $(".buy2").css('top', height*707/780);
+	    $(".buy2").css('left', width*264/580);
+	    $(".buy2").css('width', width*56/580);
+
+	    $(".buy3").css('top', height*707/780);
+	    $(".buy3").css('left', width*361/580);
+	    $(".buy3").css('width', width*56/580);
+
+	    $(".buy4").css('top', height*737/780);
+	    $(".buy4").css('left', width*255/580);
+	    $(".buy4").css('width', width*80/580);
+
+	    $(".buy1").click(function(){
+	    	data.des = "2盒装";
+	    	HM.page_click(data, function(){
+	    		window.location.href = "https://shop46440590.m.youzan.com/wscgoods/detail/2ofdntf2bbnjq";
+	    	});
+	    });
+
+	    $(".buy2").click(function(){
+	    	data.des = "4盒装";
+	    	HM.page_click(data, function(){
+	    		window.location.href = "https://shop46440590.m.youzan.com/wscgoods/detail/2g420q342ghdy";
+	    	});
+	    });
+
+	    $(".buy3").click(function(){
+	    	data.des = "10盒装";
+	    	HM.page_click(data, function(){
+	    		window.location.href = "https://shop46440590.m.youzan.com/wscgoods/detail/3ewrl6m7p6gmu";
+	    	});
+	    });
+
+	    $(".buy4").click(function(){
+	    	data.des = "领取新人礼包";
+	    	HM.page_click(data, function(){
+	    		window.location.href = "https://shop46440590.youzan.com/v2/feature/Je7feYB9Oh";
+	    	});
+	    });
+	    hasInit = true;
+	}
+
+	$(function() {
+		
+		setTimeout(function(){init();}, 100);
+		$(window).resize(function() {
+			hasInit = false;
+		  	init();
+		});
+	})
+</script>
+</html>

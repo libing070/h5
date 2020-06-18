@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>你最大的靠山不是金钱、婚姻，而是...</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="true"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    <link rel="stylesheet" href="./css/style.css?v=4"/>
+    <script src="./js/jquery-1.11.2.min.js"></script>
+    <script src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+    <script src="./js/shares.js?v=1"></script>
+    <script src="./js/hm.js"></script>
+<!--     <script type="text/javascript"
+        src="https://api.map.baidu.com/api?ak=PlhFWpA02aoURjAOpnWcRGqw7AI8EEyO&v=2.0&services=false"></script>
+<script type="text/javascript"
+        src="https://api.map.baidu.com/getscript?v=2.0&amp;ak=PlhFWpA02aoURjAOpnWcRGqw7AI8EEyO&amp;services=false&amp;t=20190622163250"></script> -->
+    <script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?558888b8347b58fdcbcce1c9e2328fbd";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+    <script type="text/javascript">
+    	var HM = new HM();
+    	function getQueryVariable(variable) {
+		    var query = window.location.search.substring(1);
+		    if(query.length>0){
+		        var vars = query.split("&");
+		        for (var i = 0; i < vars.length; i++) {
+		            var pair = vars[i].split("=");
+		            if (pair[0] == variable) {
+		                return pair[1];
+		            }
+		        }
+		    }
+		    return "default";
+		}
+		var utm = getQueryVariable("utm");
+		var channel = getQueryVariable("channel");
+
+		var random4 = function () {
+		    return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+		};
+		var createUUID = function () {
+		    return (random4() + random4() + "-" + random4() + "-" + random4() + "-" + random4() + random4());
+		}
+		var uuid = createUUID();
+		if (localStorage.getItem("uuid")==null) {
+			localStorage.setItem("uuid", uuid);
+		}else{
+			uuid = localStorage.getItem("uuid");
+		}
+
+		var data = {};
+		data.utm = utm;
+		data.channel = channel;
+		data.uuid = uuid;
+		data.province = "";
+		data.city = "";
+
+		HM.page_view(data);
+
+   //  	var geolocation = new BMap.Geolocation();
+	  //   geolocation.getCurrentPosition(function (r) {
+	  //   	try {
+	  //   		data.province = r.address.province;
+	  //   		data.city = r.address.city;
+	  //   	}catch(e){}
+			// HM.page_view(data);
+	  //   }, function () {
+	  //   });
+    </script>
+</head>
+<body>
+	<div class="bg">
+		<img src="./images/bua_wap_new_new.jpg" />
+	</div>
+	<div class="video_container">
+		<img class="video-bg" src="images/video_bg.png?v=1"/>
+		<video controls="controls" class="video" x5-playsinline="" playsinline="" webkit-playsinline="" id="myVideo" style="object-fit:cover;display: none;" height="100%"
+       width="100%" src="./videos/video.mp4?v=1" preload="auto"></video>
+        </video>
+	</div>
+<!-- 	<div class="buy1">
+		<img class="img" src="./images/btn_buy1.png"/>
+		<img class="narrow" src="./images/narrow.png"/>
+	</div>
+	<div class="buy2">
+		<img class="img" src="./images/btn_buy1.png"/>
+		<img class="narrow" src="./images/narrow.png"/>
+	</div>
+	<div class="buy3">
+		<img class="img" src="./images/btn_buy1.png"/>
+		<img class="narrow" src="./images/narrow.png"/>
+	</div> -->
+	<div class="buy4">
+		<img class="img" src="./images/lingqu_new.png"/>
+		<img class="narrow" src="./images/narrow_new.png"/>
+	</div>
+	<div class="top_fix">
+		<img class="img" src="./images/fix_wap_bg.jpg"/>
+		<div class="buy5">
+			<img class="img" src="./images/btn_lingqu_wap.png"/>
+			<img class="narrow" src="./images/narrow_new.png"/>s
+		</div>
+	</div>
+</body>
+<script>
+	var hasInit = false;
+
+	var init = function(){
+		var height = $(".bg img").height();
+		var width = $(".bg img").width();
+		if (height==0) {
+			setTimeout(function(){init();}, 100);
+			return;
+		}
+		if (hasInit == true) {
+			return;
+		}
+		$(".video_container").css("top", height/28);
+		var myVideo = document.getElementById("myVideo");
+	    $(".video-bg").on('click', function () {
+	        $('.video-bg').hide();
+	        $("#myVideo").fadeIn();
+	        myVideo.play();
+	    });
+	    // $(".buy1").css('top', height*686/780);
+	    // $(".buy1").css('left', width*187/580);
+	    // $(".buy1").css('width', width*216/580);
+
+	    // $(".buy2").css('top', height*735/780);
+	    // $(".buy2").css('left', width*60/580);
+	    // $(".buy2").css('width', width*168/580);
+
+	    // $(".buy3").css('top', height*735/780);
+	    // $(".buy3").css('left', width*353/580);
+	    // $(".buy3").css('width', width*168/580);
+
+	    $(".buy4").css('top', height*748/780);
+	    $(".buy4").css('left', width*208/580);
+	    $(".buy4").css('width', width*168/580);
+	    $(".buy4 .narrow").css('height', $(".buy4 .img").height());
+
+	    $(".buy5").css('top', height*6.1/780);
+	    $(".buy5").css('right', width*45/580);
+	    $(".buy5").css('width', width*138/580);
+	    $(".buy5 .narrow").css('height', $(".buy5 .img").height());
+
+	    // $(".buy1").click(function(){
+	    // 	data.des = "2盒装";
+	    // 	HM.page_click(data, function(){
+	    // 		window.location.href = "https://shop46440590.m.youzan.com/wscgoods/detail/2ofdntf2bbnjq";
+	    // 	});
+	    // });
+
+	    // $(".buy2").click(function(){
+	    // 	data.des = "4盒装";
+	    // 	HM.page_click(data, function(){
+	    // 		window.location.href = "https://shop46440590.m.youzan.com/wscgoods/detail/2g420q342ghdy";
+	    // 	});
+	    // });
+
+	    // $(".buy3").click(function(){
+	    // 	data.des = "10盒装";
+	    // 	HM.page_click(data, function(){
+	    // 		window.location.href = "https://shop46440590.m.youzan.com/wscgoods/detail/3ewrl6m7p6gmu";
+	    // 	});
+	    // });
+
+	    $(".buy4").click(function(){
+	    	data.des = "领取新人礼包";
+	    	HM.page_click(data, function(){
+	    		window.location.href = "https://shop46440590.youzan.com/v2/feature/Je7feYB9Oh";
+	    	});
+	    });
+	    $(".top_fix").click(function(){
+	    	data.des = "领取新人礼包";
+	    	HM.page_click(data, function(){
+	    		window.location.href = "https://shop46440590.youzan.com/v2/feature/Je7feYB9Oh";
+	    	});
+	    });
+	    hasInit = true;
+	}
+
+	$(function() {
+		setTimeout(function(){init();}, 100);
+
+		$.share({
+	        title: '你最大的靠山不是金钱、婚姻，而是...',
+	        desc: '失眠多梦、脱发、黑眼圈，抵抗力下降，你的肾极限的透支！一天喝一瓶枸杞原浆，比你喝鸡汤都管用！',
+	        imgUrl: 'share.jpg',
+	        share_url: window.location.href
+	    });
+
+	    $(window).resize(function() {
+			hasInit = false;
+		  	init();
+		});
+
+		$(window).scroll(function(){
+			var height = $(".bg img").height();
+			var top = $(document).scrollTop();
+			if (top>height*0.80) {
+				$(".top_fix").hide();
+			}else{
+				$(".top_fix").show();
+			}
+		});
+	})
+</script>
+</html>
