@@ -2,16 +2,17 @@
 
 class Ddmp {
 
-    private static $test = 1;
+    private static $test = 0;
     
     
     function inturl()
     {
         if (self::$test) {
-            $url = "http://106.75.119.170:2101/";
+            //$url = "http://106.75.119.170:2101/";
         }else{
             //正式地址
             //$url="http://120.132.70.217/";
+            $url="http://117.50.108.37:2101/";
         }
         return $url;
     }
@@ -21,7 +22,7 @@ class Ddmp {
         $utm = $data['utm'];
         $channel_id = $data['channel'];
         if (!$utm) {
-           $utm = 'm75';
+           $utm = 'm453';
         }
         if (!$channel_id) {
            $channel_id = '1';
@@ -29,45 +30,75 @@ class Ddmp {
         $key = $utm."_".$channel_id;
         
         $meiti_test = array(
-           'm75_1' => '92768f7c-9d34-401f-83a3-11d3cc8f7cfc',
+           'm453_1' => 'BD78A7D6-5A34-40B4-AAA6-28FFB2FB113F',
         );
        
         $meiti = [
-           'm75_1' => '84159f21-8275-40e8-ae78-42a5e70dc709',
-           'm76_1' => '11d27155-a48e-497d-9765-aa4b3876c354',
-           'm77_1' => '98d3c0cc-301a-4287-9189-8a2ab12728be',
-           'm77_2' => '1a872057-eec4-4dd3-b1da-0ef91ac33b89',
-           'm77_3' => '068642b7-8008-446d-9238-9b3fcdbc610f',
-           'm78_1' => '3e0852b7-b29c-4ff8-960e-e59779c9751e',
-           'm78_2' => 'f97e90d1-2104-49dd-ab20-9facafe2895d',
-           'm78_3' => '88b93171-42fd-4eb0-8a32-1b9c14978ccc',
-           'm79_1' => 'cc3caeb8-2d7b-4de3-bbe5-e6fa1b56ce10',
-           'm80_1' => '69431260-898c-4e1f-9bf3-d7eebecc8075',
-           'm81_1' => '0d0409b9-ff6c-4035-a02e-3d1e8693cad3',
-           'm81_2' => '900c28c1-1e32-4d2f-846c-b54317df397a',
-           'm81_3' => '17fa4f12-7997-4311-b8e5-b6a002d067ba',
-           'm81_4' => '54f770c8-ec44-4797-bad1-006f2754cb73',
-           'm81_5' => '3a2abeb2-71ea-42a2-9c5d-da0d8890110f',
-           'm81_6' => '79c969cb-a562-485b-9355-94bdc8c035d0',
-           'm82_1' => 'e9dd7534-0b39-4fa4-aa4a-3aa6fea4bd75',
-           'm82_2' => '1d92996b-ef47-4622-9ff5-1eaada4e9c0c',
-           'm82_3' => 'ad30a4d9-aaaf-4671-93da-2a31e3620977',
-           'm82_4' => 'c30b40b4-42cf-4f7f-87a0-b95b619c0859'
+            'm449_1' => 'ABBCFEA3-E58E-44F7-906C-620DB0676953',
+            'm449_2' => '292BC657-1347-4CD6-B4CC-618C9163B7E9',
+            'm449_3' => '7422B211-E08E-4AB5-8100-3FDFDA656B1C',
+            'm449_4' => 'B60825AA-9486-470D-A7BD-C3CDAD35D2F7',
+            'm449_5' => '7320EE0A-C1D7-4A46-97AC-81AA8325C786',
+            'm449_6' => 'F284A5FF-89ED-42D0-9864-E9E3C361CC15',
+            'm449_7' => 'A62A9B29-3A3E-4A4B-8FFC-3F59805022EF',
+            'm449_8' => '813219DF-7D6B-43C7-A685-C7BF4B8C1130',
+            'm449_9' => '93896637-111C-4AC2-971B-531AD5ADA076',
+            'm449_10' => '6378298D-4A0C-4E07-AEEC-AD997572786A',
+            'm450_1' => 'DE2F1B1A-0474-4106-9CF1-D5B745D388E6',
+            'm450_2' => 'C024B801-D6AC-41CC-9159-9FBC88458CF5',
+            'm450_3' => '7E03247E-7A44-4CEF-9360-106DAF1489CE',
+            'm450_4' => '415171A4-34AE-4E31-B09E-465EA8BE8583',
+            'm450_5' => '110BC3A4-FA9E-48FC-ABA2-751CD3D29EF3',
+            'm450_6' => '9DC21C18-0BF1-44C3-AE4E-29F11A346E55',
+            'm450_7' => 'D7FC2B1E-35BA-4DDB-97AD-49A8167C7898',
+            'm450_8' => '01C1830A-76FE-4EBD-8EF0-1D0C3DF5D064',
+            'm450_9' => 'E2A809A6-B576-4BBF-8F73-54F02A014BD3',
+            'm450_10' => 'F56D043B-2C9B-44E6-BAEE-15EC366357C5',
+            'm450_11' => 'A23C7931-B049-4144-BF07-D82AB4AD99A1',
+            'm450_12' => '9D483AEC-4649-4993-B1F4-63C28CF7D415',
+            'm450_13' => 'D6F91E5B-94B9-4965-B4F1-658821C629FC',
+            'm451_1' => '0E506108-D901-48C9-A1DD-E6AC4558D234',
+            'm451_2' => '931227A0-E876-4248-AD5B-591637E72055',
+            'm451_3' => '4B0F9795-4C91-4F5D-959A-72795D26881A',
+            'm451_4' => '11CB4C62-6730-4C98-984D-E90706B5858A',
+            'm451_5' => '54D20720-EF70-4BFE-8233-42D739C650EF',
+            'm452_1' => '34B7DF81-9E4A-43AF-8600-691EF048DE74',
+            'm452_2' => 'CC00997E-7024-4EC5-B7B0-24FA3959FF13',
+            'm452_3' => 'FE6D13F0-3BA1-4703-9271-2080CD852BF7',
+            'm452_4' => '86C8D5EA-37F6-4A2C-A876-A93C8B925377',
+            'm452_5' => 'D9DACCC7-122D-43BC-9A51-51BC3A31E837',
+            'm452_6' => 'B43361E8-97B2-4AA0-8614-62AA3BCA453E',
+            'm452_7' => '89F6E13A-26E8-41E5-8B84-D10F4F3EA650',
+            'm452_8' => 'AE39C1A7-2DCD-4EA4-B3E8-26E8D107ED6F',
+            'm452_9' => '9DAE8736-2227-4DB9-986A-B94CC8700891',
+            'm452_10' => '4990B100-7ED3-4A26-AB02-853544F98799',
+            'm452_11' => 'F1946DB2-8FFE-46CD-A646-DF6D898D8231',
+            'm452_12' => 'EC639583-3F12-4B7A-A0D1-FA8E52B05BAA',
+            'm452_13' => 'B5509CE0-D4BB-4598-B94B-40C9F57D48BB',
+            'm453_1' => '4D789EE1-FF2B-4228-BED3-5372A1514E5C',
+            'm454_1' => 'E1AA12A0-FB69-41D8-AD4D-D3FEE2F1FEF5',
+            
+            'ym449_1' => '9AC60CEB-7300-497F-82B9-CE1A2FA63FC4',
+            'ym450_1' => '9AC60CEB-7300-497F-82B9-CE1A2FA63FC4',
+            'ym451_1' => 'AB04E74D-2D50-42F9-8F07-EC6B59CF5B94',
+            'ym452_1' => '1DD515EA-4B90-40C0-9544-CE3003A3F0CA',
+            'ym453_1' => 'BD78A7D6-5A34-40B4-AAA6-28FFB2FB113F',
+            'ym454_1' => 'BD78A7D6-5A34-40B4-AAA6-28FFB2FB113F',
         ];
        
         if (self::$test) {
             if (!isset($meiti_test[$key])) {
-                $key = $meiti_test['m75_1'];
+                $key = $meiti_test['m453_1'];
             }else{
                 $key = $meiti_test[$key];
                 if (!$key) {
-                    $key = $meiti_test['m75_1'];
+                    $key = $meiti_test['m453_1'];
                 }
             }
         }else{
             $key = $meiti[$key];
             if (!$key) {
-                $key = $meiti['m75_1'];
+                $key = $meiti['m453_1'];
             }
         }
 
@@ -87,30 +118,33 @@ class Ddmp {
         $senddata['CityId'] = $data['cityId'];
         $senddata['DealerId'] = $data['jxs_id'];
         $car = $data['type'];
-        if ($car==21) {
-            $senddata['SeriesId'] = "500CE29E-E9A5-4D2A-AB82-2EF0C0F447A4";
-            $senddata['ModelId'] = "AF7A2504-8376-482E-9AD6-D0867D1BB775";
-        }elseif ($car==22) {
-            $senddata['SeriesId'] = "EF78447E-A4E7-4F84-B95F-93471C951933";
-            $senddata['ModelId'] = "C6910C00-BE8F-4076-9CFC-BA324793CBFD";
-        }elseif ($car==23) {
+        if ($car=='a6l') {
+            $senddata['SeriesId'] = "9ACA891B-9CED-4E68-8E59-D17F209C53AD";
+            $senddata['ModelId'] = "3e9d353f-e1d0-4632-ae24-f2dac97b11a2";
+        }elseif ($car=='q5l') {
             $senddata['SeriesId'] = "CB3923AB-83BD-48B1-90DC-9C2004D75BA9";
             $senddata['ModelId'] = "B19D554E-0EC2-4348-BAA3-3167FB60A9D1";
+        }elseif ($car=='a4l') {
+            $senddata['SeriesId'] = "9D5EB2B2-BD01-4154-99C4-487405AFC352";
+            $senddata['ModelId'] = "653AF3B3-CBB6-40A8-AE60-C60315ADD98E";
         }else {
-            $senddata['SeriesId'] = "32FA69D8-C28D-4DC6-AEF2-9F5B53AB4362";
-            $senddata['ModelId'] = "E4146422-B9D8-42B7-B872-C8E7B2BE6CBE";
+            $senddata['SeriesId'] = "9ACA891B-9CED-4E68-8E59-D17F209C53AD";
+            $senddata['ModelId'] = "3e9d353f-e1d0-4632-ae24-f2dac97b11a2";
+        }
+        if (isset($data['time'])) {
+            $senddata['OrderTime'] = $data['time'];
         }
 
         $datas = array(
             'authentication' => $authentication,
             'datas' => array($senddata)
         );
-        self::postinfo($url, $datas, 'POST');
+        $ret = self::postinfo($url, $datas, 'POST');
         $result = [];
         $result['code'] = 0;
         $result['msg'] = "成功";
+        $result['ddmp'] = $ret;
         return $result;
-
     }
 
     //生成唯一uuid

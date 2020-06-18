@@ -1,7 +1,7 @@
 {
-  "ip": "123.56.180.12",
-  "user": "shi0288",
-  "password": "123321111q",
-  "databases": "activity",
+  "ip": "127.0.0.1",
+  "databases": "nic_aodiai",
+  "user": "root",
+  "password": "di9*mfac",
   "port": 3306
 }

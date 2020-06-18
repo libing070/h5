@@ -1,6 +1,7 @@
-//var host = 'http://ai.audi.cn';
+//var host = 'https://ai.audi.cn';
 var host = 'http://h5tt.skyengine.cn';
 
+var base = "controller/index.php?action=getServerData&url=";
 
 function isWeiXin(){
     var ua = window.navigator.userAgent.toLowerCase();
@@ -11,21 +12,15 @@ function isWeiXin(){
     }
 }
 
-
 jQuery.extend({
     getProvince: function (cb) {
         $.ajax({
             type: 'get',
-            //  url: host + '/api/index.php?c=home&a=getprovice' + '&timestamp=' + new Date().getTime(),
-            url:host + '/api/index.php',
+            url: base + encodeURIComponent(host + '/api/index.php?c=home&a=getprovice' + '&stimestamp=' + new Date().getTime()),
             dataType: 'json',
             async: true, //异步
             cache: false, //不需要缓存
-            data: {
-                'c':'home',
-                'a':'getprovice' ,
-                'timestamp': new Date().getTime()
-            },
+            data: {},
             success: function (res) {
                 cb(res);
             },
@@ -36,17 +31,11 @@ jQuery.extend({
     getCity: function (province_id, cb) {
         $.ajax({
             type: 'get',
-            //  url: host + '/api/index.php?c=home&a=getcity&provinceid=' + province_id + '&timestamp=' + new Date().getTime(),
-            url: host + '/api/index.php',
+            url: base + encodeURIComponent(host + '/api/index.php?c=home&a=getcity&provinceid=' + province_id + '&stimestamp=' + new Date().getTime()),
             dataType: 'json',
             async: true, //异步
             cache: false, //不需要缓存
-            data: {
-                'c':'home',
-                'a':'getcity',
-                'provinceid': province_id,
-                'timestamp': new Date().getTime()
-            },
+            data: {},
             success: function (res) {
                 cb(res);
             },
@@ -57,20 +46,11 @@ jQuery.extend({
     getDealer: function (utm, city, cb) {
         $.ajax({
             type: 'get',
-            // url: host + '/api/index.php?c=home&a=getjxss&format=json&utm=' + utm + '&city=' + city + '&timestamp=' + new Date().getTime(),
-            url: host + '/api/index.php',
-
+            url: base + encodeURIComponent(host + '/api/index.php?c=home&a=getjxss&format=json&utm=' + utm + '&city=' + city + '&stimestamp=' + new Date().getTime()),
             dataType: 'json',
             async: true, //异步
             cache: false, //不需要缓存
-            data: {
-                'c':'home',
-                'a':'getjxss',
-                'format':'json',
-                'utm':utm,
-                'city':city,
-                'timestamp': new Date().getTime()
-            },
+            data: {},
             success: function (res) {
                 cb(res);
             },
@@ -95,7 +75,7 @@ jQuery.extend({
         };
         $.ajax({
             type: "POST",
-            url: host + '/api' + '?timestamp=' + new Date().getTime() + '&url=' + encodeURIComponent(locaH),
+            url: host + '/api/index.php?timestamp=' + new Date().getTime() + '&url=' + encodeURIComponent(locaH),
             dataType: 'json',
             async: true, //异步
             cache: false, //不需要缓存
@@ -192,16 +172,15 @@ jQuery.extend({
      *      [get] 搜索 /api/index.php?c=home&a=getjxss&format=json&q=q&webtype=mobile&che=q3&q=1&utm=[utms]&_keyword=[关键字]&city=[城市]
      *      [get] 当前位置经销商数据 /api/index.php?c=home&a=getjxss&format=json&q=q&webtype=mobile&che=q3&utm=[utms]&city=[城市名]&lat=[纬度]&lng=[经度]
      */
-    getResultByParams: function (data,cb) {
-        //if (param.type == 'get') param.data = null;
+    getResultByParams: function (param,cb) {
+        if (param.type == 'get') param.data = null;
         $.ajax({
-            type: 'get',
-            //  url: host + '/api/index.php' + param.url + '&timestamp=' + new Date().getTime(),
-            url: host + '/api/index.php',
+            type: param.type,
+          url: base + encodeURIComponent(host + '/api/index.php' + param.url + '&stimestamp=' + new Date().getTime()),
             dataType: 'json',
             async: true, //异步
             cache: false, //不需要缓存
-            data: data.data,
+            data: param.data,
             success: function (res) {
                 cb(res);
             },

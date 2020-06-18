@@ -1,0 +1,638 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+body {
+    -webkit-text-size-adjust: 100% !important;
+    background-color: black;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+/* a标签点击闪烁 */
+a, div, img {
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+}
+
+.content{
+    width: 100%;
+}
+input::-webkit-input-placeholder {
+    color: #ffffff;
+}
+input:-moz-placeholder {
+    color: #ffffff;
+}
+input::-moz-placeholder {
+    color: #ffffff;
+}
+
+select {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+select::-ms-expand { display: none; }
+
+.inquiry input::-webkit-input-placeholder {
+    font-size: 16px;
+    color: white;
+}
+.inquiry input:-moz-placeholder {
+    font-size: 16px;
+    color: white;
+}
+.inquiry input::-moz-placeholder {
+    font-size: 16px;
+    color: white;
+}
+.inquiry input:-ms-input-placeholder {
+    font-size: 16px;
+    color: white;
+}
+
+
+/*内容区 begin*/
+
+.book{
+    position: relative;
+    width: 100%;
+    margin-top: -1px;
+}
+.book .form {
+    position: absolute;
+    text-align: center;
+    /*background-color: rgba(255,255,255,0.7);*/
+    right:0;
+    left: 0;
+    top: 0rem;
+    margin: auto;
+    width: 80%;
+    height: 70%;
+}
+.book .form .book-title{
+    display: block;
+    width: 40%;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.book .form .line_container {
+    display: block;
+    padding-bottom: 1.5rem;
+    width: 74%;
+    height: 4rem;
+    margin: auto;
+}
+
+.book .form .half {
+    width: 48%;
+    height: 100%;
+}
+
+.book .form .input {
+    font-family: "DFPHeiW5";
+    padding-left: 10px;
+    background-color:transparent;
+    border: 0.5px solid #ffffff;
+    height: 100%;
+    outline:none;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+.book .form .input:nth-child(1){
+    float: left;
+}
+.book .form .input:nth-child(2){
+    float: right;
+}
+
+.book .form .p-c-left{
+    width: 49%;
+    float: left;
+    height: 4rem;
+    padding-bottom: 1.5rem;
+}
+.book .form .jsx-right{
+    width: 49%;
+    float: right;
+    height: 4rem;
+    padding-bottom: 1.5rem;
+}
+.book .form .select_container {
+    position: relative;
+    border: 0.5px solid #ffffff;
+    display: inline-block;
+    height: 100%;
+}
+.book .form .select_container:nth-child(1){
+    float: left;
+}
+.book .form .select_container:nth-child(2){
+    float: right;
+}
+.book .form .select_container .select-icon{
+    position: absolute;
+    right: 1rem;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 1rem;
+    height: auto;
+    pointer-events: none;
+}
+
+.book .form .jxs_container {
+    border: 0.5px solid #ffffff;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+
+}
+
+.book .form .select {
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    width: 100%;
+    outline: 0;
+    font-family: "DFPHeiW5";
+    color: #ffffff;
+    margin-right: 0.6rem;
+    padding-left: 0.8rem;
+    /*//  background: url(../images/select_narrow.png) 95% 50% no-repeat scroll transparent;*/
+    font-size: 1rem;
+}
+
+.book .form .address-msg {
+    position: relative;
+    background: #797979;
+    width: 100%;
+    height: 7.5rem;
+    margin: auto;
+}
+.book .form .address-msg .no-data{
+    position: absolute;
+    color: white;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    height: 1.5rem;
+
+}
+.book .form .address-msg img {
+    width: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.3rem;
+}
+
+.book .form .address-msg .title {
+    width: 49%;
+    height: 7.5rem;
+    line-height: 5.5rem;
+    float: left;
+    text-align: left;
+    padding-left: 2rem;
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+}
+
+.book .form .address-msg .address_phone {
+    width: 49%;
+    height: 7.5rem;
+    float: right;
+    text-align: center;
+    color: #ffffff;
+    padding-left: 1rem;
+}
+
+.book .form .address-msg .address_phone .list {
+    text-align: left;
+    font-size: 0.8rem;
+    margin-top: 2rem;
+
+}
+
+.book .form .address-msg .address_phone .list span {
+    vertical-align: middle;
+}
+.book .form .address-msg .address_phone .phone{
+    margin-top: 0.5rem;
+}
+.book .form .privacy {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    text-align: left;
+    color: #ffffff;
+    width: 100%;
+    text-decoration-line: underline;
+}
+
+.book .form .submit {
+    width: 25%;
+    margin: auto;
+}
+.book .form select option{
+    background: white;
+    color: black;
+}
+
+.videobox{
+    position: relative;
+    width: 100%;
+    min-height: 39rem;
+}
+.videobox .video-bg{
+    cursor: pointer;
+    width: 100%;
+}
+.videobox .video{
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    height: 90%;
+    outline: none;
+}
+
+.dealers {
+    /*margin-top: -8.25rem;*/
+    position: relative;
+}
+
+
+.dealers .inquiry {
+    margin: 0 auto;
+    width: 100%;
+    background: #000;
+}
+
+.dealers .inquiry .wrap{
+    position: relative;
+    width: 100%;
+    background: url(../images/dealers-bg.png) no-repeat;
+    background-size: 100%;
+    padding-top: 3rem;
+
+}
+
+.dealers .local_search {
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 4% 0;
+    overflow: hidden;
+}
+
+.dealers .local_put img{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 1rem;
+    width: 45px;
+}
+.dealers .local_put {
+    float: left;
+    width: 48%;
+    float: left;
+    height: 2.5rem;
+}
+
+.dealers .local_search .local_put select {
+    outline: none;
+    text-align: center;
+    padding: 0 1rem;
+    width: 48%;
+    height: 100%;
+    border: 1px solid white;
+    color: white;
+    background-color: transparent;
+
+}
+.dealers .local_search .local_put select option{
+    background: white;
+    color: black;
+}
+.dealers .local_search .local_put select:nth-child(1) {
+    float: left;
+}
+.dealers .local_search .local_put select:nth-child(2) {
+    float: right;
+}
+.dealers .search_put {
+    float: right;
+    width: 48%;
+    height: 2.5rem;
+    position: relative;
+    text-align: right;
+}
+.dealers .search_put img{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    width: 45px;
+}
+.dealers .search_put .inp{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+}
+.dealers .search_put .inp input {
+    color: white;
+    background-color: transparent;
+    padding: 0 1rem;
+    width: 100%;
+    height: 100%;
+    border: 1px solid white;
+
+}
+.dealers .search_put .inp .icon_search {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 10px;
+    width: auto;
+    height: 45%;
+    bottom: 0;
+    margin: auto;
+}
+
+.dealers .jxs_list {
+    width: 60%;
+    margin: auto;
+    overflow: hidden;
+    padding-bottom: 2%;
+}
+
+.dealers .jxs_list li {
+    background-color: #353535;
+    width: 48%;
+    margin-bottom: 2%;
+    padding-left: 2rem;
+    padding-bottom: 2%;
+}
+.dealers .jxs_list li:nth-child(odd){
+    float: left;
+}
+.dealers .jxs_list li:nth-child(even){
+    float: right;
+}
+
+
+.dealers .jxs_info{
+    position: relative;
+}
+.dealers .jxs_info h4 {
+    margin-bottom: 2%;
+    margin-top: 6%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    color: white;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+
+.dealers .jxs_info p:nth-child(2) {
+    color: white;
+    margin-bottom: 2%;
+    font-size: 0.8rem;
+    height: 2rem;
+}
+.dealers .jxs_info p:nth-child(3){
+    font-size: 0.8rem;
+    margin-bottom: 1%;
+    color: white;
+}
+.dealers .jxs_info a {
+    display: block;
+    bottom: 0.2rem;
+    color: white;
+    background-color: #2877C6;
+    width: 8rem;
+    vertical-align: middle;
+    line-height: 1.8rem;
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 7%;
+}
+
+.dealers .local_icon {
+    position: relative;
+    top: 6px;
+    display: inline-block;
+    width: 15px;
+    height: 18px;
+    background: url(./../images/location.png) no-repeat;
+    background-size: 100%;
+    margin-right: 5px;
+}
+
+.dealers .phone_icon {
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url(./../images/phone.png) no-repeat;
+    background-size: 100%;
+    margin-right: 5px;
+}
+
+.right-menu{
+    position: fixed;
+    right: 0;
+    height: 10rem;
+    width: 4rem;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 998;
+}
+.right-menu img{
+    cursor: pointer;
+    width: 100%;
+}
+.right-menu img:nth-child(2){
+    margin-top: -1rem;
+}
+.bottom-menu{
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+.bottom-menu .mask{
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 4rem;
+}
+.bottom-menu .item{
+    cursor: pointer;
+    margin-top: 0.3rem;
+    text-align: center;
+    display: inline-block;
+    width: 20%;
+    float: left;
+    height: 100%;
+    color: #000;
+}
+.bottom-menu .item img{
+    height: 2rem;
+    margin: auto;
+    width: auto;
+}
+
+.share-dialog{
+    z-index: 1000;
+    position: fixed;
+    width: 400px;
+    height: 200px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background-color: white;
+}
+.share-dialog a{
+    width: 50%;
+    display: inline-block;
+    float: left;
+    height: 100%;
+}
+.share-dialog a img{
+    padding: 3%;
+    height: 100%;
+    width: auto;
+}
+.weixin-dialog,.xiaochengxu-dialog{
+    z-index: 1000;
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background-color: white;
+}
+.weixin-dialog img,
+.xiaochengxu-dialog img{
+    width: 90%;
+    margin: auto;
+}
+.weixin-dialog::after {
+    content: "奥迪官方公众号";
+    display: block;
+    width: 200px;
+    height: 20px;
+    line-height: 1.2;
+    position: absolute;
+    left: 0px;
+    top: 175px;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    text-align: center;
+}
+.xiaochengxu-dialog::after {
+    content: "奥迪小程序";
+    display: block;
+    width: 200px;
+    height: 20px;
+    line-height: 1.2;
+    position: absolute;
+    left: 0px;
+    top: 175px;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    text-align: center;
+}
+/*内容区 end*/
+
+.dialog-detail{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-color: rgba(0,0,0,0.7);
+}
+.dialog-detail .mask{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    overflow-y: auto;
+    margin: auto;
+    background-color: #181818;
+    width: 50%;
+    height: 100%;
+    /*height: 28rem;*/
+    /*min-height: 30rem;*/
+}
+.dialog-detail .mask::-webkit-scrollbar { width: 0 !important }
+.dialog-detail .mask{ -ms-overflow-style: none; }
+.dialog-detail .mask{ overflow: -moz-scrollbars-none; }
+.dialog-detail .mask .close-btn{
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+    width: 1rem;
+    cursor: pointer;
+
+}
+.dialog-detail .mask .dialog-wrap{
+    margin-top: 2rem;
+}
+/*@media (min-width: 1920px) {*/
+    /*.dialog-detail .mask{*/
+        /*width: 30rem;*/
+        /*height: 40rem;*/
+    /*}*/
+/*}*/
+
+
+

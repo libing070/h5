@@ -5,19 +5,19 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
-    <title>threecars-pc</title>
+    <title>“礼”享生活，等你开启</title>
     <link rel="icon" href="data:image/ico;base64,aWNv">
     <link rel="stylesheet" href="./css/swiper.min.css">
     <link rel="stylesheet" href="./css/swiper_reset.css?v=2121">
      <link rel="stylesheet" href="./js/skin/layer.css" id="layui_layer_skinlayercss">
-    <link rel="stylesheet" href="./css/base.css?v=2.4">
+    <link rel="stylesheet" href="./css/base.css?v=3.5">
     <link rel="stylesheet" href="./css/swiper_reset.css?v=2">
     <script src="./js/jquery-1.11.2.min.js?v=2"></script>
+    <script src="./js/jquery.nicescroll.min.js"></script>
     <script src="./js/layer.js"></script>
     <script src="./js/swiper.min.js"></script>
-    <script src="./js/interface.js?v=5"></script>
-    <script src="./js/base.js?v=1.4"></script>
-
+    <script src="./js/interface.js?v=4"></script>
+    <script src="./js/base.js?v=12"></script>
 </head>
 <body>
     <div class="header">
@@ -36,9 +36,9 @@
         <div class="ceshi-a6l-swiper item item_a6l" style="display: none">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img style="width: 100%" src="images/a6l/a6l-car1.jpg"></div>
-                    <div class="swiper-slide"><img style="width: 100%" src="images/a6l/a6l-car2.jpg"></div>
-                    <div class="swiper-slide"><img style="width: 100%" src="images/a6l/a6l-car3.jpg"></div>
+                    <div class="swiper-slide"><img style="width: 100%" src="images/a6l/a6l-car1.jpg?v=1"></div>
+                    <div class="swiper-slide"><img style="width: 100%" src="images/a6l/a6l-car2.jpg?v=1"></div>
+                    <div class="swiper-slide"><img style="width: 100%" src="images/a6l/a6l-car3.jpg?v=1"></div>
                 </div>
             </div>
             <!--Add Pagination -->
@@ -47,9 +47,9 @@
         <div class="ceshi-q5l-swiper item item_q5l" style="display: none">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img style="width: 100%" src="images/q5l/q5l-car1.jpg"></div>
-                    <div class="swiper-slide"><img style="width: 100%" src="images/q5l/q5l-car2.jpg"></div>
-                    <div class="swiper-slide"><img style="width: 100%" src="images/q5l/q5l-car3.jpg"></div>
+                    <div class="swiper-slide"><img style="width: 100%" src="images/q5l/q5l-car1.jpg?v=1"></div>
+                    <div class="swiper-slide"><img style="width: 100%" src="images/q5l/q5l-car2.jpg?v=1"></div>
+                    <div class="swiper-slide"><img style="width: 100%" src="images/q5l/q5l-car3.jpg?v=1"></div>
                 </div>
             </div>
             <!--Add Pagination -->
@@ -78,9 +78,9 @@
                     <img src="images/select_narrow.png" class="select-icon">
                     <select name="car" id="car" class="select" >
                         <option value="">车型</option>
-                        <option value="A6L">A6L</option>
-                        <option value="Q5L">Q5L</option>
-                        <option value="A4L">A4L</option>
+                        <option value="a6l">A6L</option>
+                        <option value="q5l">Q5L</option>
+                        <option value="a4l">A4L</option>
                     </select>
                 </div>
             </div>
@@ -131,20 +131,20 @@
             </div>
             <div class="line_container">
                 <div class="submit">
-                    <img class="img r" style="cursor: pointer" src="images/submit.png">
+                    <img class="img r" style="cursor: pointer" src="images/submit.png?v=1">
                 </div>
             </div>
         </div>
     </div>
     <div class="zhengce">
-        <img src="images/zhengce-q5l.jpg" style="width: 100%">
+        <img src="images/zhengce-q5l.jpg?v=1" style="width: 100%">
     </div>
-    <div class="videobox" style="display: none">
-        <img class="video-bg" src="images/video_bg2.png"/>
-        <video id="video" class="video" style="display: none;"
-               controls src="video/audi.mp4" poster="">
-        </video>
-    </div>
+    <!--<div class="videobox" style="display: none">-->
+        <!--<img class="video-bg" src="images/video_bg2.png"/>-->
+        <!--<video id="video" class="video" style="display: none;"-->
+               <!--controls src="video/audi.mp4" poster="">-->
+        <!--</video>-->
+    <!--</div>-->
     <div class="peizhi peizhi-a6l"  style="display: none">
         <img src="images/a6l-peizhi-bg.png" class="bg"/>
         <div class="swiper-container">
@@ -211,7 +211,8 @@
     </div>
     <div class="dealers">
         <div class="inquiry" id="inquiry" style="margin-top: -2px">
-            <div class="wrap" style="background-image: url(./images/dealers-bg.png);">
+            <div class="wrap" style="">
+                <img src="images/jxs-title.png" style="width: 15%;margin: 0 auto;">
                 <div class="local_search">
                     <div class="local_put">
                         <select class="pro_local" name="">
@@ -261,9 +262,52 @@
             </a>
         </div>
     </div>
+
+    <div class="dialog-faxian-menu" style="display: none">
+        <div class="mask">
+            <img src="images/faxian/close-btn.png" class="close">
+            <img src="images/faxian/faxian-titles.png" class="titles">
+            <div class="wrap">
+                <div class="box">
+                    <img class="bg" src="images/faxian/faxian-share.png">
+                    <img class='btn share' src="images/faxian/faxian-click-btn-share.png">
+                </div>
+                <div class="box">
+                    <img class="bg" src="images/faxian/faxian-xiaocehngxu.png">
+                    <img class='btn xiaochengxu' src="images/faxian/faxian-click-btn-saoma.png">
+                </div>
+                <div class="box">
+                    <img class="bg" src="images/faxian/faxian-shop.png">
+                    <img class='btn shop' src="images/faxian/faxian-click-btn-go.png">
+                </div>
+                <div class="box">
+                    <img class="bg" src="images/faxian/faxian-weixin.png">
+                    <img class='btn weixin' src="images/faxian/faxian-click-btn-saoma.png">
+                </div>
+                <div class="box">
+                    <img class="bg" src="images/faxian/faxian-weibo.png">
+                    <img class='btn weibo' src="images/faxian/faxian-click-btn-go.png">
+                </div>
+                <div class="box">
+                    <img class="bg" src="images/faxian/faxian-audi.png">
+                    <img class='btn audi' src="images/faxian/faxian-click-btn-go.png">
+                </div>
+                <div class="box">
+                    <img class="bg" src="images/faxian/faxian-store.png">
+                    <img style="cursor: pointer;position: absolute;width: 40%;bottom: 1.5rem;left: 1.8rem;right: auto" class='btn apple' src="images/faxian/faxian-download-apple.png">
+                    <img style="cursor: pointer;position: absolute;width: 40%;bottom: 1.5rem;right: 1.8rem;left: auto"  class='btn android' src="images/faxian/faxian-download-android.png">
+                </div>
+                <div class="box">
+                    <img class="bg" src="images/faxian/faxian-club.png">
+                    <img class='btn club' src="images/faxian/faxian-click-btn-saoma.png">
+                </div>
+            </div>
+
+        </div>
+    </div>
     <div class="dialog-pop share-dialog" style="display: none">
         <a href="javascript:void(0);" class="liShare_wx" id="liShare_wx">
-            <img alt="Scan me!" src="images/Sporterweima.png?v=2"></a>
+            <img alt="Scan me!" src="images/Sporterweima-a6l.png?v=2"></a>
         <a href="javascript:void((function(s,d,e){try{}catch(e){}var f='https://v.t.sina.com.cn/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=1087202303'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"
            class="liShare_wb"><img src="images/share_wb.png" alt=""></a>
     </div>
@@ -274,5 +318,18 @@
     <div class="dialog-pop xiaochengxu-dialog" style="display: none">
         <a href="javascript:void(0);" class="liShare_ewm"><img src="images/xiaochengxu.jpg" alt=""></a>
     </div>
+    <div class="dialog-pop club-dialog" style="display: none">
+        <a href="javascript:void(0);" class="liShare_ewm"><img src="images/faxian/cluberweima.jpg" alt=""></a>
+    </div>
 </body>
+<script>
+    $(document).ready(function() {
+        $(".dialog-faxian-menu .mask").niceScroll({
+            cursorborder:"",
+            cursorcolor:"#000000",
+            // autohidemode:'hidden',  //选项一直隐藏滚动条
+            boxzoom:true
+        }); // First scrollable DIV
+    });
+</script>
 </html>

@@ -24,24 +24,21 @@ function randomSort(arr){
     return newArr;
 }
 var cheName = 'che';
-var utm = 'm91';
+var utm = 'm453';
 var channel=1;
 
 function getDealerUtm() {
     var mm = getQueryVariable("utm");
     switch(mm) {
-        case 'm91': return 'm45';
-        case 'm92': return 'm40';
-        case 'm93': return 'm41';
-        case 'm94': return 'm61';
-        case 'm95': return 'm62';
-        case 'm96': return 'm63';
-        case 'm97': return 'm64';
-        case 'm98': return 'm65';
-        case 'm99': return 'm66';
-        case 'm100': return 'm66';
+        case 'm449': return 'm90';
+        case 'm450': return 'm90';
+        case 'm451': return 'm91';
+        case 'm452': return 'm92';
+        case 'm453': return 'm93';
+        case 'm454': return 'm93';
+       
     }
-    return "m91";
+    return "m90";
 }
 
 function getQueryVariable(variable) {
@@ -87,6 +84,23 @@ Array.prototype.remove = function(val) {
         this.splice(index, 1);
     }
 };
+
+///获取url中指定参数
+function request(paras) {
+    var url = location.href;
+    var paraString = url.substring(url.indexOf("?") + 1, url.length).split("&");
+    var paraObj = {}
+    for (i = 0; j = paraString[i]; i++) {
+        paraObj[j.substring(0, j.indexOf("=")).toLowerCase()] = j.substring(j.indexOf("=") + 1, j.length);
+    }
+    var returnValue = paraObj[paras.toLowerCase()];
+    if (typeof (returnValue) == "undefined") {
+        return "";
+    } else {
+        return returnValue;
+    }
+}
+
 $(function(){
     utm = getQueryVariable('utm');
     channel = getQueryVariable('channel');
@@ -95,17 +109,25 @@ $(function(){
     document.addEventListener("scroll",function(){
         var y = document.documentElement.scrollTop || window.pageYOffset;
         if((y >= 400 && pt_mark == 1) &&  document.location.href.indexOf("ai.audi.cn/wap/") > -1){
-            _pt_sp_2.push('setCustomEvent',{eventName:'wap 到达第二屏'});
+            _pt_sp_2.push('setCustomEvent',{eventName:'czny wap 到达第二屏'});
             pt_mark = 0;
         }else if((y >= 400 && pt_mark == 1) && document.location.href.indexOf("ai.audi.cn/pc/") > -1){
-            _pt_sp_2.push('setCustomEvent',{eventName:'pc 到达第二屏'});
+            _pt_sp_2.push('setCustomEvent',{eventName:'czny pc 到达第二屏'});
             pt_mark = 0;
         }
     },false)
 
-    var randomcar=['a6l','q5l','a4l'];
+    var randomcar=[];
+    var urlcar = request('car');
+    if(urlcar!=""){
+        randomcar=[urlcar.toLowerCase()];
+    }else{
+       randomcar=['a6l','q5l','a4l'];
+    }
     var index = Math.floor((Math.random()*randomcar.length));
     var currCar=(randomcar[index]);
+    $("#car").find("option[value = '"+currCar.toLowerCase()+"']").attr("selected","selected");
+    $("#liShare_wx img").attr("src","./images/Sporterweima-"+currCar.toLowerCase()+".png?v=1");
     var carList=['a6l','q5l','a4l'];
      carList.remove(currCar);
     var bgStart='./images/top-'+carList[0]+'.png';
@@ -116,10 +138,10 @@ $(function(){
     htmlStr+="<div class='ceshi-top-slide' type='"+carList[1]+"' style='background-image: url("+bgEnd+")'></div>";
     $(".ceshi-top").append(htmlStr);
     $(".ceshi-group .item.item_"+currCar).fadeIn().siblings('.ceshi-group .item').hide();
-    $(".book .back-img").attr("src","images/liuzi-back-"+currCar+'.png');
-    $(".zhengce img").attr("src","images/zhengce-"+currCar+'.jpg');
+    $(".book .back-img").attr("src","images/liuzi-back-"+currCar+'.png?v=3');
+    $(".zhengce img").attr("src","images/zhengce-"+currCar+'.jpg?v=5');
     $(".peizhi.peizhi-"+currCar).fadeIn().siblings('.peizhi').hide();
-    $(".inquiry .wrap").css("background-image","url('./images/inquiryPrice-bg-"+currCar+".png'");
+    $(".inquiry .wrap").css("background-image","url('./images/inquiryPrice-bg-"+currCar+".png?v=2'");
 
     $(".ceshi-top").on("click",'.ceshi-top-slide',function () {
         if(!$(this).hasClass("active")){
@@ -131,10 +153,12 @@ $(function(){
                 $(this).css("background-image","url('images/top-"+type+".png')");
             });
             $(".ceshi-group .item.item_"+currCar).fadeIn().siblings('.ceshi-group .item').hide();
-            $(".book .back-img").attr("src","images/liuzi-back-"+currCar+'.png');
-            $(".zhengce img").attr("src","images/zhengce-"+currCar+'.jpg');
+            $(".book .back-img").attr("src","images/liuzi-back-"+currCar+'.png?v=3');
+            $(".zhengce img").attr("src","images/zhengce-"+currCar+'.jpg?v=5');
             $(".peizhi.peizhi-"+currCar).fadeIn().siblings('.peizhi').hide();
-            $(".inquiry .wrap").css("background-image","url('./images/inquiryPrice-bg-"+currCar+".png'");
+            $(".inquiry .wrap").css("background-image","url('./images/inquiryPrice-bg-"+currCar+".png?v=2'");
+            $("#car").find("option").removeAttr("selected");
+            $("#car").find("option[value = '"+currCar.toLowerCase()+"']").prop("selected",true);
 
         }
     })
@@ -221,16 +245,16 @@ $(function(){
     });
 
 //---------视频播放处理开始-----------
-    var video = document.getElementById("video");
-    $(".video-bg").on('click', function () {
-        $('.video-bg').hide();
-        $("#video").fadeIn();
-        video.play();
-    })
-    video.addEventListener('pause',function(){
-        $("#video").fadeOut();
-        $('.video-bg').show();
-    })
+//     var video = document.getElementById("video");
+//     $(".video-bg").on('click', function () {
+//         $('.video-bg').hide();
+//         $("#video").fadeIn();
+//         video.play();
+//     })
+//     video.addEventListener('pause',function(){
+//         $("#video").fadeOut();
+//         $('.video-bg').show();
+//     })
     //---------视频播放处理结束-----------
 
     //获取定位位置
@@ -308,15 +332,15 @@ $(function(){
     };
     function getInquiryCity(pro_id) {
         $.getResultByParams({
-            data:{
-                'c':'home',
-                'a':'getcity',
-                'provinceid':pro_id,
-                'utm':utm,
-                'channel':channel
-            }
-            // url: '?c=home&a=getcity&provinceid=' + pro_id + '&utm=' + utm + '&channel=' + channel,
-            // type: 'get'
+            // data:{
+            //     'c':'home',
+            //     'a':'getcity',
+            //     'provinceid':pro_id,
+            //     'utm':utm,
+            //     'channel':channel
+            // }
+            url: '?c=home&a=getcity&provinceid=' + pro_id + '&utm=' + utm + '&channel=' + channel,
+            type: 'get'
         }, function (res) {
             var str = '';
             str += '<option city_id="">请选择</option>';
@@ -333,18 +357,18 @@ $(function(){
     function getInquiryJxs( cityName) {
         var keyword = $('.keyword').val();
         $.getResultByParams({
-            data:{
-                'c':'home',
-                'a':'getjxss',
-                'format':'json',
-                'utm':getDealerUtm(),
-                '_keyword':keyword,
-                'city':cityName,
-                'channel':channel
+            // data:{
+            //     'c':'home',
+            //     'a':'getjxss',
+            //     'format':'json',
+            //     'utm':getDealerUtm(),
+            //     '_keyword':keyword,
+            //     'city':cityName,
+            //     'channel':channel
 
-            }
-            // url: '?c=home&a=getjxss&format=json&utm=' + getDealerUtm() + '&_keyword=' + keyword + '&city=' + cityName + '&channel=' + channel,
-            // type: 'get'
+            // }
+            url: '?c=home&a=getjxss&format=json&utm=' + getDealerUtm() + '&_keyword=' + keyword + '&city=' + cityName + '&channel=' + channel,
+            type: 'get'
         }, function (res) {
             res.items=randomSort(res.items);
             var str = '';
@@ -508,7 +532,7 @@ $(function(){
             return false
         }
         var data = {
-            // car:chexing,
+            car:chexing,
             name: name,
             mobile: mobile,
             cityId: city_id, //预约市
@@ -520,7 +544,20 @@ $(function(){
         $.sendData(data, function (res) {
             if (res.msg.indexOf('成功') > -1) {
                 layer.msg('预约成功',function(){
-                    _pt_sp_2.push('setCustomEvent',{eventName:'QC PC 预约成功'});
+                    _pt_sp_2.push('setCustomEvent',{eventName:'czny PC 预约成功'});
+                    try {
+                        stm_clicki('send', 'event', {
+                            customActionId: 1,
+                            customActionLabel1: '',
+                            customActionLabel2: '',
+                            customActionLabel3: $("#province option:selected").html() + "/" + $("#city option:selected").html(),
+                            customActionLabel4: $("#jxsSelect option:selected").html(),
+                            customActionLabel5: 'czny'
+                        });
+    
+                    } catch (e) {
+    
+                    }
                     tijiao = 0;
                     $('#inputName').val('');
                     $('#inputPhone').val('');
@@ -555,7 +592,8 @@ $(function(){
         $('.jxs_list').html('');
         $('html,body').animate({
             scrollTop: $(".inquiry").offset().top - 200
-        })
+        });
+
     });
 //搜索经销商
     $('.icon_search').on('click', function () {
@@ -626,6 +664,9 @@ $(function(){
             }, 500);
         }else{
             $(".bottom-menu").fadeIn();
+            // $(".dialog-faxian-menu").fadeIn();
+            // $("body").css("overflow","hidden");
+            // $(".dialog-faxian-menu .mask").getNiceScroll().resize();
         }
     });
 
@@ -648,6 +689,64 @@ $(function(){
             $(".share-dialog").fadeOut();
             $(".weixin-dialog").fadeOut();
         }
+    });
+    $(".dialog-faxian-menu").on("click",'.mask',function (e){
+        $(".xiaochengxu-dialog").fadeOut();
+        $(".share-dialog").fadeOut();
+        $(".weixin-dialog").fadeOut();
+        $(".club-dialog").fadeOut();
+
+    });
+    $(".dialog-faxian-menu .box").on("click",'.btn',function (e) {
+       window.event? window.event.cancelBubble = true : e.stopPropagation();
+        if($(this).hasClass("share")){
+            $(".share-dialog").fadeIn();
+            $(".weixin-dialog").fadeOut();
+            $(".xiaochengxu-dialog").fadeOut();
+            $(".club-dialog").fadeOut();
+        }else if($(this).hasClass("weixin")){
+            $(".weixin-dialog").fadeIn();
+            $(".share-dialog").fadeOut();
+            $(".xiaochengxu-dialog").fadeOut();
+            $(".club-dialog").fadeOut();
+        }else if($(this).hasClass("xiaochengxu")){
+            $(".xiaochengxu-dialog").fadeIn();
+            $(".share-dialog").fadeOut();
+            $(".weixin-dialog").fadeOut();
+            $(".club-dialog").fadeOut();
+        }else if($(this).hasClass("audi")){
+            window.open('https://www.audi.cn/cn/web/zh.html','_blank');
+        }else if($(this).hasClass("weibo")){
+            window.open('https://weibo.com/iaudi','_blank');
+        }else if($(this).hasClass("shop")){
+            window.open('https://4s.audi.cn','_blank');
+        }else if($(this).hasClass("club")){
+            $(".xiaochengxu-dialog").fadeOut();
+            $(".share-dialog").fadeOut();
+            $(".weixin-dialog").fadeOut();
+            $(".club-dialog").fadeIn();
+          //  window.open('https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzIxMjU1NDAwNg==&scene=124#wechat_redirect','_blank');
+        }else if($(this).hasClass("apple")){
+            window.open('https://apps.apple.com/cn/app/my-audi/id1119081688','_blank');
+        }else if($(this).hasClass("android")){
+            window.open('https://android.myapp.com/myapp/detail.htm?apkName=com.timanetworks.android.frame.audisuper.release&ADTAG=mobile','_blank');
+
+        }
+    });
+
+    $(".dialog-faxian-menu").on("click",function (e) {
+        if(e.target==this){
+            $(".dialog-faxian-menu").fadeOut();
+            $(".dialog-pop").fadeOut();
+           $("body").css("overflow","");
+        }
+
+    });
+    $(".dialog-faxian-menu").on("click",'.mask .close',function (e) {
+        $(".dialog-faxian-menu").fadeOut();
+        $(".dialog-pop").fadeOut();
+       $("body").css("overflow","");
+
     });
 
 });

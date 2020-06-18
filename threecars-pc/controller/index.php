@@ -1,7 +1,8 @@
 <?php
 
-require dirname(__FILE__)."/tools.php";
-require dirname(__FILE__)."/ddmp.php";
+require_once dirname(__FILE__)."/tools.php";
+require_once dirname(__FILE__)."/ddmp.php";
+require_once dirname(__FILE__)."/redis.php";
 
 $params = $_GET + $_POST;
 $action = isset($params['action'])?$params['action']:'';
@@ -22,24 +23,16 @@ switch($action) {
     case 'send':
         header("Content-type: application/json; charset=utf-8");
         $data = json_decode(file_get_contents('php://input'), true);
+        $type = 1010;
         if(isset($data['car'])){
-           if($data['car']=='Q2L'){
-             $data['type']=21;
-           }elseif($data['car']=='Q3'){
-             $data['type']=22;
-           }elseif($data['car']=='Q5L'){
-             $data['type']=23;
-           }else{
-               //Q7
-             $data['type']=24;
-           }
+             $data['type'] = strtolower($data['car']);
         }else{
            $result['code'] = 0;
            $result['msg'] = "请选择车型";
            echo json_encode($result, JSON_UNESCAPED_UNICODE);
            break;
         }
-        $isExist=Tools::mobile_exist($data['type'],$data['mobile']);
+        $isExist=Tools::mobile_exist($type,$data['mobile']);
         if($isExist==1){
            $result['code'] = 0;
            $result['msg'] = "手机号已经提交过";
@@ -49,9 +42,22 @@ switch($action) {
            $result['msg'] = "成功";
            Tools::gathers($data);
            $result = Ddmp::send($data);
-           Tools::mobile_add($data['type'],$data['mobile']);
+           Tools::mobile_add($type, $data['mobile']);
            echo json_encode($result, JSON_UNESCAPED_UNICODE);
         }
+        break;
+    case 'getServerData':
+        $cache = new CacheTools();
+        $url = $params['url'];
+        $url = explode('stimestamp', $url);
+        $url = $url[0];
+        $result = $cache->get($url, function($url){
+            $ret = file_get_contents($url);
+            $ret = json_decode($ret, true);
+            $ret['cache'] = true;
+            return json_encode($ret, JSON_UNESCAPED_UNICODE);
+        });
+        echo json_encode(json_decode($result, true), JSON_UNESCAPED_UNICODE);
         break;
     default:
         echo 'bad request';

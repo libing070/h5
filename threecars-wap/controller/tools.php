@@ -5,7 +5,7 @@ class Tools
 
     private static function db_query($sql)
     {
-        $config = json_decode(file_get_contents("db_config.json"));
+        $config = json_decode(file_get_contents(dirname(__FILE__)."/db_config.json"));
         $connect = mysqli_connect($config->ip, $config->user, $config->password, $config->databases, $config->port);
         $connect->query('set names utf8');
         $result = $connect->query($sql);
@@ -97,7 +97,6 @@ class Tools
         Tools::db_query($sql);
     }
 
-
     public static function gathers($data)
     {
         $name = $data['name'];
@@ -106,31 +105,36 @@ class Tools
         $cityId = $data['cityId'];
         $dealerId = $data['jxs_id'];
         $car = $data['type'];
-         if ($car==21) {
-            $seriesId = "500CE29E-E9A5-4D2A-AB82-2EF0C0F447A4";
-            $modelId = "AF7A2504-8376-482E-9AD6-D0867D1BB775";
-        }elseif ($car==22) {
-            $seriesId = "EF78447E-A4E7-4F84-B95F-93471C951933";
-            $modelId = "C6910C00-BE8F-4076-9CFC-BA324793CBFD";
-        }elseif ($car==23) {
+        if ($car=='a6l') {
+            $seriesId = "9ACA891B-9CED-4E68-8E59-D17F209C53AD";
+            $modelId = "3e9d353f-e1d0-4632-ae24-f2dac97b11a2";
+        }elseif ($car=='q5l') {
             $seriesId = "CB3923AB-83BD-48B1-90DC-9C2004D75BA9";
             $modelId = "B19D554E-0EC2-4348-BAA3-3167FB60A9D1";
+        }elseif ($car=='a4l') {
+            $seriesId = "9D5EB2B2-BD01-4154-99C4-487405AFC352";
+            $modelId = "653AF3B3-CBB6-40A8-AE60-C60315ADD98E";
         }else {
-            $seriesId = "32FA69D8-C28D-4DC6-AEF2-9F5B53AB4362";
-            $modelId = "E4146422-B9D8-42B7-B872-C8E7B2BE6CBE";
+            $seriesId = "9ACA891B-9CED-4E68-8E59-D17F209C53AD";
+            $modelId = "3e9d353f-e1d0-4632-ae24-f2dac97b11a2";
         }
-
+        
         $utm = $data['utm'];
         $channel = "";
         if(isset($data['channel'])){
             $channel=$data['channel'];
         }
         $carType = $data['car'];
-        $activity = '2019年Audi Sport 互动营销项目-pc';
+        $activity = '2020年Audi czny 上市互动营销传播项目-pc';
+        $time = 0;
+        if(isset($data['time'])) {
+            $time = $data['time'];
+        }else{
+            $time = time();
+        }
         $sql =
-            "INSERT INTO  gathers (name,phone,provinceId,cityId,dealerId,seriesId,modelId,orderTime,utm,channel,car_type,activity,created_at) VALUES ('{$name}','{$phone}','{$provinceId}','{$cityId}','{$dealerId}','{$seriesId}','{$modelId}',now(),'{$utm}','{$channel}','{$carType}','{$activity}',UNIX_TIMESTAMP(now()))";
+            "INSERT INTO  gathers (name,phone,provinceId,cityId,dealerId,seriesId,modelId,orderTime,utm,channel,car_type,activity,created_at) VALUES ('{$name}','{$phone}','{$provinceId}','{$cityId}','{$dealerId}','{$seriesId}','{$modelId}',now(),'{$utm}','{$channel}','{$carType}','{$activity}',{$time})";
         Tools::db_query($sql);
     }
-
 
 }

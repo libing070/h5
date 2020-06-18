@@ -72,7 +72,7 @@ function swapArray(arr, index1, index2) {
 }
 
 
-var utm = 'm75';
+var utm = 'm453';
 var channel=1;
 function getQueryVariable(variable) {
    var query = window.location.search.substring(1);
@@ -143,16 +143,15 @@ function mobileFun() {
 function getDealerUtm() {
     var mm = getQueryVariable("utm");
     switch(mm) {
-        case 'm75': return 'm21';
-        case 'm76': return 'm22';
-        case 'm77': return 'm23';
-        case 'm78': return 'm24';
-        case 'm79': return 'm1';
-        case 'm80': return 'm2';
-        case 'm81': return 'm3';
-        case 'm82': return 'm5';
+        case 'm449': return 'm90';
+        case 'm450': return 'm90';
+        case 'm451': return 'm91';
+        case 'm452': return 'm92';
+        case 'm453': return 'm93';
+        case 'm454': return 'm93';
+       
     }
-    return "m21";
+    return "m90";
 }
 
 //初始化页面定位处理
@@ -268,15 +267,39 @@ Array.prototype.remove = function(val) {
         this.splice(index, 1);
     }
 };
+
+///获取url中指定参数
+function request(paras) {
+    var url = location.href;
+    var paraString = url.substring(url.indexOf("?") + 1, url.length).split("&");
+    var paraObj = {}
+    for (i = 0; j = paraString[i]; i++) {
+        paraObj[j.substring(0, j.indexOf("=")).toLowerCase()] = j.substring(j.indexOf("=") + 1, j.length);
+    }
+    var returnValue = paraObj[paras.toLowerCase()];
+    if (typeof (returnValue) == "undefined") {
+        return "";
+    } else {
+        return returnValue;
+    }
+}
 $(function () {
-    //layer.msg(window.screen.height);
-    var randomcar=['a6l','q5l','a4l'];
+
+    var randomcar=[];
+    var urlcar = request('car');
+    if(urlcar!=""){
+        randomcar=[urlcar.toLowerCase()];
+    }else{
+        randomcar=['a6l','q5l','a4l'];
+    }
     var index = Math.floor((Math.random()*randomcar.length));
     var currCar=(randomcar[index]);
     console.log(currCar);
+    $("#car").find("option[value = '"+currCar.toLowerCase()+"']").prop("selected",true);
+
     var carList=['a6l','q5l','a4l'];
     carList.remove(currCar);
-     console.log(carList);
+
      var bgStart='./images/'+carList[0]+'/top-'+carList[0]+'.png';
      var bgEnd='./images/'+carList[1]+'/top-'+carList[1]+'.png';
      var bgCenter='./images/'+currCar+'/top-'+currCar+'.png';
@@ -284,16 +307,18 @@ $(function () {
         htmlStr+="<div class='ceshi-top-slide active' type='"+currCar+"' style='background-image: url("+bgCenter+")'></div>";
         htmlStr+="<div class='ceshi-top-slide' type='"+carList[1]+"' style='background-image: url("+bgEnd+")'></div>";
      $(".ceshi-top .ceshi-top-container").append(htmlStr);
+
+
      $(".ceshi-group .item.item_"+currCar).fadeIn().siblings('.ceshi-group .item').hide();
-     $(".liuzi .img_back").attr("src","images/liuzi-back-"+currCar+'.png');
-     $(".zhengce img").attr("src","images/zhengce-"+currCar+'.jpg');
+     $(".liuzi .img_back").attr("src","images/liuzi-back-"+currCar+'.png?v=1');
+     $(".zhengce img").attr("src","images/zhengce-"+currCar+'.jpg?v=2');
      $(".peizhi.peizhi-"+currCar).fadeIn().siblings('.peizhi').hide();
-     $(".inquiryPrice").css("background-image","url('./images/inquiryPrice-bg-"+currCar+".png'");
+     $(".inquiryPrice").css("background-image","url('./images/inquiryPrice-bg-"+currCar+".png?v=2'");
       var currScreenHeight=$(window).height();
       if(currScreenHeight<740){
-          $('.first').css("background-image","url(./images/"+currCar+"-kv1.jpg)");
+          $('.first').css("background-image","url(./images/"+currCar+"-kv1.jpg?v=2)");
       }else{
-          $('.first').css("background-image","url(./images/"+currCar+"-kv2.jpg)");
+          $('.first').css("background-image","url(./images/"+currCar+"-kv2.jpg?v=2)");
       }
     
     utm = getQueryVariable('utm');
@@ -317,9 +342,9 @@ $(function () {
     }
 
     $.share({
-        title: '开启美好春日，奥迪春风行动现已启幕',
-        desc: '购奥迪尊享春日礼遇，花正开即刻纵擎远方',
-        imgUrl: 'weixin_share.jpg'
+        title: '“礼”享生活，等你开启',
+        desc: '全新之旅即刻启程，购奥迪Q5L、A6L、A4L，享多重好礼，见证不凡',
+        imgUrl: 'weixin_share_'+currCar+'.jpg'
     });
 
 $(".inquiryPrice").on("mousedown",'.app-fun',function () {
@@ -506,7 +531,7 @@ $(".inquiryPrice").on("mousedown",'.app-fun',function () {
         }
         var data = {
             name: realname,
-            // car: car,
+            car: car,
             mobile: user_mobile,
             cityId: cityId, //预约市
             jxs_id: jxsId, //经销商id
@@ -517,7 +542,20 @@ $(".inquiryPrice").on("mousedown",'.app-fun',function () {
         $.sendData(data, function (res) {
             if (res.msg.indexOf('成功') > -1) {
                 layer.msg('预约成功', function () {
-                    _pt_sp_2.push('setCustomEvent',{eventName:'sports wap 预约成功'});
+                    _pt_sp_2.push('setCustomEvent',{eventName:'czny wap 预约成功'});
+                    try {
+                        stm_clicki('send', 'event', {
+                            customActionId: 1,
+                            customActionLabel1: '',
+                            customActionLabel2: '',
+                            customActionLabel3: $("#province option:selected").html() + "/" + $("#city option:selected").html(),
+                            customActionLabel4: $("#jxsSelect option:selected").html(),
+                            customActionLabel5: 'czny'
+                        });
+    
+                    } catch (e) {
+    
+                    }
                     tijiao = 0;
                     $("#realname").val('');
                     $("#user_mobile").val('');
@@ -540,43 +578,43 @@ $(".inquiryPrice").on("mousedown",'.app-fun',function () {
 
 
     //打开发现媒体
-    // $('.faxian').on('click', function (event) {
-    //     event.preventDefault();
-    //     $('.find_pop').fadeIn();
-    //     $('body').css('overflow', 'hidden');
-    // });
+    $('.faxian').on('click', function (event) {
+        event.preventDefault();
+        $('.find_pop').fadeIn();
+        $('body').css('overflow', 'hidden');
+    });
 
-    // //关闭发现媒体
-    // $('.find_pop .mask,.shareBox .dn').on('click', function (event) {
-    //     event.preventDefault();
-    //     $('.find_pop').fadeOut();
-    //     $('.media').fadeOut();
-    //     $('body').css('overflow', 'scroll');
-    // });
-    //
-    // //分享
-    // $('.share').on('click', function () {
-    //     $('.media').fadeOut();
-    //     $('.shareBox').fadeIn();
-    //     if(isWeiXin()){
-    //         $('.shareBox').find('.wx').show();
-    //     }else{
-    //         $('.shareBox').find('.dn').show();
-    //
-    //     }
-    //
-    //
-    // });
-    // //官方微信
-    // $('.weixin').on('click', function () {
-    //     $('.media').fadeOut();
-    //     $('.wxBox').fadeIn();
-    // });
-    // //小程序
-    // $('.xiaochengxu').on('click', function () {
-    //     $('.media').fadeOut();
-    //     $('.xcxBox').fadeIn();
-    // });
+    //关闭发现媒体
+    $('.find_pop .mask,.shareBox .dn').on('click', function (event) {
+        event.preventDefault();
+        $('.find_pop').fadeOut();
+        $('.media').fadeOut();
+        $('body').css('overflow', 'scroll');
+    });
+
+    //分享
+    $('.share').on('click', function () {
+        $('.media').fadeOut();
+        $('.shareBox').fadeIn();
+        if(isWeiXin()){
+            $('.shareBox').find('.wx').show();
+        }else{
+            $('.shareBox').find('.dn').show();
+
+        }
+
+
+    });
+    //官方微信
+    $('.weixin').on('click', function () {
+        $('.media').fadeOut();
+        $('.wxBox').fadeIn();
+    });
+    //小程序
+    $('.xiaochengxu').on('click', function () {
+        $('.media').fadeOut();
+        $('.xcxBox').fadeIn();
+    });
 
     // $('.wenda').on('click', function () {
     //     window.location.href = 'http://ai.auto-smart.com/audi_a6l_mobile/robot.html?utm=' + utm;
@@ -586,6 +624,7 @@ $(".inquiryPrice").on("mousedown",'.app-fun',function () {
         $(".page1").show();
         $(".return").hide();
         $(".page2").hide();
+
         $('html, body').animate({
             scrollTop: $(".liuzi").offset().top
         }, 500);

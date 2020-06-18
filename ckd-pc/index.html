@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>开启美好春日，奥迪春风行动现已启幕</title>
+    <link rel="icon" href="data:image/ico;base64,aWNv">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/swiper_reset.css?v=6">
+     <link rel="stylesheet" href="./js/skin/layer.css" id="layui_layer_skinlayercss">
+    <link rel="stylesheet" href="./css/base.css?v=2.6">
+    <script src="./js/jquery-1.11.2.min.js?v=2"></script>
+    <script src="./js/layer.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/interface.js?v=2"></script>
+    <script src="./js/base.js?v=1.6"></script>
+    <style>
+        .banner-top .tmall{
+            left:5rem;
+            bottom: 15rem;
+        }
+        @media (min-width: 1920px) {
+            .banner-top .tmall{
+                left:6rem;
+                bottom: 18rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="https://www.audi.cn/cn/web/zh.html" target="_blank">
+            <img src="./images/head.png" alt="">
+        </a>
+    </div>
+    <div class="banner-top" style="position: relative">
+        <img src="images/banner-top.jpg?v=12" style="width: 100%">
+        <div class="tmall-box" style="width: 500px;height: 250px;position: absolute;left: 6rem;bottom: 2rem">
+            <img class="" src="images/tmall-btn.png"  style="width: 50%;cursor: pointer;display: inline-block;margin-bottom: 20px" onclick="window.open('https://4s.audi.cn/index.php?s=/Home/Product/deposit/id/1963.html','_blank')">
+            <img class="" src="images/tmall-desc.png"  style="width: 100%;display: inline-block">
+        </div>
+    </div>
+    <div class="cartype-swiper" style="margin-top: -6rem">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="images/p2_q5l.png?v=4">
+                    <img  class="icon-btn" src="images/icon-q5l.png">
+                    <img type="q5l" class="detail-btn" src="images/detail-btn.png">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/p2_Q2L-e-tron.png?v=4">
+                    <img  class="icon-btn" style="width: 19rem" src="images/icon-q2l-etron.png">
+                    <img type="q2letron"  class="detail-btn" src="images/detail-btn.png">
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="images/p2_Q3.png?v=4">
+                    <img  class="icon-btn" src="images/icon-q3.png">
+                    <img type="q3" class="detail-btn" src="images/detail-btn.png">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/p2_a3.png?v=4">
+                    <img  class="icon-btn" src="images/icon-a3.png">
+                    <img type="a3" class="detail-btn" src="images/detail-btn.png">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/p2_A6L.png?v=5">
+                    <img  class="icon-btn" src="images/icon-a6l.png">
+                    <img type="a6l" class="detail-btn" src="images/detail-btn.png">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/p2_Q2L.png?v=4">
+                    <img  class="icon-btn" src="images/icon-q2l.png">
+                    <img type="q2l" class="detail-btn" src="images/detail-btn.png">
+                </div>
+            </div>
+        </div>
+        <!--<div class="swiper-pagination"></div>-->
+        <div class="page-down">
+            <img class="curr-page" src="./images/num1.png">
+            <span class="line"></span>
+            <img class="total" src="images/total6.png">
+
+        </div>
+        <div class="swiper1_btn2">
+            <div class="swiper-button-prev swiper1_prve2"></div>
+            <div class="swiper-button-next swiper1_next2"></div>
+        </div>
+        <div class="swiper1_btn">
+            <div class="swiper-button-prev swiper1_prve"></div>
+            <div class="swiper-button-next swiper1_next"></div>
+        </div>
+
+    </div>
+    <div class="book">
+        <img src="images/book-bg.png"/>
+        <div class="form">
+            <img class="book-title" src="images/book-title.png">
+            <div class="line_container">
+                <div class="p-c-left">
+                    <div class="select_container half">
+                        <img src="images/select_narrow.png" class="select-icon">
+                        <select name="car" id="car" class="select" >
+                          <option value="">车型</option>
+                          <option value="Q3">Q3</option>
+                          <option value="A3">A3</option>
+                          <option value="A6L">A6L</option>
+                          <option value="Q5L">Q5L</option>
+                          <option value="Q2L-etron">Q2L etron</option>
+                          <option value="Q2L">Q2L</option>
+                      </select>
+                    </div>
+                    <input id="inputName" class="input half" type="text" value="" placeholder="请填写您的姓名">
+                </div>
+                <div class="jsx-right">
+                    <input style="width: 100%" id="inputPhone" class="input half"  type="text" value="" oninput="if(value.length>11)value=value.slice(0,11)" placeholder="请填写您的电话号码">
+                </div>
+            </div>
+            <div class="line_container">
+                <div class="p-c-left">
+                    <div class="select_container half">
+                        <img src="images/select_narrow.png" class="select-icon">
+                        <select class="select" id="province">
+                            <option class="select-option" ids="0" value="" selected>选择省份</option>
+                        </select>
+                    </div>
+                    <div class="select_container half">
+                        <img src="images/select_narrow.png" class="select-icon">
+                        <select class="select" id="city">
+                            <option class="select-option" ids="0" value="" selected>选择城市</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="jsx-right">
+                    <div class="select_container half jxs_container">
+                        <img src="images/select_narrow.png" class="select-icon">
+                        <select class="select inputlength" id="jxsSelect">
+                            <option class="select-option" value="">请选择经销商</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="line_container">-->
+            <!--<div class="select_container half jxs_container">-->
+            <!--<img src="images/select_narrow.png" class="select-icon">-->
+            <!--<select class="select inputlength" id="jxsSelect">-->
+            <!--<option class="select-option" value="">请选择经销商</option>-->
+            <!--</select>-->
+            <!--</div>-->
+            <!--</div>-->
+            <div class="line_container" style="height:7.5rem;">
+                <div class="address-msg">
+                    <div class="list title"></div>
+                    <div class="address_phone">
+                        <div class="list t address"><img src="images/location.png"><span class='key'></span></div>
+                        <div class="list t phone"><img src="images/phone.png"><span>销售热线：</span><span class='key'></span></div>
+                    </div>
+                    <div class="no-data" style="display: none">该城市暂无经销商，请搜索周边城市！</div>
+                </div>
+            </div>
+            <div class="line_container">
+                <div class="privacy">
+                    <input style="float: left;background: rgb(255, 255, 255); opacity: 0.7; color: rgb(51, 51, 51);vertical-align: text-top;
+    zoom: 150%;" type="checkbox" id="js_agreement" class="l"/>
+                    <label for="js_agreement" class="r">您的个人资料有可能会提交至厂商的授权经销商，与您进一步沟通试驾，购车等事宜。</label>
+                </div>
+            </div>
+            <div class="line_container">
+                <div class="submit">
+                    <img class="img r" style="cursor: pointer" src="images/submit.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="videobox">-->
+        <!--<img class="video-bg" src="images/video_bg2.png"/>-->
+        <!--<video id="video" class="video" style="display: none;"-->
+               <!--controls src="video/audi.mp4" poster="">-->
+        <!--</video>-->
+    <!--</div>-->
+    <div class="dealers">
+        <div class="inquiry" id="inquiry" style="margin-top: -2px">
+            <div class="wrap">
+                <div class="local_search">
+                    <div class="local_put">
+                        <select class="pro_local" name="">
+                        </select>
+                        <select class="city_local" name="">
+                        </select>
+                    </div>
+                    <div class="search_put">
+                        <div class="inp">
+                            <input class="keyword" type="text" placeholder="请输入经销商名称">
+                            <img class="icon_search" src="./images/search-icon-end.png" alt="">
+                        </div>
+
+                    </div>
+                </div>
+                <ul class="jxs_list">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="dialog-detail" style="display: none">
+        <div class="mask">
+            <img src="images/close-btn.png" class="close-btn">
+            <div class="dialog-wrap q3" style="display: none;">
+              <div class="q3-swiper">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img style="width: 100%" src="images/q3/q3-swiper-pc.jpg"></div>
+                        <div class="swiper-slide"><img style="width: 100%" src="images/q3/q3-swiper1.png"></div>
+                        <div class="swiper-slide"><img style="width: 100%" src="images/q3/q3-swiper2.png"></div>
+                    </div>
+                </div>
+                <!--Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+              <div class="q3-peizhi-swiper peizhi">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img style="width: 100%" src="images/q3/q3-peizhi1.png"></div>
+                        <div class="swiper-slide"><img style="width: 100%" src="images/q3/q3-peizhi2.png"></div>
+                        <div class="swiper-slide"><img style="width: 100%" src="images/q3/q3-peizhi3.png"></div>
+                        <div class="swiper-slide"><img style="width: 100%" src="images/q3/q3-peizhi4.png"></div>
+                        <div class="swiper-slide"><img style="width: 100%" src="images/q3/q3-peizhi5.png"></div>
+                        <div class="swiper-slide"><img style="width: 100%" src="images/q3/q3-peizhi6.png"></div>
+                        <div class="swiper-slide"><img style="width: 100%" src="images/q3/q3-peizhi7.png"></div>
+                        <div class="swiper-slide"><img style="width: 100%" src="images/q3/q3-peizhi8.png"></div>
+                    </div>
+                </div>
+                <!--Add Pagination -->
+                <div class="peizhi_swiper1_btn">
+                    <div class="swiper-button-prev peizhi_swiper1_prve"></div>
+                    <div class="swiper-button-next peizhi_swiper1_next"></div>
+                </div>
+            </div>
+            </div>
+            <div class="dialog-wrap a3" style="display: none;">
+                <div class="a3-swiper">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img style="width: 100%" src="images/a3/a3-swiper1.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/a3/a3-swiper2.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/a3/a3-swiper3.png"></div>
+                        </div>
+                    </div>
+                    <!--Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="a3-peizhi-swiper peizhi">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img style="width: 100%" src="images/a3/a3-peizhi1.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/a3/a3-peizhi2.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/a3/a3-peizhi3.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/a3/a3-peizhi4.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/a3/a3-peizhi5.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/a3/a3-peizhi6.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/a3/a3-peizhi7.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/a3/a3-peizhi8.png"></div>
+                        </div>
+                    </div>
+                    <!--Add Pagination -->
+                    <div class="peizhi_swiper1_btn">
+                        <div class="swiper-button-prev peizhi_swiper1_prve"></div>
+                        <div class="swiper-button-next peizhi_swiper1_next"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="dialog-wrap a6l" style="display: none;">
+                <div class="a6l-swiper">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img style="width: 100%" src="images/a6l/al6-swiper-pc.jpg"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/a6l/a6l-swiper2.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/a6l/al6-swiper1-pc.jpg"></div>
+                        </div>
+                    </div>
+                    <!--Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="a6l-peizhi-swiper peizhi">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img style="width: 100%" src="images/a6l/a6l-peizhi1.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/a6l/a6l-peizhi2.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/a6l/a6l-peizhi3.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/a6l/a6l-peizhi4.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/a6l/a6l-peizhi5.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/a6l/a6l-peizhi6.png?v=1"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/a6l/a6l-peizhi7.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/a6l/a6l-peizhi8.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/a6l/a6l-peizhi9.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/a6l/a6l-peizhi10.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/a6l/a6l-peizhi11.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/a6l/a6l-peizhi12.png"></div>
+                        </div>
+                    </div>
+                    <!--Add Pagination -->
+                    <div class="peizhi_swiper1_btn">
+                        <div class="swiper-button-prev peizhi_swiper1_prve"></div>
+                        <div class="swiper-button-next peizhi_swiper1_next"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog-wrap q5l" style="display: none;">
+                <div class="q5l-swiper">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img style="width: 100%" src="images/q5l/q5l-swiper-pc.jpg"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/q5l/q5l-swiper1-pc.jpg"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/q5l/q5-swiper3.png"></div>
+                        </div>
+                    </div>
+                    <!--Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="q5l-peizhi-swiper peizhi">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img style="width: 100%" src="images/q5l/q5-peizhi1.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/q5l/q5-peizhi2.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/q5l/q5-peizhi3.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/q5l/q5-peizhi4.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/q5l/q5-peizhi5.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/q5l/q5-peizhi6.png"></div>
+                        </div>
+                    </div>
+                    <!--Add Pagination -->
+                    <div class="peizhi_swiper1_btn">
+                        <div class="swiper-button-prev peizhi_swiper1_prve"></div>
+                        <div class="swiper-button-next peizhi_swiper1_next"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog-wrap q2letron" style="display: none;">
+                <div class="q2letron-swiper">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img style="width: 100%" src="images/q2l-etron/q2l-etron-swiper1.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/q2l-etron/q2l-etron-swiper2.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/q2l-etron/q2l-etron-swiper3.png"></div>
+                        </div>
+                    </div>
+                    <!--Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="q2letron-peizhi-swiper peizhi">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img style="width: 100%" src="images/q2l-etron/q2l-etron-peizhi1.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/q2l-etron/q2l-etron-peizhi2.png"></div>
+                        </div>
+                    </div>
+                    <!--Add Pagination -->
+                    <div class="peizhi_swiper1_btn">
+                        <div class="swiper-button-prev peizhi_swiper1_prve"></div>
+                        <div class="swiper-button-next peizhi_swiper1_next"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog-wrap q2l" style="display: none;">
+                <div class="q2l-swiper">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img style="width: 100%" src="images/q2l/q2l-swiper1.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/q2l/q2l-swiper2.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/q2l/q2l-swiper3.png"></div>
+
+                        </div>
+                    </div>
+                    <!--Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="q2l-peizhi-swiper peizhi">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img style="width: 100%" src="images/q2l/q2l-peizhi1.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/q2l/q2l-peizhi2.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/q2l/q2l-peizhi3.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/q2l/q2l-peizhi4.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%" src="images/q2l/q2l-peizhi5.png"></div>
+
+                        </div>
+                    </div>
+                    <!--Add Pagination -->
+                    <div class="peizhi_swiper1_btn">
+                        <div class="swiper-button-prev peizhi_swiper1_prve"></div>
+                        <div class="swiper-button-next peizhi_swiper1_next"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right-menu">
+        <img class="yuyue" src="images/yuyue.png">
+        <img class="faxian" src="images/faxian.png">
+    </div>
+    <div class="bottom-menu" style="display: none">
+        <div class="mask">
+            <a class="item share"  href="javascript:void(0);">
+                <img src="images/dicon_03.png">
+                <span>分享</span>
+            </a>
+            <a class="item audi" href="https://www.audi.cn/cn/web/zh.html">
+                <img src="images/dicon_05.png">
+                <span>奥迪官网</span>
+            </a>
+            <a class="item weixin"  href="javascript:void(0);">
+                <img src="images/dicon_07.png">
+                <span>官方微信</span>
+            </a>
+            <a class="item weibo" href="https://weibo.com/iaudi">
+                <img src="images/dicon_09.png">
+                <span>官方微博</span>
+            </a>
+            <a class="item xiaochengxu"  href="javascript:void(0);">
+                <img src="images/xiaochengxu1.png">
+                <span>微信小程序</span>
+            </a>
+        </div>
+    </div>
+    <div class="dialog-pop share-dialog" style="display: none">
+        <a href="javascript:void(0);" class="liShare_wx" id="liShare_wx">
+            <img alt="Scan me!" src="images/Sporterweima.png?v=2"></a>
+        <a href="javascript:void((function(s,d,e){try{}catch(e){}var f='https://v.t.sina.com.cn/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=1087202303'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"
+           class="liShare_wb"><img src="images/share_wb.png" alt=""></a>
+    </div>
+
+    <div class="dialog-pop weixin-dialog" style="display: none">
+        <a href="javascript:void(0);" class="liShare_ewm"><img src="images/erweima.png" alt=""></a>
+    </div>
+    <div class="dialog-pop xiaochengxu-dialog" style="display: none">
+        <a href="javascript:void(0);" class="liShare_ewm"><img src="images/xiaochengxu.jpg" alt=""></a>
+    </div>
+</body>
+<script>
+
+   var cartypeswiper= new Swiper('.cartype-swiper .swiper-container', {
+        observer: true, //修改swiper自己或子元素时，自动初始化swiper
+        observeParents: true, //修改swiper的父元素时，自动初始化swiper
+        loop:true,
+       // initialSlide:3,
+        navigation: {
+            nextEl: '.cartype-swiper .swiper-button-next',
+            prevEl: '.cartype-swiper .swiper-button-prev',
+        },
+        on:{
+            slidePrevTransitionStart: function(){
+                $(".cartype-swiper .page-down .curr-page").attr("src","./images/num"+(this.realIndex+1)+".png");
+            },
+            slideNextTransitionStart: function(){
+                $(".cartype-swiper .page-down .curr-page").attr("src","./images/num"+(this.realIndex+1)+".png");
+            },
+            tap:function () {
+
+
+            }
+        }
+    });
+
+   $(".cartype-swiper").on("click",'.detail-btn',function () {
+       var type=$(this).attr("type");
+        $(".dialog-detail").fadeIn();
+       $(".dialog-detail .dialog-wrap."+type).fadeIn();
+       $("body").css("overflow","hidden");
+   })
+   $(".dialog-detail").on("click",'.close-btn',function () {
+       $(".dialog-detail").fadeOut();
+       $(".dialog-detail .dialog-wrap").fadeOut();
+       $("body").css("overflow","");
+   })
+   $(".dialog-detail").on("click",function (e) {
+       if(e.target==this){
+           $(".dialog-detail").fadeOut();
+           $(".dialog-detail .dialog-wrap").fadeOut();
+           $("body").css("overflow","");
+       }
+   });
+   var q3Swiper = new Swiper('.q3-swiper .swiper-container', {
+       slidesPerView: 1,
+       // spaceBetween: 30,
+       observer: true, //修改swiper自己或子元素时，自动初始化swiper
+       observeParents: true, //修改swiper的父元素时，自动初始化swiper
+       preventClicksPropagation: false,
+       initialSlide:0,
+       pagination: {
+           el: '.q3-swiper .swiper-pagination',
+           clickable: true,
+       },
+   });
+
+   var q3peizhiSwiper = new Swiper('.q3-peizhi-swiper .swiper-container', {
+       slidesPerView: 1,
+       // spaceBetween: 30,
+       observer: true, //修改swiper自己或子元素时，自动初始化swiper
+       observeParents: true, //修改swiper的父元素时，自动初始化swiper
+       preventClicksPropagation: false,
+       initialSlide:0,
+       navigation: {
+           nextEl: '.q3-peizhi-swiper .swiper-button-next',
+           prevEl: '.q3-peizhi-swiper .swiper-button-prev',
+       },
+   });
+
+   var a3Swiper = new Swiper('.a3-swiper .swiper-container', {
+       slidesPerView: 1,
+       // spaceBetween: 30,
+       observer: true, //修改swiper自己或子元素时，自动初始化swiper
+       observeParents: true, //修改swiper的父元素时，自动初始化swiper
+       preventClicksPropagation: false,
+       initialSlide:0,
+       pagination: {
+           el: '.a3-swiper .swiper-pagination',
+           clickable: true,
+       },
+   });
+   var a3peizhiSwiper = new Swiper('.a3-peizhi-swiper .swiper-container', {
+       slidesPerView: 1,
+       // spaceBetween: 30,
+       observer: true, //修改swiper自己或子元素时，自动初始化swiper
+       observeParents: true, //修改swiper的父元素时，自动初始化swiper
+       preventClicksPropagation: false,
+       initialSlide:0,
+       navigation: {
+           nextEl: '.a3-peizhi-swiper .swiper-button-next',
+           prevEl: '.a3-peizhi-swiper .swiper-button-prev',
+       },
+   });
+   var a6lSwiper = new Swiper('.a6l-swiper .swiper-container', {
+       slidesPerView: 1,
+       // spaceBetween: 30,
+       observer: true, //修改swiper自己或子元素时，自动初始化swiper
+       observeParents: true, //修改swiper的父元素时，自动初始化swiper
+       preventClicksPropagation: false,
+       initialSlide:0,
+       pagination: {
+           el: '.a6l-swiper .swiper-pagination',
+           clickable: true,
+       },
+   });
+
+   var a6lpeizhiSwiper = new Swiper('.a6l-peizhi-swiper .swiper-container', {
+       slidesPerView: 1,
+       // spaceBetween: 30,
+       observer: true, //修改swiper自己或子元素时，自动初始化swiper
+       observeParents: true, //修改swiper的父元素时，自动初始化swiper
+       preventClicksPropagation: false,
+       initialSlide:0,
+       navigation: {
+           nextEl: '.a6l-peizhi-swiper .swiper-button-next',
+           prevEl: '.a6l-peizhi-swiper .swiper-button-prev',
+       },
+   });
+
+   var q5lSwiper = new Swiper('.q5l-swiper .swiper-container', {
+       slidesPerView: 1,
+       // spaceBetween: 30,
+       observer: true, //修改swiper自己或子元素时，自动初始化swiper
+       observeParents: true, //修改swiper的父元素时，自动初始化swiper
+       preventClicksPropagation: false,
+       initialSlide:0,
+       pagination: {
+           el: '.q5l-swiper .swiper-pagination',
+           clickable: true,
+       },
+   });
+
+   var q5lpeizhiSwiper = new Swiper('.q5l-peizhi-swiper .swiper-container', {
+       slidesPerView: 1,
+       // spaceBetween: 30,
+       observer: true, //修改swiper自己或子元素时，自动初始化swiper
+       observeParents: true, //修改swiper的父元素时，自动初始化swiper
+       preventClicksPropagation: false,
+       initialSlide:0,
+       navigation: {
+           nextEl: '.q5l-peizhi-swiper .swiper-button-next',
+           prevEl: '.q5l-peizhi-swiper .swiper-button-prev',
+       },
+   });
+
+   var q2letronSwiper = new Swiper('.q2letron-swiper .swiper-container', {
+       slidesPerView: 1,
+       // spaceBetween: 30,
+       observer: true, //修改swiper自己或子元素时，自动初始化swiper
+       observeParents: true, //修改swiper的父元素时，自动初始化swiper
+       preventClicksPropagation: false,
+       initialSlide:0,
+       pagination: {
+           el: '.q2letron-swiper .swiper-pagination',
+           clickable: true,
+       },
+   });
+
+   var q2letronpeizhiSwiper = new Swiper('.q2letron-peizhi-swiper .swiper-container', {
+       slidesPerView: 1,
+       // spaceBetween: 30,
+       observer: true, //修改swiper自己或子元素时，自动初始化swiper
+       observeParents: true, //修改swiper的父元素时，自动初始化swiper
+       preventClicksPropagation: false,
+       initialSlide:0,
+       navigation: {
+           nextEl: '.q2letron-peizhi-swiper .swiper-button-next',
+           prevEl: '.q2letron-peizhi-swiper .swiper-button-prev',
+       },
+   });
+
+
+   var q2lSwiper = new Swiper('.q2l-swiper .swiper-container', {
+       slidesPerView: 1,
+       // spaceBetween: 30,
+       observer: true, //修改swiper自己或子元素时，自动初始化swiper
+       observeParents: true, //修改swiper的父元素时，自动初始化swiper
+       preventClicksPropagation: false,
+       initialSlide:0,
+       pagination: {
+           el: '.q2l-swiper .swiper-pagination',
+           clickable: true,
+       },
+   });
+
+
+   var q2lpeizhiSwiper = new Swiper('.q2l-peizhi-swiper .swiper-container', {
+       slidesPerView: 1,
+       // spaceBetween: 30,
+       observer: true, //修改swiper自己或子元素时，自动初始化swiper
+       observeParents: true, //修改swiper的父元素时，自动初始化swiper
+       preventClicksPropagation: false,
+       initialSlide:0,
+       navigation: {
+           nextEl: '.q2l-peizhi-swiper .swiper-button-next',
+           prevEl: '.q2l-peizhi-swiper .swiper-button-prev',
+       },
+   });
+</script>
+</html>

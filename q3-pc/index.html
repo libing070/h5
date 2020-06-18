@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>奥迪Q3轿跑 觉醒亮相</title>
+    <link rel="icon" href="data:image/ico;base64,aWNv">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+     <link rel="stylesheet" href="./js/skin/layer.css" id="layui_layer_skinlayercss">
+    <link rel="stylesheet" href="./css/base.css?v=3.3">
+    <link rel="stylesheet" href="./css/swiper_reset.css?v=2.5">
+    <script src="./js/jquery-1.11.2.min.js?v=2"></script>
+    <script src="./js/jquery.nicescroll.min.js"></script>
+    <script src="./js/layer.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/interface.js?v=5"></script>
+    <script src="./js/base.js?v=2.6"></script>
+</head>
+<body>
+    <div class="header">
+        <a href="https://www.audi.cn/cn/web/zh.html" target="_blank">
+            <img src="./images/head.png" alt="">
+        </a>
+    </div>
+    <div style="width: 100%;position: relative">
+        <img src="images/vv2.jpg?v=3" style="width: 100%">
+    </div>
+    <div class="videobox" style="display: none">
+        <img class="video-bg" src="images/video-bg1.png"/>
+        <video id="video" class="video" style="display: none;"
+               controls src="video/audi.mp4" poster="">
+        </video>
+    </div>
+        <div class="banner1" style="z-index: 2">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img style="width: 100%" src="images/banner1-1.jpg"></div>
+                    <div class="swiper-slide"><img style="width: 100%" src="images/banner1-2.jpg"></div>
+                    <div class="swiper-slide"><img style="width: 100%" src="images/banner1-3.jpg"></div>
+                    <!--<div class="swiper-slide"><img style="width: 100%" src="images/banner1-4.jpg"></div>-->
+                </div>
+            </div>
+            <!--Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!--<div class="swiper-button-prev banner1_swiper1_prve"></div>-->
+            <!--<div class="swiper-button-next banner1_swiper1_next"></div>-->
+        </div>
+    <div class="banner2" style="margin-top: -2px">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img style="width: 100%" src="images/banner2-4.jpg?v=3"></div>
+                <div class="swiper-slide"><img style="width: 100%" src="images/banner2-1.jpg?v=2"></div>
+                <div class="swiper-slide"><img style="width: 100%" src="images/banner2-2.jpg?v=2"></div>
+                <div class="swiper-slide"><img style="width: 100%" src="images/banner2-3.jpg?v=2"></div>
+            </div>
+        </div>
+        <!--Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev banner2_swiper1_prve"></div>
+        <div class="swiper-button-next banner2_swiper1_next"></div>
+    </div>
+    <div class="peizhi"  >
+        <img src="images/peizhi-bg.png?v=1" class="bg"/>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img  src="images/peizhi11.png?v=7"></div>
+                <div class="swiper-slide"><img  src="images/peizhi22.png?v=7"></div>
+                <div class="swiper-slide"><img  src="images/peizhi33.png?v=7"></div>
+                <div class="swiper-slide"><img  src="images/peizhi44.png?v=7"></div>
+            </div>
+            <!--Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev peizhi_swiper1_prve"></div>
+            <div class="swiper-button-next peizhi_swiper1_next"></div>
+        </div>
+
+    </div>
+    <div class="zhengce" style="display: none">
+        <img src="images/zhengce-bg.png" style="width: 100%">
+    </div>
+    <div class="book">
+        <img class="back-img" src="images/liuzi-back.png?v=1"/>
+        <div class="form">
+            <img class="book-title" src="images/book-title.png">
+            <!--<div class="line_container">-->
+                <!--<div class="select_container half jxs_container">-->
+                    <!--<img src="images/select_narrow.png" class="select-icon">-->
+                    <!--<select name="car" id="car" class="select" >-->
+                        <!--<option value="">车型</option>-->
+                        <!--<option value="Q3">Q3</option>-->
+                    <!--</select>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="line_container">
+                <input id="inputName" style="width: 100%" class="input half" type="text" value="" placeholder="请填写您的姓名">
+            </div>
+            <div class="line_container">
+                <input id="inputPhone" style="width: 100%"  class="input half"  type="text" value="" oninput="if(value.length>11)value=value.slice(0,11)" placeholder="请填写您的电话号码" />
+            </div>
+            <div class="line_container">
+                <div class="select_container half">
+                    <img src="images/select_narrow.png" class="select-icon">
+                    <select class="select" id="province">
+                        <option class="select-option" ids="0" value="" selected>选择省份</option>
+                    </select>
+                </div>
+                <div class="select_container half">
+                    <img src="images/select_narrow.png" class="select-icon">
+                    <select class="select" id="city">
+                        <option class="select-option" ids="0" value="" selected>选择城市</option>
+                    </select>
+                </div>
+            </div>
+            <div class="line_container">
+                <div class="select_container half jxs_container">
+                    <img src="images/select_narrow.png" class="select-icon">
+                    <select class="select inputlength" id="jxsSelect">
+                        <option class="select-option" value="">请选择经销商</option>
+                    </select>
+                </div>
+            </div>
+            <div class="line_container" style="height:7.5rem;margin-top: 1rem">
+                <div class="address-msg">
+                    <div class="list title"></div>
+                    <div class="address_phone">
+                        <div class="list t address"><img src="images/location.png"><span class='key'></span></div>
+                        <div class="list t phone"><img src="images/phone.png"><span>销售热线：</span><span class='key'></span></div>
+                    </div>
+                    <div class="no-data" style="display: none">该城市暂无经销商，请搜索周边城市！</div>
+                </div>
+            </div>
+            <div class="line_container">
+                <div class="privacy">
+                    <input style="float: left;background: rgb(255, 255, 255); opacity: 0.7; color: rgb(51, 51, 51);vertical-align: text-top;
+    zoom: 200%;" type="checkbox" id="js_agreement" class="l"/>
+                    <label for="js_agreement" class="r">您的个人资料有可能会提交至厂商的授权经销商，与您进一步沟通试驾，购车等事宜。</label>
+                </div>
+            </div>
+            <div class="line_container">
+                <div class="submit">
+                    <img class="img r" style="cursor: pointer" src="images/submit.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="active-wrap" style="display: none">
+        <div class="city-box">
+          <img class="active-title" src="images/active-title.png" >
+            <div class="city-list">
+                <span type="1" class="item active"><span>上海</span></span>
+                <span type="2" class="item"><span>成都</span></span>
+                <span type="3" class="item"><span>杭州</span></span>
+                <span type="4" class="item"><span>深圳</span></span>
+            </div>
+            <div class="active-swiper-box active-swiper-box1" type="1" style="display: none">
+                <div class="item active-swiper-left">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img style="width: 100%;cursor: pointer" src="images/banner3-1.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%;cursor: pointer" src="images/banner3-1.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%;cursor: pointer" src="images/banner3-1.png"></div>
+
+                        </div>
+                    </div>
+                    <!--Add Pagination -->
+                    <div class="swiper-pagination left-swiper-pagination-1"></div>
+                </div>
+                <div class="item active-swiper-right">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img class="video-bg1" style="width: 100%;cursor: pointer"  src="images/banner4-1.png?v=1"/>
+                                <video  id="video1" class="video" style="z-index: -1;cursor: pointer;height: 100%" controls src="video/audi1.mp4" poster=""></video>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="video-bg1" style="width: 100%;cursor: pointer"  src="images/banner4-1.png?v=1"/>
+                                <video id="video2" class="video"  style="z-index: -1;height: 100%" controls src="video/audi2.mp4" poster=""></video>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="video-bg1"  style="width: 100%;cursor: pointer" src="images/banner4-1.png?v=1"/>
+                                <video id="video3" class="video" style="z-index: -1;height: 100%" controls src="video/audi3.mp4" poster=""></video>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="video-bg1"  style="width: 100%;cursor: pointer" src="images/banner4-1.png?v=1"/>
+                                <video id="video4" class="video"  style="z-index: -1;height: 100%" controls src="video/audi4.mp4" poster=""></video>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Add Pagination -->
+                    <div class="swiper-pagination right-swiper-pagination-1"></div>
+                </div>
+            </div>
+            <div class="active-swiper-box active-swiper-box2" type="2" style="display: none">
+                <div class="item active-swiper-left">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img style="width: 100%;cursor: pointer" src="images/banner3-1.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%;cursor: pointer" src="images/banner3-1.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%;cursor: pointer" src="images/banner3-1.png"></div>
+
+                        </div>
+                    </div>
+                    <!--Add Pagination -->
+                    <div class="swiper-pagination left-swiper-pagination-2"></div>
+                </div>
+                <div class="item active-swiper-right">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img class="video-bg1" style="width: 100%;cursor: pointer"  src="images/banner4-1.png?v=1"/>
+                                <video  id="video1" class="video" style="z-index: -1;cursor: pointer;height: 100%" controls src="video/audi1.mp4" poster=""></video>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="video-bg1" style="width: 100%;cursor: pointer"  src="images/banner4-1.png?v=1"/>
+                                <video id="video2" class="video"  style="z-index: -1;height: 100%" controls src="video/audi2.mp4" poster=""></video>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="video-bg1"  style="width: 100%;cursor: pointer" src="images/banner4-1.png?v=1"/>
+                                <video id="video3" class="video" style="z-index: -1;height:100%" controls src="video/audi3.mp4" poster=""></video>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="video-bg1"  style="width: 100%;cursor: pointer" src="images/banner4-1.png?v=1"/>
+                                <video id="video4" class="video"  style="z-index: -1;height: 100%" controls src="video/audi4.mp4" poster=""></video>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Add Pagination -->
+                    <div class="swiper-pagination right-swiper-pagination-2"></div>
+                </div>
+            </div>
+            <div class="active-swiper-box active-swiper-box3" type="3"  style="display: none">
+                <div class="item active-swiper-left">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img style="width: 100%;cursor: pointer" src="images/banner3-1.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%;cursor: pointer" src="images/banner3-1.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%;cursor: pointer" src="images/banner3-1.png"></div>
+
+                        </div>
+                    </div>
+                    <!--Add Pagination -->
+                    <div class="swiper-pagination left-swiper-pagination-3"></div>
+                </div>
+                <div class="item active-swiper-right">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img class="video-bg1" style="width: 100%;cursor: pointer"  src="images/banner4-1.png?v=1"/>
+                                <video  id="video1" class="video" style="z-index: -1;cursor: pointer;height: 100%" controls src="video/audi1.mp4" poster=""></video>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="video-bg1" style="width: 100%;cursor: pointer"  src="images/banner4-1.png?v=1"/>
+                                <video id="video2" class="video"  style="z-index: -1;height: 100%" controls src="video/audi2.mp4" poster=""></video>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="video-bg1"  style="width: 100%;cursor: pointer" src="images/banner4-1.png?v=1"/>
+                                <video id="video3" class="video" style="z-index: -1;height: 100%" controls src="video/audi3.mp4" poster=""></video>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="video-bg1"  style="width: 100%;cursor: pointer" src="images/banner4-1.png?v=1"/>
+                                <video id="video4" class="video"  style="z-index: -1;height: 100%" controls src="video/audi4.mp4" poster=""></video>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Add Pagination -->
+                    <div class="swiper-pagination right-swiper-pagination-3"></div>
+                </div>
+            </div>
+            <div class="active-swiper-box  active-swiper-box4" type="4"  style="display: none">
+                <div class="item active-swiper-left">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img style="width: 100%;cursor: pointer" src="images/banner3-1.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%;cursor: pointer" src="images/banner3-1.png"></div>
+                            <div class="swiper-slide"><img style="width: 100%;cursor: pointer" src="images/banner3-1.png"></div>
+
+                        </div>
+                    </div>
+                    <!--Add Pagination -->
+                    <div class="swiper-pagination left-swiper-pagination-4"></div>
+                </div>
+                <div class="item active-swiper-right">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img class="video-bg1" style="width: 100%;cursor: pointer"  src="images/banner4-1.png?v=1"/>
+                                <video  id="video1" class="video" style="z-index: -1;cursor: pointer;height: 100%" controls src="video/audi1.mp4" poster=""></video>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="video-bg1" style="width: 100%;cursor: pointer"  src="images/banner4-1.png?v=1"/>
+                                <video id="video2" class="video"  style="z-index: -1;height: 100%" controls src="video/audi2.mp4" poster=""></video>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="video-bg1"  style="width: 100%;cursor: pointer" src="images/banner4-1.png?v=1"/>
+                                <video id="video3" class="video" style="z-index: -1;height: 100%" controls src="video/audi3.mp4" poster=""></video>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="video-bg1"  style="width: 100%;cursor: pointer" src="images/banner4-1.png?v=1"/>
+                                <video id="video4" class="video"  style="z-index: -1;height: 100%" controls src="video/audi4.mp4" poster=""></video>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Add Pagination -->
+                    <div class="swiper-pagination right-swiper-pagination-4"></div>
+                </div>
+            </div>
+        </div>
+        <div class="wenzhang">
+            <img class="wenzhang-title" src="images/wenzhang-title.png">
+            <div class="wenzhang-list">
+                <div class="item" frame_url="frame/1.html">
+                    <div class="art-img">
+                        <img style="width: 100%" class="logo" src="images/wenzhang-logo2.png">
+                    </div>
+                    <div class="art-txt">
+                        <!--<h4>能媲美48V？ 解读奥迪A4L 12V轻混系统</h4>-->
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 随着新款奥迪A4L的上市，更加级。关于这台车我们已步这里：要你“好看” </p>
+                        <!--<span class="detail-btn">查看详情</span>-->
+                    </div>
+                </div>
+                <div class="item" frame_url="frame/2.html">
+                    <div class="art-img">
+                        <img style="width: 100%" class="logo" src="images/wenzhang-logo1.png">
+                    </div>
+                    <div class="art-txt">
+                        <!--<h4>要你“好看” 测试全新奥迪A4L 45 TFSI</h4>-->
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 自这代奥迪A4L上市三年多来，，那开起来呢？能不能和看起来一样“好看”？</p>
+                        <!--<span class="detail-btn">查看详情</span>-->
+                    </div>
+                </div>
+                <div class="item" frame_url="frame/3.html">
+                    <div class="art-img">
+                        <img style="width: 100%" class="logo" src="images/wenzhang-logo3.png">
+                    </div>
+                    <div class="art-txt">
+                        <!--<h4>这样的全新奥迪A4L你喜欢吗？</h4>-->
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 自这代奥迪A4L上市三年多来，，那开起来呢？能不能和看起来一样“好看”？</p>
+                        <!--<span class="detail-btn">查看详情</span>-->
+                    </div>
+                </div>
+                <div class="item" frame_url="frame/1.html">
+                    <div class="art-img">
+                        <img style="width: 100%" class="logo" src="images/wenzhang-logo2.png">
+                    </div>
+                    <div class="art-txt">
+                        <!--<h4>能媲美48V？ 解读奥迪A4L 12V轻混系统</h4>-->
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 随着新款奥迪A4L的上市，更加级。关于这台车我们已步这里：要你“好看” </p>
+                        <!--<span class="detail-btn">查看详情</span>-->
+                    </div>
+                </div>
+                <div class="item" frame_url="frame/2.html">
+                    <div class="art-img">
+                        <img style="width: 100%" class="logo" src="images/wenzhang-logo1.png">
+                    </div>
+                    <div class="art-txt">
+                        <!--<h4>要你“好看” 测试全新奥迪A4L 45 TFSI</h4>-->
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 自这代奥迪A4L上市三年多来，，那开起来呢？能不能和看起来一样“好看”？</p>
+                        <!--<span class="detail-btn">查看详情</span>-->
+                    </div>
+                </div>
+                <div class="item" frame_url="frame/3.html">
+                    <div class="art-img">
+                        <img style="width: 100%" class="logo" src="images/wenzhang-logo3.png">
+                    </div>
+                    <div class="art-txt">
+                        <!--<h4>这样的全新奥迪A4L你喜欢吗？</h4>-->
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 自这代奥迪A4L上市三年多来，，那开起来呢？能不能和看起来一样“好看”？</p>
+                        <!--<span class="detail-btn">查看详情</span>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="clear: both;margin-bottom: 3rem"></div>
+    </div>
+
+    <div class="dealers" style="display: none">
+        <div class="inquiry" id="inquiry" style="margin-top: -2px">
+            <div class="wrap" style="">
+                <div class="local_search">
+                    <div class="local_put">
+                        <select class="pro_local" name="">
+                        </select>
+                        <select class="city_local" name="">
+                        </select>
+                    </div>
+                    <div class="search_put">
+                        <div class="inp">
+                            <input class="keyword" type="text" placeholder="请输入经销商名称">
+                            <img class="icon_search" src="./images/search-icon-end.png" alt="">
+                        </div>
+
+                    </div>
+                </div>
+                <ul class="jxs_list">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="right-menu">
+        <img class="yuyue" src="images/yuyue.png">
+        <img class="faxian" src="images/faxian.png">
+    </div>
+    <div class="bottom-menu" style="display: none">
+        <div class="mask">
+            <a class="item share"  href="javascript:void(0);">
+                <img src="images/dicon_03.png">
+                <span>分享</span>
+            </a>
+            <a class="item audi" href="https://www.audi.cn/cn/web/zh.html">
+                <img src="images/dicon_05.png">
+                <span>奥迪官网</span>
+            </a>
+            <a class="item weixin"  href="javascript:void(0);">
+                <img src="images/dicon_07.png">
+                <span>官方微信</span>
+            </a>
+            <a class="item weibo" href="https://weibo.com/iaudi">
+                <img src="images/dicon_09.png">
+                <span>官方微博</span>
+            </a>
+            <a class="item xiaochengxu"  href="javascript:void(0);">
+                <img src="images/xiaochengxu1.png">
+                <span>微信小程序</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="dialog-faxian-menu" style="display: none">
+        <div class="mask">
+            <img src="images/faxian/close-btn.png" class="close">
+            <img src="images/faxian/faxian-titles.png" class="titles">
+            <div class="wrap">
+                <div class="box">
+                    <img class="bg" src="images/faxian/faxian-share.png">
+                    <img class='btn share' src="images/faxian/faxian-click-btn-share.png">
+                </div>
+                <div class="box">
+                    <img class="bg" src="images/faxian/faxian-xiaocehngxu.png">
+                    <img class='btn xiaochengxu' src="images/faxian/faxian-click-btn-saoma.png">
+                </div>
+                <div class="box">
+                    <img class="bg" src="images/faxian/faxian-shop.png">
+                    <img class='btn shop' src="images/faxian/faxian-click-btn-go.png">
+                </div>
+                <div class="box">
+                    <img class="bg" src="images/faxian/faxian-weixin.png">
+                    <img class='btn weixin' src="images/faxian/faxian-click-btn-saoma.png">
+                </div>
+                <div class="box">
+                    <img class="bg" src="images/faxian/faxian-weibo.png">
+                    <img class='btn weibo' src="images/faxian/faxian-click-btn-go.png">
+                </div>
+                <div class="box">
+                    <img class="bg" src="images/faxian/faxian-audi.png">
+                    <img class='btn audi' src="images/faxian/faxian-click-btn-go.png">
+                </div>
+                <div class="box">
+                    <img class="bg" src="images/faxian/faxian-store.png">
+                    <img style="cursor: pointer;position: absolute;width: 40%;bottom: 1.5rem;left: 1.8rem;right: auto" class='btn apple' src="images/faxian/faxian-download-apple.png">
+                    <img style="cursor: pointer;position: absolute;width: 40%;bottom: 1.5rem;right: 1.8rem;left: auto"  class='btn android' src="images/faxian/faxian-download-android.png">
+                </div>
+                <div class="box">
+                    <img class="bg" src="images/faxian/faxian-club.png">
+                    <img class='btn club' src="images/faxian/faxian-click-btn-saoma.png">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="dialog-pop share-dialog" style="display: none">
+        <a href="javascript:void(0);" class="liShare_wx" id="liShare_wx">
+            <img alt="Scan me!" src="images/Sporterweima.png?v=2"></a>
+        <a href="javascript:void((function(s,d,e){try{}catch(e){}var f='https://v.t.sina.com.cn/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=1087202303'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"
+           class="liShare_wb"><img src="images/share_wb.png" alt=""></a>
+    </div>
+
+    <div class="dialog-pop weixin-dialog" style="display: none">
+        <a href="javascript:void(0);" class="liShare_ewm"><img src="images/erweima.png" alt=""></a>
+    </div>
+    <div class="dialog-pop xiaochengxu-dialog" style="display: none">
+        <a href="javascript:void(0);" class="liShare_ewm"><img src="images/xiaochengxu.jpg" alt=""></a>
+    </div>
+    <div class="dialog-pop club-dialog" style="display: none">
+        <a href="javascript:void(0);" class="liShare_ewm"><img src="images/faxian/cluberweima.png" alt=""></a>
+    </div>
+
+    <div class="shadow"></div>
+    <div class="evaluation_pop">
+        <div class="close"><a href="javascript:void(0);"></a></div>
+        <div class="con">
+            <iframe src="" id="myframe" width="113%" height="113%" scrolling="no" frameborder="0"></iframe>
+        </div>
+    </div>
+
+
+</body>
+<script>
+    $(document).ready(function() {
+        $(".dialog-faxian-menu .mask").niceScroll({
+            cursorborder:"",
+            cursorcolor:"#000000",
+            // autohidemode:'hidden',  //选项一直隐藏滚动条
+            boxzoom:true
+        }); // First scrollable DIV
+        $(".active-swiper-box1").show();
+    });
+
+
+    $(".city-list").on("click",".item",function () {
+        resetVideo();
+        if(!$(this).hasClass("active")){
+            $(this).addClass("active").siblings().removeClass("active");
+            var  type=$(this).attr("type");
+            $(".active-swiper-box.active-swiper-box"+type).fadeIn();
+            $(".active-swiper-box").not(".active-swiper-box"+type).hide();
+        }
+    })
+</script>
+<script>
+    // 打开文章详情
+    $(".wenzhang-list").on('click', '.item', function () {
+        var url = $(this).attr("frame_url");
+        $("#myframe").attr("src", url);
+        $(".shadow").show();
+        $(".evaluation_pop").show();
+    })
+    //关闭文章详情
+    $(".evaluation_pop").on('click', '.close', function () {
+        $(".shadow").hide();
+        $(".evaluation_pop").hide();
+        // console.log($('#myframe'))
+        $("#myframe").attr("src", '');
+    })
+</script>
+</html>

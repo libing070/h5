@@ -1,0 +1,182 @@
+
+.banner1,
+.banner2{
+    width: 100%;
+    position: relative;
+    z-index: 0;
+}
+.banner1 .swiper-pagination,
+.banner2 .swiper-pagination{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom:1rem;
+
+}
+.banner1 .swiper-pagination-bullet,
+.banner2 .swiper-pagination-bullet{
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    opacity: 1;
+    background: none;
+    background-image: url("../images/swpier-pag--icon1.png");
+    background-size: 100%;
+    margin: 0 2px;
+    outline:none;
+
+}
+.banner1 .swiper-pagination-bullet-active,
+.banner2 .swiper-pagination-bullet-active{
+    width: 35px;
+    border-radius: 0;
+    background: url("../images/swpier-pag--icon-active1.png") no-repeat;
+    background-size: 100%;
+    outline:none;
+    margin: 0 2px;
+}
+
+.peizhi1,
+.peizhi{
+    position: relative;
+    margin-top: -5px;
+}
+.peizhi1 .bg,
+.peizhi .bg{
+    width: 100%;
+
+}
+.peizhi1 .swiper-container,
+.peizhi .swiper-container{
+    position: absolute;
+    top: 2.5rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: auto;
+}
+.peizhi1 .swiper-pagination,
+.peizhi .swiper-pagination{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 3rem;
+
+}
+.peizhi1 .swiper-pagination-bullet,
+.peizhi .swiper-pagination-bullet{
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    opacity: 1;
+    background: none;
+    background-image: url("../images/swpier-pag--icon1.png");
+    background-size: 100%;
+    margin: 0 2px;
+    outline:none;
+
+}
+.peizhi1 .swiper-pagination-bullet-active,
+.peizhi .swiper-pagination-bullet-active{
+    width: 35px;
+    border-radius: 0;
+    background: url("../images/swpier-pag--icon-active1.png") no-repeat;
+    background-size: 100%;
+    outline:none;
+    margin: 0 2px;
+}
+
+/*.peizhi_swiper1_btn{*/
+    /*width: 100%;*/
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    /*bottom: 2.5rem;*/
+    /*z-index: 5;*/
+    /*margin: auto;*/
+    /*height: 0;*/
+/*}*/
+.peizhi1 .peizhi_swiper1_next,
+.peizhi .peizhi_swiper1_next {
+    position: absolute;
+    right: 3rem;
+    width: 0.8rem;
+    top: auto;
+    bottom: 2.3rem;
+    background: url('./../images/ceshi_swiper1_prve.png') no-repeat center;
+    background-size: 100%;
+    outline:none;
+}
+.peizhi1 .peizhi_swiper1_prve,
+.peizhi .peizhi_swiper1_prve {
+    position: absolute;
+    left: 3rem;
+    width: 0.8rem;
+    top: auto;
+    bottom: 2.3rem;
+    background: url('./../images/ceshi_swiper1_next.png') no-repeat center;
+    background-size: 100%;
+    outline:none;
+}
+.page3-banner1,
+.page3-banner2{
+    position: relative;
+}
+.page3-banner1 .swiper-pagination{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom:1rem;
+}
+.page3-banner2 .swiper-pagination{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom:0.5rem;
+
+}
+.page3-banner1 .swiper-pagination-bullet{
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    opacity: 1;
+    background: none;
+    background-image: url("../images/swpier-pag--icon2.png");
+    background-size: 100%;
+    margin: 0 2px;
+    outline:none;
+}
+.page3-banner2 .swiper-pagination-bullet{
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    opacity: 1;
+    background: none;
+    background-image: url("../images/swpier-pag--icon3.png");
+    background-size: 100%;
+    margin: 0 2px;
+    outline:none;
+
+}
+.page3-banner1 .swiper-pagination-bullet-active,
+.page3-banner2 .swiper-pagination-bullet-active{
+    width: 35px;
+    border-radius: 0;
+    background: url("../images/swpier-pag--icon-active1.png") no-repeat;
+    background-size: 100%;
+    outline:none;
+    margin: 0 2px;
+}
+
+
+@media screen and (min-height: 800px) {
+    /*.peizhi .peizhi_swiper1_next {*/
+        /*bottom: 21.3rem;*/
+    /*}*/
+    /*.peizhi .peizhi_swiper1_prve {*/
+        /*bottom: 21.3rem;*/
+    /*}*/
+    /*.peizhi .swiper-pagination{*/
+        /*bottom: 22rem;*/
+    /*}*/
+}

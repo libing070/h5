@@ -298,7 +298,7 @@ select::-ms-expand { display: none; }
 .dealers .inquiry .wrap{
     position: relative;
     width: 100%;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-size: 100%;
     padding-top: 8rem;
 
@@ -391,6 +391,8 @@ select::-ms-expand { display: none; }
     margin: auto;
     overflow: hidden;
     padding-bottom: 2%;
+    position: relative;
+    z-index: 1;
 }
 
 .dealers .jxs_list li {
@@ -437,7 +439,7 @@ select::-ms-expand { display: none; }
     display: block;
     bottom: 0.2rem;
     color: white;
-    background-color: #2A599B;
+    background-color: #C53235 ;
     width: 8rem;
     vertical-align: middle;
     line-height: 1.8rem;
@@ -520,6 +522,86 @@ select::-ms-expand { display: none; }
     width: auto;
 }
 
+.dialog-faxian-menu{
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+.dialog-faxian-menu .mask{
+    position: absolute;
+    border-radius: 5px;
+    background-image: url("./../images/faxian/faxian-dialog-bg.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    overflow-y: auto;
+    margin: auto;
+    background-color: #181818;
+    width: 70%;
+    height: 100%;
+}
+.dialog-faxian-menu .mask .close{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+}
+.dialog-faxian-menu .mask .titles{
+    position: relative;
+    margin: auto;
+    margin-top: 2rem;
+    width: 20%;
+
+}
+.dialog-faxian-menu .mask .wrap{
+    position: relative;
+    margin: auto;
+    margin-top: 2rem;
+    width: 80%;
+}
+.dialog-faxian-menu .mask .wrap .box{
+    position: relative;
+    width: 45%;
+    margin: 20px 10px;
+}
+.dialog-faxian-menu .mask .wrap .box:nth-child(odd){
+    float: left;
+}
+.dialog-faxian-menu .mask .wrap .box:nth-child(even){
+float: right;
+}
+
+.dialog-faxian-menu .mask .wrap .box .box{
+    position: relative;
+    width: 85%;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.dialog-faxian-menu .mask .wrap .box .bg{
+    width: 100%;
+}
+.dialog-faxian-menu .mask .wrap .box .btn{
+    cursor: pointer;
+    position: absolute;
+    width: 80%;
+    bottom: 1.5rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
 .share-dialog{
     z-index: 1000;
     position: fixed;
@@ -543,6 +625,7 @@ select::-ms-expand { display: none; }
     height: 100%;
     width: auto;
 }
+.club-dialog,
 .weixin-dialog,.xiaochengxu-dialog{
     z-index: 1000;
     position: fixed;
@@ -555,6 +638,7 @@ select::-ms-expand { display: none; }
     margin: auto;
     background-color: white;
 }
+.club-dialog img,
 .weixin-dialog img,
 .xiaochengxu-dialog img{
     width: 90%;
@@ -575,6 +659,19 @@ select::-ms-expand { display: none; }
 }
 .xiaochengxu-dialog::after {
     content: "奥迪小程序";
+    display: block;
+    width: 200px;
+    height: 20px;
+    line-height: 1.2;
+    position: absolute;
+    left: 0px;
+    top: 175px;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    text-align: center;
+}
+.club-dialog::after {
+    content: "奥迪官方车主俱乐部";
     display: block;
     width: 200px;
     height: 20px;

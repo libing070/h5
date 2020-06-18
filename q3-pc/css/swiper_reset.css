@@ -1,0 +1,235 @@
+.banner1,
+.banner2{
+    position: relative;
+    width: 100%;
+}
+.banner1 .swiper-pagination,
+.banner2 .swiper-pagination{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 2rem;
+
+}
+.banner1 .swiper-pagination-bullet{
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    opacity: 1;
+    background: none;
+    background-image: url("../images/swpier-pag--icon2.png");
+    background-size: 100%;
+    margin: 0 2px;
+    outline:none;
+}
+.banner2 .swiper-pagination-bullet{
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    opacity: 1;
+    background: none;
+    background-image: url("../images/swpier-pag--icon3.png");
+    background-size: 100%;
+    margin: 0 2px;
+    outline:none;
+
+}
+.banner1 .swiper-pagination-bullet-active,
+.banner2 .swiper-pagination-bullet-active{
+    width: 35px;
+    border-radius: 0;
+    background: url("../images/swpier-pag--icon-active1.png") no-repeat;
+    background-size: 100%;
+    outline:none;
+    margin: 0 2px;
+}
+
+.banner1 .banner1_swiper1_next{
+    position: absolute;
+    right: 30rem;
+    width: 0.8rem;
+    top: auto;
+    bottom:1.3rem;
+    background: url('./../images/ceshi_swiper1_prve.png') no-repeat center;
+    background-size: 100%;
+    outline:none;
+}
+.banner1 .banner1_swiper1_prve {
+    position: absolute;
+    left: 30rem;
+    width: 0.8rem;
+    top: auto;
+    bottom: 1.3rem;
+    background: url('./../images/ceshi_swiper1_next.png') no-repeat center;
+    background-size: 100%;
+    outline:none;
+}
+
+.banner2 .banner2_swiper1_next {
+    position: absolute;
+    right: 5rem;
+    width: 1.3rem;
+    bottom: 0;
+    top: 0;
+    background: url('./../images/ceshi_swiper1_prve.png') no-repeat center;
+    background-size: 100%;
+    outline:none;
+    margin: auto;
+}
+.banner2 .banner2_swiper1_prve {
+    position: absolute;
+    left: 5rem;
+    width: 1.3rem;
+    bottom: 0;
+    top: 0;
+    background: url('./../images/ceshi_swiper1_next.png') no-repeat center;
+    background-size: 100%;
+    outline:none;
+    margin: auto;
+}
+.peizhi{
+    position: relative;
+    margin-top: -5px;
+}
+.peizhi .bg{
+    width: 100%;
+
+}
+.peizhi .swiper-container{
+    position: absolute;
+    top: 12rem;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    margin: auto;
+}
+.peizhi .swiper-slide{
+    text-align: center;
+}
+.peizhi .swiper-slide img {
+    display: inline-block;
+    width: 45%;
+}
+.peizhi .swiper-pagination{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 5rem;
+
+}
+.peizhi .swiper-pagination-bullet{
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    opacity: 1;
+    background: none;
+    background-image: url("../images/swpier-pag--icon1.png");
+    background-size: 100%;
+    margin: 0 2px;
+    outline:none;
+
+}
+.peizhi .swiper-pagination-bullet-active{
+    width: 35px;
+    border-radius: 0;
+    background: url("../images/swpier-pag--icon-active1.png") no-repeat;
+    background-size: 100%;
+    outline:none;
+    margin: 0 2px;
+}
+
+/*.peizhi_swiper1_btn{*/
+    /*width: 75%;*/
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    /*bottom: 0.5rem;*/
+    /*z-index: 5;*/
+    /*margin: auto;*/
+    /*height: 2rem;*/
+    /*background-color: #2D93CA;*/
+/*}*/
+.swiper-container .peizhi_swiper1_next {
+    position: absolute;
+    right: 30rem;
+    width: 0.8rem;
+    top: auto;
+    bottom: 4.3rem;
+    background: url('./../images/ceshi_swiper1_prve.png') no-repeat center;
+    background-size: 100%;
+    outline:none;
+}
+
+.swiper-container .peizhi_swiper1_prve {
+    position: absolute;
+    left: 30rem;
+    width: 0.8rem;
+    top: auto;
+    bottom: 4.3rem;
+    background: url('./../images/ceshi_swiper1_next.png') no-repeat center;
+    background-size: 100%;
+    outline:none;
+}
+
+.active-swiper-box .item{
+    position: relative;
+}
+.active-swiper-box .item .swiper-pagination{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 2rem;
+
+}
+.active-swiper-box  .active-swiper-left .swiper-pagination-bullet{
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    opacity: 1;
+    background: none;
+    background-image: url("../images/swpier-pag--icon2.png");
+    background-size: 100%;
+    margin: 0 2px;
+    outline:none;
+
+}
+.active-swiper-box  .active-swiper-right .swiper-pagination-bullet{
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    opacity: 1;
+    background: none;
+    background-image: url("../images/swpier-pag--icon3.png");
+    background-size: 100%;
+    margin: 0 2px;
+    outline:none;
+
+}
+.active-swiper-box  .item .swiper-pagination-bullet-active{
+    width: 35px;
+    border-radius: 0;
+    background: url("../images/swpier-pag--icon-active1.png") no-repeat;
+    background-size: 100%;
+    outline:none;
+    margin: 0 2px;
+}
+
+
+/*@media screen and (max-width: 1600px) and (min-width: 1367px){*/
+    /*.ceshi-group .swiper-pagination{*/
+        /*bottom: 10rem;*/
+
+    /*}*/
+/*}*/
+@media screen and (min-width: 1601px){
+    .peizhi .swiper-container{
+        top: 15rem;
+    }
+    .peizhi .swiper-slide img {
+        width: 45%;
+    }
+    .dealers .inquiry .wrap{
+        padding-top: 12rem;
+    }
+}
