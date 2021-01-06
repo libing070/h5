@@ -10,7 +10,7 @@
     "build": "yarn run clean && node build/build.js"
   },
   "dependencies": {
-    "axios": "^0.17.0",
+    "axios": "^0.21.1",
     "babel-eslint": "^7.2.3",
     "echarts": "^3.7.2",
     "echarts-wordcloud": "^1.1.3",
